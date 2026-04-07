@@ -1,0 +1,666 @@
+{
+  "origin_hub_id": 27,
+  "destination_hub_id": 16,
+  "routes": [
+    {
+      "arc_id": "5570",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 240.0,
+      "total_distance_m": 1228.52,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 950.78,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1976466,
+          "to_lon": 6.1429674,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 69.0,
+          "distance_m": 61.75,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1976466,
+          "from_lon": 6.1429674,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 31.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5577",
+      "type": "PT-Only",
+      "total_travel_time_s": 360.0,
+      "total_transfer_time_s": 205.0,
+      "total_distance_m": 1138.98,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 360.0,
+          "distance_m": 903.39,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980819,
+          "to_lon": 6.1428596,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 34.0,
+          "distance_m": 19.6,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980819,
+          "from_lon": 6.1428596,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 6,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5571",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 240.0,
+      "total_distance_m": 1228.52,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 950.78,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1976466,
+          "to_lon": 6.1429674,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 69.0,
+          "distance_m": 61.75,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1976466,
+          "from_lon": 6.1429674,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5572",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 205.0,
+      "total_distance_m": 1138.98,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 903.39,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980819,
+          "to_lon": 6.1428596,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 34.0,
+          "distance_m": 19.6,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980819,
+          "from_lon": 6.1428596,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5573",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 305.0,
+      "total_distance_m": 1229.53,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 898.93,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1982809,
+          "to_lon": 6.1419433,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 134.0,
+          "distance_m": 114.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1982809,
+          "from_lon": 6.1419433,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5574",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 305.0,
+      "total_distance_m": 1524.6599999999999,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 1194.06,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1982809,
+          "to_lon": 6.1419433,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 134.0,
+          "distance_m": 114.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1982809,
+          "from_lon": 6.1419433,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5576",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 240.0,
+      "total_distance_m": 1228.52,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 950.78,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1976466,
+          "to_lon": 6.1429674,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 69.0,
+          "distance_m": 61.75,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1976466,
+          "from_lon": 6.1429674,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_5588",
+      "type": "Car",
+      "total_travel_time_s": 224.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 2513.05,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 224.0,
+          "distance_m": 2513.05,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.672088,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 4,
+        "Total Travel Time (min)": 4
+      }
+    },
+    {
+      "arc_id": "5569",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 404.0,
+      "total_distance_m": 1278.71,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 335.0,
+          "distance_m": 450.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2045294,
+          "to_lon": 6.1434525,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 180.0,
+          "distance_m": 766.46,
+          "line_publicCode": {
+            "publicCode": "18"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1976466,
+          "to_lon": 6.1429674,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2045294,
+          "from_lon": 6.1434525,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 69.0,
+          "distance_m": 61.75,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1976466,
+          "from_lon": 6.1429674,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5575",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 417.0,
+      "total_distance_m": 1126.13,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 171.0,
+          "distance_m": 215.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2032052,
+          "to_lon": 6.1469289,
+          "from_place": "Origin",
+          "from_lat": 46.2038767,
+          "from_lon": 6.1488325,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 180.0,
+          "distance_m": 611.73,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Place de Neuve",
+          "to_lat": 46.2006871,
+          "to_lon": 6.1432998,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2032052,
+          "from_lon": 6.1469289,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 246.0,
+          "distance_m": 298.41,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.198207,
+          "to_lon": 6.1429368,
+          "from_place": "Genève, Place de Neuve",
+          "from_lat": 46.2006871,
+          "from_lon": 6.1432998,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    }
+  ],
+  "demand": 31,
+  "gamma": 2.038
+}

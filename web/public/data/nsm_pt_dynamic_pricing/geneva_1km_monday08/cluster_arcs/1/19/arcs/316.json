@@ -1,0 +1,137 @@
+{
+  "arc_id": "316",
+  "type": "PT-Only",
+  "origin_hub_id": 1,
+  "destination_hub_id": 19,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 74.0,
+  "total_distance_m": 892.16,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 17.0,
+      "distance_m": 13.55,
+      "from_place": "Origin",
+      "to_place": "Genève, gare Cornavin",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20965,
+          6.14181
+        ],
+        [
+          46.20966,
+          6.1418
+        ],
+        [
+          46.20966,
+          6.14179
+        ],
+        [
+          46.20965,
+          6.14182
+        ],
+        [
+          46.20963,
+          6.14189
+        ],
+        [
+          46.20961,
+          6.14187
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 240.0,
+      "distance_m": 834.03,
+      "from_place": "Genève, gare Cornavin",
+      "to_place": "Genève, Stand",
+      "line_publicCode": {
+        "publicCode": "14"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20957,
+          6.14184
+        ],
+        [
+          46.20726,
+          6.142
+        ],
+        [
+          46.20726,
+          6.142
+        ],
+        [
+          46.20454,
+          6.14345
+        ],
+        [
+          46.20454,
+          6.14345
+        ],
+        [
+          46.20413,
+          6.14023
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 57.0,
+      "distance_m": 44.58,
+      "from_place": "Genève, Stand",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2041,
+          6.14022
+        ],
+        [
+          46.2041,
+          6.14022
+        ],
+        [
+          46.2041,
+          6.14019
+        ],
+        [
+          46.20411,
+          6.14016
+        ],
+        [
+          46.2041,
+          6.14016
+        ],
+        [
+          46.20409,
+          6.14016
+        ],
+        [
+          46.20402,
+          6.14016
+        ],
+        [
+          46.20402,
+          6.14011
+        ],
+        [
+          46.20385,
+          6.14014
+        ]
+      ]
+    }
+  ]
+}

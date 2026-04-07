@@ -1,0 +1,252 @@
+{
+  "origin_hub_id": 2,
+  "destination_hub_id": 10,
+  "routes": [
+    {
+      "arc_id": "476",
+      "type": "PT-Only",
+      "total_travel_time_s": 120.0,
+      "total_transfer_time_s": 448.0,
+      "total_distance_m": 1070.56,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 450.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Origin",
+          "from_lat": 46.1987368,
+          "from_lon": 6.1504763,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 522.86,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Rue du Lac",
+          "to_lat": 46.2041066,
+          "to_lon": 6.1585442,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 75.0,
+          "distance_m": 97.01,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2033872,
+          "to_lon": 6.1584552,
+          "from_place": "Genève, Rue du Lac",
+          "from_lat": 46.2041066,
+          "from_lon": 6.1585442,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 35.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 2,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "475",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 448.0,
+      "total_distance_m": 1070.56,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 450.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Origin",
+          "from_lat": 46.1987368,
+          "from_lon": 6.1504763,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 522.86,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Rue du Lac",
+          "to_lat": 46.2041066,
+          "to_lon": 6.1585442,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 75.0,
+          "distance_m": 97.01,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2033872,
+          "to_lon": 6.1584552,
+          "from_place": "Genève, Rue du Lac",
+          "from_lat": 46.2041066,
+          "from_lon": 6.1585442,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "477",
+      "type": "PT-Only",
+      "total_travel_time_s": 120.0,
+      "total_transfer_time_s": 448.0,
+      "total_distance_m": 1102.54,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 450.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Origin",
+          "from_lat": 46.1987368,
+          "from_lon": 6.1504763,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 554.84,
+          "line_publicCode": {
+            "publicCode": "2"
+          },
+          "to_place": "Genève, Rue du Lac",
+          "to_lat": 46.2041066,
+          "to_lon": 6.1585442,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 75.0,
+          "distance_m": 97.01,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2033872,
+          "to_lon": 6.1584552,
+          "from_place": "Genève, Rue du Lac",
+          "from_lat": 46.2041066,
+          "from_lon": 6.1585442,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 2,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_479",
+      "type": "Car",
+      "total_travel_time_s": 117.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1017.02,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 117.0,
+          "distance_m": 1017.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2033872,
+          "to_lon": 6.1584552,
+          "from_place": "Origin",
+          "from_lat": 46.1987368,
+          "from_lon": 6.1504763,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.4327232,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 5,
+        "Total Travel Time (min)": 2
+      }
+    }
+  ],
+  "demand": 35,
+  "gamma": 2.668
+}

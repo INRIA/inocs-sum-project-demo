@@ -1,0 +1,252 @@
+{
+  "origin_hub_id": 24,
+  "destination_hub_id": 26,
+  "routes": [
+    {
+      "arc_id": "5069",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 313.0,
+      "total_distance_m": 1892.5500000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 235.0,
+          "distance_m": 282.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Palais Eynard",
+          "to_lat": 46.2000902,
+          "to_lon": 6.1466864,
+          "from_place": "Origin",
+          "from_lat": 46.2003966,
+          "from_lon": 6.14764,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 540.0,
+          "distance_m": 1531.42,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Prairie",
+          "to_lat": 46.2085144,
+          "to_lon": 6.1355114,
+          "from_place": "Genève, Palais Eynard",
+          "from_lat": 46.2000902,
+          "from_lon": 6.1466864,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 78.0,
+          "distance_m": 78.22,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2083367,
+          "to_lon": 6.1360362,
+          "from_place": "Genève, Prairie",
+          "from_lat": 46.2085144,
+          "from_lon": 6.1355114,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 54.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5067",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 580.0,
+      "total_distance_m": 1626.46,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 502.0,
+          "distance_m": 679.32,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2050641,
+          "to_lon": 6.1429764,
+          "from_place": "Origin",
+          "from_lat": 46.2003966,
+          "from_lon": 6.14764,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 868.92,
+          "line_publicCode": {
+            "publicCode": "19"
+          },
+          "to_place": "Genève, Prairie",
+          "to_lat": 46.2085144,
+          "to_lon": 6.1355114,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2050641,
+          "from_lon": 6.1429764,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 78.0,
+          "distance_m": 78.22,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2083367,
+          "to_lon": 6.1360362,
+          "from_place": "Genève, Prairie",
+          "from_lat": 46.2085144,
+          "from_lon": 6.1355114,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5068",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 580.0,
+      "total_distance_m": 1626.46,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 502.0,
+          "distance_m": 679.32,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2050641,
+          "to_lon": 6.1429764,
+          "from_place": "Origin",
+          "from_lat": 46.2003966,
+          "from_lon": 6.14764,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 868.92,
+          "line_publicCode": {
+            "publicCode": "10"
+          },
+          "to_place": "Genève, Prairie",
+          "to_lat": 46.2085144,
+          "to_lon": 6.1355114,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2050641,
+          "from_lon": 6.1429764,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 78.0,
+          "distance_m": 78.22,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2083367,
+          "to_lon": 6.1360362,
+          "from_place": "Genève, Prairie",
+          "from_lat": 46.2085144,
+          "from_lon": 6.1355114,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_5082",
+      "type": "Car",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1680.78,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 240.0,
+          "distance_m": 1680.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2083367,
+          "to_lon": 6.1360362,
+          "from_place": "Origin",
+          "from_lat": 46.2003966,
+          "from_lon": 6.14764,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.5389248,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 3,
+        "Total Travel Time (min)": 4
+      }
+    }
+  ],
+  "demand": 54,
+  "gamma": 2.959
+}

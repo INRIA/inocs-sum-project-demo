@@ -1,0 +1,161 @@
+{
+  "arc_id": "1682",
+  "type": "PT-Only",
+  "origin_hub_id": 8,
+  "destination_hub_id": 7,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 89.0,
+  "total_distance_m": 866.66,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 27.0,
+      "distance_m": 28.79,
+      "from_place": "Origin",
+      "to_place": "Genève, Coutance",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20704,
+          6.14186
+        ],
+        [
+          46.20705,
+          6.14187
+        ],
+        [
+          46.20708,
+          6.14188
+        ],
+        [
+          46.20712,
+          6.14186
+        ],
+        [
+          46.20717,
+          6.14186
+        ],
+        [
+          46.20721,
+          6.14186
+        ],
+        [
+          46.20725,
+          6.14187
+        ],
+        [
+          46.20725,
+          6.14193
+        ],
+        [
+          46.20725,
+          6.14195
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 240.0,
+      "distance_m": 769.33,
+      "from_place": "Genève, Coutance",
+      "to_place": "Genève, Cirque",
+      "line_publicCode": {
+        "publicCode": "19"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20725,
+          6.14192
+        ],
+        [
+          46.20424,
+          6.14206
+        ],
+        [
+          46.20424,
+          6.14206
+        ],
+        [
+          46.20209,
+          6.14182
+        ],
+        [
+          46.20209,
+          6.14182
+        ],
+        [
+          46.20148,
+          6.1395
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 62.0,
+      "distance_m": 68.54,
+      "from_place": "Genève, Cirque",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20145,
+          6.13948
+        ],
+        [
+          46.20145,
+          6.13948
+        ],
+        [
+          46.20143,
+          6.13948
+        ],
+        [
+          46.20144,
+          6.1394
+        ],
+        [
+          46.20145,
+          6.13931
+        ],
+        [
+          46.20145,
+          6.13925
+        ],
+        [
+          46.20143,
+          6.13925
+        ],
+        [
+          46.20141,
+          6.13925
+        ],
+        [
+          46.20139,
+          6.13942
+        ],
+        [
+          46.20134,
+          6.13939
+        ],
+        [
+          46.20133,
+          6.13939
+        ],
+        [
+          46.20121,
+          6.13931
+        ]
+      ]
+    }
+  ]
+}

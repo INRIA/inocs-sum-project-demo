@@ -1,0 +1,25 @@
+services:
+  #docker compose --profile build up
+  otp-build:
+    image: docker.io/opentripplanner/opentripplanner:latest
+    profiles:
+      - build
+    environment:
+      JAVA_TOOL_OPTIONS: -Xmx20g
+      OTP_LOG_LEVEL: DEBUG
+    volumes:
+      - ./data:/var/opentripplanner
+    command: ["--build", "--save"]
+
+  #docker compose --profile serve up
+  otp-serve:
+    image: docker.io/opentripplanner/opentripplanner:latest
+    profiles:
+      - serve
+    environment:
+      JAVA_TOOL_OPTIONS: -Xmx20g
+    volumes:
+      - ./data:/var/opentripplanner
+    ports:
+      - "8080:8080"
+    command: ["--load", "--serve"]

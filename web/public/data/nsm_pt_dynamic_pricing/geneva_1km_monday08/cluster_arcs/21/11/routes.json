@@ -1,0 +1,922 @@
+{
+  "origin_hub_id": 21,
+  "destination_hub_id": 11,
+  "routes": [
+    {
+      "arc_id": "4385",
+      "type": "PT-Only",
+      "total_travel_time_s": 660.0,
+      "total_transfer_time_s": 217.0,
+      "total_distance_m": 2310.5200000000004,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 60.0,
+          "distance_m": 78.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Gautier",
+          "to_lat": 46.213444,
+          "to_lon": 6.1503964,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 660.0,
+          "distance_m": 2104.44,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2028259,
+          "to_lon": 6.1535585,
+          "from_place": "Genève, Gautier",
+          "from_lat": 46.213444,
+          "from_lon": 6.1503964,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 157.0,
+          "distance_m": 128.05,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2028259,
+          "from_lon": 6.1535585,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 49.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 11,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4390",
+      "type": "PT+Bike",
+      "total_travel_time_s": 636.0,
+      "total_transfer_time_s": 282.0,
+      "total_distance_m": 2019.3200000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 60.0,
+          "distance_m": 78.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Gautier",
+          "to_lat": 46.213444,
+          "to_lon": 6.1503964,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 552.17,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Alpes",
+          "to_lat": 46.2090366,
+          "to_lon": 6.1471535,
+          "from_place": "Genève, Gautier",
+          "from_lat": 46.213444,
+          "from_lon": 6.1503964,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 222.0,
+          "distance_m": 159.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.20803,
+          "to_lon": 6.147165,
+          "from_place": "Genève, Alpes",
+          "from_lat": 46.2090366,
+          "from_lon": 6.1471535,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 456.0,
+          "distance_m": 1229.13,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Bike",
+          "from_lat": 46.20803,
+          "from_lon": 6.147165,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6040816326530613,
+        "Total Price": 2.6040816326530614,
+        "PT Time": 3,
+        "Bike Time": 8,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4383",
+      "type": "PT+Bike",
+      "total_travel_time_s": 611.0,
+      "total_transfer_time_s": 520.0,
+      "total_distance_m": 2625.0,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 151.0,
+          "distance_m": 113.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Jaquet",
+          "to_lat": 46.2138681,
+          "to_lon": 6.1511388,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 491.0,
+          "distance_m": 1428.47,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Place de la Fusterie",
+          "to_lat": 46.2041587,
+          "to_lon": 6.1460944,
+          "from_place": "Jean-Jaquet",
+          "from_lat": 46.2138681,
+          "from_lon": 6.1511388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 129.0,
+          "distance_m": 156.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Place de la Fusterie",
+          "from_lat": 46.2041587,
+          "from_lon": 6.1460944,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 240.0,
+          "distance_m": 257.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6204081632653059,
+        "Total Price": 2.620408163265306,
+        "PT Time": 2,
+        "Bike Time": 9,
+        "Transfers": 9,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "4387",
+      "type": "PT+Bike",
+      "total_travel_time_s": 611.0,
+      "total_transfer_time_s": 520.0,
+      "total_distance_m": 2625.0,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 151.0,
+          "distance_m": 113.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Jaquet",
+          "to_lat": 46.2138681,
+          "to_lon": 6.1511388,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 491.0,
+          "distance_m": 1428.47,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Place de la Fusterie",
+          "to_lat": 46.2041587,
+          "to_lon": 6.1460944,
+          "from_place": "Jean-Jaquet",
+          "from_lat": 46.2138681,
+          "from_lon": 6.1511388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 129.0,
+          "distance_m": 156.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Place de la Fusterie",
+          "from_lat": 46.2041587,
+          "from_lon": 6.1460944,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 240.0,
+          "distance_m": 257.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6204081632653059,
+        "Total Price": 2.620408163265306,
+        "PT Time": 2,
+        "Bike Time": 9,
+        "Transfers": 9,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "4388",
+      "type": "PT+Bike",
+      "total_travel_time_s": 611.0,
+      "total_transfer_time_s": 520.0,
+      "total_distance_m": 2625.0,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 151.0,
+          "distance_m": 113.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Jaquet",
+          "to_lat": 46.2138681,
+          "to_lon": 6.1511388,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 491.0,
+          "distance_m": 1428.47,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Place de la Fusterie",
+          "to_lat": 46.2041587,
+          "to_lon": 6.1460944,
+          "from_place": "Jean-Jaquet",
+          "from_lat": 46.2138681,
+          "from_lon": 6.1511388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 129.0,
+          "distance_m": 156.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Place de la Fusterie",
+          "from_lat": 46.2041587,
+          "from_lon": 6.1460944,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 240.0,
+          "distance_m": 257.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6204081632653059,
+        "Total Price": 2.620408163265306,
+        "PT Time": 2,
+        "Bike Time": 9,
+        "Transfers": 9,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "4389",
+      "type": "PT+Bike",
+      "total_travel_time_s": 611.0,
+      "total_transfer_time_s": 520.0,
+      "total_distance_m": 2625.0,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 151.0,
+          "distance_m": 113.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Jaquet",
+          "to_lat": 46.2138681,
+          "to_lon": 6.1511388,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 491.0,
+          "distance_m": 1428.47,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Place de la Fusterie",
+          "to_lat": 46.2041587,
+          "to_lon": 6.1460944,
+          "from_place": "Jean-Jaquet",
+          "from_lat": 46.2138681,
+          "from_lon": 6.1511388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 129.0,
+          "distance_m": 156.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Place de la Fusterie",
+          "from_lat": 46.2041587,
+          "from_lon": 6.1460944,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 240.0,
+          "distance_m": 257.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6204081632653059,
+        "Total Price": 2.620408163265306,
+        "PT Time": 2,
+        "Bike Time": 9,
+        "Transfers": 9,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "4382",
+      "type": "PT+Bike",
+      "total_travel_time_s": 575.0,
+      "total_transfer_time_s": 332.0,
+      "total_distance_m": 2025.7499999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 151.0,
+          "distance_m": 113.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Jaquet",
+          "to_lat": 46.2138681,
+          "to_lon": 6.1511388,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 335.0,
+          "distance_m": 1053.62,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Pont du Mont-Blanc",
+          "to_lat": 46.2069193,
+          "to_lon": 6.1473036,
+          "from_place": "Jean-Jaquet",
+          "from_lat": 46.2138681,
+          "from_lon": 6.1511388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 24.0,
+          "distance_m": 27.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2070349,
+          "to_lon": 6.1473512,
+          "from_place": "Pont du Mont-Blanc",
+          "from_lat": 46.2069193,
+          "from_lon": 6.1473036,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 702.38,
+          "line_publicCode": {
+            "publicCode": "9"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2028259,
+          "to_lon": 6.1535585,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2070349,
+          "from_lon": 6.1473512,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 157.0,
+          "distance_m": 128.05,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2028259,
+          "from_lon": 6.1535585,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6204081632653059,
+        "Total Price": 2.620408163265306,
+        "PT Time": 4,
+        "Bike Time": 6,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "4386",
+      "type": "PT+Bike",
+      "total_travel_time_s": 515.0,
+      "total_transfer_time_s": 431.0,
+      "total_distance_m": 2194.66,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 151.0,
+          "distance_m": 113.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Jaquet",
+          "to_lat": 46.2138681,
+          "to_lon": 6.1511388,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 335.0,
+          "distance_m": 1053.62,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Pont du Mont-Blanc",
+          "to_lat": 46.2069193,
+          "to_lon": 6.1473036,
+          "from_place": "Jean-Jaquet",
+          "from_lat": 46.2138681,
+          "from_lon": 6.1511388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 24.0,
+          "distance_m": 27.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2070349,
+          "to_lon": 6.1473512,
+          "from_place": "Pont du Mont-Blanc",
+          "from_lat": 46.2069193,
+          "from_lon": 6.1473036,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 724.79,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2070349,
+          "from_lon": 6.1473512,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 256.0,
+          "distance_m": 274.55,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6204081632653059,
+        "Total Price": 2.620408163265306,
+        "PT Time": 3,
+        "Bike Time": 6,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "4384",
+      "type": "PT+Bike",
+      "total_travel_time_s": 455.0,
+      "total_transfer_time_s": 461.0,
+      "total_distance_m": 2024.42,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 151.0,
+          "distance_m": 113.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Jaquet",
+          "to_lat": 46.2138681,
+          "to_lon": 6.1511388,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 335.0,
+          "distance_m": 1053.62,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Pont du Mont-Blanc",
+          "to_lat": 46.2069193,
+          "to_lon": 6.1473036,
+          "from_place": "Jean-Jaquet",
+          "from_lat": 46.2138681,
+          "from_lon": 6.1511388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 24.0,
+          "distance_m": 27.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2070349,
+          "to_lon": 6.1473512,
+          "from_place": "Pont du Mont-Blanc",
+          "from_lat": 46.2069193,
+          "from_lon": 6.1473036,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 492.2,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Métropole",
+          "to_lat": 46.203373,
+          "to_lon": 6.1509444,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2070349,
+          "from_lon": 6.1473512,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 286.0,
+          "distance_m": 336.9,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Genève, Métropole",
+          "from_lat": 46.203373,
+          "from_lon": 6.1509444,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6204081632653059,
+        "Total Price": 2.620408163265306,
+        "PT Time": 2,
+        "Bike Time": 6,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "car_4393",
+      "type": "Car",
+      "total_travel_time_s": 147.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1815.99,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 147.0,
+          "distance_m": 1815.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2030985,
+          "to_lon": 6.1546648,
+          "from_place": "Origin",
+          "from_lat": 46.2136364,
+          "from_lon": 6.1498854,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.5605584,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 2,
+        "Total Travel Time (min)": 3
+      }
+    }
+  ],
+  "demand": 49,
+  "gamma": 2.745
+}

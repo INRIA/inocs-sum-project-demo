@@ -1,0 +1,22 @@
+---
+import DashboardLayout from '../presentation/layouts/DashboardLayout.astro';
+import CityMapView from '../presentation/components/map/CityMapView';
+---
+
+<DashboardLayout title="City Map" description="Explore GTFS transit network and shared mobility data for Geneva">
+  <div class="flex-1 flex flex-col h-[calc(100vh-3.5rem)]">
+    <div class="px-4 py-3 border-b border-border bg-surface">
+      <h1 class="text-lg font-semibold text-primary">
+        🗺️ City Map — Geneva Transport Network
+      </h1>
+      <p class="text-text text-xs mt-0.5">
+        GTFS transit stops &amp; itineraries · Bike-sharing stations · Ridership heatmap
+      </p>
+    </div>
+
+    <div class="flex-1 relative min-h-0 overflow-hidden">
+      <!-- CityMapView must be client-only because Leaflet requires a DOM -->
+      <CityMapView client:only="react" />
+    </div>
+  </div>
+</DashboardLayout>

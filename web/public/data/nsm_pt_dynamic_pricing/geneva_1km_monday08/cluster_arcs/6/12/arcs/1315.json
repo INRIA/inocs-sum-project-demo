@@ -1,0 +1,165 @@
+{
+  "arc_id": "1315",
+  "type": "PT-Only",
+  "origin_hub_id": 6,
+  "destination_hub_id": 12,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 231.0,
+  "total_distance_m": 1289.48,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 97.0,
+      "distance_m": 101.68,
+      "from_place": "Origin",
+      "to_place": "Genève, Chantepoulet",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20762,
+          6.14412
+        ],
+        [
+          46.20782,
+          6.1437
+        ],
+        [
+          46.20784,
+          6.14366
+        ],
+        [
+          46.20809,
+          6.14393
+        ],
+        [
+          46.2081,
+          6.14384
+        ],
+        [
+          46.20811,
+          6.14375
+        ],
+        [
+          46.20812,
+          6.14375
+        ],
+        [
+          46.20812,
+          6.14372
+        ],
+        [
+          46.20813,
+          6.14368
+        ],
+        [
+          46.20815,
+          6.14369
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 240.0,
+      "distance_m": 1014.45,
+      "from_place": "Genève, Chantepoulet",
+      "to_place": "Genève, Rive",
+      "line_publicCode": {
+        "publicCode": "25"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20815,
+          6.14363
+        ],
+        [
+          46.20704,
+          6.14735
+        ],
+        [
+          46.20704,
+          6.14735
+        ],
+        [
+          46.20339,
+          6.15094
+        ],
+        [
+          46.20339,
+          6.15094
+        ],
+        [
+          46.20285,
+          6.15355
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 134.0,
+      "distance_m": 173.35,
+      "from_place": "Genève, Rive",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20282,
+          6.15355
+        ],
+        [
+          46.20282,
+          6.15355
+        ],
+        [
+          46.20287,
+          6.1533
+        ],
+        [
+          46.20287,
+          6.1533
+        ],
+        [
+          46.20291,
+          6.15311
+        ],
+        [
+          46.20298,
+          6.15281
+        ],
+        [
+          46.203,
+          6.15274
+        ],
+        [
+          46.20298,
+          6.15274
+        ],
+        [
+          46.20284,
+          6.15268
+        ],
+        [
+          46.20282,
+          6.15268
+        ],
+        [
+          46.2028,
+          6.15267
+        ],
+        [
+          46.20216,
+          6.1524
+        ]
+      ]
+    }
+  ]
+}

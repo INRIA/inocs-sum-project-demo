@@ -1,0 +1,718 @@
+{
+  "origin_hub_id": 7,
+  "destination_hub_id": 15,
+  "routes": [
+    {
+      "arc_id": "1551",
+      "type": "PT-Only",
+      "total_travel_time_s": 420.0,
+      "total_transfer_time_s": 173.0,
+      "total_distance_m": 1686.7800000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 127.0,
+          "distance_m": 139.17,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2008052,
+          "to_lon": 6.1406048,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 420.0,
+          "distance_m": 1492.97,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2008052,
+          "from_lon": 6.1406048,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 38.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 7,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1558",
+      "type": "PT+Bike",
+      "total_travel_time_s": 566.0,
+      "total_transfer_time_s": 218.0,
+      "total_distance_m": 1865.6299999999999,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 92.0,
+          "distance_m": 93.21,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2012964,
+          "to_lon": 6.139967,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 60.0,
+          "distance_m": 187.44,
+          "line_publicCode": {
+            "publicCode": "2"
+          },
+          "to_place": "Genève, Théâtre",
+          "to_lat": 46.2023472,
+          "to_lon": 6.1418714,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2012964,
+          "from_lon": 6.139967,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 77.0,
+          "distance_m": 15.49,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Boulevard du Théâtre",
+          "to_lat": 46.2023851,
+          "to_lon": 6.1417309,
+          "from_place": "Genève, Théâtre",
+          "from_lat": 46.2023472,
+          "from_lon": 6.1418714,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 506.0,
+          "distance_m": 1526.67,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue du Môle 31",
+          "to_lat": 46.2134789,
+          "to_lon": 6.1458686,
+          "from_place": "Boulevard du Théâtre",
+          "from_lat": 46.2023851,
+          "from_lon": 6.1417309,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 49.0,
+          "distance_m": 42.82,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Rue du Môle 31",
+          "from_lat": 46.2134789,
+          "from_lon": 6.1458686,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 1,
+        "Bike Time": 9,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1553",
+      "type": "PT+Bike",
+      "total_travel_time_s": 532.0,
+      "total_transfer_time_s": 253.0,
+      "total_distance_m": 1797.8600000000001,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 92.0,
+          "distance_m": 93.21,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2012964,
+          "to_lon": 6.139967,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 787.22,
+          "line_publicCode": {
+            "publicCode": "19"
+          },
+          "to_place": "Genève, Coutance",
+          "to_lat": 46.2076006,
+          "to_lon": 6.1423655,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2012964,
+          "from_lon": 6.139967,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 121.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Ebike",
+          "to_lat": 46.2075496,
+          "to_lon": 6.1432541,
+          "from_place": "Genève, Coutance",
+          "from_lat": 46.2076006,
+          "from_lon": 6.1423655,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 292.0,
+          "distance_m": 796.33,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Ebike",
+          "from_lat": 46.2075496,
+          "from_lon": 6.1432541,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 4,
+        "Bike Time": 5,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1550",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 173.0,
+      "total_distance_m": 1686.7800000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 127.0,
+          "distance_m": 139.17,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2008052,
+          "to_lon": 6.1406048,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 480.0,
+          "distance_m": 1492.97,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2008052,
+          "from_lon": 6.1406048,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1552",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 173.0,
+      "total_distance_m": 1686.7800000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 127.0,
+          "distance_m": 139.17,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2008052,
+          "to_lon": 6.1406048,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 480.0,
+          "distance_m": 1492.97,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2008052,
+          "from_lon": 6.1406048,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1555",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 173.0,
+      "total_distance_m": 1686.7800000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 127.0,
+          "distance_m": 139.17,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2008052,
+          "to_lon": 6.1406048,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 480.0,
+          "distance_m": 1492.97,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2008052,
+          "from_lon": 6.1406048,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1556",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 173.0,
+      "total_distance_m": 1686.7800000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 127.0,
+          "distance_m": 139.17,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2008052,
+          "to_lon": 6.1406048,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 480.0,
+          "distance_m": 1492.97,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2008052,
+          "from_lon": 6.1406048,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1557",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 173.0,
+      "total_distance_m": 1686.7800000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 127.0,
+          "distance_m": 139.17,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2008052,
+          "to_lon": 6.1406048,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 480.0,
+          "distance_m": 1492.97,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2008052,
+          "from_lon": 6.1406048,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1554",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 714.0,
+      "total_distance_m": 1652.7,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 92.0,
+          "distance_m": 93.21,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2012964,
+          "to_lon": 6.139967,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 787.22,
+          "line_publicCode": {
+            "publicCode": "10"
+          },
+          "to_place": "Genève, Coutance",
+          "to_lat": 46.2076006,
+          "to_lon": 6.1423655,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2012964,
+          "from_lon": 6.139967,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 622.0,
+          "distance_m": 772.27,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Coutance",
+          "from_lat": 46.2076006,
+          "from_lon": 6.1423655,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 12,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_1580",
+      "type": "Car",
+      "total_travel_time_s": 210.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1922.57,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 210.0,
+          "distance_m": 1922.57,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Origin",
+          "from_lat": 46.2011071,
+          "from_lon": 6.1393313,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.5776111999999998,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 4,
+        "Total Travel Time (min)": 4
+      }
+    }
+  ],
+  "demand": 38,
+  "gamma": 2.133
+}

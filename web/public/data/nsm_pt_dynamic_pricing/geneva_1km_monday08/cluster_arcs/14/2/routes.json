@@ -1,0 +1,183 @@
+{
+  "origin_hub_id": 14,
+  "destination_hub_id": 2,
+  "routes": [
+    {
+      "arc_id": "2879",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 154.0,
+      "total_distance_m": 929.21,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 69.0,
+          "distance_m": 86.2,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2030186,
+          "to_lon": 6.1474051,
+          "from_place": "Origin",
+          "from_lat": 46.2033959,
+          "from_lon": 6.1465384,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 733.4,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2030186,
+          "from_lon": 6.1474051,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 36.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "2880",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 154.0,
+      "total_distance_m": 929.21,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 69.0,
+          "distance_m": 86.2,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2030186,
+          "to_lon": 6.1474051,
+          "from_place": "Origin",
+          "from_lat": 46.2033959,
+          "from_lon": 6.1465384,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 733.4,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2030186,
+          "from_lon": 6.1474051,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_2889",
+      "type": "Car",
+      "total_travel_time_s": 112.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 833.66,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 112.0,
+          "distance_m": 833.66,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Origin",
+          "from_lat": 46.2033959,
+          "from_lon": 6.1465384,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.4033856,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 3,
+        "Total Travel Time (min)": 2
+      }
+    }
+  ],
+  "demand": 36,
+  "gamma": 1.729
+}

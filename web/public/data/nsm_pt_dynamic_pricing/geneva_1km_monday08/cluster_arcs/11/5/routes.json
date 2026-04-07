@@ -1,0 +1,756 @@
+{
+  "origin_hub_id": 11,
+  "destination_hub_id": 5,
+  "routes": [
+    {
+      "arc_id": "2290",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 218.0,
+      "total_distance_m": 1902.78,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 120.0,
+          "distance_m": 107.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 540.0,
+          "distance_m": 1668.27,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Monthoux",
+          "to_lat": 46.2105348,
+          "to_lon": 6.1483752,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 98.0,
+          "distance_m": 127.26,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Genève, Monthoux",
+          "from_lat": 46.2105348,
+          "from_lon": 6.1483752,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 29.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "2289",
+      "type": "PT+Bike",
+      "total_travel_time_s": 559.0,
+      "total_transfer_time_s": 281.0,
+      "total_distance_m": 2177.37,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 120.0,
+          "distance_m": 107.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1283.16,
+          "line_publicCode": {
+            "publicCode": "10"
+          },
+          "to_place": "Genève, Coutance",
+          "to_lat": 46.2076006,
+          "to_lon": 6.1423655,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 121.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Ebike",
+          "to_lat": 46.2075496,
+          "to_lon": 6.1432541,
+          "from_place": "Genève, Coutance",
+          "from_lat": 46.2076006,
+          "from_lon": 6.1423655,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 199.0,
+          "distance_m": 665.86,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Ebike",
+          "from_lat": 46.2075496,
+          "from_lon": 6.1432541,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 6,
+        "Bike Time": 4,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "2288",
+      "type": "PT+Bike",
+      "total_travel_time_s": 492.0,
+      "total_transfer_time_s": 235.0,
+      "total_distance_m": 1801.3799999999999,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 120.0,
+          "distance_m": 107.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 554.9,
+          "line_publicCode": {
+            "publicCode": "2"
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2039885,
+          "to_lon": 6.14851,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 115.0,
+          "distance_m": 66.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.204269,
+          "to_lon": 6.1487348,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2039885,
+          "from_lon": 6.14851,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 372.0,
+          "distance_m": 1072.62,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Bike",
+          "from_lat": 46.204269,
+          "from_lon": 6.1487348,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 2,
+        "Bike Time": 7,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "2285",
+      "type": "PT+Bike",
+      "total_travel_time_s": 489.0,
+      "total_transfer_time_s": 260.0,
+      "total_distance_m": 1597.32,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 120.0,
+          "distance_m": 107.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 915.31,
+          "line_publicCode": {
+            "publicCode": "9"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 140.0,
+          "distance_m": 102.74,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.20803,
+          "to_lon": 6.147165,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 189.0,
+          "distance_m": 472.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Bike",
+          "from_lat": 46.20803,
+          "from_lon": 6.147165,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 5,
+        "Bike Time": 4,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "2287",
+      "type": "PT+Bike",
+      "total_travel_time_s": 369.0,
+      "total_transfer_time_s": 377.0,
+      "total_distance_m": 1455.09,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 237.0,
+          "distance_m": 279.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Métropole",
+          "to_lat": 46.203373,
+          "to_lon": 6.1515104,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 601.25,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Métropole",
+          "from_lat": 46.203373,
+          "from_lon": 6.1515104,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 140.0,
+          "distance_m": 102.74,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.20803,
+          "to_lon": 6.147165,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 189.0,
+          "distance_m": 472.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Bike",
+          "from_lat": 46.20803,
+          "from_lon": 6.147165,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 3,
+        "Bike Time": 4,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "2283",
+      "type": "PT+Bike",
+      "total_travel_time_s": 309.0,
+      "total_transfer_time_s": 377.0,
+      "total_distance_m": 1455.09,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 237.0,
+          "distance_m": 279.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Métropole",
+          "to_lat": 46.203373,
+          "to_lon": 6.1515104,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 601.25,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Métropole",
+          "from_lat": 46.203373,
+          "from_lon": 6.1515104,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 140.0,
+          "distance_m": 102.74,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.20803,
+          "to_lon": 6.147165,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 189.0,
+          "distance_m": 472.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Bike",
+          "from_lat": 46.20803,
+          "from_lon": 6.147165,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 2,
+        "Bike Time": 4,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "2284",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 559.0,
+      "total_distance_m": 1530.24,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 120.0,
+          "distance_m": 107.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 915.31,
+          "line_publicCode": {
+            "publicCode": "9"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 439.0,
+          "distance_m": 507.68,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "2286",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 676.0,
+      "total_distance_m": 1388.01,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 237.0,
+          "distance_m": 279.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Métropole",
+          "to_lat": 46.203373,
+          "to_lon": 6.1515104,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 601.25,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Métropole",
+          "from_lat": 46.203373,
+          "from_lon": 6.1515104,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 439.0,
+          "distance_m": 507.68,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 12,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_2312",
+      "type": "Car",
+      "total_travel_time_s": 167.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1537.63,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 167.0,
+          "distance_m": 1537.63,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.5160208,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 3,
+        "Total Travel Time (min)": 3
+      }
+    },
+    {
+      "arc_id": "2291",
+      "type": "PT-Only",
+      "total_travel_time_s": 120.0,
+      "total_transfer_time_s": 676.0,
+      "total_distance_m": 1388.01,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 237.0,
+          "distance_m": 279.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Métropole",
+          "to_lat": 46.203373,
+          "to_lon": 6.1515104,
+          "from_place": "Origin",
+          "from_lat": 46.2030985,
+          "from_lon": 6.1546648,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 601.25,
+          "line_publicCode": {
+            "publicCode": "8"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Métropole",
+          "from_lat": 46.203373,
+          "from_lon": 6.1515104,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 439.0,
+          "distance_m": 507.68,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 2,
+        "Bike Time": 0.0,
+        "Transfers": 12,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    }
+  ],
+  "demand": 29,
+  "gamma": 2.543
+}

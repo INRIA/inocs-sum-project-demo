@@ -1,0 +1,157 @@
+{
+  "arc_id": "2916",
+  "type": "PT-Only",
+  "origin_hub_id": 14,
+  "destination_hub_id": 7,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 194.0,
+  "total_distance_m": 1171.44,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 33.0,
+      "distance_m": 36.91,
+      "from_place": "Origin",
+      "to_place": "Genève, Molard",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20332,
+          6.1465
+        ],
+        [
+          46.20329,
+          6.14666
+        ],
+        [
+          46.20329,
+          6.14668
+        ],
+        [
+          46.20328,
+          6.14668
+        ],
+        [
+          46.20323,
+          6.14692
+        ],
+        [
+          46.20323,
+          6.14692
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 240.0,
+      "distance_m": 948.63,
+      "from_place": "Genève, Molard",
+      "to_place": "Genève, Cirque",
+      "line_publicCode": {
+        "publicCode": "17"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.2032,
+          6.14692
+        ],
+        [
+          46.20391,
+          6.14384
+        ],
+        [
+          46.20391,
+          6.14384
+        ],
+        [
+          46.20417,
+          6.14035
+        ],
+        [
+          46.20417,
+          6.14035
+        ],
+        [
+          46.20036,
+          6.14085
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 161.0,
+      "distance_m": 185.9,
+      "from_place": "Genève, Cirque",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20035,
+          6.14083
+        ],
+        [
+          46.20035,
+          6.14083
+        ],
+        [
+          46.20083,
+          6.14049
+        ],
+        [
+          46.20083,
+          6.14048
+        ],
+        [
+          46.20086,
+          6.14047
+        ],
+        [
+          46.20094,
+          6.14043
+        ],
+        [
+          46.20107,
+          6.14025
+        ],
+        [
+          46.20108,
+          6.14019
+        ],
+        [
+          46.2011,
+          6.14009
+        ],
+        [
+          46.2011,
+          6.14008
+        ],
+        [
+          46.20116,
+          6.13991
+        ],
+        [
+          46.20129,
+          6.13943
+        ],
+        [
+          46.20128,
+          6.13943
+        ],
+        [
+          46.20116,
+          6.13935
+        ]
+      ]
+    }
+  ]
+}

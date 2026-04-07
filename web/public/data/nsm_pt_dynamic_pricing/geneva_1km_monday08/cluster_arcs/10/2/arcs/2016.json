@@ -1,0 +1,169 @@
+{
+  "arc_id": "2016",
+  "type": "PT-Only",
+  "origin_hub_id": 10,
+  "destination_hub_id": 2,
+  "total_travel_time_s": 180.0,
+  "total_transfer_time_s": 186.0,
+  "total_distance_m": 947.19,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 101.0,
+      "distance_m": 122.01,
+      "from_place": "Origin",
+      "to_place": "Genève, Rue du Lac",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20344,
+          6.15839
+        ],
+        [
+          46.20322,
+          6.15794
+        ],
+        [
+          46.20326,
+          6.15792
+        ],
+        [
+          46.2033,
+          6.15789
+        ],
+        [
+          46.2035,
+          6.1577
+        ],
+        [
+          46.20346,
+          6.15767
+        ],
+        [
+          46.2034,
+          6.1576
+        ],
+        [
+          46.20343,
+          6.15754
+        ],
+        [
+          46.20346,
+          6.15747
+        ],
+        [
+          46.20349,
+          6.15749
+        ],
+        [
+          46.20352,
+          6.15752
+        ],
+        [
+          46.20355,
+          6.15754
+        ],
+        [
+          46.20355,
+          6.15756
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 715.57,
+      "from_place": "Genève, Rue du Lac",
+      "to_place": "Genève, Musée art et histoire",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20352,
+          6.15748
+        ],
+        [
+          46.20251,
+          6.15556
+        ],
+        [
+          46.20251,
+          6.15556
+        ],
+        [
+          46.20202,
+          6.15352
+        ],
+        [
+          46.20202,
+          6.15352
+        ],
+        [
+          46.19943,
+          6.15072
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 85.0,
+      "distance_m": 109.61,
+      "from_place": "Genève, Musée art et histoire",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.1994,
+          6.15069
+        ],
+        [
+          46.1994,
+          6.15069
+        ],
+        [
+          46.19929,
+          6.15052
+        ],
+        [
+          46.19927,
+          6.15049
+        ],
+        [
+          46.19927,
+          6.1505
+        ],
+        [
+          46.19922,
+          6.15059
+        ],
+        [
+          46.19917,
+          6.15069
+        ],
+        [
+          46.19915,
+          6.15072
+        ],
+        [
+          46.19903,
+          6.15091
+        ],
+        [
+          46.19878,
+          6.15054
+        ]
+      ]
+    }
+  ]
+}

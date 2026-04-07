@@ -1,0 +1,320 @@
+{
+  "origin_hub_id": 10,
+  "destination_hub_id": 21,
+  "routes": [
+    {
+      "arc_id": "car_2206",
+      "type": "Car",
+      "total_travel_time_s": 259.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 2615.21,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 259.0,
+          "distance_m": 2615.21,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Origin",
+          "from_lat": 46.2033872,
+          "from_lon": 6.1584552,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 52.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.6884336,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 3,
+        "Total Travel Time (min)": 5
+      }
+    },
+    {
+      "arc_id": "2193",
+      "type": "PT-Only",
+      "total_travel_time_s": 660.0,
+      "total_transfer_time_s": 328.0,
+      "total_distance_m": 2441.39,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 270.0,
+          "distance_m": 322.45,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2033872,
+          "from_lon": 6.1584552,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 660.0,
+          "distance_m": 2049.04,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Gautier",
+          "to_lat": 46.2135808,
+          "to_lon": 6.1505941,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 58.0,
+          "distance_m": 69.9,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Genève, Gautier",
+          "from_lat": 46.2135808,
+          "from_lon": 6.1505941,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 11,
+        "Bike Time": 0.0,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "2192",
+      "type": "PT+Bike",
+      "total_travel_time_s": 566.0,
+      "total_transfer_time_s": 423.0,
+      "total_distance_m": 2136.73,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 270.0,
+          "distance_m": 322.45,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2033872,
+          "from_lon": 6.1584552,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 915.31,
+          "line_publicCode": {
+            "publicCode": "9"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 80.0,
+          "distance_m": 23.27,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bonivard",
+          "to_lat": 46.2077679,
+          "to_lon": 6.1465002,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 266.0,
+          "distance_m": 778.67,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Bâle 26",
+          "to_lat": 46.2131834,
+          "to_lon": 6.1491878,
+          "from_place": "Bonivard",
+          "from_lat": 46.2077679,
+          "from_lon": 6.1465002,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 73.0,
+          "distance_m": 97.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Rue de Bâle 26",
+          "from_lat": 46.2131834,
+          "from_lon": 6.1491878,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 5,
+        "Bike Time": 5,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "2194",
+      "type": "PT+Bike",
+      "total_travel_time_s": 566.0,
+      "total_transfer_time_s": 254.0,
+      "total_distance_m": 2128.04,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 101.0,
+          "distance_m": 122.01,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Rue du Lac",
+          "to_lat": 46.2035222,
+          "to_lon": 6.1574842,
+          "from_place": "Origin",
+          "from_lat": 46.2033872,
+          "from_lon": 6.1584552,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 1107.06,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Rue du Lac",
+          "from_lat": 46.2035222,
+          "from_lon": 6.1574842,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 80.0,
+          "distance_m": 23.27,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bonivard",
+          "to_lat": 46.2077679,
+          "to_lon": 6.1465002,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 266.0,
+          "distance_m": 778.67,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Bâle 26",
+          "to_lat": 46.2131834,
+          "to_lon": 6.1491878,
+          "from_place": "Bonivard",
+          "from_lat": 46.2077679,
+          "from_lon": 6.1465002,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 73.0,
+          "distance_m": 97.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Rue de Bâle 26",
+          "from_lat": 46.2131834,
+          "from_lon": 6.1491878,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 5,
+        "Bike Time": 5,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    }
+  ],
+  "demand": 52,
+  "gamma": 3.1489175264
+}

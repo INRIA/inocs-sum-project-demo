@@ -1,0 +1,826 @@
+{
+  "origin_hub_id": 20,
+  "destination_hub_id": 9,
+  "routes": [
+    {
+      "arc_id": "car_4167",
+      "type": "Car",
+      "total_travel_time_s": 266.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 2587.58,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 266.0,
+          "distance_m": 2587.58,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 50.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.6840128,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 5,
+        "Total Travel Time (min)": 5
+      }
+    },
+    {
+      "arc_id": "4157",
+      "type": "PT-Only",
+      "total_travel_time_s": 720.0,
+      "total_transfer_time_s": 353.0,
+      "total_distance_m": 2780.0800000000004,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 192.0,
+          "distance_m": 257.67,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Philosophes",
+          "to_lat": 46.1966953,
+          "to_lon": 6.1461564,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 720.0,
+          "distance_m": 2321.86,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Navigation",
+          "to_lat": 46.2119521,
+          "to_lon": 6.1496508,
+          "from_place": "Genève, Philosophes",
+          "from_lat": 46.1966953,
+          "from_lon": 6.1461564,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 200.55,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Genève, Navigation",
+          "from_lat": 46.2119521,
+          "from_lon": 6.1496508,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 12,
+        "Bike Time": 0.0,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4158",
+      "type": "PT+Bike",
+      "total_travel_time_s": 714.0,
+      "total_transfer_time_s": 337.0,
+      "total_distance_m": 2363.83,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 222.0,
+          "distance_m": 245.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1983617,
+          "to_lon": 6.14957,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 885.93,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2039885,
+          "to_lon": 6.14851,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1983617,
+          "from_lon": 6.14957,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 115.0,
+          "distance_m": 66.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.204269,
+          "to_lon": 6.1487348,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2039885,
+          "from_lon": 6.14851,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 354.0,
+          "distance_m": 1166.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Bike",
+          "from_lat": 46.204269,
+          "from_lon": 6.1487348,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 6,
+        "Bike Time": 6,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4156",
+      "type": "PT+Bike",
+      "total_travel_time_s": 709.0,
+      "total_transfer_time_s": 306.0,
+      "total_distance_m": 2595.58,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 83.0,
+          "distance_m": 23.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Sénebier",
+          "to_lat": 46.1979739,
+          "to_lon": 6.1471238,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 409.0,
+          "distance_m": 1414.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Terreaux-du-Temple",
+          "to_lat": 46.2072477,
+          "to_lon": 6.1412344,
+          "from_place": "Jean-Sénebier",
+          "from_lat": 46.1979739,
+          "from_lon": 6.1471238,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 62.0,
+          "distance_m": 56.78,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Goulart",
+          "to_lat": 46.207613,
+          "to_lon": 6.1415301,
+          "from_place": "Terreaux-du-Temple",
+          "from_lat": 46.2072477,
+          "from_lon": 6.1412344,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 900.34,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Navigation",
+          "to_lat": 46.2119521,
+          "to_lon": 6.1496508,
+          "from_place": "Genève, Goulart",
+          "from_lat": 46.207613,
+          "from_lon": 6.1415301,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 200.55,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Genève, Navigation",
+          "from_lat": 46.2119521,
+          "from_lon": 6.1496508,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 5,
+        "Bike Time": 7,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "4154",
+      "type": "PT+Bike",
+      "total_travel_time_s": 662.0,
+      "total_transfer_time_s": 343.0,
+      "total_distance_m": 2513.38,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 182.0,
+          "distance_m": 234.73,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1983741,
+          "to_lon": 6.1486088,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1189.9,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Coutance",
+          "to_lat": 46.2076006,
+          "to_lon": 6.1423655,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1983741,
+          "from_lon": 6.1486088,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 121.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Ebike",
+          "to_lat": 46.2075496,
+          "to_lon": 6.1432541,
+          "from_place": "Genève, Coutance",
+          "from_lat": 46.2076006,
+          "from_lon": 6.1423655,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 302.0,
+          "distance_m": 967.65,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Ebike",
+          "from_lat": 46.2075496,
+          "from_lon": 6.1432541,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 6,
+        "Bike Time": 6,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4160",
+      "type": "PT+Bike",
+      "total_travel_time_s": 662.0,
+      "total_transfer_time_s": 343.0,
+      "total_distance_m": 2513.38,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 182.0,
+          "distance_m": 234.73,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1983741,
+          "to_lon": 6.1486088,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1189.9,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Coutance",
+          "to_lat": 46.2076006,
+          "to_lon": 6.1423655,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1983741,
+          "from_lon": 6.1486088,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 121.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Ebike",
+          "to_lat": 46.2075496,
+          "to_lon": 6.1432541,
+          "from_place": "Genève, Coutance",
+          "from_lat": 46.2076006,
+          "from_lon": 6.1423655,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 302.0,
+          "distance_m": 967.65,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Ebike",
+          "from_lat": 46.2075496,
+          "from_lon": 6.1432541,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 6,
+        "Bike Time": 6,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4161",
+      "type": "PT+Bike",
+      "total_travel_time_s": 654.0,
+      "total_transfer_time_s": 337.0,
+      "total_distance_m": 2363.83,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 222.0,
+          "distance_m": 245.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1983617,
+          "to_lon": 6.14957,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 885.93,
+          "line_publicCode": {
+            "publicCode": "7"
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2039885,
+          "to_lon": 6.14851,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1983617,
+          "from_lon": 6.14957,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 115.0,
+          "distance_m": 66.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.204269,
+          "to_lon": 6.1487348,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2039885,
+          "from_lon": 6.14851,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 354.0,
+          "distance_m": 1166.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Bike",
+          "from_lat": 46.204269,
+          "from_lon": 6.1487348,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 5,
+        "Bike Time": 6,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4155",
+      "type": "PT+Bike",
+      "total_travel_time_s": 650.0,
+      "total_transfer_time_s": 362.0,
+      "total_distance_m": 2160.2599999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 222.0,
+          "distance_m": 245.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1983617,
+          "to_lon": 6.14957,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 480.0,
+          "distance_m": 1246.35,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1983617,
+          "from_lon": 6.14957,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 140.0,
+          "distance_m": 102.74,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.20803,
+          "to_lon": 6.147165,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 170.0,
+          "distance_m": 566.07,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Bike",
+          "from_lat": 46.20803,
+          "from_lon": 6.147165,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 8,
+        "Bike Time": 3,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4159",
+      "type": "PT+Bike",
+      "total_travel_time_s": 535.0,
+      "total_transfer_time_s": 586.0,
+      "total_distance_m": 2390.12,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 381.0,
+          "distance_m": 503.95,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place de Neuve",
+          "to_lat": 46.2009918,
+          "to_lon": 6.1438567,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 180.0,
+          "distance_m": 526.63,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2030186,
+          "to_lon": 6.1474051,
+          "from_place": "Genève, Place de Neuve",
+          "from_lat": 46.2009918,
+          "from_lon": 6.1438567,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 205.0,
+          "distance_m": 193.35,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.204269,
+          "to_lon": 6.1487348,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2030186,
+          "from_lon": 6.1474051,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 355.0,
+          "distance_m": 1166.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Bike",
+          "from_lat": 46.204269,
+          "from_lon": 6.1487348,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 3,
+        "Bike Time": 6,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4153",
+      "type": "PT+Bike",
+      "total_travel_time_s": 530.0,
+      "total_transfer_time_s": 362.0,
+      "total_distance_m": 2160.2599999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 222.0,
+          "distance_m": 245.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1983617,
+          "to_lon": 6.14957,
+          "from_place": "Origin",
+          "from_lat": 46.1979287,
+          "from_lon": 6.1473965,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1246.35,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1983617,
+          "from_lon": 6.14957,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 140.0,
+          "distance_m": 102.74,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.20803,
+          "to_lon": 6.147165,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 170.0,
+          "distance_m": 566.07,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Bike",
+          "from_lat": 46.20803,
+          "from_lon": 6.147165,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 6,
+        "Bike Time": 3,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    }
+  ],
+  "demand": 50,
+  "gamma": 3.1468220672
+}

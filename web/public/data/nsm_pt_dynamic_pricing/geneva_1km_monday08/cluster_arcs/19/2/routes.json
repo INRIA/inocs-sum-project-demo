@@ -1,0 +1,666 @@
+{
+  "origin_hub_id": 19,
+  "destination_hub_id": 2,
+  "routes": [
+    {
+      "arc_id": "3884",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 376.0,
+      "total_distance_m": 1335.26,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 147.0,
+          "distance_m": 191.49,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2042372,
+          "to_lon": 6.1420601,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 867.75,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1981814,
+          "to_lon": 6.1486986,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2042372,
+          "from_lon": 6.1420601,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 229.0,
+          "distance_m": 276.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1981814,
+          "from_lon": 6.1486986,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 40.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3889",
+      "type": "PT-Only",
+      "total_travel_time_s": 360.0,
+      "total_transfer_time_s": 572.0,
+      "total_distance_m": 2032.5300000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 74.0,
+          "distance_m": 52.38,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2036404,
+          "to_lon": 6.1398502,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1409.75,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Lombard",
+          "to_lat": 46.195576,
+          "to_lon": 6.1472164,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2036404,
+          "from_lon": 6.1398502,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 498.0,
+          "distance_m": 570.4,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Lombard",
+          "from_lat": 46.195576,
+          "from_lon": 6.1472164,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 6,
+        "Bike Time": 0.0,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3885",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 411.0,
+      "total_distance_m": 1457.9099999999999,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 326.0,
+          "distance_m": 391.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 957.27,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3890",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 481.0,
+      "total_distance_m": 1515.49,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 111.0,
+          "distance_m": 119.71,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2035968,
+          "to_lon": 6.141054,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 944.95,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2035968,
+          "from_lon": 6.141054,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 370.0,
+          "distance_m": 450.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 9,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3892",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 376.0,
+      "total_distance_m": 1335.26,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 147.0,
+          "distance_m": 191.49,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2042372,
+          "to_lon": 6.1420601,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 867.75,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1981814,
+          "to_lon": 6.1486986,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2042372,
+          "from_lon": 6.1420601,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 229.0,
+          "distance_m": 276.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1981814,
+          "from_lon": 6.1486986,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_3904",
+      "type": "Car",
+      "total_travel_time_s": 193.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 2138.87,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 193.0,
+          "distance_m": 2138.87,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.6122192,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 4,
+        "Total Travel Time (min)": 4
+      }
+    },
+    {
+      "arc_id": "3886",
+      "type": "PT-Only",
+      "total_travel_time_s": 120.0,
+      "total_transfer_time_s": 699.0,
+      "total_distance_m": 1501.02,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 326.0,
+          "distance_m": 391.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 659.3,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 450.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 2,
+        "Bike Time": 0.0,
+        "Transfers": 12,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3887",
+      "type": "PT-Only",
+      "total_travel_time_s": 120.0,
+      "total_transfer_time_s": 766.0,
+      "total_distance_m": 1558.06,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 681.0,
+          "distance_m": 917.88,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Métropole",
+          "to_lat": 46.203373,
+          "to_lon": 6.1509444,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 530.57,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Métropole",
+          "from_lat": 46.203373,
+          "from_lon": 6.1509444,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 2,
+        "Bike Time": 0.0,
+        "Transfers": 13,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3888",
+      "type": "PT-Only",
+      "total_travel_time_s": 120.0,
+      "total_transfer_time_s": 696.0,
+      "total_distance_m": 1510.1999999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 326.0,
+          "distance_m": 391.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 370.0,
+          "distance_m": 450.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 2,
+        "Bike Time": 0.0,
+        "Transfers": 12,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3891",
+      "type": "PT-Only",
+      "total_travel_time_s": 120.0,
+      "total_transfer_time_s": 696.0,
+      "total_distance_m": 1510.1999999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 326.0,
+          "distance_m": 391.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 370.0,
+          "distance_m": 450.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 2,
+        "Bike Time": 0.0,
+        "Transfers": 12,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    }
+  ],
+  "demand": 40,
+  "gamma": 2.662
+}

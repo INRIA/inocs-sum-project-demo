@@ -1,0 +1,25 @@
+---
+import DashboardLayout from "../presentation/layouts/DashboardLayout.astro";
+import DynamicPricingPage from "../presentation/components/pricing/DynamicPricingPage";
+---
+
+<DashboardLayout
+  title="Dynamic Pricing"
+  description="Optimisation results for dynamic pricing and demand nudging"
+>
+  <div class="flex-1 flex flex-col h-[calc(100vh-3.5rem)] min-h-0">
+    <div class="px-4 py-3 border-b border-border bg-surface">
+      <h1 class="text-lg font-semibold text-primary">
+        Dynamic Pricing Optimization Demo
+      </h1>
+      <p class="text-text text-xs mt-0.5">
+        Model context and optimization metrics for multimodal demand nudging
+        scenarios.
+      </p>
+    </div>
+
+    <div class="flex-1 min-h-0 overflow-auto">
+      <DynamicPricingPage client:only="react" />
+    </div>
+  </div>
+</DashboardLayout>

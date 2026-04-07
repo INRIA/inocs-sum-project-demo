@@ -1,0 +1,836 @@
+{
+  "origin_hub_id": 16,
+  "destination_hub_id": 15,
+  "routes": [
+    {
+      "arc_id": "3368",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 140.0,
+      "total_distance_m": 2071.57,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 94.0,
+          "distance_m": 108.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1976839,
+          "to_lon": 6.1435603,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 540.0,
+          "distance_m": 1907.94,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1976839,
+          "from_lon": 6.1435603,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 20.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3366",
+      "type": "PT+Bike",
+      "total_travel_time_s": 668.0,
+      "total_transfer_time_s": 239.0,
+      "total_distance_m": 2085.21,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 38.0,
+          "distance_m": 22.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980881,
+          "to_lon": 6.1430482,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 631.57,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980881,
+          "from_lon": 6.1430482,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 152.0,
+          "distance_m": 108.75,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de la Confédération 2",
+          "to_lat": 46.2038067,
+          "to_lon": 6.1433116,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 428.0,
+          "distance_m": 1279.57,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue du Môle 31",
+          "to_lat": 46.2134789,
+          "to_lon": 6.1458686,
+          "from_place": "Rue de la Confédération 2",
+          "from_lat": 46.2038067,
+          "from_lon": 6.1433116,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 49.0,
+          "distance_m": 42.82,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Rue du Môle 31",
+          "from_lat": 46.2134789,
+          "from_lon": 6.1458686,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 4,
+        "Bike Time": 8,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "3370",
+      "type": "PT+Bike",
+      "total_travel_time_s": 668.0,
+      "total_transfer_time_s": 235.0,
+      "total_distance_m": 2086.04,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 34.0,
+          "distance_m": 19.6,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980819,
+          "to_lon": 6.1428596,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 635.3,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980819,
+          "from_lon": 6.1428596,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 152.0,
+          "distance_m": 108.75,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de la Confédération 2",
+          "to_lat": 46.2038067,
+          "to_lon": 6.1433116,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 428.0,
+          "distance_m": 1279.57,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue du Môle 31",
+          "to_lat": 46.2134789,
+          "to_lon": 6.1458686,
+          "from_place": "Rue de la Confédération 2",
+          "from_lat": 46.2038067,
+          "from_lon": 6.1433116,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 49.0,
+          "distance_m": 42.82,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Rue du Môle 31",
+          "from_lat": 46.2134789,
+          "from_lon": 6.1458686,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 4,
+        "Bike Time": 8,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "3372",
+      "type": "PT-Only",
+      "total_travel_time_s": 600.0,
+      "total_transfer_time_s": 140.0,
+      "total_distance_m": 2071.57,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 94.0,
+          "distance_m": 108.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1976839,
+          "to_lon": 6.1435603,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 600.0,
+          "distance_m": 1907.94,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1976839,
+          "from_lon": 6.1435603,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 10,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3365",
+      "type": "PT+Bike",
+      "total_travel_time_s": 582.0,
+      "total_transfer_time_s": 245.0,
+      "total_distance_m": 1937.66,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 38.0,
+          "distance_m": 22.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980881,
+          "to_lon": 6.1430482,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 761.28,
+          "line_publicCode": {
+            "publicCode": "18"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2048714,
+          "to_lon": 6.1434615,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980881,
+          "from_lon": 6.1430482,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 159.0,
+          "distance_m": 129.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Place St-Gervais",
+          "to_lat": 46.2057147,
+          "to_lon": 6.1427931,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2048714,
+          "from_lon": 6.1434615,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 342.0,
+          "distance_m": 981.23,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue du Môle 31",
+          "to_lat": 46.2134789,
+          "to_lon": 6.1458686,
+          "from_place": "Place St-Gervais",
+          "from_lat": 46.2057147,
+          "from_lon": 6.1427931,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 48.0,
+          "distance_m": 42.82,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Rue du Môle 31",
+          "from_lat": 46.2134789,
+          "from_lon": 6.1458686,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 4,
+        "Bike Time": 6,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "3371",
+      "type": "PT+Bike",
+      "total_travel_time_s": 560.0,
+      "total_transfer_time_s": 222.0,
+      "total_distance_m": 2116.4900000000002,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 34.0,
+          "distance_m": 19.6,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980819,
+          "to_lon": 6.1428596,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 60.0,
+          "distance_m": 332.54,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Place de Neuve",
+          "to_lat": 46.2009918,
+          "to_lon": 6.1438567,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980819,
+          "from_lon": 6.1428596,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 139.0,
+          "distance_m": 97.43,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "François-Bartholoni",
+          "to_lat": 46.200731,
+          "to_lon": 6.1429667,
+          "from_place": "Genève, Place de Neuve",
+          "from_lat": 46.2009918,
+          "from_lon": 6.1438567,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 500.0,
+          "distance_m": 1624.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue du Môle 31",
+          "to_lat": 46.2134789,
+          "to_lon": 6.1458686,
+          "from_place": "François-Bartholoni",
+          "from_lat": 46.200731,
+          "from_lon": 6.1429667,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 49.0,
+          "distance_m": 42.82,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Rue du Môle 31",
+          "from_lat": 46.2134789,
+          "from_lon": 6.1458686,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 1,
+        "Bike Time": 9,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "3373",
+      "type": "PT+Bike",
+      "total_travel_time_s": 560.0,
+      "total_transfer_time_s": 226.0,
+      "total_distance_m": 2115.67,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 38.0,
+          "distance_m": 22.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980881,
+          "to_lon": 6.1430482,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 60.0,
+          "distance_m": 328.82,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Place de Neuve",
+          "to_lat": 46.2009918,
+          "to_lon": 6.1438567,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980881,
+          "from_lon": 6.1430482,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 139.0,
+          "distance_m": 97.43,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "François-Bartholoni",
+          "to_lat": 46.200731,
+          "to_lon": 6.1429667,
+          "from_place": "Genève, Place de Neuve",
+          "from_lat": 46.2009918,
+          "from_lon": 6.1438567,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 500.0,
+          "distance_m": 1624.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue du Môle 31",
+          "to_lat": 46.2134789,
+          "to_lon": 6.1458686,
+          "from_place": "François-Bartholoni",
+          "from_lat": 46.200731,
+          "from_lon": 6.1429667,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 49.0,
+          "distance_m": 42.82,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Rue du Môle 31",
+          "from_lat": 46.2134789,
+          "from_lon": 6.1458686,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 1,
+        "Bike Time": 9,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "3367",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 202.0,
+      "total_distance_m": 1957.95,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 156.0,
+          "distance_m": 145.54,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1986415,
+          "to_lon": 6.1420421,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 540.0,
+          "distance_m": 1757.77,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1986415,
+          "from_lon": 6.1420421,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3369",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 202.0,
+      "total_distance_m": 1957.95,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 156.0,
+          "distance_m": 145.54,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1986415,
+          "to_lon": 6.1420421,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 540.0,
+          "distance_m": 1757.77,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Môle",
+          "to_lat": 46.2133943,
+          "to_lon": 6.1455725,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1986415,
+          "from_lon": 6.1420421,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 54.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Genève, Môle",
+          "from_lat": 46.2133943,
+          "from_lon": 6.1455725,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_3374",
+      "type": "Car",
+      "total_travel_time_s": 191.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1967.41,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 191.0,
+          "distance_m": 1967.41,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2137838,
+          "to_lon": 6.1459152,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.5847856,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 4,
+        "Total Travel Time (min)": 4
+      }
+    }
+  ],
+  "demand": 20,
+  "gamma": 2.335
+}

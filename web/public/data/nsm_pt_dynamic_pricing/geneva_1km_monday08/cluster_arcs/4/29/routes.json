@@ -1,0 +1,836 @@
+{
+  "origin_hub_id": 4,
+  "destination_hub_id": 29,
+  "routes": [
+    {
+      "arc_id": "1033",
+      "type": "PT-Only",
+      "total_travel_time_s": 420.0,
+      "total_transfer_time_s": 263.0,
+      "total_distance_m": 1644.93,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 173.0,
+          "distance_m": 150.88,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 420.0,
+          "distance_m": 1431.0,
+          "line_publicCode": {
+            "publicCode": "9"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2088874,
+          "to_lon": 6.1402096,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 90.0,
+          "distance_m": 63.05,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2088874,
+          "from_lon": 6.1402096,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 47.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 7,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1041",
+      "type": "PT+Bike",
+      "total_travel_time_s": 600.0,
+      "total_transfer_time_s": 287.0,
+      "total_distance_m": 2025.14,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 113.0,
+          "distance_m": 117.32,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Terrassière",
+          "to_lat": 46.2009669,
+          "to_lon": 6.1557414,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 492.79,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Métropole",
+          "to_lat": 46.203373,
+          "to_lon": 6.1515104,
+          "from_place": "Genève, Terrassière",
+          "from_lat": 46.2009669,
+          "from_lon": 6.1557414,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 108.0,
+          "distance_m": 52.45,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue du Prince",
+          "to_lat": 46.2031806,
+          "to_lon": 6.1514251,
+          "from_place": "Genève, Métropole",
+          "from_lat": 46.203373,
+          "from_lon": 6.1515104,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 420.0,
+          "distance_m": 1279.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Malatrex",
+          "to_lat": 46.2082382,
+          "to_lon": 6.1393971,
+          "from_place": "Rue du Prince",
+          "from_lat": 46.2031806,
+          "from_lon": 6.1514251,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 66.0,
+          "distance_m": 83.39,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Malatrex",
+          "from_lat": 46.2082382,
+          "from_lon": 6.1393971,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6297872340425532,
+        "Total Price": 2.629787234042553,
+        "PT Time": 3,
+        "Bike Time": 7,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1035",
+      "type": "PT+Bike",
+      "total_travel_time_s": 502.0,
+      "total_transfer_time_s": 255.0,
+      "total_distance_m": 1942.2800000000004,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 97.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Terrassière",
+          "to_lat": 46.2011472,
+          "to_lon": 6.1559031,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 985.96,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2039264,
+          "to_lon": 6.1437399,
+          "from_place": "Genève, Terrassière",
+          "from_lat": 46.2011472,
+          "from_lon": 6.1559031,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 104.0,
+          "distance_m": 50.63,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de la Confédération 2",
+          "to_lat": 46.2038067,
+          "to_lon": 6.1433116,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2039264,
+          "from_lon": 6.1437399,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 262.0,
+          "distance_m": 725.11,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Malatrex",
+          "to_lat": 46.2082382,
+          "to_lon": 6.1393971,
+          "from_place": "Rue de la Confédération 2",
+          "from_lat": 46.2038067,
+          "from_lon": 6.1433116,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 66.0,
+          "distance_m": 83.39,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Malatrex",
+          "from_lat": 46.2082382,
+          "from_lon": 6.1393971,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 4,
+        "Bike Time": 5,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1034",
+      "type": "PT+Bike",
+      "total_travel_time_s": 501.0,
+      "total_transfer_time_s": 259.0,
+      "total_distance_m": 1941.24,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 97.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Terrassière",
+          "to_lat": 46.2011472,
+          "to_lon": 6.1559031,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 978.3,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2039139,
+          "to_lon": 6.1438387,
+          "from_place": "Genève, Terrassière",
+          "from_lat": 46.2011472,
+          "from_lon": 6.1559031,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 108.0,
+          "distance_m": 57.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de la Confédération 2",
+          "to_lat": 46.2038067,
+          "to_lon": 6.1433116,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2039139,
+          "from_lon": 6.1438387,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 261.0,
+          "distance_m": 725.11,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Malatrex",
+          "to_lat": 46.2082382,
+          "to_lon": 6.1393971,
+          "from_place": "Rue de la Confédération 2",
+          "from_lat": 46.2038067,
+          "from_lon": 6.1433116,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 66.0,
+          "distance_m": 83.39,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Malatrex",
+          "from_lat": 46.2082382,
+          "from_lon": 6.1393971,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 4,
+        "Bike Time": 5,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1036",
+      "type": "PT+Bike",
+      "total_travel_time_s": 501.0,
+      "total_transfer_time_s": 259.0,
+      "total_distance_m": 1941.24,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 97.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Terrassière",
+          "to_lat": 46.2011472,
+          "to_lon": 6.1559031,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 978.3,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2039139,
+          "to_lon": 6.1438387,
+          "from_place": "Genève, Terrassière",
+          "from_lat": 46.2011472,
+          "from_lon": 6.1559031,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 108.0,
+          "distance_m": 57.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de la Confédération 2",
+          "to_lat": 46.2038067,
+          "to_lon": 6.1433116,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2039139,
+          "from_lon": 6.1438387,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 261.0,
+          "distance_m": 725.11,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Malatrex",
+          "to_lat": 46.2082382,
+          "to_lon": 6.1393971,
+          "from_place": "Rue de la Confédération 2",
+          "from_lat": 46.2038067,
+          "from_lon": 6.1433116,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 66.0,
+          "distance_m": 83.39,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Malatrex",
+          "from_lat": 46.2082382,
+          "from_lon": 6.1393971,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 4,
+        "Bike Time": 5,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1037",
+      "type": "PT+Bike",
+      "total_travel_time_s": 501.0,
+      "total_transfer_time_s": 259.0,
+      "total_distance_m": 1941.24,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 97.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Terrassière",
+          "to_lat": 46.2011472,
+          "to_lon": 6.1559031,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 978.3,
+          "line_publicCode": {
+            "publicCode": "17"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2039139,
+          "to_lon": 6.1438387,
+          "from_place": "Genève, Terrassière",
+          "from_lat": 46.2011472,
+          "from_lon": 6.1559031,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 108.0,
+          "distance_m": 57.25,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de la Confédération 2",
+          "to_lat": 46.2038067,
+          "to_lon": 6.1433116,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2039139,
+          "from_lon": 6.1438387,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 261.0,
+          "distance_m": 725.11,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Malatrex",
+          "to_lat": 46.2082382,
+          "to_lon": 6.1393971,
+          "from_place": "Rue de la Confédération 2",
+          "from_lat": 46.2038067,
+          "from_lon": 6.1433116,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 66.0,
+          "distance_m": 83.39,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Malatrex",
+          "from_lat": 46.2082382,
+          "from_lon": 6.1393971,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 4,
+        "Bike Time": 5,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1039",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 263.0,
+      "total_distance_m": 1716.1699999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 173.0,
+          "distance_m": 150.88,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Place des Eaux-Vives",
+          "to_lat": 46.2025586,
+          "to_lon": 6.155418,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 480.0,
+          "distance_m": 1502.24,
+          "line_publicCode": {
+            "publicCode": "10"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2088874,
+          "to_lon": 6.1402096,
+          "from_place": "Genève, Place des Eaux-Vives",
+          "from_lat": 46.2025586,
+          "from_lon": 6.155418,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 90.0,
+          "distance_m": 63.05,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2088874,
+          "from_lon": 6.1402096,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1040",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 480.0,
+      "total_distance_m": 2047.67,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 113.0,
+          "distance_m": 117.32,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Terrassière",
+          "to_lat": 46.2009669,
+          "to_lon": 6.1557414,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 480.0,
+          "distance_m": 1481.71,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2103981,
+          "to_lon": 6.1436321,
+          "from_place": "Genève, Terrassière",
+          "from_lat": 46.2009669,
+          "from_lon": 6.1557414,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 367.0,
+          "distance_m": 448.64,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2103981,
+          "from_lon": 6.1436321,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1038",
+      "type": "PT-Only",
+      "total_travel_time_s": 360.0,
+      "total_transfer_time_s": 585.0,
+      "total_distance_m": 1890.54,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 353.0,
+          "distance_m": 370.76,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2019182,
+          "to_lon": 6.1524446,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1219.55,
+          "line_publicCode": {
+            "publicCode": "7"
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2068048,
+          "to_lon": 6.1390417,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2019182,
+          "from_lon": 6.1524446,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 232.0,
+          "distance_m": 300.23,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2068048,
+          "from_lon": 6.1390417,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 6,
+        "Bike Time": 0.0,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_1043",
+      "type": "Car",
+      "total_travel_time_s": 206.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1882.67,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 206.0,
+          "distance_m": 1882.67,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2087206,
+          "to_lon": 6.1397025,
+          "from_place": "Origin",
+          "from_lat": 46.2016527,
+          "from_lon": 6.1561465,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.5712272,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 3,
+        "Total Travel Time (min)": 4
+      }
+    }
+  ],
+  "demand": 47,
+  "gamma": 2.5490000000000004
+}

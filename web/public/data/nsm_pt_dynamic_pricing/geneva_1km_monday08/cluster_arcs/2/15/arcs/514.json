@@ -1,0 +1,261 @@
+{
+  "arc_id": "514",
+  "type": "PT-Only",
+  "origin_hub_id": 2,
+  "destination_hub_id": 15,
+  "total_travel_time_s": 660.0,
+  "total_transfer_time_s": 228.0,
+  "total_distance_m": 2396.7999999999997,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 133.0,
+      "distance_m": 177.01,
+      "from_place": "Origin",
+      "to_place": "Genève, Musée art et histoire",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.19871,
+          6.1505
+        ],
+        [
+          46.19897,
+          6.15088
+        ],
+        [
+          46.1991,
+          6.1507
+        ],
+        [
+          46.19913,
+          6.15068
+        ],
+        [
+          46.19961,
+          6.15135
+        ],
+        [
+          46.19972,
+          6.15151
+        ],
+        [
+          46.19981,
+          6.15164
+        ],
+        [
+          46.19984,
+          6.15169
+        ],
+        [
+          46.19986,
+          6.15168
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 360.0,
+      "distance_m": 1096.97,
+      "from_place": "Genève, Musée art et histoire",
+      "to_place": "Genève, Bel-Air",
+      "line_publicCode": {
+        "publicCode": "7"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.19986,
+          6.15165
+        ],
+        [
+          46.20191,
+          6.15244
+        ],
+        [
+          46.20191,
+          6.15244
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.20398,
+          6.14853
+        ],
+        [
+          46.20398,
+          6.14853
+        ],
+        [
+          46.20506,
+          6.143
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 49.0,
+      "distance_m": 58.9,
+      "from_place": "Genève, Bel-Air",
+      "to_place": "Genève, Bel-Air",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20506,
+          6.14297
+        ],
+        [
+          46.20506,
+          6.14298
+        ],
+        [
+          46.20495,
+          6.14304
+        ],
+        [
+          46.20491,
+          6.14307
+        ],
+        [
+          46.20487,
+          6.14309
+        ],
+        [
+          46.20492,
+          6.14335
+        ],
+        [
+          46.20493,
+          6.14336
+        ],
+        [
+          46.20493,
+          6.14338
+        ],
+        [
+          46.20493,
+          6.1434
+        ],
+        [
+          46.20494,
+          6.14342
+        ],
+        [
+          46.20493,
+          6.14346
+        ],
+        [
+          46.20492,
+          6.14347
+        ],
+        [
+          46.20492,
+          6.14347
+        ]
+      ]
+    },
+    {
+      "leg_idx": 3,
+      "mode": "TRAM",
+      "duration_s": 300.0,
+      "distance_m": 1009.28,
+      "from_place": "Genève, Bel-Air",
+      "to_place": "Genève, Môle",
+      "line_publicCode": {
+        "publicCode": "15"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20487,
+          6.14346
+        ],
+        [
+          46.20761,
+          6.1423
+        ],
+        [
+          46.20761,
+          6.1423
+        ],
+        [
+          46.21039,
+          6.14364
+        ],
+        [
+          46.21039,
+          6.14364
+        ],
+        [
+          46.21339,
+          6.14558
+        ]
+      ]
+    },
+    {
+      "leg_idx": 4,
+      "mode": "FOOT",
+      "duration_s": 46.0,
+      "distance_m": 54.64,
+      "from_place": "Genève, Môle",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21342,
+          6.14559
+        ],
+        [
+          46.21355,
+          6.14568
+        ],
+        [
+          46.21355,
+          6.1457
+        ],
+        [
+          46.21355,
+          6.1457
+        ],
+        [
+          46.21355,
+          6.14573
+        ],
+        [
+          46.21379,
+          6.14589
+        ]
+      ]
+    }
+  ]
+}

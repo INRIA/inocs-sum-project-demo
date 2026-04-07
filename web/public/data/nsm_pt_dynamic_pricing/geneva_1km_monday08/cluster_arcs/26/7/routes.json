@@ -1,0 +1,666 @@
+{
+  "origin_hub_id": 26,
+  "destination_hub_id": 7,
+  "routes": [
+    {
+      "arc_id": "5332",
+      "type": "PT-Only",
+      "total_travel_time_s": 420.0,
+      "total_transfer_time_s": 137.0,
+      "total_distance_m": 1478.07,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 75.0,
+          "distance_m": 97.68,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Prairie",
+          "to_lat": 46.2085144,
+          "to_lon": 6.1359965,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 420.0,
+          "distance_m": 1311.85,
+          "line_publicCode": {
+            "publicCode": "19"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2014519,
+          "to_lon": 6.1394819,
+          "from_place": "Genève, Prairie",
+          "from_lat": 46.2085144,
+          "from_lon": 6.1359965,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 62.0,
+          "distance_m": 68.54,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2014519,
+          "from_lon": 6.1394819,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 45.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 7,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5331",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 380.0,
+      "total_distance_m": 1251.23,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 767.17,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2003514,
+          "to_lon": 6.1408384,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 185.9,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2003514,
+          "from_lon": 6.1408384,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5326",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 286.0,
+      "total_distance_m": 1099.88,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 714.54,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 67.0,
+          "distance_m": 87.18,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5327",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 286.0,
+      "total_distance_m": 1099.88,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 714.54,
+          "line_publicCode": {
+            "publicCode": "8"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 67.0,
+          "distance_m": 87.18,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5328",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 286.0,
+      "total_distance_m": 1099.88,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 714.54,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 67.0,
+          "distance_m": 87.18,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5329",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 286.0,
+      "total_distance_m": 1099.88,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 714.54,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 67.0,
+          "distance_m": 87.18,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5330",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 380.0,
+      "total_distance_m": 1251.23,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 180.0,
+          "distance_m": 767.17,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2003514,
+          "to_lon": 6.1408384,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 185.9,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2003514,
+          "from_lon": 6.1408384,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5333",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 286.0,
+      "total_distance_m": 1099.88,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 714.54,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 67.0,
+          "distance_m": 87.18,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5334",
+      "type": "PT-Only",
+      "total_travel_time_s": 180.0,
+      "total_transfer_time_s": 286.0,
+      "total_distance_m": 1099.88,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 219.0,
+          "distance_m": 298.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 714.54,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 67.0,
+          "distance_m": 87.18,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 3,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_5337",
+      "type": "Car",
+      "total_travel_time_s": 153.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1243.11,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 153.0,
+          "distance_m": 1243.11,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2011071,
+          "to_lon": 6.1393313,
+          "from_place": "Origin",
+          "from_lat": 46.2083367,
+          "from_lon": 6.1360362,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.4688976,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 5,
+        "Total Travel Time (min)": 3
+      }
+    }
+  ],
+  "demand": 45,
+  "gamma": 2.133
+}

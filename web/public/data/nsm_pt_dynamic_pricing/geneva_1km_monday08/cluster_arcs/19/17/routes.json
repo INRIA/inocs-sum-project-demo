@@ -1,0 +1,666 @@
+{
+  "origin_hub_id": 19,
+  "destination_hub_id": 17,
+  "routes": [
+    {
+      "arc_id": "4002",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 87.0,
+      "total_distance_m": 1152.53,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 33.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2039761,
+          "to_lon": 6.139949,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 1064.78,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, poste",
+          "to_lat": 46.2133881,
+          "to_lon": 6.1413594,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2039761,
+          "from_lon": 6.139949,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 41.0,
+          "distance_m": 53.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, poste",
+          "from_lat": 46.2133881,
+          "from_lon": 6.1413594,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 22.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 2,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4001",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 87.0,
+      "total_distance_m": 1152.53,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 33.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2039761,
+          "to_lon": 6.139949,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 1064.78,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, poste",
+          "to_lat": 46.2133881,
+          "to_lon": 6.1413594,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2039761,
+          "from_lon": 6.139949,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 41.0,
+          "distance_m": 53.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, poste",
+          "from_lat": 46.2133881,
+          "from_lon": 6.1413594,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 2,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4003",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 419.0,
+      "total_distance_m": 1239.48,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 33.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2039761,
+          "to_lon": 6.139949,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 771.7,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2103981,
+          "to_lon": 6.1436321,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2039761,
+          "from_lon": 6.139949,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 433.95,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2103981,
+          "from_lon": 6.1436321,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4004",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 432.0,
+      "total_distance_m": 1312.66,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 111.0,
+          "distance_m": 119.71,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2035968,
+          "to_lon": 6.141054,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 815.49,
+          "line_publicCode": {
+            "publicCode": "14"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2099194,
+          "to_lon": 6.1414582,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2035968,
+          "from_lon": 6.141054,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 321.0,
+          "distance_m": 377.46,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2099194,
+          "from_lon": 6.1414582,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4005",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 419.0,
+      "total_distance_m": 1239.48,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 33.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2039761,
+          "to_lon": 6.139949,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 771.7,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2103981,
+          "to_lon": 6.1436321,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2039761,
+          "from_lon": 6.139949,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 433.95,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2103981,
+          "from_lon": 6.1436321,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4007",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 298.0,
+      "total_distance_m": 1069.39,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 33.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2039761,
+          "to_lon": 6.139949,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 745.14,
+          "line_publicCode": {
+            "publicCode": "8"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2105162,
+          "to_lon": 6.1415391,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2039761,
+          "from_lon": 6.139949,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 252.0,
+          "distance_m": 290.42,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2105162,
+          "from_lon": 6.1415391,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4009",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 432.0,
+      "total_distance_m": 1312.66,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 111.0,
+          "distance_m": 119.71,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2035968,
+          "to_lon": 6.141054,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 815.49,
+          "line_publicCode": {
+            "publicCode": "14"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2099194,
+          "to_lon": 6.1414582,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2035968,
+          "from_lon": 6.141054,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 321.0,
+          "distance_m": 377.46,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2099194,
+          "from_lon": 6.1414582,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4006",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 419.0,
+      "total_distance_m": 1239.48,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 46.0,
+          "distance_m": 33.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2039761,
+          "to_lon": 6.139949,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 771.7,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2103981,
+          "to_lon": 6.1436321,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2039761,
+          "from_lon": 6.139949,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 433.95,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2103981,
+          "from_lon": 6.1436321,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "4008",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 388.0,
+      "total_distance_m": 1087.62,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 67.0,
+          "distance_m": 58.79,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2041688,
+          "to_lon": 6.1402814,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 651.37,
+          "line_publicCode": {
+            "publicCode": "14"
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2099194,
+          "to_lon": 6.1414582,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2041688,
+          "from_lon": 6.1402814,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 321.0,
+          "distance_m": 377.46,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2099194,
+          "from_lon": 6.1414582,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 7,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_4021",
+      "type": "Car",
+      "total_travel_time_s": 139.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1272.33,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 139.0,
+          "distance_m": 1272.33,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2129136,
+          "to_lon": 6.1413822,
+          "from_place": "Origin",
+          "from_lat": 46.2038204,
+          "from_lon": 6.1402499,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.4735728,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 2,
+        "Total Travel Time (min)": 3
+      }
+    }
+  ],
+  "demand": 22,
+  "gamma": 1.7229999999999999
+}

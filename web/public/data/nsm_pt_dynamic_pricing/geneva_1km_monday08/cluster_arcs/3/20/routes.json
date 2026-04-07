@@ -1,0 +1,757 @@
+{
+  "origin_hub_id": 3,
+  "destination_hub_id": 20,
+  "routes": [
+    {
+      "arc_id": "car_755",
+      "type": "Car",
+      "total_travel_time_s": 150.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1695.2,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 150.0,
+          "distance_m": 1695.2,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 44.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.541232,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 3,
+        "Total Travel Time (min)": 3
+      }
+    },
+    {
+      "arc_id": "754",
+      "type": "PT+Bike",
+      "total_travel_time_s": 507.0,
+      "total_transfer_time_s": 249.0,
+      "total_distance_m": 1756.06,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 134.0,
+          "distance_m": 132.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 180.0,
+          "distance_m": 714.54,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 92.0,
+          "distance_m": 33.56,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue des Savoises 3",
+          "to_lat": 46.2007559,
+          "to_lon": 6.1396609,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 327.0,
+          "distance_m": 851.97,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Sénebier",
+          "to_lat": 46.1979739,
+          "to_lon": 6.1471238,
+          "from_place": "Rue des Savoises 3",
+          "from_lat": 46.2007559,
+          "from_lon": 6.1396609,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 23.0,
+          "distance_m": 23.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Jean-Sénebier",
+          "from_lat": 46.1979739,
+          "from_lon": 6.1471238,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.7454545454545454,
+        "Total Price": 2.745454545454545,
+        "PT Time": 3,
+        "Bike Time": 6,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "753",
+      "type": "PT-Only",
+      "total_travel_time_s": 480.0,
+      "total_transfer_time_s": 454.0,
+      "total_distance_m": 2297.15,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 134.0,
+          "distance_m": 132.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 480.0,
+          "distance_m": 1803.37,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Lombard",
+          "to_lat": 46.195576,
+          "to_lon": 6.1472164,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 320.0,
+          "distance_m": 360.87,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Genève, Lombard",
+          "from_lat": 46.195576,
+          "from_lon": 6.1472164,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 8,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "751",
+      "type": "PT+Bike",
+      "total_travel_time_s": 387.0,
+      "total_transfer_time_s": 425.0,
+      "total_distance_m": 1606.01,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 150.0,
+          "distance_m": 145.96,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2072524,
+          "to_lon": 6.1395897,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 353.22,
+          "line_publicCode": {
+            "publicCode": "14"
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.2041066,
+          "to_lon": 6.1402275,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2072524,
+          "from_lon": 6.1395897,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 252.0,
+          "distance_m": 219.34,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Beth-Yaacov",
+          "to_lat": 46.2028401,
+          "to_lon": 6.1414002,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.2041066,
+          "from_lon": 6.1402275,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 267.0,
+          "distance_m": 864.41,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Sénebier",
+          "to_lat": 46.1979739,
+          "to_lon": 6.1471238,
+          "from_place": "Beth-Yaacov",
+          "from_lat": 46.2028401,
+          "from_lon": 6.1414002,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 23.0,
+          "distance_m": 23.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Jean-Sénebier",
+          "from_lat": 46.1979739,
+          "from_lon": 6.1471238,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 2,
+        "Bike Time": 5,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "749",
+      "type": "PT+Bike",
+      "total_travel_time_s": 361.0,
+      "total_transfer_time_s": 556.0,
+      "total_distance_m": 1678.2399999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 326.0,
+          "distance_m": 359.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.204175,
+          "to_lon": 6.1403353,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 816.89,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1971865,
+          "to_lon": 6.1430213,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.204175,
+          "from_lon": 6.1403353,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 207.0,
+          "distance_m": 170.06,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Leschot 11",
+          "to_lat": 46.1966174,
+          "to_lon": 6.1442388,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1971865,
+          "from_lon": 6.1430213,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 121.0,
+          "distance_m": 308.52,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Jean-Sénebier",
+          "to_lat": 46.1979739,
+          "to_lon": 6.1471238,
+          "from_place": "Leschot 11",
+          "from_lat": 46.1966174,
+          "from_lon": 6.1442388,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 23.0,
+          "distance_m": 23.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Jean-Sénebier",
+          "from_lat": 46.1979739,
+          "from_lon": 6.1471238,
+          "rented_bike": false
+        }
+      ],
+      "optimization": null,
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "746",
+      "type": "PT-Only",
+      "total_travel_time_s": 360.0,
+      "total_transfer_time_s": 472.0,
+      "total_distance_m": 1719.67,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 296.0,
+          "distance_m": 319.0,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Coutance",
+          "to_lat": 46.2072524,
+          "to_lon": 6.1419253,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1203.18,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1981814,
+          "to_lon": 6.1486986,
+          "from_place": "Genève, Coutance",
+          "from_lat": 46.2072524,
+          "from_lon": 6.1419253,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 176.0,
+          "distance_m": 197.49,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1981814,
+          "from_lon": 6.1486986,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 6,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "747",
+      "type": "PT-Only",
+      "total_travel_time_s": 360.0,
+      "total_transfer_time_s": 472.0,
+      "total_distance_m": 1719.67,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 296.0,
+          "distance_m": 319.0,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Coutance",
+          "to_lat": 46.2072524,
+          "to_lon": 6.1419253,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1203.18,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Athénée",
+          "to_lat": 46.1981814,
+          "to_lon": 6.1486986,
+          "from_place": "Genève, Coutance",
+          "from_lat": 46.2072524,
+          "from_lon": 6.1419253,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 176.0,
+          "distance_m": 197.49,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Genève, Athénée",
+          "from_lat": 46.1981814,
+          "from_lon": 6.1486986,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 6,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "750",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 617.0,
+      "total_distance_m": 1706.6100000000001,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 134.0,
+          "distance_m": 132.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 1012.6,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1982809,
+          "to_lon": 6.1419433,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 483.0,
+          "distance_m": 561.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1982809,
+          "from_lon": 6.1419433,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 11,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "752",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 617.0,
+      "total_distance_m": 1706.6100000000001,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 134.0,
+          "distance_m": 132.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mercier",
+          "to_lat": 46.2071716,
+          "to_lon": 6.1394909,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 300.0,
+          "distance_m": 1012.6,
+          "line_publicCode": {
+            "publicCode": "15"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1982809,
+          "to_lon": 6.1419433,
+          "from_place": "Genève, Mercier",
+          "from_lat": 46.2071716,
+          "from_lon": 6.1394909,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 483.0,
+          "distance_m": 561.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1982809,
+          "from_lon": 6.1419433,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 11,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "748",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 723.0,
+      "total_distance_m": 1657.8,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 326.0,
+          "distance_m": 359.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Stand",
+          "to_lat": 46.204175,
+          "to_lon": 6.1403353,
+          "from_place": "Origin",
+          "from_lat": 46.2065514,
+          "from_lon": 6.1386279,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 816.89,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1971865,
+          "to_lon": 6.1430213,
+          "from_place": "Genève, Stand",
+          "from_lat": 46.204175,
+          "from_lon": 6.1403353,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 397.0,
+          "distance_m": 481.22,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1979287,
+          "to_lon": 6.1473965,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1971865,
+          "from_lon": 6.1430213,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 13,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    }
+  ],
+  "demand": 44,
+  "gamma": 2.8471439679999997
+}

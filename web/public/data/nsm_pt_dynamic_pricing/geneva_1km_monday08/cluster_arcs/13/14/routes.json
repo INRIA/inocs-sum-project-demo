@@ -1,0 +1,183 @@
+{
+  "origin_hub_id": 13,
+  "destination_hub_id": 14,
+  "routes": [
+    {
+      "arc_id": "2801",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 280.0,
+      "total_distance_m": 1125.85,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 154.0,
+          "distance_m": 147.49,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2104602,
+          "to_lon": 6.1432459,
+          "from_place": "Origin",
+          "from_lat": 46.2102427,
+          "from_lon": 6.1439753,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 822.03,
+          "line_publicCode": {
+            "publicCode": "8"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2104602,
+          "from_lon": 6.1432459,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 126.0,
+          "distance_m": 156.33,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2033959,
+          "to_lon": 6.1465384,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 38.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_2816",
+      "type": "Car",
+      "total_travel_time_s": 321.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 2484.51,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 321.0,
+          "distance_m": 2484.51,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2033959,
+          "to_lon": 6.1465384,
+          "from_place": "Origin",
+          "from_lat": 46.2102427,
+          "from_lon": 6.1439753,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.6675216,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 2,
+        "Total Travel Time (min)": 6
+      }
+    },
+    {
+      "arc_id": "2802",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 280.0,
+      "total_distance_m": 1125.85,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 154.0,
+          "distance_m": 147.49,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2104602,
+          "to_lon": 6.1432459,
+          "from_place": "Origin",
+          "from_lat": 46.2102427,
+          "from_lon": 6.1439753,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 822.03,
+          "line_publicCode": {
+            "publicCode": "8"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2104602,
+          "from_lon": 6.1432459,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 126.0,
+          "distance_m": 156.33,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2033959,
+          "to_lon": 6.1465384,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    }
+  ],
+  "demand": 38,
+  "gamma": 2.246
+}

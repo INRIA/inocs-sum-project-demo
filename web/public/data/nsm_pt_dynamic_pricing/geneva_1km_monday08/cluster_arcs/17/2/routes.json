@@ -1,0 +1,390 @@
+{
+  "origin_hub_id": 17,
+  "destination_hub_id": 2,
+  "routes": [
+    {
+      "arc_id": "3498",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 158.0,
+      "total_distance_m": 2051.2000000000003,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 73.0,
+          "distance_m": 67.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, poste",
+          "to_lat": 46.2126608,
+          "to_lon": 6.1411168,
+          "from_place": "Origin",
+          "from_lat": 46.2129136,
+          "from_lon": 6.1413822,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 540.0,
+          "distance_m": 1873.68,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, poste",
+          "from_lat": 46.2126608,
+          "from_lon": 6.1411168,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 46.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3497",
+      "type": "PT-Only",
+      "total_travel_time_s": 600.0,
+      "total_transfer_time_s": 516.0,
+      "total_distance_m": 2413.5,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 431.0,
+          "distance_m": 521.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Lyon",
+          "to_lat": 46.2096645,
+          "to_lon": 6.1385297,
+          "from_place": "Origin",
+          "from_lat": 46.2129136,
+          "from_lon": 6.1413822,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 600.0,
+          "distance_m": 1782.87,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Lyon",
+          "from_lat": 46.2096645,
+          "from_lon": 6.1385297,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 10,
+        "Bike Time": 0.0,
+        "Transfers": 9,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3494",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 158.0,
+      "total_distance_m": 2051.2000000000003,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 73.0,
+          "distance_m": 67.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, poste",
+          "to_lat": 46.2126608,
+          "to_lon": 6.1411168,
+          "from_place": "Origin",
+          "from_lat": 46.2129136,
+          "from_lon": 6.1413822,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 540.0,
+          "distance_m": 1873.68,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, poste",
+          "from_lat": 46.2126608,
+          "from_lon": 6.1411168,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3496",
+      "type": "PT-Only",
+      "total_travel_time_s": 540.0,
+      "total_transfer_time_s": 158.0,
+      "total_distance_m": 2051.2000000000003,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 73.0,
+          "distance_m": 67.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, poste",
+          "to_lat": 46.2126608,
+          "to_lon": 6.1411168,
+          "from_place": "Origin",
+          "from_lat": 46.2129136,
+          "from_lon": 6.1413822,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 540.0,
+          "distance_m": 1873.68,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, poste",
+          "from_lat": 46.2126608,
+          "from_lon": 6.1411168,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 9,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "3495",
+      "type": "PT-Only",
+      "total_travel_time_s": 420.0,
+      "total_transfer_time_s": 841.0,
+      "total_distance_m": 2329.5899999999997,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 468.0,
+          "distance_m": 535.06,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, gare Cornavin",
+          "to_lat": 46.2089123,
+          "to_lon": 6.1397963,
+          "from_place": "Origin",
+          "from_lat": 46.2129136,
+          "from_lon": 6.1413822,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 420.0,
+          "distance_m": 1343.84,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Genève, gare Cornavin",
+          "from_lat": 46.2089123,
+          "from_lon": 6.1397963,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 450.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 7,
+        "Bike Time": 0.0,
+        "Transfers": 15,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_3504",
+      "type": "Car",
+      "total_travel_time_s": 268.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 2525.52,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 268.0,
+          "distance_m": 2525.52,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Origin",
+          "from_lat": 46.2129136,
+          "from_lon": 6.1413822,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.6740832,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 5,
+        "Total Travel Time (min)": 5
+      }
+    }
+  ],
+  "demand": 46,
+  "gamma": 2.335
+}

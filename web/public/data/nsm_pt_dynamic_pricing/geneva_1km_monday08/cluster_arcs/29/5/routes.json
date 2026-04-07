@@ -1,0 +1,183 @@
+{
+  "origin_hub_id": 29,
+  "destination_hub_id": 5,
+  "routes": [
+    {
+      "arc_id": "5841",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 328.0,
+      "total_distance_m": 1064.59,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 230.0,
+          "distance_m": 222.65,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Goulart",
+          "to_lat": 46.207613,
+          "to_lon": 6.1415301,
+          "from_place": "Origin",
+          "from_lat": 46.2087206,
+          "from_lon": 6.1397025,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 714.68,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Monthoux",
+          "to_lat": 46.2105348,
+          "to_lon": 6.1483752,
+          "from_place": "Genève, Goulart",
+          "from_lat": 46.207613,
+          "from_lon": 6.1415301,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 98.0,
+          "distance_m": 127.26,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Genève, Monthoux",
+          "from_lat": 46.2105348,
+          "from_lon": 6.1483752,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 41.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "5840",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 328.0,
+      "total_distance_m": 1064.59,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 230.0,
+          "distance_m": 222.65,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Goulart",
+          "to_lat": 46.207613,
+          "to_lon": 6.1415301,
+          "from_place": "Origin",
+          "from_lat": 46.2087206,
+          "from_lon": 6.1397025,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 714.68,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Monthoux",
+          "to_lat": 46.2105348,
+          "to_lon": 6.1483752,
+          "from_place": "Genève, Goulart",
+          "from_lat": 46.207613,
+          "from_lon": 6.1415301,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 98.0,
+          "distance_m": 127.26,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Genève, Monthoux",
+          "from_lat": 46.2105348,
+          "from_lon": 6.1483752,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 6,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_5854",
+      "type": "Car",
+      "total_travel_time_s": 216.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1579.35,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 216.0,
+          "distance_m": 1579.35,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2112281,
+          "to_lon": 6.1483848,
+          "from_place": "Origin",
+          "from_lat": 46.2087206,
+          "from_lon": 6.1397025,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.522696,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 5,
+        "Total Travel Time (min)": 4
+      }
+    }
+  ],
+  "demand": 41,
+  "gamma": 2.4539999999999997
+}

@@ -1,0 +1,922 @@
+{
+  "origin_hub_id": 5,
+  "destination_hub_id": 2,
+  "routes": [
+    {
+      "arc_id": "1068",
+      "type": "PT+Bike",
+      "total_travel_time_s": 589.0,
+      "total_transfer_time_s": 171.0,
+      "total_distance_m": 1971.2199999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 61.0,
+          "distance_m": 1.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Zurich 5",
+          "to_lat": 46.2112231,
+          "to_lon": 6.148367,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 289.0,
+          "distance_m": 809.9,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Pont du Mont-Blanc",
+          "to_lat": 46.2069193,
+          "to_lon": 6.1473036,
+          "from_place": "Rue de Zurich 5",
+          "from_lat": 46.2112231,
+          "from_lon": 6.148367,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 25.0,
+          "distance_m": 27.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2070349,
+          "to_lon": 6.1473512,
+          "from_place": "Pont du Mont-Blanc",
+          "from_lat": 46.2069193,
+          "from_lon": 6.1473036,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 1022.77,
+          "line_publicCode": {
+            "publicCode": "5"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2070349,
+          "from_lon": 6.1473512,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 2.0,
+        "Bike Price": 0.9622589403552421,
+        "Total Price": 2.962258940355242,
+        "PT Time": 5,
+        "Bike Time": 5,
+        "Transfers": 3,
+        "z value": 1.2,
+        "Relaxation Difference": -0.7245178807104842
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "car_1088",
+      "type": "Car",
+      "total_travel_time_s": 196.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 1939.56,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 196.0,
+          "distance_m": 1939.56,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 40.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.5803296,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 2,
+        "Total Travel Time (min)": 4
+      }
+    },
+    {
+      "arc_id": "1073",
+      "type": "PT+Bike",
+      "total_travel_time_s": 844.0,
+      "total_transfer_time_s": 263.0,
+      "total_distance_m": 2956.33,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 120.0,
+          "distance_m": 157.73,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Monthoux",
+          "to_lat": 46.2101929,
+          "to_lon": 6.1483034,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 480.0,
+          "distance_m": 1611.01,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Cirque",
+          "to_lat": 46.2007555,
+          "to_lon": 6.139967,
+          "from_place": "Genève, Monthoux",
+          "from_lat": 46.2101929,
+          "from_lon": 6.1483034,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 143.0,
+          "distance_m": 82.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Ebike",
+          "to_lat": 46.200195,
+          "to_lon": 6.139953,
+          "from_place": "Genève, Cirque",
+          "from_lat": 46.2007555,
+          "from_lon": 6.139967,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 364.0,
+          "distance_m": 1104.6,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Ebike",
+          "from_lat": 46.200195,
+          "from_lon": 6.139953,
+          "rented_bike": true
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 8,
+        "Bike Time": 7,
+        "Transfers": 5,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "1069",
+      "type": "PT+Bike",
+      "total_travel_time_s": 706.0,
+      "total_transfer_time_s": 210.0,
+      "total_distance_m": 2249.9300000000003,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 61.0,
+          "distance_m": 1.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Zurich 5",
+          "to_lat": 46.2112231,
+          "to_lon": 6.148367,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 586.0,
+          "distance_m": 1696.74,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rive",
+          "to_lat": 46.2014375,
+          "to_lon": 6.1530625,
+          "from_place": "Rue de Zurich 5",
+          "from_lat": 46.2112231,
+          "from_lon": 6.148367,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 64.0,
+          "distance_m": 80.98,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2020052,
+          "to_lon": 6.1535046,
+          "from_place": "Rive",
+          "from_lat": 46.2014375,
+          "from_lon": 6.1530625,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 120.0,
+          "distance_m": 361.58,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2020052,
+          "from_lon": 6.1535046,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 2,
+        "Bike Time": 10,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "1072",
+      "type": "PT-Only",
+      "total_travel_time_s": 660.0,
+      "total_transfer_time_s": 537.0,
+      "total_distance_m": 2756.96,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 120.0,
+          "distance_m": 157.73,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Monthoux",
+          "to_lat": 46.2101929,
+          "to_lon": 6.1483034,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 660.0,
+          "distance_m": 2074.1,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Terrassière",
+          "to_lat": 46.2007306,
+          "to_lon": 6.1552024,
+          "from_place": "Genève, Monthoux",
+          "from_lat": 46.2101929,
+          "from_lon": 6.1483034,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 417.0,
+          "distance_m": 525.13,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Terrassière",
+          "from_lat": 46.2007306,
+          "from_lon": 6.1552024,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 11,
+        "Bike Time": 0.0,
+        "Transfers": 9,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1067",
+      "type": "PT+Bike",
+      "total_travel_time_s": 646.0,
+      "total_transfer_time_s": 197.0,
+      "total_distance_m": 2159.44,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 61.0,
+          "distance_m": 1.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Zurich 5",
+          "to_lat": 46.2112231,
+          "to_lon": 6.148367,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 586.0,
+          "distance_m": 1696.74,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rive",
+          "to_lat": 46.2014375,
+          "to_lon": 6.1530625,
+          "from_place": "Rue de Zurich 5",
+          "from_lat": 46.2112231,
+          "from_lon": 6.148367,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 51.0,
+          "distance_m": 54.09,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Rive",
+          "from_lat": 46.2014375,
+          "from_lon": 6.1530625,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 60.0,
+          "distance_m": 297.98,
+          "line_publicCode": {
+            "publicCode": "3"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 1,
+        "Bike Time": 10,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "1075",
+      "type": "PT+Bike",
+      "total_travel_time_s": 589.0,
+      "total_transfer_time_s": 171.0,
+      "total_distance_m": 1971.2199999999998,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 61.0,
+          "distance_m": 1.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Zurich 5",
+          "to_lat": 46.2112231,
+          "to_lon": 6.148367,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 289.0,
+          "distance_m": 809.9,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Pont du Mont-Blanc",
+          "to_lat": 46.2069193,
+          "to_lon": 6.1473036,
+          "from_place": "Rue de Zurich 5",
+          "from_lat": 46.2112231,
+          "from_lon": 6.148367,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 25.0,
+          "distance_m": 27.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2070349,
+          "to_lon": 6.1473512,
+          "from_place": "Pont du Mont-Blanc",
+          "from_lat": 46.2069193,
+          "from_lon": 6.1473036,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 1022.77,
+          "line_publicCode": {
+            "publicCode": "20"
+          },
+          "to_place": "Genève, Musée art et histoire",
+          "to_lat": 46.1994001,
+          "to_lon": 6.1506929,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2070349,
+          "from_lon": 6.1473512,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 85.0,
+          "distance_m": 109.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Musée art et histoire",
+          "from_lat": 46.1994001,
+          "from_lon": 6.1506929,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.9803718873730041,
+        "Total Price": 2.9803718873730043,
+        "PT Time": 5,
+        "Bike Time": 5,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "1070",
+      "type": "PT+Bike",
+      "total_travel_time_s": 552.0,
+      "total_transfer_time_s": 559.0,
+      "total_distance_m": 2259.71,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 61.0,
+          "distance_m": 1.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Zurich 5",
+          "to_lat": 46.2112231,
+          "to_lon": 6.148367,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 432.0,
+          "distance_m": 982.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Place de la Fusterie",
+          "to_lat": 46.2041587,
+          "to_lon": 6.1460944,
+          "from_place": "Rue de Zurich 5",
+          "from_lat": 46.2112231,
+          "from_lon": 6.148367,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 128.0,
+          "distance_m": 156.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Place de la Fusterie",
+          "from_lat": 46.2041587,
+          "from_lon": 6.1460944,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 370.0,
+          "distance_m": 450.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 2,
+        "Bike Time": 8,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "1074",
+      "type": "PT+Bike",
+      "total_travel_time_s": 552.0,
+      "total_transfer_time_s": 559.0,
+      "total_distance_m": 2259.71,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 61.0,
+          "distance_m": 1.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Zurich 5",
+          "to_lat": 46.2112231,
+          "to_lon": 6.148367,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 432.0,
+          "distance_m": 982.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Place de la Fusterie",
+          "to_lat": 46.2041587,
+          "to_lon": 6.1460944,
+          "from_place": "Rue de Zurich 5",
+          "from_lat": 46.2112231,
+          "from_lon": 6.148367,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 128.0,
+          "distance_m": 156.91,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.203659,
+          "to_lon": 6.1446472,
+          "from_place": "Place de la Fusterie",
+          "from_lat": 46.2041587,
+          "from_lon": 6.1460944,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "TRAM",
+          "duration_s": 120.0,
+          "distance_m": 668.34,
+          "line_publicCode": {
+            "publicCode": "12"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2017192,
+          "to_lon": 6.1528668,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.203659,
+          "from_lon": 6.1446472,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 370.0,
+          "distance_m": 450.83,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2017192,
+          "from_lon": 6.1528668,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 2,
+        "Bike Time": 8,
+        "Transfers": 10,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    },
+    {
+      "arc_id": "1071",
+      "type": "PT+Bike",
+      "total_travel_time_s": 529.0,
+      "total_transfer_time_s": 459.0,
+      "total_distance_m": 2014.32,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 61.0,
+          "distance_m": 1.02,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Zurich 5",
+          "to_lat": 46.2112231,
+          "to_lon": 6.148367,
+          "from_place": "Origin",
+          "from_lat": 46.2112281,
+          "from_lon": 6.1483848,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BICYCLE",
+          "duration_s": 289.0,
+          "distance_m": 809.9,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Pont du Mont-Blanc",
+          "to_lat": 46.2069193,
+          "to_lon": 6.1473036,
+          "from_place": "Rue de Zurich 5",
+          "from_lat": 46.2112231,
+          "from_lon": 6.148367,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 25.0,
+          "distance_m": 27.92,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2070349,
+          "to_lon": 6.1473512,
+          "from_place": "Pont du Mont-Blanc",
+          "from_lat": 46.2069193,
+          "from_lon": 6.1473036,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 724.79,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Rive",
+          "to_lat": 46.2016819,
+          "to_lon": 6.1527231,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2070349,
+          "from_lon": 6.1473512,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 373.0,
+          "distance_m": 450.69,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.1987368,
+          "to_lon": 6.1504763,
+          "from_place": "Genève, Rive",
+          "from_lat": 46.2016819,
+          "from_lon": 6.1527231,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 4,
+        "Bike Time": 5,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": true,
+      "egress_bike": false
+    }
+  ],
+  "demand": 42,
+  "gamma": 2.9816762303999997
+}

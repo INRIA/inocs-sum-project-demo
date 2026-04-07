@@ -1,0 +1,354 @@
+{
+  "origin_hub_id": 22,
+  "destination_hub_id": 21,
+  "routes": [
+    {
+      "arc_id": "4703",
+      "type": "PT+Bike",
+      "total_travel_time_s": 626.0,
+      "total_transfer_time_s": 198.0,
+      "total_distance_m": 2357.1200000000003,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 45.0,
+          "distance_m": 52.13,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Vollandes",
+          "to_lat": 46.2053376,
+          "to_lon": 6.1603498,
+          "from_place": "Origin",
+          "from_lat": 46.2054093,
+          "from_lon": 6.1597521,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 360.0,
+          "distance_m": 1406.02,
+          "line_publicCode": {
+            "publicCode": "6"
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Genève, Vollandes",
+          "from_lat": 46.2053376,
+          "from_lon": 6.1603498,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 80.0,
+          "distance_m": 23.27,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bonivard",
+          "to_lat": 46.2077679,
+          "to_lon": 6.1465002,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 266.0,
+          "distance_m": 778.67,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Bâle 26",
+          "to_lat": 46.2131834,
+          "to_lon": 6.1491878,
+          "from_place": "Bonivard",
+          "from_lat": 46.2077679,
+          "from_lon": 6.1465002,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 73.0,
+          "distance_m": 97.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Rue de Bâle 26",
+          "from_lat": 46.2131834,
+          "from_lon": 6.1491878,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 11.0,
+        "Bike Price": 0.6,
+        "Total Price": 2.6,
+        "PT Time": 6,
+        "Bike Time": 5,
+        "Transfers": 4,
+        "z value": 6.6,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4702",
+      "type": "PT+Bike",
+      "total_travel_time_s": 659.0,
+      "total_transfer_time_s": 234.0,
+      "total_distance_m": 2594.48,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 45.0,
+          "distance_m": 52.13,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Vollandes",
+          "to_lat": 46.2053376,
+          "to_lon": 6.1603498,
+          "from_place": "Origin",
+          "from_lat": 46.2054093,
+          "from_lon": 6.1597521,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 1045.61,
+          "line_publicCode": {
+            "publicCode": "2"
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2039885,
+          "to_lon": 6.14851,
+          "from_place": "Genève, Vollandes",
+          "from_lat": 46.2053376,
+          "from_lon": 6.1603498,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 115.0,
+          "distance_m": 66.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.204269,
+          "to_lon": 6.1487348,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2039885,
+          "from_lon": 6.14851,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 419.0,
+          "distance_m": 1333.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Bâle 26",
+          "to_lat": 46.2131834,
+          "to_lon": 6.1491878,
+          "from_place": "Bike",
+          "from_lat": 46.204269,
+          "from_lon": 6.1487348,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 74.0,
+          "distance_m": 97.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Rue de Bâle 26",
+          "from_lat": 46.2131834,
+          "from_lon": 6.1491878,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 4,
+        "Bike Time": 7,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "4704",
+      "type": "PT+Bike",
+      "total_travel_time_s": 659.0,
+      "total_transfer_time_s": 234.0,
+      "total_distance_m": 2594.48,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 45.0,
+          "distance_m": 52.13,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Vollandes",
+          "to_lat": 46.2053376,
+          "to_lon": 6.1603498,
+          "from_place": "Origin",
+          "from_lat": 46.2054093,
+          "from_lon": 6.1597521,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 240.0,
+          "distance_m": 1045.61,
+          "line_publicCode": {
+            "publicCode": "2"
+          },
+          "to_place": "Genève, Molard",
+          "to_lat": 46.2039885,
+          "to_lon": 6.14851,
+          "from_place": "Genève, Vollandes",
+          "from_lat": 46.2053376,
+          "from_lon": 6.1603498,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 115.0,
+          "distance_m": 66.61,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Bike",
+          "to_lat": 46.204269,
+          "to_lon": 6.1487348,
+          "from_place": "Genève, Molard",
+          "from_lat": 46.2039885,
+          "from_lon": 6.14851,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 3,
+          "mode": "BICYCLE",
+          "duration_s": 419.0,
+          "distance_m": 1333.1,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Rue de Bâle 26",
+          "to_lat": 46.2131834,
+          "to_lon": 6.1491878,
+          "from_place": "Bike",
+          "from_lat": 46.204269,
+          "from_lon": 6.1487348,
+          "rented_bike": true
+        },
+        {
+          "leg_idx": 4,
+          "mode": "FOOT",
+          "duration_s": 74.0,
+          "distance_m": 97.03,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Rue de Bâle 26",
+          "from_lat": 46.2131834,
+          "from_lon": 6.1491878,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT+Bike",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.8,
+        "Total Price": 2.8,
+        "PT Time": 4,
+        "Bike Time": 7,
+        "Transfers": 4,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      },
+      "access_bike": false,
+      "egress_bike": true
+    },
+    {
+      "arc_id": "car_4713",
+      "type": "Car",
+      "total_travel_time_s": 244.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 2686.59,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 244.0,
+          "distance_m": 2686.59,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2136364,
+          "to_lon": 6.1498854,
+          "from_place": "Origin",
+          "from_lat": 46.2054093,
+          "from_lon": 6.1597521,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.6998544,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 2,
+        "Total Travel Time (min)": 5
+      }
+    }
+  ],
+  "demand": 11,
+  "gamma": 3.1543309855999997
+}

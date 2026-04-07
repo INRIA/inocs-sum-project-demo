@@ -1,0 +1,161 @@
+{
+  "arc_id": "5900",
+  "type": "PT-Only",
+  "origin_hub_id": 29,
+  "destination_hub_id": 12,
+  "total_travel_time_s": 420.0,
+  "total_transfer_time_s": 161.0,
+  "total_distance_m": 1527.7,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 27.0,
+      "distance_m": 32.92,
+      "from_place": "Origin",
+      "to_place": "Genève, gare Cornavin",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20868,
+          6.13977
+        ],
+        [
+          46.20881,
+          6.13991
+        ],
+        [
+          46.20882,
+          6.13991
+        ],
+        [
+          46.20886,
+          6.13984
+        ],
+        [
+          46.20889,
+          6.13981
+        ],
+        [
+          46.20889,
+          6.13981
+        ],
+        [
+          46.20891,
+          6.13982
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 420.0,
+      "distance_m": 1321.43,
+      "from_place": "Genève, gare Cornavin",
+      "to_place": "Genève, Rive",
+      "line_publicCode": {
+        "publicCode": "9"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20891,
+          6.13979
+        ],
+        [
+          46.20816,
+          6.14363
+        ],
+        [
+          46.20816,
+          6.14363
+        ],
+        [
+          46.20705,
+          6.14735
+        ],
+        [
+          46.20705,
+          6.14735
+        ],
+        [
+          46.2034,
+          6.15094
+        ],
+        [
+          46.2034,
+          6.15094
+        ],
+        [
+          46.20286,
+          6.15355
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 134.0,
+      "distance_m": 173.35,
+      "from_place": "Genève, Rive",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20282,
+          6.15355
+        ],
+        [
+          46.20282,
+          6.15355
+        ],
+        [
+          46.20287,
+          6.1533
+        ],
+        [
+          46.20287,
+          6.1533
+        ],
+        [
+          46.20291,
+          6.15311
+        ],
+        [
+          46.20298,
+          6.15281
+        ],
+        [
+          46.203,
+          6.15274
+        ],
+        [
+          46.20298,
+          6.15274
+        ],
+        [
+          46.20284,
+          6.15268
+        ],
+        [
+          46.20282,
+          6.15268
+        ],
+        [
+          46.2028,
+          6.15267
+        ],
+        [
+          46.20216,
+          6.1524
+        ]
+      ]
+    }
+  ]
+}

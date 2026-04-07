@@ -1,0 +1,252 @@
+{
+  "origin_hub_id": 6,
+  "destination_hub_id": 9,
+  "routes": [
+    {
+      "arc_id": "car_1305",
+      "type": "Car",
+      "total_travel_time_s": 119.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 860.08,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 119.0,
+          "distance_m": 860.08,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Origin",
+          "from_lat": 46.2076731,
+          "from_lon": 6.1441669,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 25.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.4076128,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 3,
+        "Total Travel Time (min)": 2
+      }
+    },
+    {
+      "arc_id": "1279",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 430.0,
+      "total_distance_m": 1404.08,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 269.0,
+          "distance_m": 303.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Goulart",
+          "to_lat": 46.207613,
+          "to_lon": 6.1415301,
+          "from_place": "Origin",
+          "from_lat": 46.2076731,
+          "from_lon": 6.1441669,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 900.34,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Navigation",
+          "to_lat": 46.2119521,
+          "to_lon": 6.1496508,
+          "from_place": "Genève, Goulart",
+          "from_lat": 46.207613,
+          "from_lon": 6.1415301,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 200.55,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Genève, Navigation",
+          "from_lat": 46.2119521,
+          "from_lon": 6.1496508,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1280",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 452.0,
+      "total_distance_m": 1456.33,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 291.0,
+          "distance_m": 317.16,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Mont-Blanc",
+          "to_lat": 46.2076068,
+          "to_lon": 6.1466505,
+          "from_place": "Origin",
+          "from_lat": 46.2076731,
+          "from_lon": 6.1441669,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 938.62,
+          "line_publicCode": {
+            "publicCode": "25"
+          },
+          "to_place": "Genève, Navigation",
+          "to_lat": 46.2119521,
+          "to_lon": 6.1496508,
+          "from_place": "Genève, Mont-Blanc",
+          "from_lat": 46.2076068,
+          "from_lon": 6.1466505,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 200.55,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Genève, Navigation",
+          "from_lat": 46.2119521,
+          "from_lon": 6.1496508,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "1281",
+      "type": "PT-Only",
+      "total_travel_time_s": 300.0,
+      "total_transfer_time_s": 430.0,
+      "total_distance_m": 1404.08,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 269.0,
+          "distance_m": 303.19,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Goulart",
+          "to_lat": 46.207613,
+          "to_lon": 6.1415301,
+          "from_place": "Origin",
+          "from_lat": 46.2076731,
+          "from_lon": 6.1441669,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "BUS",
+          "duration_s": 300.0,
+          "distance_m": 900.34,
+          "line_publicCode": {
+            "publicCode": "1"
+          },
+          "to_place": "Genève, Navigation",
+          "to_lat": 46.2119521,
+          "to_lon": 6.1496508,
+          "from_place": "Genève, Goulart",
+          "from_lat": 46.207613,
+          "from_lon": 6.1415301,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 161.0,
+          "distance_m": 200.55,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2114261,
+          "to_lon": 6.1515008,
+          "from_place": "Genève, Navigation",
+          "from_lat": 46.2119521,
+          "from_lon": 6.1496508,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 5,
+        "Bike Time": 0.0,
+        "Transfers": 8,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    }
+  ],
+  "demand": 25,
+  "gamma": 2.6678084672
+}

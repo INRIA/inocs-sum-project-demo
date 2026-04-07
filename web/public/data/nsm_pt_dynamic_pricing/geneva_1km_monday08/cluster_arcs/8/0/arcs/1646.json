@@ -1,0 +1,153 @@
+{
+  "arc_id": "1646",
+  "type": "PT-Only",
+  "origin_hub_id": 8,
+  "destination_hub_id": 0,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 115.0,
+  "total_distance_m": 877.6899999999999,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 31.0,
+      "distance_m": 31.15,
+      "from_place": "Origin",
+      "to_place": "Genève, Coutance",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20704,
+          6.14186
+        ],
+        [
+          46.20705,
+          6.14187
+        ],
+        [
+          46.20708,
+          6.14188
+        ],
+        [
+          46.20712,
+          6.14186
+        ],
+        [
+          46.20717,
+          6.14186
+        ],
+        [
+          46.20721,
+          6.14186
+        ],
+        [
+          46.20725,
+          6.14187
+        ],
+        [
+          46.20725,
+          6.14193
+        ],
+        [
+          46.20727,
+          6.14194
+        ],
+        [
+          46.20726,
+          6.14203
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 240.0,
+      "distance_m": 750.0,
+      "from_place": "Genève, Coutance",
+      "to_place": "Genève, Place de Neuve",
+      "line_publicCode": {
+        "publicCode": "18"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20725,
+          6.142
+        ],
+        [
+          46.20453,
+          6.14345
+        ],
+        [
+          46.20453,
+          6.14345
+        ],
+        [
+          46.2007,
+          6.1433
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 84.0,
+      "distance_m": 96.54,
+      "from_place": "Genève, Place de Neuve",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20068,
+          6.14329
+        ],
+        [
+          46.20068,
+          6.1433
+        ],
+        [
+          46.20068,
+          6.1433
+        ],
+        [
+          46.20066,
+          6.14328
+        ],
+        [
+          46.20067,
+          6.14324
+        ],
+        [
+          46.2007,
+          6.14314
+        ],
+        [
+          46.20078,
+          6.14314
+        ],
+        [
+          46.20088,
+          6.14307
+        ],
+        [
+          46.20124,
+          6.14282
+        ],
+        [
+          46.20121,
+          6.14272
+        ],
+        [
+          46.20124,
+          6.14273
+        ]
+      ]
+    }
+  ]
+}

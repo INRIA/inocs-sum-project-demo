@@ -1,0 +1,169 @@
+{
+  "arc_id": "5968",
+  "type": "PT-Only",
+  "origin_hub_id": 29,
+  "destination_hub_id": 22,
+  "total_travel_time_s": 600.0,
+  "total_transfer_time_s": 82.0,
+  "total_distance_m": 2135.83,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 27.0,
+      "distance_m": 32.92,
+      "from_place": "Origin",
+      "to_place": "Genève, gare Cornavin",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20868,
+          6.13977
+        ],
+        [
+          46.20881,
+          6.13991
+        ],
+        [
+          46.20882,
+          6.13991
+        ],
+        [
+          46.20886,
+          6.13984
+        ],
+        [
+          46.20889,
+          6.13981
+        ],
+        [
+          46.20889,
+          6.13981
+        ],
+        [
+          46.20891,
+          6.13982
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 600.0,
+      "distance_m": 2040.22,
+      "from_place": "Genève, gare Cornavin",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20891,
+          6.13979
+        ],
+        [
+          46.20816,
+          6.14363
+        ],
+        [
+          46.20816,
+          6.14363
+        ],
+        [
+          46.20705,
+          6.14735
+        ],
+        [
+          46.20705,
+          6.14735
+        ],
+        [
+          46.2034,
+          6.15094
+        ],
+        [
+          46.2034,
+          6.15094
+        ],
+        [
+          46.20172,
+          6.15272
+        ],
+        [
+          46.20172,
+          6.15272
+        ],
+        [
+          46.20414,
+          6.15854
+        ],
+        [
+          46.20414,
+          6.15854
+        ],
+        [
+          46.20516,
+          6.16025
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 55.0,
+      "distance_m": 62.69,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20512,
+          6.16025
+        ],
+        [
+          46.20512,
+          6.16026
+        ],
+        [
+          46.20514,
+          6.16029
+        ],
+        [
+          46.20517,
+          6.16033
+        ],
+        [
+          46.20519,
+          6.16031
+        ],
+        [
+          46.20522,
+          6.1603
+        ],
+        [
+          46.20529,
+          6.16023
+        ],
+        [
+          46.20526,
+          6.16019
+        ],
+        [
+          46.20529,
+          6.16017
+        ],
+        [
+          46.2055,
+          6.15994
+        ]
+      ]
+    }
+  ]
+}

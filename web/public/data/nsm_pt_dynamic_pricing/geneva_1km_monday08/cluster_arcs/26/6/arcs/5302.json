@@ -1,0 +1,145 @@
+{
+  "arc_id": "5302",
+  "type": "PT-Only",
+  "origin_hub_id": 26,
+  "destination_hub_id": 6,
+  "total_travel_time_s": 180.0,
+  "total_transfer_time_s": 172.0,
+  "total_distance_m": 802.0600000000002,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 75.0,
+      "distance_m": 97.68,
+      "from_place": "Origin",
+      "to_place": "Genève, Prairie",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20822,
+          6.13599
+        ],
+        [
+          46.20833,
+          6.13546
+        ],
+        [
+          46.20835,
+          6.13541
+        ],
+        [
+          46.20835,
+          6.13541
+        ],
+        [
+          46.2084,
+          6.13558
+        ],
+        [
+          46.20842,
+          6.13569
+        ],
+        [
+          46.2085,
+          6.136
+        ],
+        [
+          46.2085,
+          6.13602
+        ],
+        [
+          46.20851,
+          6.13602
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 602.7,
+      "from_place": "Genève, Prairie",
+      "to_place": "Genève, Chantepoulet",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20851,
+          6.13599
+        ],
+        [
+          46.20891,
+          6.13979
+        ],
+        [
+          46.20891,
+          6.13979
+        ],
+        [
+          46.20816,
+          6.14363
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 97.0,
+      "distance_m": 101.68,
+      "from_place": "Genève, Chantepoulet",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20815,
+          6.14363
+        ],
+        [
+          46.20814,
+          6.14363
+        ],
+        [
+          46.20814,
+          6.14368
+        ],
+        [
+          46.20814,
+          6.14372
+        ],
+        [
+          46.20814,
+          6.14372
+        ],
+        [
+          46.20814,
+          6.14382
+        ],
+        [
+          46.20814,
+          6.14392
+        ],
+        [
+          46.2079,
+          6.14366
+        ],
+        [
+          46.20789,
+          6.14371
+        ],
+        [
+          46.2077,
+          6.14414
+        ]
+      ]
+    }
+  ]
+}

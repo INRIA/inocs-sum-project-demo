@@ -1,0 +1,145 @@
+{
+  "arc_id": "5650",
+  "type": "PT-Only",
+  "origin_hub_id": 27,
+  "destination_hub_id": 26,
+  "total_travel_time_s": 480.0,
+  "total_transfer_time_s": 118.0,
+  "total_distance_m": 1435.45,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 40.0,
+      "distance_m": 45.99,
+      "from_place": "Origin",
+      "to_place": "Genève, Molard",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20388,
+          6.14883
+        ],
+        [
+          46.2039,
+          6.14874
+        ],
+        [
+          46.20397,
+          6.14841
+        ],
+        [
+          46.20401,
+          6.14849
+        ],
+        [
+          46.20401,
+          6.14853
+        ],
+        [
+          46.204,
+          6.14853
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 480.0,
+      "distance_m": 1311.24,
+      "from_place": "Genève, Molard",
+      "to_place": "Genève, Prairie",
+      "line_publicCode": {
+        "publicCode": "10"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20398,
+          6.14851
+        ],
+        [
+          46.20506,
+          6.14298
+        ],
+        [
+          46.20506,
+          6.14298
+        ],
+        [
+          46.2076,
+          6.14238
+        ],
+        [
+          46.2076,
+          6.14238
+        ],
+        [
+          46.20888,
+          6.14023
+        ],
+        [
+          46.20888,
+          6.14023
+        ],
+        [
+          46.20852,
+          6.13555
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 78.0,
+      "distance_m": 78.22,
+      "from_place": "Genève, Prairie",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20851,
+          6.13551
+        ],
+        [
+          46.20852,
+          6.13551
+        ],
+        [
+          46.20852,
+          6.1355
+        ],
+        [
+          46.20849,
+          6.13535
+        ],
+        [
+          46.20843,
+          6.13539
+        ],
+        [
+          46.20838,
+          6.13542
+        ],
+        [
+          46.20838,
+          6.13542
+        ],
+        [
+          46.20837,
+          6.13548
+        ],
+        [
+          46.20827,
+          6.13602
+        ]
+      ]
+    }
+  ]
+}

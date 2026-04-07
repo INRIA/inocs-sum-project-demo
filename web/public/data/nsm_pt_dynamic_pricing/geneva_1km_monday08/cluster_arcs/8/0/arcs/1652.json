@@ -1,0 +1,153 @@
+{
+  "arc_id": "1652",
+  "type": "PT-Only",
+  "origin_hub_id": 8,
+  "destination_hub_id": 0,
+  "total_travel_time_s": 180.0,
+  "total_transfer_time_s": 145.0,
+  "total_distance_m": 736.4799999999999,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 27.0,
+      "distance_m": 28.79,
+      "from_place": "Origin",
+      "to_place": "Genève, Coutance",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20704,
+          6.14186
+        ],
+        [
+          46.20705,
+          6.14187
+        ],
+        [
+          46.20708,
+          6.14188
+        ],
+        [
+          46.20712,
+          6.14186
+        ],
+        [
+          46.20717,
+          6.14186
+        ],
+        [
+          46.20721,
+          6.14186
+        ],
+        [
+          46.20725,
+          6.14187
+        ],
+        [
+          46.20725,
+          6.14193
+        ],
+        [
+          46.20725,
+          6.14195
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 552.3,
+      "from_place": "Genève, Coutance",
+      "to_place": "Genève, Bovy-Lysberg",
+      "line_publicCode": {
+        "publicCode": "20"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20725,
+          6.14192
+        ],
+        [
+          46.20424,
+          6.14206
+        ],
+        [
+          46.20424,
+          6.14206
+        ],
+        [
+          46.2024,
+          6.14294
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 118.0,
+      "distance_m": 155.39,
+      "from_place": "Genève, Bovy-Lysberg",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20238,
+          6.14294
+        ],
+        [
+          46.20238,
+          6.14293
+        ],
+        [
+          46.20237,
+          6.14292
+        ],
+        [
+          46.20237,
+          6.14292
+        ],
+        [
+          46.20233,
+          6.14294
+        ],
+        [
+          46.20227,
+          6.14296
+        ],
+        [
+          46.20179,
+          6.14315
+        ],
+        [
+          46.20167,
+          6.1432
+        ],
+        [
+          46.20152,
+          6.14317
+        ],
+        [
+          46.20137,
+          6.1427
+        ],
+        [
+          46.20134,
+          6.1427
+        ],
+        [
+          46.20132,
+          6.1427
+        ]
+      ]
+    }
+  ]
+}

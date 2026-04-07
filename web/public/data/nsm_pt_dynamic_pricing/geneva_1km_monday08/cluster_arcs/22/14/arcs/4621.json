@@ -1,0 +1,249 @@
+{
+  "arc_id": "4621",
+  "type": "PT-Only",
+  "origin_hub_id": 22,
+  "destination_hub_id": 14,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 169.0,
+  "total_distance_m": 1291.18,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 45.0,
+      "distance_m": 52.13,
+      "from_place": "Origin",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20548,
+          6.15988
+        ],
+        [
+          46.20528,
+          6.16012
+        ],
+        [
+          46.20526,
+          6.16015
+        ],
+        [
+          46.2053,
+          6.1602
+        ],
+        [
+          46.20533,
+          6.16026
+        ],
+        [
+          46.20533,
+          6.1603
+        ],
+        [
+          46.20536,
+          6.16033
+        ],
+        [
+          46.20536,
+          6.16034
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 652.96,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Genève, Rive",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20533,
+          6.16034
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20252,
+          6.15557
+        ],
+        [
+          46.20252,
+          6.15557
+        ],
+        [
+          46.20203,
+          6.15353
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 91.0,
+      "distance_m": 114.49,
+      "from_place": "Genève, Rive",
+      "to_place": "Genève, Rive",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.202,
+          6.1535
+        ],
+        [
+          46.202,
+          6.1535
+        ],
+        [
+          46.20199,
+          6.1535
+        ],
+        [
+          46.20191,
+          6.15348
+        ],
+        [
+          46.20191,
+          6.15345
+        ],
+        [
+          46.20191,
+          6.15342
+        ],
+        [
+          46.20191,
+          6.15337
+        ],
+        [
+          46.2019,
+          6.15331
+        ],
+        [
+          46.20189,
+          6.15321
+        ],
+        [
+          46.20189,
+          6.15317
+        ],
+        [
+          46.20188,
+          6.15315
+        ],
+        [
+          46.20188,
+          6.15314
+        ],
+        [
+          46.20188,
+          6.15312
+        ],
+        [
+          46.20188,
+          6.15311
+        ],
+        [
+          46.20188,
+          6.15309
+        ],
+        [
+          46.20187,
+          6.15309
+        ],
+        [
+          46.20187,
+          6.15309
+        ],
+        [
+          46.20187,
+          6.15309
+        ],
+        [
+          46.20202,
+          6.15241
+        ],
+        [
+          46.20202,
+          6.15241
+        ]
+      ]
+    },
+    {
+      "leg_idx": 3,
+      "mode": "TRAM",
+      "duration_s": 60.0,
+      "distance_m": 434.69,
+      "from_place": "Genève, Rive",
+      "to_place": "Genève, Molard",
+      "line_publicCode": {
+        "publicCode": "12"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.2019,
+          6.15225
+        ],
+        [
+          46.2032,
+          6.14693
+        ]
+      ]
+    },
+    {
+      "leg_idx": 4,
+      "mode": "FOOT",
+      "duration_s": 33.0,
+      "distance_m": 36.91,
+      "from_place": "Genève, Molard",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2032,
+          6.14692
+        ],
+        [
+          46.2032,
+          6.14692
+        ],
+        [
+          46.20326,
+          6.14669
+        ],
+        [
+          46.20328,
+          6.14669
+        ],
+        [
+          46.20328,
+          6.14668
+        ],
+        [
+          46.20332,
+          6.14653
+        ]
+      ]
+    }
+  ]
+}

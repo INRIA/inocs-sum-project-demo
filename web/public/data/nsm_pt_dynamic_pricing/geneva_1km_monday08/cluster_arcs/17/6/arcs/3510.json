@@ -1,0 +1,161 @@
+{
+  "arc_id": "3510",
+  "type": "PT-Only",
+  "origin_hub_id": 17,
+  "destination_hub_id": 6,
+  "total_travel_time_s": 180.0,
+  "total_transfer_time_s": 170.0,
+  "total_distance_m": 708.4300000000001,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 73.0,
+      "distance_m": 67.91,
+      "from_place": "Origin",
+      "to_place": "Genève, poste",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.21291,
+          6.14138
+        ],
+        [
+          46.21291,
+          6.14138
+        ],
+        [
+          46.21292,
+          6.14136
+        ],
+        [
+          46.21297,
+          6.14127
+        ],
+        [
+          46.21305,
+          6.14118
+        ],
+        [
+          46.213,
+          6.14117
+        ],
+        [
+          46.21295,
+          6.14116
+        ],
+        [
+          46.21291,
+          6.14116
+        ],
+        [
+          46.21286,
+          6.14116
+        ],
+        [
+          46.21285,
+          6.14116
+        ],
+        [
+          46.21277,
+          6.14116
+        ],
+        [
+          46.21274,
+          6.14117
+        ],
+        [
+          46.21274,
+          6.14117
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 538.84,
+      "from_place": "Genève, poste",
+      "to_place": "Genève, Chantepoulet",
+      "line_publicCode": {
+        "publicCode": "5"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.21266,
+          6.14111
+        ],
+        [
+          46.2101,
+          6.14283
+        ],
+        [
+          46.2101,
+          6.14283
+        ],
+        [
+          46.20817,
+          6.14363
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 97.0,
+      "distance_m": 101.68,
+      "from_place": "Genève, Chantepoulet",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20815,
+          6.14363
+        ],
+        [
+          46.20814,
+          6.14363
+        ],
+        [
+          46.20814,
+          6.14368
+        ],
+        [
+          46.20814,
+          6.14372
+        ],
+        [
+          46.20814,
+          6.14372
+        ],
+        [
+          46.20814,
+          6.14382
+        ],
+        [
+          46.20814,
+          6.14392
+        ],
+        [
+          46.2079,
+          6.14366
+        ],
+        [
+          46.20789,
+          6.14371
+        ],
+        [
+          46.2077,
+          6.14414
+        ]
+      ]
+    }
+  ]
+}

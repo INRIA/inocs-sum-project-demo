@@ -1,0 +1,114 @@
+{
+  "origin_hub_id": 16,
+  "destination_hub_id": 28,
+  "routes": [
+    {
+      "arc_id": "3470",
+      "type": "PT-Only",
+      "total_travel_time_s": 240.0,
+      "total_transfer_time_s": 121.0,
+      "total_distance_m": 887.9499999999999,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "FOOT",
+          "duration_s": 38.0,
+          "distance_m": 22.5,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Genève, Plainpalais",
+          "to_lat": 46.1980881,
+          "to_lon": 6.1430482,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        },
+        {
+          "leg_idx": 1,
+          "mode": "TRAM",
+          "duration_s": 240.0,
+          "distance_m": 761.28,
+          "line_publicCode": {
+            "publicCode": "18"
+          },
+          "to_place": "Genève, Bel-Air",
+          "to_lat": 46.2048714,
+          "to_lon": 6.1434615,
+          "from_place": "Genève, Plainpalais",
+          "from_lat": 46.1980881,
+          "from_lon": 6.1430482,
+          "rented_bike": null
+        },
+        {
+          "leg_idx": 2,
+          "mode": "FOOT",
+          "duration_s": 83.0,
+          "distance_m": 104.17,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2042674,
+          "to_lon": 6.1431563,
+          "from_place": "Genève, Bel-Air",
+          "from_lat": 46.2048714,
+          "from_lon": 6.1434615,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "PT-Only",
+        "nu": 1.0,
+        "Flow (q)": 54.0,
+        "Bike Price": 0.0,
+        "Total Price": 2.0,
+        "PT Time": 4,
+        "Bike Time": 0.0,
+        "Transfers": 3,
+        "z value": 0.0,
+        "Relaxation Difference": 0.0
+      }
+    },
+    {
+      "arc_id": "car_3471",
+      "type": "Car",
+      "total_travel_time_s": 111.0,
+      "total_transfer_time_s": 0.0,
+      "total_distance_m": 874.99,
+      "legs": [
+        {
+          "leg_idx": 0,
+          "mode": "CAR",
+          "duration_s": 111.0,
+          "distance_m": 874.99,
+          "line_publicCode": {
+            "publicCode": ""
+          },
+          "to_place": "Destination",
+          "to_lat": 46.2042674,
+          "to_lon": 6.1431563,
+          "from_place": "Origin",
+          "from_lat": 46.198207,
+          "from_lon": 6.1429368,
+          "rented_bike": false
+        }
+      ],
+      "optimization": {
+        "Type": "Car",
+        "nu": 0,
+        "Flow (q)": 0.0,
+        "Bike Price": 0.0,
+        "Total Price": 3.4099984,
+        "PT Time": 0.0,
+        "Bike Time": 0.0,
+        "Transfers": 0,
+        "Parking Time (min)": 5,
+        "Total Travel Time (min)": 2
+      }
+    }
+  ],
+  "demand": 54,
+  "gamma": 1.83
+}

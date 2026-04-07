@@ -1,0 +1,153 @@
+{
+  "arc_id": "882",
+  "type": "PT-Only",
+  "origin_hub_id": 4,
+  "destination_hub_id": 14,
+  "total_travel_time_s": 180.0,
+  "total_transfer_time_s": 118.0,
+  "total_distance_m": 861.87,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 85.0,
+      "distance_m": 97.19,
+      "from_place": "Origin",
+      "to_place": "Genève, Terrassière",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20163,
+          6.15611
+        ],
+        [
+          46.20171,
+          6.15604
+        ],
+        [
+          46.20167,
+          6.15601
+        ],
+        [
+          46.20165,
+          6.156
+        ],
+        [
+          46.20165,
+          6.15597
+        ],
+        [
+          46.20151,
+          6.15585
+        ],
+        [
+          46.20137,
+          6.15597
+        ],
+        [
+          46.20136,
+          6.15599
+        ],
+        [
+          46.20121,
+          6.15601
+        ],
+        [
+          46.20121,
+          6.15601
+        ],
+        [
+          46.20123,
+          6.15591
+        ],
+        [
+          46.20123,
+          6.15591
+        ],
+        [
+          46.20123,
+          6.15594
+        ],
+        [
+          46.20123,
+          6.15596
+        ],
+        [
+          46.20123,
+          6.15596
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 180.0,
+      "distance_m": 727.77,
+      "from_place": "Genève, Terrassière",
+      "to_place": "Genève, Molard",
+      "line_publicCode": {
+        "publicCode": "12"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20114,
+          6.1559
+        ],
+        [
+          46.2019,
+          6.15226
+        ],
+        [
+          46.2019,
+          6.15226
+        ],
+        [
+          46.2032,
+          6.14694
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 33.0,
+      "distance_m": 36.91,
+      "from_place": "Genève, Molard",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2032,
+          6.14692
+        ],
+        [
+          46.2032,
+          6.14692
+        ],
+        [
+          46.20326,
+          6.14669
+        ],
+        [
+          46.20328,
+          6.14669
+        ],
+        [
+          46.20328,
+          6.14668
+        ],
+        [
+          46.20332,
+          6.14653
+        ]
+      ]
+    }
+  ]
+}

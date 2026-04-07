@@ -1,0 +1,157 @@
+{
+  "arc_id": "2446",
+  "type": "PT-Only",
+  "origin_hub_id": 11,
+  "destination_hub_id": 25,
+  "total_travel_time_s": 300.0,
+  "total_transfer_time_s": 214.0,
+  "total_distance_m": 1145.07,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 120.0,
+      "distance_m": 107.25,
+      "from_place": "Origin",
+      "to_place": "Genève, Place des Eaux-Vives",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20307,
+          6.15465
+        ],
+        [
+          46.20302,
+          6.15489
+        ],
+        [
+          46.20299,
+          6.15508
+        ],
+        [
+          46.20299,
+          6.15513
+        ],
+        [
+          46.20298,
+          6.15522
+        ],
+        [
+          46.20296,
+          6.15538
+        ],
+        [
+          46.20287,
+          6.15536
+        ],
+        [
+          46.20286,
+          6.15545
+        ],
+        [
+          46.20267,
+          6.15537
+        ],
+        [
+          46.20267,
+          6.15538
+        ],
+        [
+          46.20267,
+          6.15542
+        ],
+        [
+          46.20267,
+          6.15544
+        ],
+        [
+          46.20266,
+          6.15544
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 300.0,
+      "distance_m": 915.31,
+      "from_place": "Genève, Place des Eaux-Vives",
+      "to_place": "Genève, Mont-Blanc",
+      "line_publicCode": {
+        "publicCode": "9"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20255,
+          6.15541
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.2076,
+          6.14667
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 94.0,
+      "distance_m": 122.51,
+      "from_place": "Genève, Mont-Blanc",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2076,
+          6.14665
+        ],
+        [
+          46.20761,
+          6.14666
+        ],
+        [
+          46.20752,
+          6.14686
+        ],
+        [
+          46.20741,
+          6.14708
+        ],
+        [
+          46.20742,
+          6.1471
+        ],
+        [
+          46.20757,
+          6.14725
+        ],
+        [
+          46.2076,
+          6.1473
+        ],
+        [
+          46.20779,
+          6.14697
+        ],
+        [
+          46.20794,
+          6.14714
+        ]
+      ]
+    }
+  ]
+}

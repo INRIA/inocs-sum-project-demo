@@ -1,0 +1,165 @@
+{
+  "arc_id": "5479",
+  "type": "PT-Only",
+  "origin_hub_id": 27,
+  "destination_hub_id": 0,
+  "total_travel_time_s": 180.0,
+  "total_transfer_time_s": 148.0,
+  "total_distance_m": 915.9000000000001,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 40.0,
+      "distance_m": 45.99,
+      "from_place": "Origin",
+      "to_place": "Genève, Molard",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20388,
+          6.14883
+        ],
+        [
+          46.2039,
+          6.14874
+        ],
+        [
+          46.20397,
+          6.14841
+        ],
+        [
+          46.20401,
+          6.14849
+        ],
+        [
+          46.20401,
+          6.14853
+        ],
+        [
+          46.204,
+          6.14853
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 738.44,
+      "from_place": "Genève, Molard",
+      "to_place": "Genève, Théâtre",
+      "line_publicCode": {
+        "publicCode": "2"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20398,
+          6.14851
+        ],
+        [
+          46.20423,
+          6.14207
+        ],
+        [
+          46.20423,
+          6.14207
+        ],
+        [
+          46.20208,
+          6.14183
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 108.0,
+      "distance_m": 131.47,
+      "from_place": "Genève, Théâtre",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20207,
+          6.14181
+        ],
+        [
+          46.20207,
+          6.14181
+        ],
+        [
+          46.20206,
+          6.14181
+        ],
+        [
+          46.20205,
+          6.14183
+        ],
+        [
+          46.20207,
+          6.14189
+        ],
+        [
+          46.20197,
+          6.14198
+        ],
+        [
+          46.20195,
+          6.142
+        ],
+        [
+          46.20191,
+          6.14203
+        ],
+        [
+          46.20179,
+          6.14213
+        ],
+        [
+          46.20138,
+          6.14243
+        ],
+        [
+          46.20134,
+          6.14247
+        ],
+        [
+          46.20133,
+          6.1425
+        ],
+        [
+          46.20132,
+          6.14254
+        ],
+        [
+          46.20131,
+          6.14258
+        ],
+        [
+          46.20131,
+          6.14261
+        ],
+        [
+          46.20131,
+          6.14265
+        ],
+        [
+          46.20132,
+          6.14267
+        ],
+        [
+          46.20135,
+          6.14268
+        ]
+      ]
+    }
+  ]
+}

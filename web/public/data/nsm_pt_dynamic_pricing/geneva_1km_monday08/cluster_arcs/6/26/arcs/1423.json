@@ -1,0 +1,161 @@
+{
+  "arc_id": "1423",
+  "type": "PT-Only",
+  "origin_hub_id": 6,
+  "destination_hub_id": 26,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 247.0,
+  "total_distance_m": 873.6400000000001,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 169.0,
+      "distance_m": 212.44,
+      "from_place": "Origin",
+      "to_place": "Genève, Coutance",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20762,
+          6.14412
+        ],
+        [
+          46.20782,
+          6.1437
+        ],
+        [
+          46.20784,
+          6.14366
+        ],
+        [
+          46.20755,
+          6.14335
+        ],
+        [
+          46.20758,
+          6.1433
+        ],
+        [
+          46.20761,
+          6.14327
+        ],
+        [
+          46.20761,
+          6.14326
+        ],
+        [
+          46.20759,
+          6.14322
+        ],
+        [
+          46.20756,
+          6.14318
+        ],
+        [
+          46.20796,
+          6.1427
+        ],
+        [
+          46.20798,
+          6.14264
+        ],
+        [
+          46.20768,
+          6.1425
+        ],
+        [
+          46.20764,
+          6.14249
+        ],
+        [
+          46.20765,
+          6.14249
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 240.0,
+      "distance_m": 582.98,
+      "from_place": "Genève, Coutance",
+      "to_place": "Genève, Prairie",
+      "line_publicCode": {
+        "publicCode": "19"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.2076,
+          6.14236
+        ],
+        [
+          46.20888,
+          6.14021
+        ],
+        [
+          46.20888,
+          6.14021
+        ],
+        [
+          46.20852,
+          6.13553
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 78.0,
+      "distance_m": 78.22,
+      "from_place": "Genève, Prairie",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20851,
+          6.13551
+        ],
+        [
+          46.20852,
+          6.13551
+        ],
+        [
+          46.20852,
+          6.1355
+        ],
+        [
+          46.20849,
+          6.13535
+        ],
+        [
+          46.20843,
+          6.13539
+        ],
+        [
+          46.20838,
+          6.13542
+        ],
+        [
+          46.20838,
+          6.13542
+        ],
+        [
+          46.20837,
+          6.13548
+        ],
+        [
+          46.20827,
+          6.13602
+        ]
+      ]
+    }
+  ]
+}

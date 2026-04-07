@@ -1,0 +1,195 @@
+{
+  "arc_id": "1392",
+  "type": "PT-Only",
+  "origin_hub_id": 6,
+  "destination_hub_id": 22,
+  "total_travel_time_s": 480.0,
+  "total_transfer_time_s": 152.0,
+  "total_distance_m": 1929.5900000000001,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 97.0,
+      "distance_m": 101.68,
+      "from_place": "Origin",
+      "to_place": "Genève, Chantepoulet",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20762,
+          6.14412
+        ],
+        [
+          46.20782,
+          6.1437
+        ],
+        [
+          46.20784,
+          6.14366
+        ],
+        [
+          46.20809,
+          6.14393
+        ],
+        [
+          46.2081,
+          6.14384
+        ],
+        [
+          46.20811,
+          6.14375
+        ],
+        [
+          46.20812,
+          6.14375
+        ],
+        [
+          46.20812,
+          6.14372
+        ],
+        [
+          46.20813,
+          6.14368
+        ],
+        [
+          46.20815,
+          6.14369
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 300.0,
+      "distance_m": 1036.86,
+      "from_place": "Genève, Chantepoulet",
+      "to_place": "Genève, Rive",
+      "line_publicCode": {
+        "publicCode": "5"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20815,
+          6.14363
+        ],
+        [
+          46.20704,
+          6.14735
+        ],
+        [
+          46.20704,
+          6.14735
+        ],
+        [
+          46.20339,
+          6.15094
+        ],
+        [
+          46.20339,
+          6.15094
+        ],
+        [
+          46.20171,
+          6.15272
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 728.36,
+      "from_place": "Genève, Rive",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": "2"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20168,
+          6.15272
+        ],
+        [
+          46.20232,
+          6.15658
+        ],
+        [
+          46.20232,
+          6.15658
+        ],
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.20512,
+          6.16025
+        ]
+      ]
+    },
+    {
+      "leg_idx": 3,
+      "mode": "FOOT",
+      "duration_s": 55.0,
+      "distance_m": 62.69,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20512,
+          6.16025
+        ],
+        [
+          46.20512,
+          6.16026
+        ],
+        [
+          46.20514,
+          6.16029
+        ],
+        [
+          46.20517,
+          6.16033
+        ],
+        [
+          46.20519,
+          6.16031
+        ],
+        [
+          46.20522,
+          6.1603
+        ],
+        [
+          46.20529,
+          6.16023
+        ],
+        [
+          46.20526,
+          6.16019
+        ],
+        [
+          46.20529,
+          6.16017
+        ],
+        [
+          46.2055,
+          6.15994
+        ]
+      ]
+    }
+  ]
+}

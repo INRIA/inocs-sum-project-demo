@@ -1,0 +1,25 @@
+{
+  "random_seed": null,
+  "instance_nodes": 0,
+  "instance_od_pairs": 0,
+  "clustering": {
+    "method": "KMeans",
+    "threshold": 1000,
+    "buffer": 100
+  },
+  "optimization": {
+    "M": 4,
+    "max_displayed_alts": null,
+    "ridership_weight": null
+  },
+  "generation": {
+    "fixed_pt_price_value": null,
+    "bike_cost_operator": null,
+    "bike_station_count": 0
+  },
+  "solution": {
+    "objective": 305795.23541894864,
+    "gap_percent": 0.009894525588444038,
+    "solve_time_s": 3.8276259899139404
+  }
+}

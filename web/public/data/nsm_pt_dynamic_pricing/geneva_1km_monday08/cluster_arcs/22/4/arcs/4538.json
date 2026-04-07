@@ -1,0 +1,141 @@
+{
+  "arc_id": "4538",
+  "type": "PT-Only",
+  "origin_hub_id": 22,
+  "destination_hub_id": 4,
+  "total_travel_time_s": 120.0,
+  "total_transfer_time_s": 124.0,
+  "total_distance_m": 637.6,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 45.0,
+      "distance_m": 52.13,
+      "from_place": "Origin",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20548,
+          6.15988
+        ],
+        [
+          46.20528,
+          6.16012
+        ],
+        [
+          46.20526,
+          6.16015
+        ],
+        [
+          46.2053,
+          6.1602
+        ],
+        [
+          46.20533,
+          6.16026
+        ],
+        [
+          46.20533,
+          6.1603
+        ],
+        [
+          46.20536,
+          6.16033
+        ],
+        [
+          46.20536,
+          6.16034
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 120.0,
+      "distance_m": 531.37,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Genève, Place des Eaux-Vives",
+      "line_publicCode": {
+        "publicCode": "G"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20533,
+          6.16034
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20181,
+          6.1558
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 79.0,
+      "distance_m": 54.1,
+      "from_place": "Genève, Place des Eaux-Vives",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20179,
+          6.15578
+        ],
+        [
+          46.20179,
+          6.15578
+        ],
+        [
+          46.20179,
+          6.15582
+        ],
+        [
+          46.20183,
+          6.15587
+        ],
+        [
+          46.20187,
+          6.15594
+        ],
+        [
+          46.20189,
+          6.15601
+        ],
+        [
+          46.20187,
+          6.15604
+        ],
+        [
+          46.20183,
+          6.15609
+        ],
+        [
+          46.20176,
+          6.15604
+        ],
+        [
+          46.20169,
+          6.15612
+        ]
+      ]
+    }
+  ]
+}

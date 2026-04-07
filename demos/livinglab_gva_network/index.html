@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-semicircle"></script>
+    <script src="https://elfalem.github.io/Leaflet.curve/src/leaflet.curve.js"></script>
+
+    <!-- Leaflet.heat for heatmap rendering -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
+    <script src="../../demos/livinglab_gva_network/js/utils.js"></script>
+    <script src="../../demos/livinglab_gva_network/js/sum-pt-nsm-network.js"></script>
+    <script src="../../demos/livinglab_gva_network/js/sum-pt-ridership-heatmap.js"></script>
+
+    <meta charset="utf-8" />
+    <title>Bike Sharing Network Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <style>
+      html,
+      body,
+      #map {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="config-controls">
+      <label>
+        <input
+          type="radio"
+          name="demo-data"
+          value="../../data/sum_gtfs_geojson/geojson/geneva_1km-radius/"
+          checked
+        />
+        Geneva 1km radius
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="demo-data"
+          value="../../data/sum_gtfs_geojson/geojson/geneva_5km-radius/"
+        />
+        Geneva 5km radius
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="demo-data"
+          value="../../data/sum_gtfs_geojson/geojson/geneva_10km-radius/"
+        />
+        Geneva 10km radius
+      </label>
+      <br />
+    </div>
+
+    <div id="map-container" style="height: 100vh">
+      <sum-pt-nsm-network
+        datasetpath="../../data/sum_gtfs_geojson/geojson/geneva_1km-radius/"
+        style="display: block; height: 100%"
+      ></sum-pt-nsm-network>
+    </div>
+
+    <script>
+      // Store current ridership visualization instance and state
+      let currentRidershipViz = null;
+      let currentDatasetPath = null;
+      let loadButton = null;
+
+      // Create and show the load button
+      function showLoadButton(path) {
+        currentDatasetPath = path;
+
+        // Remove existing button if any
+        if (loadButton) {
+          loadButton.remove();
+        }
+
+        // Remove existing visualization if any
+        if (currentRidershipViz) {
+          currentRidershipViz.remove();
+          currentRidershipViz = null;
+        }
+
+        // Create load button
+        loadButton = document.createElement("button");
+        loadButton.id = "load-ridership-btn";
+        loadButton.innerHTML = "📊 Load Ridership Heatmap";
+        loadButton.style.cssText = `
+          position: absolute;
+          top: 150px;
+          right: 10px;
+          z-index: 1000;
+          background: white;
+          padding: 12px 20px;
+          border: 2px solid #004494;
+          border-radius: 6px;
+          font-size: 14px;
+          font-weight: 600;
+          color: #004494;
+          cursor: pointer;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+          transition: all 0.2s ease;
+        `;
+
+        loadButton.addEventListener("mouseenter", () => {
+          loadButton.style.background = "#004494";
+          loadButton.style.color = "white";
+        });
+
+        loadButton.addEventListener("mouseleave", () => {
+          loadButton.style.background = "white";
+          loadButton.style.color = "#004494";
+        });
+
+        loadButton.addEventListener("click", async () => {
+          loadButton.disabled = true;
+          loadButton.innerHTML = "⏳ Loading...";
+          try {
+            await initRidershipForPath(currentDatasetPath);
+            loadButton.remove();
+            loadButton = null;
+          } catch (error) {
+            loadButton.disabled = false;
+            loadButton.innerHTML = "❌ Failed - Retry";
+            console.error("Failed to load ridership:", error);
+          }
+        });
+
+        document.body.appendChild(loadButton);
+      }
+
+      // Initialize ridership heatmap when user clicks load button
+      async function initRidershipForPath(path) {
+        try {
+          console.log("initRidershipForPath called with:", path);
+
+          // Remove previous visualization if exists
+          if (currentRidershipViz) {
+            console.log("Removing previous visualization");
+            currentRidershipViz.remove();
+            currentRidershipViz = null;
+          }
+
+          // Initialize new visualization
+          console.log("Initializing new ridership heatmap...");
+          currentRidershipViz = await initializeRidershipHeatmap(path);
+          console.log("Ridership heatmap initialized successfully for:", path);
+        } catch (error) {
+          console.error("Failed to initialize ridership heatmap:", error);
+          throw error;
+        }
+      }
+
+      // Initialize with default dataset - handle both cases:
+      // 1. Map already ready (event already fired)
+      // 2. Map not ready yet (wait for event)
+      const defaultPath =
+        "../../data/sum_gtfs_geojson/geojson/geneva_1km-radius/";
+
+      if (window.__SUM_SHARED_MAP) {
+        // Map already exists, show load button immediately
+        console.log("Map already ready, showing load button...");
+        showLoadButton(defaultPath);
+      } else {
+        // Map not ready yet, wait for event
+        console.log("Waiting for map ready event...");
+        window.addEventListener("sum-map-ready", () => {
+          console.log("Map ready event received, showing load button...");
+          showLoadButton(defaultPath);
+        });
+      }
+
+      document.querySelectorAll('input[name="demo-data"]').forEach((input) => {
+        input.addEventListener("change", () => {
+          if (input.checked) {
+            const container = document.getElementById("map-container");
+            const newPath = input.value;
+
+            // Remove any existing map component
+            const oldComponent = container.querySelector("sum-pt-nsm-network");
+            if (oldComponent) oldComponent.remove();
+
+            // Create a new component with the selected dataset path
+            const newComponent = document.createElement("sum-pt-nsm-network");
+            newComponent.setAttribute("datasetpath", newPath);
+            newComponent.style.display = "block";
+            newComponent.style.height = "100%";
+            container.appendChild(newComponent);
+
+            // Show load button for new dataset (wait for map to be ready)
+            setTimeout(() => {
+              showLoadButton(newPath);
+            }, 500);
+          }
+        });
+      });
+    </script>
+    <style>
+      .leaflet-tile-loaded {
+        filter: brightness(1) invert(1) grayscale(10);
+      }
+      .leaflet-container a {
+        color: #000000;
+      }
+      .leaflet-container .leaflet-control-attribution {
+        background: none;
+        background-color: #fff;
+      }
+      #config-controls {
+        z-index: 1000;
+        position: absolute;
+        top: 10px;
+        left: 100px;
+        background: white;
+        padding: 10px;
+        border-radius: 6px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: row;
+      }
+      #config-controls label {
+        display: flex;
+        align-items: center;
+        margin-left: 0.5em;
+      }
+    </style>
+  </body>
+</html>

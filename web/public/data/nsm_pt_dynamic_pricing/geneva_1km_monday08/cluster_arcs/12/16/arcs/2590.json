@@ -1,0 +1,165 @@
+{
+  "arc_id": "2590",
+  "type": "PT-Only",
+  "origin_hub_id": 12,
+  "destination_hub_id": 16,
+  "total_travel_time_s": 420.0,
+  "total_transfer_time_s": 60.0,
+  "total_distance_m": 1385.9999999999998,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 26.0,
+      "distance_m": 28.33,
+      "from_place": "Origin",
+      "to_place": "Genève, Rive",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2021,
+          6.1523
+        ],
+        [
+          46.20205,
+          6.15228
+        ],
+        [
+          46.20203,
+          6.15228
+        ],
+        [
+          46.20201,
+          6.15232
+        ],
+        [
+          46.20199,
+          6.15229
+        ],
+        [
+          46.20198,
+          6.15227
+        ],
+        [
+          46.20198,
+          6.15227
+        ],
+        [
+          46.20198,
+          6.15227
+        ],
+        [
+          46.20198,
+          6.1523
+        ],
+        [
+          46.20198,
+          6.1523
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 420.0,
+      "distance_m": 1338.07,
+      "from_place": "Genève, Rive",
+      "to_place": "Genève, Plainpalais",
+      "line_publicCode": {
+        "publicCode": "17"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.2019,
+          6.15225
+        ],
+        [
+          46.2032,
+          6.14693
+        ],
+        [
+          46.2032,
+          6.14693
+        ],
+        [
+          46.20391,
+          6.14385
+        ],
+        [
+          46.20391,
+          6.14385
+        ],
+        [
+          46.20069,
+          6.14332
+        ],
+        [
+          46.20069,
+          6.14332
+        ],
+        [
+          46.1981,
+          6.14289
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 34.0,
+      "distance_m": 19.6,
+      "from_place": "Genève, Plainpalais",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.19808,
+          6.14285
+        ],
+        [
+          46.19808,
+          6.14286
+        ],
+        [
+          46.19808,
+          6.14292
+        ],
+        [
+          46.19809,
+          6.14294
+        ],
+        [
+          46.19809,
+          6.14294
+        ],
+        [
+          46.19809,
+          6.14294
+        ],
+        [
+          46.19813,
+          6.14294
+        ],
+        [
+          46.19815,
+          6.14294
+        ],
+        [
+          46.1982,
+          6.14294
+        ],
+        [
+          46.1982,
+          6.14294
+        ]
+      ]
+    }
+  ]
+}

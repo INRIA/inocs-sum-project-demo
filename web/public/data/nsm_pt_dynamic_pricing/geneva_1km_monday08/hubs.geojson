@@ -1,0 +1,1194 @@
+{
+  "type": "FeatureCollection",
+  "name": "hubs",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 0,
+        "bike_stations": [
+          "bs_18770",
+          "bs_21949",
+          "bs_18611",
+          "bs_20720",
+          "bs_21477",
+          "bs_20624",
+          "bs_18509",
+          "bs_21476",
+          "bs_22022",
+          "bs_22360"
+        ],
+        "pt_stations": [
+          "pts_8592794",
+          "pts_8592794:0:U",
+          "pts_8592804:0:Q",
+          "pts_8592885",
+          "pts_8592885:0:I",
+          "pts_8592885:0:J",
+          "pts_8592885:0:L",
+          "pts_8592885:0:M",
+          "pts_8592885:0:N",
+          "pts_8595022",
+          "pts_8595022:0:N",
+          "pts_8595022:0:O",
+          "pts_8595022:0:Y",
+          "pts_Parent8592794",
+          "pts_Parent8592885",
+          "pts_Parent8595022"
+        ],
+        "lines": [
+          "20",
+          "5",
+          "3",
+          "18",
+          "15",
+          "12",
+          "17",
+          "6",
+          "8",
+          "2",
+          "92",
+          "19",
+          "10",
+          "7"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.142631942727273,
+          46.20122896736369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 1,
+        "bike_stations": [
+          "bs_18500",
+          "bs_18496",
+          "bs_22369",
+          "bs_18471",
+          "bs_18511"
+        ],
+        "pt_stations": [
+          "pts_8587057",
+          "pts_8587057:0:A",
+          "pts_8587057:0:F",
+          "pts_8587057:0:G",
+          "pts_8587057:0:H",
+          "pts_8587057:0:I",
+          "pts_8587057:0:J",
+          "pts_Parent8587057"
+        ],
+        "lines": [
+          "18",
+          "14",
+          "15",
+          "17",
+          "1",
+          "20",
+          "25",
+          "6",
+          "9",
+          "EV",
+          "8",
+          "5",
+          "60",
+          "19",
+          "3",
+          "10",
+          "29",
+          "E+",
+          "G+",
+          "12",
+          "61"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.141821019166667,
+          46.20965979249588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 2,
+        "bike_stations": [
+          "bs_21911",
+          "bs_18555",
+          "bs_21480",
+          "bs_21910"
+        ],
+        "pt_stations": [
+          "pts_8592779",
+          "pts_8592779:0:I",
+          "pts_8592779:0:J",
+          "pts_8592779:0:K",
+          "pts_8592779:0:L",
+          "pts_8592779:0:O",
+          "pts_8592820:0:E",
+          "pts_8592851",
+          "pts_8592851:0:N",
+          "pts_8592851:0:O",
+          "pts_8592879:0:G",
+          "pts_8592907:0:M",
+          "pts_Parent8592779",
+          "pts_Parent8592820",
+          "pts_Parent8592851",
+          "pts_Parent8592879",
+          "pts_Parent8592907"
+        ],
+        "lines": [
+          "7",
+          "5",
+          "3",
+          "20",
+          "8",
+          "92",
+          "6",
+          "2"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.150476253157893,
+          46.198736750544754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 3,
+        "bike_stations": [
+          "bs_24674",
+          "bs_18598",
+          "bs_21869"
+        ],
+        "pt_stations": [
+          "pts_8592841",
+          "pts_8592841:0:A",
+          "pts_8592841:0:T",
+          "pts_8592841:0:U",
+          "pts_8592841:0:V",
+          "pts_8592873",
+          "pts_8592873:0:C",
+          "pts_8592873:0:D",
+          "pts_Parent8592841",
+          "pts_Parent8592873"
+        ],
+        "lines": [
+          "18",
+          "15",
+          "14",
+          "7",
+          "8",
+          "1",
+          "5",
+          "20",
+          "17",
+          "12",
+          "25",
+          "9"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.138627866363636,
+          46.20655142270115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 4,
+        "bike_stations": [
+          "bs_18542",
+          "bs_18543"
+        ],
+        "pt_stations": [
+          "pts_8592883",
+          "pts_8592883:0:O",
+          "pts_8592883:0:P",
+          "pts_8592883:0:Q",
+          "pts_8592883:0:R",
+          "pts_8592883:0:S",
+          "pts_8592883:0:Z",
+          "pts_8592910",
+          "pts_8592910:0:T",
+          "pts_8592910:0:U",
+          "pts_8592910:0:V",
+          "pts_8592910:0:W",
+          "pts_8592924:0:Y",
+          "pts_Parent8592883",
+          "pts_Parent8592910"
+        ],
+        "lines": [
+          "25",
+          "33",
+          "9",
+          "6",
+          "E",
+          "G",
+          "10",
+          "2",
+          "A",
+          "7",
+          "29",
+          "8",
+          "1",
+          "E+",
+          "G+",
+          "17",
+          "12"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.156146542666667,
+          46.20165265009152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 5,
+        "bike_stations": [
+          "bs_18570",
+          "bs_22236",
+          "bs_22188",
+          "bs_22189",
+          "bs_21966",
+          "bs_21965",
+          "bs_18593",
+          "bs_21936",
+          "bs_21964"
+        ],
+        "pt_stations": [
+          "pts_8592866",
+          "pts_8592866:0:U",
+          "pts_8592866:0:V",
+          "pts_8592871",
+          "pts_8592871:0:M",
+          "pts_8592871:0:N",
+          "pts_Parent8592866",
+          "pts_Parent8592871"
+        ],
+        "lines": [
+          "1",
+          "25"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.148384798666666,
+          46.21122812611659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 6,
+        "bike_stations": [
+          "bs_18551",
+          "bs_18839",
+          "bs_18838"
+        ],
+        "pt_stations": [
+          "pts_8592801",
+          "pts_8592801:0:Q",
+          "pts_Parent8592801"
+        ],
+        "lines": [
+          "6",
+          "8",
+          "20",
+          "25",
+          "9",
+          "5",
+          "E+",
+          "G+"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.144166862,
+          46.20767311511699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 7,
+        "bike_stations": [
+          "bs_18589",
+          "bs_22023",
+          "bs_22234",
+          "bs_18835",
+          "bs_20626",
+          "bs_22362"
+        ],
+        "pt_stations": [
+          "pts_8592804",
+          "pts_8592804:0:P",
+          "pts_8592804:0:R",
+          "pts_8592804:0:S",
+          "pts_8592804:0:T",
+          "pts_Parent8592804"
+        ],
+        "lines": [
+          "15",
+          "18",
+          "17",
+          "12",
+          "19",
+          "2",
+          "91",
+          "5",
+          "1",
+          "20",
+          "8",
+          "10",
+          "25",
+          "9",
+          "3",
+          "7"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.139331258181818,
+          46.2011071280381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 8,
+        "bike_stations": [
+          "bs_18422",
+          "bs_20712",
+          "bs_21993",
+          "bs_21994",
+          "bs_18538",
+          "bs_18579"
+        ],
+        "pt_stations": [
+          "pts_8592812",
+          "pts_8592812:0:W",
+          "pts_8592812:0:X",
+          "pts_8592812:0:Y",
+          "pts_8592812:0:Z",
+          "pts_8592831",
+          "pts_8592831:0:S",
+          "pts_Parent8592812",
+          "pts_Parent8592831"
+        ],
+        "lines": [
+          "18",
+          "14",
+          "15",
+          "5",
+          "19",
+          "3",
+          "10",
+          "20",
+          "6",
+          "8",
+          "17",
+          "1",
+          "25",
+          "9"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.141874935384615,
+          46.207039085594054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 9,
+        "bike_stations": [
+          "bs_18394",
+          "bs_21963",
+          "bs_22187",
+          "bs_21962",
+          "bs_21960"
+        ],
+        "pt_stations": [
+          "pts_8511621",
+          "pts_8511621:0:A",
+          "pts_8511621:0:B",
+          "pts_Parent8511621"
+        ],
+        "lines": [
+          "29"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.151500757499999,
+          46.2114261177192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 10,
+        "bike_stations": [
+          "bs_20715",
+          "bs_22313",
+          "bs_18533",
+          "bs_22311",
+          "bs_22315",
+          "bs_22314",
+          "bs_18487"
+        ],
+        "pt_stations": [
+          "pts_8592900",
+          "pts_8592900:0:T",
+          "pts_8592900:0:U",
+          "pts_Parent8592900"
+        ],
+        "lines": [
+          "6",
+          "E",
+          "G",
+          "2",
+          "29",
+          "A"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.158455176,
+          46.20338722130039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 11,
+        "bike_stations": [
+          "bs_22214",
+          "bs_22213",
+          "bs_22349"
+        ],
+        "pt_stations": [
+          "pts_8587061:0:J",
+          "pts_8587061:0:K"
+        ],
+        "lines": [
+          "E",
+          "G",
+          "G+",
+          "25",
+          "9",
+          "E+"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.154664842,
+          46.20309847373438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 12,
+        "bike_stations": [
+          "bs_18406",
+          "bs_21485",
+          "bs_18833",
+          "bs_22017"
+        ],
+        "pt_stations": [
+          "pts_8587061",
+          "pts_8587061:0:A",
+          "pts_8587061:0:B",
+          "pts_8587061:0:C",
+          "pts_8587061:0:D",
+          "pts_8587061:0:E",
+          "pts_8587061:0:F",
+          "pts_8587061:0:G",
+          "pts_8587061:0:H",
+          "pts_8587061:0:I",
+          "pts_8592856",
+          "pts_8592856:0:M",
+          "pts_8592856:0:N",
+          "pts_Parent8587061",
+          "pts_Parent8592856"
+        ],
+        "lines": [
+          "17",
+          "12",
+          "33",
+          "7",
+          "6",
+          "8",
+          "5",
+          "E",
+          "G",
+          "3",
+          "10",
+          "20",
+          "2",
+          "25",
+          "A",
+          "9",
+          "29",
+          "92",
+          "E+",
+          "G+",
+          "1"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.152386965294118,
+          46.20208870925504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 13,
+        "bike_stations": [
+          "bs_22237",
+          "bs_21934",
+          "bs_21935"
+        ],
+        "pt_stations": [
+          "pts_8587057:0:B",
+          "pts_8587057:0:C",
+          "pts_8587057:0:D",
+          "pts_8587057:0:E"
+        ],
+        "lines": [
+          "61",
+          "60",
+          "20",
+          "5",
+          "29",
+          "8",
+          "15",
+          "A2",
+          "25",
+          "1"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.14397526,
+          46.21024273831495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 14,
+        "bike_stations": [
+          "bs_18559",
+          "bs_18569",
+          "bs_18540",
+          "bs_30704"
+        ],
+        "pt_stations": [
+          "pts_8587387:0:F",
+          "pts_8592862",
+          "pts_8592862:0:Y",
+          "pts_8592862:0:Z",
+          "pts_Parent8592862"
+        ],
+        "lines": [
+          "12",
+          "17",
+          "10",
+          "92",
+          "3",
+          "7",
+          "6",
+          "2",
+          "8"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.14653841,
+          46.203395901668074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 15,
+        "bike_stations": [
+          "bs_27875",
+          "bs_22741",
+          "bs_27876"
+        ],
+        "pt_stations": [
+          "pts_8592863",
+          "pts_8592863:0:S",
+          "pts_8592863:0:Z",
+          "pts_Parent8592863"
+        ],
+        "lines": [
+          "15",
+          "25",
+          "1",
+          "A2"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.145915153333334,
+          46.21378376464653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 16,
+        "bike_stations": [
+          "bs_21475"
+        ],
+        "pt_stations": [
+          "pts_8587907",
+          "pts_8587907:0:A",
+          "pts_8587907:0:B",
+          "pts_8587907:0:C",
+          "pts_8587907:0:E",
+          "pts_8587907:0:F",
+          "pts_8587907:0:T",
+          "pts_Parent8587907"
+        ],
+        "lines": [
+          "12",
+          "17",
+          "15",
+          "18",
+          "1",
+          "20",
+          "8",
+          "5",
+          "A6",
+          "25",
+          "9"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.14293681375,
+          46.19820695345339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 17,
+        "bike_stations": [
+          "bs_22414"
+        ],
+        "pt_stations": [
+          "pts_8592888",
+          "pts_8592888:0:T",
+          "pts_8592888:0:U",
+          "pts_Parent8592888"
+        ],
+        "lines": [
+          "20",
+          "5",
+          "60",
+          "29",
+          "61"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.14138224,
+          46.21291362079248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 18,
+        "bike_stations": [
+          "bs_18840",
+          "bs_22366",
+          "bs_18807",
+          "bs_22364",
+          "bs_22368",
+          "bs_22367",
+          "bs_22365"
+        ],
+        "pt_stations": [
+          "pts_8592850",
+          "pts_8592850:0:M",
+          "pts_8592850:0:N",
+          "pts_Parent8592850"
+        ],
+        "lines": [
+          "18",
+          "14",
+          "3",
+          "17",
+          "12",
+          "15",
+          "A2"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1383631,
+          46.21053157072344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 19,
+        "bike_stations": [
+          "bs_18473",
+          "bs_22361"
+        ],
+        "pt_stations": [
+          "pts_8592906",
+          "pts_8592906:0:H",
+          "pts_8592906:0:I",
+          "pts_8592906:0:J",
+          "pts_8592906:0:K",
+          "pts_8592906:0:L",
+          "pts_8592906:0:W",
+          "pts_8592906:0:Y",
+          "pts_Parent8592906"
+        ],
+        "lines": [
+          "14",
+          "15",
+          "18",
+          "17",
+          "12",
+          "80",
+          "5",
+          "1",
+          "20",
+          "8",
+          "25",
+          "9"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.140249865555556,
+          46.20382042823433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 20,
+        "bike_stations": [
+          "bs_21909",
+          "bs_21905",
+          "bs_20636",
+          "bs_21906",
+          "bs_21907"
+        ],
+        "pt_stations": [
+          "pts_8511618:0:H",
+          "pts_Parent8511618"
+        ],
+        "lines": [
+          "92"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.147396463333333,
+          46.1979286787186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 21,
+        "bike_stations": [
+          "bs_21938",
+          "bs_18416",
+          "bs_21940",
+          "bs_18516",
+          "bs_22185",
+          "bs_22186"
+        ],
+        "pt_stations": [
+          "pts_8592830",
+          "pts_8592830:0:Q",
+          "pts_8592830:0:R",
+          "pts_Parent8592830"
+        ],
+        "lines": [
+          "1",
+          "25"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.149885385555555,
+          46.21363638275387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 22,
+        "bike_stations": [
+          "bs_22210",
+          "bs_22211",
+          "bs_22208",
+          "bs_22207"
+        ],
+        "pt_stations": [
+          "pts_8592925",
+          "pts_8592925:0:V",
+          "pts_8592925:0:W",
+          "pts_8592925:0:X",
+          "pts_Parent8592925"
+        ],
+        "lines": [
+          "6",
+          "E",
+          "G",
+          "2",
+          "29",
+          "A"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.15975210625,
+          46.20540928719994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 23,
+        "bike_stations": [
+          "bs_18837",
+          "bs_22363",
+          "bs_18574",
+          "bs_22227"
+        ],
+        "pt_stations": [],
+        "lines": [],
+        "label": "bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.137279475,
+          46.20360092589311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 24,
+        "bike_stations": [
+          "bs_21479"
+        ],
+        "pt_stations": [
+          "pts_8511617:0:M",
+          "pts_8592792:0:Q",
+          "pts_8592799:0:V",
+          "pts_8592838:0:O",
+          "pts_8592909:0:P",
+          "pts_8595021",
+          "pts_8595021:0:R",
+          "pts_8595021:0:S",
+          "pts_Parent8511617",
+          "pts_Parent8592792",
+          "pts_Parent8592799",
+          "pts_Parent8592838",
+          "pts_Parent8592909",
+          "pts_Parent8595021"
+        ],
+        "lines": [
+          "92",
+          "5",
+          "3",
+          "20",
+          "6",
+          "8",
+          "2"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.147639986666666,
+          46.20039655117232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 25,
+        "bike_stations": [
+          "bs_18503",
+          "bs_21969",
+          "bs_18603",
+          "bs_21967",
+          "bs_18613",
+          "bs_18612",
+          "bs_21968"
+        ],
+        "pt_stations": [
+          "pts_8592777",
+          "pts_8592777:0:O",
+          "pts_8592864",
+          "pts_8592864:0:G",
+          "pts_8592864:0:H",
+          "pts_Parent8592777",
+          "pts_Parent8592864"
+        ],
+        "lines": [
+          "25",
+          "1",
+          "6",
+          "9",
+          "8",
+          "5",
+          "20",
+          "E+",
+          "G+"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.147085585833334,
+          46.20795440248465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 26,
+        "bike_stations": [
+          "bs_18842",
+          "bs_18843"
+        ],
+        "pt_stations": [
+          "pts_8592890",
+          "pts_8592890:0:O",
+          "pts_8592890:0:P",
+          "pts_Parent8592890"
+        ],
+        "lines": [
+          "6",
+          "9",
+          "19",
+          "10"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.136036206,
+          46.20833671440877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 27,
+        "bike_stations": [
+          "bs_18552",
+          "bs_20714"
+        ],
+        "pt_stations": [
+          "pts_8592862:0:W",
+          "pts_8592862:0:X"
+        ],
+        "lines": [
+          "7",
+          "2",
+          "3",
+          "10",
+          "6"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.148832495,
+          46.20387670875296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 28,
+        "bike_stations": [
+          "bs_18567"
+        ],
+        "pt_stations": [
+          "pts_8587387",
+          "pts_8587387:0:A",
+          "pts_8587387:0:B",
+          "pts_8587387:0:C",
+          "pts_8587387:0:D",
+          "pts_8587387:0:E",
+          "pts_8587387:0:G",
+          "pts_8587387:0:Z",
+          "pts_Parent8587387"
+        ],
+        "lines": [
+          "18",
+          "17",
+          "12",
+          "14",
+          "15",
+          "19",
+          "2",
+          "7",
+          "80",
+          "5",
+          "3",
+          "10",
+          "20",
+          "6",
+          "8"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.143156338888889,
+          46.20426743042192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": 29,
+        "bike_stations": [
+          "bs_18497",
+          "bs_21996",
+          "bs_21995"
+        ],
+        "pt_stations": [
+          "pts_8587057:0:K",
+          "pts_8587057:0:L"
+        ],
+        "lines": [
+          "9",
+          "10",
+          "6",
+          "19"
+        ],
+        "label": "pt+bike station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.139702514,
+          46.20872062703607
+        ]
+      }
+    }
+  ]
+}

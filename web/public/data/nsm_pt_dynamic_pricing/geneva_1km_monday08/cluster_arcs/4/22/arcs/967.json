@@ -1,0 +1,161 @@
+{
+  "arc_id": "967",
+  "type": "PT-Only",
+  "origin_hub_id": 4,
+  "destination_hub_id": 22,
+  "total_travel_time_s": 60.0,
+  "total_transfer_time_s": 168.0,
+  "total_distance_m": 585.02,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 113.0,
+      "distance_m": 99.65,
+      "from_place": "Origin",
+      "to_place": "Genève, Place des Eaux-Vives",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20163,
+          6.15611
+        ],
+        [
+          46.20171,
+          6.15604
+        ],
+        [
+          46.20179,
+          6.1561
+        ],
+        [
+          46.20181,
+          6.15612
+        ],
+        [
+          46.20181,
+          6.15627
+        ],
+        [
+          46.20189,
+          6.1563
+        ],
+        [
+          46.20196,
+          6.1564
+        ],
+        [
+          46.20201,
+          6.15648
+        ],
+        [
+          46.20204,
+          6.15652
+        ],
+        [
+          46.20208,
+          6.15651
+        ],
+        [
+          46.2021,
+          6.15651
+        ],
+        [
+          46.20231,
+          6.15662
+        ],
+        [
+          46.20232,
+          6.15661
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 60.0,
+      "distance_m": 422.68,
+      "from_place": "Genève, Place des Eaux-Vives",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20232,
+          6.15658
+        ],
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.20512,
+          6.16025
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 55.0,
+      "distance_m": 62.69,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20512,
+          6.16025
+        ],
+        [
+          46.20512,
+          6.16026
+        ],
+        [
+          46.20514,
+          6.16029
+        ],
+        [
+          46.20517,
+          6.16033
+        ],
+        [
+          46.20519,
+          6.16031
+        ],
+        [
+          46.20522,
+          6.1603
+        ],
+        [
+          46.20529,
+          6.16023
+        ],
+        [
+          46.20526,
+          6.16019
+        ],
+        [
+          46.20529,
+          6.16017
+        ],
+        [
+          46.2055,
+          6.15994
+        ]
+      ]
+    }
+  ]
+}

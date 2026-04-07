@@ -1,0 +1,726 @@
+{
+  "type": "FeatureCollection",
+  "name": "selected_bike_stations",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dcac5fffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.163169701399437,
+          46.20216185306845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dc121fffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.140039475770065,
+          46.20708246262266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dcac9fffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1509024270217285,
+          46.19792636403692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dcae9fffff",
+        "y": 1.0,
+        "inventory": 4.0,
+        "capacity": 4.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.167726257146385,
+          46.20803677835579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dc125fffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.144597944919238,
+          46.2129575738099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dcacdfffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.155460245416853,
+          46.20380197317223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dcac1fffff",
+        "y": 1.0,
+        "inventory": 15.0,
+        "capacity": 16.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.158612520792636,
+          46.196286305967476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dca1bfffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.152308001516701,
+          46.21131722558726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dc12bfffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.13548038190567,
+          46.201206729451336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dc13dfffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.138632633148121,
+          46.19369021213585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dcac7fffff",
+        "y": 1.0,
+        "inventory": 8.0,
+        "capacity": 8.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.166321995074027,
+          46.19464633098501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dc135fffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.146343983889262,
+          46.192050133056014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dc123fffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.143191713984843,
+          46.199566505197005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dcacbfffff",
+        "y": 1.0,
+        "inventory": 8.0,
+        "capacity": 8.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.15405471540027,
+          46.19041013707771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dca13fffff",
+        "y": 1.0,
+        "inventory": 16.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.160017439000257,
+          46.2096769604371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BS-887a8dc127fffff",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "BikeStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.147750170132522,
+          46.20544217635576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_33-2",
+        "y": 1.0,
+        "inventory": 2.0,
+        "capacity": 5.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.155432,
+          46.202549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_91-1",
+        "y": 1.0,
+        "inventory": 18.0,
+        "capacity": 19.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.135715,
+          46.201316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_91-2",
+        "y": 1.0,
+        "inventory": 7.0,
+        "capacity": 14.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.140016,
+          46.200781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_91-3",
+        "y": 1.0,
+        "inventory": 12.0,
+        "capacity": 15.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.13925,
+          46.197614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_91-7",
+        "y": 1.0,
+        "inventory": 17.0,
+        "capacity": 17.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.146071,
+          46.191323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_91-8",
+        "y": 1.0,
+        "inventory": 3.0,
+        "capacity": 4.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.148709,
+          46.194277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_A2-0",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.145281,
+          46.21314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_1-1",
+        "y": 1.0,
+        "inventory": 14.0,
+        "capacity": 14.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.14959,
+          46.211777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_1-5",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.139526,
+          46.207226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_1-9",
+        "y": 1.0,
+        "inventory": 3.0,
+        "capacity": 5.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.14299,
+          46.195048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_1-10",
+        "y": 1.0,
+        "inventory": 5.0,
+        "capacity": 5.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.147214,
+          46.195591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_1-13",
+        "y": 1.0,
+        "inventory": 3.0,
+        "capacity": 3.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.154362,
+          46.194089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_1-15",
+        "y": 1.0,
+        "inventory": 9.0,
+        "capacity": 9.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.157377,
+          46.19864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_1-17",
+        "y": 1.0,
+        "inventory": 20.0,
+        "capacity": 20.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.162253,
+          46.201781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_25-6",
+        "y": 1.0,
+        "inventory": 6.0,
+        "capacity": 7.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.147279,
+          46.207063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_25-7",
+        "y": 1.0,
+        "inventory": 6.0,
+        "capacity": 6.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.150775,
+          46.203342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_25-9",
+        "y": 1.0,
+        "inventory": 3.0,
+        "capacity": 3.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.155732,
+          46.202454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_25-11",
+        "y": 1.0,
+        "inventory": 6.0,
+        "capacity": 6.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.157225,
+          46.198494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_8-0",
+        "y": 1.0,
+        "inventory": 4.0,
+        "capacity": 7.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.160832,
+          46.193875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_8-4",
+        "y": 1.0,
+        "inventory": 6.0,
+        "capacity": 9.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.151399,
+          46.203241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_20-1",
+        "y": 1.0,
+        "inventory": 5.0,
+        "capacity": 5.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.15566,
+          46.196191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_20-3",
+        "y": 1.0,
+        "inventory": 4.0,
+        "capacity": 4.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.148546,
+          46.198405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_20-5",
+        "y": 1.0,
+        "inventory": 4.0,
+        "capacity": 9.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.144228,
+          46.201279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_E-0",
+        "y": 1.0,
+        "inventory": 3.0,
+        "capacity": 3.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.161853,
+          46.206689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_15-2",
+        "y": 1.0,
+        "inventory": 7.0,
+        "capacity": 7.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.140586,
+          46.200805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "transfer_PT_29-5",
+        "y": 1.0,
+        "inventory": 0.0,
+        "capacity": 4.0,
+        "type": "TransferStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.152729,
+          46.211987
+        ]
+      }
+    }
+  ]
+}

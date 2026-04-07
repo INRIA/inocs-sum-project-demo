@@ -1,0 +1,211 @@
+{
+  "arc_id": "3419",
+  "type": "PT-Only",
+  "origin_hub_id": 16,
+  "destination_hub_id": 22,
+  "total_travel_time_s": 600.0,
+  "total_transfer_time_s": 93.0,
+  "total_distance_m": 2072.44,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 38.0,
+      "distance_m": 22.5,
+      "from_place": "Origin",
+      "to_place": "Genève, Plainpalais",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.1982,
+          6.14294
+        ],
+        [
+          46.1982,
+          6.14294
+        ],
+        [
+          46.19816,
+          6.14294
+        ],
+        [
+          46.19815,
+          6.14294
+        ],
+        [
+          46.19812,
+          6.14294
+        ],
+        [
+          46.19812,
+          6.14294
+        ],
+        [
+          46.19812,
+          6.14295
+        ],
+        [
+          46.19812,
+          6.14297
+        ],
+        [
+          46.19812,
+          6.14299
+        ],
+        [
+          46.19812,
+          6.14301
+        ],
+        [
+          46.19812,
+          6.14303
+        ],
+        [
+          46.19812,
+          6.14305
+        ],
+        [
+          46.19812,
+          6.14305
+        ],
+        [
+          46.19812,
+          6.14305
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 240.0,
+      "distance_m": 631.57,
+      "from_place": "Genève, Plainpalais",
+      "to_place": "Genève, Bel-Air",
+      "line_publicCode": {
+        "publicCode": "12"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.19808,
+          6.14304
+        ],
+        [
+          46.20099,
+          6.14385
+        ],
+        [
+          46.20099,
+          6.14385
+        ],
+        [
+          46.20365,
+          6.14464
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "BUS",
+      "duration_s": 360.0,
+      "distance_m": 1355.68,
+      "from_place": "Genève, Bel-Air",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20365,
+          6.14464
+        ],
+        [
+          46.20302,
+          6.1474
+        ],
+        [
+          46.20302,
+          6.1474
+        ],
+        [
+          46.2017,
+          6.15272
+        ],
+        [
+          46.2017,
+          6.15272
+        ],
+        [
+          46.20412,
+          6.15854
+        ],
+        [
+          46.20412,
+          6.15854
+        ],
+        [
+          46.20514,
+          6.16025
+        ]
+      ]
+    },
+    {
+      "leg_idx": 3,
+      "mode": "FOOT",
+      "duration_s": 55.0,
+      "distance_m": 62.69,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20512,
+          6.16025
+        ],
+        [
+          46.20512,
+          6.16026
+        ],
+        [
+          46.20514,
+          6.16029
+        ],
+        [
+          46.20517,
+          6.16033
+        ],
+        [
+          46.20519,
+          6.16031
+        ],
+        [
+          46.20522,
+          6.1603
+        ],
+        [
+          46.20529,
+          6.16023
+        ],
+        [
+          46.20526,
+          6.16019
+        ],
+        [
+          46.20529,
+          6.16017
+        ],
+        [
+          46.2055,
+          6.15994
+        ]
+      ]
+    }
+  ]
+}

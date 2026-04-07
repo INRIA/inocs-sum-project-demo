@@ -1,0 +1,165 @@
+{
+  "arc_id": "1744",
+  "type": "PT-Only",
+  "origin_hub_id": 8,
+  "destination_hub_id": 15,
+  "total_travel_time_s": 180.0,
+  "total_transfer_time_s": 115.0,
+  "total_distance_m": 832.6,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 69.0,
+      "distance_m": 86.5,
+      "from_place": "Origin",
+      "to_place": "Genève, Coutance",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20704,
+          6.14186
+        ],
+        [
+          46.20705,
+          6.14187
+        ],
+        [
+          46.20708,
+          6.14188
+        ],
+        [
+          46.20712,
+          6.14186
+        ],
+        [
+          46.20717,
+          6.14186
+        ],
+        [
+          46.20721,
+          6.14186
+        ],
+        [
+          46.20725,
+          6.14187
+        ],
+        [
+          46.20755,
+          6.14206
+        ],
+        [
+          46.20759,
+          6.14208
+        ],
+        [
+          46.20764,
+          6.14214
+        ],
+        [
+          46.20764,
+          6.14218
+        ],
+        [
+          46.20763,
+          6.14225
+        ],
+        [
+          46.20763,
+          6.14229
+        ],
+        [
+          46.20763,
+          6.14231
+        ],
+        [
+          46.20765,
+          6.14232
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 180.0,
+      "distance_m": 691.46,
+      "from_place": "Genève, Coutance",
+      "to_place": "Genève, Môle",
+      "line_publicCode": {
+        "publicCode": "15"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20761,
+          6.14229
+        ],
+        [
+          46.21039,
+          6.14363
+        ],
+        [
+          46.21039,
+          6.14363
+        ],
+        [
+          46.21339,
+          6.14557
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 46.0,
+      "distance_m": 54.64,
+      "from_place": "Genève, Môle",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21342,
+          6.14559
+        ],
+        [
+          46.21355,
+          6.14568
+        ],
+        [
+          46.21355,
+          6.1457
+        ],
+        [
+          46.21355,
+          6.1457
+        ],
+        [
+          46.21355,
+          6.14573
+        ],
+        [
+          46.21379,
+          6.14589
+        ]
+      ]
+    }
+  ]
+}

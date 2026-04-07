@@ -1,0 +1,173 @@
+{
+  "arc_id": "422",
+  "type": "PT-Only",
+  "origin_hub_id": 2,
+  "destination_hub_id": 3,
+  "total_travel_time_s": 480.0,
+  "total_transfer_time_s": 216.0,
+  "total_distance_m": 1718.2099999999998,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 133.0,
+      "distance_m": 177.01,
+      "from_place": "Origin",
+      "to_place": "Genève, Musée art et histoire",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.19871,
+          6.1505
+        ],
+        [
+          46.19897,
+          6.15088
+        ],
+        [
+          46.1991,
+          6.1507
+        ],
+        [
+          46.19913,
+          6.15068
+        ],
+        [
+          46.19961,
+          6.15135
+        ],
+        [
+          46.19972,
+          6.15151
+        ],
+        [
+          46.19981,
+          6.15164
+        ],
+        [
+          46.19984,
+          6.15169
+        ],
+        [
+          46.19986,
+          6.15168
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 480.0,
+      "distance_m": 1456.34,
+      "from_place": "Genève, Musée art et histoire",
+      "to_place": "Genève, Mercier",
+      "line_publicCode": {
+        "publicCode": "7"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.19986,
+          6.15165
+        ],
+        [
+          46.20191,
+          6.15244
+        ],
+        [
+          46.20191,
+          6.15244
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.20398,
+          6.14853
+        ],
+        [
+          46.20398,
+          6.14853
+        ],
+        [
+          46.20506,
+          6.143
+        ],
+        [
+          46.20506,
+          6.143
+        ],
+        [
+          46.2068,
+          6.13908
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 83.0,
+      "distance_m": 84.86,
+      "from_place": "Genève, Mercier",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2068,
+          6.13904
+        ],
+        [
+          46.20682,
+          6.13904
+        ],
+        [
+          46.20682,
+          6.13902
+        ],
+        [
+          46.20682,
+          6.13898
+        ],
+        [
+          46.2068,
+          6.13857
+        ],
+        [
+          46.20676,
+          6.13858
+        ],
+        [
+          46.20671,
+          6.13858
+        ],
+        [
+          46.20671,
+          6.13853
+        ],
+        [
+          46.20656,
+          6.13855
+        ],
+        [
+          46.20656,
+          6.13857
+        ],
+        [
+          46.20657,
+          6.13868
+        ]
+      ]
+    }
+  ]
+}

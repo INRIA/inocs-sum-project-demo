@@ -1,0 +1,145 @@
+{
+  "arc_id": "3995",
+  "type": "PT-Only",
+  "origin_hub_id": 19,
+  "destination_hub_id": 15,
+  "total_travel_time_s": 360.0,
+  "total_transfer_time_s": 92.0,
+  "total_distance_m": 1225.26,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 46.0,
+      "distance_m": 33.83,
+      "from_place": "Origin",
+      "to_place": "Genève, Stand",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2038,
+          6.1401
+        ],
+        [
+          46.20398,
+          6.14008
+        ],
+        [
+          46.204,
+          6.14008
+        ],
+        [
+          46.204,
+          6.14003
+        ],
+        [
+          46.204,
+          6.14001
+        ],
+        [
+          46.204,
+          6.13999
+        ],
+        [
+          46.20399,
+          6.13999
+        ],
+        [
+          46.20399,
+          6.13999
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 360.0,
+      "distance_m": 1136.79,
+      "from_place": "Genève, Stand",
+      "to_place": "Genève, Môle",
+      "line_publicCode": {
+        "publicCode": "15"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20397,
+          6.13994
+        ],
+        [
+          46.20761,
+          6.14153
+        ],
+        [
+          46.20761,
+          6.14153
+        ],
+        [
+          46.21039,
+          6.14363
+        ],
+        [
+          46.21039,
+          6.14363
+        ],
+        [
+          46.21339,
+          6.14557
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 46.0,
+      "distance_m": 54.64,
+      "from_place": "Genève, Môle",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21339,
+          6.14557
+        ],
+        [
+          46.21342,
+          6.14559
+        ],
+        [
+          46.21355,
+          6.14568
+        ],
+        [
+          46.21355,
+          6.1457
+        ],
+        [
+          46.21355,
+          6.1457
+        ],
+        [
+          46.21355,
+          6.14573
+        ],
+        [
+          46.21379,
+          6.14589
+        ]
+      ]
+    }
+  ]
+}

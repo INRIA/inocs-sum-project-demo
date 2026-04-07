@@ -1,0 +1,203 @@
+{
+  "arc_id": "3305",
+  "type": "PT-Only",
+  "origin_hub_id": 16,
+  "destination_hub_id": 10,
+  "total_travel_time_s": 540.0,
+  "total_transfer_time_s": 113.0,
+  "total_distance_m": 1933.24,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 38.0,
+      "distance_m": 22.5,
+      "from_place": "Origin",
+      "to_place": "Genève, Plainpalais",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.1982,
+          6.14294
+        ],
+        [
+          46.1982,
+          6.14294
+        ],
+        [
+          46.19816,
+          6.14294
+        ],
+        [
+          46.19815,
+          6.14294
+        ],
+        [
+          46.19812,
+          6.14294
+        ],
+        [
+          46.19812,
+          6.14294
+        ],
+        [
+          46.19812,
+          6.14295
+        ],
+        [
+          46.19812,
+          6.14297
+        ],
+        [
+          46.19812,
+          6.14299
+        ],
+        [
+          46.19812,
+          6.14301
+        ],
+        [
+          46.19812,
+          6.14303
+        ],
+        [
+          46.19812,
+          6.14305
+        ],
+        [
+          46.19812,
+          6.14305
+        ],
+        [
+          46.19812,
+          6.14305
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 240.0,
+      "distance_m": 631.57,
+      "from_place": "Genève, Plainpalais",
+      "to_place": "Genève, Bel-Air",
+      "line_publicCode": {
+        "publicCode": "12"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.19808,
+          6.14304
+        ],
+        [
+          46.20099,
+          6.14385
+        ],
+        [
+          46.20099,
+          6.14385
+        ],
+        [
+          46.20365,
+          6.14464
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "BUS",
+      "duration_s": 300.0,
+      "distance_m": 1182.16,
+      "from_place": "Genève, Bel-Air",
+      "to_place": "Genève, Rue du Lac",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20365,
+          6.14464
+        ],
+        [
+          46.20302,
+          6.1474
+        ],
+        [
+          46.20302,
+          6.1474
+        ],
+        [
+          46.2017,
+          6.15272
+        ],
+        [
+          46.2017,
+          6.15272
+        ],
+        [
+          46.20412,
+          6.15854
+        ]
+      ]
+    },
+    {
+      "leg_idx": 3,
+      "mode": "FOOT",
+      "duration_s": 75.0,
+      "distance_m": 97.01,
+      "from_place": "Genève, Rue du Lac",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.20403,
+          6.15841
+        ],
+        [
+          46.20401,
+          6.1584
+        ],
+        [
+          46.204,
+          6.1584
+        ],
+        [
+          46.20371,
+          6.15869
+        ],
+        [
+          46.20369,
+          6.1587
+        ],
+        [
+          46.20367,
+          6.1587
+        ],
+        [
+          46.20366,
+          6.1587
+        ],
+        [
+          46.20352,
+          6.15843
+        ]
+      ]
+    }
+  ]
+}

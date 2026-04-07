@@ -1,0 +1,169 @@
+{
+  "arc_id": "232",
+  "type": "PT-Only",
+  "origin_hub_id": 1,
+  "destination_hub_id": 7,
+  "total_travel_time_s": 300.0,
+  "total_transfer_time_s": 182.0,
+  "total_distance_m": 1344.67,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 115.0,
+      "distance_m": 139.84,
+      "from_place": "Origin",
+      "to_place": "Genève, gare Cornavin",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20965,
+          6.14181
+        ],
+        [
+          46.20968,
+          6.14181
+        ],
+        [
+          46.2097,
+          6.14183
+        ],
+        [
+          46.20971,
+          6.14184
+        ],
+        [
+          46.2097,
+          6.14187
+        ],
+        [
+          46.20959,
+          6.14217
+        ],
+        [
+          46.20963,
+          6.14222
+        ],
+        [
+          46.21008,
+          6.14272
+        ],
+        [
+          46.21009,
+          6.14273
+        ],
+        [
+          46.21005,
+          6.14283
+        ],
+        [
+          46.21003,
+          6.14289
+        ],
+        [
+          46.21001,
+          6.14294
+        ],
+        [
+          46.20999,
+          6.14299
+        ],
+        [
+          46.20999,
+          6.14301
+        ],
+        [
+          46.20996,
+          6.14297
+        ],
+        [
+          46.20996,
+          6.14297
+        ],
+        [
+          46.20997,
+          6.14296
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 300.0,
+      "distance_m": 1117.65,
+      "from_place": "Genève, gare Cornavin",
+      "to_place": "Genève, Cirque",
+      "line_publicCode": {
+        "publicCode": "1"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20989,
+          6.14294
+        ],
+        [
+          46.20718,
+          6.1395
+        ],
+        [
+          46.20718,
+          6.1395
+        ],
+        [
+          46.20366,
+          6.13986
+        ],
+        [
+          46.20366,
+          6.13986
+        ],
+        [
+          46.20078,
+          6.13997
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 67.0,
+      "distance_m": 87.18,
+      "from_place": "Genève, Cirque",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20075,
+          6.13996
+        ],
+        [
+          46.20077,
+          6.13995
+        ],
+        [
+          46.20077,
+          6.13992
+        ],
+        [
+          46.20097,
+          6.13916
+        ],
+        [
+          46.20113,
+          6.13926
+        ],
+        [
+          46.20114,
+          6.13926
+        ]
+      ]
+    }
+  ]
+}

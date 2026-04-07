@@ -1,0 +1,191 @@
+{
+  "arc_id": "5306",
+  "type": "PT-Only",
+  "origin_hub_id": 26,
+  "destination_hub_id": 2,
+  "total_travel_time_s": 600.0,
+  "total_transfer_time_s": 160.0,
+  "total_distance_m": 2158.23,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 75.0,
+      "distance_m": 97.68,
+      "from_place": "Origin",
+      "to_place": "Genève, Prairie",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20822,
+          6.13599
+        ],
+        [
+          46.20833,
+          6.13546
+        ],
+        [
+          46.20835,
+          6.13541
+        ],
+        [
+          46.20835,
+          6.13541
+        ],
+        [
+          46.2084,
+          6.13558
+        ],
+        [
+          46.20842,
+          6.13569
+        ],
+        [
+          46.2085,
+          6.136
+        ],
+        [
+          46.2085,
+          6.13602
+        ],
+        [
+          46.20851,
+          6.13602
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 540.0,
+      "distance_m": 1652.96,
+      "from_place": "Genève, Prairie",
+      "to_place": "Genève, Rive",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20851,
+          6.13599
+        ],
+        [
+          46.20891,
+          6.13979
+        ],
+        [
+          46.20891,
+          6.13979
+        ],
+        [
+          46.20726,
+          6.14192
+        ],
+        [
+          46.20726,
+          6.14192
+        ],
+        [
+          46.20367,
+          6.14464
+        ],
+        [
+          46.20367,
+          6.14464
+        ],
+        [
+          46.20304,
+          6.1474
+        ],
+        [
+          46.20304,
+          6.1474
+        ],
+        [
+          46.20172,
+          6.15272
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "BUS",
+      "duration_s": 60.0,
+      "distance_m": 297.98,
+      "from_place": "Genève, Rive",
+      "to_place": "Genève, Musée art et histoire",
+      "line_publicCode": {
+        "publicCode": "5"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20168,
+          6.15272
+        ],
+        [
+          46.19941,
+          6.1507
+        ]
+      ]
+    },
+    {
+      "leg_idx": 3,
+      "mode": "FOOT",
+      "duration_s": 85.0,
+      "distance_m": 109.61,
+      "from_place": "Genève, Musée art et histoire",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.1994,
+          6.15069
+        ],
+        [
+          46.1994,
+          6.15069
+        ],
+        [
+          46.19929,
+          6.15052
+        ],
+        [
+          46.19927,
+          6.15049
+        ],
+        [
+          46.19927,
+          6.1505
+        ],
+        [
+          46.19922,
+          6.15059
+        ],
+        [
+          46.19917,
+          6.15069
+        ],
+        [
+          46.19915,
+          6.15072
+        ],
+        [
+          46.19903,
+          6.15091
+        ],
+        [
+          46.19878,
+          6.15054
+        ]
+      ]
+    }
+  ]
+}

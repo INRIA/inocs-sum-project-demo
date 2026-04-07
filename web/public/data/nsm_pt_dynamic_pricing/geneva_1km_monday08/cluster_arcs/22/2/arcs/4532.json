@@ -1,0 +1,157 @@
+{
+  "arc_id": "4532",
+  "type": "PT-Only",
+  "origin_hub_id": 22,
+  "destination_hub_id": 2,
+  "total_travel_time_s": 300.0,
+  "total_transfer_time_s": 130.0,
+  "total_distance_m": 1176.28,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 45.0,
+      "distance_m": 52.13,
+      "from_place": "Origin",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20548,
+          6.15988
+        ],
+        [
+          46.20528,
+          6.16012
+        ],
+        [
+          46.20526,
+          6.16015
+        ],
+        [
+          46.2053,
+          6.1602
+        ],
+        [
+          46.20533,
+          6.16026
+        ],
+        [
+          46.20533,
+          6.1603
+        ],
+        [
+          46.20536,
+          6.16033
+        ],
+        [
+          46.20536,
+          6.16034
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 300.0,
+      "distance_m": 1014.54,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Genève, Musée art et histoire",
+      "line_publicCode": {
+        "publicCode": "2"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20533,
+          6.16034
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20252,
+          6.15557
+        ],
+        [
+          46.20252,
+          6.15557
+        ],
+        [
+          46.20203,
+          6.15353
+        ],
+        [
+          46.20203,
+          6.15353
+        ],
+        [
+          46.19944,
+          6.15073
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 85.0,
+      "distance_m": 109.61,
+      "from_place": "Genève, Musée art et histoire",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.1994,
+          6.15069
+        ],
+        [
+          46.1994,
+          6.15069
+        ],
+        [
+          46.19929,
+          6.15052
+        ],
+        [
+          46.19927,
+          6.15049
+        ],
+        [
+          46.19927,
+          6.1505
+        ],
+        [
+          46.19922,
+          6.15059
+        ],
+        [
+          46.19917,
+          6.15069
+        ],
+        [
+          46.19915,
+          6.15072
+        ],
+        [
+          46.19903,
+          6.15091
+        ],
+        [
+          46.19878,
+          6.15054
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+env
+.DS_Store
+*.egg-info
+*.c
+
+**/__pycache__/
+otp/data*

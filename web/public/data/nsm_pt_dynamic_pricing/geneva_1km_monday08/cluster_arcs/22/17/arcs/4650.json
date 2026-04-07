@@ -1,0 +1,187 @@
+{
+  "arc_id": "4650",
+  "type": "PT-Only",
+  "origin_hub_id": 22,
+  "destination_hub_id": 17,
+  "total_travel_time_s": 600.0,
+  "total_transfer_time_s": 86.0,
+  "total_distance_m": 2340.9900000000002,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 45.0,
+      "distance_m": 52.13,
+      "from_place": "Origin",
+      "to_place": "Genève, Vollandes",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20548,
+          6.15988
+        ],
+        [
+          46.20528,
+          6.16012
+        ],
+        [
+          46.20526,
+          6.16015
+        ],
+        [
+          46.2053,
+          6.1602
+        ],
+        [
+          46.20533,
+          6.16026
+        ],
+        [
+          46.20533,
+          6.1603
+        ],
+        [
+          46.20536,
+          6.16033
+        ],
+        [
+          46.20536,
+          6.16034
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 180.0,
+      "distance_m": 804.77,
+      "from_place": "Genève, Vollandes",
+      "to_place": "Genève, Métropole",
+      "line_publicCode": {
+        "publicCode": "2"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20533,
+          6.16034
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20353,
+          6.15749
+        ],
+        [
+          46.20257,
+          6.15543
+        ],
+        [
+          46.20257,
+          6.15543
+        ],
+        [
+          46.20339,
+          6.15154
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "BUS",
+      "duration_s": 420.0,
+      "distance_m": 1430.17,
+      "from_place": "Genève, Métropole",
+      "to_place": "Genève, poste",
+      "line_publicCode": {
+        "publicCode": "20"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20337,
+          6.15151
+        ],
+        [
+          46.2076,
+          6.14666
+        ],
+        [
+          46.2076,
+          6.14666
+        ],
+        [
+          46.21051,
+          6.14155
+        ],
+        [
+          46.21051,
+          6.14155
+        ],
+        [
+          46.21338,
+          6.14138
+        ]
+      ]
+    },
+    {
+      "leg_idx": 3,
+      "mode": "FOOT",
+      "duration_s": 41.0,
+      "distance_m": 53.92,
+      "from_place": "Genève, poste",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.21338,
+          6.14135
+        ],
+        [
+          46.21338,
+          6.14137
+        ],
+        [
+          46.21336,
+          6.14137
+        ],
+        [
+          46.21327,
+          6.14137
+        ],
+        [
+          46.21318,
+          6.14137
+        ],
+        [
+          46.21312,
+          6.14137
+        ],
+        [
+          46.21308,
+          6.14137
+        ],
+        [
+          46.21305,
+          6.14139
+        ],
+        [
+          46.21303,
+          6.14142
+        ],
+        [
+          46.21299,
+          6.1414
+        ]
+      ]
+    }
+  ]
+}

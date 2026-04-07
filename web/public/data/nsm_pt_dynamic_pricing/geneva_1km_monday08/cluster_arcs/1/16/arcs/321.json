@@ -1,0 +1,165 @@
+{
+  "arc_id": "321",
+  "type": "PT-Only",
+  "origin_hub_id": 1,
+  "destination_hub_id": 16,
+  "total_travel_time_s": 420.0,
+  "total_transfer_time_s": 86.0,
+  "total_distance_m": 1423.19,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 17.0,
+      "distance_m": 13.55,
+      "from_place": "Origin",
+      "to_place": "Genève, gare Cornavin",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20965,
+          6.14181
+        ],
+        [
+          46.20966,
+          6.1418
+        ],
+        [
+          46.20966,
+          6.14179
+        ],
+        [
+          46.20965,
+          6.14182
+        ],
+        [
+          46.20963,
+          6.14189
+        ],
+        [
+          46.20961,
+          6.14187
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "TRAM",
+      "duration_s": 420.0,
+      "distance_m": 1347.89,
+      "from_place": "Genève, gare Cornavin",
+      "to_place": "Genève, Plainpalais",
+      "line_publicCode": {
+        "publicCode": "18"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20957,
+          6.14184
+        ],
+        [
+          46.20726,
+          6.142
+        ],
+        [
+          46.20726,
+          6.142
+        ],
+        [
+          46.20454,
+          6.14345
+        ],
+        [
+          46.20454,
+          6.14345
+        ],
+        [
+          46.20071,
+          6.1433
+        ],
+        [
+          46.20071,
+          6.1433
+        ],
+        [
+          46.19768,
+          6.14298
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 69.0,
+      "distance_m": 61.75,
+      "from_place": "Genève, Plainpalais",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.19764,
+          6.14296
+        ],
+        [
+          46.19766,
+          6.14296
+        ],
+        [
+          46.19766,
+          6.14296
+        ],
+        [
+          46.19766,
+          6.14295
+        ],
+        [
+          46.19777,
+          6.14295
+        ],
+        [
+          46.19797,
+          6.14296
+        ],
+        [
+          46.19798,
+          6.14296
+        ],
+        [
+          46.19808,
+          6.14296
+        ],
+        [
+          46.19809,
+          6.14296
+        ],
+        [
+          46.19809,
+          6.14296
+        ],
+        [
+          46.19813,
+          6.14296
+        ],
+        [
+          46.19815,
+          6.14296
+        ],
+        [
+          46.1982,
+          6.14296
+        ],
+        [
+          46.1982,
+          6.14296
+        ]
+      ]
+    }
+  ]
+}

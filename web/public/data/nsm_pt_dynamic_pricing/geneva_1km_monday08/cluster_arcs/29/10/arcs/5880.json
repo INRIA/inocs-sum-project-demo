@@ -1,0 +1,161 @@
+{
+  "arc_id": "5880",
+  "type": "PT-Only",
+  "origin_hub_id": 29,
+  "destination_hub_id": 10,
+  "total_travel_time_s": 540.0,
+  "total_transfer_time_s": 102.0,
+  "total_distance_m": 1996.63,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 27.0,
+      "distance_m": 32.92,
+      "from_place": "Origin",
+      "to_place": "Genève, gare Cornavin",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20868,
+          6.13977
+        ],
+        [
+          46.20881,
+          6.13991
+        ],
+        [
+          46.20882,
+          6.13991
+        ],
+        [
+          46.20886,
+          6.13984
+        ],
+        [
+          46.20889,
+          6.13981
+        ],
+        [
+          46.20889,
+          6.13981
+        ],
+        [
+          46.20891,
+          6.13982
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 540.0,
+      "distance_m": 1866.7,
+      "from_place": "Genève, gare Cornavin",
+      "to_place": "Genève, Rue du Lac",
+      "line_publicCode": {
+        "publicCode": "6"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20891,
+          6.13979
+        ],
+        [
+          46.20816,
+          6.14363
+        ],
+        [
+          46.20816,
+          6.14363
+        ],
+        [
+          46.20705,
+          6.14735
+        ],
+        [
+          46.20705,
+          6.14735
+        ],
+        [
+          46.2034,
+          6.15094
+        ],
+        [
+          46.2034,
+          6.15094
+        ],
+        [
+          46.20172,
+          6.15272
+        ],
+        [
+          46.20172,
+          6.15272
+        ],
+        [
+          46.20414,
+          6.15854
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 75.0,
+      "distance_m": 97.01,
+      "from_place": "Genève, Rue du Lac",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.2041,
+          6.15854
+        ],
+        [
+          46.20403,
+          6.15841
+        ],
+        [
+          46.20401,
+          6.1584
+        ],
+        [
+          46.204,
+          6.1584
+        ],
+        [
+          46.20371,
+          6.15869
+        ],
+        [
+          46.20369,
+          6.1587
+        ],
+        [
+          46.20367,
+          6.1587
+        ],
+        [
+          46.20366,
+          6.1587
+        ],
+        [
+          46.20352,
+          6.15843
+        ]
+      ]
+    }
+  ]
+}

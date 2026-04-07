@@ -1,0 +1,137 @@
+{
+  "arc_id": "589",
+  "type": "PT-Only",
+  "origin_hub_id": 2,
+  "destination_hub_id": 27,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 173.0,
+  "total_distance_m": 877.65,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 133.0,
+      "distance_m": 177.01,
+      "from_place": "Origin",
+      "to_place": "Genève, Musée art et histoire",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.19871,
+          6.1505
+        ],
+        [
+          46.19897,
+          6.15088
+        ],
+        [
+          46.1991,
+          6.1507
+        ],
+        [
+          46.19913,
+          6.15068
+        ],
+        [
+          46.19961,
+          6.15135
+        ],
+        [
+          46.19972,
+          6.15151
+        ],
+        [
+          46.19981,
+          6.15164
+        ],
+        [
+          46.19984,
+          6.15169
+        ],
+        [
+          46.19986,
+          6.15168
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 240.0,
+      "distance_m": 654.65,
+      "from_place": "Genève, Musée art et histoire",
+      "to_place": "Genève, Molard",
+      "line_publicCode": {
+        "publicCode": "3"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.19986,
+          6.15165
+        ],
+        [
+          46.20191,
+          6.15244
+        ],
+        [
+          46.20191,
+          6.15244
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.20337,
+          6.15152
+        ],
+        [
+          46.20398,
+          6.14853
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 40.0,
+      "distance_m": 45.99,
+      "from_place": "Genève, Molard",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20398,
+          6.14851
+        ],
+        [
+          46.204,
+          6.14851
+        ],
+        [
+          46.20401,
+          6.14848
+        ],
+        [
+          46.20398,
+          6.14841
+        ],
+        [
+          46.20392,
+          6.14875
+        ],
+        [
+          46.20391,
+          6.14885
+        ]
+      ]
+    }
+  ]
+}

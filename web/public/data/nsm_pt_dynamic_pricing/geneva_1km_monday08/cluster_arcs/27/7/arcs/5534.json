@@ -1,0 +1,149 @@
+{
+  "arc_id": "5534",
+  "type": "PT-Only",
+  "origin_hub_id": 27,
+  "destination_hub_id": 7,
+  "total_travel_time_s": 240.0,
+  "total_transfer_time_s": 102.0,
+  "total_distance_m": 1045.55,
+  "legs": [
+    {
+      "leg_idx": 0,
+      "mode": "FOOT",
+      "duration_s": 40.0,
+      "distance_m": 45.99,
+      "from_place": "Origin",
+      "to_place": "Genève, Molard",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20388,
+          6.14883
+        ],
+        [
+          46.2039,
+          6.14874
+        ],
+        [
+          46.20397,
+          6.14841
+        ],
+        [
+          46.20401,
+          6.14849
+        ],
+        [
+          46.20401,
+          6.14853
+        ],
+        [
+          46.204,
+          6.14853
+        ]
+      ]
+    },
+    {
+      "leg_idx": 1,
+      "mode": "BUS",
+      "duration_s": 240.0,
+      "distance_m": 931.02,
+      "from_place": "Genève, Molard",
+      "to_place": "Genève, Cirque",
+      "line_publicCode": {
+        "publicCode": "2"
+      },
+      "rented_bike": null,
+      "geometry": [
+        [
+          46.20398,
+          6.14851
+        ],
+        [
+          46.20423,
+          6.14207
+        ],
+        [
+          46.20423,
+          6.14207
+        ],
+        [
+          46.20208,
+          6.14183
+        ],
+        [
+          46.20208,
+          6.14183
+        ],
+        [
+          46.20147,
+          6.13951
+        ]
+      ]
+    },
+    {
+      "leg_idx": 2,
+      "mode": "FOOT",
+      "duration_s": 62.0,
+      "distance_m": 68.54,
+      "from_place": "Genève, Cirque",
+      "to_place": "Destination",
+      "line_publicCode": {
+        "publicCode": ""
+      },
+      "rented_bike": false,
+      "geometry": [
+        [
+          46.20145,
+          6.13948
+        ],
+        [
+          46.20145,
+          6.13948
+        ],
+        [
+          46.20143,
+          6.13948
+        ],
+        [
+          46.20144,
+          6.1394
+        ],
+        [
+          46.20145,
+          6.13931
+        ],
+        [
+          46.20145,
+          6.13925
+        ],
+        [
+          46.20143,
+          6.13925
+        ],
+        [
+          46.20141,
+          6.13925
+        ],
+        [
+          46.20139,
+          6.13942
+        ],
+        [
+          46.20134,
+          6.13939
+        ],
+        [
+          46.20133,
+          6.13939
+        ],
+        [
+          46.20121,
+          6.13931
+        ]
+      ]
+    }
+  ]
+}
