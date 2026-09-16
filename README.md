@@ -1,23 +1,37 @@
-# INOCS SUM PT-NSM Optimization Demo
+# INOCS SUM Project Demo
 
-Static demonstrators for optimization models developed by the INOCS team at INRIA in the context of EU SUM project for shared mobility integrated with public transport.
+Public website of the INOCS team at INRIA for the EU SUM project (Seamless Shared Urban Mobility), covering shared mobility integrated with public transport.
 
-This repository contains a static web application built with Astro and React, static JSON and GeoJSON datasets used by the demo pages, and a reference OpenTripPlanner setup that was used during data generation.
+The site has two parts, published together as one static GitHub Pages deployment:
 
-Live demo: https://inria.github.io/inocs-sum-pt-nsm-optimization-demo
+- the **SUM project presentation** at the site root: an interactive "Ville en mouvement" journey that presents the project, its living labs, resources and hands-on games, first prepared for the Nuit européenne des chercheurs 2026
+- the **optimization demonstrators** under `/demo/`: interactive visualizations of the optimization models developed by INOCS (city map, bike-sharing network design, dynamic pricing)
+
+The repository also contains the static JSON and GeoJSON datasets used by the demonstrators, and a reference OpenTripPlanner setup used during data generation.
+
+Live site: https://inria.github.io/inocs-sum-project-demo
+
+Demonstrators: https://inria.github.io/inocs-sum-project-demo/demo/
 
 ## What this repository contains
 
-- `web/`: the main static website, built with Astro and React, and deployed to GitHub Pages
+- `web/`: the static website, built with Astro and React, and deployed to GitHub Pages
+- `web/src/modules/sum-project/`: the SUM project presentation module (content, components and styles of the site root)
 - `web/public/data/`: static JSON and GeoJSON files consumed by the demo pages
 - `demos/`: legacy static demonstrators kept for reference
 - `otp/`: reference OpenTripPlanner setup and local runtime data directory
 
 At this stage, the repository is focused on publishing the demonstrators and their static inputs. In future iterations, the Python packages used to generate these datasets for each optimization study will also be published here with their own documentation.
 
+## SUM project presentation
+
+The site root presents the SUM project as a journey through a city with several stops (city hall, crossroads, bike station, fare, tram stop). Each stop combines a question, a short reveal, resources drawn from the project reports, image galleries and, for some stops, a game. The pricing stop embeds a simplified "Fixez le prix" demo and links to the dynamic pricing demonstrator.
+
+All text is driven by `web/src/modules/sum-project/data/content.json`. Images live in `web/public/images/`. Empty string fields in the content file are placeholders still to be filled.
+
 ## Demonstration topics
 
-The current demonstrators cover three complementary research directions.
+The demonstrators under `/demo/` cover three complementary research directions.
 
 ### 1. Public transport and new shared mobility network visualization
 
@@ -39,10 +53,15 @@ The dynamic pricing demonstrator exposes optimization outputs related to pricing
 ├── demos/                  # Legacy static demonstrators kept for reference
 ├── otp/                    # OpenTripPlanner reference setup and local data
 │   └── docker-compose.yml
-└── web/                    # Main Astro + React static demo website
+└── web/                    # Astro + React static website
 	├── public/
-	│   └── data/           # Static JSON and GeoJSON assets used by the site
+	│   ├── data/           # Static JSON and GeoJSON assets used by the demonstrators
+	│   └── images/         # Images of the SUM project presentation
 	└── src/
+	    ├── modules/sum-project/   # Project presentation module (content, components, styles)
+	    ├── pages/index.astro      # Site root: SUM project presentation
+	    ├── pages/demo/            # Optimization demonstrators
+	    └── domain/ application/ infrastructure/ presentation/   # Demonstrator code
 ```
 
 More detailed documentation is available in:
@@ -71,7 +90,7 @@ npm run dev
 
 Then open:
 
-`http://localhost:4321/inocs-sum-pt-nsm-optimization-demo`
+`http://localhost:4321/inocs-sum-project-demo` for the project presentation, or `http://localhost:4321/inocs-sum-project-demo/demo/` for the demonstrators.
 
 To build the production version locally:
 

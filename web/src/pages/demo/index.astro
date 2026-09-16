@@ -1,0 +1,109 @@
+---
+import DashboardLayout from "../../presentation/layouts/DashboardLayout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const features = [
+  {
+    title: "City Map",
+    description:
+      "Explore GTFS transit network, bike-sharing stations and ridership heatmap for Geneva.",
+    href: `${base}/demo/city-map`,
+    icon: "🗺️",
+    tags: ["GTFS", "GeoJSON", "Leaflet"],
+  },
+  {
+    title: "Dynamic Pricing",
+    description:
+      "View optimisation results for dynamic pricing and demand nudging across intermodal trips.",
+    href: `${base}/demo/nsm-dynamic-pricing`,
+    icon: "💰",
+    tags: ["Optimisation", "Pricing", "Intermodal"],
+  },
+  {
+    title: "Network Design for Bike Sharing Systems",
+    description:
+      "Demonstration of optimization model results for network design of bike sharing systems with inventory and capacity (by PhD. Zhenyu Wu).",
+    href: `${base}/demos/network_design_bike_stations`,
+    icon: "🚲",
+    tags: ["Optimisation", "Bike Sharing", "Network Design"],
+  },
+];
+---
+
+<DashboardLayout title="Dashboard">
+  <section class="max-w-5xl mx-auto px-4 py-16 w-full">
+    <!-- Hero -->
+    <div class="mb-14 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+        <span class="text-secondary">SUM</span>
+        <span class="text-primary">Demo Dashboard</span>
+      </h1>
+      <p class="text-text text-lg max-w-2xl mx-auto leading-relaxed">
+        Interactive demos of the <strong class="text-primary"
+          >SUM GTFS GeoJSON</strong
+        > Python library — visualise city transport data and explore optimisation
+        model results.
+      </p>
+      <div class="flex justify-center gap-4 mt-6 text-sm flex-wrap">
+        <a
+          href="https://inria.github.io/inocs-sum-project-demo/docs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-4 py-2 rounded-lg border border-border text-text hover:border-primary hover:text-primary transition-colors"
+        >
+          API Docs →
+        </a>
+        <a
+          href="https://github.com/inria/inocs-sum-project-demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-4 py-2 rounded-lg border border-border text-text hover:border-primary hover:text-primary transition-colors"
+        >
+          GitHub →
+        </a>
+      </div>
+    </div>
+
+    <!-- Feature cards -->
+    <ul class="grid sm:grid-cols-2 gap-6" role="list">
+      {
+        features.map((f) => (
+          <li>
+            <a
+              href={f.href}
+              class="group flex flex-col h-full rounded-2xl border border-border bg-surface hover:border-primary hover:shadow-md transition-all duration-200 p-6 no-underline"
+            >
+              <div class="text-4xl mb-4">{f.icon}</div>
+              <h2 class="text-xl font-semibold text-primary group-hover:text-secondary transition-colors mb-2">
+                {f.title}
+              </h2>
+              <p class="text-text text-sm leading-relaxed flex-1">
+                {f.description}
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {f.tags.map((tag) => (
+                  <span class="text-xs px-2 py-0.5 rounded-full border border-border bg-surface text-muted">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- About -->
+    <div class="mt-16 rounded-2xl border border-border bg-surface p-8">
+      <h2 class="text-lg font-semibold mb-3 text-primary">About</h2>
+      <p class="text-text text-sm leading-relaxed">
+        This dashboard is a static front-end demo published on GitHub Pages.
+        Data is pre-generated from standard <strong class="text-primary"
+          >GTFS</strong
+        > and <strong class="text-primary">GBFS</strong> feeds. All data files are
+        served as static assets from this repository (no backend).
+      </p>
+    </div>
+  </section>
+</DashboardLayout>

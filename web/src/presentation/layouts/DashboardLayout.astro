@@ -22,15 +22,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <body class="min-h-screen bg-foreground text-text flex flex-col">
     <header class="border-b border-border bg-foreground/90 backdrop-blur sticky top-0 z-50">
       <nav class="max-w-7xl mx-auto px-4 h-14 flex items-center gap-6">
-        <a href={`${base}/`} class="flex items-center gap-2 font-semibold text-primary hover:text-secondary transition-colors">
+        <a href={`${base}/demo/`} class="flex items-center gap-2 font-semibold text-primary hover:text-secondary transition-colors">
           <span class="text-secondary text-xl font-bold">SUM</span>
           <span class="text-muted text-sm hidden sm:inline">Demo Dashboard</span>
         </a>
         <div class="ml-auto flex items-center gap-4 text-sm">
-          <a href={`${base}/city-map`} class="text-text hover:text-primary transition-colors">City Map</a>
-          <a href={`${base}/nsm-dynamic-pricing`}  class="text-text hover:text-primary transition-colors">Pricing</a>
+          <a href={`${base}/demo/city-map`} class="text-text hover:text-primary transition-colors">City Map</a>
+          <a href={`${base}/demo/nsm-dynamic-pricing`}  class="text-text hover:text-primary transition-colors">Pricing</a>
           <a
-            href="https://github.com/inria/inocs-sum-pt-nsm-optimization-demo"
+            href="https://github.com/inria/inocs-sum-project-demo"
             target="_blank"
             rel="noopener noreferrer"
             class="text-muted hover:text-primary transition-colors"

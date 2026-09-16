@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://inria.github.io',
-  base: '/inocs-sum-pt-nsm-optimization-demo',
+  base: '/inocs-sum-project-demo',
   output: 'static',
   integrations: [react()],
   vite: {

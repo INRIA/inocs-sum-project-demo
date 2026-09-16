@@ -1,0 +1,2527 @@
+{
+  "meta": {
+    "title": "Ville en mouvement",
+    "subtitle": "Venez concevoir la mobilité partagée et les transports de votre ville idéale",
+    "event": {
+      "name": "Nuit européenne des chercheurs — Monde(s) numérique(s)",
+      "date": "2026-09-25",
+      "time": "17:00–22:00",
+      "venue": "I-Factory La Doua, Villeurbanne",
+      "audience": "familles (enfants 6+), étudiants, adultes"
+    },
+    "project": {
+      "name": "SUM — Seamless Shared Urban Mobility",
+      "programme": "Horizon Europe / CIVITAS",
+      "grant": "101103646",
+      "period": "juin 2023 – mai 2026",
+      "website": "https://www.sum-project.eu",
+      "odp": "https://odp.sum-project.eu",
+      "demo": "https://inria.github.io/inocs-sum-bss-pt-network-design/"
+    },
+    "brand": {
+      "blue": "#2A4888",
+      "blueDark": "#004493",
+      "green": "#96BA3E",
+      "greenLight": "#E6EFD3",
+      "ink": "#1F2937",
+      "paper": "#FFFFFF",
+      "note": "Couleurs échantillonnées sur la couverture du rapport SUM (bleu et vert du logo). Police du site non récupérée : utiliser une sans-serif système."
+    },
+    "languages": [
+      "fr"
+    ],
+    "sourceReport": "SUM Periodic Report 2 – Part B (M18–M36). Les numéros de page cités sont ceux imprimés en pied de page.",
+    "editingRule": "Tout champ vide (\"\") est un emplacement à compléter. Rien n'a été inventé : si une information n'est pas dans le rapport, le champ est laissé vide.",
+    "logo": {
+      "src": "/images/sum-logo.png",
+      "alt": "SUM — Seamless Shared Urban Mobility",
+      "source": "https://sum-project.eu/wp-content/uploads/2020/07/0964_SUM_LOGO_RGB.png"
+    },
+    "imagesNote": "stops[].images : image(s) principale(s) de l'arrêt, affichées en haut du panneau (la première en grand, les autres en vignettes). src vide = emplacement. Fichiers dans app/public/images/."
+  },
+  "journey": {
+    "metaphor": "Un trajet porte-à-porte sans voiture personnelle : maison → carrefour → station de vélos → téléphone (le prix) → arrêt de tram → destination. À chaque arrêt, une décision.",
+    "traveller": {
+      "name": "",
+      "note": "Nom/personnage du vélo qui avance sur la frise (à définir)."
+    },
+    "intro": {
+      "title": "Vous êtes maire. Félicitations !",
+      "durationMin": 2,
+      "repeatable": true,
+      "script": [
+        "Bienvenue à Ville en mouvement. Ce soir, vous êtes à la tête de votre ville.",
+        "Votre défi : que chacun arrive à l'heure, sans voiture personnelle, avec un budget d'émissions de CO₂ limité.",
+        "Entre 2023 et 2026, neuf villes européennes ont relevé ce défi pour de vrai dans le projet de recherche SUM — de Rotterdam à Jérusalem, de Genève à Coimbra. Lille les a suivies comme ville observatrice.",
+        "La salle est votre ville : six tables, six arrêts d'un trajet porte-à-porte. Vous pouvez faire tout le trajet ou vous arrêter où vous voulez.",
+        "Sur chaque table, un QR code ouvre la page de l'arrêt avec les explications et les vraies données.",
+        "À la fin, on se retrouve pour le conseil municipal : chaque table raconte ce que ses maires ont décidé."
+      ],
+      "badge": {
+        "text": "MAIRE",
+        "note": "Autocollant remis à l'entrée (à concevoir)."
+      }
+    },
+    "conclusion": {
+      "title": "Le conseil municipal",
+      "atMinute": 45,
+      "durationMin": 10,
+      "steps": [
+        "Rassembler tout le monde devant l'écran de l'Hôtel de ville.",
+        "Chaque table animée dit en une phrase ce que ses maires ont décidé (carrefour, station).",
+        "Révéler ce que le modèle propose (station) et ce que les vraies villes ont fait (tram).",
+        "Message final : la recherche éclaire, la ville décide."
+      ],
+      "messages": [
+        "Le problème est vraiment difficile : plusieurs critères, plusieurs contraintes, plusieurs acteurs.",
+        "Les outils de recherche (prévision, simulation, optimisation) aident à comparer des scénarios — ils ne remplacent pas la décision.",
+        "Ce que vous avez vu à la table « Station » est de la recherche : rien n'est déployé dans une ville. Genève est le cas d'étude.",
+        "Les vraies villes ont testé, mesuré, et parfois échoué — et c'est mesuré aussi."
+      ]
+    }
+  },
+  "stops": [
+    {
+      "id": "hotel-de-ville",
+      "order": 1,
+      "place": "Hôtel de ville",
+      "title": "Vous êtes maire",
+      "question": "Et si c'était vous qui décidiez ?",
+      "mode": "passive",
+      "animator": null,
+      "position": "entrée de la salle, grand écran",
+      "capacity": null,
+      "durationMin": null,
+      "tableTent": {
+        "headline": "Vous êtes maire.",
+        "subline": "Neuf villes européennes ont relevé le défi. À votre tour."
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "text": "Prenez votre badge de maire."
+        },
+        {
+          "step": 2,
+          "text": "Regardez le trajet sur l'écran : cinq arrêts, cinq décisions."
+        },
+        {
+          "step": 3,
+          "text": "Choisissez un arrêt et allez à la table correspondante."
+        }
+      ],
+      "materials": [
+        "Grand écran ou téléviseur avec la page « Trajet » (vélo animé)",
+        "Affiche A2 : le trajet et les cinq arrêts",
+        "Affiche A3 : SUM en trois chiffres",
+        "Affiche A3 : la table des smileys (acceptation par ville)",
+        "Badges autocollants « MAIRE »",
+        "QR code vers l'arrêt 1 de la page"
+      ],
+      "reveal": null,
+      "resources": [
+        {
+          "id": "sum-en-bref",
+          "title": "C'est quoi, SUM ?",
+          "teaser": "Neuf villes, trois ans, une question : comment relier vélos, trottinettes et voitures partagées aux transports en commun ?",
+          "kind": "fact",
+          "body": [
+            "SUM (Seamless Shared Urban Mobility) est un projet de recherche européen financé par Horizon Europe, mené de juin 2023 à mai 2026.",
+            "Son ambition : intégrer les nouvelles mobilités partagées (NSM) aux transports en commun dans plus de 15 villes européennes d'ici 2026 et 30 d'ici 2030.",
+            "Le projet a été coordonné par Inria."
+          ],
+          "facts": [
+            {
+              "label": "Villes laboratoires (Living Labs)",
+              "value": "9"
+            },
+            {
+              "label": "Organisations partenaires",
+              "value": "29"
+            },
+            {
+              "label": "Pays",
+              "value": "12"
+            },
+            {
+              "label": "Villes observatrices",
+              "value": "7, dont Lille"
+            },
+            {
+              "label": "Durée",
+              "value": "36 mois (2023–2026)"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Carte des 9 Living Labs",
+              "suggestedSource": "sum-project.eu / présentations partenaires"
+            }
+          ],
+          "links": [
+            {
+              "label": "Site du projet",
+              "url": "https://www.sum-project.eu"
+            }
+          ],
+          "source": {
+            "report": "p.7–8, p.82, p.85",
+            "task": "",
+            "partner": "Inria (coordinateur)",
+            "livingLab": ""
+          }
+        },
+        {
+          "id": "neuf-villes",
+          "title": "Qui sont les neuf villes ?",
+          "teaser": "De la Norvège à Chypre, de la banlieue d'Athènes au centre de Genève.",
+          "kind": "fact",
+          "body": [
+            "Quatre villes « leaders » : Munich, Genève, Jérusalem, Penteli (Athènes).",
+            "Cinq villes « suiveuses » : Rotterdam, Cracovie, Fredrikstad, Larnaca, Coimbra."
+          ],
+          "facts": [
+            {
+              "label": "Munich",
+              "value": "Allemagne"
+            },
+            {
+              "label": "Genève",
+              "value": "Suisse"
+            },
+            {
+              "label": "Jérusalem",
+              "value": "Israël"
+            },
+            {
+              "label": "Penteli (Athènes)",
+              "value": "Grèce"
+            },
+            {
+              "label": "Rotterdam",
+              "value": "Pays-Bas"
+            },
+            {
+              "label": "Cracovie",
+              "value": "Pologne"
+            },
+            {
+              "label": "Fredrikstad",
+              "value": "Norvège"
+            },
+            {
+              "label": "Larnaca",
+              "value": "Chypre"
+            },
+            {
+              "label": "Coimbra",
+              "value": "Portugal"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.7, p.20",
+            "task": "WP4",
+            "partner": "",
+            "livingLab": "toutes"
+          }
+        },
+        {
+          "id": "cinq-leviers",
+          "title": "Les cinq leviers du maire",
+          "teaser": "Prévoir, gérer, connecter, co-concevoir, tarifer.",
+          "kind": "fact",
+          "body": [
+            "SUM a organisé son travail autour de cinq piliers, qui sont aussi les cinq leviers d'un maire de ville idéale."
+          ],
+          "facts": [
+            {
+              "label": "1. Prévoir",
+              "value": "outils de prédiction de la disponibilité des modes partagés"
+            },
+            {
+              "label": "2. Gérer",
+              "value": "outils de gestion des flottes partagées à la demande"
+            },
+            {
+              "label": "3. Connecter",
+              "value": "intégration des horaires et de la billettique avec les transports en commun"
+            },
+            {
+              "label": "4. Co-concevoir",
+              "value": "co-création des pôles de mobilité et de l'espace public"
+            },
+            {
+              "label": "5. Tarifer",
+              "value": "tarification et incitations (nudging) pour réduire le coût des modes partagés"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.8",
+            "task": "",
+            "partner": "",
+            "livingLab": ""
+          }
+        },
+        {
+          "id": "comment-on-mesure",
+          "title": "Comment sait-on si ça marche ?",
+          "teaser": "On demande aux habitants, avant et après.",
+          "kind": "fact",
+          "body": [
+            "Dans chaque ville, une enquête a été menée avant les changements (2024) puis après (début 2026), avec le même questionnaire, traduit en sept langues.",
+            "Un cadre commun d'évaluation (SIEF) définit les indicateurs pour comparer les villes : part modale, temps de trajet porte-à-porte, acceptation, sécurité perçue, émissions…",
+            "Les données de l'enquête « avant » sont publiques (Zenodo)."
+          ],
+          "facts": [
+            {
+              "label": "Objectif par ville",
+              "value": "200 répondants"
+            },
+            {
+              "label": "Langues du questionnaire",
+              "value": "7 (+ anglais)"
+            },
+            {
+              "label": "Indicateurs du cadre SIEF",
+              "value": "29"
+            },
+            {
+              "label": "Indicateur principal",
+              "value": "la part modale (voiture / TC / partagé / marche / vélo)"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Le cadre SIEF tel que présenté sur la plateforme",
+              "suggestedSource": "rapport Fig. 3 p.13 / odp.sum-project.eu/data/kpis"
+            }
+          ],
+          "links": [
+            {
+              "label": "Jeu de données ex-ante (Zenodo)",
+              "url": "https://doi.org/10.5281/zenodo.14887578"
+            }
+          ],
+          "source": {
+            "report": "p.11–13, p.64",
+            "task": "T1.1, T1.3, T5.1",
+            "partner": "NTUA, Chalmers, UT",
+            "livingLab": "toutes"
+          }
+        },
+        {
+          "id": "smileys",
+          "title": "Qui a aimé quoi ?",
+          "teaser": "Les habitants ont noté les nouveaux services. Devinez les villes tout en vert.",
+          "kind": "table",
+          "body": [
+            "Après quelques mois d'usage, les habitants ont évalué le service partagé de leur ville : praticité, gain de temps, facilité, accessibilité, sécurité, intention de l'utiliser."
+          ],
+          "legend": "🙂 au-dessus de la moyenne · 😐 dans la moyenne · 🙁 en dessous · NA non évalué",
+          "table": {
+            "columns": [
+              "Ville",
+              "Service",
+              "Praticité",
+              "Gain de temps",
+              "Facilité",
+              "Accessibilité",
+              "Sécurité",
+              "Intention"
+            ],
+            "rows": [
+              [
+                "Munich",
+                "Autopartage",
+                "🙁",
+                "😐",
+                "🙂",
+                "NA",
+                "NA",
+                "😐"
+              ],
+              [
+                "Genève",
+                "Autopartage",
+                "😐",
+                "🙁",
+                "🙂",
+                "🙂",
+                "NA",
+                "🙂"
+              ],
+              [
+                "Genève",
+                "Vélos partagés",
+                "😐",
+                "😐",
+                "🙂",
+                "🙂",
+                "🙂",
+                "😐"
+              ],
+              [
+                "Jérusalem",
+                "Vélos partagés",
+                "🙁",
+                "🙁",
+                "🙁",
+                "🙁",
+                "🙁",
+                "🙁"
+              ],
+              [
+                "Jérusalem",
+                "Tram (à venir)",
+                "😐",
+                "😐",
+                "🙂",
+                "😐",
+                "NA",
+                "NA"
+              ],
+              [
+                "Rotterdam",
+                "Scooters électriques",
+                "🙁",
+                "🙂",
+                "😐",
+                "NA",
+                "😐",
+                "🙁"
+              ],
+              [
+                "Penteli",
+                "Vélos partagés",
+                "🙁",
+                "🙁",
+                "🙂",
+                "🙁",
+                "🙁",
+                "🙁"
+              ],
+              [
+                "Cracovie",
+                "LajkBus (bus à la demande)",
+                "🙂",
+                "🙂",
+                "🙂",
+                "🙂",
+                "🙂",
+                "🙂"
+              ],
+              [
+                "Larnaca",
+                "Vélos partagés",
+                "🙂",
+                "🙂",
+                "🙂",
+                "🙂",
+                "🙂",
+                "🙂"
+              ],
+              [
+                "Coimbra",
+                "Bus",
+                "🙁",
+                "🙁",
+                "😐",
+                "😐",
+                "NA",
+                "🙁"
+              ]
+            ]
+          },
+          "facts": [],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "Table 3, p.19",
+            "task": "T1.6",
+            "partner": "VEDECOM",
+            "livingLab": "toutes"
+          }
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/sum-map.png",
+          "alt": "Carte des villes du projet SUM",
+          "caption": "Les villes du projet SUM en Europe",
+          "credit": "sum-project.eu"
+        }
+      ]
+    },
+    {
+      "id": "carrefour",
+      "order": 2,
+      "place": "Carrefour",
+      "title": "Et si on refaisait ce carrefour ?",
+      "question": "Qui utilise cette rue ? Quand ? Qu'est-ce qui coince ?",
+      "mode": "animated",
+      "animator": "B",
+      "position": "table 2",
+      "capacity": 6,
+      "durationMin": 10,
+      "tableTent": {
+        "headline": "Et si on refaisait ce carrefour ?",
+        "subline": "À Coimbra, 49 habitants l'ont fait pour de vrai."
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "title": "Choisir une situation (3 min)",
+          "text": "Regardez le plan. Que se passe-t-il exactement à cet endroit ? Qui est concerné ? À quel moment de la journée ? Placez les miniatures sur le plan et rejouez le problème pas à pas."
+        },
+        {
+          "step": 2,
+          "title": "Tester une alternative (5 min)",
+          "text": "Posez le papier calque sur le plan. Dessinez un changement. Testez la solution avec les miniatures. Est-ce que ça marche pour tout le monde ?"
+        },
+        {
+          "step": 3,
+          "title": "Voter (2 min)",
+          "text": "Chaque groupe présente sa solution en une phrase. Tout le monde vote pour sa préférée."
+        },
+        {
+          "step": 4,
+          "title": "Ouvrir l'enveloppe",
+          "text": "Découvrez ce que les habitants de Coimbra ont fait."
+        }
+      ],
+      "rule": "Toutes les perspectives comptent : assurez-vous que tout le monde a parlé avant de passer à l'étape suivante.",
+      "materials": [
+        "Plan imprimé A2 d'un carrefour (à choisir : réel ou fictif)",
+        "Feuilles de papier calque A3",
+        "Feutres",
+        "Miniatures : bus, minibus, voitures, vélos, trottinettes, piétons, bâtiments, mobilier (jouets ou impressions 3D)",
+        "Cartes d'instruction plastifiées (étapes 1–4)",
+        "Enveloppe « Ouvre-moi quand vous avez voté »",
+        "Gommettes de vote",
+        "QR code vers l'arrêt 2 de la page"
+      ],
+      "reveal": {
+        "title": "Ce qui s'est passé à Coimbra",
+        "lines": [
+          "Un nouveau pôle de mobilité était en construction. La ville a réuni 49 participants : parents et enseignants de l'école voisine, étudiants, personnel de l'hôpital, une personne en fauteuil roulant, la police, des chauffeurs de bus et de taxi, des opérateurs de trottinettes, des urbanistes, des élus.",
+          "Ils ont visité le site, puis travaillé à l'école primaire avec des plans, du papier calque, des véhicules et bâtiments imprimés en 3D.",
+          "Chaque groupe a présenté sa solution, tout le monde a voté.",
+          "Parce que les décideurs étaient dans la salle, le résultat a de bonnes chances d'être repris dans le projet final du pôle."
+        ],
+        "source": {
+          "report": "p.30–32, p.99",
+          "task": "T3.2",
+          "partner": "Chalmers + Coimbra",
+          "livingLab": "Coimbra"
+        }
+      },
+      "resources": [
+        {
+          "id": "coimbra-atelier",
+          "title": "49 habitants, un pôle de mobilité",
+          "teaser": "Comment une ville dessine un carrefour avec ceux qui l'utilisent.",
+          "kind": "story",
+          "body": [
+            "À Coimbra (Portugal), un nouveau pôle de mobilité et la rue autour ont été le sujet d'un atelier de co-création.",
+            "Déroulé : visite du site en groupes avec un plan et des questions → marche jusqu'à l'école primaire → travail en groupes (un urbaniste par groupe) avec plans, papier calque, véhicules et bâtiments imprimés en 3D → chaque groupe présente → vote → réflexion individuelle.",
+            "Les participants ont dit avoir beaucoup appris et que le pôle serait bien meilleur avec leurs propositions."
+          ],
+          "facts": [
+            {
+              "label": "Participants",
+              "value": "49"
+            },
+            {
+              "label": "Phase 1 « Choisir des situations »",
+              "value": "25 min"
+            },
+            {
+              "label": "Phase 2 « Tester des alternatives »",
+              "value": "35 min"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Les participants travaillent avec plans, calque et véhicules 3D",
+              "suggestedSource": "rapport Fig. 16 p.32 (demander l'original à Chalmers/Coimbra)"
+            },
+            {
+              "src": "",
+              "caption": "Visite du site avec la police locale",
+              "suggestedSource": "rapport Fig. 13 p.31"
+            },
+            {
+              "src": "",
+              "caption": "Fiche d'instructions (en portugais)",
+              "suggestedSource": "rapport Fig. 15 p.32"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.30–32",
+            "task": "T3.2 / WP3",
+            "partner": "Chalmers (Design & Human Factors), Coimbra LL",
+            "livingLab": "Coimbra"
+          }
+        },
+        {
+          "id": "menu-cocreation",
+          "title": "Le menu de la co-création",
+          "teaser": "Antipasti, primi, dolci : un atelier se commande comme au restaurant.",
+          "kind": "tool",
+          "body": [
+            "Pour aider les neuf villes à organiser leurs propres ateliers, Chalmers a créé un « menu des méthodes de co-création », présenté comme la carte d'un restaurant italien : chaque plat correspond à une phase de l'atelier, de la mise en jambes à l'évaluation.",
+            "Avec des épingles, de la laine et des post-it emojis faits maison : « le plaisir et la créativité ne sont pas des distractions, ils permettent aux participants de s'engager plus ouvertement »."
+          ],
+          "facts": [],
+          "images": [
+            {
+              "src": "",
+              "caption": "Le menu de co-création développé dans SUM",
+              "suggestedSource": "rapport Fig. 11 p.30"
+            },
+            {
+              "src": "",
+              "caption": "Planches d'autocollants : personnes, lieux, méthodes, facile/difficile",
+              "suggestedSource": "rapport Fig. 12 p.30"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.29–30",
+            "task": "T3.2 / WP3",
+            "partner": "Chalmers",
+            "livingLab": "toutes (Coimbra l'a le plus utilisé)"
+          }
+        },
+        {
+          "id": "fredrikstad-ferry",
+          "title": "Des épingles et de la laine sur la carte",
+          "teaser": "À Fredrikstad, les idées des habitants sont devenues une ligne de bus et un parking vélo.",
+          "kind": "story",
+          "body": [
+            "Fredrikstad (Norvège) voulait transformer les arrêts d'une nouvelle ligne de ferry en pôles de mobilité.",
+            "Trois ateliers citoyens (avril 2024, mai 2024, puis un troisième avec 32 participants : habitants, commerces, opérateurs, urbanistes).",
+            "Résultats déjà mis en place : une nouvelle ligne de bus pendulaire et un parking vélo partagé reliant le ferry aux lieux de travail."
+          ],
+          "facts": [
+            {
+              "label": "Participants au 3ᵉ atelier",
+              "value": "32"
+            },
+            {
+              "label": "Réalisations",
+              "value": "1 ligne de bus, 1 parking vélo partagé"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Carte de Fredrikstad avec épingles, laine et drapeaux",
+              "suggestedSource": "rapport photo p.29"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.29",
+            "task": "T3.2 / WP3",
+            "partner": "Chalmers, Fredrikstad Kommune, HYKE",
+            "livingLab": "Fredrikstad"
+          }
+        },
+        {
+          "id": "penteli-rues",
+          "title": "Les premières rues cyclables de Grèce",
+          "teaser": "À Penteli, la co-création a produit 5 km de rues à 30 km/h.",
+          "kind": "story",
+          "body": [
+            "Dans la banlieue d'Athènes, la municipalité de Penteli a co-conçu l'espace de rue avec les habitants (ateliers en ligne et en présentiel — l'atelier physique a dû être reporté à cause des incendies d'août 2024).",
+            "Résultat : plus de 5 km de rues transformées, limitées à 30 km/h, environ 400 m de pistes cyclables, et un pôle de mobilité avec totem bilingue sur la place de Melissia."
+          ],
+          "facts": [
+            {
+              "label": "Rues transformées",
+              "value": "> 5 km"
+            },
+            {
+              "label": "Vitesse",
+              "value": "30 km/h"
+            },
+            {
+              "label": "Pistes cyclables dédiées",
+              "value": "≈ 400 m"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.28, p.52–53",
+            "task": "T3.1 / T4.4",
+            "partner": "Municipalité de Penteli, NTUA",
+            "livingLab": "Penteli"
+          }
+        }
+      ],
+      "images": [
+        {
+          "src": "",
+          "alt": "Photo de la rue / du carrefour à redessiner",
+          "caption": "Le carrefour du jeu (photo à fournir — la même que sur le plan papier)",
+          "credit": ""
+        },
+        {
+          "src": "/images/carrefour-coimbra-plans.jpg",
+          "alt": "Participants travaillant sur des plans avec calque et miniatures",
+          "caption": "Coimbra : plans, calque, gommettes et miniatures",
+          "credit": "Rapport SUM, Fig. 14"
+        },
+        {
+          "src": "/images/carrefour-coimbra-atelier.jpg",
+          "alt": "Groupe autour d’un plan à l’école primaire",
+          "caption": "Coimbra : les groupes testent leurs alternatives",
+          "credit": "Rapport SUM, Fig. 16"
+        },
+        {
+          "src": "/images/carrefour-coimbra-visite.jpg",
+          "alt": "Visite du site avec la police locale",
+          "caption": "Coimbra : visite du site avant l’atelier",
+          "credit": "Rapport SUM, Fig. 13"
+        },
+        {
+          "src": "/images/carrefour-fredrikstad-carte.jpg",
+          "alt": "Carte avec épingles, laine et drapeaux",
+          "caption": "Fredrikstad : épingles et laine sur la carte",
+          "credit": "Rapport SUM, p.29"
+        },
+        {
+          "src": "/images/carrefour-coimbra-fiche.png",
+          "alt": "Fiche d’instructions de l’atelier (portugais)",
+          "caption": "La fiche d’instructions originale (Etapas do Workshop)",
+          "credit": "Rapport SUM, Fig. 15"
+        }
+      ]
+    },
+    {
+      "id": "station",
+      "order": 3,
+      "place": "Station de vélos",
+      "title": "Où doivent vivre les vélos ?",
+      "question": "Vous avez 10 stations à placer. Où, et pourquoi ?",
+      "mode": "animated",
+      "animator": "A",
+      "position": "table 3, avec tablette et ordinateur portable",
+      "capacity": 6,
+      "durationMin": 15,
+      "researchOnly": true,
+      "tableTent": {
+        "headline": "Où doivent vivre les vélos ?",
+        "subline": "10 stations à placer. Un budget. Une ville qui bouge. — Recherche uniquement : rien n'est déployé."
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "text": ""
+        },
+        {
+          "id": "q2",
+          "text": ""
+        },
+        {
+          "id": "q3",
+          "text": ""
+        },
+        {
+          "id": "q4",
+          "text": ""
+        }
+      ],
+      "game": {
+        "mapNote": "Carte imprimée avec les stations candidates prédéfinies (emplacements à fournir).",
+        "stationsToPlace": 10,
+        "tablet": {
+          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/",
+          "note": "Les étapes du jeu et le résultat sont sur la tablette : carte interactive avec points chauds pour voir comment la ville bouge au fil de la journée."
+        }
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "title": "Regarder la ville bouger (2 min)",
+          "text": "Sur la tablette, observez les points chauds : d'où partent les gens le matin ? Où vont-ils ? Et le samedi ?"
+        },
+        {
+          "step": 2,
+          "title": "Répondre aux 4 questions (3 min)",
+          "text": ""
+        },
+        {
+          "step": 3,
+          "title": "Placer 10 stations (6 min)",
+          "text": "Discutez en groupe, puis placez vos 10 épingles sur la carte imprimée, parmi les emplacements proposés."
+        },
+        {
+          "step": 4,
+          "title": "Comparer avec le modèle (4 min)",
+          "text": "Sur la tablette, découvrez ce que propose le modèle d'optimisation pour le même budget — et ce qui change quand le budget change."
+        }
+      ],
+      "materials": [
+        "Carte imprimée A1 de la ville avec les stations candidates (même dessin que la tablette)",
+        "Épingles ou pions : 10 par groupe",
+        "Tablette avec la démo interactive (mode plein écran)",
+        "Ordinateur portable pour la révélation sur écran",
+        "Cartes des 4 questions",
+        "Fiche « Recherche uniquement »",
+        "QR code vers l'arrêt 3 de la page"
+      ],
+      "reveal": {
+        "title": "Ce que dit le modèle",
+        "lines": [
+          "Le modèle décide en même temps où placer les stations, combien de places (bornes) et combien de vélos, en tenant compte des trajets combinés vélo + transport en commun.",
+          "Résultat clé : en dessous d'environ un quart du budget, le système reste « vélo seul » (moins de 15 % des trajets utilisent aussi le TC). Au-dessus, la part des trajets combinés monte et se stabilise entre 22 et 33 %.",
+          "Gain de temps moyen de l'ordre de 50 % par rapport à marcher + transport en commun.",
+          "Concevoir vélos et TC ensemble demande moins de bornes qu'en les concevant l'un après l'autre.",
+          "Cas d'étude : Genève, zone centrale de 1,5 km. C'est de la recherche (niveau TRL 3–4), pas un déploiement."
+        ],
+        "source": {
+          "report": "p.25–27",
+          "task": "T2.3 / WP2",
+          "partner": "Inria (INOCS)",
+          "livingLab": "Genève (Rotterdam prévu)"
+        }
+      },
+      "resources": [
+        {
+          "id": "le-probleme",
+          "title": "Pourquoi c'est difficile",
+          "teaser": "Trop de stations coûte cher. Trop peu, et les vélos ne servent à rien.",
+          "kind": "story",
+          "body": [
+            "Placer des stations de vélos partagés a l'air simple. Mais chaque station a un coût, une capacité, un stock de vélos à réapprovisionner, et elle doit tomber là où les gens en ont besoin — souvent à côté d'un arrêt de bus ou de tram.",
+            "Il faut décider plusieurs choses à la fois, sous contrainte de budget, en anticipant comment les gens vont réellement se déplacer."
+          ],
+          "facts": [
+            {
+              "label": "Décisions à prendre ensemble",
+              "value": "emplacement, capacité, taille de flotte, réapprovisionnement"
+            },
+            {
+              "label": "Contraintes",
+              "value": "budget d'investissement et budget de fonctionnement"
+            },
+            {
+              "label": "Objectif",
+              "value": "servir le maximum de trajets"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.25–26",
+            "task": "T2.3",
+            "partner": "Inria",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "comment-le-modele-decide",
+          "title": "Comment le modèle décide",
+          "teaser": "Une ville découpée en hexagones, des milliers de trajets possibles, un programme qui choisit.",
+          "kind": "tool",
+          "body": [
+            "1. La ville est découpée en hexagones ; chaque centre d'hexagone et chaque arrêt de transport en commun est une station candidate.",
+            "2. Pour chaque origine-destination, on pré-calcule les trajets possibles : vélo direct, vélo + TC, marche + TC.",
+            "3. Un programme d'optimisation (programme linéaire en nombres entiers) choisit les stations, leur capacité et la flotte, avec un terme de coût pour le réapprovisionnement.",
+            "4. La demande vient de données réelles : enquête origine-destination 2022 des TC de Genève, comptages 2024 aux arrêts (TPG) et horaires GTFS."
+          ],
+          "facts": [
+            {
+              "label": "Zone d'étude",
+              "value": "Genève, centre, 1,5 km"
+            },
+            {
+              "label": "Présenté à",
+              "value": "EURO 2025 (Leeds)"
+            },
+            {
+              "label": "Niveau de maturité",
+              "value": "TRL 3 → 4 (recherche)"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Carte hexagonale de Genève avec stations candidates",
+              "suggestedSource": "démo INOCS"
+            }
+          ],
+          "links": [
+            {
+              "label": "Démo interactive",
+              "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/"
+            }
+          ],
+          "source": {
+            "report": "p.25–27",
+            "task": "T2.3 / WP2",
+            "partner": "Inria (INOCS), NTUA (réapprovisionnement)",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "autres-outils",
+          "title": "Les autres outils de la boîte",
+          "teaser": "Prévoir la disponibilité, simuler des flottes, faire arriver le minibus juste avant le tram.",
+          "kind": "list",
+          "body": [
+            "SUM a développé d'autres outils pour la ville idéale, testés avec les données des villes :"
+          ],
+          "items": [
+            {
+              "title": "Y aura-t-il une trottinette ?",
+              "text": "Un modèle d'apprentissage automatique prédit jusqu'à 90 minutes à l'avance la probabilité de trouver un scooter partagé, à partir de l'historique, de la météo et des points d'intérêt. Déployé dans l'application RET à Rotterdam.",
+              "partner": "TU Delft, Siemens Mobility",
+              "source": "p.20–22"
+            },
+            {
+              "title": "Le jumeau numérique du bus à la demande",
+              "text": "Un cadre de simulation-optimisation (FleetPy + modèle de choix) évalue des milliers de configurations de service. À Jérusalem, plus de 2 000 configurations testées.",
+              "partner": "Tel Aviv University, TUM, Jagiellonian University",
+              "source": "p.23–24, p.49"
+            },
+            {
+              "title": "Le minibus qui arrive juste avant le tram",
+              "text": "Un « courtier » multimodal découpe un trajet en tronçons TC + à la demande et contraint les véhicules à arriver à l'arrêt juste avant les passages de TC. Testé avec les données des TPG (Genève).",
+              "partner": "TUM",
+              "source": "p.25–26"
+            },
+            {
+              "title": "Qui a droit à une station ?",
+              "text": "Une version du modèle de réseau vélo + TC optimise à la fois l'efficacité et l'équité (indice de Gini d'accessibilité).",
+              "partner": "UT, TUM, Inria, JU",
+              "source": "p.24–25"
+            }
+          ],
+          "facts": [],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.20–27",
+            "task": "WP2",
+            "partner": "TUD, TAU, TUM, UT, JU, Inria",
+            "livingLab": ""
+          }
+        },
+        {
+          "id": "recherche-uniquement",
+          "title": "Recherche uniquement",
+          "teaser": "Rien de ce que vous voyez sur cette table n'est déployé dans une ville.",
+          "kind": "notice",
+          "body": [
+            "Les modèles présentés à cette table sont des travaux de recherche de l'équipe INOCS (Inria). Genève est le cas d'étude, avec des données réelles, mais aucune station n'a été construite sur la base de ces résultats.",
+            "L'objectif est d'aider les villes à comparer des scénarios — la décision leur appartient."
+          ],
+          "facts": [],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.26, p.37",
+            "task": "T2.3, T3.3",
+            "partner": "Inria",
+            "livingLab": "Genève"
+          }
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/station-geneve-demo.png",
+          "alt": "Carte de Genève : lignes de tram et de bus, points d’intérêt, stations de vélos existantes",
+          "caption": "Genève, 1,5 km autour du Rhône : 59 zones, 438 arrêts de TC, stations de vélos existantes",
+          "credit": "Démo INOCS / Inria"
+        }
+      ]
+    },
+    {
+      "id": "tarif",
+      "order": 4,
+      "place": "Sur le téléphone",
+      "title": "Et si le maire fixait les prix ?",
+      "question": "Quel prix pour le vélo à 8 h ? Et à 15 h ? Qui en profite ?",
+      "mode": "selfservice",
+      "animator": null,
+      "position": "table 4, tablette avec la démo « Fixez le prix »",
+      "capacity": 6,
+      "durationMin": 8,
+      "researchOnly": true,
+      "tableTent": {
+        "headline": "Et si le maire fixait les prix ?",
+        "subline": "Vous fixez le prix du vélo. Les habitants choisissent. À vous d'anticiper. — Recherche uniquement."
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "title": "Choisissez un objectif (1 min)",
+          "text": "Moins de voitures ? Plus de recettes pour l'opérateur ? Un équilibre ?"
+        },
+        {
+          "step": 2,
+          "title": "Fixez les prix (3 min)",
+          "text": "Sur la tablette, réglez le prix du vélo aux heures de pointe et aux heures creuses, et la remise du billet combiné TC + vélo. Regardez la répartition des trajets changer."
+        },
+        {
+          "step": 3,
+          "title": "Activez la recommandation (2 min)",
+          "text": "Même prix, mais l'appli propose d'abord le trajet TC + vélo. Que se passe-t-il ?"
+        },
+        {
+          "step": 4,
+          "title": "Comparez avec le modèle (2 min)",
+          "text": "Appuyez sur « Que propose le modèle ? » : le prix qu'un algorithme choisirait pour votre objectif. Êtes-vous d'accord ?"
+        }
+      ],
+      "rule": "Le prix qui rapporte le plus n'est pas celui qui vide le plus de voitures. Et un prix trop élevé exclut ceux qui ont le moins.",
+      "game": {
+        "note": "Variante sans tablette (2 équipes) : l'équipe Opérateur choisit un prix parmi 3 cartes (1 €, 2 €, 3 €) et l'option recommandée ; chaque membre de l'équipe Voyageurs tire une carte Profil (étudiant·e, parent avec poussette, actif·ve avec voiture, retraité·e, touriste) et choisit avec la carte de choix Voiture / Vélo partagé / Bus / tpg Flex. On compte, l'Opérateur ajuste, on rejoue. Puis on échange les rôles.",
+        "tablet": {
+          "url": "demo/nsm-dynamic-pricing",
+          "note": "La démo « Fixez le prix » est intégrée à cette page. La tablette ouvre l’interface de démonstration INOCS (recherche d’itinéraire avec prix dynamiques)."
+        }
+      },
+      "materials": [
+        "Tablette avec la page de l'arrêt 4 (démo « Fixez le prix » intégrée)",
+        "3 cartes Prix (1 €, 2 €, 3 €) et 1 carte « Recommandation »",
+        "6 cartes Profil voyageur (à concevoir)",
+        "Carte de choix Voiture / Vélo partagé / Bus / tpg Flex (Fig. 17 du rapport, en français)",
+        "Fiche « Recherche uniquement »",
+        "QR code vers l'arrêt 4 de la page"
+      ],
+      "reveal": {
+        "title": "Ce que dit la recherche",
+        "lines": [
+          "Le prix et la recommandation sont deux leviers différents : le prix déplace les choix à la marge ; la recommandation change ce que les gens voient en premier.",
+          "Sur le cas de Genève (transports en commun + vélos partagés en station), les politiques calculées par le modèle à deux niveaux réduisent l'usage de la voiture et augmentent la part des modes partagés par rapport aux scénarios sans tarification ou sans recommandation.",
+          "Le modèle tient compte de la capacité des stations : il ne recommande un trajet à vélo que s'il y a un vélo au départ et une place à l'arrivée.",
+          "C'est de la recherche (TRL 4) : aucune ville n'applique aujourd'hui une tarification calculée de cette façon."
+        ],
+        "source": {
+          "report": "p.33–35, p.37",
+          "task": "T3.3 / WP3",
+          "partner": "Inria (INOCS), TUD",
+          "livingLab": "Genève (cas d'étude)"
+        }
+      },
+      "images": [
+        {
+          "src": "",
+          "alt": "Capture de l'interface de démonstration INOCS : recherche d'itinéraire avec prix dynamiques",
+          "caption": "L'interface de démonstration (trois options de trajet, prix dynamiques) — capture à fournir",
+          "credit": "INOCS / Inria"
+        },
+        {
+          "src": "/images/tarif-carte-choix-geneve.png",
+          "alt": "Carte de choix de l'enquête de Genève : voiture, vélo partagé, bus, tpg Flex",
+          "caption": "La carte de choix de l'enquête menée à Genève auprès de 300 habitants",
+          "credit": "Rapport SUM, Fig. 17 (VEDECOM)"
+        }
+      ],
+      "resources": [
+        {
+          "id": "le-maire-fixe-les-prix",
+          "title": "Et si le maire fixait les prix ?",
+          "teaser": "Le maire décide des tarifs, puis les habitants choisissent. Le maire doit anticiper.",
+          "kind": "tool",
+          "body": [
+            "Au premier niveau, l'opérateur (ou la ville) fixe les prix et propose un menu de trajets recommandés. Au second niveau, chaque voyageur choisit selon ses préférences. On appelle cela un modèle « à deux niveaux » (bilevel).",
+            "L'opérateur doit anticiper les choix des voyageurs — c'est ce qui rend le problème difficile et intéressant.",
+            "Sur le cas de Genève (TC + vélos partagés en station), ces politiques réduisent l'usage de la voiture et augmentent la part des modes partagés par rapport à des scénarios sans tarification ou sans recommandation.",
+            "Le modèle fonctionne pour n'importe quelle ville qui publie ses horaires (GTFS) et ses données vélo (GBFS)."
+          ],
+          "facts": [
+            {
+              "label": "Niveau de maturité",
+              "value": "TRL 4 (recherche)"
+            },
+            {
+              "label": "Présenté à",
+              "value": "IFORS 2026 (Vienne)"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "label": "Interface de démonstration (recherche d'itinéraire avec prix dynamiques)",
+              "url": ""
+            }
+          ],
+          "source": {
+            "report": "p.33–35, p.37",
+            "task": "T3.3 / WP3",
+            "partner": "Inria (INOCS), TUD",
+            "livingLab": "Genève (Munich possible)"
+          }
+        },
+        {
+          "id": "deux-leviers",
+          "title": "Deux leviers, pas un",
+          "teaser": "Le prix, et l'ordre dans lequel l'appli vous montre les options.",
+          "kind": "story",
+          "body": [
+            "Quand vous cherchez un trajet dans une appli, vous ne comparez pas tous les trajets possibles : vous regardez les trois ou quatre proposés. Ce qui est proposé, et dans quel ordre, pèse autant que le prix.",
+            "Le modèle de l'équipe joue sur les deux : il fixe les prix et compose le menu de trajets recommandés, en s'assurant que les trajets à vélo proposés sont réalisables (un vélo au départ, une place à l'arrivée)."
+          ],
+          "facts": [
+            {
+              "label": "Levier 1",
+              "value": "le prix (pointe / creuse, billet combiné)"
+            },
+            {
+              "label": "Levier 2",
+              "value": "la recommandation (ce que l'appli montre en premier)"
+            },
+            {
+              "label": "Contrainte",
+              "value": "capacité et stock des stations"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.35",
+            "task": "T3.3",
+            "partner": "Inria, TUD",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "dans-le-monde",
+          "title": "Est-ce que ça existe déjà quelque part ?",
+          "teaser": "Des morceaux, oui. Le tout, non.",
+          "kind": "list",
+          "body": [
+            "Des villes font déjà varier les prix ou les récompenses selon l'heure ou le lieu — mais chaque pièce séparément. Aucune n'applique, à notre connaissance, une tarification calculée pour optimiser à la fois l'intérêt des usagers, du trafic et de l'opérateur avec un critère d'équité. C'est ce qui reste de la recherche."
+          ],
+          "items": [
+            {
+              "title": "Singapour — tarif pré-pointe",
+              "text": "Réduction sur le métro pour qui valide avant 7 h 45 (jusqu'à 50 cents ou le prix du tronçon ferroviaire).",
+              "partner": "Public Transport Council (Singapour)"
+            },
+            {
+              "title": "Danemark — Rejsekort",
+              "text": "Depuis 2024, l'appli applique automatiquement 20 % de réduction aux heures creuses (11 h–13 h et 18 h–7 h en semaine, week-ends et fériés).",
+              "partner": "source : Fairtiq"
+            },
+            {
+              "title": "Stockholm — étude tarifaire",
+              "text": "Hausse en pointe et baisse de 26 % en heures creuses : fréquentation hors pointe + 9 %, passagers + 1 %, recettes + 1 %.",
+              "partner": "source : Fairtiq"
+            },
+            {
+              "title": "Genève — essai hors pointe",
+              "text": "De mars 2023 à mars 2024, 20 % de réduction hors pointe via l'appli Fairtiq (validation en montant/descendant).",
+              "partner": "Rapport SUM, p.47 (tpg)"
+            },
+            {
+              "title": "New York, Washington, Chicago — Bike Angels",
+              "text": "Les usagers gagnent des points en prenant un vélo dans une station pleine et en le rendant dans une station vide ; la valeur des stations change au fil de la journée. Des points, pas des prix.",
+              "partner": "Citi Bike / Capital Bikeshare (Lyft)"
+            },
+            {
+              "title": "Paris — Vélib' stations bonus",
+              "text": "Crédit de temps offert quand on rend le vélo dans une station en hauteur, pour aider le rééquilibrage.",
+              "partner": "Vélib' Métropole"
+            }
+          ],
+          "facts": [],
+          "images": [],
+          "links": [
+            {
+              "label": "Fairtiq — peak / off-peak pricing",
+              "url": "https://fairtiq.com/en/blog/how-peak-and-off-peak-pricing-transforms-public-transport"
+            },
+            {
+              "label": "Singapour — pre-peak discount",
+              "url": "https://ask.gov.sg/ptc/questions/clglxtosd003ml408cankl8w2"
+            },
+            {
+              "label": "Bike Angels — analyse (ACM COMPASS 2018)",
+              "url": "https://dl.acm.org/doi/10.1145/3209811.3209866"
+            }
+          ],
+          "source": {
+            "report": "recherche web sept. 2026 + rapport p.47",
+            "task": "",
+            "partner": "",
+            "livingLab": ""
+          }
+        },
+        {
+          "id": "reserver-plus-tard",
+          "title": "Réserver un vélo pour plus tard, moins cher",
+          "teaser": "Et si l'appli vous proposait un vélo garanti dans 20 minutes, à prix réduit ?",
+          "kind": "story",
+          "body": [
+            "Autre piste de l'équipe : à chaque période, l'opérateur affiche à chaque station un menu de destinations et de prix, avec des trajets immédiats et des trajets différés avec vélo garanti.",
+            "L'objectif est de servir le maximum de trajets malgré l'incertitude ; le problème est trop gros pour être résolu exactement, d'où des algorithmes « à horizon glissant »."
+          ],
+          "facts": [
+            {
+              "label": "Idée",
+              "value": "menus de prix par station et par période"
+            },
+            {
+              "label": "Nouveauté",
+              "value": "trajets différés avec garantie"
+            },
+            {
+              "label": "Statut",
+              "value": "manuscrit soumis (recherche)"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.35",
+            "task": "T3.3",
+            "partner": "Inria",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "jeu-des-prix",
+          "title": "Le jeu des prix (sans tablette)",
+          "teaser": "Deux équipes : l'Opérateur fixe, les Voyageurs choisissent, on recompte.",
+          "kind": "tool",
+          "body": [
+            "L'équipe Opérateur choisit un prix (1 €, 2 € ou 3 €) et l'option qu'elle recommande. Chaque Voyageur tire un profil et choisit son mode avec la carte de choix. On compte : combien de voitures ? combien de vélos ? combien d'argent pour l'opérateur ? L'Opérateur ajuste, on rejoue, puis on échange les rôles.",
+            "C'est exactement la structure du modèle : un niveau qui décide, un niveau qui réagit, et un décideur qui doit anticiper."
+          ],
+          "facts": [
+            {
+              "label": "Joueurs",
+              "value": "4 à 10"
+            },
+            {
+              "label": "Durée",
+              "value": "2 tours de 3 min"
+            },
+            {
+              "label": "Matériel",
+              "value": "3 cartes Prix, 6 cartes Profil, carte de choix"
+            }
+          ],
+          "images": [
+            {
+              "src": "/images/tarif-carte-choix-geneve.png",
+              "caption": "La carte de choix de l'enquête de Genève, réutilisable telle quelle",
+              "suggestedSource": "Rapport SUM, Fig. 17"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.33–34",
+            "task": "T3.3",
+            "partner": "VEDECOM (enquête), Inria (modèle)",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "tarif-recherche-uniquement",
+          "title": "Recherche uniquement",
+          "teaser": "La démo de cette page est un modèle pédagogique simplifié.",
+          "kind": "notice",
+          "body": [
+            "La démo « Fixez le prix » utilise un petit modèle de choix simplifié avec des paramètres illustratifs, pour faire sentir le mécanisme. Ce ne sont ni les données de Genève ni les résultats du modèle de recherche.",
+            "Le vrai modèle est présenté sur l'interface de démonstration INOCS (recherche d'itinéraire avec prix dynamiques) et dans les publications de l'équipe."
+          ],
+          "facts": [],
+          "images": [],
+          "links": [
+            {
+              "label": "Interface de démonstration INOCS",
+              "url": ""
+            }
+          ],
+          "source": {
+            "report": "p.37",
+            "task": "T3.3",
+            "partner": "Inria",
+            "livingLab": "Genève"
+          }
+        }
+      ]
+    },
+    {
+      "id": "arret-de-tram",
+      "order": 5,
+      "place": "Arrêt de tram",
+      "title": "Qu'ont fait les vraies villes ?",
+      "question": "Vous êtes maire de Rotterdam. Que choisissez-vous ?",
+      "mode": "selfservice",
+      "animator": null,
+      "position": "table 4, sans animateur",
+      "capacity": 8,
+      "durationMin": 8,
+      "tableTent": {
+        "headline": "Qu'ont fait les vraies villes ?",
+        "subline": "Tirez une ville. Choisissez 3 mesures. Retournez la carte."
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "text": "Tirez une carte Ville et lisez son profil : quelle ville, quel problème."
+        },
+        {
+          "step": 2,
+          "text": "Parmi les cartes Mesure, choisissez les 3 que vous mettriez en place en tant que maire."
+        },
+        {
+          "step": 3,
+          "text": "Retournez la carte Ville : découvrez ce que la ville a vraiment fait, et ce qui s'est passé."
+        },
+        {
+          "step": 4,
+          "text": "Scannez le QR code de la ville pour les photos et les chiffres."
+        }
+      ],
+      "materials": [
+        "9 cartes Ville recto-verso (A5, plastifiées)",
+        "20 cartes Mesure (format carte à jouer), en 2 couleurs : contraintes (push) / incitations (pull)",
+        "Carte d'instruction",
+        "QR code par ville vers la page de l'arrêt 4",
+        "Affiches A3 des trois exemples vedettes : Rotterdam, Genève, Jérusalem"
+      ],
+      "reveal": null,
+      "featured": [
+        "rotterdam",
+        "geneve",
+        "jerusalem"
+      ],
+      "resources": [
+        {
+          "id": "rotterdam-app",
+          "title": "Y aura-t-il une trottinette quand mon métro arrive ?",
+          "teaser": "À Rotterdam, l'appli des transports répond : « 98 % ».",
+          "kind": "story",
+          "body": [
+            "Dans l'application du réseau RET, l'itinéraire affiche désormais la probabilité de trouver un scooter électrique partagé CHECK à l'arrivée — par tranches (0–25 %, … 75–100 %), jusqu'à 90 minutes à l'avance.",
+            "Le modèle (apprentissage automatique) est entraîné sur l'historique des trajets, la météo et les points d'intérêt. Il tourne dans le cloud (Siemens Mobility) et alimente l'application (InfoPlaza).",
+            "En service depuis juillet 2025 au pôle Beurs ; étendu en 2026 à 15 stations de mobilité sur 17 zones du réseau.",
+            "Leçon des partenaires : « la technologie est un facilitateur, pas une solution en soi »."
+          ],
+          "facts": [
+            {
+              "label": "En service depuis",
+              "value": "juillet 2025"
+            },
+            {
+              "label": "Horizon de prédiction",
+              "value": "jusqu'à 90 min"
+            },
+            {
+              "label": "Couverture 2026",
+              "value": "15 stations / 17 zones"
+            },
+            {
+              "label": "Après le projet",
+              "value": "RET achète le modèle comme service à Siemens"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Capture de l'application RET avec la prédiction",
+              "suggestedSource": "rapport Fig. 30 p.55 (demander l'original à RET/InfoPlaza)"
+            },
+            {
+              "src": "",
+              "caption": "Les 15 stations couvertes",
+              "suggestedSource": "rapport Fig. 33 p.57"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.20–22, p.55–57",
+            "task": "T2.1 / T4.5",
+            "partner": "RET, TU Delft, Siemens Mobility, InfoPlaza, CHECK",
+            "livingLab": "Rotterdam"
+          }
+        },
+        {
+          "id": "geneve-poles",
+          "title": "De 0 à 29 pôles de mobilité",
+          "teaser": "À Genève, un totem, des vélos, un tram — et des forfaits TC + vélo.",
+          "kind": "story",
+          "body": [
+            "Un pôle de mobilité, c'est un lieu où l'on passe facilement du tram au vélo partagé, à la voiture partagée ou au vélo-cargo. Chaque pôle est signalé par un totem : plan, temps de marche, QR codes, et en haut la silhouette de Genève avec son jet d'eau.",
+            "Au lancement du projet (mai 2023) : 0 pôle. Début 2025 : 7. Fin du projet (mai 2026) : 29. Les tpg prévoient 10 nouveaux pôles par an.",
+            "Côté numérique : en 2024, des forfaits mensuels TC + mobilité partagée. Entre juin et décembre 2024, environ 600 forfaits vendus et plus de 10 000 trajets à vélo partagé, surtout des 15–39 ans."
+          ],
+          "facts": [
+            {
+              "label": "Pôles de mobilité",
+              "value": "0 → 7 → 29 (2023 → 2025 → 2026)"
+            },
+            {
+              "label": "Forfaits TC + partagé (juin–déc. 2024)",
+              "value": "≈ 600"
+            },
+            {
+              "label": "Trajets vélo partagé générés",
+              "value": "> 10 000"
+            },
+            {
+              "label": "Bus à la demande tpg flex",
+              "value": "≈ 300 passagers / jour"
+            },
+            {
+              "label": "Après le projet",
+              "value": "10 nouveaux pôles / an"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Le totem « Pôle de mobilité »",
+              "suggestedSource": "rapport Fig. 22 p.45"
+            },
+            {
+              "src": "",
+              "caption": "Carte des 29 pôles (juin 2026)",
+              "suggestedSource": "rapport Fig. 23 p.45"
+            },
+            {
+              "src": "",
+              "caption": "Mosaïque de pôles",
+              "suggestedSource": "rapport Fig. 24 p.46"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.43–48",
+            "task": "T4.2 / T3.2",
+            "partner": "tpg, Canton de Genève, UT, TUM, VEDECOM, Inria",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "jerusalem-stations",
+          "title": "14 % des stations, 30 % des locations",
+          "teaser": "À Jérusalem, les vélos placés aux arrêts du tram font le plein.",
+          "kind": "story",
+          "body": [
+            "En février 2025, la ligne rouge du tram a été prolongée : 12 nouvelles stations dans la ville, 6 dans le quartier du Living Lab, environ 33 000 trajets par jour.",
+            "18 nouvelles stations de vélos partagés Jerufun ont été installées dans le quartier, dont 3 directement aux nouveaux arrêts du tram.",
+            "Après l'extension, la demande de vélos partagés a augmenté de 80 %. Environ 30 % des trajets à vélo commencent ou finissent à une station de tram.",
+            "Les stations aux arrêts du tram représentent 14 % des stations mais 30 % de toutes les locations : « l'emplacement stratégique compte plus que la taille du réseau »."
+          ],
+          "facts": [
+            {
+              "label": "Nouvelles stations de tram",
+              "value": "12 (dont 6 dans le quartier)"
+            },
+            {
+              "label": "Trajets tram / jour",
+              "value": "≈ 33 000"
+            },
+            {
+              "label": "Stations vélo ajoutées",
+              "value": "18, dont 3 aux arrêts du tram"
+            },
+            {
+              "label": "Demande vélo après l'extension",
+              "value": "+ 80 %"
+            },
+            {
+              "label": "Stations aux arrêts du tram",
+              "value": "14 % des stations, 30 % des locations"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Extension de la ligne rouge",
+              "suggestedSource": "rapport Fig. 25 p.48"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.48–50",
+            "task": "T4.3 / T2.2",
+            "partner": "Municipalité de Jérusalem, Tel Aviv University, Sigma6, Jerufun",
+            "livingLab": "Jérusalem"
+          }
+        },
+        {
+          "id": "cracovie-lajkbus",
+          "title": "Un bus qui vient quand on l'appelle",
+          "teaser": "LajkBus, à Cracovie : réservation par appli, trajet partagé, jusqu'au pôle de transport.",
+          "kind": "story",
+          "body": [
+            "Dans le quartier périphérique de Skotniki, la ville a lancé en février 2025 un bus à la demande : réservation dans une application, itinéraire calculé en temps réel, trajets partagés, connexion au pôle de Czerwone Maki.",
+            "En semaine de 6 h à 21 h. La demande augmente aux heures de pointe. La ville garde le service après le projet et veut l'étendre.",
+            "Les habitants ont tout noté en vert dans l'enquête d'acceptation."
+          ],
+          "facts": [
+            {
+              "label": "Lancement",
+              "value": "février 2025"
+            },
+            {
+              "label": "Horaires",
+              "value": "lun–ven, 6 h – 21 h"
+            },
+            {
+              "label": "Part des modes partagés (enquêtes, indicatif)",
+              "value": "< 1 % → 20 %"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "LajkBus",
+              "suggestedSource": "demander à la Ville de Cracovie / ZF (pas de figure dans le rapport)"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.19, p.58–59, p.65",
+            "task": "T4.6",
+            "partner": "Ville de Cracovie, Autorité des transports, ZF, Jagiellonian University",
+            "livingLab": "Cracovie"
+          }
+        },
+        {
+          "id": "larnaca-appli",
+          "title": "Une appli, un billet : bus + vélo",
+          "teaser": "Larnaca n'avait pas de vélos partagés. Maintenant ils sont dans l'appli du bus.",
+          "kind": "story",
+          "body": [
+            "Avant SUM, Larnaca (Chypre) n'avait aucun service de vélos partagés. Le projet a permis l'arrivée de Nextbike dans la zone pilote, avec des stations placées avec les autorités.",
+            "L'application de l'opérateur de bus a été transformée en plateforme MaaS : on réserve bus + vélo en un seul trajet, à un tarif combiné réduit, avec un seul paiement.",
+            "Les habitants ont tout noté en vert dans l'enquête d'acceptation."
+          ],
+          "facts": [
+            {
+              "label": "Vélos partagés avant SUM",
+              "value": "aucun"
+            },
+            {
+              "label": "Application",
+              "value": "bus + vélo dans un seul billet, tarif réduit"
+            },
+            {
+              "label": "Enquêtes",
+              "value": "500 usagers, deux vagues"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Zone pilote",
+              "suggestedSource": "rapport Fig. 35 p.59"
+            },
+            {
+              "src": "",
+              "caption": "Captures de l'application",
+              "suggestedSource": "demander à LPT / CON"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.19, p.36, p.59–60",
+            "task": "T3.4 / T4.8",
+            "partner": "LPT, CON, Nextbike, MOBYX",
+            "livingLab": "Larnaca"
+          }
+        },
+        {
+          "id": "munich-autopartage",
+          "title": "900 places réservées aux voitures partagées",
+          "teaser": "À Munich, deux tiers sont dans des pôles de mobilité, à côté des vélos et trottinettes.",
+          "kind": "story",
+          "body": [
+            "La ville de Munich réserve des places de stationnement aux voitures partagées : appel d'offres pour jusqu'à 600 places en station et jusqu'à 1 000 places en libre-service d'ici fin 2026. En mai 2026, environ 900 places étaient en place, dont deux tiers dans des pôles de mobilité.",
+            "L'analyse de 1,4 million de trajets d'autopartage montre que 27,6 % des départs et arrivées tombent dans des zones équipées d'un pôle, et que seuls 4,4 % des trajets n'ont pas d'arrêt de TC à moins de 500 m.",
+            "Enquête : 26 % des trajets en autopartage remplacent un trajet en voiture personnelle ; 32 % des répondants n'ont pas acheté de voiture."
+          ],
+          "facts": [
+            {
+              "label": "Places réservées (mai 2026)",
+              "value": "≈ 900, 2/3 dans des pôles"
+            },
+            {
+              "label": "Trajets analysés",
+              "value": "≈ 1,4 million"
+            },
+            {
+              "label": "Trajets sans arrêt TC à 500 m",
+              "value": "4,4 %"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Signalétique de pôle de mobilité à Munich",
+              "suggestedSource": "rapport Fig. 19 p.41"
+            },
+            {
+              "src": "",
+              "caption": "Points chauds sur grille hexagonale",
+              "suggestedSource": "rapport Fig. 20 p.42"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.39–43",
+            "task": "T4.1",
+            "partner": "Ville de Munich, TUM",
+            "livingLab": "Munich"
+          }
+        },
+        {
+          "id": "coimbra-bus",
+          "title": "Un bus fixe le matin, à la demande l'après-midi",
+          "teaser": "À Coimbra, un village à plus de 600 m de tout arrêt a eu son minibus — réservable aussi par téléphone.",
+          "kind": "story",
+          "body": [
+            "Dans la paroisse de Cernache, un service hybride a été lancé en septembre 2024 : ligne fixe aux heures de pointe vers le pôle de Casconha, à la demande le reste du temps. Réservation en ligne ou par téléphone pour les personnes peu à l'aise avec le numérique. Minibus à plancher bas.",
+            "Résultat honnête : pas de report modal significatif pendant le pilote, demande en dessous des prévisions (kilomètres à vide, travaux, manque de chauffeurs). Mais le service a été bien accueilli et jugé facile à utiliser.",
+            "Leçon : la technologie ne suffit pas sans communication, fiabilité et engagement continu des habitants."
+          ],
+          "facts": [
+            {
+              "label": "Lancement",
+              "value": "septembre 2024"
+            },
+            {
+              "label": "Réservation",
+              "value": "en ligne ou centre d'appel"
+            },
+            {
+              "label": "Part de la voiture (enquête après)",
+              "value": "93,2 % des trajets"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Le service à la demande",
+              "suggestedSource": "rapport Fig. 36 p.60"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.60–62",
+            "task": "T4.9",
+            "partner": "Municipalité de Coimbra, SMTUC, OPT",
+            "livingLab": "Coimbra"
+          }
+        },
+        {
+          "id": "penteli-velos",
+          "title": "38 vélos électriques… et moins de 100 trajets",
+          "teaser": "À Penteli, le service marchait. Le vandalisme l'a freiné.",
+          "kind": "story",
+          "body": [
+            "La municipalité a installé 38 vélos électriques et 6 stations, gratuits au début, avec une tuile « Vélos » dans l'application FREENOW.",
+            "Le système était techniquement opérationnel, mais le vandalisme a obligé à réduire les horaires et le nombre de vélos : moins de 100 trajets enregistrés.",
+            "Les bus électriques prévus n'ont pas pu être achetés pendant le projet ; seule la ligne scolaire a circulé, les autres lignes ont été simulées."
+          ],
+          "facts": [
+            {
+              "label": "Vélos / stations",
+              "value": "38 / 6"
+            },
+            {
+              "label": "Trajets enregistrés",
+              "value": "< 100"
+            },
+            {
+              "label": "Rues transformées",
+              "value": "> 5 km, 30 km/h"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Tuile « Vélos » dans FREENOW",
+              "suggestedSource": "rapport Fig. 28 p.53"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.50–54, p.105",
+            "task": "T4.4",
+            "partner": "Municipalité de Penteli, NTUA, FREENOW",
+            "livingLab": "Penteli"
+          }
+        },
+        {
+          "id": "ce-qui-na-pas-eu-lieu",
+          "title": "Ce qui n'a pas eu lieu",
+          "teaser": "Une flotte de voitures autonomes à Munich ? Non. Et c'est aussi un résultat.",
+          "kind": "notice",
+          "body": [
+            "Munich devait tester une flotte de 25 véhicules autonomes (niveau 4). Aucune homologation de niveau 4 n'existait en Allemagne : le partenaire a quitté le projet et la ville s'est recentrée sur l'autopartage et les pôles de mobilité.",
+            "À Genève, le transport combiné passagers + marchandises avec ZF a été abandonné ; remplacé par des simulations, l'extension du bus à la demande et des consignes connectées dans les pôles.",
+            "À Penteli, les bus électriques n'ont pas été achetés dans les délais.",
+            "Le rapport final le dit lui-même : « toutes les villes n'ont pas le même niveau de résultats »."
+          ],
+          "facts": [],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.38–39, p.104–105, p.101",
+            "task": "WP4",
+            "partner": "",
+            "livingLab": "Munich, Genève, Penteli"
+          }
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/tram-geneve-poles.jpg",
+          "alt": "Mosaïque de photos de pôles de mobilité à Genève",
+          "caption": "Genève : 29 pôles de mobilité avec totem",
+          "credit": "Rapport SUM, Fig. 24 (tpg)"
+        },
+        {
+          "src": "/images/tram-rotterdam-app-1.png",
+          "alt": "Capture de l’application RET avec la prédiction de disponibilité",
+          "caption": "Rotterdam : « Verwachte beschikbaarheid CHECK scooter : 98 % »",
+          "credit": "Rapport SUM, Fig. 30 (RET)"
+        },
+        {
+          "src": "/images/tram-rotterdam-app-2.png",
+          "alt": "Détail d’un trajet dans l’application RET",
+          "caption": "Rotterdam : la prédiction dans le détail du trajet",
+          "credit": "Rapport SUM, Fig. 30 (RET)"
+        },
+        {
+          "src": "/images/tram-geneve-totem.png",
+          "alt": "Haut du totem Pôle de mobilité avec la silhouette de Genève",
+          "caption": "Genève : le haut du totem, avec le jet d’eau",
+          "credit": "Rapport SUM, Fig. 22 (tpg)"
+        },
+        {
+          "src": "/images/tram-geneve-carte-poles.jpg",
+          "alt": "Carte des 29 pôles de mobilité",
+          "caption": "Genève : état des lieux juin 2026",
+          "credit": "Rapport SUM, Fig. 23 (tpg)"
+        },
+        {
+          "src": "/images/tram-munich-poles.jpg",
+          "alt": "Signalétique et places réservées de pôle de mobilité à Munich",
+          "caption": "Munich : places réservées et signalétique des pôles",
+          "credit": "Rapport SUM, Fig. 19 (Dobner & Angermann)"
+        }
+      ]
+    },
+    {
+      "id": "destination",
+      "order": 6,
+      "place": "Destination",
+      "title": "Est-ce que ça a marché ?",
+      "question": "Comment sait-on qu'une ville a changé ?",
+      "mode": "passive",
+      "animator": null,
+      "position": "table 5, tablette avec la plateforme de données",
+      "capacity": null,
+      "durationMin": null,
+      "tableTent": {
+        "headline": "Est-ce que ça a marché ?",
+        "subline": "1 435 habitants ont répondu. Voici ce qu'ils disent."
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "text": "Regardez les affiches avant / après."
+        },
+        {
+          "step": 2,
+          "text": "Sur la tablette, choisissez une ville sur la plateforme de données ouvertes."
+        },
+        {
+          "step": 3,
+          "text": "Cherchez ce qui a changé… et ce qui n'a pas changé."
+        }
+      ],
+      "materials": [
+        "Affiche A3 : « 1 435 réponses, 8 villes, 7 langues »",
+        "Affiche A3 : avant / après par ville (parts modales)",
+        "Tablette avec odp.sum-project.eu (vue Insights)",
+        "Affiche A4 : « Ce qui n'a pas marché, et pourquoi c'est utile »",
+        "QR code vers l'arrêt 6 de la page"
+      ],
+      "reveal": null,
+      "resources": [
+        {
+          "id": "enquete-apres",
+          "title": "1 435 habitants ont répondu",
+          "teaser": "Même questionnaire qu'avant, deux ans plus tard.",
+          "kind": "fact",
+          "body": [
+            "Entre janvier et février 2026, les villes ont refait l'enquête de 2024 : 25 questions (profil, système de transport, acceptation, carnet de déplacements)."
+          ],
+          "facts": [
+            {
+              "label": "Genève",
+              "value": "184"
+            },
+            {
+              "label": "Cracovie",
+              "value": "211"
+            },
+            {
+              "label": "Rotterdam",
+              "value": "144"
+            },
+            {
+              "label": "Jérusalem",
+              "value": "186"
+            },
+            {
+              "label": "Coimbra",
+              "value": "101"
+            },
+            {
+              "label": "Munich",
+              "value": "202"
+            },
+            {
+              "label": "Penteli",
+              "value": "202"
+            },
+            {
+              "label": "Larnaca",
+              "value": "205"
+            },
+            {
+              "label": "Fredrikstad",
+              "value": "pas d'enquête après (analyse sur 2021 et 2024)"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.64",
+            "task": "T5.1",
+            "partner": "UT",
+            "livingLab": "toutes"
+          }
+        },
+        {
+          "id": "avant-apres",
+          "title": "Qu'est-ce qui a changé ?",
+          "teaser": "Des signaux, ville par ville — à lire avec prudence.",
+          "kind": "list",
+          "body": [
+            "Le rapport prévient : la comparaison avant/après est indicative, car les répondants ne sont pas les mêmes personnes."
+          ],
+          "items": [
+            {
+              "title": "Cracovie",
+              "text": "Modes partagés : moins de 1 % avant → 20 % après (LajkBus)."
+            },
+            {
+              "title": "Penteli",
+              "text": "Transports en commun : ≈ 16 % → 18,5 %."
+            },
+            {
+              "title": "Jérusalem",
+              "text": "Marche, voiture, micromobilité et train en hausse après l'extension du tram."
+            },
+            {
+              "title": "Munich",
+              "text": "Enquête début 2026 : voiture personnelle − 10 %, marche et vélo + 12 %."
+            },
+            {
+              "title": "Genève",
+              "text": "41 % des trajets déclarés en train (avant)."
+            },
+            {
+              "title": "Coimbra",
+              "text": "93,2 % des trajets déclarés en voiture après — pas de report modal pendant le pilote."
+            }
+          ],
+          "facts": [],
+          "images": [
+            {
+              "src": "",
+              "caption": "Parts modales de Munich, avant / après",
+              "suggestedSource": "rapport Fig. 38 p.65"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "p.42, p.62, p.64–65",
+            "task": "T5.1",
+            "partner": "UT, TUM",
+            "livingLab": ""
+          }
+        },
+        {
+          "id": "plateforme",
+          "title": "La plateforme de données ouvertes",
+          "teaser": "11 villes y publient leurs indicateurs. Sans compte, pour tout le monde.",
+          "kind": "tool",
+          "body": [
+            "La SUM Open Data Platform rassemble les indicateurs de chaque ville avant et après, les mesures mises en place, et deux outils d'aide à la décision : une analyse d'impact (quelle mesure a contribué à quel indicateur) et une analyse multicritère (quelle mesure gagne selon les priorités choisies).",
+            "Conçue et développée par Inria avec les partenaires, elle est en logiciel libre et restera en ligne au moins cinq ans après le projet."
+          ],
+          "facts": [
+            {
+              "label": "Villes hébergées (juin 2026)",
+              "value": "11, dont les 9 de SUM"
+            },
+            {
+              "label": "Accès",
+              "value": "public, sans compte"
+            },
+            {
+              "label": "Code",
+              "value": "open source"
+            },
+            {
+              "label": "Durée de vie",
+              "value": "≥ 5 ans après le projet"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Page d'accueil de la plateforme",
+              "suggestedSource": "rapport Fig. 4 p.16 / capture odp.sum-project.eu"
+            }
+          ],
+          "links": [
+            {
+              "label": "odp.sum-project.eu",
+              "url": "https://odp.sum-project.eu"
+            },
+            {
+              "label": "Outil d'analyse d'impact",
+              "url": "https://odp.sum-project.eu/tools/impact_analysis"
+            },
+            {
+              "label": "Outil d'analyse multicritère",
+              "url": "https://odp.sum-project.eu/tools/mcda_analysis"
+            }
+          ],
+          "source": {
+            "report": "p.14–17, p.66–68, p.99",
+            "task": "T1.5 / T5.2",
+            "partner": "Inria, UT, NTUA, VEDECOM",
+            "livingLab": "toutes"
+          }
+        },
+        {
+          "id": "quelle-mesure-gagne",
+          "title": "Quelle mesure gagne ?",
+          "teaser": "Ça dépend de ce qu'on met en premier : coût, climat, équité, rapidité.",
+          "kind": "list",
+          "body": [
+            "L'analyse multicritère (méthode PROMETHEE-GAIA) classe dix familles de mesures selon les priorités choisies. Avec les priorités retenues dans le projet, le classement est :"
+          ],
+          "items": [
+            {
+              "title": "1",
+              "text": "Infrastructures électriques et bas carbone"
+            },
+            {
+              "title": "2",
+              "text": "Optimisation des horaires et fréquences des transports en commun"
+            },
+            {
+              "title": "3",
+              "text": "Engagement et sensibilisation du public"
+            },
+            {
+              "title": "4",
+              "text": "Intégration des modes partagés dans l'écosystème de mobilité"
+            },
+            {
+              "title": "5",
+              "text": "Plateformes de mobilité intégrée (MaaS)"
+            }
+          ],
+          "facts": [],
+          "images": [
+            {
+              "src": "",
+              "caption": "Capture de l'analyse multicritère",
+              "suggestedSource": "rapport Fig. 39 p.68"
+            }
+          ],
+          "links": [
+            {
+              "label": "Essayer avec vos propres priorités",
+              "url": "https://odp.sum-project.eu/tools/mcda_analysis"
+            }
+          ],
+          "source": {
+            "report": "p.66–68",
+            "task": "T5.2",
+            "partner": "VEDECOM (méthode), Inria (intégration)",
+            "livingLab": "toutes"
+          }
+        },
+        {
+          "id": "ce-qui-na-pas-marche",
+          "title": "Ce qui n'a pas marché — et pourquoi c'est utile",
+          "teaser": "Un échec mesuré vaut plus qu'un succès supposé.",
+          "kind": "notice",
+          "body": [
+            "À Penteli, les vélos électriques ont fait moins de 100 trajets à cause du vandalisme.",
+            "À Coimbra, le bus à la demande n'a pas produit de report modal pendant le pilote.",
+            "À Rotterdam, un seul opérateur de scooters a accepté de partager ses données.",
+            "Ces résultats sont dans le rapport final et sur la plateforme, au même titre que les réussites. C'est ce qui permet à d'autres villes d'apprendre."
+          ],
+          "facts": [],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.56, p.62, p.105",
+            "task": "WP4 / WP5",
+            "partner": "",
+            "livingLab": "Penteli, Coimbra, Rotterdam"
+          }
+        },
+        {
+          "id": "et-apres",
+          "title": "Et après SUM ?",
+          "teaser": "Sept villes observatrices, dont Lille. Quinze visées d'ici 2030.",
+          "kind": "fact",
+          "body": [
+            "Sept villes ont suivi le projet comme observatrices : Vitoria-Gasteiz, Lille, Istanbul, Zagreb, Tel Aviv, Héraklion et la communauté du Douro (19 communes, qui réplique le transport à la demande).",
+            "La plateforme sera transférée à ERTICO fin 2026 pour continuer à accueillir de nouvelles villes."
+          ],
+          "facts": [
+            {
+              "label": "Villes observatrices",
+              "value": "7"
+            },
+            {
+              "label": "Objectif 2030",
+              "value": "15"
+            },
+            {
+              "label": "Guide des villes observatrices",
+              "value": "en ligne"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "label": "Site du projet",
+              "url": "https://www.sum-project.eu"
+            }
+          ],
+          "source": {
+            "report": "p.82, p.85–87, p.103",
+            "task": "T6.2",
+            "partner": "ERTICO, POLIS",
+            "livingLab": ""
+          }
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/destination-odp.jpg",
+          "alt": "Page d’accueil de la SUM Open Data Platform",
+          "caption": "La plateforme de données ouvertes : odp.sum-project.eu",
+          "credit": "Rapport SUM, Fig. 4"
+        },
+        {
+          "src": "/images/destination-sief.png",
+          "alt": "Schéma du cadre d’évaluation SIEF",
+          "caption": "Les 29 indicateurs du cadre SIEF",
+          "credit": "Rapport SUM, Fig. 3 / ODP"
+        }
+      ]
+    }
+  ],
+  "cardGame": {
+    "title": "Qu'ont fait les vraies villes ?",
+    "rules": [
+      "Tirez une carte Ville. Lisez le recto : la ville et son problème.",
+      "Choisissez 3 cartes Mesure que vous mettriez en place.",
+      "Retournez la carte Ville : ce que la ville a vraiment fait, et ce qui s'est passé.",
+      "Scannez le QR code pour les photos et les chiffres."
+    ],
+    "measureTypes": {
+      "push": {
+        "label": "Contrainte",
+        "description": "Rend la voiture moins pratique ou plus chère",
+        "color": "#2A4888"
+      },
+      "pull": {
+        "label": "Incitation",
+        "description": "Rend les alternatives plus pratiques ou moins chères",
+        "color": "#96BA3E"
+      }
+    },
+    "measures": [
+      {
+        "id": "peage",
+        "type": "push",
+        "label": "Péage urbain"
+      },
+      {
+        "id": "stationnement-payant",
+        "type": "push",
+        "label": "Stationnement payant"
+      },
+      {
+        "id": "stationnement-restreint",
+        "type": "push",
+        "label": "Stationnement restreint"
+      },
+      {
+        "id": "zone-pietonne",
+        "type": "push",
+        "label": "Zone à trafic limité / rues piétonnes"
+      },
+      {
+        "id": "gestion-offre-stationnement",
+        "type": "push",
+        "label": "Gestion de l'offre de stationnement"
+      },
+      {
+        "id": "limitation-vitesse",
+        "type": "push",
+        "label": "Limitation de vitesse"
+      },
+      {
+        "id": "poles",
+        "type": "pull",
+        "label": "Pôles de mobilité"
+      },
+      {
+        "id": "horaires-integres",
+        "type": "pull",
+        "label": "Horaires intégrés dans une appli MaaS"
+      },
+      {
+        "id": "billet-integre",
+        "type": "pull",
+        "label": "Billet intégré dans une appli MaaS"
+      },
+      {
+        "id": "infra-nsm",
+        "type": "pull",
+        "label": "Pistes cyclables, parkings relais"
+      },
+      {
+        "id": "plan-partage",
+        "type": "pull",
+        "label": "Plan d'action pour le partage à la demande"
+      },
+      {
+        "id": "nudging",
+        "type": "pull",
+        "label": "Incitations ludiques ou récompenses"
+      },
+      {
+        "id": "prix-dynamique",
+        "type": "pull",
+        "label": "Tarification dynamique des modes partagés"
+      },
+      {
+        "id": "info-disponibilite",
+        "type": "pull",
+        "label": "Meilleure information sur la disponibilité des modes partagés"
+      },
+      {
+        "id": "nouveau-service",
+        "type": "pull",
+        "label": "Nouveau service partagé (ex. vélos)"
+      },
+      {
+        "id": "nouvelle-ligne",
+        "type": "pull",
+        "label": "Nouvelle infrastructure ou ligne de TC (ex. bus électriques)"
+      },
+      {
+        "id": "voies-prioritaires",
+        "type": "pull",
+        "label": "Requalification de rues / voies prioritaires"
+      },
+      {
+        "id": "places-partage",
+        "type": "pull",
+        "label": "Places réservées autopartage / micromobilité"
+      },
+      {
+        "id": "extension-tc",
+        "type": "pull",
+        "label": "Extension de la zone desservie par les TC"
+      },
+      {
+        "id": "planification-tc",
+        "type": "pull",
+        "label": "Programme central de planification des TC"
+      }
+    ],
+    "measuresSource": {
+      "report": "Table 7, p.38",
+      "note": "Lecture d'un tableau en petite police : vérifier les croix ville par ville avant impression."
+    },
+    "cities": [
+      {
+        "id": "rotterdam",
+        "name": "Rotterdam",
+        "country": "Pays-Bas",
+        "role": "suiveuse",
+        "profile": "Grande ville dense avec métro, tram et bus. Les quartiers périurbains sont moins bien connectés au centre. Plusieurs opérateurs de trottinettes et scooters partagés, mais on ne sait jamais s'il y en aura un à l'arrivée du métro.",
+        "problem": "Relier les quartiers périurbains au centre en rendant le passage TC → scooter partagé fiable.",
+        "measuresTaken": [
+          "stationnement-payant",
+          "stationnement-restreint",
+          "limitation-vitesse",
+          "poles",
+          "horaires-integres",
+          "billet-integre",
+          "infra-nsm",
+          "info-disponibilite",
+          "places-partage"
+        ],
+        "whatTheyDid": [
+          "Un modèle de prédiction affiche dans l'appli RET la probabilité de trouver un scooter CHECK à l'arrivée (jusqu'à 90 min à l'avance).",
+          "En service depuis juillet 2025 ; 15 stations / 17 zones en 2026.",
+          "Signalétique prévue vers les pôles partagés dans au moins 5 parkings relais."
+        ],
+        "whatHappened": [
+          "Un seul opérateur (CHECK) a accepté de partager ses données.",
+          "RET achètera le modèle comme service après le projet.",
+          "« La technologie est un facilitateur, pas une solution en soi. »"
+        ],
+        "notDone": [],
+        "odpUrl": "",
+        "source": {
+          "report": "p.20–22, p.55–57, Table 7 p.38"
+        }
+      },
+      {
+        "id": "geneve",
+        "name": "Genève",
+        "country": "Suisse",
+        "role": "leader",
+        "profile": "Ville-canton avec un bon réseau de tram et de bus (tpg). Beaucoup de pendulaires, y compris depuis la France. Vélos partagés, vélos-cargo, autopartage existent mais chacun de son côté.",
+        "problem": "Faire des lieux où l'on passe facilement d'un mode à l'autre, et vendre TC + vélo ensemble.",
+        "measuresTaken": [
+          "peage",
+          "zone-pietonne",
+          "poles",
+          "horaires-integres",
+          "billet-integre",
+          "infra-nsm",
+          "nudging",
+          "prix-dynamique",
+          "nouvelle-ligne",
+          "voies-prioritaires"
+        ],
+        "whatTheyDid": [
+          "29 pôles de mobilité avec totem (0 en 2023).",
+          "Forfaits mensuels TC + mobilité partagée (2024).",
+          "Bus à la demande tpg flex étendu ; consignes connectées dans les pôles (2026).",
+          "Essai de réduction de 20 % hors pointe via l'appli Fairtiq (2023–2024)."
+        ],
+        "whatHappened": [
+          "≈ 600 forfaits vendus et > 10 000 trajets vélo partagé entre juin et décembre 2024.",
+          "Les pôles sont entrés dans cinq plans cantonaux ; 10 nouveaux pôles par an prévus.",
+          "La zone à trafic limité proposée a été rejetée par le Grand Conseil (octobre 2024)."
+        ],
+        "notDone": [
+          "Transport combiné passagers + marchandises avec ZF : abandonné."
+        ],
+        "odpUrl": "",
+        "source": {
+          "report": "p.43–48, p.105, Table 7 p.38"
+        }
+      },
+      {
+        "id": "jerusalem",
+        "name": "Jérusalem",
+        "country": "Israël",
+        "role": "leader",
+        "profile": "Quartier résidentiel en périphérie (Yuvalim–Ganim), en pente, avec une nouvelle ligne de tram en construction. Forte dépendance à la voiture.",
+        "problem": "Faire du tram le cœur du quartier et amener les gens jusqu'aux stations sans voiture.",
+        "measuresTaken": [
+          "stationnement-restreint",
+          "zone-pietonne",
+          "gestion-offre-stationnement",
+          "limitation-vitesse",
+          "horaires-integres",
+          "infra-nsm",
+          "plan-partage",
+          "info-disponibilite",
+          "nouveau-service",
+          "nouvelle-ligne",
+          "places-partage"
+        ],
+        "whatTheyDid": [
+          "Extension de la ligne rouge du tram (février 2025) : 12 stations, dont 6 dans le quartier.",
+          "18 stations de vélos partagés, dont 3 aux arrêts du tram ; nouvelle piste cyclable.",
+          "Simulation de plus de 2 000 configurations de bus à la demande comme rabattement vers le tram."
+        ],
+        "whatHappened": [
+          "≈ 33 000 trajets de tram par jour ; intention d'utiliser les TC : 51,5 % → 63,1 %.",
+          "Demande de vélos partagés + 80 % ; les 3 stations aux arrêts du tram = 14 % des stations mais 30 % des locations.",
+          "Le bus à la demande reste une recommandation aux décideurs (pas déployé)."
+        ],
+        "notDone": [],
+        "odpUrl": "",
+        "source": {
+          "report": "p.48–50, Table 7 p.38"
+        }
+      },
+      {
+        "id": "penteli",
+        "name": "Penteli (Athènes)",
+        "country": "Grèce",
+        "role": "leader",
+        "profile": "Banlieue périurbaine et vallonnée d'Athènes. Voiture dominante, peu de transports en commun locaux, aucune piste cyclable.",
+        "problem": "Créer de zéro une offre locale : rues apaisées, vélos, bus, un pôle.",
+        "measuresTaken": [
+          "zone-pietonne",
+          "poles",
+          "horaires-integres",
+          "billet-integre",
+          "infra-nsm",
+          "nouveau-service",
+          "nouvelle-ligne",
+          "voies-prioritaires"
+        ],
+        "whatTheyDid": [
+          "Co-création de l'espace de rue : > 5 km à 30 km/h, ≈ 400 m de pistes cyclables (premières rues cyclables).",
+          "Pôle de mobilité sur la place de Melissia avec totem bilingue.",
+          "38 vélos électriques et 6 stations ; tuile « Vélos » dans l'appli FREENOW.",
+          "Modèle d'optimisation des horaires de bus (NTUA)."
+        ],
+        "whatHappened": [
+          "Moins de 100 trajets à vélo : vandalisme, horaires réduits.",
+          "TC : ≈ 16 % → 18,5 % des trajets ; indicateur d'accessibilité 6,35 % → ≈ 50,5 %.",
+          "Ligne scolaire réalisée ; les autres lignes simulées."
+        ],
+        "notDone": [
+          "Bus électriques non achetés pendant le projet (barrières administratives)."
+        ],
+        "odpUrl": "",
+        "source": {
+          "report": "p.28, p.50–54, p.105, Table 7 p.38"
+        }
+      },
+      {
+        "id": "munich",
+        "name": "Munich",
+        "country": "Allemagne",
+        "role": "leader",
+        "profile": "Grande ville avec un excellent réseau de TC (32,7 % des trajets) et déjà beaucoup d'autopartage. Les voitures partagées cherchent souvent une place.",
+        "problem": "Faire de la place aux voitures partagées près des TC, et comprendre à quoi elles servent.",
+        "measuresTaken": [
+          "stationnement-payant",
+          "stationnement-restreint",
+          "gestion-offre-stationnement",
+          "limitation-vitesse",
+          "poles",
+          "horaires-integres",
+          "infra-nsm",
+          "plan-partage",
+          "prix-dynamique",
+          "info-disponibilite",
+          "voies-prioritaires",
+          "places-partage",
+          "extension-tc",
+          "planification-tc"
+        ],
+        "whatTheyDid": [
+          "≈ 900 places réservées à l'autopartage (mai 2026), deux tiers dans des pôles de mobilité.",
+          "Analyse de 1,4 million de trajets d'autopartage sur une grille hexagonale.",
+          "Simulation de covoiturage à la demande (FleetPy) : 36,6 % des trajets du centre pourraient être regroupés."
+        ],
+        "whatHappened": [
+          "26 % des trajets en autopartage remplacent la voiture personnelle ; 32 % des répondants n'ont pas acheté de voiture.",
+          "Début 2026 : voiture personnelle − 10 %, marche et vélo + 12 %.",
+          "« L'infrastructure seule ne suffit pas. »"
+        ],
+        "notDone": [
+          "Flotte de 25 véhicules autonomes (niveau 4) : jamais déployée, pas d'homologation en Allemagne."
+        ],
+        "odpUrl": "",
+        "source": {
+          "report": "p.39–43, p.104, Table 7 p.38"
+        }
+      },
+      {
+        "id": "cracovie",
+        "name": "Cracovie",
+        "country": "Pologne",
+        "role": "suiveuse",
+        "profile": "Quartier périphérique dispersé (Skotniki) où les lignes de bus classiques passent rarement. Un grand pôle de transport (Czerwone Maki) pas loin, mais difficile à rejoindre.",
+        "problem": "Amener les habitants d'un quartier dispersé jusqu'au pôle de transport.",
+        "measuresTaken": [
+          "peage",
+          "stationnement-payant",
+          "zone-pietonne",
+          "horaires-integres",
+          "billet-integre",
+          "infra-nsm",
+          "plan-partage",
+          "info-disponibilite",
+          "nouveau-service"
+        ],
+        "whatTheyDid": [
+          "LajkBus : bus à la demande réservé par appli, itinéraire dynamique, trajets partagés (lancé février 2025, lun–ven 6 h–21 h)."
+        ],
+        "whatHappened": [
+          "Demande en hausse aux heures de pointe ; habitants satisfaits (tout en vert dans l'enquête).",
+          "Modes partagés : < 1 % → 20 % des trajets déclarés (indicatif).",
+          "La ville garde le service et veut l'étendre à d'autres quartiers."
+        ],
+        "notDone": [],
+        "odpUrl": "",
+        "source": {
+          "report": "p.19, p.58–59, p.65, Table 7 p.38"
+        }
+      },
+      {
+        "id": "fredrikstad",
+        "name": "Fredrikstad",
+        "country": "Norvège",
+        "role": "suiveuse",
+        "profile": "Ville fluviale où les ferries font partie des transports publics. Une nouvelle ligne de ferry arrive ; ses arrêts ne sont que des pontons.",
+        "problem": "Transformer les arrêts de ferry en pôles de mobilité pour marcher et pédaler.",
+        "measuresTaken": [
+          "peage",
+          "stationnement-payant",
+          "stationnement-restreint",
+          "zone-pietonne",
+          "poles",
+          "horaires-integres",
+          "billet-integre",
+          "infra-nsm",
+          "nouveau-service",
+          "nouvelle-ligne"
+        ],
+        "whatTheyDid": [
+          "Trois ateliers citoyens (2024) avec épingles, laine et post-it pour concevoir les pôles."
+        ],
+        "whatHappened": [
+          "Une nouvelle ligne de bus pendulaire et un parking vélo partagé ont été mis en place à partir des idées des habitants.",
+          "Pas d'enquête « après » complète (analyse sur 2021 et 2024)."
+        ],
+        "notDone": [],
+        "odpUrl": "",
+        "source": {
+          "report": "p.29, p.64, Table 7 p.38"
+        }
+      },
+      {
+        "id": "larnaca",
+        "name": "Larnaca",
+        "country": "Chypre",
+        "role": "suiveuse",
+        "profile": "Ville côtière en développement, réseau de bus vieillissant, aucun vélo partagé.",
+        "problem": "Créer une offre partagée à partir de zéro et la mettre dans l'appli du bus.",
+        "measuresTaken": [
+          "stationnement-payant",
+          "zone-pietonne",
+          "billet-integre",
+          "nudging"
+        ],
+        "whatTheyDid": [
+          "Arrivée de Nextbike (vélos partagés) dans la zone pilote, stations placées avec les autorités.",
+          "Appli de l'opérateur de bus transformée en plateforme MaaS : bus + vélo en un billet, tarif combiné réduit."
+        ],
+        "whatHappened": [
+          "Application « pleinement opérationnelle et ouverte au public ».",
+          "Habitants satisfaits : tout en vert dans l'enquête d'acceptation.",
+          "500 usagers interrogés en deux vagues."
+        ],
+        "notDone": [],
+        "odpUrl": "",
+        "source": {
+          "report": "p.19, p.36, p.59–60, Table 7 p.38"
+        }
+      },
+      {
+        "id": "coimbra",
+        "name": "Coimbra",
+        "country": "Portugal",
+        "role": "suiveuse",
+        "profile": "Ville universitaire avec des villages en périphérie où l'on habite à plus de 600 m de tout arrêt de bus. La voiture est reine.",
+        "problem": "Desservir un village peu dense sans faire rouler des bus vides.",
+        "measuresTaken": [
+          "stationnement-payant",
+          "stationnement-restreint",
+          "zone-pietonne",
+          "poles",
+          "billet-integre",
+          "infra-nsm",
+          "plan-partage"
+        ],
+        "whatTheyDid": [
+          "Minibus hybride à Cernache : ligne fixe aux heures de pointe, à la demande le reste du temps ; réservation en ligne ou par téléphone (septembre 2024).",
+          "Atelier de co-création d'un pôle de mobilité avec 49 participants."
+        ],
+        "whatHappened": [
+          "Pas de report modal significatif pendant le pilote ; demande en dessous des prévisions.",
+          "Service bien accueilli et jugé facile à utiliser ; 93,2 % des trajets déclarés en voiture.",
+          "Leçon : communication, fiabilité et engagement continu comptent autant que la technologie."
+        ],
+        "notDone": [],
+        "odpUrl": "",
+        "source": {
+          "report": "p.30–32, p.60–62, Table 7 p.38"
+        }
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "NSM",
+      "definition": "Nouvelles mobilités partagées : vélos, trottinettes, scooters, voitures en libre-service, bus à la demande."
+    },
+    {
+      "term": "TC",
+      "definition": "Transports en commun."
+    },
+    {
+      "term": "Living Lab",
+      "definition": "Ville laboratoire où habitants, autorités, opérateurs et chercheurs testent ensemble de nouveaux services."
+    },
+    {
+      "term": "Pôle de mobilité",
+      "definition": "Lieu où l'on passe facilement d'un mode de transport à un autre."
+    },
+    {
+      "term": "MaaS",
+      "definition": "Mobility as a Service : une seule application pour planifier, réserver et payer plusieurs modes."
+    },
+    {
+      "term": "Part modale",
+      "definition": "Pourcentage des trajets faits avec chaque mode (voiture, TC, vélo, marche, partagé)."
+    },
+    {
+      "term": "Push / pull",
+      "definition": "Mesures qui contraignent la voiture (push) ou qui rendent les alternatives attractives (pull)."
+    },
+    {
+      "term": "Optimisation bilevel",
+      "definition": "Problème à deux niveaux : un décideur (l'opérateur) choisit en anticipant la réaction d'un autre (les voyageurs)."
+    },
+    {
+      "term": "TRL",
+      "definition": "Niveau de maturité technologique, de 1 (idée) à 9 (produit en service). Les modèles de l'équipe sont à 3–4 : recherche."
+    }
+  ]
+}

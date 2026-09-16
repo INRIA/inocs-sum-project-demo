@@ -2,7 +2,7 @@
  * Infrastructure: base URL helper.
  *
  * Astro's import.meta.env.BASE_URL returns the configured `base` path
- * (e.g. "/inocs-sum-pt-nsm-optimization-demo/") defined in astro.config.mjs.
+ * (e.g. "/inocs-sum-project-demo/") defined in astro.config.mjs.
  * All data fetches must be prefixed with this value to work on GitHub Pages.
  */
 
@@ -15,7 +15,7 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/?$/, '/');
  *
  * @example
  *   assetUrl('data/sum_gtfs_geojson/geneva_1km-radius/stops.geojson')
- *   // → "/inocs-sum-pt-nsm-optimization-demo/data/sum_gtfs_geojson/geneva_1km-radius/stops.geojson"
+ *   // → "/inocs-sum-project-demo/data/sum_gtfs_geojson/geneva_1km-radius/stops.geojson"
  */
 export function assetUrl(path: string): string {
   return `${BASE}${path.replace(/^\//, '')}`;
