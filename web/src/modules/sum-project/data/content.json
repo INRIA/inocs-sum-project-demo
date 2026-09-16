@@ -601,7 +601,7 @@
       "order": 2,
       "place": "Belvédère",
       "title": "Ce qui arrive après le tram",
-      "question": "Douze idées venues des villes SUM : lesquelles roulent déjà, lesquelles sont au labo, lesquelles ont buté sur un mur ?",
+      "question": "Douze idées venues des villes SUM : lesquelles roulent déjà, lesquelles sont au labo, lesquelles attendent encore leur heure ?",
       "mode": "selfservice",
       "animator": null,
       "position": "table 2, en autonomie ; un animateur passe toutes les 10 min pour un débrief d'une minute",
@@ -621,7 +621,7 @@
         {
           "step": 2,
           "title": "Trier (3–4 min)",
-          "text": "À tour de rôle : lisez votre carte à voix haute, 20 secondes de débat, posez-la sur un tapis : 🟢 ça roule déjà, 🟡 au labo ou en préparation, 🔴 pas (encore) possible."
+          "text": "À tour de rôle : lisez votre carte à voix haute, 20 secondes de débat, posez-la sur un tapis : 🟢 ça roule déjà, 🟡 au labo ou en préparation, 🔴 ça attend son heure."
         },
         {
           "step": 3,
@@ -638,7 +638,7 @@
       "materials": [
         "Chevalet de table",
         "12 cartes innovation A6, recto (titre, photo, accroche, question) / verso (tampon, 3 lignes « pourquoi », partenaire, « Pour le voir : table X », page du rapport)",
-        "3 tapis A4 : 🟢 « Ça roule déjà » · 🟡 « Au labo ou en préparation » · 🔴 « Pas (encore) possible »",
+        "3 tapis A4 : 🟢 « Ça roule déjà » · 🟡 « Au labo ou en préparation » · 🔴 « Ça attend son heure »",
         "Bandeau de score et tampon pour le ticket",
         "20 bulletins « Bulletin pour le conseil municipal »",
         "Enveloppe « Le score de SUM »",
@@ -670,10 +670,10 @@
             {
               "id": "mur",
               "emoji": "🔴",
-              "label": "Pas (encore) possible",
-              "short": "Pas possible",
+              "label": "Ça attend son heure",
+              "short": "Attend son heure",
               "tone": "red",
-              "hint": "Arrêté, refusé, bloqué"
+              "hint": "Reporté pour l'instant, mais mesuré"
             }
           ],
           "cards": [
