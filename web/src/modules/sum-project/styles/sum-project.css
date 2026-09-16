@@ -193,6 +193,26 @@ td.e { font-size: 22px; }
 .fcard.info .blines { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; line-height: 1.3; }
 .fcard.info .bimg { margin: 0; border-radius: 8px; overflow: hidden; background: var(--paper); border: 1px solid var(--line); }
 .fcard.info .bimg img { display: block; width: 100%; max-height: 220px; object-fit: contain; }
+/* Bandeau photo en haut du recto (arrêt 1) */
+.fcard.info .face.front .pic { margin: -14px -16px 2px; height: 118px; overflow: hidden; border-radius: 10px 10px 0 0; background: var(--paper); border-bottom: 1px solid var(--line); flex: none; }
+.fcard.info .face.front .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fcard.info .face.front .pic.fit { background: #fff; padding: 6px; }
+.fcard.info .face.front .pic.fit img { object-fit: contain; }
+.fcard.wide .face.front .pic { height: 150px; }
+
+/* Bandeau des villes : neuf photos, neuf drapeaux, chaque tuile mène à la ville (arrêt Destination) */
+.citystrip { display: grid; gap: 10px; }
+.citystrip .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.citystrip .lead { margin: 0; font-size: 14px; color: var(--muted); }
+.citystrip .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ctile { position: relative; display: block; aspect-ratio: 3 / 2; border-radius: 10px; overflow: hidden; border: 2px solid var(--sum-blue); background: var(--paper); text-decoration: none; color: #fff; transition: transform .15s, box-shadow .15s; }
+.ctile:hover, .ctile:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(27,52,103,.22); outline: none; border-color: var(--sum-green); }
+.ctile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ctile .ph { width: 100%; height: 100%; display: grid; place-items: center; font-size: 40px; }
+.ctile .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 8px 6px; display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 1; background: linear-gradient(to top, rgba(10,24,56,.85), rgba(10,24,56,0)); }
+.ctile .cap .flag { font-size: 18px; }
+.ctile .cap b { font-family: var(--display); font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+
 /* Carte mise en avant (plateforme de données) */
 .fcard.accent .face.front { background: var(--sum-blue); border-color: var(--sum-blue-deep); color: #fff; }
 .fcard.accent .face.front .n { color: var(--sum-green); }

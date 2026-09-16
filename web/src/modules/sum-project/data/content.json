@@ -94,7 +94,7 @@
       "durationMin": null,
       "tableTent": {
         "headline": "Vous êtes maire.",
-        "subline": "Neuf villes européennes ont relevé le défi. Retournez les cartes pour faire connaissance."
+        "subline": "Neuf villes européennes ont relevé le défi. Touchez une ville, retournez les cartes : faites connaissance."
       },
       "instructions": [
         {
@@ -154,9 +154,16 @@
           ],
           "images": [
             {
-              "src": "",
-              "caption": "Carte des 9 Living Labs",
-              "suggestedSource": "sum-project.eu / présentations partenaires"
+              "src": "/images/sum-map.png",
+              "alt": "Carte des neuf villes du projet SUM en Europe",
+              "caption": "Les neuf Living Labs, de la Norvège à Chypre",
+              "credit": "sum-project.eu"
+            },
+            {
+              "src": "/images/sum-consortium-cracovie.jpg",
+              "alt": "Le consortium SUM devant un bus électrique de Cracovie",
+              "caption": "Le consortium réuni à Cracovie, devant un bus électrique",
+              "credit": "SUM, présentation de la coordination, juin 2026"
             }
           ],
           "links": [
@@ -297,9 +304,10 @@
           ],
           "images": [
             {
-              "src": "",
-              "caption": "Le cadre SIEF tel que présenté sur la plateforme",
-              "suggestedSource": "rapport Fig. 3 p.13 / odp.sum-project.eu/data/kpis"
+              "src": "/images/destination-sief.png",
+              "alt": "Le cadre d'évaluation SIEF : 29 indicateurs, dont la part modale",
+              "caption": "Le cadre SIEF tel que présenté sur la plateforme : 29 indicateurs, la part modale au centre",
+              "credit": "odp.sum-project.eu"
             }
           ],
           "links": [
@@ -456,7 +464,13 @@
           "front": {
             "value": "29",
             "label": "partenaires",
-            "teaser": "dans 12 pays"
+            "teaser": "dans 12 pays",
+            "image": {
+              "src": "/images/sum-consortium-cracovie.jpg",
+              "alt": "Le consortium SUM devant un bus électrique de Cracovie",
+              "caption": "Le consortium SUM réuni à Cracovie",
+              "credit": "SUM"
+            }
           },
           "back": {
             "title": "Qui fait SUM ?",
@@ -464,9 +478,16 @@
               "Des universités aux opérateurs de transport, en passant par les villes et les réseaux européens.",
               "12 pays, de la Norvège à Chypre.",
               "Coordination : Inria."
-            ]
+            ],
+            "image": {
+              "src": "/images/sum-partners.png",
+              "alt": "Les logos des 29 partenaires du projet SUM",
+              "caption": "Les 29 partenaires",
+              "credit": "SUM"
+            }
           },
-          "resource": "sum-en-bref"
+          "resource": "sum-en-bref",
+          "wide": true
         },
         {
           "id": "duree",
@@ -492,7 +513,13 @@
           "front": {
             "value": "9",
             "label": "Living Labs",
-            "teaser": "de la Norvège à Chypre, de la banlieue d'Athènes au centre de Genève"
+            "teaser": "de la Norvège à Chypre, de la banlieue d'Athènes au centre de Genève",
+            "image": {
+              "src": "/images/sum-map.png",
+              "alt": "Carte des villes du projet SUM",
+              "caption": "Les villes du projet SUM en Europe",
+              "credit": "sum-project.eu"
+            }
           },
           "back": {
             "title": "Les neuf villes",
@@ -507,7 +534,9 @@
               "5 villes suiveuses : Rotterdam, Cracovie, Fredrikstad, Larnaca, Coimbra."
             ]
           },
-          "resource": "neuf-villes"
+          "resource": "neuf-villes",
+          "wide": true,
+          "accent": true
         },
         {
           "id": "objectifs",
@@ -558,7 +587,13 @@
               "200 répondants visés par ville.",
               "29 indicateurs communs (cadre SIEF).",
               "Indicateur principal : la part modale, c'est-à-dire qui se déplace comment."
-            ]
+            ],
+            "image": {
+              "src": "/images/destination-sief.png",
+              "alt": "Le cadre d'évaluation SIEF : 29 indicateurs, dont la part modale",
+              "caption": "Les 29 indicateurs du cadre SIEF",
+              "credit": "odp.sum-project.eu"
+            }
           },
           "resource": "comment-on-mesure"
         },
@@ -594,7 +629,11 @@
             ]
           }
         }
-      ]
+      ],
+      "cityStrip": {
+        "title": "Neuf villes ont relevé le défi",
+        "lead": "Touchez une ville : sa carte vous attend à l'arrêt 5 · Destination."
+      }
     },
     {
       "id": "belvedere",
@@ -2228,7 +2267,13 @@
         "notDone": [
           "Un calculateur d'itinéraire multimodal complet, couvrant la fiabilité de tous les modes (pas seulement les cyclomoteurs CHECK), reste un projet à long terme, pas encore construit.",
           "Localiser tous les hubs dans l'appli RET et créer un guidage dédié entre les arrêts et les hubs sont prévus mais pas encore faits."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/rotterdam/citywide-mobility-hub-network-2.jpg",
+          "alt": "Un pôle de mobilité avec vélos-cargos à Rotterdam",
+          "caption": "Un pôle de mobilité avec vélos-cargos à Rotterdam",
+          "credit": "Living Lab Rotterdam"
+        }
       },
       {
         "id": "geneve",
@@ -2401,7 +2446,13 @@
           "« Zone à circulation limitée » interdisant les voitures aux horaires scolaires près d'une école : rejetée par le Grand Conseil en octobre 2024, en partie remplacée par une extension du 30 km/h.",
           "Tarification dynamique des modes partagés (incitations selon les heures creuses) : testée mais sans résultat significatif, faute de participants assez nombreux.",
           "Collaboration avec ZF pour un véhicule à la demande combinant passagers et marchandises : abandonnée, ZF s'étant réorienté vers les véhicules autonomes (repris dans le projet ULTIMO)."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/geneve/mobility-hubs-3.jpg",
+          "alt": "Un bus et des vélos partagés à un pôle de mobilité genevois",
+          "caption": "Un bus et des vélos partagés à un pôle de mobilité genevois",
+          "credit": "Living Lab Genève"
+        }
       },
       {
         "id": "jerusalem",
@@ -2553,7 +2604,13 @@
         "notDone": [
           "Service de covoiturage à la demande (RidePooling, SUM) : document de politique et simulation terminés, mais l'opérateur et la date de lancement restent à définir, dans l'attente d'une décision du ministère des Transports.",
           "Extension de la Ligne verte du tram : seul un premier tronçon est attendu, au 3e trimestre 2026."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/jerusalem/jerufan-bike-share-1.jpg",
+          "alt": "Des habitants à vélo partagé à Jérusalem",
+          "caption": "Des habitants à vélo partagé à Jérusalem",
+          "credit": "Living Lab Jérusalem"
+        }
       },
       {
         "id": "cracovie",
@@ -2712,7 +2769,13 @@
         ],
         "notDone": [
           "Des mesures de contrainte plus générales (extension du stationnement payant, zones à circulation limitée, zones à 30 km/h, parkings relais supplémentaires) font partie du cadre contrainte/incitation du Living Lab, mais la présentation ne les décrit pas comme mises en œuvre à Cracovie, avec des dates et des résultats, contrairement aux mesures liées au minibus."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/cracovie/lajkbus-on-demand-minibus-2.jpg",
+          "alt": "Le minibus à la demande LajkBus à Cracovie",
+          "caption": "Le minibus à la demande LajkBus à Cracovie",
+          "credit": "Living Lab Cracovie"
+        }
       },
       {
         "id": "larnaca",
@@ -2922,7 +2985,13 @@
         "notDone": [
           "Trottinettes partagées : intégrées dans l'appli PAME mais toujours interdites par la ville au moment de la réunion d'évaluation.",
           "Règles de stationnement plus strictes et tarification : signalées comme un écart, le stationnement reste gratuit ou sous-tarifé par rapport à d'autres villes méditerranéennes ; les deux parkings relais sont prévus au-delà de SUM, dans le cadre du SUMP de Larnaca, mais pas encore construits."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/larnaca/bike-network-expansion-1.jpg",
+          "alt": "Une station de vélos partagés sur le front de mer de Larnaca",
+          "caption": "Une station de vélos partagés sur le front de mer de Larnaca",
+          "credit": "Living Lab Larnaca"
+        }
       },
       {
         "id": "munich",
@@ -3049,7 +3118,13 @@
         "notDone": [
           "Le livrable « Introduction d'une flotte de véhicules autonomes » (un service de VTC autonome prévu avec SIXT) a été annulé en juin 2023 : l'Allemagne n'homologuait pas encore les véhicules de niveau 4, donc SIXT ne pouvait pas obtenir les autorisations nécessaires. Le Living Lab de Munich a été réorienté vers l'analyse des données d'autopartage en free-floating.",
           "Les objectifs de 200 pôles de mobilité et de 1 600 places d'autopartage ne sont pas encore atteints (environ 130/200 pôles et 800/1 600 places en juin 2026) ; les deux se poursuivent jusqu'en décembre 2027."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/munich/repurposed-parking-shared-mobility-1.jpg",
+          "alt": "Un vélo partagé sur une ancienne place de voiture à Munich",
+          "caption": "Un vélo partagé sur une ancienne place de voiture à Munich",
+          "credit": "Living Lab Munich"
+        }
       },
       {
         "id": "coimbra",
@@ -3225,7 +3300,13 @@
           "Le plan de mobilité urbaine durable (SUMP) n'a pas été finalisé dans le calendrier du projet.",
           "Certains pôles de mobilité sont retardés, en attente de la fin des travaux du BRT.",
           "La billettique intégrée Move-C n'est pas encore étendue à l'opérateur de cars intercommunaux ni à la compagnie ferroviaire nationale."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/coimbra/fare-integration-move-c-2.jpg",
+          "alt": "Un bus jaune de Coimbra et ses passagers",
+          "caption": "Un bus jaune de Coimbra et ses passagers",
+          "credit": "Living Lab Coimbra"
+        }
       },
       {
         "id": "penteli",
@@ -3433,7 +3514,13 @@
         "notDone": [
           "Des bus électriques ont été annoncés (mars 2026) mais pas achetés ni déployés, à cause de blocages administratifs au niveau du gouvernement central : les lignes réintroduites roulent avec des bus classiques.",
           "Le réseau de rues cyclables n'était réalisé qu'à environ 50 % (5,6 km prévus) à la fin de la période observée ; la piste cyclable dédiée (400 m) est entièrement terminée."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/penteli/ebike-sharing-1.jpg",
+          "alt": "Les vélos électriques partagés de Penteli",
+          "caption": "Les vélos électriques partagés de Penteli",
+          "credit": "Living Lab Penteli (Athènes)"
+        }
       },
       {
         "id": "fredrikstad",
@@ -3581,7 +3668,13 @@
           "L'exploitation totalement autonome du ferry n'a pas été atteinte ; le test a porté sur le ferry électrique en conditions réelles.",
           "Aucune nouvelle appli MaaS locale n'a été construite ; l'intégration du ferry s'appuie sur les applis de voyage existantes et sur la plateforme de données ouvertes (ODP).",
           "Des « pôles de mobilité » reliant transports en commun et modes partagés figurent dans le plan de mesures, mais aucune date de mise en œuvre ni résultat n'est rapporté pour Fredrikstad."
-        ]
+        ],
+        "hero": {
+          "src": "/images/cities/fredrikstad/hyke-electric-ferry-pilot-1.jpg",
+          "alt": "Le ferry électrique Hyke sur le Glomma",
+          "caption": "Le ferry électrique Hyke sur le Glomma",
+          "credit": "Living Lab Fredrikstad"
+        }
       }
     ]
   },

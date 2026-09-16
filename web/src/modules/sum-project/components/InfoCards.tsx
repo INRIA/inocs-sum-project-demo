@@ -20,6 +20,11 @@ export default function InfoCards({ cards, onOpen, title, columns }: Props) {
                     backTitle={c.back.title || c.front.label}
                     front={
                       <>
+                        {c.front.image && (
+                          <figure className={"pic" + (c.front.image.src.endsWith(".png") ? " fit" : "")}>
+                            <img src={assetUrl(c.front.image.src)} alt={c.front.image.alt || c.front.image.caption} />
+                          </figure>
+                        )}
                         {c.front.value && <div className="n">{c.front.value}</div>}
                         <div className="l">{c.front.label}</div>
                         {c.front.teaser && <p className="t">{c.front.teaser}</p>}

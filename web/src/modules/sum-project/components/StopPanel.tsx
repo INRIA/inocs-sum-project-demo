@@ -6,6 +6,7 @@ import Gallery from "./Gallery";
 import InfoCards from "./InfoCards";
 import Modal from "./Modal";
 import SortGame from "./SortGame";
+import CityStrip from "./CityStrip";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
@@ -13,7 +14,7 @@ type Props = { stop: Stop; content: Content; resId: string | null; onOpen: (id: 
 
 export default function StopPanel({ stop, content, resId, onOpen }: Props) {
   const sort = stop.game?.sort || null;
-  const cardMode = !!(stop.cards || stop.cities || stop.challenge || sort); // arrêt « cartes » : recto / verso / fiche en modale
+  const cardMode = !!(stop.cards || stop.cities || stop.challenge || sort || stop.cityStrip); // arrêt « cartes » : recto / verso / fiche en modale
   const cityId = stop.cities ? parseSel(resId).cityId : null;
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
   const isSortCard = !!sort && sort.cards.some((c) => c.id === resId);
@@ -75,6 +76,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
               </section>
             )}
             {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
+            {stop.cityStrip && <CityStrip strip={stop.cityStrip} cities={content.cities.items} />}
             {stop.cards && stop.cards.length > 0 && <InfoCards cards={stop.cards} onOpen={onOpen} />}
             {stop.cities && <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} />}
             {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title={stop.moreTitle || "Pour aller plus loin"} columns={stop.id === "station" ? 2 : undefined} />}

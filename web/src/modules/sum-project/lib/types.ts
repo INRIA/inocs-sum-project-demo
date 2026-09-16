@@ -15,7 +15,7 @@ export type Instruction = { step: number; title?: string; text: string };
 // Carte d'information : recto = un chiffre et une accroche, verso = 3–5 lignes, puis « En savoir plus » (fiche en modale).
 export type InfoCard = {
   id: string; accent?: boolean; wide?: boolean;
-  front: { value?: string; label: string; teaser?: string };
+  front: { value?: string; label: string; teaser?: string; image?: Img };  // image : bandeau photo en haut du recto
   back: { title?: string; lines?: string[]; image?: Img };
   link?: Link;        // action externe (ex. ouvrir la plateforme)
   resource?: string;  // id d'une ressource de l'arrêt, ouverte en modale
@@ -50,6 +50,7 @@ export type Stop = {
   featured?: string[];
   images?: Img[];
   challenge?: { eyebrow?: string; question: string; hint?: string; cta: Link };  // une seule question, un seul bouton
+  cityStrip?: { title: string; lead?: string };  // bandeau des villes (photo, drapeau, nom) → #/destination/<ville>
   cards?: InfoCard[];      // mode « cartes » : recto / verso / fiche
   cities?: boolean;        // affiche les cartes Villes (bloc `cities`) après `cards`
   moreCards?: InfoCard[];  // cartes « pour aller plus loin », après les villes
@@ -70,6 +71,7 @@ export type CityMeasure = {
 export type CityItem = {
   id: string; name: string; country: string; flag: string; role: string;
   tagline: string; context?: string; odpUrl?: string;
+  hero?: Img;  // la photo qui représente la ville (bandeau de l'arrêt 1)
   modalSplit?: ModalSplit | null; measures: CityMeasure[]; results?: string[]; notDone?: string[];
 };
 export type CitiesBlock = {
