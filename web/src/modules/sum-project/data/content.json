@@ -94,7 +94,7 @@
       "durationMin": null,
       "tableTent": {
         "headline": "Vous êtes maire.",
-        "subline": "Neuf villes européennes ont relevé le défi. Touchez une ville, retournez les cartes : faites connaissance."
+        "subline": "Neuf villes européennes ont relevé le défi. Retournez les cartes : pourquoi changer, avec quoi, et est-ce que ça a marché ?"
       },
       "instructions": [
         {
@@ -144,12 +144,16 @@
               "value": "12"
             },
             {
-              "label": "Villes observatrices",
-              "value": "7, dont Lille"
-            },
-            {
               "label": "Durée",
               "value": "36 mois (2023–2026)"
+            },
+            {
+              "label": "Budget",
+              "value": "10,2 M€ (Horizon Europe)"
+            },
+            {
+              "label": "Objectif de départ",
+              "value": "15 villes équipées d'ici 2026, 30 d'ici 2030"
             }
           ],
           "images": [
@@ -173,7 +177,7 @@
             }
           ],
           "source": {
-            "report": "p.7–8, p.82, p.85",
+            "report": "p.6–9, p.85",
             "task": "",
             "partner": "Inria (coordinateur)",
             "livingLab": ""
@@ -455,16 +459,197 @@
             "partner": "VEDECOM",
             "livingLab": "toutes"
           }
+        },
+        {
+          "id": "pourquoi-changer",
+          "title": "Pourquoi changer ?",
+          "teaser": "Ce que les habitants disaient avant SUM.",
+          "kind": "contexte",
+          "body": [
+            "Plus de 70 % des kilomètres parcourus chaque année par une personne moyenne le sont en voiture individuelle (statistique néerlandaise, CBS 2016). SUM part de là.",
+            "Une enquête européenne (projet e-Hubs, 2021) a demandé aux habitants pourquoi ils ne passaient pas de la voiture aux modes partagés. Cinq réponses dominent."
+          ],
+          "facts": [
+            {
+              "label": "Contents de leur voiture",
+              "value": "34 %"
+            },
+            {
+              "label": "Impossible de combiner avec les transports en commun",
+              "value": "17 %"
+            },
+            {
+              "label": "Trop cher",
+              "value": "16 %"
+            },
+            {
+              "label": "Pas sûrs de trouver un véhicule disponible",
+              "value": "15 %"
+            },
+            {
+              "label": "Impossible de laisser le véhicule où ils veulent",
+              "value": "11 %"
+            }
+          ],
+          "source": {
+            "report": "",
+            "task": "Présentation de la coordination, réunion d'évaluation, juin 2026, diapo 4",
+            "partner": "Inria (coordinateur)",
+            "livingLab": ""
+          }
+        },
+        {
+          "id": "ca-a-marche",
+          "title": "Est-ce que ça a marché ?",
+          "teaser": "Ce que dit l'enquête « après », ville par ville.",
+          "kind": "résultat",
+          "body": [
+            "Début 2026, les habitants des neuf villes ont répondu au même questionnaire qu'en 2024. Les résultats varient beaucoup d'une ville à l'autre.",
+            "Ce sont des parts de trajets déclarés dans l'enquête, pas des comptages : un ordre de grandeur, pas une mesure au trajet près."
+          ],
+          "items": [
+            {
+              "title": "Cracovie",
+              "text": "les modes partagés ne dépassaient pas 1 % des trajets avant ; l'enquête « après » en déclare 20 %, avec le bus à la demande LajkBus."
+            },
+            {
+              "title": "Jérusalem",
+              "text": "la marche, la micromobilité et le train progressent entre les deux enquêtes."
+            },
+            {
+              "title": "Toutes villes",
+              "text": "les transports en commun passent de 16 % à 18,5 % des trajets déclarés."
+            },
+            {
+              "title": "Coimbra",
+              "text": "93 % des trajets déclarés se font encore en voiture : la voiture domine toujours."
+            }
+          ],
+          "source": {
+            "report": "p.64–65",
+            "task": "T5.1",
+            "partner": "UT, TUM",
+            "livingLab": "toutes"
+          }
+        },
+        {
+          "id": "et-apres",
+          "title": "Et après SUM ?",
+          "teaser": "Sept villes observatrices, une plateforme ouverte.",
+          "kind": "suite",
+          "body": [
+            "Sept villes ont suivi le projet de juin 2024 à juin 2026 pour reproduire ce qui marche : Vitoria-Gasteiz, Lille, Istanbul, Zagreb, Tel Aviv, Héraklion et la communauté du Douro. Elles ont assisté aux assemblées, visité des Living Labs et suivi 14 sessions d'experts.",
+            "La plateforme de données ouverte (odp.sum-project.eu) héberge 11 villes en juin 2026, dont les neuf de SUM. Son code est libre et elle reste en ligne après le projet.",
+            "Deux villes observatrices, le Douro et Vitoria-Gasteiz, se sont engagées à poursuivre : le Douro déploie un transport à la demande coordonné dans ses 19 communes."
+          ],
+          "facts": [
+            {
+              "label": "Villes observatrices",
+              "value": "7, dont Lille"
+            },
+            {
+              "label": "Villes sur la plateforme",
+              "value": "11 (juin 2026)"
+            },
+            {
+              "label": "Sessions d'experts suivies",
+              "value": "14"
+            }
+          ],
+          "images": [
+            {
+              "src": "/images/destination-odp.jpg",
+              "alt": "La page d'accueil de la plateforme de données SUM",
+              "caption": "La plateforme de données ouverte, odp.sum-project.eu",
+              "credit": "SUM"
+            }
+          ],
+          "source": {
+            "report": "p.85–87, p.99",
+            "task": "T6.2",
+            "partner": "ERTICO",
+            "livingLab": ""
+          }
         }
       ],
       "images": [],
       "cards": [
         {
+          "id": "pourquoi",
+          "wide": true,
+          "accent": true,
+          "front": {
+            "value": "70 %",
+            "label": "des kilomètres se font en voiture individuelle",
+            "teaser": "Pourquoi changer ? Parce que l'habitude tient bon. Avant SUM, voilà ce que disaient les habitants."
+          },
+          "back": {
+            "title": "Les cinq freins des habitants",
+            "chart": {
+              "type": "bars",
+              "unit": " %",
+              "items": [
+                {
+                  "label": "Contents de leur voiture",
+                  "value": 34
+                },
+                {
+                  "label": "Impossible de combiner avec le bus ou le tram",
+                  "value": 17
+                },
+                {
+                  "label": "Trop cher",
+                  "value": 16
+                },
+                {
+                  "label": "Pas sûrs d'en trouver un",
+                  "value": 15
+                },
+                {
+                  "label": "Pas là où ils veulent",
+                  "value": 11
+                }
+              ]
+            },
+            "lines": [
+              "Cinq freins, cinq leviers : SUM a construit un outil contre chacun."
+            ]
+          },
+          "resource": "pourquoi-changer"
+        },
+        {
+          "id": "leviers",
+          "front": {
+            "value": "5",
+            "label": "leviers du maire",
+            "teaser": "Prévoir, gérer, connecter, co-concevoir, tarifer",
+            "icons": [
+              "prevoir",
+              "gerer",
+              "connecter",
+              "coconcevoir",
+              "tarifer"
+            ]
+          },
+          "back": {
+            "title": "Les cinq leviers, et où les voir",
+            "lines": [
+              "Prévoir où seront les vélos et scooters dans une heure → Belvédère, carte 1.",
+              "Gérer une flotte de bus à la demande → Belvédère, carte 2.",
+              "Connecter bus et vélo sur un seul billet → Belvédère, carte 3.",
+              "Co-concevoir la rue avec les habitants → Carrefour.",
+              "Tarifer pour faire changer d'habitude → Belvédère, carte 8."
+            ]
+          },
+          "resource": "cinq-leviers"
+        },
+        {
           "id": "partenaires",
+          "wide": true,
           "front": {
             "value": "29",
-            "label": "partenaires",
-            "teaser": "dans 12 pays",
+            "label": "partenaires · 12 pays · 9 villes",
+            "teaser": "Qui a joué ? Des universités, des villes et des opérateurs de transport, de la Norvège à Chypre.",
             "image": {
               "src": "/images/sum-consortium-cracovie.jpg",
               "alt": "Le consortium SUM devant un bus électrique de Cracovie",
@@ -474,128 +659,40 @@
           },
           "back": {
             "title": "Qui fait SUM ?",
-            "lines": [
-              "Des universités aux opérateurs de transport, en passant par les villes et les réseaux européens.",
-              "12 pays, de la Norvège à Chypre.",
-              "Coordination : Inria."
-            ],
             "image": {
               "src": "/images/sum-partners.png",
               "alt": "Les logos des 29 partenaires du projet SUM",
               "caption": "Les 29 partenaires",
               "credit": "SUM"
-            }
-          },
-          "resource": "sum-en-bref",
-          "wide": true
-        },
-        {
-          "id": "duree",
-          "front": {
-            "value": "3 ans",
-            "label": "de recherche et de terrain",
-            "teaser": "juin 2023 – mai 2026"
-          },
-          "back": {
-            "title": "La chronologie",
-            "lines": [
-              "Juin 2023 : lancement du projet.",
-              "2024 : enquête « avant » auprès des habitants.",
-              "2024–2026 : les villes testent leurs mesures.",
-              "Début 2026 : enquête « après », même questionnaire.",
-              "Mai 2026 : fin du projet ; la plateforme reste en ligne au moins 5 ans."
-            ]
-          },
-          "resource": "sum-en-bref"
-        },
-        {
-          "id": "living-labs",
-          "front": {
-            "value": "9",
-            "label": "Living Labs",
-            "teaser": "de la Norvège à Chypre, de la banlieue d'Athènes au centre de Genève",
-            "image": {
-              "src": "/images/sum-map.png",
-              "alt": "Carte des villes du projet SUM",
-              "caption": "Les villes du projet SUM en Europe",
-              "credit": "sum-project.eu"
-            }
-          },
-          "back": {
-            "title": "Les neuf villes",
-            "image": {
-              "src": "/images/sum-map.png",
-              "alt": "Carte des villes du projet SUM",
-              "caption": "Les villes du projet SUM en Europe",
-              "credit": "sum-project.eu"
             },
             "lines": [
-              "4 villes leaders : Munich, Genève, Jérusalem, Penteli.",
-              "5 villes suiveuses : Rotterdam, Cracovie, Fredrikstad, Larnaca, Coimbra."
-            ]
-          },
-          "resource": "neuf-villes",
-          "wide": true,
-          "accent": true
-        },
-        {
-          "id": "objectifs",
-          "front": {
-            "value": "15 → 30",
-            "label": "villes équipées d'ici 2030",
-            "teaser": "L'objectif : relier mobilités partagées et transports en commun"
-          },
-          "back": {
-            "title": "Ce que SUM vise",
-            "lines": [
-              "Intégrer vélos, trottinettes, voitures partagées et bus à la demande aux transports en commun.",
-              "Des trajets porte-à-porte sans voiture personnelle, dans un budget d'émissions de CO₂ limité.",
-              "15 villes d'ici 2026, 30 d'ici 2030."
+              "Des universités aux opérateurs de transport, en passant par les villes et les réseaux européens.",
+              "Trois pays hors Union européenne : Israël, Norvège, Suisse.",
+              "Budget : 10,2 millions d'euros sur trois ans. Coordination : Inria."
             ]
           },
           "resource": "sum-en-bref"
         },
         {
-          "id": "leviers",
+          "id": "marche",
           "front": {
-            "value": "5",
-            "label": "leviers du maire",
-            "teaser": "Prévoir, gérer, connecter, co-concevoir, tarifer"
+            "value": "< 1 % → 20 %",
+            "label": "de trajets en modes partagés à Cracovie",
+            "teaser": "Est-ce que ça a marché ? Après le bus à la demande, d'après l'enquête « après »."
           },
           "back": {
-            "title": "Les cinq leviers",
+            "title": "Est-ce que ça a marché ?",
             "lines": [
-              "Prévoir la disponibilité des modes partagés.",
-              "Gérer les flottes partagées à la demande.",
-              "Connecter horaires et billettique aux transports en commun.",
-              "Co-concevoir les pôles de mobilité avec les habitants.",
-              "Tarifer et inciter pour réduire le coût des modes partagés."
+              "Cracovie : les modes partagés passent de moins de 1 % à 20 % des trajets déclarés, après LajkBus.",
+              "Dans les neuf villes, les transports en commun passent de 16 % à 18,5 % des trajets.",
+              "Coimbra : 93 % des trajets se font encore en voiture. Tout ne bouge pas en trois ans."
             ]
           },
-          "resource": "cinq-leviers"
-        },
-        {
-          "id": "enquetes",
-          "front": {
-            "value": "2",
-            "label": "enquêtes, avant et après",
-            "teaser": "Même questionnaire, 7 langues, 2024 puis 2026"
+          "link": {
+            "label": "Voir les villes, arrêt 5",
+            "url": "#/destination"
           },
-          "back": {
-            "title": "Comment sait-on si ça marche ?",
-            "lines": [
-              "200 répondants visés par ville.",
-              "29 indicateurs communs (cadre SIEF).",
-              "Indicateur principal : la part modale, c'est-à-dire qui se déplace comment."
-            ],
-            "image": {
-              "src": "/images/destination-sief.png",
-              "alt": "Le cadre d'évaluation SIEF : 29 indicateurs, dont la part modale",
-              "caption": "Les 29 indicateurs du cadre SIEF",
-              "credit": "odp.sum-project.eu"
-            }
-          },
-          "resource": "comment-on-mesure"
+          "resource": "ca-a-marche"
         },
         {
           "id": "smileys",
@@ -605,29 +702,180 @@
             "teaser": "Les habitants ont noté les nouveaux services. Devinez les villes tout en vert."
           },
           "back": {
-            "title": "Réponse",
-            "lines": [
-              "Tout en vert : Cracovie (LajkBus) et Larnaca (vélos partagés).",
-              "Tout en rouge : Jérusalem (vélos partagés).",
-              "Le détail, service par service, est dans la fiche."
-            ]
+            "title": "Qui a aimé quoi ?",
+            "chart": {
+              "type": "matrix",
+              "columns": [
+                "Ville",
+                "Service",
+                "Pratique",
+                "Temps",
+                "Facile",
+                "Accès",
+                "Sûr",
+                "Envie"
+              ],
+              "rows": [
+                [
+                  "Munich",
+                  "Autopartage",
+                  "🙁",
+                  "😐",
+                  "🙂",
+                  "NA",
+                  "NA",
+                  "😐"
+                ],
+                [
+                  "Genève",
+                  "Autopartage",
+                  "😐",
+                  "🙁",
+                  "🙂",
+                  "🙂",
+                  "NA",
+                  "🙂"
+                ],
+                [
+                  "Genève",
+                  "Vélos partagés",
+                  "😐",
+                  "😐",
+                  "🙂",
+                  "🙂",
+                  "🙂",
+                  "😐"
+                ],
+                [
+                  "Jérusalem",
+                  "Vélos partagés",
+                  "🙁",
+                  "🙁",
+                  "🙁",
+                  "🙁",
+                  "🙁",
+                  "🙁"
+                ],
+                [
+                  "Jérusalem",
+                  "Tram (à venir)",
+                  "😐",
+                  "😐",
+                  "🙂",
+                  "😐",
+                  "NA",
+                  "NA"
+                ],
+                [
+                  "Rotterdam",
+                  "Scooters",
+                  "🙁",
+                  "🙂",
+                  "😐",
+                  "NA",
+                  "😐",
+                  "🙁"
+                ],
+                [
+                  "Penteli",
+                  "Vélos partagés",
+                  "🙁",
+                  "🙁",
+                  "🙂",
+                  "🙁",
+                  "🙁",
+                  "🙁"
+                ],
+                [
+                  "Cracovie",
+                  "LajkBus",
+                  "🙂",
+                  "🙂",
+                  "🙂",
+                  "🙂",
+                  "🙂",
+                  "🙂"
+                ],
+                [
+                  "Larnaca",
+                  "Vélos partagés",
+                  "🙂",
+                  "🙂",
+                  "🙂",
+                  "🙂",
+                  "🙂",
+                  "🙂"
+                ],
+                [
+                  "Coimbra",
+                  "Bus",
+                  "🙁",
+                  "🙁",
+                  "😐",
+                  "😐",
+                  "NA",
+                  "🙁"
+                ]
+              ],
+              "legend": "🙂 au-dessus de la moyenne · 😐 dans la moyenne · 🙁 en dessous · NA non évalué",
+              "headCols": 2
+            }
           },
           "resource": "smileys"
         },
         {
-          "id": "observatrices",
+          "id": "avant-apres",
           "front": {
-            "value": "7",
-            "label": "villes observatrices",
-            "teaser": "dont Lille"
+            "value": "Avant → Après",
+            "label": "la même question, deux fois",
+            "teaser": "Comment sait-on si ça marche ? On demande aux habitants avant, puis après."
           },
           "back": {
-            "title": "Elles suivent pour répliquer",
+            "title": "Comment sait-on ?",
+            "chart": {
+              "type": "timeline",
+              "items": [
+                {
+                  "when": "Juin 2023",
+                  "text": "Lancement du projet."
+                },
+                {
+                  "when": "2024",
+                  "text": "Enquête « avant » : 200 habitants par ville, même questionnaire en 7 langues."
+                },
+                {
+                  "when": "2024 – 2026",
+                  "text": "Les villes testent leurs mesures."
+                },
+                {
+                  "when": "Début 2026",
+                  "text": "Enquête « après », mêmes questions."
+                },
+                {
+                  "when": "Mai 2026",
+                  "text": "Fin du projet ; la plateforme reste en ligne."
+                }
+              ]
+            }
+          },
+          "resource": "comment-on-mesure"
+        },
+        {
+          "id": "apres",
+          "front": {
+            "value": "Lille",
+            "label": "observe SUM, avec six autres villes",
+            "teaser": "Et après ? Sept villes regardent pour copier. La plateforme accueille déjà 11 villes."
+          },
+          "back": {
+            "title": "Et après ?",
             "lines": [
-              "Vitoria-Gasteiz, Lille, Istanbul, Zagreb, Tel Aviv, Héraklion et la communauté du Douro.",
-              "Objectif : 15 villes d'ici 2030."
+              "🇫🇷 Lille · 🇪🇸 Vitoria-Gasteiz · 🇹🇷 Istanbul · 🇭🇷 Zagreb · 🇮🇱 Tel Aviv · 🇬🇷 Héraklion · 🇵🇹 Douro.",
+              "La plateforme de données héberge déjà 11 villes, dont les 9 de SUM, et reste ouverte.",
+              "Le Douro déploie des bus à la demande dans 19 communes."
             ]
-          }
+          },
+          "resource": "et-apres"
         }
       ],
       "cityStrip": {

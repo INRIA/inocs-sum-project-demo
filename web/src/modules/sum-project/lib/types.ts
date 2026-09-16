@@ -12,11 +12,17 @@ export type Resource = {
 
 export type Instruction = { step: number; title?: string; text: string };
 
+// Petits graphiques dessinés depuis les données (barres, frise, grille d'émojis) : modifiables sans toucher au code.
+export type Chart =
+  | { type: "bars"; unit?: string; items: { label: string; value: number }[] }
+  | { type: "timeline"; items: { when: string; text: string }[] }
+  | { type: "matrix"; columns: string[]; rows: string[][]; legend?: string; headCols?: number };  // headCols : colonnes de gauche fusionnées en en-tête de ligne
+
 // Carte d'information : recto = un chiffre et une accroche, verso = 3–5 lignes, puis « En savoir plus » (fiche en modale).
 export type InfoCard = {
   id: string; accent?: boolean; wide?: boolean;
-  front: { value?: string; label: string; teaser?: string; image?: Img };  // image : bandeau photo en haut du recto
-  back: { title?: string; lines?: string[]; image?: Img };
+  front: { value?: string; label: string; teaser?: string; image?: Img; icons?: string[] };  // image : bandeau photo ; icons : pictogrammes (Pictos.tsx)
+  back: { title?: string; lines?: string[]; image?: Img; chart?: Chart };
   link?: Link;        // action externe (ex. ouvrir la plateforme)
   resource?: string;  // id d'une ressource de l'arrêt, ouverte en modale
 };
