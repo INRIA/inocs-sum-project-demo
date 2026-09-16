@@ -5,15 +5,15 @@ import FlipCard from "./FlipCard";
 
 // Grille de cartes d'information. L'état « retournée » est local : on peut en retourner plusieurs
 // et les garder ouvertes pendant qu'on raconte. « En savoir plus » ouvre la fiche (modale) via le hash.
-type Props = { cards: InfoCard[]; onOpen: (res: string) => void; title?: string };
+type Props = { cards: InfoCard[]; onOpen: (res: string) => void; title?: string; columns?: number };
 
-export default function InfoCards({ cards, onOpen, title }: Props) {
+export default function InfoCards({ cards, onOpen, title, columns }: Props) {
   const [open, setOpen] = useState<Set<string>>(new Set());
   const set = (id: string, on: boolean) => setOpen((s) => { const n = new Set(s); on ? n.add(id) : n.delete(id); return n; });
   return (
     <section className="cardsec" aria-label={title}>
       {title && <h3 className="csec-title">{title}</h3>}
-      <div className="cardgrid">
+      <div className={"cardgrid" + (columns ? ` cols-${columns}` : "")}>
         {cards.map((c) => (
           <FlipCard key={c.id} flipped={open.has(c.id)} onFlip={(on) => set(c.id, on)} label={c.front.label}
                     className={"info" + (c.accent ? " accent" : "") + (c.wide ? " wide" : "")}
