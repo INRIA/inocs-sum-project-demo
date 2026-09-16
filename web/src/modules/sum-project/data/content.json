@@ -75,7 +75,7 @@
       "messages": [
         "Le problème est vraiment difficile : plusieurs critères, plusieurs contraintes, plusieurs acteurs.",
         "Les outils de recherche (prévision, simulation, optimisation) aident à comparer des scénarios — ils ne remplacent pas la décision.",
-        "Ce que vous avez vu à la table « Station » est de la recherche : rien n'est déployé dans une ville. Genève est le cas d'étude.",
+        "Ce que vous avez vu à la table « Station » est un travail de recherche et d'innovation, avec Genève comme cas d'étude.",
         "Les vraies villes ont testé, mesuré, et parfois échoué — et c'est mesuré aussi."
       ]
     }
@@ -607,10 +607,9 @@
       "position": "table 2, avec tablette et ordinateur portable",
       "capacity": 6,
       "durationMin": 15,
-      "researchOnly": true,
       "tableTent": {
         "headline": "Où doivent vivre les vélos ?",
-        "subline": "Une carte, des épingles, un budget. La tablette montre comment la ville bouge. — Recherche uniquement : rien n'est déployé."
+        "subline": "Une carte, des épingles, un budget. La tablette montre comment la ville bouge."
       },
       "game": {
         "tablet": {
@@ -645,7 +644,6 @@
         "Épingles ou pions : 10 par groupe",
         "Tablette avec la démo (étape 2 « La ville », passée en français, plein écran)",
         "Ordinateur portable ou écran pour la révélation (étape 4, plan d'amorce 20 k€)",
-        "Fiche « Recherche uniquement »",
         "QR code vers l'arrêt 2 de la page"
       ],
       "reveal": null,
@@ -789,114 +787,89 @@
             "partner": "TUD, TAU, TUM, UT, JU, Inria",
             "livingLab": ""
           }
-        },
-        {
-          "id": "recherche-uniquement",
-          "title": "Recherche uniquement",
-          "teaser": "Rien de ce que vous voyez sur cette table n'est déployé dans une ville.",
-          "kind": "notice",
-          "body": [
-            "Les modèles présentés à cette table sont des travaux de recherche de l'équipe INOCS (Inria). Genève est le cas d'étude, avec des données réelles, mais aucune station n'a été construite sur la base de ces résultats.",
-            "L'objectif est d'aider les villes à comparer des scénarios — la décision leur appartient."
-          ],
-          "facts": [],
-          "images": [],
-          "links": [],
-          "source": {
-            "report": "p.26, p.37",
-            "task": "T2.3, T3.3",
-            "partner": "Inria",
-            "livingLab": "Genève"
-          }
         }
       ],
       "images": [],
       "moreCards": [
         {
-          "id": "modele",
+          "id": "q1-budget",
           "front": {
-            "value": "22–33 %",
-            "label": "de trajets combinés vélo + tram",
-            "teaser": "Ce que dit le modèle, une fois le budget suffisant"
+            "value": "Q1",
+            "label": "Combien la ville doit-elle investir ?",
+            "teaser": "Et à partir de quand l'euro suivant ne rapporte-t-il plus ?"
           },
           "back": {
-            "title": "Ce que dit le modèle",
+            "title": "Réponse : jusqu'à 80 000 €",
             "lines": [
-              "En dessous d'environ un quart du budget, le système reste « vélo seul ».",
-              "Au-dessus, la part des trajets combinés monte et se stabilise entre 22 et 33 %.",
-              "Gain de temps moyen de l'ordre de 50 % par rapport à marcher + transport en commun."
+              "20 000 € servent 34 % des trajets potentiels, 40 000 € en servent 62 %, 80 000 € en servent 90 %.",
+              "Au-delà, presque plus rien : 120 000 € servent 91 %.",
+              "Les premiers euros achètent de la couverture, les derniers des bornes pour des usagers déjà servis."
             ]
           },
-          "resource": "ce-que-dit-le-modele"
+          "link": {
+            "label": "Voir la preuve dans la démo",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+          }
         },
         {
-          "id": "probleme",
+          "id": "q2-transports",
           "front": {
-            "value": "4",
-            "label": "décisions à prendre ensemble",
-            "teaser": "Emplacement, capacité, flotte, réapprovisionnement"
+            "value": "Q2",
+            "label": "Quand le vélo partagé alimente-t-il les trams et les bus ?",
+            "teaser": "Au lieu de simplement remplacer de courts trajets"
           },
           "back": {
-            "title": "Pourquoi c'est difficile",
+            "title": "Réponse : entre 20 000 et 40 000 €",
             "lines": [
-              "Trop de stations coûte cher. Trop peu, et les vélos ne servent à rien.",
-              "Chaque station a un coût, une capacité et un stock à réapprovisionner.",
-              "Elle doit tomber là où les gens en ont besoin, souvent à côté d'un arrêt de bus ou de tram."
+              "À 20 000 €, un trajet servi sur cinq seulement (19 %) combine vélo et transports en commun.",
+              "À 40 000 €, un sur trois (32 %) : le modèle peut financer des stations aux arrêts de tram et de bus.",
+              "À 80 000 €, quatre sur dix (40 %)."
             ]
           },
-          "resource": "le-probleme"
+          "link": {
+            "label": "Voir la preuve dans la démo",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+          }
         },
         {
-          "id": "decide",
+          "id": "q3-camions",
           "front": {
-            "value": "1,5 km",
-            "label": "de Genève, en hexagones",
-            "teaser": "Comment le modèle décide"
+            "value": "Q3",
+            "label": "Des camions, ou des bornes ?",
+            "teaser": "Faut-il payer des camions qui déplacent les vélos, ou plus de stations ?"
           },
           "back": {
-            "title": "Comment le modèle décide",
+            "title": "Réponse : un peu de camions, pas plus",
             "lines": [
-              "La ville est découpée en hexagones ; chaque centre et chaque arrêt de transport en commun est une station candidate.",
-              "Pour chaque origine-destination, trois trajets possibles : vélo direct, vélo + TC, marche + TC.",
-              "Un programme d'optimisation choisit les stations, leur capacité et la flotte, à partir de données réelles (enquête 2022, comptages TPG 2024)."
+              "Sans camion, le réseau à 80 000 € sert 87,5 % des trajets.",
+              "9 tournées par jour (426 €) le portent à 90 % : 36 trajets de plus.",
+              "Sans limite, 76 tournées (4 000 € par jour) n'ajoutent que 13 trajets : mieux vaut investir ailleurs."
             ]
           },
-          "resource": "comment-le-modele-decide"
+          "link": {
+            "label": "Voir la preuve dans la démo",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+          }
         },
         {
-          "id": "outils",
+          "id": "q4-rythme",
           "front": {
-            "value": "4 outils",
-            "label": "de plus dans la boîte",
-            "teaser": "Prévoir la disponibilité, simuler des flottes, faire arriver le minibus juste avant le tram"
+            "value": "Q4",
+            "label": "Le rythme de la journée change-t-il la carte ?",
+            "teaser": "Pendulaires le lundi, loisirs le dimanche"
           },
           "back": {
-            "title": "Les autres outils",
+            "title": "Réponse : peu la carte, beaucoup le service",
             "lines": [
-              "Y aura-t-il une trottinette ?",
-              "Le jumeau numérique du bus à la demande.",
-              "Le minibus qui arrive juste avant le tram.",
-              "Qui a droit à une station ?"
+              "Même budget, 80 000 € : une journée régulière est servie à 92 %, une journée à forte pointe du matin à 82 %.",
+              "La carte bouge peu, de 75 à 84 stations selon le rythme.",
+              "Ce qui change : plus la pointe est chargée, moins elle est servie."
             ]
           },
-          "resource": "autres-outils"
-        },
-        {
-          "id": "recherche",
-          "front": {
-            "value": "TRL 3–4",
-            "label": "recherche uniquement",
-            "teaser": "Rien n'est déployé dans une ville"
-          },
-          "back": {
-            "title": "Recherche uniquement",
-            "lines": [
-              "Genève est le cas d'étude, avec des données réelles, mais aucune station n'a été construite sur cette base.",
-              "Les modèles sont au niveau de maturité 3–4 sur 9 : c'est de la recherche.",
-              "Ils aident à comparer des scénarios ; la décision appartient à la ville."
-            ]
-          },
-          "resource": "recherche-uniquement"
+          "link": {
+            "label": "Voir la preuve dans la démo",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+          }
         }
       ],
       "challenge": {
@@ -907,7 +880,9 @@
           "label": "Découvrir comment la ville bouge",
           "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=2"
         }
-      }
+      },
+      "badge": "Recherche et innovation",
+      "moreTitle": "Les quatre questions du modèle"
     },
     {
       "id": "carrefour",

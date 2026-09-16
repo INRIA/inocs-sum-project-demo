@@ -59,7 +59,6 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
           {cardMode ? <details className="consignes"><summary>Consignes de la table</summary>{consignes}</details> : consignes}
           {!cardMode && stop.game?.tablet?.url && <a className="demo" href={/^https?:/.test(stop.game.tablet.url) ? stop.game.tablet.url : assetUrl(stop.game.tablet.url)} target="_blank" rel="noopener">Ouvrir la démo sur la tablette ↗</a>}
           {!cardMode && stop.game?.note && <div className="notice soft">{stop.game.note}</div>}
-          {stop.researchOnly && <div className="notice">Recherche uniquement — rien n'est déployé dans une ville.</div>}
         </aside>
 
         {cardMode ? (
@@ -74,7 +73,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
             )}
             {stop.cards && stop.cards.length > 0 && <InfoCards cards={stop.cards} onOpen={onOpen} />}
             {stop.cities && <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} />}
-            {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title="Pour aller plus loin" />}
+            {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title={stop.moreTitle || "Pour aller plus loin"} />}
           </>
         ) : (
           <div className="tiles">

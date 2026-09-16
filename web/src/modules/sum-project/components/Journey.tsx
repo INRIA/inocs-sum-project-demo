@@ -64,7 +64,7 @@ export default function Journey({ content }: { content: Content }) {
             <header className="sheet-head">
               <div>
                 <div className="eyebrow">Arrêt {stop.order} · {stop.place}</div>
-                <h2>{stop.title}</h2>
+                <h2>{stop.title.replace(/ ([?!:;])/g, "\u00a0$1")}{stop.badge && <span className="titlebadge">{stop.badge}</span>}</h2>
                 <div className="q">{stop.question}</div>
               </div>
               <div className="actions">

@@ -24,7 +24,8 @@ export type InfoCard = {
 export type Stop = {
   id: string; order: number; place: string; title: string; question: string;
   mode: "passive" | "animated" | "selfservice"; animator: string | null; position?: string;
-  capacity: number | null; durationMin: number | null; researchOnly?: boolean;
+  capacity: number | null; durationMin: number | null;
+  badge?: string;          // étiquette à côté du titre (ex. « Recherche et innovation »)
   tableTent: { headline: string; subline: string };
   instructions: Instruction[]; rule?: string; materials: string[];
   questions?: { id: string; text: string }[];
@@ -36,6 +37,7 @@ export type Stop = {
   cards?: InfoCard[];      // mode « cartes » : recto / verso / fiche
   cities?: boolean;        // affiche les cartes Villes (bloc `cities`) après `cards`
   moreCards?: InfoCard[];  // cartes « pour aller plus loin », après les villes
+  moreTitle?: string;      // titre de la section moreCards (défaut : « Pour aller plus loin »)
   resources: Resource[];
 };
 
