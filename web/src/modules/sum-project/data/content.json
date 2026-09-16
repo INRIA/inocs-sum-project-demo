@@ -601,7 +601,7 @@
       "order": 2,
       "place": "Belvédère",
       "title": "Ce qui arrive après le tram",
-      "question": "Douze idées venues des villes SUM : lesquelles roulent déjà, lesquelles sont au labo, lesquelles attendent encore leur heure ?",
+      "question": "Treize idées venues des villes SUM : lesquelles roulent déjà, lesquelles sont au labo, lesquelles attendent encore leur heure ?",
       "mode": "selfservice",
       "animator": null,
       "position": "table 2, en autonomie ; un animateur passe toutes les 10 min pour un débrief d'une minute",
@@ -610,7 +610,7 @@
       "badge": "Jeu de tri",
       "tableTent": {
         "headline": "Ce qui arrive après le tram",
-        "subline": "Douze idées, trois tapis. Devinez où chacune en est vraiment, puis retournez les cartes."
+        "subline": "Treize idées, trois tapis. Devinez où chacune en est vraiment, puis retournez les cartes."
       },
       "instructions": [
         {
@@ -637,7 +637,7 @@
       "rule": "Chacun place au moins une carte. Personne ne retourne une carte avant la fin.",
       "materials": [
         "Chevalet de table",
-        "12 cartes innovation A6, recto (titre, photo, accroche, question) / verso (tampon, 3 lignes « pourquoi », partenaire, « Pour le voir : table X », page du rapport)",
+        "13 cartes innovation A6, recto (titre, photo, accroche, question) / verso (tampon, 3 lignes « pourquoi », partenaire, « Pour le voir : table X », page du rapport)",
         "3 tapis A4 : 🟢 « Ça roule déjà » · 🟡 « Au labo ou en préparation » · 🔴 « Ça attend son heure »",
         "Bandeau de score et tampon pour le ticket",
         "20 bulletins « Bulletin pour le conseil municipal »",
@@ -979,6 +979,32 @@
                 "res": "geneve"
               },
               "source": "Rapport pp. 43–48"
+            },
+            {
+              "id": "ferry-sans-capitaine",
+              "n": 13,
+              "title": "Un ferry sans capitaine pour traverser le fleuve",
+              "pitch": "Un petit ferry électrique qui relie les deux rives du Glomma, intégré aux bus, et qui navigue tout seul.",
+              "question": "Un bateau autonome, c'est plus simple qu'une voiture autonome ?",
+              "image": {
+                "src": "/images/cities/fredrikstad/hyke-electric-ferry-pilot-1.jpg",
+                "caption": "Le ferry électrique Hyke testé sur le Glomma (Fredrikstad)",
+                "alt": "Un ferry électrique blanc et profilé naviguant sur l'eau",
+                "credit": "Living Lab Fredrikstad"
+              },
+              "verdict": "mur",
+              "why": [
+                "Le ferry électrique, lui, a été testé pour de vrai d'avril 2024 à août 2025 : 26 583 passagers en 2025.",
+                "La version sans capitaine n'a pas vu le jour : le travail sur les capteurs et l'autonomie a pris plus de temps que prévu.",
+                "Les ferries restent l'ossature de la ville : environ 1,46 million de passagers par an, contre 350 000 en 2012."
+              ],
+              "partner": "Hyke, Municipalité de Fredrikstad",
+              "livingLab": "Fredrikstad",
+              "see": {
+                "stop": "destination",
+                "res": "fredrikstad--hyke-electric-ferry-pilot"
+              },
+              "source": "Présentation du Living Lab Fredrikstad, réunion d'évaluation SUM, juin 2026, diapos 5, 15 et 18"
             }
           ],
           "debrief": "les idées « numériques » (une appli, un site, un calcul) ont avancé vite ; celles qui dépendent d'un véhicule, d'un budget ou d'une loi ont ralenti ou se sont arrêtées. Pourquoi ?",
