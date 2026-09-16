@@ -1,5 +1,5 @@
 import { assetUrl } from "../../../infrastructure/assetUrl";
-import type { Content, Stop } from "../lib/types";
+import type { Content, InfoCard, Stop } from "../lib/types";
 import ResourceDetail from "./ResourceDetail";
 import CityCards, { parseSel } from "./CityCards";
 import Gallery from "./Gallery";
@@ -18,6 +18,17 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
   const cityId = stop.cities ? parseSel(resId).cityId : null;
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
   const isSortCard = !!sort && sort.cards.some((c) => c.id === resId);
+
+  // En mode « cartes », l'enveloppe devient la dernière carte de la grille (son verso = la révélation).
+  // Le jeu de tri (Belvédère) garde son propre retournement : on n'y touche pas.
+  const cards: InfoCard[] = stop.cards && stop.cards.length > 0 && stop.reveal && !sort
+    ? [...stop.cards, {
+        id: "__reveal", accent: true,
+        front: { value: "✉", label: stop.reveal.title, teaser: "Ouvre-moi quand vous avez voté." },
+        back: { title: "Ce qui s'est passé", lines: stop.reveal.lines },
+        resource: "__reveal",
+      }]
+    : stop.cards || [];
 
   const r = isCity || isSortCard ? null
     : resId === "__reveal" && stop.reveal
@@ -76,7 +87,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
               </section>
             )}
             {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
-            {stop.cards && stop.cards.length > 0 && <InfoCards cards={stop.cards} onOpen={onOpen} />}
+            {cards.length > 0 && <InfoCards cards={cards} onOpen={onOpen} />}
             {stop.cities && <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} />}
             {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title={stop.moreTitle || "Pour aller plus loin"} columns={stop.id === "station" ? 2 : undefined} />}
             {stop.cityStrip && <CityStrip strip={stop.cityStrip} cities={content.cities.items} />}

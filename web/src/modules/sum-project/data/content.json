@@ -87,6 +87,7 @@
       "place": "Hôtel de ville",
       "title": "Vous êtes maire",
       "question": "Et si c'était vous qui décidiez ?",
+      "brief": "Ici, vous découvrez le défi des neuf villes en retournant sept cartes.",
       "mode": "passive",
       "animator": null,
       "position": "entrée de la salle, grand écran",
@@ -889,6 +890,7 @@
       "place": "Belvédère",
       "title": "Ce qui arrive après le tram",
       "question": "Treize idées venues des villes SUM : lesquelles roulent déjà, lesquelles sont au labo, lesquelles attendent encore leur heure ?",
+      "brief": "Ici, vous devinez où en sont treize idées : sur la route, au labo ou en attente.",
       "mode": "selfservice",
       "animator": null,
       "position": "table 2, en autonomie ; un animateur passe toutes les 10 min pour un débrief d'une minute",
@@ -1415,6 +1417,7 @@
       "place": "Station de vélos",
       "title": "Où placer les stations de vélos partagés ?",
       "question": "Avec 20 000 €, où placez-vous les dix dernières stations ?",
+      "brief": "Ici, vous placez dix stations de vélos sur la carte de Genève avec 20 000 €.",
       "mode": "animated",
       "animator": "A",
       "position": "table 3, avec tablette et ordinateur portable",
@@ -1703,6 +1706,7 @@
       "place": "Carrefour",
       "title": "Et si on refaisait ce carrefour ?",
       "question": "Qui utilise cette rue ? Quand ? Qu'est-ce qui coince ?",
+      "brief": "Ici, vous redessinez un carrefour avec du calque et des miniatures, puis vous votez.",
       "mode": "animated",
       "animator": "B",
       "position": "table 4",
@@ -1710,7 +1714,7 @@
       "durationMin": 10,
       "tableTent": {
         "headline": "Et si on refaisait ce carrefour ?",
-        "subline": "À Coimbra, 49 habitants l'ont fait pour de vrai."
+        "subline": "Posez le calque, déplacez les miniatures, votez — puis ouvrez l'enveloppe. Trois villes européennes l'ont fait pour de vrai."
       },
       "instructions": [
         {
@@ -1787,19 +1791,28 @@
           ],
           "images": [
             {
-              "src": "",
-              "caption": "Les participants travaillent avec plans, calque et véhicules 3D",
-              "suggestedSource": "rapport Fig. 16 p.32 (demander l'original à Chalmers/Coimbra)"
+              "src": "/images/carrefour-coimbra-atelier.jpg",
+              "alt": "Des participants penchés sur un plan couvert de calque, avec des miniatures",
+              "caption": "Les participants travaillent avec plans, calque et véhicules imprimés en 3D",
+              "credit": "Rapport SUM, Fig. 16, p. 32"
             },
             {
-              "src": "",
-              "caption": "Visite du site avec la police locale",
-              "suggestedSource": "rapport Fig. 13 p.31"
+              "src": "/images/carrefour-coimbra-plans.jpg",
+              "alt": "Trois participants discutent autour du plan du quartier posé sur une table",
+              "caption": "La discussion se poursuit à l'école primaire, autour du plan",
+              "credit": "Rapport SUM, Fig. 13, p. 31"
             },
             {
-              "src": "",
-              "caption": "Fiche d'instructions (en portugais)",
-              "suggestedSource": "rapport Fig. 15 p.32"
+              "src": "/images/carrefour-coimbra-visite.jpg",
+              "alt": "Un groupe de participants écoute un policier municipal sur le futur site du pôle",
+              "caption": "Visite du site avec la police locale, avant l'atelier",
+              "credit": "Rapport SUM, Fig. 14, p. 31"
+            },
+            {
+              "src": "/images/carrefour-coimbra-fiche.png",
+              "alt": "Fiche d'instructions de l'atelier en portugais, « Etapas do Workshop »",
+              "caption": "Fiche d'instructions de l'atelier (en portugais)",
+              "credit": "Rapport SUM, Fig. 15, p. 32"
             }
           ],
           "links": [],
@@ -1822,14 +1835,22 @@
           "facts": [],
           "images": [
             {
-              "src": "",
-              "caption": "Le menu de co-création développé dans SUM",
-              "suggestedSource": "rapport Fig. 11 p.30"
+              "src": "/images/carrefour-menu-cocreation.png",
+              "alt": "Le menu des méthodes de co-création, imprimé comme la carte d'un restaurant italien",
+              "caption": "Le menu de co-création développé dans SUM : antipasti, primi, secondi, dolci",
+              "credit": "Rapport SUM, Fig. 11, p. 30"
             },
             {
-              "src": "",
-              "caption": "Planches d'autocollants : personnes, lieux, méthodes, facile/difficile",
-              "suggestedSource": "rapport Fig. 12 p.30"
+              "src": "/images/carrefour-menu-gommettes.png",
+              "alt": "Planches d'autocollants dessinés : personnages, ampoules « méthode », lieux, jauges facile/difficile",
+              "caption": "Planches d'autocollants : personnes à impliquer, méthodes, lieux, facile/difficile",
+              "credit": "Rapport SUM, Fig. 12, p. 30"
+            },
+            {
+              "src": "/images/carrefour-fredrikstad-cocreation.jpg",
+              "alt": "Six personnes autour d'une table de travail couverte de fiches et d'autocollants",
+              "caption": "« Co-créer la co-création » : les Living Labs préparent leurs propres ateliers",
+              "credit": "Rapport SUM, Fig. 10, p. 30"
             }
           ],
           "links": [],
@@ -1862,9 +1883,10 @@
           ],
           "images": [
             {
-              "src": "",
+              "src": "/images/carrefour-fredrikstad-carte.jpg",
+              "alt": "Une carte de Fredrikstad posée sur une table, hérissée d'épingles reliées par de la laine, avec des drapeaux annotés",
               "caption": "Carte de Fredrikstad avec épingles, laine et drapeaux",
-              "suggestedSource": "rapport photo p.29"
+              "credit": "Rapport SUM, p. 29"
             }
           ],
           "links": [],
@@ -1877,7 +1899,7 @@
         },
         {
           "id": "penteli-rues",
-          "title": "Les premières rues cyclables de Grèce",
+          "title": "Les premières rues cyclables d'Attique",
           "teaser": "À Penteli, la co-création a produit 5 km de rues à 30 km/h.",
           "kind": "story",
           "body": [
@@ -1898,7 +1920,14 @@
               "value": "≈ 400 m"
             }
           ],
-          "images": [],
+          "images": [
+            {
+              "src": "/images/cities/penteli/cycle-streets-2.jpg",
+              "alt": "Une rue de Melissia après réaménagement, avec un large trottoir pavé et une chaussée réduite",
+              "caption": "Une rue de Penteli après son réaménagement",
+              "credit": "Living Lab Penteli"
+            }
+          ],
           "links": [],
           "source": {
             "report": "p.28, p.52–53",
@@ -1918,8 +1947,8 @@
         {
           "src": "/images/carrefour-coimbra-plans.jpg",
           "alt": "Participants travaillant sur des plans avec calque et miniatures",
-          "caption": "Coimbra : plans, calque, gommettes et miniatures",
-          "credit": "Rapport SUM, Fig. 14"
+          "caption": "Coimbra : la discussion autour du plan, à l'école primaire",
+          "credit": "Rapport SUM, Fig. 13"
         },
         {
           "src": "/images/carrefour-coimbra-atelier.jpg",
@@ -1931,7 +1960,7 @@
           "src": "/images/carrefour-coimbra-visite.jpg",
           "alt": "Visite du site avec la police locale",
           "caption": "Coimbra : visite du site avant l’atelier",
-          "credit": "Rapport SUM, Fig. 13"
+          "credit": "Rapport SUM, Fig. 14"
         },
         {
           "src": "/images/carrefour-fredrikstad-carte.jpg",
@@ -1945,6 +1974,110 @@
           "caption": "La fiche d’instructions originale (Etapas do Workshop)",
           "credit": "Rapport SUM, Fig. 15"
         }
+      ],
+      "cards": [
+        {
+          "id": "coimbra",
+          "accent": true,
+          "wide": true,
+          "front": {
+            "value": "49",
+            "label": "habitants ont redessiné un carrefour",
+            "teaser": "À Coimbra, autour d'un pôle de mobilité en construction : les parents et les enseignants de l'école voisine, l'hôpital, la police, les chauffeurs de bus et de taxi — et les élus.",
+            "image": {
+              "src": "/images/carrefour-coimbra-atelier.jpg",
+              "alt": "Des participants penchés sur un plan couvert de calque, avec des miniatures",
+              "caption": "Coimbra : les groupes testent leurs alternatives",
+              "credit": "Rapport SUM, Fig. 16"
+            }
+          },
+          "back": {
+            "title": "Comment ils ont fait",
+            "lines": [
+              "Ils ont d'abord visité le site en groupes, avec un plan et des questions à se poser.",
+              "Puis atelier à l'école primaire : plans, papier calque, véhicules et bâtiments imprimés en 3D, un urbaniste par groupe.",
+              "Chaque groupe présente sa solution, tout le monde vote.",
+              "Les décideurs étaient dans la salle : le résultat a de bonnes chances d'être repris dans le projet final du pôle."
+            ]
+          },
+          "resource": "coimbra-atelier"
+        },
+        {
+          "id": "menu",
+          "front": {
+            "value": "1 menu",
+            "label": "Le menu de la co-création",
+            "teaser": "Antipasti, primi, dolci : un atelier se commande comme au restaurant italien.",
+            "image": {
+              "src": "/images/carrefour-fredrikstad-cocreation.jpg",
+              "alt": "Six personnes autour d'une table de travail couverte de fiches et d'autocollants",
+              "caption": "« Co-créer la co-création » : les Living Labs préparent leurs ateliers",
+              "credit": "Rapport SUM, Fig. 10"
+            }
+          },
+          "back": {
+            "title": "Commander un atelier",
+            "image": {
+              "src": "/images/carrefour-menu-cocreation.png",
+              "alt": "Le menu des méthodes de co-création, imprimé comme la carte d'un restaurant italien",
+              "caption": "Le menu de co-création développé dans SUM",
+              "credit": "Rapport SUM, Fig. 11"
+            },
+            "lines": [
+              "Chaque plat est une méthode, et chaque service une phase de l'atelier : se mettre dans l'ambiance, comprendre le lieu, trouver des idées, les évaluer.",
+              "Chalmers l'a créé pour les neuf villes du projet ; Coimbra est celle qui s'en est le plus servie.",
+              "Avec des planches d'autocollants, des épingles, de la laine et des post-it emojis faits maison : « le plaisir et la créativité ne sont pas des distractions »."
+            ]
+          },
+          "resource": "menu-cocreation"
+        },
+        {
+          "id": "fredrikstad",
+          "front": {
+            "value": "32",
+            "label": "participants, une ligne de bus, un parking vélo",
+            "teaser": "À Fredrikstad, les habitants ont dit où ça coince avec des épingles et de la laine sur la carte de la ville.",
+            "image": {
+              "src": "/images/carrefour-fredrikstad-carte.jpg",
+              "alt": "Une carte de Fredrikstad hérissée d'épingles reliées par de la laine, avec des drapeaux annotés",
+              "caption": "Fredrikstad : épingles et laine sur la carte",
+              "credit": "Rapport SUM, p. 29"
+            }
+          },
+          "back": {
+            "title": "Des épingles, puis du concret",
+            "lines": [
+              "La ville voulait transformer les arrêts d'une nouvelle ligne de ferry en pôles de mobilité.",
+              "Trois ateliers citoyens en 2024 : habitants, commerces, opérateurs, urbanistes — 32 personnes au troisième.",
+              "Déjà en service : une nouvelle ligne de bus pendulaire.",
+              "Et un parking vélo partagé, entre le ferry et les lieux de travail."
+            ]
+          },
+          "resource": "fredrikstad-ferry"
+        },
+        {
+          "id": "penteli",
+          "front": {
+            "value": "> 5 km",
+            "label": "de rues cyclables, les premières d'Attique",
+            "teaser": "À Penteli, dans la banlieue d'Athènes, l'espace de la rue a été redécoupé avec les habitants.",
+            "image": {
+              "src": "/images/cities/penteli/cycle-streets-2.jpg",
+              "alt": "Une rue de Melissia après réaménagement, large trottoir pavé et chaussée réduite",
+              "caption": "Penteli : une rue après son réaménagement",
+              "credit": "Living Lab Penteli"
+            }
+          },
+          "back": {
+            "title": "La rue redécoupée avec les habitants",
+            "lines": [
+              "Deux ateliers, un en ligne et un en présentiel — ce dernier reporté à cause des incendies d'août 2024.",
+              "Plus de 5 km de rues transformées et limitées à 30 km/h, dont environ 400 m de piste cyclable dédiée.",
+              "Et un pôle de mobilité avec son totem bilingue, sur la place de Melissia."
+            ]
+          },
+          "resource": "penteli-rues"
+        }
       ]
     },
     {
@@ -1953,6 +2086,7 @@
       "place": "Destination",
       "title": "Qu'ont fait les vraies villes ?",
       "question": "Neuf villes ont essayé. Est-ce que ça a marché ?",
+      "brief": "Ici, vous retournez les cartes des neuf villes pour voir ce qui a vraiment changé.",
       "mode": "selfservice",
       "animator": null,
       "position": "table 5, grand écran tactile ou tablette, sans animateur",
