@@ -1,14 +1,13 @@
 import type { CitiesBlock, CityItem, CityMeasure } from "../lib/types";
 import Gallery from "./Gallery";
 
-type Props = { city: CityItem; m: CityMeasure; block: CitiesBlock; onBack: () => void };
+type Props = { city: CityItem; m: CityMeasure; block: CitiesBlock };
 
 // Fiche d'une mesure : photos, résumé, détails, chiffre clé, résultats de la ville, source.
-export default function MeasureDetail({ city, m, block, onBack }: Props) {
+export default function MeasureDetail({ city, m, block }: Props) {
   const t = block.measureTypes[m.type];
   return (
     <article className="detail mdetail">
-      <button className="iconbtn back" type="button" onClick={onBack}>← Villes</button>
       <div className="mhead">
         <span className={"badge " + m.type}>{t.label}</span>
         <span className="who"><span className="flag">{city.flag}</span> {city.name} · {city.country}</span>

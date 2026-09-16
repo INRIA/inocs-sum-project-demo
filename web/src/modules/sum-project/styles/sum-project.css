@@ -115,7 +115,6 @@ a { color: var(--sum-blue); }
 
 /* Resource detail */
 .detail { display: grid; gap: 14px; max-width: 900px; }
-.detail .back { align-self: start; }
 .detail h3 { font-size: clamp(22px, 2.4vw, 30px); color: var(--sum-blue); font-weight: 800; line-height: 1.1; }
 .detail .teaser { color: var(--muted); font-style: italic; font-size: 17px; }
 .detail p { margin: 0; max-width: 70ch; font-size: 17px; }
@@ -258,4 +257,28 @@ td.e { font-size: 22px; }
 @media (max-width: 520px) {
   .citygrid { grid-template-columns: 1fr; }
   .citycard .face { min-height: 300px; }
+}
+
+/* ---------- Modale (ressource, fiche de mesure) ---------- */
+.modal-backdrop { position: fixed; inset: 0; z-index: 50; background: rgba(27,52,103,.45); display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: 24px; box-sizing: border-box; }
+.modal {
+  background: var(--card); border-radius: 16px; border-top: 6px solid var(--sum-green); width: 100%; max-width: 960px; min-width: 0; box-sizing: border-box; max-height: calc(100vh - 48px);
+  display: grid; grid-template-rows: auto 1fr; box-shadow: 0 24px 70px rgba(27,52,103,.35); outline: none;
+}
+.modal-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--muted); min-width: 0; }
+.crumbs > span { display: inline-flex; align-items: center; gap: 4px; }
+.crumbs .sep { color: var(--sum-green-deep); font-size: 18px; line-height: 1; margin: 0 4px; }
+.crumbs .cur { color: var(--sum-blue); }
+.crumbs .flag { font-size: 18px; }
+.modal-body { overflow: auto; min-width: 0; padding: 18px 22px 26px; }
+.modal-body .detail { max-width: none; }
+@media (max-width: 700px) {
+  .modal-backdrop { padding: 0; align-items: end; }
+  .modal { max-width: none; max-height: 94vh; border-radius: 16px 16px 0 0; }
+  .modal-body { padding: 14px 16px 22px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .modal { animation: modal-in .22s ease-out; }
+  @keyframes modal-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 }

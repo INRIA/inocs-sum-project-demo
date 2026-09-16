@@ -3,6 +3,7 @@ import type { Content, Stop } from "../lib/types";
 import ResourceDetail, { SourceLine } from "./ResourceDetail";
 import CityCards from "./CityCards";
 import Gallery from "./Gallery";
+import Modal from "./Modal";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
@@ -14,10 +15,15 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
     ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
     : (!cityStop && stop.resources.find((x) => x.id === resId)) || null;
 
-  if (r) return <ResourceDetail r={r} onBack={() => onOpen(null)} />;
+  const crumb = `Arrêt ${stop.order} · ${stop.place}`;
 
   return (
     <>
+      {r && (
+        <Modal crumbs={[crumb, r.id === "__reveal" ? "Enveloppe" : "Ressources", r.title]} onClose={() => onOpen(null)}>
+          <ResourceDetail r={r} />
+        </Modal>
+      )}
       {!cityStop && stop.images && stop.images.length > 0 && <Gallery images={stop.images} />}
       <div className="rlist">
         <aside className="tent">
@@ -45,7 +51,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
           {stop.researchOnly && <div className="notice">Recherche uniquement — rien n'est déployé dans une ville.</div>}
         </aside>
 
-        {cityStop ? <CityCards block={content.cities} sel={resId} onOpen={onOpen} /> : (
+        {cityStop ? <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} /> : (
         <div className="tiles">
           {stop.resources.map((res) => {
             const first = res.facts?.[0];

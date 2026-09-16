@@ -11,10 +11,9 @@ export function SourceLine({ s }: { s?: Source | null }) {
   return <div className="src">Source : {parts.join(" · ")}</div>;
 }
 
-export default function ResourceDetail({ r, onBack }: { r: Resource; onBack: () => void }) {
+export default function ResourceDetail({ r }: { r: Resource }) {
   return (
     <article className="detail">
-      <button className="iconbtn back" type="button" onClick={onBack}>← Ressources</button>
       <h3>{r.title}</h3>
       {r.teaser && <div className="teaser">{r.teaser}</div>}
       {(r.body || []).map((b, i) => <p key={i}>{b}</p>)}

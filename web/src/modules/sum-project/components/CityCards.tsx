@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import type { CitiesBlock, CityItem, Split } from "../lib/types";
 import MeasureDetail from "./MeasureDetail";
+import Modal from "./Modal";
 
 // Encodage dans l'URL : #/arret-de-tram/<ville> (carte retournée), #/arret-de-tram/<ville>--<mesure> (fiche).
 export const parseSel = (sel: string | null) => {
@@ -49,9 +50,9 @@ function CardFront({ c }: { c: CityItem }) {
   );
 }
 
-type Props = { block: CitiesBlock; sel: string | null; onOpen: (res: string | null) => void };
+type Props = { block: CitiesBlock; sel: string | null; onOpen: (res: string | null) => void; crumb?: string };
 
-export default function CityCards({ block, sel, onOpen }: Props) {
+export default function CityCards({ block, sel, onOpen, crumb }: Props) {
   const { cityId, measureId } = parseSel(sel);
   const city = block.items.find((c) => c.id === cityId) || null;
   const measure = (city && city.measures.find((m) => m.id === measureId)) || null;
@@ -68,10 +69,13 @@ export default function CityCards({ block, sel, onOpen }: Props) {
     return () => window.removeEventListener("keydown", onKey, true);
   }, [measure, city, onOpen]);
 
-  if (city && measure) return <MeasureDetail city={city} m={measure} block={block} onBack={() => onOpen(city.id)} />;
-
   return (
     <section className="citywrap" aria-label={block.title}>
+      {city && measure && (
+        <Modal crumbs={[crumb || block.title, <><span className="flag" aria-hidden="true">{city.flag}</span> {city.name}</>, measure.title]} onClose={() => onOpen(city.id)}>
+          <MeasureDetail city={city} m={measure} block={block} />
+        </Modal>
+      )}
       {block.intro && <p className="cintro">{block.intro}</p>}
       {block.items.length === 0 ? (
         <div className="empty">Contenu en préparation — les villes arrivent bientôt.</div>
