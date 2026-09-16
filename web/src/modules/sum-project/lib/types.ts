@@ -26,10 +26,26 @@ export type Stop = {
   resources: Resource[];
 };
 
-export type Measure = { id: string; type: "push" | "pull"; label: string };
-export type City = {
-  id: string; name: string; country: string; role: string; profile: string; problem: string;
-  measuresTaken: string[]; whatTheyDid: string[]; whatHappened: string[]; notDone: string[]; odpUrl: string; source: { report: string };
+export type MeasureType = "push" | "pull";
+export type Split = { before: number; after: number };
+export type ModalSplit = {
+  years: number[];
+  nsm?: Split | null; pt?: Split | null; car?: Split | null; note?: string;
+};
+export type CityMeasure = {
+  id: string; type: MeasureType; title: string; summary: string;
+  details?: string[]; keyFigure?: { value: string; label: string } | null; images?: Img[]; source?: string;
+};
+export type CityItem = {
+  id: string; name: string; country: string; flag: string; role: string;
+  tagline: string; context?: string; odpUrl?: string;
+  modalSplit?: ModalSplit | null; measures: CityMeasure[]; results?: string[]; notDone?: string[];
+};
+export type CitiesBlock = {
+  title: string; intro: string;
+  measureTypes: Record<MeasureType, { label: string; description: string; color: string }>;
+  source: { odp: string; presentations: string };
+  items: CityItem[];
 };
 
 export type Content = {
@@ -38,6 +54,6 @@ export type Content = {
     brand: Record<string, string>; sourceReport: string; logo?: { src: string; alt: string } };
   journey: { metaphor: string; intro: { title: string; durationMin: number; script: string[] }; conclusion: { title: string; atMinute: number; durationMin: number; steps: string[]; messages: string[] } };
   stops: Stop[];
-  cardGame: { title: string; rules: string[]; measureTypes: Record<string, { label: string; description: string; color: string }>; measures: Measure[]; cities: City[]; measuresSource: { report: string; note: string } };
+  cities: CitiesBlock;
   glossary: { term: string; definition: string }[];
 };

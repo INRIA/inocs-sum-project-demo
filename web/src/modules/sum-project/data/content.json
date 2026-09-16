@@ -953,7 +953,7 @@
       "order": 4,
       "place": "Arrêt de tram",
       "title": "Qu'ont fait les vraies villes ?",
-      "question": "Vous êtes maire de Rotterdam. Que choisissez-vous ?",
+      "question": "Neuf villes ont essayé. Qu'est-ce qui a marché ?",
       "mode": "selfservice",
       "animator": null,
       "position": "table 4, sans animateur",
@@ -961,459 +961,30 @@
       "durationMin": 8,
       "tableTent": {
         "headline": "Qu'ont fait les vraies villes ?",
-        "subline": "Tirez une ville. Choisissez 3 mesures. Retournez la carte."
+        "subline": "Choisissez une ville, lisez son évolution, retournez la carte et ouvrez une mesure."
       },
       "instructions": [
         {
           "step": 1,
-          "text": "Tirez une carte Ville et lisez son profil : quelle ville, quel problème."
+          "text": "Choisissez une carte Ville : son drapeau, sa phrase, et l'évolution de la mobilité partagée (avant → après)."
         },
         {
           "step": 2,
-          "text": "Parmi les cartes Mesure, choisissez les 3 que vous mettriez en place en tant que maire."
+          "text": "Touchez la carte : elle se retourne et montre les mesures prises par la ville — contraintes (bleu) et incitations (vert)."
         },
         {
           "step": 3,
-          "text": "Retournez la carte Ville : découvrez ce que la ville a vraiment fait, et ce qui s'est passé."
-        },
-        {
-          "step": 4,
-          "text": "Scannez le QR code de la ville pour les photos et les chiffres."
+          "text": "Touchez une mesure : photos, chiffres et résultats. Le QR code de la ville ouvre la même page sur votre téléphone."
         }
       ],
       "materials": [
-        "9 cartes Ville recto-verso (A5, plastifiées)",
-        "20 cartes Mesure (format carte à jouer), en 2 couleurs : contraintes (push) / incitations (pull)",
+        "Grand écran tactile ou tablette (page de l'arrêt 4)",
         "Carte d'instruction",
-        "QR code par ville vers la page de l'arrêt 4",
-        "Affiches A3 des trois exemples vedettes : Rotterdam, Genève, Jérusalem"
+        "QR code par ville vers #/arret-de-tram/<ville>"
       ],
       "reveal": null,
-      "featured": [
-        "rotterdam",
-        "geneve",
-        "jerusalem"
-      ],
-      "resources": [
-        {
-          "id": "rotterdam-app",
-          "title": "Y aura-t-il une trottinette quand mon métro arrive ?",
-          "teaser": "À Rotterdam, l'appli des transports répond : « 98 % ».",
-          "kind": "story",
-          "body": [
-            "Dans l'application du réseau RET, l'itinéraire affiche désormais la probabilité de trouver un scooter électrique partagé CHECK à l'arrivée — par tranches (0–25 %, … 75–100 %), jusqu'à 90 minutes à l'avance.",
-            "Le modèle (apprentissage automatique) est entraîné sur l'historique des trajets, la météo et les points d'intérêt. Il tourne dans le cloud (Siemens Mobility) et alimente l'application (InfoPlaza).",
-            "En service depuis juillet 2025 au pôle Beurs ; étendu en 2026 à 15 stations de mobilité sur 17 zones du réseau.",
-            "Leçon des partenaires : « la technologie est un facilitateur, pas une solution en soi »."
-          ],
-          "facts": [
-            {
-              "label": "En service depuis",
-              "value": "juillet 2025"
-            },
-            {
-              "label": "Horizon de prédiction",
-              "value": "jusqu'à 90 min"
-            },
-            {
-              "label": "Couverture 2026",
-              "value": "15 stations / 17 zones"
-            },
-            {
-              "label": "Après le projet",
-              "value": "RET achète le modèle comme service à Siemens"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Capture de l'application RET avec la prédiction",
-              "suggestedSource": "rapport Fig. 30 p.55 (demander l'original à RET/InfoPlaza)"
-            },
-            {
-              "src": "",
-              "caption": "Les 15 stations couvertes",
-              "suggestedSource": "rapport Fig. 33 p.57"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.20–22, p.55–57",
-            "task": "T2.1 / T4.5",
-            "partner": "RET, TU Delft, Siemens Mobility, InfoPlaza, CHECK",
-            "livingLab": "Rotterdam"
-          }
-        },
-        {
-          "id": "geneve-poles",
-          "title": "De 0 à 29 pôles de mobilité",
-          "teaser": "À Genève, un totem, des vélos, un tram — et des forfaits TC + vélo.",
-          "kind": "story",
-          "body": [
-            "Un pôle de mobilité, c'est un lieu où l'on passe facilement du tram au vélo partagé, à la voiture partagée ou au vélo-cargo. Chaque pôle est signalé par un totem : plan, temps de marche, QR codes, et en haut la silhouette de Genève avec son jet d'eau.",
-            "Au lancement du projet (mai 2023) : 0 pôle. Début 2025 : 7. Fin du projet (mai 2026) : 29. Les tpg prévoient 10 nouveaux pôles par an.",
-            "Côté numérique : en 2024, des forfaits mensuels TC + mobilité partagée. Entre juin et décembre 2024, environ 600 forfaits vendus et plus de 10 000 trajets à vélo partagé, surtout des 15–39 ans."
-          ],
-          "facts": [
-            {
-              "label": "Pôles de mobilité",
-              "value": "0 → 7 → 29 (2023 → 2025 → 2026)"
-            },
-            {
-              "label": "Forfaits TC + partagé (juin–déc. 2024)",
-              "value": "≈ 600"
-            },
-            {
-              "label": "Trajets vélo partagé générés",
-              "value": "> 10 000"
-            },
-            {
-              "label": "Bus à la demande tpg flex",
-              "value": "≈ 300 passagers / jour"
-            },
-            {
-              "label": "Après le projet",
-              "value": "10 nouveaux pôles / an"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Le totem « Pôle de mobilité »",
-              "suggestedSource": "rapport Fig. 22 p.45"
-            },
-            {
-              "src": "",
-              "caption": "Carte des 29 pôles (juin 2026)",
-              "suggestedSource": "rapport Fig. 23 p.45"
-            },
-            {
-              "src": "",
-              "caption": "Mosaïque de pôles",
-              "suggestedSource": "rapport Fig. 24 p.46"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.43–48",
-            "task": "T4.2 / T3.2",
-            "partner": "tpg, Canton de Genève, UT, TUM, VEDECOM, Inria",
-            "livingLab": "Genève"
-          }
-        },
-        {
-          "id": "jerusalem-stations",
-          "title": "14 % des stations, 30 % des locations",
-          "teaser": "À Jérusalem, les vélos placés aux arrêts du tram font le plein.",
-          "kind": "story",
-          "body": [
-            "En février 2025, la ligne rouge du tram a été prolongée : 12 nouvelles stations dans la ville, 6 dans le quartier du Living Lab, environ 33 000 trajets par jour.",
-            "18 nouvelles stations de vélos partagés Jerufun ont été installées dans le quartier, dont 3 directement aux nouveaux arrêts du tram.",
-            "Après l'extension, la demande de vélos partagés a augmenté de 80 %. Environ 30 % des trajets à vélo commencent ou finissent à une station de tram.",
-            "Les stations aux arrêts du tram représentent 14 % des stations mais 30 % de toutes les locations : « l'emplacement stratégique compte plus que la taille du réseau »."
-          ],
-          "facts": [
-            {
-              "label": "Nouvelles stations de tram",
-              "value": "12 (dont 6 dans le quartier)"
-            },
-            {
-              "label": "Trajets tram / jour",
-              "value": "≈ 33 000"
-            },
-            {
-              "label": "Stations vélo ajoutées",
-              "value": "18, dont 3 aux arrêts du tram"
-            },
-            {
-              "label": "Demande vélo après l'extension",
-              "value": "+ 80 %"
-            },
-            {
-              "label": "Stations aux arrêts du tram",
-              "value": "14 % des stations, 30 % des locations"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Extension de la ligne rouge",
-              "suggestedSource": "rapport Fig. 25 p.48"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.48–50",
-            "task": "T4.3 / T2.2",
-            "partner": "Municipalité de Jérusalem, Tel Aviv University, Sigma6, Jerufun",
-            "livingLab": "Jérusalem"
-          }
-        },
-        {
-          "id": "cracovie-lajkbus",
-          "title": "Un bus qui vient quand on l'appelle",
-          "teaser": "LajkBus, à Cracovie : réservation par appli, trajet partagé, jusqu'au pôle de transport.",
-          "kind": "story",
-          "body": [
-            "Dans le quartier périphérique de Skotniki, la ville a lancé en février 2025 un bus à la demande : réservation dans une application, itinéraire calculé en temps réel, trajets partagés, connexion au pôle de Czerwone Maki.",
-            "En semaine de 6 h à 21 h. La demande augmente aux heures de pointe. La ville garde le service après le projet et veut l'étendre.",
-            "Les habitants ont tout noté en vert dans l'enquête d'acceptation."
-          ],
-          "facts": [
-            {
-              "label": "Lancement",
-              "value": "février 2025"
-            },
-            {
-              "label": "Horaires",
-              "value": "lun–ven, 6 h – 21 h"
-            },
-            {
-              "label": "Part des modes partagés (enquêtes, indicatif)",
-              "value": "< 1 % → 20 %"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "LajkBus",
-              "suggestedSource": "demander à la Ville de Cracovie / ZF (pas de figure dans le rapport)"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.19, p.58–59, p.65",
-            "task": "T4.6",
-            "partner": "Ville de Cracovie, Autorité des transports, ZF, Jagiellonian University",
-            "livingLab": "Cracovie"
-          }
-        },
-        {
-          "id": "larnaca-appli",
-          "title": "Une appli, un billet : bus + vélo",
-          "teaser": "Larnaca n'avait pas de vélos partagés. Maintenant ils sont dans l'appli du bus.",
-          "kind": "story",
-          "body": [
-            "Avant SUM, Larnaca (Chypre) n'avait aucun service de vélos partagés. Le projet a permis l'arrivée de Nextbike dans la zone pilote, avec des stations placées avec les autorités.",
-            "L'application de l'opérateur de bus a été transformée en plateforme MaaS : on réserve bus + vélo en un seul trajet, à un tarif combiné réduit, avec un seul paiement.",
-            "Les habitants ont tout noté en vert dans l'enquête d'acceptation."
-          ],
-          "facts": [
-            {
-              "label": "Vélos partagés avant SUM",
-              "value": "aucun"
-            },
-            {
-              "label": "Application",
-              "value": "bus + vélo dans un seul billet, tarif réduit"
-            },
-            {
-              "label": "Enquêtes",
-              "value": "500 usagers, deux vagues"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Zone pilote",
-              "suggestedSource": "rapport Fig. 35 p.59"
-            },
-            {
-              "src": "",
-              "caption": "Captures de l'application",
-              "suggestedSource": "demander à LPT / CON"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.19, p.36, p.59–60",
-            "task": "T3.4 / T4.8",
-            "partner": "LPT, CON, Nextbike, MOBYX",
-            "livingLab": "Larnaca"
-          }
-        },
-        {
-          "id": "munich-autopartage",
-          "title": "900 places réservées aux voitures partagées",
-          "teaser": "À Munich, deux tiers sont dans des pôles de mobilité, à côté des vélos et trottinettes.",
-          "kind": "story",
-          "body": [
-            "La ville de Munich réserve des places de stationnement aux voitures partagées : appel d'offres pour jusqu'à 600 places en station et jusqu'à 1 000 places en libre-service d'ici fin 2026. En mai 2026, environ 900 places étaient en place, dont deux tiers dans des pôles de mobilité.",
-            "L'analyse de 1,4 million de trajets d'autopartage montre que 27,6 % des départs et arrivées tombent dans des zones équipées d'un pôle, et que seuls 4,4 % des trajets n'ont pas d'arrêt de TC à moins de 500 m.",
-            "Enquête : 26 % des trajets en autopartage remplacent un trajet en voiture personnelle ; 32 % des répondants n'ont pas acheté de voiture."
-          ],
-          "facts": [
-            {
-              "label": "Places réservées (mai 2026)",
-              "value": "≈ 900, 2/3 dans des pôles"
-            },
-            {
-              "label": "Trajets analysés",
-              "value": "≈ 1,4 million"
-            },
-            {
-              "label": "Trajets sans arrêt TC à 500 m",
-              "value": "4,4 %"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Signalétique de pôle de mobilité à Munich",
-              "suggestedSource": "rapport Fig. 19 p.41"
-            },
-            {
-              "src": "",
-              "caption": "Points chauds sur grille hexagonale",
-              "suggestedSource": "rapport Fig. 20 p.42"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.39–43",
-            "task": "T4.1",
-            "partner": "Ville de Munich, TUM",
-            "livingLab": "Munich"
-          }
-        },
-        {
-          "id": "coimbra-bus",
-          "title": "Un bus fixe le matin, à la demande l'après-midi",
-          "teaser": "À Coimbra, un village à plus de 600 m de tout arrêt a eu son minibus — réservable aussi par téléphone.",
-          "kind": "story",
-          "body": [
-            "Dans la paroisse de Cernache, un service hybride a été lancé en septembre 2024 : ligne fixe aux heures de pointe vers le pôle de Casconha, à la demande le reste du temps. Réservation en ligne ou par téléphone pour les personnes peu à l'aise avec le numérique. Minibus à plancher bas.",
-            "Résultat honnête : pas de report modal significatif pendant le pilote, demande en dessous des prévisions (kilomètres à vide, travaux, manque de chauffeurs). Mais le service a été bien accueilli et jugé facile à utiliser.",
-            "Leçon : la technologie ne suffit pas sans communication, fiabilité et engagement continu des habitants."
-          ],
-          "facts": [
-            {
-              "label": "Lancement",
-              "value": "septembre 2024"
-            },
-            {
-              "label": "Réservation",
-              "value": "en ligne ou centre d'appel"
-            },
-            {
-              "label": "Part de la voiture (enquête après)",
-              "value": "93,2 % des trajets"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Le service à la demande",
-              "suggestedSource": "rapport Fig. 36 p.60"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.60–62",
-            "task": "T4.9",
-            "partner": "Municipalité de Coimbra, SMTUC, OPT",
-            "livingLab": "Coimbra"
-          }
-        },
-        {
-          "id": "penteli-velos",
-          "title": "38 vélos électriques… et moins de 100 trajets",
-          "teaser": "À Penteli, le service marchait. Le vandalisme l'a freiné.",
-          "kind": "story",
-          "body": [
-            "La municipalité a installé 38 vélos électriques et 6 stations, gratuits au début, avec une tuile « Vélos » dans l'application FREENOW.",
-            "Le système était techniquement opérationnel, mais le vandalisme a obligé à réduire les horaires et le nombre de vélos : moins de 100 trajets enregistrés.",
-            "Les bus électriques prévus n'ont pas pu être achetés pendant le projet ; seule la ligne scolaire a circulé, les autres lignes ont été simulées."
-          ],
-          "facts": [
-            {
-              "label": "Vélos / stations",
-              "value": "38 / 6"
-            },
-            {
-              "label": "Trajets enregistrés",
-              "value": "< 100"
-            },
-            {
-              "label": "Rues transformées",
-              "value": "> 5 km, 30 km/h"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Tuile « Vélos » dans FREENOW",
-              "suggestedSource": "rapport Fig. 28 p.53"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.50–54, p.105",
-            "task": "T4.4",
-            "partner": "Municipalité de Penteli, NTUA, FREENOW",
-            "livingLab": "Penteli"
-          }
-        },
-        {
-          "id": "ce-qui-na-pas-eu-lieu",
-          "title": "Ce qui n'a pas eu lieu",
-          "teaser": "Une flotte de voitures autonomes à Munich ? Non. Et c'est aussi un résultat.",
-          "kind": "notice",
-          "body": [
-            "Munich devait tester une flotte de 25 véhicules autonomes (niveau 4). Aucune homologation de niveau 4 n'existait en Allemagne : le partenaire a quitté le projet et la ville s'est recentrée sur l'autopartage et les pôles de mobilité.",
-            "À Genève, le transport combiné passagers + marchandises avec ZF a été abandonné ; remplacé par des simulations, l'extension du bus à la demande et des consignes connectées dans les pôles.",
-            "À Penteli, les bus électriques n'ont pas été achetés dans les délais.",
-            "Le rapport final le dit lui-même : « toutes les villes n'ont pas le même niveau de résultats »."
-          ],
-          "facts": [],
-          "images": [],
-          "links": [],
-          "source": {
-            "report": "p.38–39, p.104–105, p.101",
-            "task": "WP4",
-            "partner": "",
-            "livingLab": "Munich, Genève, Penteli"
-          }
-        }
-      ],
-      "images": [
-        {
-          "src": "/images/tram-geneve-poles.jpg",
-          "alt": "Mosaïque de photos de pôles de mobilité à Genève",
-          "caption": "Genève : 29 pôles de mobilité avec totem",
-          "credit": "Rapport SUM, Fig. 24 (tpg)"
-        },
-        {
-          "src": "/images/tram-rotterdam-app-1.png",
-          "alt": "Capture de l’application RET avec la prédiction de disponibilité",
-          "caption": "Rotterdam : « Verwachte beschikbaarheid CHECK scooter : 98 % »",
-          "credit": "Rapport SUM, Fig. 30 (RET)"
-        },
-        {
-          "src": "/images/tram-rotterdam-app-2.png",
-          "alt": "Détail d’un trajet dans l’application RET",
-          "caption": "Rotterdam : la prédiction dans le détail du trajet",
-          "credit": "Rapport SUM, Fig. 30 (RET)"
-        },
-        {
-          "src": "/images/tram-geneve-totem.png",
-          "alt": "Haut du totem Pôle de mobilité avec la silhouette de Genève",
-          "caption": "Genève : le haut du totem, avec le jet d’eau",
-          "credit": "Rapport SUM, Fig. 22 (tpg)"
-        },
-        {
-          "src": "/images/tram-geneve-carte-poles.jpg",
-          "alt": "Carte des 29 pôles de mobilité",
-          "caption": "Genève : état des lieux juin 2026",
-          "credit": "Rapport SUM, Fig. 23 (tpg)"
-        },
-        {
-          "src": "/images/tram-munich-poles.jpg",
-          "alt": "Signalétique et places réservées de pôle de mobilité à Munich",
-          "caption": "Munich : places réservées et signalétique des pôles",
-          "credit": "Rapport SUM, Fig. 19 (Dobner & Angermann)"
-        }
-      ]
+      "resources": [],
+      "images": []
     },
     {
       "id": "destination",
@@ -1739,14 +1310,9 @@
       ]
     }
   ],
-  "cardGame": {
+  "cities": {
     "title": "Qu'ont fait les vraies villes ?",
-    "rules": [
-      "Tirez une carte Ville. Lisez le recto : la ville et son problème.",
-      "Choisissez 3 cartes Mesure que vous mettriez en place.",
-      "Retournez la carte Ville : ce que la ville a vraiment fait, et ce qui s'est passé.",
-      "Scannez le QR code pour les photos et les chiffres."
-    ],
+    "intro": "Neuf Living Labs européens ont testé la mobilité partagée. Choisissez une ville : voici ce qu'elle a fait, et ce que ça a changé.",
     "measureTypes": {
       "push": {
         "label": "Contrainte",
@@ -1759,420 +1325,1476 @@
         "color": "#96BA3E"
       }
     },
-    "measures": [
-      {
-        "id": "peage",
-        "type": "push",
-        "label": "Péage urbain"
-      },
-      {
-        "id": "stationnement-payant",
-        "type": "push",
-        "label": "Stationnement payant"
-      },
-      {
-        "id": "stationnement-restreint",
-        "type": "push",
-        "label": "Stationnement restreint"
-      },
-      {
-        "id": "zone-pietonne",
-        "type": "push",
-        "label": "Zone à trafic limité / rues piétonnes"
-      },
-      {
-        "id": "gestion-offre-stationnement",
-        "type": "push",
-        "label": "Gestion de l'offre de stationnement"
-      },
-      {
-        "id": "limitation-vitesse",
-        "type": "push",
-        "label": "Limitation de vitesse"
-      },
-      {
-        "id": "poles",
-        "type": "pull",
-        "label": "Pôles de mobilité"
-      },
-      {
-        "id": "horaires-integres",
-        "type": "pull",
-        "label": "Horaires intégrés dans une appli MaaS"
-      },
-      {
-        "id": "billet-integre",
-        "type": "pull",
-        "label": "Billet intégré dans une appli MaaS"
-      },
-      {
-        "id": "infra-nsm",
-        "type": "pull",
-        "label": "Pistes cyclables, parkings relais"
-      },
-      {
-        "id": "plan-partage",
-        "type": "pull",
-        "label": "Plan d'action pour le partage à la demande"
-      },
-      {
-        "id": "nudging",
-        "type": "pull",
-        "label": "Incitations ludiques ou récompenses"
-      },
-      {
-        "id": "prix-dynamique",
-        "type": "pull",
-        "label": "Tarification dynamique des modes partagés"
-      },
-      {
-        "id": "info-disponibilite",
-        "type": "pull",
-        "label": "Meilleure information sur la disponibilité des modes partagés"
-      },
-      {
-        "id": "nouveau-service",
-        "type": "pull",
-        "label": "Nouveau service partagé (ex. vélos)"
-      },
-      {
-        "id": "nouvelle-ligne",
-        "type": "pull",
-        "label": "Nouvelle infrastructure ou ligne de TC (ex. bus électriques)"
-      },
-      {
-        "id": "voies-prioritaires",
-        "type": "pull",
-        "label": "Requalification de rues / voies prioritaires"
-      },
-      {
-        "id": "places-partage",
-        "type": "pull",
-        "label": "Places réservées autopartage / micromobilité"
-      },
-      {
-        "id": "extension-tc",
-        "type": "pull",
-        "label": "Extension de la zone desservie par les TC"
-      },
-      {
-        "id": "planification-tc",
-        "type": "pull",
-        "label": "Programme central de planification des TC"
-      }
-    ],
-    "measuresSource": {
-      "report": "Table 7, p.38",
-      "note": "Lecture d'un tableau en petite police : vérifier les croix ville par ville avant impression."
+    "source": {
+      "odp": "https://odp.sum-project.eu/insights/cities",
+      "presentations": "Présentations des Living Labs, réunion d'évaluation SUM, juin 2026"
     },
-    "cities": [
+    "items": [
       {
         "id": "rotterdam",
         "name": "Rotterdam",
         "country": "Pays-Bas",
+        "flag": "🇳🇱",
         "role": "suiveuse",
-        "profile": "Grande ville dense avec métro, tram et bus. Les quartiers périurbains sont moins bien connectés au centre. Plusieurs opérateurs de trottinettes et scooters partagés, mais on ne sait jamais s'il y en aura un à l'arrivée du métro.",
-        "problem": "Relier les quartiers périurbains au centre en rendant le passage TC → scooter partagé fiable.",
-        "measuresTaken": [
-          "stationnement-payant",
-          "stationnement-restreint",
-          "limitation-vitesse",
-          "poles",
-          "horaires-integres",
-          "billet-integre",
-          "infra-nsm",
-          "info-disponibilite",
-          "places-partage"
+        "tagline": "Relier trottinettes partagées et transports en commun grâce à une appli",
+        "context": "À Rotterdam, l'opérateur de transports en commun RET a testé si afficher, dans son appli, la disponibilité prévue des cyclomoteurs électriques partagés CHECK donnait plus de confiance aux voyageurs pour terminer leur trajet après le métro ou le tram. En parallèle, la Ville de Rotterdam (hors projet SUM) étend son réseau de pôles de mobilité partagée et durcit le stationnement payant pour les voitures.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/5",
+        "modalSplit": {
+          "years": [
+            2023,
+            null
+          ],
+          "nsm": null,
+          "pt": null,
+          "car": null,
+          "note": "Résultats pas encore publiés"
+        },
+        "measures": [
+          {
+            "id": "check-availability-prediction",
+            "type": "pull",
+            "title": "Disponibilité prévue des cyclomoteurs dans l'appli RET",
+            "summary": "RET a ajouté à son appli MaaS — une appli qui réunit tous les transports — une fonction qui prévoit et affiche la disponibilité des cyclomoteurs électriques partagés CHECK à 14 stations de métro, pour que les voyageurs puissent compter sur un véhicule partagé pour finir leur trajet.",
+            "details": [
+              "Prévoit la disponibilité des cyclomoteurs CHECK à 14 stations de métro et l'affiche dans le calculateur d'itinéraire de l'appli RET.",
+              "Développé par RET (l'opérateur de transports en commun), Siemens Mobility (technologie) et TU Delft (recherche), avec CHECK (opérateur de cyclomoteurs) et Infoplaza (développeur de l'appli).",
+              "Testé de mars à juin 2025, avec un déploiement plus large prévu de mars à mai 2026.",
+              "Dans l'appli : une bannière « Nouveau ! Disponibilité prévue des cyclomoteurs CHECK » et une étiquette du type « Disponibilité prévue scooter CHECK : 98 % » à côté des trajets concernés.",
+              "Évalué par une enquête de satisfaction et l'usage réel de l'appli ; aucun objectif chiffré n'avait été fixé."
+            ],
+            "keyFigure": {
+              "value": "14",
+              "label": "stations de métro couvertes"
+            },
+            "images": [
+              {
+                "src": "/images/cities/rotterdam/check-availability-prediction-1.jpg",
+                "alt": "Écran de l'appli RET affichant la disponibilité prévue d'un scooter CHECK à côté d'un trajet en transport en commun",
+                "caption": "L'appli RET affiche « Disponibilité prévue scooter CHECK : 98 % »",
+                "credit": "Living Lab Rotterdam"
+              },
+              {
+                "src": "/images/cities/rotterdam/check-availability-prediction-2.jpg",
+                "alt": "Comparaison avant/après de l'appli RET, avec la nouvelle fonction de disponibilité activée",
+                "caption": "Avant / après : la nouvelle fonction dans l'appli RET",
+                "credit": "Living Lab Rotterdam"
+              },
+              {
+                "src": "/images/cities/rotterdam/check-availability-prediction-3.jpg",
+                "alt": "Deux écrans de l'appli RET avec le pourcentage de disponibilité du scooter CHECK entouré en rouge",
+                "caption": "Là où la disponibilité du scooter apparaît dans l'appli",
+                "credit": "Living Lab Rotterdam"
+              }
+            ],
+            "source": "Présentation du Living Lab Rotterdam, réunion d'évaluation SUM, juin 2026, diapos 5, 6, 7, 8, 9 et 11"
+          },
+          {
+            "id": "citywide-mobility-hub-network",
+            "type": "pull",
+            "title": "Réseau de pôles de mobilité partagée",
+            "summary": "Rotterdam a déployé des pôles « hub » repérables dans toute la ville, où vélos, cyclomoteurs et trottinettes partagés sont garés, et fait grandir ce réseau avec des flottes plus importantes.",
+            "details": [
+              "Des panneaux verts « hub » marquent des places de stationnement dédiées aux vélos et cyclomoteurs partagés dans les rues de Rotterdam.",
+              "La Ville de Rotterdam étend les flottes, les zones de service et le réseau de hubs pour faire des modes partagés une vraie option porte-à-porte, à côté des transports en commun.",
+              "RET prévoit à terme de localiser tous les hubs dans son appli et de créer un guidage entre les arrêts et les hubs (pas encore fait).",
+              "Politique de la ville de Rotterdam, pas une mesure du Living Lab, qui n'a pas de volet contrainte sur cette mesure."
+            ],
+            "keyFigure": null,
+            "images": [
+              {
+                "src": "/images/cities/rotterdam/citywide-mobility-hub-network-1.jpg",
+                "alt": "Carte satellite du centre de Rotterdam avec les pôles de mobilité partagée repérés en vert",
+                "caption": "Le réseau de pôles de mobilité partagée couvre le centre",
+                "credit": "Living Lab Rotterdam"
+              },
+              {
+                "src": "/images/cities/rotterdam/citywide-mobility-hub-network-2.jpg",
+                "alt": "Panneau vert « hub » dans une rue de Rotterdam, avec vélos et cyclomoteurs partagés garés en dessous",
+                "caption": "Un pôle de mobilité partagée dans la rue, tram en arrière-plan",
+                "credit": "Living Lab Rotterdam"
+              }
+            ],
+            "source": "Présentation du Living Lab Rotterdam, réunion d'évaluation SUM, juin 2026, diapos 6, 7 et 8"
+          },
+          {
+            "id": "paid-parking-expansion",
+            "type": "push",
+            "title": "Stationnement payant étendu et plus cher",
+            "summary": "En dehors des mesures du Living Lab, la Ville de Rotterdam a étendu ses zones de stationnement payant et augmenté le prix du stationnement en voirie, pour pousser les automobilistes vers les transports en commun et les modes partagés.",
+            "details": [
+              "Les zones de stationnement payant ont été étendues à une plus grande partie de la ville.",
+              "Le prix du stationnement en voirie a été augmenté.",
+              "Politique de la Ville de Rotterdam, qui fixe la politique de mobilité locale mais n'est pas partenaire du projet ; aucune contrainte n'a été introduite directement par le Living Lab.",
+              "Fait pendant à la fonction incitative de l'appli et au réseau croissant de pôles de mobilité partagée."
+            ],
+            "keyFigure": null,
+            "images": [],
+            "source": "Présentation du Living Lab Rotterdam, réunion d'évaluation SUM, juin 2026, diapo 6"
+          }
         ],
-        "whatTheyDid": [
-          "Un modèle de prédiction affiche dans l'appli RET la probabilité de trouver un scooter CHECK à l'arrivée (jusqu'à 90 min à l'avance).",
-          "En service depuis juillet 2025 ; 15 stations / 17 zones en 2026.",
-          "Signalétique prévue vers les pôles partagés dans au moins 5 parkings relais."
+        "results": [
+          "Aucun objectif chiffré n'avait été fixé pour le test de prédiction de disponibilité ; il a été évalué par une enquête de satisfaction et l'usage de l'appli, plutôt que par une mesure avant/après.",
+          "L'usage de la fenêtre de disponibilité CHECK est passé de presque zéro à plusieurs milliers d'ouvertures en quelques semaines.",
+          "Les cyclomoteurs partagés restent un mode marginal à Rotterdam, surtout pour les personnes âgées ou à mobilité réduite ; la fonction de prédiction profite surtout à celles et ceux déjà ouverts aux trajets multimodaux.",
+          "Le Living Lab n'a signalé aucun écart : tous les objectifs fixés pour la mesure testée ont été atteints."
         ],
-        "whatHappened": [
-          "Un seul opérateur (CHECK) a accepté de partager ses données.",
-          "RET achètera le modèle comme service après le projet.",
-          "« La technologie est un facilitateur, pas une solution en soi. »"
-        ],
-        "notDone": [],
-        "odpUrl": "",
-        "source": {
-          "report": "p.20–22, p.55–57, Table 7 p.38"
-        }
+        "notDone": [
+          "Un calculateur d'itinéraire multimodal complet, couvrant la fiabilité de tous les modes (pas seulement les cyclomoteurs CHECK), reste un projet à long terme, pas encore construit.",
+          "Localiser tous les hubs dans l'appli RET et créer un guidage dédié entre les arrêts et les hubs sont prévus mais pas encore faits."
+        ]
       },
       {
         "id": "geneve",
         "name": "Genève",
         "country": "Suisse",
+        "flag": "🇨🇭",
         "role": "leader",
-        "profile": "Ville-canton avec un bon réseau de tram et de bus (tpg). Beaucoup de pendulaires, y compris depuis la France. Vélos partagés, vélos-cargo, autopartage existent mais chacun de son côté.",
-        "problem": "Faire des lieux où l'on passe facilement d'un mode à l'autre, et vendre TC + vélo ensemble.",
-        "measuresTaken": [
-          "peage",
-          "zone-pietonne",
-          "poles",
-          "horaires-integres",
-          "billet-integre",
-          "infra-nsm",
-          "nudging",
-          "prix-dynamique",
-          "nouvelle-ligne",
-          "voies-prioritaires"
+        "tagline": "Relier vélos, navettes à la demande et bus dans tout le canton",
+        "context": "Le Grand Genève (plus d'un million d'habitants) est piloté par les tpg (transports publics genevois), l'opérateur principal de transports en commun. Le Living Lab relie de nouveaux services partagés, une navette à la demande et une future appli unique aux bus, trams et trains du canton, pour les habitants, les entreprises et les familles.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/2",
+        "modalSplit": {
+          "years": [
+            2023,
+            2026
+          ],
+          "nsm": {
+            "before": 6.3,
+            "after": 4.3
+          },
+          "pt": {
+            "before": 30.3,
+            "after": 23.3
+          },
+          "car": {
+            "before": 18.3,
+            "after": 14.3
+          }
+        },
+        "measures": [
+          {
+            "id": "mobility-hubs",
+            "type": "pull",
+            "title": "Réseau de pôles de mobilité multimodaux",
+            "summary": "Un réseau de pôles physiques dans tout le canton, chacun signalé par un totem, combine arrêts de bus ou de tram, vélos et vélos-cargos partagés, autopartage et casiers, pour passer facilement de la voiture aux transports en commun et aux modes partagés.",
+            "details": [
+              "29 pôles déployés entre 2023 et 2026, d'autres sont prévus dans le canton.",
+              "Permis de construire obtenus en septembre 2024 ; les pôles figurent désormais dans 5 documents de planification stratégique du canton.",
+              "Chaque pôle a un totem avec un plan du quartier, les services disponibles et des QR codes.",
+              "Un totem de 2e génération, plus visible et plus inclusif (4 faces, pictogrammes), est en cours de déploiement.",
+              "7 opérateurs de mobilité partagée intégrés aux pôles : vélos (Donkey Republic), vélos-cargos (TCS Carvélo), autopartage (Mobility), covoiturage transfrontalier (Hé!Léman), parking relais (Fondation des Parkings), stations vélo (OVO), casiers connectés (Wechip)."
+            ],
+            "keyFigure": {
+              "value": "29",
+              "label": "pôles déployés depuis 2023"
+            },
+            "images": [
+              {
+                "src": "/images/cities/geneve/mobility-hubs-1.jpg",
+                "alt": "Carte du canton de Genève avec tous les pôles de mobilité, en service ou prévus",
+                "caption": "29 pôles de mobilité en service dans le canton, juin 2026",
+                "credit": "Living Lab Genève"
+              },
+              {
+                "src": "/images/cities/geneve/mobility-hubs-2.jpg",
+                "alt": "Totem de pôle de mobilité à côté d'un arrêt de bus tpg, avec un abri « Vélos à louer »",
+                "caption": "Un pôle combine arrêt de bus et vélos en libre-service",
+                "credit": "Living Lab Genève"
+              },
+              {
+                "src": "/images/cities/geneve/mobility-hubs-3.jpg",
+                "alt": "Totem de pôle à côté d'un arrêt de tram, avec des vélos partagés oranges et un vélo-cargo",
+                "caption": "Plusieurs services partagés réunis autour d'un même arrêt",
+                "credit": "Living Lab Genève"
+              }
+            ],
+            "source": "Présentation du Living Lab Genève, réunion d'évaluation SUM, juin 2026, diapos 3, 5, 6, 7 et 8"
+          },
+          {
+            "id": "maas-app",
+            "type": "pull",
+            "title": "Une seule appli pour tous les transports",
+            "summary": "Une nouvelle appli unique — une appli qui réunit tous les transports — regroupe les tpg, les Mouettes genevoises et les CFF sur une seule plateforme pour planifier un trajet et, à terme, payer, à la place de 3 applis séparées.",
+            "details": [
+              "Développée en interne par les tpg avec Hacon, après qu'un appel d'offres commun avec Berne, Bâle et Zurich (20 millions de francs) n'a reçu aucune offre adaptée.",
+              "Livrée en 3 phases : d'abord le calcul d'itinéraire, puis la billetterie, puis l'accessibilité.",
+              "Première phase prévue pour l'été 2026.",
+              "Objectif : remplacer 3 applis séparées par une seule plateforme et améliorer l'accessibilité sur tous les modes."
+            ],
+            "keyFigure": {
+              "value": "3",
+              "label": "opérateurs réunis dans une appli"
+            },
+            "images": [
+              {
+                "src": "/images/cities/geneve/maas-app-1.jpg",
+                "alt": "Écran de recherche d'itinéraire de la future appli, avec les départs à Lancy-Bachet-Gare",
+                "caption": "Recherche des prochains départs de bus et de tram",
+                "credit": "Living Lab Genève"
+              },
+              {
+                "src": "/images/cities/geneve/maas-app-2.jpg",
+                "alt": "Écran de résultat d'un trajet entre Onex et l'hôpital universitaire, avec horaires et correspondances",
+                "caption": "Un trajet réel calculé de bout en bout dans l'appli",
+                "credit": "Living Lab Genève"
+              }
+            ],
+            "source": "Présentation du Living Lab Genève, réunion d'évaluation SUM, juin 2026, diapos 5, 6, 9 et 12"
+          },
+          {
+            "id": "evomoov",
+            "type": "pull",
+            "title": "Evomoov, un accompagnement pour les entreprises",
+            "summary": "Une plateforme aide les entreprises et les communes à construire une stratégie de mobilité qui fait passer leurs employés de la voiture à des modes plus durables, en combinant analyse des habitudes, stratégie et mesures concrètes (stationnement, vélos, incitations).",
+            "details": [
+              "Utilisée par plus de 130 entreprises (32 000 employés) et plus de 48 communes.",
+              "Une démarche en 3 étapes : comprendre les habitudes de déplacement, définir une stratégie, mettre en place des solutions sur mesure (mobilité active, transports en commun, partage, stationnement, sensibilisation).",
+              "Taux de satisfaction déclaré : 87 %.",
+              "Gérée par les tpg depuis 2024."
+            ],
+            "keyFigure": {
+              "value": "130+",
+              "label": "entreprises accompagnées par Evomoov"
+            },
+            "images": [
+              {
+                "src": "/images/cities/geneve/evomoov-1.jpg",
+                "alt": "Schéma de la méthode Evomoov : comprendre les habitudes, définir une stratégie, mettre en place des solutions",
+                "caption": "Les 3 étapes de la méthode Evomoov",
+                "credit": "Living Lab Genève"
+              }
+            ],
+            "source": "Présentation du Living Lab Genève, réunion d'évaluation SUM, juin 2026, diapos 3, 5, 6 et 9"
+          },
+          {
+            "id": "tpg-flex",
+            "type": "pull",
+            "title": "Navette à la demande : tpg flex",
+            "summary": "Un service de minibus à la demande (tpg flex) — un bus à la demande, aussi appelé DRT — a été étendu à de nouvelles zones du canton, avec en plus une navette de nuit pour le personnel des tpg, coordonnée avec les horaires des lignes fixes.",
+            "details": [
+              "Environ 300 passagers par jour sur tpg flex.",
+              "Étendu à de nouvelles zones du canton pendant le projet.",
+              "Nouvelle navette de nuit pour les employés des tpg, 0h30–6h, 5 jours sur 7, en complément du service régulier 6h–0h, 7 jours sur 7.",
+              "Horaires optimisés avec VEDECOM et TUM (outil FleetPy) pour synchroniser les navettes à la demande avec les départs des lignes fixes.",
+              "Prochaine étape envisagée : des véhicules autonomes dans les pôles des zones industrielles (projet ULTIMO)."
+            ],
+            "keyFigure": {
+              "value": "~300",
+              "label": "passagers par jour sur tpg flex"
+            },
+            "images": [],
+            "source": "Présentation du Living Lab Genève, réunion d'évaluation SUM, juin 2026, diapos 3, 5, 6, 9, 12 et 13"
+          },
+          {
+            "id": "30kmh-speed-limit",
+            "type": "push",
+            "title": "Extension des zones limitées à 30 km/h",
+            "summary": "Après le rejet par le Grand Conseil, en octobre 2024, d'une « zone à circulation limitée » prévue près d'une école (chemin des Hutins), une décision de justice a permis d'étendre la limite à 30 km/h à jusqu'à 400 routes.",
+            "details": [
+              "Le projet initial prévoyait de fermer une rue aux voitures pendant les horaires scolaires, pour tester l'effet sur la sécurité, la circulation et les habitudes de déplacement des familles.",
+              "Rejeté par le Grand Conseil (le parlement cantonal) en octobre 2024.",
+              "Partiellement compensé par une décision de justice autorisant une limite à 30 km/h sur jusqu'à 400 routes.",
+              "Un péage urbain différencié selon l'heure, prévu séparément pour l'entrée dans Genève, n'a pas été mis en place après un vote populaire négatif."
+            ],
+            "keyFigure": {
+              "value": "400",
+              "label": "routes concernées par le 30 km/h"
+            },
+            "images": [],
+            "source": "Présentation du Living Lab Genève, réunion d'évaluation SUM, juin 2026, diapos 6 et 12"
+          }
         ],
-        "whatTheyDid": [
-          "29 pôles de mobilité avec totem (0 en 2023).",
-          "Forfaits mensuels TC + mobilité partagée (2024).",
-          "Bus à la demande tpg flex étendu ; consignes connectées dans les pôles (2026).",
-          "Essai de réduction de 20 % hors pointe via l'appli Fairtiq (2023–2024)."
-        ],
-        "whatHappened": [
-          "≈ 600 forfaits vendus et > 10 000 trajets vélo partagé entre juin et décembre 2024.",
-          "Les pôles sont entrés dans cinq plans cantonaux ; 10 nouveaux pôles par an prévus.",
-          "La zone à trafic limité proposée a été rejetée par le Grand Conseil (octobre 2024)."
+        "results": [
+          "Intégration multimodale aux arrêts : 46 % en mars 2026, contre 37 % en septembre 2023.",
+          "Satisfaction des usagers : 78 % en mars 2026, contre 14 % en septembre 2023.",
+          "Écart de temps de trajet avec la voiture réduit à 1,5 fois en 2026, contre 2,2 fois en 2023.",
+          "Opérateurs de mobilité partagée intégrés : 7, contre 4 en 2023 ; actions de participation citoyenne : 11, contre 4 en 2023."
         ],
         "notDone": [
-          "Transport combiné passagers + marchandises avec ZF : abandonné."
-        ],
-        "odpUrl": "",
-        "source": {
-          "report": "p.43–48, p.105, Table 7 p.38"
-        }
+          "Péage urbain différencié selon l'heure à l'entrée de Genève : non mis en place après un vote populaire négatif.",
+          "« Zone à circulation limitée » interdisant les voitures aux horaires scolaires près d'une école : rejetée par le Grand Conseil en octobre 2024, en partie remplacée par une extension du 30 km/h.",
+          "Tarification dynamique des modes partagés (incitations selon les heures creuses) : testée mais sans résultat significatif, faute de participants assez nombreux.",
+          "Collaboration avec ZF pour un véhicule à la demande combinant passagers et marchandises : abandonnée, ZF s'étant réorienté vers les véhicules autonomes (repris dans le projet ULTIMO)."
+        ]
       },
       {
         "id": "jerusalem",
         "name": "Jérusalem",
         "country": "Israël",
+        "flag": "🇮🇱",
         "role": "leader",
-        "profile": "Quartier résidentiel en périphérie (Yuvalim–Ganim), en pente, avec une nouvelle ligne de tram en construction. Forte dépendance à la voiture.",
-        "problem": "Faire du tram le cœur du quartier et amener les gens jusqu'aux stations sans voiture.",
-        "measuresTaken": [
-          "stationnement-restreint",
-          "zone-pietonne",
-          "gestion-offre-stationnement",
-          "limitation-vitesse",
-          "horaires-integres",
-          "infra-nsm",
-          "plan-partage",
-          "info-disponibilite",
-          "nouveau-service",
-          "nouvelle-ligne",
-          "places-partage"
+        "tagline": "Faire d'une nouvelle ligne de tram un quartier connecté et sans voiture",
+        "context": "Yuvalim-Ganim, un quartier en forte croissance sur les collines à l'ouest de Jérusalem (environ 40 000 habitants, plus de 80 000 attendus), où les longues distances à pied en pente rendaient les habitants très dépendants de la voiture. Le Living Lab s'est appuyé sur l'extension de la Ligne rouge du tram — un LRT, ou tram léger — pour ajouter des services de desserte locale autour d'elle.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/3",
+        "modalSplit": {
+          "years": [
+            2017,
+            2025
+          ],
+          "nsm": null,
+          "pt": {
+            "before": 37.7,
+            "after": 30.0
+          },
+          "car": {
+            "before": 46.0,
+            "after": 54.9
+          }
+        },
+        "measures": [
+          {
+            "id": "red-line-lrt-extension",
+            "type": "pull",
+            "title": "La Ligne rouge du tram étendue au quartier",
+            "summary": "La Ligne rouge du tram de Jérusalem a été prolongée de 12 stations, dont 6 desservent le Living Lab de Yuvalim-Ganim, le reliant directement aux zones d'emploi et à l'hôpital Hadassah.",
+            "details": [
+              "6 nouvelles stations de tram dans le Living Lab, sur une extension de 12 stations au total.",
+              "Construite par la Municipalité de Jérusalem et JTMT, d'octobre 2020 à février 2025.",
+              "Relie Yuvalim-Ganim aux zones d'emploi et à l'hôpital Hadassah.",
+              "Objectif : réduire le temps de trajet en transports en commun et augmenter leur usage.",
+              "Un premier tronçon d'une nouvelle Ligne verte est attendu au 3e trimestre 2026."
+            ],
+            "keyFigure": {
+              "value": "33 000",
+              "label": "trajets par jour sur 6 stations"
+            },
+            "images": [
+              {
+                "src": "/images/cities/jerusalem/red-line-lrt-extension-1.jpg",
+                "alt": "Un tram entre en gare sur la Ligne rouge prolongée, travaux de finition encore visibles",
+                "caption": "Le tram sur la nouvelle section de la Ligne rouge",
+                "credit": "Living Lab Jérusalem"
+              }
+            ],
+            "source": "Présentation du Living Lab Jérusalem, réunion d'évaluation SUM, juin 2026, pages 3, 5 et 9"
+          },
+          {
+            "id": "lrt-park-and-ride",
+            "type": "pull",
+            "title": "Un nouveau parking relais près du tram",
+            "summary": "Un parking relais — un P+R, pour se garer et prendre le tram — est en construction à côté d'une station, pour que les automobilistes venant de l'extérieur du quartier puissent se garer et continuer en tram plutôt qu'en voiture jusqu'au centre-ville.",
+            "details": [
+              "Construit par la Municipalité de Jérusalem et JTMT, de décembre 2022 à décembre 2026 ; chantier en cours.",
+              "Objectif : plus de transports en commun, moins de voitures.",
+              "Le projet prévoit un toit végétalisé intégré à l'échangeur routier."
+            ],
+            "keyFigure": null,
+            "images": [
+              {
+                "src": "/images/cities/jerusalem/lrt-park-and-ride-1.jpg",
+                "alt": "Photo aérienne du chantier du parking relais, grues et giratoire",
+                "caption": "Le chantier du parking relais vu du ciel",
+                "credit": "Living Lab Jérusalem"
+              },
+              {
+                "src": "/images/cities/jerusalem/lrt-park-and-ride-2.jpg",
+                "alt": "Image de synthèse du futur parking relais, avec un toit végétalisé au-dessus de l'échangeur",
+                "caption": "Le parking relais une fois terminé, en image de synthèse",
+                "credit": "Living Lab Jérusalem"
+              }
+            ],
+            "source": "Présentation du Living Lab Jérusalem, réunion d'évaluation SUM, juin 2026, page 6"
+          },
+          {
+            "id": "lrt-public-elevators",
+            "type": "pull",
+            "title": "Des ascenseurs publics jusqu'au tram",
+            "summary": "20 ascenseurs publics doivent relier les rues en pente et les immeubles directement aux stations de tram, pour rendre accessible à pied un quartier vallonné et difficile d'accès.",
+            "details": [
+              "20 nouveaux ascenseurs publics vers les stations de tram, construits par la Municipalité de Jérusalem et JTMT.",
+              "Déploiement de janvier 2024 à décembre 2029 ; plusieurs sont déjà en service, d'autres encore en construction.",
+              "Objectif : élargir la zone couverte par le tram et augmenter son usage en rendant les stations accessibles depuis les rues en pente."
+            ],
+            "keyFigure": {
+              "value": "20",
+              "label": "ascenseurs publics prévus vers le tram"
+            },
+            "images": [
+              {
+                "src": "/images/cities/jerusalem/lrt-public-elevators-1.jpg",
+                "alt": "Une tour d'ascenseur public terminée à côté d'une passerelle, avec une piste cyclable et une voiture garée pour l'échelle",
+                "caption": "Un ascenseur public relie une rue en pente au tram",
+                "credit": "Living Lab Jérusalem"
+              },
+              {
+                "src": "/images/cities/jerusalem/lrt-public-elevators-2.jpg",
+                "alt": "Vue depuis la plateforme haute de l'ascenseur, sur le quartier et la piste cyclable en contrebas",
+                "caption": "Vue depuis le haut de l'ascenseur, quartier en contrebas",
+                "credit": "Living Lab Jérusalem"
+              }
+            ],
+            "source": "Présentation du Living Lab Jérusalem, réunion d'évaluation SUM, juin 2026, page 6"
+          },
+          {
+            "id": "jerufan-bike-share",
+            "type": "pull",
+            "title": "Vélos partagés Jerufan et nouvelle piste cyclable",
+            "summary": "18 nouvelles stations de vélos partagés Jerufan (dont 3 aux stations de tram) et une nouvelle piste cyclable rue Golomb ont été ajoutées dans le Living Lab, pour faire du vélo, y compris pour rejoindre le tram, une vraie option.",
+            "details": [
+              "18 nouvelles stations installées par Eden et la Municipalité de Jérusalem, de février à avril 2024.",
+              "Nouvelle piste cyclable rue Golomb, construite par la Municipalité de Jérusalem et JTMT, d'octobre 2022 à octobre 2023.",
+              "130 stations Jerufan dans toute la ville, 330 trajets par jour ; 18 d'entre elles (dont 3 aux stations de tram) sont dans le Living Lab.",
+              "30 % des trajets Jerufan partent ou arrivent aux nouvelles stations de tram.",
+              "Environ 700 trajets par jour enregistrés sur le corridor en 2025."
+            ],
+            "keyFigure": {
+              "value": "9,5 → 24",
+              "label": "trajets à vélo par jour"
+            },
+            "images": [
+              {
+                "src": "/images/cities/jerusalem/jerufan-bike-share-1.jpg",
+                "alt": "Un groupe de personnes à vélo sur une piste cyclable, vélos partagés Jerufan",
+                "caption": "Les vélos partagés Jerufan utilisés au quotidien",
+                "credit": "Living Lab Jérusalem"
+              },
+              {
+                "src": "/images/cities/jerusalem/jerufan-bike-share-2.jpg",
+                "alt": "Une station de vélos partagés Jerufan juste à côté d'un arrêt de tram, tram en arrière-plan",
+                "caption": "Une station Jerufan directement à la station de tram",
+                "credit": "Living Lab Jérusalem"
+              }
+            ],
+            "source": "Présentation du Living Lab Jérusalem, réunion d'évaluation SUM, juin 2026, pages 3 et 7"
+          }
         ],
-        "whatTheyDid": [
-          "Extension de la ligne rouge du tram (février 2025) : 12 stations, dont 6 dans le quartier.",
-          "18 stations de vélos partagés, dont 3 aux arrêts du tram ; nouvelle piste cyclable.",
-          "Simulation de plus de 2 000 configurations de bus à la demande comme rabattement vers le tram."
-        ],
-        "whatHappened": [
-          "≈ 33 000 trajets de tram par jour ; intention d'utiliser les TC : 51,5 % → 63,1 %.",
-          "Demande de vélos partagés + 80 % ; les 3 stations aux arrêts du tram = 14 % des stations mais 30 % des locations.",
-          "Le bus à la demande reste une recommandation aux décideurs (pas déployé)."
-        ],
-        "notDone": [],
-        "odpUrl": "",
-        "source": {
-          "report": "p.48–50, Table 7 p.38"
-        }
-      },
-      {
-        "id": "penteli",
-        "name": "Penteli (Athènes)",
-        "country": "Grèce",
-        "role": "leader",
-        "profile": "Banlieue périurbaine et vallonnée d'Athènes. Voiture dominante, peu de transports en commun locaux, aucune piste cyclable.",
-        "problem": "Créer de zéro une offre locale : rues apaisées, vélos, bus, un pôle.",
-        "measuresTaken": [
-          "zone-pietonne",
-          "poles",
-          "horaires-integres",
-          "billet-integre",
-          "infra-nsm",
-          "nouveau-service",
-          "nouvelle-ligne",
-          "voies-prioritaires"
-        ],
-        "whatTheyDid": [
-          "Co-création de l'espace de rue : > 5 km à 30 km/h, ≈ 400 m de pistes cyclables (premières rues cyclables).",
-          "Pôle de mobilité sur la place de Melissia avec totem bilingue.",
-          "38 vélos électriques et 6 stations ; tuile « Vélos » dans l'appli FREENOW.",
-          "Modèle d'optimisation des horaires de bus (NTUA)."
-        ],
-        "whatHappened": [
-          "Moins de 100 trajets à vélo : vandalisme, horaires réduits.",
-          "TC : ≈ 16 % → 18,5 % des trajets ; indicateur d'accessibilité 6,35 % → ≈ 50,5 %.",
-          "Ligne scolaire réalisée ; les autres lignes simulées."
+        "results": [
+          "Intention d'utiliser les transports en commun en hausse, de 51,5 % à 63,1 %, avec 33 000 trajets par jour sur les 6 nouvelles stations.",
+          "Bon accueil de l'extension du tram : 64,7 % de soutien et 95,6 % se sentent en sécurité autour des stations.",
+          "Vélos Jerufan : les stations reliées au tram ont généré 30 % des locations pour seulement 14 % des stations ; les trajets quotidiens vers Yuvalim-Ganim sont passés de 9,5 à 24.",
+          "Covoiturage à la demande (encore en recherche, pas déployé) : 61,8 % se disent prêts à l'utiliser et 72 % à payer 2€ de plus ; le report modal reste faible (0,6 à 2,7 %), mais l'occupation est passée de 1,3 à 3,7 passagers par trajet après optimisation."
         ],
         "notDone": [
-          "Bus électriques non achetés pendant le projet (barrières administratives)."
-        ],
-        "odpUrl": "",
-        "source": {
-          "report": "p.28, p.50–54, p.105, Table 7 p.38"
-        }
-      },
-      {
-        "id": "munich",
-        "name": "Munich",
-        "country": "Allemagne",
-        "role": "leader",
-        "profile": "Grande ville avec un excellent réseau de TC (32,7 % des trajets) et déjà beaucoup d'autopartage. Les voitures partagées cherchent souvent une place.",
-        "problem": "Faire de la place aux voitures partagées près des TC, et comprendre à quoi elles servent.",
-        "measuresTaken": [
-          "stationnement-payant",
-          "stationnement-restreint",
-          "gestion-offre-stationnement",
-          "limitation-vitesse",
-          "poles",
-          "horaires-integres",
-          "infra-nsm",
-          "plan-partage",
-          "prix-dynamique",
-          "info-disponibilite",
-          "voies-prioritaires",
-          "places-partage",
-          "extension-tc",
-          "planification-tc"
-        ],
-        "whatTheyDid": [
-          "≈ 900 places réservées à l'autopartage (mai 2026), deux tiers dans des pôles de mobilité.",
-          "Analyse de 1,4 million de trajets d'autopartage sur une grille hexagonale.",
-          "Simulation de covoiturage à la demande (FleetPy) : 36,6 % des trajets du centre pourraient être regroupés."
-        ],
-        "whatHappened": [
-          "26 % des trajets en autopartage remplacent la voiture personnelle ; 32 % des répondants n'ont pas acheté de voiture.",
-          "Début 2026 : voiture personnelle − 10 %, marche et vélo + 12 %.",
-          "« L'infrastructure seule ne suffit pas. »"
-        ],
-        "notDone": [
-          "Flotte de 25 véhicules autonomes (niveau 4) : jamais déployée, pas d'homologation en Allemagne."
-        ],
-        "odpUrl": "",
-        "source": {
-          "report": "p.39–43, p.104, Table 7 p.38"
-        }
+          "Service de covoiturage à la demande (RidePooling, SUM) : document de politique et simulation terminés, mais l'opérateur et la date de lancement restent à définir, dans l'attente d'une décision du ministère des Transports.",
+          "Extension de la Ligne verte du tram : seul un premier tronçon est attendu, au 3e trimestre 2026."
+        ]
       },
       {
         "id": "cracovie",
         "name": "Cracovie",
         "country": "Pologne",
+        "flag": "🇵🇱",
         "role": "suiveuse",
-        "profile": "Quartier périphérique dispersé (Skotniki) où les lignes de bus classiques passent rarement. Un grand pôle de transport (Czerwone Maki) pas loin, mais difficile à rejoindre.",
-        "problem": "Amener les habitants d'un quartier dispersé jusqu'au pôle de transport.",
-        "measuresTaken": [
-          "peage",
-          "stationnement-payant",
-          "zone-pietonne",
-          "horaires-integres",
-          "billet-integre",
-          "infra-nsm",
-          "plan-partage",
-          "info-disponibilite",
-          "nouveau-service"
+        "tagline": "Un minibus à la demande pour désenclaver un quartier périphérique",
+        "context": "Le Living Lab de Cracovie a ciblé un quartier périphérique d'environ 6 500 habitants, mal desservi par les transports en commun, pour relier au centre-ville les personnes qui s'y rendent chaque jour pour le travail ou l'école.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/6",
+        "modalSplit": {
+          "years": [
+            2023,
+            2026
+          ],
+          "nsm": {
+            "before": 2.0,
+            "after": 17.9
+          },
+          "pt": {
+            "before": 27.6,
+            "after": 35.4
+          },
+          "car": {
+            "before": 62.7,
+            "after": 30.8
+          }
+        },
+        "measures": [
+          {
+            "id": "lajkbus-on-demand-minibus",
+            "type": "pull",
+            "title": "Minibus partagé à la demande pour la périphérie",
+            "summary": "Un service de bus à la demande — un DRT — appelé Lajkbus a été lancé le 10 février 2025 dans un quartier périphérique de Cracovie mal desservi par le bus, le tram et le train. Les usagers réservent une place partagée avec une appli et sont pris en charge près de chez eux.",
+            "details": [
+              "Zone desservie : un quartier périphérique d'environ 6 500 habitants, avec un faible accès aux transports en commun.",
+              "Réservation via une appli simple ; flotte de minibus partagés floqués Lajkbus / KMK.",
+              "Lancé le 10 février 2025, en service au moins jusqu'à fin juin 2026.",
+              "En un an : plus de 50 500 passagers transportés (202 par jour en moyenne) et plus de 41 500 réservations (167 par jour), avec un taux de partage moyen de 65 %.",
+              "2 640 utilisateurs inscrits en mars 2026, dont 1 223 ayant fait au moins un trajet et environ 200 utilisateurs réguliers."
+            ],
+            "keyFigure": {
+              "value": "50 500",
+              "label": "passagers transportés en un an"
+            },
+            "images": [
+              {
+                "src": "/images/cities/cracovie/lajkbus-on-demand-minibus-1.jpg",
+                "alt": "Un passager monte à bord d'un minibus Lajkbus/KMK à la tombée de la nuit",
+                "caption": "Un passager monte dans un minibus Lajkbus",
+                "credit": "Living Lab Cracovie"
+              },
+              {
+                "src": "/images/cities/cracovie/lajkbus-on-demand-minibus-2.jpg",
+                "alt": "Deux minibus Lajkbus/KMK garés côte à côte au pôle d'échanges",
+                "caption": "Les minibus Lajkbus au pôle d'échanges de Czerwone Maki",
+                "credit": "Living Lab Cracovie"
+              },
+              {
+                "src": "/images/cities/cracovie/lajkbus-on-demand-minibus-3.jpg",
+                "alt": "Carte de la zone desservie par Lajkbus, avec le pôle parking-relais de Czerwone Maki",
+                "caption": "La zone desservie par le service Lajkbus",
+                "credit": "Living Lab Cracovie"
+              }
+            ],
+            "source": "Présentation du Living Lab Cracovie, réunion d'évaluation SUM, juin 2026, diapos 3, 5, 10 et 11"
+          },
+          {
+            "id": "denser-pickup-points",
+            "type": "pull",
+            "title": "Plus de points d'arrêt près du réseau",
+            "summary": "Pour rendre le nouveau service utile, Cracovie a resserré ses points de prise en charge et ses arrêts dans la zone desservie, réduisant nettement la distance à parcourir à pied jusqu'à un arrêt.",
+            "details": [
+              "Habitants à moins de 100 m d'un arrêt : 9,6 % avant → 45,1 % après.",
+              "À moins de 200 m : 30,4 % → 85,1 %.",
+              "À moins de 300 m : 50,4 % → 98,3 %.",
+              "À moins de 500 m : 85,9 % → 100 %."
+            ],
+            "keyFigure": {
+              "value": "100 %",
+              "label": "habitants à moins de 500 m"
+            },
+            "images": [
+              {
+                "src": "/images/cities/cracovie/denser-pickup-points-1.jpg",
+                "alt": "Carte thermique de l'accès à pied aux arrêts KMK et aux points de prise en charge Lajkbus",
+                "caption": "L'accès à pied aux arrêts, avant / après",
+                "credit": "Living Lab Cracovie"
+              }
+            ],
+            "source": "Présentation du Living Lab Cracovie, réunion d'évaluation SUM, juin 2026, diapos 6 et 7"
+          },
+          {
+            "id": "czerwone-maki-transfer-hub",
+            "type": "pull",
+            "title": "Le pôle d'échanges de Czerwone Maki agrandi",
+            "summary": "Le service de minibus a été construit autour du pôle de Czerwone Maki (terminus de tram, arrêts de bus, parking relais et parking à vélos), qui en devient le principal point de correspondance avec le reste du réseau de Cracovie.",
+            "details": [
+              "64,2 % de tous les trajets (26 763 sur l'ensemble enregistré) se font depuis ou vers le pôle de Czerwone Maki, contre 35,8 % ailleurs.",
+              "Le pôle réunit en un même lieu un terminus de tram et de bus, un parking relais et un parking à vélos (dont une station de vélos électriques).",
+              "Une correspondance simple était un objectif recherché dès la conception du nouveau service."
+            ],
+            "keyFigure": {
+              "value": "64,2 %",
+              "label": "des trajets passent par ce pôle"
+            },
+            "images": [
+              {
+                "src": "/images/cities/cracovie/czerwone-maki-transfer-hub-1.jpg",
+                "alt": "Photo aérienne du pôle de Czerwone Maki, avec trams, bus et parking relais",
+                "caption": "Le pôle de Czerwone Maki vu du ciel",
+                "credit": "Living Lab Cracovie"
+              },
+              {
+                "src": "/images/cities/cracovie/czerwone-maki-transfer-hub-2.jpg",
+                "alt": "Photo aérienne du parking relais avec une station de vélos et vélos électriques au premier plan",
+                "caption": "Le parking à vélos qui complète le parking relais",
+                "credit": "Living Lab Cracovie"
+              }
+            ],
+            "source": "Présentation du Living Lab Cracovie, réunion d'évaluation SUM, juin 2026, diapos 6 et 8"
+          },
+          {
+            "id": "integrated-ticketing",
+            "type": "pull",
+            "title": "Un ticket unique pour minibus et réseau",
+            "summary": "Le nouveau service a été intégré à la billettique existante de Cracovie (KMK) plutôt que d'avoir son propre tarif : les usagers montent avec un ticket KMK valide, en achètent un pour le trajet, ou présentent une preuve de gratuité, et les chauffeurs valident avec les mêmes appareils que les contrôleurs de bus et de tram.",
+            "details": [
+              "Pour monter, il faut présenter un ticket KMK valide ou une preuve de droit à la gratuité.",
+              "Un ticket peut être acheté spécialement pour le trajet en minibus, ou un ticket KMK déjà valide peut être réutilisé.",
+              "Les chauffeurs disposent des mêmes appareils de validation que les contrôleurs des trams et des bus."
+            ],
+            "keyFigure": null,
+            "images": [
+              {
+                "src": "/images/cities/cracovie/integrated-ticketing-1.jpg",
+                "alt": "Étiquette de ticket mobile avec le numéro du véhicule et un QR code à scanner dans l'appli KMK",
+                "caption": "Le ticket mobile utilisé dans le minibus",
+                "credit": "Living Lab Cracovie"
+              },
+              {
+                "src": "/images/cities/cracovie/integrated-ticketing-2.jpg",
+                "alt": "Les mains d'un passager tenant une carte de transport et un téléphone montrant la validation du ticket à bord",
+                "caption": "Un passager valide son ticket, comme dans le bus",
+                "credit": "Living Lab Cracovie"
+              }
+            ],
+            "source": "Présentation du Living Lab Cracovie, réunion d'évaluation SUM, juin 2026, diapos 6 et 9"
+          }
         ],
-        "whatTheyDid": [
-          "LajkBus : bus à la demande réservé par appli, itinéraire dynamique, trajets partagés (lancé février 2025, lun–ven 6 h–21 h)."
+        "results": [
+          "Intention d'utiliser le service en hausse, de 54,6 % à 81,4 % des habitants interrogés.",
+          "Satisfaction des usagers en hausse, de 40,7 % à 69,7 % après le lancement du service.",
+          "Part des transports en commun dans la zone desservie en hausse, de 40,5 % à 62,7 %.",
+          "En un an de service : plus de 50 500 passagers, plus de 41 500 réservations, taux de partage moyen de 65 %."
         ],
-        "whatHappened": [
-          "Demande en hausse aux heures de pointe ; habitants satisfaits (tout en vert dans l'enquête).",
-          "Modes partagés : < 1 % → 20 % des trajets déclarés (indicatif).",
-          "La ville garde le service et veut l'étendre à d'autres quartiers."
-        ],
-        "notDone": [],
-        "odpUrl": "",
-        "source": {
-          "report": "p.19, p.58–59, p.65, Table 7 p.38"
-        }
-      },
-      {
-        "id": "fredrikstad",
-        "name": "Fredrikstad",
-        "country": "Norvège",
-        "role": "suiveuse",
-        "profile": "Ville fluviale où les ferries font partie des transports publics. Une nouvelle ligne de ferry arrive ; ses arrêts ne sont que des pontons.",
-        "problem": "Transformer les arrêts de ferry en pôles de mobilité pour marcher et pédaler.",
-        "measuresTaken": [
-          "peage",
-          "stationnement-payant",
-          "stationnement-restreint",
-          "zone-pietonne",
-          "poles",
-          "horaires-integres",
-          "billet-integre",
-          "infra-nsm",
-          "nouveau-service",
-          "nouvelle-ligne"
-        ],
-        "whatTheyDid": [
-          "Trois ateliers citoyens (2024) avec épingles, laine et post-it pour concevoir les pôles."
-        ],
-        "whatHappened": [
-          "Une nouvelle ligne de bus pendulaire et un parking vélo partagé ont été mis en place à partir des idées des habitants.",
-          "Pas d'enquête « après » complète (analyse sur 2021 et 2024)."
-        ],
-        "notDone": [],
-        "odpUrl": "",
-        "source": {
-          "report": "p.29, p.64, Table 7 p.38"
-        }
+        "notDone": [
+          "Des mesures de contrainte plus générales (extension du stationnement payant, zones à circulation limitée, zones à 30 km/h, parkings relais supplémentaires) font partie du cadre contrainte/incitation du Living Lab, mais la présentation ne les décrit pas comme mises en œuvre à Cracovie, avec des dates et des résultats, contrairement aux mesures liées au minibus."
+        ]
       },
       {
         "id": "larnaca",
         "name": "Larnaca",
         "country": "Chypre",
+        "flag": "🇨🇾",
         "role": "suiveuse",
-        "profile": "Ville côtière en développement, réseau de bus vieillissant, aucun vélo partagé.",
-        "problem": "Créer une offre partagée à partir de zéro et la mettre dans l'appli du bus.",
-        "measuresTaken": [
-          "stationnement-payant",
-          "zone-pietonne",
-          "billet-integre",
-          "nudging"
+        "tagline": "Une appli pour le bus et le vélo, avec des incitations",
+        "context": "Larnaca est une ville côtière chypriote où la voiture domine depuis longtemps les trajets vers le centre et le front de mer. Le Living Lab a combiné une nouvelle appli bus + vélo, des incitations de prix, un réseau de vélos partagés agrandi et des bus plus fréquents, avec un projet de parkings relais pour réduire l'accès en voiture au centre-ville.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/8",
+        "modalSplit": {
+          "years": [
+            2023,
+            2026
+          ],
+          "nsm": null,
+          "pt": {
+            "before": 8.6,
+            "after": 13.0
+          },
+          "car": {
+            "before": 87.3,
+            "after": 84.7
+          }
+        },
+        "measures": [
+          {
+            "id": "maas-app-integration",
+            "type": "pull",
+            "title": "Bus, vélo et trottinette dans une seule appli",
+            "summary": "Les vélos partagés Nextbike (et les trottinettes Tier) ont été intégrés à l'appli de transports en commun PAME, pour que les usagers voient bus, vélos et trottinettes sur une même carte et réservent un trajet bus + vélo complet en un seul endroit. Déployé de janvier à juillet 2024.",
+            "details": [
+              "Réalisé par Cyprus Public Transport (LPT) et Nextbike (NBIKE), avec CON, comme nouveau service intégré dans l'appli PAMEApp existante (iOS/Android).",
+              "La carte de l'appli affiche en direct les arrêts de bus, les stations Nextbike et les trottinettes Tier, avec un sélecteur « Bus / Pame Express / Vélo ».",
+              "Les usagers peuvent réserver un trajet complet combinant marche, vélo partagé et bus, avec une carte du trajet et le tarif en direct.",
+              "37 % des trajets planifiés dans l'appli combinent transports en commun et un autre mode ; l'intention de changer de mode est notée 3,3/6."
+            ],
+            "keyFigure": {
+              "value": "37 %",
+              "label": "des trajets combinent plusieurs modes"
+            },
+            "images": [
+              {
+                "src": "/images/cities/larnaca/maas-app-integration-1.jpg",
+                "alt": "Carte d'accueil de l'appli PAMEApp avec arrêts de bus, stations Nextbike et trottinettes Tier",
+                "caption": "Bus, vélos et trottinettes réunis sur une même carte",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/maas-app-integration-2.jpg",
+                "alt": "Liste des stations Nextbike proches avec la disponibilité des vélos et vélos électriques en direct",
+                "caption": "La disponibilité des vélos partagés, en direct dans l'appli",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/maas-app-integration-3.jpg",
+                "alt": "Trajet réservé combinant une marche, un vélo Nextbike et un bus, avec carte, horaires et tarif à 3,20 €",
+                "caption": "Un trajet complet réservé en une fois, pour 3,20 €",
+                "credit": "Living Lab Larnaca"
+              }
+            ],
+            "source": "Présentation du Living Lab Larnaca, réunion d'évaluation SUM, juin 2026, diapos 5 et 7"
+          },
+          {
+            "id": "ticketing-price-nudging",
+            "type": "pull",
+            "title": "Un billet combiné bus + vélo, moins cher",
+            "summary": "Un billet combiné bus + vélo, achetable dans l'appli, avec des comparaisons de prix et de CO2 bien visibles et une campagne promotionnelle, pour inciter les habitants à moins utiliser la voiture. Mené d'avril à août 2024.",
+            "details": [
+              "Nouvel accord entre LPT et Nextbike, avec une nouvelle formule tarifaire pour le grand public.",
+              "L'appli affiche prix et durée de chaque option côte à côte, par exemple marche + vélo + bus en 24 minutes pour 3,30 € contre un trajet en trottinette seule.",
+              "Une campagne « Combinez bus et vélo avec l'appli PAME » offrait des vélos électriques et des abonnements gratuits en récompense.",
+              "La part des transports en commun a augmenté de 31 points ; la satisfaction sur le tarif est notée 3,1/6."
+            ],
+            "keyFigure": {
+              "value": "+31 pts",
+              "label": "de part des transports en commun"
+            },
+            "images": [
+              {
+                "src": "/images/cities/larnaca/ticketing-price-nudging-1.jpg",
+                "alt": "Comparateur de trajet : 24 minutes en marche + vélo + bus pour 3,30 € contre une trottinette seule",
+                "caption": "L'appli met en avant l'option bus + vélo, moins chère",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/ticketing-price-nudging-2.jpg",
+                "alt": "Écran de réservation Nextbike avec le prix à la minute et le niveau de batterie avant de débloquer un vélo",
+                "caption": "Un tarif simple et transparent pour débloquer un vélo",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/ticketing-price-nudging-3.jpg",
+                "alt": "Dépliant promotionnel « Combinez bus et vélo avec l'appli PAME », avec un concours pour gagner des vélos électriques",
+                "caption": "La campagne pour inciter les habitants à essayer l'offre",
+                "credit": "Living Lab Larnaca"
+              }
+            ],
+            "source": "Présentation du Living Lab Larnaca, réunion d'évaluation SUM, juin 2026, diapos 5, 7 et 8"
+          },
+          {
+            "id": "bike-network-expansion",
+            "type": "pull",
+            "title": "100 vélos partagés de plus, 20 stations",
+            "summary": "Le réseau de vélos partagés Nextbike a été agrandi de 100 vélos sur 20 stations à Larnaca, du front de mer au centre-ville et aux lieux fréquentés. Déployé d'avril à juin 2024, avec une croissance décrite comme continue, année après année.",
+            "details": [
+              "Réalisé par Nextbike (NBIKE) ; stations placées près des arrêts de bus et des lieux fréquentés pour faciliter les correspondances.",
+              "La couverture va de la promenade de Finikoudes à l'ancien hôpital, en passant par la gare routière centrale et le centre commercial Metropolis Mall.",
+              "Le taux d'adoption des vélos partagés atteint 41 % et le vélo représente 8 % des trajets.",
+              "Satisfaction des usagers notée 4,9/6 ; sentiment de sécurité noté 3,8/6."
+            ],
+            "keyFigure": {
+              "value": "100",
+              "label": "nouveaux vélos partagés sur 20 stations"
+            },
+            "images": [
+              {
+                "src": "/images/cities/larnaca/bike-network-expansion-1.jpg",
+                "alt": "Rangée de vélos Nextbike garés sur la promenade du front de mer à Larnaca",
+                "caption": "Les vélos partagés sur la promenade de Finikoudes",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/bike-network-expansion-2.jpg",
+                "alt": "Carte des stations Nextbike, des arrêts de bus et des lieux fréquentés à Larnaca",
+                "caption": "Les stations de vélos placées près des arrêts de bus",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/bike-network-expansion-3.jpg",
+                "alt": "Carte satellite de la zone couverte, du front de mer au centre commercial Metropolis Mall",
+                "caption": "La zone désormais couverte par les vélos partagés",
+                "credit": "Living Lab Larnaca"
+              }
+            ],
+            "source": "Présentation du Living Lab Larnaca, réunion d'évaluation SUM, juin 2026, diapos 5 et 9"
+          },
+          {
+            "id": "bus-frequency-increase",
+            "type": "pull",
+            "title": "Plus de bus sur deux lignes clés",
+            "summary": "Cyprus Public Transport (LPT) a augmenté la fréquence de deux lignes desservant l'ouest de Larnaca, avec plus de passages par jour depuis juin 2024, et ce changement se poursuit au-delà du projet SUM.",
+            "details": [
+              "Ligne 417 : 26 à 42 passages par jour en semaine (+85 %) ; le week-end, de 14 à 32.",
+              "Ligne 421 : 12 à 15 passages par jour en semaine (+20 %) ; le week-end, de 8 à 9.",
+              "Fréquentation annuelle : 8 838 passagers, en hausse de 50,1 % sur un an ; janvier-février 2026 environ 25 % au-dessus de la même période en 2025."
+            ],
+            "keyFigure": {
+              "value": "+85 %",
+              "label": "de passages sur la ligne 417"
+            },
+            "images": [
+              {
+                "src": "/images/cities/larnaca/bus-frequency-increase-1.jpg",
+                "alt": "Carte de l'ouest de Larnaca avec les lignes 417 et 421 tracées en rouge",
+                "caption": "Les deux lignes qui ont gagné en fréquence",
+                "credit": "Living Lab Larnaca"
+              }
+            ],
+            "source": "Présentation du Living Lab Larnaca, réunion d'évaluation SUM, juin 2026, diapos 6 et 10"
+          },
+          {
+            "id": "parking-restriction-park-ride",
+            "type": "push",
+            "title": "Des parkings relais pour limiter la voiture",
+            "summary": "Dans le cadre de son plan de mobilité urbaine durable (SUMP), Larnaca prévoit de réduire fortement le stationnement en centre-ville et de construire des parkings relais — des P+R — en périphérie, pour que les automobilistes puissent se garer et continuer en transports en commun. Ce projet dépasse le calendrier de SUM : les sites ont été choisis et modélisés, mais rien n'était encore construit à la réunion d'évaluation.",
+            "details": [
+              "Le SUMP de Larnaca vise à réduire de 80 % le stationnement en voirie dans le centre (contre 494 places aujourd'hui) et de 30 % le stationnement hors voirie (contre 2 199 places).",
+              "Deux sites candidats pour un parking relais ont été choisis et visualisés, à Kalo Chorio et à Aradippou.",
+              "L'outil de modélisation HARMONY a simulé séparément un scénario à deux sites (800 places au total, 15 navettes toutes les 10 minutes), qui détournerait environ 4 940 trajets en voiture par jour et retirerait environ 772 véhicules par heure de la pointe du matin.",
+              "Impact modélisé de la mesure : trafic −15 %, CO2 −12,4 %, acceptation de 73 % dans les enquêtes.",
+              "Portée par la Municipalité de Larnaca et le service des Travaux publics ; signalée en interne comme un écart, le stationnement en voirie restant aujourd'hui gratuit ou sous-tarifé par rapport à d'autres villes méditerranéennes."
+            ],
+            "keyFigure": {
+              "value": "-80 %",
+              "label": "de stationnement en centre-ville prévu"
+            },
+            "images": [
+              {
+                "src": "/images/cities/larnaca/parking-restriction-park-ride-1.jpg",
+                "alt": "Photo aérienne du site prévu pour un parking relais à Kalo Chorio, avec une image de synthèse du projet",
+                "caption": "Le site prévu à Kalo Chorio",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/parking-restriction-park-ride-2.jpg",
+                "alt": "Photo aérienne du site prévu pour un parking relais à Aradippou, avec une image de synthèse du projet",
+                "caption": "Le second site prévu, à Aradippou",
+                "credit": "Living Lab Larnaca"
+              },
+              {
+                "src": "/images/cities/larnaca/parking-restriction-park-ride-3.jpg",
+                "alt": "Fiches chiffrées : P+R Livadia (nord) 400 places, P+R Dromolaxia (sud) 400 places, navette toutes les 10 minutes",
+                "caption": "Les chiffres du projet de parkings relais modélisé",
+                "credit": "Living Lab Larnaca"
+              }
+            ],
+            "source": "Présentation du Living Lab Larnaca, réunion d'évaluation SUM, juin 2026, diapos 6, 11 et 12"
+          }
         ],
-        "whatTheyDid": [
-          "Arrivée de Nextbike (vélos partagés) dans la zone pilote, stations placées avec les autorités.",
-          "Appli de l'opérateur de bus transformée en plateforme MaaS : bus + vélo en un billet, tarif combiné réduit."
+        "results": [
+          "Fréquence de la ligne 417 en hausse de 85 % et de la ligne 421 de 20 % depuis juin 2024 ; fréquentation annuelle de 8 838 passagers, en hausse de 50,1 % sur un an.",
+          "Part des transports en commun en hausse de 31 points après le billet combiné bus + vélo et ses incitations.",
+          "100 vélos partagés de plus sur 20 stations ; adoption à 41 %, part modale du vélo à 8 %, satisfaction 4,9/6.",
+          "Le SUMP de Larnaca vise une réduction de 80 % du stationnement en centre-ville, avec deux parkings relais prévus."
         ],
-        "whatHappened": [
-          "Application « pleinement opérationnelle et ouverte au public ».",
-          "Habitants satisfaits : tout en vert dans l'enquête d'acceptation.",
-          "500 usagers interrogés en deux vagues."
+        "notDone": [
+          "Trottinettes partagées : intégrées dans l'appli PAME mais toujours interdites par la ville au moment de la réunion d'évaluation.",
+          "Règles de stationnement plus strictes et tarification : signalées comme un écart, le stationnement reste gratuit ou sous-tarifé par rapport à d'autres villes méditerranéennes ; les deux parkings relais sont prévus au-delà de SUM, dans le cadre du SUMP de Larnaca, mais pas encore construits."
+        ]
+      },
+      {
+        "id": "munich",
+        "name": "Munich",
+        "country": "Allemagne",
+        "flag": "🇩🇪",
+        "role": "leader",
+        "tagline": "Transformer des places de stationnement en autopartage et en pôles de mobilité",
+        "context": "Le service Mobilité de la Ville de Munich, avec TU Munich comme partenaire de recherche, développe des places d'autopartage réservées et des pôles de mobilité dans toute la ville, surtout dans les quartiers périphériques, pour réduire le trafic automobile et mieux relier l'autopartage aux transports en commun.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/1",
+        "modalSplit": {
+          "years": [
+            2024,
+            2026
+          ],
+          "nsm": {
+            "before": 13.3,
+            "after": 9.4
+          },
+          "pt": {
+            "before": 34.5,
+            "after": 43.8
+          },
+          "car": {
+            "before": 24.0,
+            "after": 30.8
+          }
+        },
+        "measures": [
+          {
+            "id": "reserved-carsharing-parking",
+            "type": "pull",
+            "title": "Des places de stationnement réservées à l'autopartage",
+            "summary": "Depuis juillet 2023, la Ville de Munich transforme des places de stationnement en places d'autopartage réservées et signalées, en free-floating et en stations fixes, avec la disponibilité des véhicules affichée en direct dans les applis des opérateurs.",
+            "details": [
+              "Objectif : 1 600 places d'autopartage en voirie (1 000 en free-floating + 600 en stations fixes) ; 800 déjà construites en juin 2026, dont 197 places en stations fixes.",
+              "108 stations d'autopartage dédiées, avec 197 véhicules, réparties dans 23 des 24 quartiers de Munich (juin 2026).",
+              "Les places portent le nom de l'opérateur (par exemple StattAuto, avec le slogan « Euer Viertel. Euer Auto. ») et sont visibles en direct dans les applis.",
+              "Étude 2025 : une voiture en autopartage remplace 23 voitures particulières à Munich.",
+              "Calendrier : juillet 2023 à décembre 2027, piloté par la Ville de Munich et son service de la Construction."
+            ],
+            "keyFigure": {
+              "value": "800",
+              "label": "places d'autopartage construites (objectif 1 600)"
+            },
+            "images": [
+              {
+                "src": "/images/cities/munich/reserved-carsharing-parking-1.jpg",
+                "alt": "Une voiture d'autopartage StattAuto garée sur une place réservée, avec la signalétique dédiée",
+                "caption": "Une place d'autopartage réservée, avec une voiture StattAuto",
+                "credit": "Living Lab Munich"
+              },
+              {
+                "src": "/images/cities/munich/reserved-carsharing-parking-2.jpg",
+                "alt": "La même place d'autopartage, avec des annotations montrant la signalétique et l'intégration dans les applis, à côté du slogan « Euer Viertel. Euer Auto. »",
+                "caption": "Comment la place est signalée et repérable dans une appli",
+                "credit": "Living Lab Munich"
+              },
+              {
+                "src": "/images/cities/munich/reserved-carsharing-parking-3.jpg",
+                "alt": "Carte de Munich avec un repère pour chaque station d'autopartage, répartie dans presque tous les quartiers",
+                "caption": "Les stations d'autopartage réparties dans toute la ville",
+                "credit": "Living Lab Munich"
+              }
+            ],
+            "source": "Présentation du Living Lab Munich, réunion d'évaluation SUM, juin 2026, diapos 4, 6, 7 et 8"
+          },
+          {
+            "id": "mobility-hubs",
+            "type": "pull",
+            "title": "Des pôles de mobilité dans toute la ville",
+            "summary": "Munich construit un réseau de pôles de mobilité signalés, qui réunissent en un même endroit transports en commun, autopartage, vélos partagés et trottinettes électriques, pour faciliter le passage d'un mode à l'autre.",
+            "details": [
+              "Objectif : 200 pôles de mobilité dans toute la ville ; environ 128 à 130 déjà construits en juin 2026.",
+              "Chaque pôle a une signalétique standard indiquant les modes partagés disponibles à cet endroit précis (voiture, trottinette, vélo électrique, vélo-cargo) et le nom de la rue.",
+              "Objectif : renforcer les trajets combinant transports en commun et modes partagés, améliorer l'accessibilité et rendre l'offre partagée plus visible.",
+              "Calendrier : juillet 2023 à décembre 2027, piloté par la Ville de Munich et son service de la Construction."
+            ],
+            "keyFigure": {
+              "value": "130",
+              "label": "pôles construits (objectif 200)"
+            },
+            "images": [
+              {
+                "src": "/images/cities/munich/mobility-hubs-1.jpg",
+                "alt": "Panneau de rue signalant un pôle de mobilité (« Knöbelstraße ») avec les pictogrammes des modes disponibles",
+                "caption": "Un pôle de mobilité reconnaissable par sa signalétique",
+                "credit": "Living Lab Munich"
+              }
+            ],
+            "source": "Présentation du Living Lab Munich, réunion d'évaluation SUM, juin 2026, diapos 4, 6 et 7"
+          },
+          {
+            "id": "repurposed-parking-shared-mobility",
+            "type": "push",
+            "title": "Du stationnement voiture vers les modes partagés",
+            "summary": "Comme mesure de contrainte, la ville transforme des places de stationnement voiture en places dédiées à l'autopartage, aux trottinettes et aux vélos, réduisant l'espace réservé à la voiture individuelle au profit des modes partagés.",
+            "details": [
+              "Jusqu'à 2 500 places de stationnement sont converties au total : environ 1 600 pour l'autopartage, le reste pour les trottinettes et les vélos partagés.",
+              "Objectif : moins de voitures individuelles et moins de trafic de recherche de place en centre-ville, un meilleur usage des véhicules partagés, une offre plus visible.",
+              "Des vélos partagés (par exemple MyRadl) et des trottinettes (Dott, Bolt) occupent désormais d'anciennes places de stationnement marquées au sol."
+            ],
+            "keyFigure": {
+              "value": "2 500",
+              "label": "places converties en modes partagés"
+            },
+            "images": [
+              {
+                "src": "/images/cities/munich/repurposed-parking-shared-mobility-1.jpg",
+                "alt": "Vélos partagés MyRadl garés dans une zone marquée au sol, près d'une piste cyclable et de la circulation",
+                "caption": "Une ancienne place de stationnement devenue station de vélos",
+                "credit": "Living Lab Munich"
+              }
+            ],
+            "source": "Présentation du Living Lab Munich, réunion d'évaluation SUM, juin 2026, diapos 4 et 7"
+          }
         ],
-        "notDone": [],
-        "odpUrl": "",
-        "source": {
-          "report": "p.19, p.36, p.59–60, Table 7 p.38"
-        }
+        "results": [
+          "Étude 2025 : une voiture en autopartage remplace 23 voitures particulières à Munich.",
+          "Sur 215 usagers de l'autopartage interrogés, 58 % disent que les places réservées les aident régulièrement, souvent ou toujours à trouver une place ; plus de la moitié trouvent encore le stationnement parfois à toujours difficile en général.",
+          "Seuls 4,4 % des trajets en autopartage commencent ou finissent à plus de 500 m d'un arrêt de transport en commun (sur 1 113 arrêts analysés dans 1 189 hexagones de la ville) — l'autopartage complète déjà bien le réseau, même si seuls 5 à 9 % des trajets combinent souvent ou toujours autopartage et transports en commun.",
+          "Une simulation de covoiturage à la demande, utilisant les places d'autopartage comme points de prise en charge, montre que 36,6 % des trajets directs en centre-ville pourraient être partagés, surtout aux heures de pointe."
+        ],
+        "notDone": [
+          "Le livrable « Introduction d'une flotte de véhicules autonomes » (un service de VTC autonome prévu avec SIXT) a été annulé en juin 2023 : l'Allemagne n'homologuait pas encore les véhicules de niveau 4, donc SIXT ne pouvait pas obtenir les autorisations nécessaires. Le Living Lab de Munich a été réorienté vers l'analyse des données d'autopartage en free-floating.",
+          "Les objectifs de 200 pôles de mobilité et de 1 600 places d'autopartage ne sont pas encore atteints (environ 130/200 pôles et 800/1 600 places en juin 2026) ; les deux se poursuivent jusqu'en décembre 2027."
+        ]
       },
       {
         "id": "coimbra",
         "name": "Coimbra",
         "country": "Portugal",
+        "flag": "🇵🇹",
         "role": "suiveuse",
-        "profile": "Ville universitaire avec des villages en périphérie où l'on habite à plus de 600 m de tout arrêt de bus. La voiture est reine.",
-        "problem": "Desservir un village peu dense sans faire rouler des bus vides.",
-        "measuresTaken": [
-          "stationnement-payant",
-          "stationnement-restreint",
-          "zone-pietonne",
-          "poles",
-          "billet-integre",
-          "infra-nsm",
-          "plan-partage"
+        "tagline": "Des bus à la demande en périphérie, un centre plus calme",
+        "context": "Coimbra a testé un service de transport flexible reliant la commune périphérique et peu dense de Cernache au reste du réseau, tout en déployant en ville des mesures de contrainte (zones à circulation limitée, stationnement payant) et d'incitation (rues piétonnes, billettique intégrée, flotte de bus électriques), en particulier pour les personnes âgées et éloignées du numérique.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/9",
+        "modalSplit": {
+          "years": [
+            2023,
+            2026
+          ],
+          "nsm": {
+            "before": 1.15,
+            "after": 1.5
+          },
+          "pt": {
+            "before": 23.0,
+            "after": 38.8
+          },
+          "car": {
+            "before": 71.1,
+            "after": 57.3
+          }
+        },
+        "measures": [
+          {
+            "id": "flexible-transport-cernache",
+            "type": "pull",
+            "title": "Un bus flexible pour Cernache",
+            "summary": "Un service de transport flexible a été mis en place à Cernache, commune périphérique peu dense : itinéraires et horaires fixes aux heures de pointe, service à la demande — un DRT — en dehors, reliant les habitants au pôle de mobilité de Casconha et au reste du réseau.",
+            "details": [
+              "En service de septembre 2024 à mai 2026, avec la Municipalité de Coimbra, la SMTUC et la Junte de paroisse de Cernache.",
+              "Minibus adaptés pour l'accessibilité ; service destiné en priorité aux personnes âgées et éloignées du numérique.",
+              "Réservation jusqu'à 2 jours à l'avance, itinéraires optimisés par algorithme, trajet confirmé la veille ; voyager sans réservation reste possible s'il y a de la place.",
+              "Accessible aussi par téléphone (centre d'appels gratuit) ou par une plateforme de réservation en ligne, pour les personnes qui ne peuvent pas utiliser une appli."
+            ],
+            "keyFigure": {
+              "value": "1 849",
+              "label": "passagers transportés aux heures de pointe"
+            },
+            "images": [
+              {
+                "src": "/images/cities/coimbra/flexible-transport-cernache-1.jpg",
+                "alt": "Deux minibus du service flexible se croisant au pôle d'échanges de Casconha",
+                "caption": "Les minibus se croisent au pôle d'échanges de Casconha",
+                "credit": "Living Lab Coimbra"
+              },
+              {
+                "src": "/images/cities/coimbra/flexible-transport-cernache-2.jpg",
+                "alt": "Dépliant du service « Transporte Flexível » à Cernache, avec une photo du minibus et le numéro de réservation",
+                "caption": "Le dépliant du service, avec le numéro pour réserver",
+                "credit": "Living Lab Coimbra"
+              }
+            ],
+            "source": "Présentation du Living Lab Coimbra, réunion d'évaluation SUM, juin 2026, diapos 3, 4, 6, 18, 19 et 20"
+          },
+          {
+            "id": "limited-traffic-paid-parking",
+            "type": "push",
+            "title": "Circulation limitée et stationnement payant au centre",
+            "summary": "Coimbra limite l'accès des véhicules à une partie du centre historique et applique un stationnement payant (avec un tarif résident) en centre-ville, pour réduire le trafic et faire tourner les places disponibles.",
+            "details": [
+              "Mesure réglementaire couvrant les zones à circulation limitée et l'accès restreint au centre historique.",
+              "Stationnement payant et tarif résident en centre-ville.",
+              "Objectif : réduire le trafic et les émissions, préserver le centre historique, et pousser les usagers réguliers vers les transports en commun ou d'autres modes."
+            ],
+            "keyFigure": null,
+            "images": [
+              {
+                "src": "/images/cities/coimbra/limited-traffic-paid-parking-1.jpg",
+                "alt": "Carte des zones de stationnement payant, en couleurs, et des parkings relais de Coimbra",
+                "caption": "Les zones de stationnement payant en centre-ville",
+                "credit": "Living Lab Coimbra"
+              },
+              {
+                "src": "/images/cities/coimbra/limited-traffic-paid-parking-2.jpg",
+                "alt": "Une rue pavée étroite du centre historique équipée de bornes rétractables limitant l'accès aux voitures",
+                "caption": "Des bornes limitent l'accès des voitures au centre historique",
+                "credit": "Living Lab Coimbra"
+              }
+            ],
+            "source": "Présentation du Living Lab Coimbra, réunion d'évaluation SUM, juin 2026, diapos 8 et 10"
+          },
+          {
+            "id": "riverside-pedestrian-zone",
+            "type": "pull",
+            "title": "Des rues piétonnes au bord du fleuve",
+            "summary": "Certaines rues, dont un tronçon au bord du Mondego, ont été fermées à la circulation motorisée et transformées en espace entièrement piéton.",
+            "details": [
+              "Fait partie des mesures d'incitation visant un espace public plus sûr et plus agréable.",
+              "Effet attendu : plus de déplacements actifs et moins de petits trajets en voiture en ville."
+            ],
+            "keyFigure": null,
+            "images": [
+              {
+                "src": "/images/cities/coimbra/riverside-pedestrian-zone-1.jpg",
+                "alt": "Nouvelle promenade piétonne pavée le long du Mondego, sans circulation automobile",
+                "caption": "La nouvelle promenade piétonne au bord du Mondego",
+                "credit": "Living Lab Coimbra"
+              }
+            ],
+            "source": "Présentation du Living Lab Coimbra, réunion d'évaluation SUM, juin 2026, diapos 9 et 11"
+          },
+          {
+            "id": "fare-integration-move-c",
+            "type": "pull",
+            "title": "Move-C, un billet pour bus, BRT et train",
+            "summary": "La région de Coimbra a lancé Move-C, une carte tarifaire intermodale unique utilisable sur les bus de la SMTUC et le nouveau Metrobus (BRT — un bus à haut niveau de service), pour faciliter les correspondances entre modes.",
+            "details": [
+              "Mise en place ; le tarif intégré a démarré en janvier 2026 pour la SMTUC et le BRT.",
+              "Reste à intégrer : l'opérateur de cars intercommunaux et la compagnie ferroviaire nationale.",
+              "Les formules incluent des titres prépayés, des pass de 1, 3 ou 7 jours et des abonnements mensuels, aux niveaux communal, intercommunal et régional."
+            ],
+            "keyFigure": null,
+            "images": [
+              {
+                "src": "/images/cities/coimbra/fare-integration-move-c-1.jpg",
+                "alt": "La carte tarifaire intermodale Move-C, avec un pictogramme de train, bus et futur Metrobus",
+                "caption": "La carte Move-C, un seul titre pour plusieurs modes",
+                "credit": "Living Lab Coimbra"
+              },
+              {
+                "src": "/images/cities/coimbra/fare-integration-move-c-2.jpg",
+                "alt": "Des passagers, dont un enfant avec un vélo, montent à bord d'un Metrobus à une nouvelle station",
+                "caption": "Des passagers montent à bord du nouveau Metrobus",
+                "credit": "Living Lab Coimbra"
+              }
+            ],
+            "source": "Présentation du Living Lab Coimbra, réunion d'évaluation SUM, juin 2026, diapos 9 et 12"
+          },
+          {
+            "id": "electric-bus-fleet",
+            "type": "pull",
+            "title": "Des bus électriques pour la flotte municipale",
+            "summary": "La SMTUC renouvelle sa flotte de bus avec des véhicules électriques, en remplacement des anciens bus diesel, pour améliorer le service, le confort et les émissions.",
+            "details": [
+              "46 + 14 bus électriques déjà en service, 16 de plus arrivent bientôt.",
+              "Objectif : 45 % de la flotte électrique en 2026.",
+              "Un dépôt de recharge a été construit pour la flotte électrique."
+            ],
+            "keyFigure": {
+              "value": "45 %",
+              "label": "de la flotte électrique en 2026"
+            },
+            "images": [
+              {
+                "src": "/images/cities/coimbra/electric-bus-fleet-1.jpg",
+                "alt": "Rangée de bus électriques branchés à des bornes de recharge dans un dépôt",
+                "caption": "Les bus électriques en charge au dépôt",
+                "credit": "Living Lab Coimbra"
+              },
+              {
+                "src": "/images/cities/coimbra/electric-bus-fleet-2.jpg",
+                "alt": "Gros plan d'un bus floqué « 100 % ELETRICO » branché à une borne de recharge",
+                "caption": "Un bus « 100 % électrique » branché à sa borne",
+                "credit": "Living Lab Coimbra"
+              }
+            ],
+            "source": "Présentation du Living Lab Coimbra, réunion d'évaluation SUM, juin 2026, diapos 9 et 14"
+          }
         ],
-        "whatTheyDid": [
-          "Minibus hybride à Cernache : ligne fixe aux heures de pointe, à la demande le reste du temps ; réservation en ligne ou par téléphone (septembre 2024).",
-          "Atelier de co-création d'un pôle de mobilité avec 49 participants."
+        "results": [
+          "Service flexible aux heures de pointe : 2 696 trajets réalisés sur 4 428 prévus (61 %), pour 10 507,53 km en service et 10 211,59 km à vide, avec 1 849 passagers transportés.",
+          "Service à la demande hors pointe : 57 réservations enregistrées mais seulement 43 trajets réalisés (5 annulés par les passagers, 9 refusés faute de moyens disponibles, en partie à cause de grèves).",
+          "Pôles de mobilité : 8 terminés, 2 en construction, 1 encore en projet.",
+          "Flotte électrique : 46 + 14 bus électriques en service, 16 de plus à venir, objectif 45 % de la flotte électrique en 2026."
         ],
-        "whatHappened": [
-          "Pas de report modal significatif pendant le pilote ; demande en dessous des prévisions.",
-          "Service bien accueilli et jugé facile à utiliser ; 93,2 % des trajets déclarés en voiture.",
-          "Leçon : communication, fiabilité et engagement continu comptent autant que la technologie."
+        "notDone": [
+          "Le plan de mobilité urbaine durable (SUMP) n'a pas été finalisé dans le calendrier du projet.",
+          "Certains pôles de mobilité sont retardés, en attente de la fin des travaux du BRT.",
+          "La billettique intégrée Move-C n'est pas encore étendue à l'opérateur de cars intercommunaux ni à la compagnie ferroviaire nationale."
+        ]
+      },
+      {
+        "id": "penteli",
+        "name": "Penteli (Athènes)",
+        "country": "Grèce",
+        "flag": "🇬🇷",
+        "role": "leader",
+        "tagline": "Faire de Penteli une banlieue d'Athènes plus légère en voiture",
+        "context": "Penteli est une commune résidentielle vallonnée au nord d'Athènes, aux rues étroites et très dépendante de la voiture, même pour de courts trajets. Entre décembre 2024 et mai 2026, le Living Lab a apporté des vélos électriques partagés, des pôles de mobilité, une appli tous-modes, un réseau de rues cyclables et des lignes de bus locales, pour donner aux habitants de vraies alternatives à la voiture.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/4",
+        "modalSplit": {
+          "years": [
+            2023,
+            2026
+          ],
+          "nsm": {
+            "before": 1.0,
+            "after": 0.0
+          },
+          "pt": {
+            "before": 23.0,
+            "after": 16.7
+          },
+          "car": {
+            "before": 61.6,
+            "after": 72.0
+          }
+        },
+        "measures": [
+          {
+            "id": "ebike-sharing",
+            "type": "pull",
+            "title": "Un service de vélos électriques partagés",
+            "summary": "Un système municipal de vélos électriques partagés a été installé dans tout Penteli à partir de mai 2024, avec des stations à des points stratégiques de la commune.",
+            "details": [
+              "38 vélos électriques répartis sur 6 stations.",
+              "Géré par AMCO, réservable par QR code et intégré à l'appli FreeNow.",
+              "Usage encore modeste : environ 35 trajets enregistrés à ce jour.",
+              "Les personnes qui utilisent déjà le service ont plus l'intention de continuer que les non-utilisateurs (de 40 % à 50 %)."
+            ],
+            "keyFigure": {
+              "value": "38 vélos",
+              "label": "sur 6 stations, 35 trajets enregistrés"
+            },
+            "images": [
+              {
+                "src": "/images/cities/penteli/ebike-sharing-1.jpg",
+                "alt": "Rangée de vélos électriques partagés garés à une station de Penteli",
+                "caption": "Les vélos électriques partagés, en station",
+                "credit": "Living Lab Penteli"
+              },
+              {
+                "src": "/images/cities/penteli/ebike-sharing-2.jpg",
+                "alt": "Carte des 6 stations de vélos électriques réparties dans la commune",
+                "caption": "Les 6 stations réparties dans la commune",
+                "credit": "Living Lab Penteli"
+              },
+              {
+                "src": "/images/cities/penteli/ebike-sharing-3.jpg",
+                "alt": "Panneau explicatif dans la rue montrant comment débloquer un vélo électrique partagé par QR code",
+                "caption": "Le mode d'emploi affiché dans la rue",
+                "credit": "Living Lab Penteli"
+              }
+            ],
+            "source": "Présentation du Living Lab Penteli, réunion d'évaluation SUM, juin 2026, diapos 5, 8, 9, 12 et 16"
+          },
+          {
+            "id": "mobility-hubs",
+            "type": "pull",
+            "title": "Des pôles de mobilité durable",
+            "summary": "De petits pôles physiques, réunissant en un point signalé les transports en commun, les vélos électriques, les taxis et les informations VTC, ont été créés à partir de décembre 2024, pour rendre le changement de mode simple.",
+            "details": [
+              "Chaque pôle est un panneau de rue avec des QR codes vers le bus local, les transports métropolitains, les VTC (FreeNow) et les vélos électriques.",
+              "Premier pôle testé sur la place Melissou.",
+              "57,9 % des habitants interrogés jugent le concept de pôle très ou extrêmement utile.",
+              "Le nombre de services partagés intégrés au pôle est passé de 2 à 3."
+            ],
+            "keyFigure": {
+              "value": "57,9 %",
+              "label": "trouvent le pôle très utile"
+            },
+            "images": [
+              {
+                "src": "/images/cities/penteli/mobility-hubs-1.jpg",
+                "alt": "Un vélo électrique garé à côté du panneau « pôle de mobilité - Place Melissou »",
+                "caption": "Un pôle de mobilité, tel que les habitants le croisent",
+                "credit": "Living Lab Penteli"
+              },
+              {
+                "src": "/images/cities/penteli/mobility-hubs-2.jpg",
+                "alt": "Panneau du pôle de mobilité avec une carte des temps de marche et de vélo et des QR codes vers bus, métro, taxi et vélo électrique",
+                "caption": "Ce que propose le pôle, expliqué en un panneau",
+                "credit": "Living Lab Penteli"
+              }
+            ],
+            "source": "Présentation du Living Lab Penteli, réunion d'évaluation SUM, juin 2026, diapos 3, 5, 8, 9, 13 et 15"
+          },
+          {
+            "id": "cycle-streets",
+            "type": "pull",
+            "title": "Un premier réseau de rues cyclables",
+            "summary": "Penteli a construit son tout premier réseau de rues cyclables, en donnant à vélos et piétons de l'espace pris à la voiture, avec une limite à 30 km/h, à partir de juillet 2024.",
+            "details": [
+              "Premier réseau de rues cyclables jamais construit à Penteli et dans toute la région de l'Attique.",
+              "400 m de piste cyclable dédiée entièrement terminés (100 % prêts).",
+              "5,6 km de rues cyclables prévus, environ la moitié réalisée (50 %) au moment de la réunion.",
+              "La part du réseau de rues consacrée aux modes actifs est passée de 1,99 % à 5,19 %.",
+              "Limite de vitesse ramenée à 30 km/h sur les rues réaménagées."
+            ],
+            "keyFigure": {
+              "value": "5,19 %",
+              "label": "du réseau pour les modes actifs"
+            },
+            "images": [
+              {
+                "src": "/images/cities/penteli/cycle-streets-1.jpg",
+                "alt": "Une rue résidentielle de Penteli avant réaménagement, asphalte nu, voitures garées, aucun marquage vélo",
+                "caption": "Une rue de Penteli avant son réaménagement",
+                "credit": "Living Lab Penteli"
+              },
+              {
+                "src": "/images/cities/penteli/cycle-streets-2.jpg",
+                "alt": "La même rue après réaménagement, avec un marquage de piste cyclable peint et un panneau bleu de rue cyclable",
+                "caption": "La même rue, après réaménagement",
+                "credit": "Living Lab Penteli"
+              },
+              {
+                "src": "/images/cities/penteli/cycle-streets-3.jpg",
+                "alt": "Carte schématique du réseau de rues cyclables à sens unique prévu à Melissia (Penteli)",
+                "caption": "Le réseau de rues cyclables prévu à Melissia",
+                "credit": "Living Lab Penteli"
+              }
+            ],
+            "source": "Présentation du Living Lab Penteli, réunion d'évaluation SUM, juin 2026, diapos 6, 8, 10, 14 et 15"
+          },
+          {
+            "id": "maas-app",
+            "type": "pull",
+            "title": "Une appli tous-modes avec FreeNow",
+            "summary": "Depuis janvier 2025, l'appli FreeNow couvre aussi les vélos électriques partagés de Penteli, à côté des VTC, offrant aux habitants une seule appli pour planifier et payer des trajets combinant plusieurs modes.",
+            "details": [
+              "Première intégration MaaS — une appli qui réunit tous les transports — jamais proposée à Penteli.",
+              "Combine VTC, réservation de vélos électriques et information de trajet numérique dans une seule appli.",
+              "Plus de 100 clics enregistrés pour réserver un vélo électrique et plus de 50 pour télécharger l'appli depuis la page de lancement.",
+              "Une carte web publique du réseau de transport de Penteli a été publiée par le NTUA."
+            ],
+            "keyFigure": {
+              "value": ">100",
+              "label": "clics enregistrés pour réserver un vélo"
+            },
+            "images": [
+              {
+                "src": "/images/cities/penteli/maas-app-1.jpg",
+                "alt": "Page du site FreeNow annonçant les vélos électriques partagés de la Municipalité de Penteli dans l'appli",
+                "caption": "L'annonce publique du lancement du service dans FreeNow",
+                "credit": "Living Lab Penteli"
+              },
+              {
+                "src": "/images/cities/penteli/maas-app-2.jpg",
+                "alt": "Écran d'accueil de l'appli FreeNow avec l'option « Penteli eBikes » à côté du taxi et de la location de voiture",
+                "caption": "L'option vélo électrique dans l'écran d'accueil de FreeNow",
+                "credit": "Living Lab Penteli"
+              },
+              {
+                "src": "/images/cities/penteli/maas-app-3.jpg",
+                "alt": "Carte web publique du nouveau réseau de transport de Penteli, avec pistes cyclables, rues piétonnes et arrêts",
+                "caption": "La carte publique du réseau de transport de Penteli",
+                "credit": "Living Lab Penteli"
+              }
+            ],
+            "source": "Présentation du Living Lab Penteli, réunion d'évaluation SUM, juin 2026, diapos 6, 8 et 11"
+          },
+          {
+            "id": "bus-lines-reintroduced",
+            "type": "pull",
+            "title": "Des lignes de bus locales réintroduites",
+            "summary": "La municipalité a réintroduit 3 lignes de transport en commun locales, plus une ligne dédiée à l'université, entre avril et mai 2026 ; l'achat annoncé de bus électriques pour ces lignes n'a pas été livré à temps.",
+            "details": [
+              "3 lignes locales, plus une ligne universitaire, réintroduites (avril-mai 2026).",
+              "Les horaires des véhicules et des équipages ont été retravaillés par le NTUA à partir de janvier 2025.",
+              "Des bus électriques ont été achetés/annoncés (à partir de mars 2026) mais pas déployés, à cause de blocages administratifs au niveau du gouvernement central : les lignes roulent pour l'instant avec des bus classiques.",
+              "Le rapport de coût entre modes partagés + transports en commun et voiture individuelle s'est amélioré, de 0,77 à 0,65."
+            ],
+            "keyFigure": {
+              "value": "3 + 1",
+              "label": "lignes locales réintroduites"
+            },
+            "images": [
+              {
+                "src": "/images/cities/penteli/bus-lines-reintroduced-1.jpg",
+                "alt": "Carte des lignes de transport en commun locales réintroduites à Penteli, avec leurs arrêts",
+                "caption": "Le réseau de bus locaux réintroduit",
+                "credit": "Living Lab Penteli"
+              }
+            ],
+            "source": "Présentation du Living Lab Penteli, réunion d'évaluation SUM, juin 2026, diapos 7, 8, 9, 18 et 19"
+          }
         ],
-        "notDone": [],
-        "odpUrl": "",
-        "source": {
-          "report": "p.30–32, p.60–62, Table 7 p.38"
-        }
+        "results": [
+          "L'indice d'accessibilité (qui combine portée et choix de mode) est passé de 6,35 à 50,53 après l'arrivée du pôle de mobilité et du réseau cyclable.",
+          "L'accessibilité moyenne à vélo vers les destinations non résidentielles est passée de 42,45 avant SUM à 152,88 à mi-parcours (+260 %) puis 222,17 en fin de projet (+424 %).",
+          "Combiner le pôle de mobilité avec les rues cyclables et les transports en commun donne une accessibilité environ 45 % plus élevée qu'avec le pôle seul, ce qui montre que les mesures fonctionnent mieux ensemble.",
+          "Le rapport de coût entre modes partagés + transports en commun et voiture individuelle s'est amélioré, de 5,77 à 4,88."
+        ],
+        "notDone": [
+          "Des bus électriques ont été annoncés (mars 2026) mais pas achetés ni déployés, à cause de blocages administratifs au niveau du gouvernement central : les lignes réintroduites roulent avec des bus classiques.",
+          "Le réseau de rues cyclables n'était réalisé qu'à environ 50 % (5,6 km prévus) à la fin de la période observée ; la piste cyclable dédiée (400 m) est entièrement terminée."
+        ]
+      },
+      {
+        "id": "fredrikstad",
+        "name": "Fredrikstad",
+        "country": "Norvège",
+        "flag": "🇳🇴",
+        "role": "suiveuse",
+        "tagline": "Une ville sur un fleuve teste ferries électriques, vélos et trottinettes",
+        "context": "Fredrikstad, en Norvège, est coupée en deux par le fleuve Glomma ; le Living Lab a testé des liaisons fluviales partagées, des connexions à vélo et en minibus pour le premier et le dernier kilomètre, des trottinettes et vélos électriques partagés encadrés, et un centre-ville réaménagé avec moins de place pour la voiture, pour les habitants et les personnes qui traversent le fleuve chaque jour.",
+        "odpUrl": "https://odp.sum-project.eu/living-lab-city/7",
+        "modalSplit": {
+          "years": [
+            null,
+            null
+          ],
+          "nsm": null,
+          "pt": null,
+          "car": null,
+          "note": "Résultats pas encore publiés"
+        },
+        "measures": [
+          {
+            "id": "hyke-electric-ferry-pilot",
+            "type": "pull",
+            "title": "Un ferry électrique entre les deux rives",
+            "summary": "Un ferry électrique pour passagers (Hyke) a été testé sur le Glomma entre Bekkhus et Vaterland, du 1er trimestre 2024 au 3e trimestre 2025, comme complément partagé au réseau de transports en commun.",
+            "details": [
+              "Liaison Bekkhus–Vaterland sur le Glomma, menée avec la Municipalité de Fredrikstad, Hyke, ØKT et l'université Chalmers.",
+              "Test opérationnel mené du 1er trimestre 2024 au 3e trimestre 2025, désormais terminé.",
+              "26 583 passagers ont emprunté la ligne pilote Hyke en 2025.",
+              "L'exploitation totalement autonome n'a pas été atteinte pendant le test ; c'est le ferry électrique lui-même qui a été testé avec succès en conditions réelles.",
+              "S'inscrit dans un réseau de ferries plus large, passé d'environ 350 000 à environ 1 456 208 passagers par an sur l'ensemble des lignes de Fredrikstad."
+            ],
+            "keyFigure": {
+              "value": "26 583",
+              "label": "passagers du ferry pilote en 2025"
+            },
+            "images": [
+              {
+                "src": "/images/cities/fredrikstad/hyke-electric-ferry-pilot-1.jpg",
+                "alt": "Un ferry électrique blanc et profilé naviguant sur l'eau",
+                "caption": "Le ferry électrique testé pour la liaison partagée",
+                "credit": "Living Lab Fredrikstad"
+              },
+              {
+                "src": "/images/cities/fredrikstad/hyke-electric-ferry-pilot-2.jpg",
+                "alt": "Un petit ferry rouge amarré le long des quais de Fredrikstad, avec deux passagers à bord",
+                "caption": "Un ferry du réseau municipal, sur le Glomma",
+                "credit": "Living Lab Fredrikstad"
+              },
+              {
+                "src": "/images/cities/fredrikstad/hyke-electric-ferry-pilot-3.jpg",
+                "alt": "Graphique du nombre de passagers des ferries de Fredrikstad de 2012 à 2024, en hausse de 350 000 à 1,5 million",
+                "caption": "La fréquentation des ferries, en forte hausse depuis 2012",
+                "credit": "Living Lab Fredrikstad"
+              }
+            ],
+            "source": "Présentation du Living Lab Fredrikstad, réunion d'évaluation SUM, juin 2026, diapos 3, 5, 14, 15 et 18"
+          },
+          {
+            "id": "city-centre-street-redesign",
+            "type": "push",
+            "title": "De l'espace repris à la voiture, au centre",
+            "summary": "En centre-ville, l'espace de rue et la priorité de circulation ont été repris à la voiture individuelle au profit de la marche, du vélo, des transports en commun et des modes partagés, avec un stationnement central revu en disponibilité et en prix.",
+            "details": [
+              "Le réaménagement comprend une piste cyclable dédiée, des passages piétons élargis et une restriction « interdit aux voitures, sauf bus et taxi ».",
+              "Stationnement : disponibilité et prix ajustés dans les zones centrales, pour réduire les trajets en voiture vers le centre.",
+              "Objectif : moins de dépendance à la voiture, un espace public plus sûr et plus agréable, une part plus grande pour les modes durables."
+            ],
+            "keyFigure": null,
+            "images": [
+              {
+                "src": "/images/cities/fredrikstad/city-centre-street-redesign-1.jpg",
+                "alt": "Une rue de centre-ville réaménagée avec une piste cyclable, des passages piétons larges et un panneau « interdit aux voitures, sauf bus et taxi »",
+                "caption": "Une rue de centre-ville, après réaménagement",
+                "credit": "Living Lab Fredrikstad"
+              }
+            ],
+            "source": "Présentation du Living Lab Fredrikstad, réunion d'évaluation SUM, juin 2026, diapos 7, 8 et 11"
+          },
+          {
+            "id": "shared-escooters-ebikes",
+            "type": "pull",
+            "title": "Des trottinettes et vélos électriques encadrés",
+            "summary": "Des services de trottinettes et vélos électriques partagés (Ryde et Voi) ont été déployés en zone urbaine, avec un nombre total de véhicules plafonné par la municipalité entre Fredrikstad et la ville voisine de Sarpsborg.",
+            "details": [
+              "Opérateurs Ryde et Voi, encadrés par un plafond combiné pouvant aller jusqu'à 1 500 véhicules entre Fredrikstad et Sarpsborg.",
+              "600 000 trajets partagés enregistrés en 2025, distance moyenne de 1,5 km, environ 800 véhicules déployés en moyenne.",
+              "Environ 750 trajets par véhicule et par an (soit environ 2,1 trajets par véhicule et par jour).",
+              "25,3 % des habitants interrogés ont accès à un vélo électrique (enquête FRVU24) ; les trottinettes ne représentent que 0,3 % des trajets mesurés (FRVU24)."
+            ],
+            "keyFigure": {
+              "value": "600 000",
+              "label": "trajets partagés enregistrés en 2025"
+            },
+            "images": [
+              {
+                "src": "/images/cities/fredrikstad/shared-escooters-ebikes-1.jpg",
+                "alt": "Deux trottinettes électriques vertes Ryde garées sur une rue piétonne commerçante",
+                "caption": "Des trottinettes Ryde, telles que les habitants les croisent",
+                "credit": "Living Lab Fredrikstad"
+              },
+              {
+                "src": "/images/cities/fredrikstad/shared-escooters-ebikes-2.jpg",
+                "alt": "Infographie : 600 000 trajets, 1,5 km en moyenne, 800 vélos déployés en moyenne en 2025",
+                "caption": "L'usage des trottinettes et vélos électriques en 2025",
+                "credit": "Living Lab Fredrikstad"
+              }
+            ],
+            "source": "Présentation du Living Lab Fredrikstad, réunion d'évaluation SUM, juin 2026, diapos 3, 9, 12 et 16"
+          },
+          {
+            "id": "first-last-mile-bike-minibus-pilot",
+            "type": "pull",
+            "title": "Vélos et minibus pour rejoindre le ferry",
+            "summary": "Un test combinant un service de vélos en prêt et un minibus à la demande a été mené pour mieux rejoindre les arrêts de ferry et de bus, avec 50 vélos en prêt installés au terminal de ferry d'Øra.",
+            "details": [
+              "Partenaires : la Municipalité de Fredrikstad, ØKT et des opérateurs locaux.",
+              "Test mené du 2e trimestre 2024 au 1er trimestre 2025, pour explorer des solutions de transport flexibles et à la demande.",
+              "50 vélos en prêt installés au terminal de ferry d'Øra, pour les derniers kilomètres.",
+              "65 % des habitants interrogés sont favorables à des pistes cyclables continues et 22 % à des pistes séparées, ce qui montre une vraie demande pour de meilleures connexions à vélo."
+            ],
+            "keyFigure": {
+              "value": "50",
+              "label": "vélos en prêt au terminal d'Øra"
+            },
+            "images": [
+              {
+                "src": "/images/cities/fredrikstad/first-last-mile-bike-minibus-pilot-1.jpg",
+                "alt": "Des cyclistes traversant un pont-promenade en bord de fleuve, en zone urbaine",
+                "caption": "Le vélo au quotidien à Fredrikstad (photo générale)",
+                "credit": "Living Lab Fredrikstad"
+              }
+            ],
+            "source": "Présentation du Living Lab Fredrikstad, réunion d'évaluation SUM, juin 2026, diapos 3, 5 et 15"
+          }
+        ],
+        "results": [
+          "La fréquentation totale des ferries est passée d'environ 350 000 passagers (2012) à environ 1 456 208 passagers (2025).",
+          "Le ferry électrique pilote Hyke (Bekkhus–Vaterland) a transporté 26 583 passagers en 2025.",
+          "Les trottinettes et vélos électriques partagés ont enregistré 600 000 trajets en 2025, avec environ 800 véhicules déployés en moyenne.",
+          "L'accès à un vélo électrique atteint 25,3 % des habitants interrogés, contre seulement 0,3 % des trajets mesurés en trottinette (enquête FRVU24)."
+        ],
+        "notDone": [
+          "L'exploitation totalement autonome du ferry n'a pas été atteinte ; le test a porté sur le ferry électrique en conditions réelles.",
+          "Aucune nouvelle appli MaaS locale n'a été construite ; l'intégration du ferry s'appuie sur les applis de voyage existantes et sur la plateforme de données ouvertes (ODP).",
+          "Des « pôles de mobilité » reliant transports en commun et modes partagés figurent dans le plan de mesures, mais aucune date de mise en œuvre ni résultat n'est rapporté pour Fredrikstad."
+        ]
       }
     ]
   },

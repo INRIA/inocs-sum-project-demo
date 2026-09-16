@@ -1,7 +1,7 @@
 import { assetUrl } from "../../../infrastructure/assetUrl";
 import type { Content, Stop } from "../lib/types";
 import ResourceDetail, { SourceLine } from "./ResourceDetail";
-import CardGame from "./CardGame";
+import CityCards from "./CityCards";
 import Gallery from "./Gallery";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
@@ -9,15 +9,16 @@ const modeLabel = { passive: "Table libre", animated: "Table animée", selfservi
 type Props = { stop: Stop; content: Content; resId: string | null; onOpen: (id: string | null) => void };
 
 export default function StopPanel({ stop, content, resId, onOpen }: Props) {
-  const r = resId === "__reveal" && stop.reveal
+  const cityStop = stop.id === "arret-de-tram"; // arrêt 4 : cartes Villes, pas de ressources
+  const r = !cityStop && resId === "__reveal" && stop.reveal
     ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
-    : stop.resources.find((x) => x.id === resId) || null;
+    : (!cityStop && stop.resources.find((x) => x.id === resId)) || null;
 
   if (r) return <ResourceDetail r={r} onBack={() => onOpen(null)} />;
 
   return (
     <>
-      {stop.images && stop.images.length > 0 && <Gallery images={stop.images} />}
+      {!cityStop && stop.images && stop.images.length > 0 && <Gallery images={stop.images} />}
       <div className="rlist">
         <aside className="tent">
           <div className="headline">{stop.tableTent.headline}</div>
@@ -44,6 +45,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
           {stop.researchOnly && <div className="notice">Recherche uniquement — rien n'est déployé dans une ville.</div>}
         </aside>
 
+        {cityStop ? <CityCards block={content.cities} sel={resId} onOpen={onOpen} /> : (
         <div className="tiles">
           {stop.resources.map((res) => {
             const first = res.facts?.[0];
@@ -65,8 +67,8 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
             </button>
           )}
         </div>
+        )}
       </div>
-      {stop.id === "arret-de-tram" && <CardGame game={content.cardGame} />}
     </>
   );
 }
