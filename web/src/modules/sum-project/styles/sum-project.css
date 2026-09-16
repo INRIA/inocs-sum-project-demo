@@ -156,7 +156,7 @@ td.e { font-size: 22px; }
 .cardgrid.cols-2 { grid-template-columns: repeat(2, 1fr); }
 .cardgrid.cities { --card-h: 320px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 
-.fcard { perspective: 1400px; display: grid; }
+.fcard { perspective: 1400px; display: grid; scroll-margin-top: 12px; }
 .fcard.wide { grid-column: span 2; }
 /* Les deux faces sont empilées ; la face cachée est sortie du flux : même hauteur au repos, seule une carte retournée grandit. */
 .fcard .inner { position: relative; display: grid; width: 100%; transition: transform .6s; transform-style: preserve-3d; }

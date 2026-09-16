@@ -5,12 +5,12 @@ import type { ReactNode } from "react";
 type Props = {
   flipped: boolean; onFlip: (next: boolean) => void;
   front: ReactNode; back: ReactNode; backTitle: ReactNode;
-  label: string; className?: string;
+  label: string; className?: string; id?: string;
 };
 
-export default function FlipCard({ flipped, onFlip, front, back, backTitle, label, className }: Props) {
+export default function FlipCard({ flipped, onFlip, front, back, backTitle, label, className, id }: Props) {
   return (
-    <div className={"fcard" + (flipped ? " flip" : "") + (className ? " " + className : "")}>
+    <div id={id} className={"fcard" + (flipped ? " flip" : "") + (className ? " " + className : "")}>
       <div className="inner">
         <button type="button" className="face front" inert={flipped} aria-label={`${label} — retourner la carte`} onClick={() => onFlip(true)}>
           {front}

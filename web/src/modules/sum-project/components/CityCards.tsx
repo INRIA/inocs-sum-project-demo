@@ -65,6 +65,14 @@ export default function CityCards({ block, sel, onOpen, crumb }: Props) {
   // Cartes retournées : état local (plusieurs à la fois), amorcé par le hash (QR code d'une ville).
   const [open, setOpen] = useState<Set<string>>(() => new Set(city ? [city.id] : []));
   useEffect(() => { if (city) setOpen((s) => (s.has(city.id) ? s : new Set(s).add(city.id))); }, [city]);
+  // Lien profond (QR, bandeau de l'arrêt 1) : on amène la carte de la ville sous les yeux, une fois le tiroir ouvert.
+  useEffect(() => {
+    if (!city || story) return;
+    const el = document.getElementById("city-" + city.id); if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const t = setTimeout(() => el.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" }), 80);
+    return () => clearTimeout(t);
+  }, [city, story]);
   const set = (id: string, on: boolean) => setOpen((s) => { const n = new Set(s); on ? n.add(id) : n.delete(id); return n; });
 
   return (
@@ -81,7 +89,7 @@ export default function CityCards({ block, sel, onOpen, crumb }: Props) {
       ) : (
         <div className="cardgrid cities">
           {block.items.map((c) => (
-            <FlipCard key={c.id} flipped={open.has(c.id)} onFlip={(on) => set(c.id, on)} label={c.name} className="city"
+            <FlipCard key={c.id} id={"city-" + c.id} flipped={open.has(c.id)} onFlip={(on) => set(c.id, on)} label={c.name} className="city"
                       backTitle={<>{c.flag} {c.name}</>}
                       front={<CardFront c={c} />}
                       back={

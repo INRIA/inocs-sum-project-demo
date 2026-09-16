@@ -76,10 +76,10 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
               </section>
             )}
             {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
-            {stop.cityStrip && <CityStrip strip={stop.cityStrip} cities={content.cities.items} />}
             {stop.cards && stop.cards.length > 0 && <InfoCards cards={stop.cards} onOpen={onOpen} />}
             {stop.cities && <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} />}
             {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title={stop.moreTitle || "Pour aller plus loin"} columns={stop.id === "station" ? 2 : undefined} />}
+            {stop.cityStrip && <CityStrip strip={stop.cityStrip} cities={content.cities.items} />}
           </>
         ) : (
           <div className="tiles">
