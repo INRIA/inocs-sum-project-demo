@@ -40,7 +40,7 @@
     "imagesNote": "stops[].images : image(s) principale(s) de l'arrêt, affichées en haut du panneau (la première en grand, les autres en vignettes). src vide = emplacement. Fichiers dans app/public/images/."
   },
   "journey": {
-    "metaphor": "Un trajet porte-à-porte sans voiture personnelle : maison → carrefour → station de vélos → destination. À chaque arrêt, une décision.",
+    "metaphor": "Un trajet porte-à-porte sans voiture personnelle : maison → station de vélos → carrefour → destination. À chaque arrêt, une décision.",
     "traveller": {
       "name": "",
       "note": "Nom/personnage du vélo qui avance sur la frise (à définir)."
@@ -68,7 +68,7 @@
       "durationMin": 10,
       "steps": [
         "Rassembler tout le monde devant l'écran de l'Hôtel de ville.",
-        "Chaque table animée dit en une phrase ce que ses maires ont décidé (carrefour, station).",
+        "Chaque table animée dit en une phrase ce que ses maires ont décidé (station, carrefour).",
         "Révéler ce que le modèle propose (station) et ce que les vraies villes ont fait (destination).",
         "Message final : la recherche éclaire, la ville décide."
       ],
@@ -597,14 +597,438 @@
       ]
     },
     {
-      "id": "carrefour",
+      "id": "station",
       "order": 2,
+      "place": "Station de vélos",
+      "title": "Où doivent vivre les vélos ?",
+      "question": "Vous fixez le budget. Où le modèle place-t-il les stations, et pourquoi ?",
+      "mode": "animated",
+      "animator": "A",
+      "position": "table 2, avec tablette et ordinateur portable",
+      "capacity": 6,
+      "durationMin": 15,
+      "researchOnly": true,
+      "tableTent": {
+        "headline": "Où doivent vivre les vélos ?",
+        "subline": "Le jeu se joue sur la tablette, en cinq étapes. Les cartes disent quoi regarder et quoi décider. — Recherche uniquement : rien n'est déployé."
+      },
+      "game": {
+        "tablet": {
+          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/",
+          "note": "Plein écran sur la tablette. Flèches ← → pour changer d'étape, espace pour dérouler la journée. Deep links : ?step=3 ouvre l'étape 3, ?step=4&plan=budget_080k ouvre les résultats du plan de référence."
+        }
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "text": "Ouvrez la démo sur la tablette et passez-la en français (bouton FR, en haut à droite)."
+        },
+        {
+          "step": 2,
+          "text": "Suivez les cinq cartes, une par étape de la démo : chacune dit quoi regarder et quoi décider."
+        },
+        {
+          "step": 3,
+          "text": "Votez pour un plan à la table, construisez-le, puis comparez avec les autres."
+        }
+      ],
+      "materials": [
+        "Tablette avec la démo en plein écran (passée en français)",
+        "Ordinateur portable ou écran pour montrer la démo au groupe",
+        "Carte d'instruction (les cinq étapes)",
+        "Fiche « Recherche uniquement »",
+        "QR code vers l'arrêt 2 de la page et QR code vers la démo"
+      ],
+      "reveal": null,
+      "resources": [
+        {
+          "id": "ce-que-dit-le-modele",
+          "title": "Ce que dit le modèle",
+          "teaser": "Le résultat de l'étude, en cinq phrases.",
+          "kind": "fact",
+          "body": [
+            "Le modèle décide en même temps où placer les stations, combien de places (bornes) et combien de vélos, en tenant compte des trajets combinés vélo + transport en commun.",
+            "Résultat clé : en dessous d'environ un quart du budget, le système reste « vélo seul » (moins de 15 % des trajets utilisent aussi le TC). Au-dessus, la part des trajets combinés monte et se stabilise entre 22 et 33 %.",
+            "Gain de temps moyen de l'ordre de 50 % par rapport à marcher + transport en commun.",
+            "Concevoir vélos et TC ensemble demande moins de bornes qu'en les concevant l'un après l'autre.",
+            "Cas d'étude : Genève, zone centrale de 1,5 km. C'est de la recherche (niveau TRL 3–4), pas un déploiement."
+          ],
+          "source": {
+            "report": "p.25–27",
+            "task": "T2.3 / WP2",
+            "partner": "Inria (INOCS)",
+            "livingLab": "Genève (Rotterdam prévu)"
+          }
+        },
+        {
+          "id": "le-probleme",
+          "title": "Pourquoi c'est difficile",
+          "teaser": "Trop de stations coûte cher. Trop peu, et les vélos ne servent à rien.",
+          "kind": "story",
+          "body": [
+            "Placer des stations de vélos partagés a l'air simple. Mais chaque station a un coût, une capacité, un stock de vélos à réapprovisionner, et elle doit tomber là où les gens en ont besoin — souvent à côté d'un arrêt de bus ou de tram.",
+            "Il faut décider plusieurs choses à la fois, sous contrainte de budget, en anticipant comment les gens vont réellement se déplacer."
+          ],
+          "facts": [
+            {
+              "label": "Décisions à prendre ensemble",
+              "value": "emplacement, capacité, taille de flotte, réapprovisionnement"
+            },
+            {
+              "label": "Contraintes",
+              "value": "budget d'investissement et budget de fonctionnement"
+            },
+            {
+              "label": "Objectif",
+              "value": "servir le maximum de trajets"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.25–26",
+            "task": "T2.3",
+            "partner": "Inria",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "comment-le-modele-decide",
+          "title": "Comment le modèle décide",
+          "teaser": "Une ville découpée en hexagones, des milliers de trajets possibles, un programme qui choisit.",
+          "kind": "tool",
+          "body": [
+            "1. La ville est découpée en hexagones ; chaque centre d'hexagone et chaque arrêt de transport en commun est une station candidate.",
+            "2. Pour chaque origine-destination, on pré-calcule les trajets possibles : vélo direct, vélo + TC, marche + TC.",
+            "3. Un programme d'optimisation (programme linéaire en nombres entiers) choisit les stations, leur capacité et la flotte, avec un terme de coût pour le réapprovisionnement.",
+            "4. La demande vient de données réelles : enquête origine-destination 2022 des TC de Genève, comptages 2024 aux arrêts (TPG) et horaires GTFS."
+          ],
+          "facts": [
+            {
+              "label": "Zone d'étude",
+              "value": "Genève, centre, 1,5 km"
+            },
+            {
+              "label": "Présenté à",
+              "value": "EURO 2025 (Leeds)"
+            },
+            {
+              "label": "Niveau de maturité",
+              "value": "TRL 3 → 4 (recherche)"
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "caption": "Carte hexagonale de Genève avec stations candidates",
+              "suggestedSource": "démo INOCS"
+            }
+          ],
+          "links": [
+            {
+              "label": "Démo interactive",
+              "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/"
+            }
+          ],
+          "source": {
+            "report": "p.25–27",
+            "task": "T2.3 / WP2",
+            "partner": "Inria (INOCS), NTUA (réapprovisionnement)",
+            "livingLab": "Genève"
+          }
+        },
+        {
+          "id": "autres-outils",
+          "title": "Les autres outils de la boîte",
+          "teaser": "Prévoir la disponibilité, simuler des flottes, faire arriver le minibus juste avant le tram.",
+          "kind": "list",
+          "body": [
+            "SUM a développé d'autres outils pour la ville idéale, testés avec les données des villes :"
+          ],
+          "items": [
+            {
+              "title": "Y aura-t-il une trottinette ?",
+              "text": "Un modèle d'apprentissage automatique prédit jusqu'à 90 minutes à l'avance la probabilité de trouver un scooter partagé, à partir de l'historique, de la météo et des points d'intérêt. Déployé dans l'application RET à Rotterdam.",
+              "partner": "TU Delft, Siemens Mobility",
+              "source": "p.20–22"
+            },
+            {
+              "title": "Le jumeau numérique du bus à la demande",
+              "text": "Un cadre de simulation-optimisation (FleetPy + modèle de choix) évalue des milliers de configurations de service. À Jérusalem, plus de 2 000 configurations testées.",
+              "partner": "Tel Aviv University, TUM, Jagiellonian University",
+              "source": "p.23–24, p.49"
+            },
+            {
+              "title": "Le minibus qui arrive juste avant le tram",
+              "text": "Un « courtier » multimodal découpe un trajet en tronçons TC + à la demande et contraint les véhicules à arriver à l'arrêt juste avant les passages de TC. Testé avec les données des TPG (Genève).",
+              "partner": "TUM",
+              "source": "p.25–26"
+            },
+            {
+              "title": "Qui a droit à une station ?",
+              "text": "Une version du modèle de réseau vélo + TC optimise à la fois l'efficacité et l'équité (indice de Gini d'accessibilité).",
+              "partner": "UT, TUM, Inria, JU",
+              "source": "p.24–25"
+            }
+          ],
+          "facts": [],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.20–27",
+            "task": "WP2",
+            "partner": "TUD, TAU, TUM, UT, JU, Inria",
+            "livingLab": ""
+          }
+        },
+        {
+          "id": "recherche-uniquement",
+          "title": "Recherche uniquement",
+          "teaser": "Rien de ce que vous voyez sur cette table n'est déployé dans une ville.",
+          "kind": "notice",
+          "body": [
+            "Les modèles présentés à cette table sont des travaux de recherche de l'équipe INOCS (Inria). Genève est le cas d'étude, avec des données réelles, mais aucune station n'a été construite sur la base de ces résultats.",
+            "L'objectif est d'aider les villes à comparer des scénarios — la décision leur appartient."
+          ],
+          "facts": [],
+          "images": [],
+          "links": [],
+          "source": {
+            "report": "p.26, p.37",
+            "task": "T2.3, T3.3",
+            "partner": "Inria",
+            "livingLab": "Genève"
+          }
+        }
+      ],
+      "images": [],
+      "cards": [
+        {
+          "id": "demo",
+          "accent": true,
+          "wide": true,
+          "front": {
+            "value": "5 étapes",
+            "label": "sur la tablette",
+            "teaser": "Un jeu de décision sur données genevoises réelles. Vous fixez le budget, le modèle place les stations."
+          },
+          "back": {
+            "title": "Avant de commencer",
+            "image": {
+              "src": "/images/station-geneve-demo.png",
+              "alt": "Capture de la démo : carte de Genève et cinq étapes",
+              "caption": "La démo « Où doivent vivre les vélos ? »"
+            },
+            "lines": [
+              "Bouton FR en haut à droite pour passer la démo en français.",
+              "Flèches ← → pour changer d'étape, espace pour dérouler la journée.",
+              "Comptez 15 minutes pour les cinq étapes."
+            ]
+          },
+          "link": {
+            "label": "Ouvrir la démo",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/"
+          }
+        },
+        {
+          "id": "etape-1",
+          "front": {
+            "value": "1",
+            "label": "Les questions",
+            "teaser": "Quatre questions, un budget"
+          },
+          "back": {
+            "title": "Quoi regarder",
+            "lines": [
+              "Les quatre questions qu'une ville se pose : combien investir, quand le vélo alimente-t-il le tram, camions ou bornes, le rythme de la journée.",
+              "Trois chiffres : 1 453 trajets potentiels par jour, 100 sites candidats, 3 périodes.",
+              "À la table : où mettriez-vous la première station ?"
+            ]
+          },
+          "link": {
+            "label": "Ouvrir l'étape 1",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=1"
+          }
+        },
+        {
+          "id": "etape-2",
+          "front": {
+            "value": "2",
+            "label": "La ville",
+            "teaser": "Où Genève bouge, heure par heure"
+          },
+          "back": {
+            "title": "Quoi regarder",
+            "lines": [
+              "Lancez la journée : les cercles rouges grossissent avec les montées et les descentes aux arrêts.",
+              "Comparez lundi et dimanche : la pointe de 8 h disparaît le dimanche.",
+              "Le modèle résume la journée en trois périodes : matin, midi, soir."
+            ]
+          },
+          "link": {
+            "label": "Ouvrir l'étape 2",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=2"
+          }
+        },
+        {
+          "id": "etape-3",
+          "front": {
+            "value": "3",
+            "label": "Choisir un plan",
+            "teaser": "Quatre budgets, un optimiseur"
+          },
+          "back": {
+            "title": "Quoi décider",
+            "lines": [
+              "Quatre ambitions : amorce (20 k€), essentiel (60 k€), référence (80 k€), ambitieux (120 k€).",
+              "Vous fixez le budget ; le modèle place les stations, les bornes et les vélos.",
+              "Votez à la table, puis « Construire ce réseau »."
+            ]
+          },
+          "link": {
+            "label": "Ouvrir l'étape 3",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=3"
+          }
+        },
+        {
+          "id": "etape-4",
+          "front": {
+            "value": "4",
+            "label": "Les résultats",
+            "teaser": "Une journée sur le réseau"
+          },
+          "back": {
+            "title": "Quoi regarder",
+            "lines": [
+              "Les stations tombent sur la carte : bleues aux arrêts de tram et de bus, vertes aux centres de zone.",
+              "Trois chiffres : trajets servis, part connectée aux transports publics, minutes gagnées par trajet.",
+              "Essayez un autre plan pour comparer."
+            ]
+          },
+          "link": {
+            "label": "Ouvrir l'étape 4",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=4&plan=budget_080k"
+          }
+        },
+        {
+          "id": "etape-5",
+          "front": {
+            "value": "5",
+            "label": "Comparer les plans",
+            "teaser": "Les quatre questions, répondues"
+          },
+          "back": {
+            "title": "Ce qu'on retient",
+            "lines": [
+              "Les premiers euros achètent de la couverture ; au-delà du plan de référence, les rendements décroissent.",
+              "Entre 60 et 80 k€, le réseau bascule du « vélo seul » vers une vraie intégration aux transports publics.",
+              "Une petite pénalité par tournée de camion réduit cette dépense de 90 % pour moins de 1 % de demande en moins."
+            ]
+          },
+          "link": {
+            "label": "Ouvrir l'étape 5",
+            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+          }
+        }
+      ],
+      "moreCards": [
+        {
+          "id": "modele",
+          "front": {
+            "value": "22–33 %",
+            "label": "de trajets combinés vélo + tram",
+            "teaser": "Ce que dit le modèle, une fois le budget suffisant"
+          },
+          "back": {
+            "title": "Ce que dit le modèle",
+            "lines": [
+              "En dessous d'environ un quart du budget, le système reste « vélo seul ».",
+              "Au-dessus, la part des trajets combinés monte et se stabilise entre 22 et 33 %.",
+              "Gain de temps moyen de l'ordre de 50 % par rapport à marcher + transport en commun."
+            ]
+          },
+          "resource": "ce-que-dit-le-modele"
+        },
+        {
+          "id": "probleme",
+          "front": {
+            "value": "4",
+            "label": "décisions à prendre ensemble",
+            "teaser": "Emplacement, capacité, flotte, réapprovisionnement"
+          },
+          "back": {
+            "title": "Pourquoi c'est difficile",
+            "lines": [
+              "Trop de stations coûte cher. Trop peu, et les vélos ne servent à rien.",
+              "Chaque station a un coût, une capacité et un stock à réapprovisionner.",
+              "Elle doit tomber là où les gens en ont besoin, souvent à côté d'un arrêt de bus ou de tram."
+            ]
+          },
+          "resource": "le-probleme"
+        },
+        {
+          "id": "decide",
+          "front": {
+            "value": "1,5 km",
+            "label": "de Genève, en hexagones",
+            "teaser": "Comment le modèle décide"
+          },
+          "back": {
+            "title": "Comment le modèle décide",
+            "lines": [
+              "La ville est découpée en hexagones ; chaque centre et chaque arrêt de transport en commun est une station candidate.",
+              "Pour chaque origine-destination, trois trajets possibles : vélo direct, vélo + TC, marche + TC.",
+              "Un programme d'optimisation choisit les stations, leur capacité et la flotte, à partir de données réelles (enquête 2022, comptages TPG 2024)."
+            ]
+          },
+          "resource": "comment-le-modele-decide"
+        },
+        {
+          "id": "outils",
+          "front": {
+            "value": "4 outils",
+            "label": "de plus dans la boîte",
+            "teaser": "Prévoir la disponibilité, simuler des flottes, faire arriver le minibus juste avant le tram"
+          },
+          "back": {
+            "title": "Les autres outils",
+            "lines": [
+              "Y aura-t-il une trottinette ?",
+              "Le jumeau numérique du bus à la demande.",
+              "Le minibus qui arrive juste avant le tram.",
+              "Qui a droit à une station ?"
+            ]
+          },
+          "resource": "autres-outils"
+        },
+        {
+          "id": "recherche",
+          "front": {
+            "value": "TRL 3–4",
+            "label": "recherche uniquement",
+            "teaser": "Rien n'est déployé dans une ville"
+          },
+          "back": {
+            "title": "Recherche uniquement",
+            "lines": [
+              "Genève est le cas d'étude, avec des données réelles, mais aucune station n'a été construite sur cette base.",
+              "Les modèles sont au niveau de maturité 3–4 sur 9 : c'est de la recherche.",
+              "Ils aident à comparer des scénarios ; la décision appartient à la ville."
+            ]
+          },
+          "resource": "recherche-uniquement"
+        }
+      ]
+    },
+    {
+      "id": "carrefour",
+      "order": 3,
       "place": "Carrefour",
       "title": "Et si on refaisait ce carrefour ?",
       "question": "Qui utilise cette rue ? Quand ? Qu'est-ce qui coince ?",
       "mode": "animated",
       "animator": "B",
-      "position": "table 2",
+      "position": "table 3",
       "capacity": 6,
       "durationMin": 10,
       "tableTent": {
@@ -642,7 +1066,7 @@
         "Cartes d'instruction plastifiées (étapes 1–4)",
         "Enveloppe « Ouvre-moi quand vous avez voté »",
         "Gommettes de vote",
-        "QR code vers l'arrêt 2 de la page"
+        "QR code vers l'arrêt 3 de la page"
       ],
       "reveal": {
         "title": "Ce qui s'est passé à Coimbra",
@@ -843,246 +1267,6 @@
           "alt": "Fiche d’instructions de l’atelier (portugais)",
           "caption": "La fiche d’instructions originale (Etapas do Workshop)",
           "credit": "Rapport SUM, Fig. 15"
-        }
-      ]
-    },
-    {
-      "id": "station",
-      "order": 3,
-      "place": "Station de vélos",
-      "title": "Où doivent vivre les vélos ?",
-      "question": "Vous avez 10 stations à placer. Où, et pourquoi ?",
-      "mode": "animated",
-      "animator": "A",
-      "position": "table 3, avec tablette et ordinateur portable",
-      "capacity": 6,
-      "durationMin": 15,
-      "researchOnly": true,
-      "tableTent": {
-        "headline": "Où doivent vivre les vélos ?",
-        "subline": "10 stations à placer. Un budget. Une ville qui bouge. — Recherche uniquement : rien n'est déployé."
-      },
-      "questions": [
-        {
-          "id": "q1",
-          "text": ""
-        },
-        {
-          "id": "q2",
-          "text": ""
-        },
-        {
-          "id": "q3",
-          "text": ""
-        },
-        {
-          "id": "q4",
-          "text": ""
-        }
-      ],
-      "game": {
-        "mapNote": "Carte imprimée avec les stations candidates prédéfinies (emplacements à fournir).",
-        "stationsToPlace": 10,
-        "tablet": {
-          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/",
-          "note": "Les étapes du jeu et le résultat sont sur la tablette : carte interactive avec points chauds pour voir comment la ville bouge au fil de la journée."
-        }
-      },
-      "instructions": [
-        {
-          "step": 1,
-          "title": "Regarder la ville bouger (2 min)",
-          "text": "Sur la tablette, observez les points chauds : d'où partent les gens le matin ? Où vont-ils ? Et le samedi ?"
-        },
-        {
-          "step": 2,
-          "title": "Répondre aux 4 questions (3 min)",
-          "text": ""
-        },
-        {
-          "step": 3,
-          "title": "Placer 10 stations (6 min)",
-          "text": "Discutez en groupe, puis placez vos 10 épingles sur la carte imprimée, parmi les emplacements proposés."
-        },
-        {
-          "step": 4,
-          "title": "Comparer avec le modèle (4 min)",
-          "text": "Sur la tablette, découvrez ce que propose le modèle d'optimisation pour le même budget — et ce qui change quand le budget change."
-        }
-      ],
-      "materials": [
-        "Carte imprimée A1 de la ville avec les stations candidates (même dessin que la tablette)",
-        "Épingles ou pions : 10 par groupe",
-        "Tablette avec la démo interactive (mode plein écran)",
-        "Ordinateur portable pour la révélation sur écran",
-        "Cartes des 4 questions",
-        "Fiche « Recherche uniquement »",
-        "QR code vers l'arrêt 3 de la page"
-      ],
-      "reveal": {
-        "title": "Ce que dit le modèle",
-        "lines": [
-          "Le modèle décide en même temps où placer les stations, combien de places (bornes) et combien de vélos, en tenant compte des trajets combinés vélo + transport en commun.",
-          "Résultat clé : en dessous d'environ un quart du budget, le système reste « vélo seul » (moins de 15 % des trajets utilisent aussi le TC). Au-dessus, la part des trajets combinés monte et se stabilise entre 22 et 33 %.",
-          "Gain de temps moyen de l'ordre de 50 % par rapport à marcher + transport en commun.",
-          "Concevoir vélos et TC ensemble demande moins de bornes qu'en les concevant l'un après l'autre.",
-          "Cas d'étude : Genève, zone centrale de 1,5 km. C'est de la recherche (niveau TRL 3–4), pas un déploiement."
-        ],
-        "source": {
-          "report": "p.25–27",
-          "task": "T2.3 / WP2",
-          "partner": "Inria (INOCS)",
-          "livingLab": "Genève (Rotterdam prévu)"
-        }
-      },
-      "resources": [
-        {
-          "id": "le-probleme",
-          "title": "Pourquoi c'est difficile",
-          "teaser": "Trop de stations coûte cher. Trop peu, et les vélos ne servent à rien.",
-          "kind": "story",
-          "body": [
-            "Placer des stations de vélos partagés a l'air simple. Mais chaque station a un coût, une capacité, un stock de vélos à réapprovisionner, et elle doit tomber là où les gens en ont besoin — souvent à côté d'un arrêt de bus ou de tram.",
-            "Il faut décider plusieurs choses à la fois, sous contrainte de budget, en anticipant comment les gens vont réellement se déplacer."
-          ],
-          "facts": [
-            {
-              "label": "Décisions à prendre ensemble",
-              "value": "emplacement, capacité, taille de flotte, réapprovisionnement"
-            },
-            {
-              "label": "Contraintes",
-              "value": "budget d'investissement et budget de fonctionnement"
-            },
-            {
-              "label": "Objectif",
-              "value": "servir le maximum de trajets"
-            }
-          ],
-          "images": [],
-          "links": [],
-          "source": {
-            "report": "p.25–26",
-            "task": "T2.3",
-            "partner": "Inria",
-            "livingLab": "Genève"
-          }
-        },
-        {
-          "id": "comment-le-modele-decide",
-          "title": "Comment le modèle décide",
-          "teaser": "Une ville découpée en hexagones, des milliers de trajets possibles, un programme qui choisit.",
-          "kind": "tool",
-          "body": [
-            "1. La ville est découpée en hexagones ; chaque centre d'hexagone et chaque arrêt de transport en commun est une station candidate.",
-            "2. Pour chaque origine-destination, on pré-calcule les trajets possibles : vélo direct, vélo + TC, marche + TC.",
-            "3. Un programme d'optimisation (programme linéaire en nombres entiers) choisit les stations, leur capacité et la flotte, avec un terme de coût pour le réapprovisionnement.",
-            "4. La demande vient de données réelles : enquête origine-destination 2022 des TC de Genève, comptages 2024 aux arrêts (TPG) et horaires GTFS."
-          ],
-          "facts": [
-            {
-              "label": "Zone d'étude",
-              "value": "Genève, centre, 1,5 km"
-            },
-            {
-              "label": "Présenté à",
-              "value": "EURO 2025 (Leeds)"
-            },
-            {
-              "label": "Niveau de maturité",
-              "value": "TRL 3 → 4 (recherche)"
-            }
-          ],
-          "images": [
-            {
-              "src": "",
-              "caption": "Carte hexagonale de Genève avec stations candidates",
-              "suggestedSource": "démo INOCS"
-            }
-          ],
-          "links": [
-            {
-              "label": "Démo interactive",
-              "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/"
-            }
-          ],
-          "source": {
-            "report": "p.25–27",
-            "task": "T2.3 / WP2",
-            "partner": "Inria (INOCS), NTUA (réapprovisionnement)",
-            "livingLab": "Genève"
-          }
-        },
-        {
-          "id": "autres-outils",
-          "title": "Les autres outils de la boîte",
-          "teaser": "Prévoir la disponibilité, simuler des flottes, faire arriver le minibus juste avant le tram.",
-          "kind": "list",
-          "body": [
-            "SUM a développé d'autres outils pour la ville idéale, testés avec les données des villes :"
-          ],
-          "items": [
-            {
-              "title": "Y aura-t-il une trottinette ?",
-              "text": "Un modèle d'apprentissage automatique prédit jusqu'à 90 minutes à l'avance la probabilité de trouver un scooter partagé, à partir de l'historique, de la météo et des points d'intérêt. Déployé dans l'application RET à Rotterdam.",
-              "partner": "TU Delft, Siemens Mobility",
-              "source": "p.20–22"
-            },
-            {
-              "title": "Le jumeau numérique du bus à la demande",
-              "text": "Un cadre de simulation-optimisation (FleetPy + modèle de choix) évalue des milliers de configurations de service. À Jérusalem, plus de 2 000 configurations testées.",
-              "partner": "Tel Aviv University, TUM, Jagiellonian University",
-              "source": "p.23–24, p.49"
-            },
-            {
-              "title": "Le minibus qui arrive juste avant le tram",
-              "text": "Un « courtier » multimodal découpe un trajet en tronçons TC + à la demande et contraint les véhicules à arriver à l'arrêt juste avant les passages de TC. Testé avec les données des TPG (Genève).",
-              "partner": "TUM",
-              "source": "p.25–26"
-            },
-            {
-              "title": "Qui a droit à une station ?",
-              "text": "Une version du modèle de réseau vélo + TC optimise à la fois l'efficacité et l'équité (indice de Gini d'accessibilité).",
-              "partner": "UT, TUM, Inria, JU",
-              "source": "p.24–25"
-            }
-          ],
-          "facts": [],
-          "images": [],
-          "links": [],
-          "source": {
-            "report": "p.20–27",
-            "task": "WP2",
-            "partner": "TUD, TAU, TUM, UT, JU, Inria",
-            "livingLab": ""
-          }
-        },
-        {
-          "id": "recherche-uniquement",
-          "title": "Recherche uniquement",
-          "teaser": "Rien de ce que vous voyez sur cette table n'est déployé dans une ville.",
-          "kind": "notice",
-          "body": [
-            "Les modèles présentés à cette table sont des travaux de recherche de l'équipe INOCS (Inria). Genève est le cas d'étude, avec des données réelles, mais aucune station n'a été construite sur la base de ces résultats.",
-            "L'objectif est d'aider les villes à comparer des scénarios — la décision leur appartient."
-          ],
-          "facts": [],
-          "images": [],
-          "links": [],
-          "source": {
-            "report": "p.26, p.37",
-            "task": "T2.3, T3.3",
-            "partner": "Inria",
-            "livingLab": "Genève"
-          }
-        }
-      ],
-      "images": [
-        {
-          "src": "/images/station-geneve-demo.png",
-          "alt": "Carte de Genève : lignes de tram et de bus, points d’intérêt, stations de vélos existantes",
-          "caption": "Genève, 1,5 km autour du Rhône : 59 zones, 438 arrêts de TC, stations de vélos existantes",
-          "credit": "Démo INOCS / Inria"
         }
       ]
     },

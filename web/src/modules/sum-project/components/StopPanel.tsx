@@ -57,8 +57,8 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
             {stop.capacity && <span className="chip blue">≤ {stop.capacity} pers.</span>}
           </div>
           {cardMode ? <details className="consignes"><summary>Consignes de la table</summary>{consignes}</details> : consignes}
-          {stop.game?.tablet?.url && <a className="demo" href={/^https?:/.test(stop.game.tablet.url) ? stop.game.tablet.url : assetUrl(stop.game.tablet.url)} target="_blank" rel="noopener">Ouvrir la démo sur la tablette ↗</a>}
-          {stop.game?.note && <div className="notice soft">{stop.game.note}</div>}
+          {!cardMode && stop.game?.tablet?.url && <a className="demo" href={/^https?:/.test(stop.game.tablet.url) ? stop.game.tablet.url : assetUrl(stop.game.tablet.url)} target="_blank" rel="noopener">Ouvrir la démo sur la tablette ↗</a>}
+          {!cardMode && stop.game?.note && <div className="notice soft">{stop.game.note}</div>}
           {stop.researchOnly && <div className="notice">Recherche uniquement — rien n'est déployé dans une ville.</div>}
         </aside>
 
