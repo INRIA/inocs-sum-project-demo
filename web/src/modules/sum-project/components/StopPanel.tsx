@@ -11,7 +11,7 @@ const modeLabel = { passive: "Table libre", animated: "Table animée", selfservi
 type Props = { stop: Stop; content: Content; resId: string | null; onOpen: (id: string | null) => void };
 
 export default function StopPanel({ stop, content, resId, onOpen }: Props) {
-  const cardMode = !!(stop.cards || stop.cities); // arrêt « cartes » : recto / verso / fiche en modale
+  const cardMode = !!(stop.cards || stop.cities || stop.challenge); // arrêt « cartes » : recto / verso / fiche en modale
   const cityId = stop.cities ? parseSel(resId).cityId : null;
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
 
@@ -64,6 +64,14 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
 
         {cardMode ? (
           <>
+            {stop.challenge && (
+              <section className="challenge" aria-label="La question">
+                <div className="k">{stop.challenge.eyebrow || "La question"}</div>
+                <p className="q">{stop.challenge.question}</p>
+                {stop.challenge.hint && <p className="h">{stop.challenge.hint}</p>}
+                <a className="iconbtn primary big" href={stop.challenge.cta.url} target="_blank" rel="noopener">{stop.challenge.cta.label} ↗</a>
+              </section>
+            )}
             {stop.cards && stop.cards.length > 0 && <InfoCards cards={stop.cards} onOpen={onOpen} />}
             {stop.cities && <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} />}
             {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title="Pour aller plus loin" />}

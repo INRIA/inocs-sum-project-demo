@@ -3,7 +3,7 @@
     "title": "Ville en mouvement",
     "subtitle": "Venez concevoir la mobilité partagée et les transports de votre ville idéale",
     "event": {
-      "name": "Nuit européenne des chercheurs — Monde(s) numérique(s)",
+      "name": "Nuit européenne des chercheurs 2026 — Monde(s) numérique(s)",
       "date": "2026-09-25",
       "time": "17:00–22:00",
       "venue": "I-Factory La Doua, Villeurbanne",
@@ -601,7 +601,7 @@
       "order": 2,
       "place": "Station de vélos",
       "title": "Où doivent vivre les vélos ?",
-      "question": "Vous fixez le budget. Où le modèle place-t-il les stations, et pourquoi ?",
+      "question": "Avec 20 000 €, où placez-vous les dix dernières stations ?",
       "mode": "animated",
       "animator": "A",
       "position": "table 2, avec tablette et ordinateur portable",
@@ -610,34 +610,43 @@
       "researchOnly": true,
       "tableTent": {
         "headline": "Où doivent vivre les vélos ?",
-        "subline": "Le jeu se joue sur la tablette, en cinq étapes. Les cartes disent quoi regarder et quoi décider. — Recherche uniquement : rien n'est déployé."
+        "subline": "Une carte, des épingles, un budget. La tablette montre comment la ville bouge. — Recherche uniquement : rien n'est déployé."
       },
       "game": {
         "tablet": {
-          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/",
-          "note": "Plein écran sur la tablette. Flèches ← → pour changer d'étape, espace pour dérouler la journée. Deep links : ?step=3 ouvre l'étape 3, ?step=4&plan=budget_080k ouvre les résultats du plan de référence."
+          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=2",
+          "note": "?step=2 ouvre directement « La ville ». Révélation : ?step=4&plan=budget_020k (33 stations, 247 bornes, 196 vélos, 34 % de la demande servie)."
         }
       },
       "instructions": [
         {
           "step": 1,
-          "text": "Ouvrez la démo sur la tablette et passez-la en français (bouton FR, en haut à droite)."
+          "title": "Regarder la carte (2 min)",
+          "text": "Sur la table : le centre de Genève, ses lignes de tram et de bus, et les 23 stations déjà placées."
         },
         {
           "step": 2,
-          "text": "Suivez les cinq cartes, une par étape de la démo : chacune dit quoi regarder et quoi décider."
+          "title": "Chercher des indices (3 min)",
+          "text": "Sur la tablette, déroulez la journée : où les gens montent-ils et descendent-ils ? Un lundi, un dimanche ?"
         },
         {
           "step": 3,
-          "text": "Votez pour un plan à la table, construisez-le, puis comparez avec les autres."
+          "title": "Placer 10 épingles (6 min)",
+          "text": "Discutez en groupe, puis placez vos 10 stations sur la carte, parmi les sites candidats."
+        },
+        {
+          "step": 4,
+          "title": "Comparer avec le modèle (4 min)",
+          "text": "Sur l'écran, découvrez où le modèle d'optimisation a mis les siennes, et ce qui change quand le budget augmente."
         }
       ],
       "materials": [
-        "Tablette avec la démo en plein écran (passée en français)",
-        "Ordinateur portable ou écran pour montrer la démo au groupe",
-        "Carte d'instruction (les cinq étapes)",
+        "Carte imprimée A1 du centre de Genève (1,5 km) avec les sites candidats et les 23 stations déjà placées",
+        "Épingles ou pions : 10 par groupe",
+        "Tablette avec la démo (étape 2 « La ville », passée en français, plein écran)",
+        "Ordinateur portable ou écran pour la révélation (étape 4, plan d'amorce 20 k€)",
         "Fiche « Recherche uniquement »",
-        "QR code vers l'arrêt 2 de la page et QR code vers la démo"
+        "QR code vers l'arrêt 2 de la page"
       ],
       "reveal": null,
       "resources": [
@@ -802,135 +811,6 @@
         }
       ],
       "images": [],
-      "cards": [
-        {
-          "id": "demo",
-          "accent": true,
-          "wide": true,
-          "front": {
-            "value": "5 étapes",
-            "label": "sur la tablette",
-            "teaser": "Un jeu de décision sur données genevoises réelles. Vous fixez le budget, le modèle place les stations."
-          },
-          "back": {
-            "title": "Avant de commencer",
-            "image": {
-              "src": "/images/station-geneve-demo.png",
-              "alt": "Capture de la démo : carte de Genève et cinq étapes",
-              "caption": "La démo « Où doivent vivre les vélos ? »"
-            },
-            "lines": [
-              "Bouton FR en haut à droite pour passer la démo en français.",
-              "Flèches ← → pour changer d'étape, espace pour dérouler la journée.",
-              "Comptez 15 minutes pour les cinq étapes."
-            ]
-          },
-          "link": {
-            "label": "Ouvrir la démo",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/"
-          }
-        },
-        {
-          "id": "etape-1",
-          "front": {
-            "value": "1",
-            "label": "Les questions",
-            "teaser": "Quatre questions, un budget"
-          },
-          "back": {
-            "title": "Quoi regarder",
-            "lines": [
-              "Les quatre questions qu'une ville se pose : combien investir, quand le vélo alimente-t-il le tram, camions ou bornes, le rythme de la journée.",
-              "Trois chiffres : 1 453 trajets potentiels par jour, 100 sites candidats, 3 périodes.",
-              "À la table : où mettriez-vous la première station ?"
-            ]
-          },
-          "link": {
-            "label": "Ouvrir l'étape 1",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=1"
-          }
-        },
-        {
-          "id": "etape-2",
-          "front": {
-            "value": "2",
-            "label": "La ville",
-            "teaser": "Où Genève bouge, heure par heure"
-          },
-          "back": {
-            "title": "Quoi regarder",
-            "lines": [
-              "Lancez la journée : les cercles rouges grossissent avec les montées et les descentes aux arrêts.",
-              "Comparez lundi et dimanche : la pointe de 8 h disparaît le dimanche.",
-              "Le modèle résume la journée en trois périodes : matin, midi, soir."
-            ]
-          },
-          "link": {
-            "label": "Ouvrir l'étape 2",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=2"
-          }
-        },
-        {
-          "id": "etape-3",
-          "front": {
-            "value": "3",
-            "label": "Choisir un plan",
-            "teaser": "Quatre budgets, un optimiseur"
-          },
-          "back": {
-            "title": "Quoi décider",
-            "lines": [
-              "Quatre ambitions : amorce (20 k€), essentiel (60 k€), référence (80 k€), ambitieux (120 k€).",
-              "Vous fixez le budget ; le modèle place les stations, les bornes et les vélos.",
-              "Votez à la table, puis « Construire ce réseau »."
-            ]
-          },
-          "link": {
-            "label": "Ouvrir l'étape 3",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=3"
-          }
-        },
-        {
-          "id": "etape-4",
-          "front": {
-            "value": "4",
-            "label": "Les résultats",
-            "teaser": "Une journée sur le réseau"
-          },
-          "back": {
-            "title": "Quoi regarder",
-            "lines": [
-              "Les stations tombent sur la carte : bleues aux arrêts de tram et de bus, vertes aux centres de zone.",
-              "Trois chiffres : trajets servis, part connectée aux transports publics, minutes gagnées par trajet.",
-              "Essayez un autre plan pour comparer."
-            ]
-          },
-          "link": {
-            "label": "Ouvrir l'étape 4",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=4&plan=budget_080k"
-          }
-        },
-        {
-          "id": "etape-5",
-          "front": {
-            "value": "5",
-            "label": "Comparer les plans",
-            "teaser": "Les quatre questions, répondues"
-          },
-          "back": {
-            "title": "Ce qu'on retient",
-            "lines": [
-              "Les premiers euros achètent de la couverture ; au-delà du plan de référence, les rendements décroissent.",
-              "Entre 60 et 80 k€, le réseau bascule du « vélo seul » vers une vraie intégration aux transports publics.",
-              "Une petite pénalité par tournée de camion réduit cette dépense de 90 % pour moins de 1 % de demande en moins."
-            ]
-          },
-          "link": {
-            "label": "Ouvrir l'étape 5",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
-          }
-        }
-      ],
       "moreCards": [
         {
           "id": "modele",
@@ -1018,7 +898,16 @@
           },
           "resource": "recherche-uniquement"
         }
-      ]
+      ],
+      "challenge": {
+        "eyebrow": "Vous êtes maire de Genève",
+        "question": "Avec 20 000 €, la ville peut ouvrir 33 stations de vélos. 23 sont déjà placées aux meilleurs endroits. Où placez-vous les 10 dernières ?",
+        "hint": "Un indice : regardez comment la ville bouge avec les transports en commun, heure par heure. Les vélos finissent là où les gens sont allés.",
+        "cta": {
+          "label": "Découvrir comment la ville bouge",
+          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=2"
+        }
+      }
     },
     {
       "id": "carrefour",

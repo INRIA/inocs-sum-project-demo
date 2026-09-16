@@ -32,6 +32,7 @@ export type Stop = {
   reveal: { title: string; lines: string[]; source?: Source } | null;
   featured?: string[];
   images?: Img[];
+  challenge?: { eyebrow?: string; question: string; hint?: string; cta: Link };  // une seule question, un seul bouton
   cards?: InfoCard[];      // mode « cartes » : recto / verso / fiche
   cities?: boolean;        // affiche les cartes Villes (bloc `cities`) après `cards`
   moreCards?: InfoCard[];  // cartes « pour aller plus loin », après les villes
