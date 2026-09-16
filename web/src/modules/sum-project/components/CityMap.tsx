@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 export type StopLite = { id: string; order: number; place: string; title: string };
 
-type Props = { stops: StopLite[]; activeId: string | null; onSelect: (id: string) => void };
+type Props = {
+  stops: StopLite[]; activeId: string | null; onSelect: (id: string) => void;
+  visited?: Set<string>;   // arrêts déjà ouverts : un petit tampon ✓ sur le disque
+  atEnd?: boolean;         // écran du conseil municipal : le vélo va jusqu'au bout de la route
+};
 
 // Route du vélo : une courbe qui traverse la ville de gauche à droite (viewBox 1400 × 620).
 const ROAD = "M 40 500 C 200 500, 240 300, 380 290 S 560 400, 700 330 S 860 150, 1000 190 S 1180 360, 1330 250";
@@ -28,7 +32,7 @@ function Icon({ id }: { id: string }) {
   }
 }
 
-export default function CityMap({ stops, activeId, onSelect }: Props) {
+export default function CityMap({ stops, activeId, onSelect, visited, atEnd = false }: Props) {
   const pathRef = useRef<SVGPathElement>(null);
   const bikeRef = useRef<SVGGElement>(null);
   const [pts, setPts] = useState<{ x: number; y: number }[]>([]);
@@ -54,12 +58,18 @@ export default function CityMap({ stops, activeId, onSelect }: Props) {
     g.setAttribute("transform", `translate(${q.x} ${q.y - 26}) rotate(${ang * 0.6})`);
   }
 
-  // le vélo roule jusqu'à l'arrêt sélectionné
+  // le vélo roule jusqu'à l'arrêt sélectionné (ou jusqu'au bout de la route pour le conseil municipal)
   useEffect(() => {
-    const p = pathRef.current; if (!p || !activeId) return;
-    const idx = stops.findIndex((s) => s.id === activeId); if (idx < 0) return;
+    const p = pathRef.current; if (!p) return;
     const L = p.getTotalLength();
-    const from = lenRef.current, to = Math.max(0, L * fractionsFor(stops.length)[idx] - PARK_BEFORE);
+    let to: number | null = null;
+    if (atEnd) to = L;
+    else if (activeId) {
+      const idx = stops.findIndex((s) => s.id === activeId);
+      if (idx >= 0) to = Math.max(0, L * fractionsFor(stops.length)[idx] - PARK_BEFORE);
+    }
+    if (to === null) return;
+    const from = lenRef.current;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dist = Math.abs(to - from);
     const dur = reduce ? 0 : Math.min(2200, Math.max(700, dist * 1.6));
@@ -74,7 +84,7 @@ export default function CityMap({ stops, activeId, onSelect }: Props) {
     };
     rafRef.current = requestAnimationFrame(step);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [activeId, stops]);
+  }, [activeId, atEnd, stops]);
 
   return (
     <svg className="map" viewBox="0 0 1400 620" preserveAspectRatio="xMidYMid meet" role="group" aria-label={`Carte de la ville : ${stops.length} arrêts`}>
@@ -112,15 +122,22 @@ export default function CityMap({ stops, activeId, onSelect }: Props) {
       {pts.map((p, i) => {
         const s = stops[i]; if (!s) return null;
         const active = s.id === activeId;
+        const seen = !!visited?.has(s.id);
         const ly = i % 2 === 1 ? -62 : 70;
         return (
           <g key={s.id} className={"stop" + (active ? " active" : "")} transform={`translate(${p.x} ${p.y})`}
-             onClick={() => onSelect(s.id)} role="button" tabIndex={0} aria-label={`Arrêt ${s.order} : ${s.place}`} aria-pressed={active}
+             onClick={() => onSelect(s.id)} role="button" tabIndex={0} aria-label={`Arrêt ${s.order} : ${s.place}${seen ? ", visité" : ""}`} aria-pressed={active}
              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(s.id); } }}>
             <circle className="ring" r="30" />
             <circle className="disc" r="30" filter="url(#soft)" />
             <g color={active ? "#17230A" : "var(--sum-blue)"}><Icon id={s.id} /></g>
             <g transform="translate(24 -24)"><circle r="12" fill="var(--sum-blue-deep)" /><text className="num" style={{ fontSize: 14, fill: "#fff" }}>{s.order}</text></g>
+            {seen && (
+              <g className="tick" transform="translate(22 22)" aria-hidden="true">
+                <circle r="12" fill="#fff" stroke="var(--sum-green-deep)" strokeWidth="3" />
+                <path d="M-5 0 L-1.5 4.5 L5.5 -4" fill="none" stroke="var(--sum-green-deep)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+              </g>
+            )}
             <text className="lbl" y={ly}>{s.place}</text>
             <text className="lbl2" y={ly + 20}>{s.title}</text>
           </g>

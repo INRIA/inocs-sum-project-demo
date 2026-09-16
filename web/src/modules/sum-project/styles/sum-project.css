@@ -493,3 +493,104 @@ td.e { font-size: 22px; }
   .modal { animation: modal-in .22s ease-out; }
   @keyframes modal-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 }
+
+/* ==========================================================================
+   Parcours : écran d'entrée, état « visité », conseil municipal, brief d'arrivée
+   (ajouté pour la revue UX — points 1, 2, 3 et 6 du plan)
+   ========================================================================== */
+
+/* Arrivée directe par QR : le tiroir est déjà là, il ne glisse pas */
+.panel.noanim, .mapwrap.noanim { transition: none; }
+
+/* ---------- Pastilles : visité, et la sixième pastille « Le conseil » ---------- */
+.legend button.visited { border-color: var(--sum-green-deep); }
+.legend button.visited span.n { background: var(--sum-green-deep); }
+.legend button .tick { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--sum-green-soft); color: var(--sum-green-deep); font-size: 13px; font-weight: 800; line-height: 1; margin-left: -2px; }
+.legend button[aria-current="true"] .tick { background: #17230A; color: var(--sum-green); }
+.legend button.fin { border-style: dashed; border-color: var(--sum-green-deep); color: var(--sum-green-deep); }
+.legend button.fin span.n { background: transparent; color: var(--sum-green-deep); font-size: 15px; }
+.legend button.fin[aria-current="true"] { background: var(--sum-green); border-color: var(--sum-green-deep); color: #17230A; }
+.legend button.fin[aria-current="true"] span.n { color: #17230A; }
+/* « Je suis à une table » : les pastilles se signalent une fois */
+.legend.flash button { animation: legendflash 1.1s ease-out 2; }
+@keyframes legendflash { 0%, 100% { box-shadow: 0 0 0 0 rgba(150,186,62,0); } 40% { box-shadow: 0 0 0 6px rgba(150,186,62,.55); } }
+@media (prefers-reduced-motion: reduce) {
+  .legend.flash button { animation: none; box-shadow: 0 0 0 4px rgba(150,186,62,.55); }
+}
+
+/* ---------- Écran d'entrée « Vous êtes maire » ---------- */
+.sheet-head .sticker {
+  flex: none; align-self: flex-start; transform: rotate(-6deg);
+  font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .14em;
+  padding: 10px 16px; border-radius: 8px; background: var(--sum-green); color: #17230A;
+  border: 2px dashed var(--sum-green-deep); box-shadow: 0 4px 12px rgba(27,52,103,.18);
+}
+.intro { display: grid; gap: 14px; max-width: 62ch; }
+.intro p { margin: 0; font-size: 17px; }
+.intro .stake {
+  font-family: var(--display); font-weight: 800; font-size: clamp(21px, 2.3vw, 29px); line-height: 1.15;
+  color: var(--sum-blue-deep); text-wrap: balance;
+  background: var(--sum-green-soft); border-left: 6px solid var(--sum-green);
+  border-radius: 0 10px 10px 0; padding: 14px 18px;
+}
+.introcta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2px; }
+.introcta .iconbtn { justify-self: start; }
+.introcta .iconbtn.primary { background: var(--sum-green); border-color: var(--sum-green-deep); color: #17230A; }
+
+/* ---------- Brief d'arrivée (QR) : une ligne sous le titre ---------- */
+.sheet-head .brief {
+  margin-top: 6px; display: inline-block; font-size: 15px; line-height: 1.3; font-style: normal;
+  background: var(--sum-green-soft); color: var(--sum-blue-deep); border-radius: 8px; padding: 6px 12px;
+}
+.sheet-head .brief b { font-family: var(--display); color: var(--sum-green-deep); }
+
+/* ---------- Conseil municipal (#/conseil) ---------- */
+.conseil { display: grid; gap: 20px; max-width: 70ch; }
+.conseil section { display: grid; gap: 8px; }
+.ticket { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ticket .trow {
+  width: 100%; min-height: 48px; display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 10px;
+  text-align: left; padding: 6px 12px 6px 8px; border: 2px dashed var(--line); border-radius: 10px; background: var(--card);
+}
+.ticket .trow:hover { border-color: var(--sum-blue); }
+.ticket .trow .n { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--sum-blue); color: #fff; font-family: var(--display); font-weight: 800; font-size: 14px; }
+.ticket .trow .pl { font-family: var(--display); font-weight: 700; color: var(--sum-blue-deep); }
+.ticket .trow .stamp { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); border: 1.5px dashed var(--line); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+.ticket .trow.on { border-style: solid; border-color: var(--sum-green); background: var(--sum-green-soft); }
+.ticket .trow.on .n { background: var(--sum-green-deep); }
+.ticket .trow.on .stamp { color: var(--sum-green-deep); border-color: var(--sum-green-deep); border-style: solid; background: #fff; transform: rotate(-2deg); }
+
+.scorebox { background: var(--sum-blue-soft); border-radius: 12px; padding: 14px 16px; }
+.scorebox .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sum-blue); }
+.scorebox .big { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.1; color: var(--sum-blue-deep); font-variant-numeric: tabular-nums; }
+.scorebox .none { margin: 0; font-size: 15px; color: var(--sum-blue-deep); }
+
+.conseil .more { border-top: 1px solid var(--line); padding-top: 10px; }
+.conseil .more summary { cursor: pointer; font-family: var(--display); font-weight: 700; color: var(--sum-blue); font-size: 15px; min-height: 28px; }
+.conseil .more > * + * { margin-top: 8px; }
+.conseil .links2 { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.conseil .links2 a { font-weight: 700; display: inline-flex; align-items: center; min-height: 44px; }
+.conseil .steps2 { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; }
+.conseil .mini { margin: 0; font-size: 13px; color: var(--muted); }
+.conseil .iconbtn.primary { justify-self: start; }
+.conseil .iconbtn.reset { justify-self: start; border-color: var(--sum-blue); }
+
+/* ---------- Téléphone ---------- */
+@media (max-width: 860px) {
+  /* six pastilles : une barre qui défile plutôt qu'un pavé qui déborde de la carte */
+  .legend { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; left: 8px; right: 8px; bottom: 8px;
+    max-width: none; padding-bottom: 4px; scrollbar-width: none; }
+  .legend::-webkit-scrollbar { display: none; }
+  .legend button { flex: none; }
+  .sheet-head .sticker { font-size: 13px; padding: 8px 12px; }
+  .intro .stake { padding: 12px 14px; }
+  .introcta .iconbtn { width: 100%; justify-content: center; text-align: center; }
+}
+@media (max-width: 520px) {
+  .ticket .trow { grid-template-columns: 28px minmax(0, 1fr); row-gap: 4px; }
+  .ticket .trow .stamp { grid-column: 2; justify-self: start; }
+}

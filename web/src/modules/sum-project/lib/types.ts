@@ -48,6 +48,7 @@ export type Stop = {
   mode: "passive" | "animated" | "selfservice"; animator: string | null; position?: string;
   capacity: number | null; durationMin: number | null;
   badge?: string;          // étiquette à côté du titre (ex. « Recherche et innovation »)
+  brief?: string;          // une ligne : « Ici, vous allez … », affichée sous le titre pour qui arrive par QR
   tableTent: { headline: string; subline: string };
   instructions: Instruction[]; rule?: string; materials: string[];
   questions?: { id: string; text: string }[];
@@ -91,7 +92,11 @@ export type Content = {
   meta: { title: string; subtitle: string; event: { name: string; date: string; time: string; venue: string; audience: string };
     project: { name: string; programme: string; grant: string; period: string; website: string; odp: string; demo: string };
     brand: Record<string, string>; sourceReport: string; logo?: { src: string; alt: string } };
-  journey: { metaphor: string; intro: { title: string; durationMin: number; script: string[] }; conclusion: { title: string; atMinute: number; durationMin: number; steps: string[]; messages: string[] } };
+  journey: {
+    metaphor: string;
+    intro: { title: string; durationMin: number; script: string[]; repeatable?: boolean; badge?: { text: string; note?: string } };
+    conclusion: { title: string; atMinute: number; durationMin: number; steps: string[]; messages: string[] };
+  };
   stops: Stop[];
   cities: CitiesBlock;
   glossary: { term: string; definition: string }[];
