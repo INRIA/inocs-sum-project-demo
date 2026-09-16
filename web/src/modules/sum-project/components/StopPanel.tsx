@@ -3,7 +3,6 @@ import type { Content, Stop } from "../lib/types";
 import ResourceDetail, { SourceLine } from "./ResourceDetail";
 import CardGame from "./CardGame";
 import Gallery from "./Gallery";
-import PricingDemo from "./PricingDemo";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
@@ -19,7 +18,6 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
   return (
     <>
       {stop.images && stop.images.length > 0 && <Gallery images={stop.images} />}
-      {stop.id === "tarif" && <PricingDemo />}
       <div className="rlist">
         <aside className="tent">
           <div className="headline">{stop.tableTent.headline}</div>

@@ -21,8 +21,6 @@ function Icon({ id }: { id: string }) {
       return <g {...s}><path d="M-14 -4 H-4 V-14 H4 V-4 H14 V4 H4 V14 H-4 V4 H-14 Z" /></g>;
     case "station":
       return <g {...s}><circle cx="-9" cy="6" r="6.5" /><circle cx="10" cy="6" r="6.5" /><path d="M-9 6 L-2 -6 H7 L10 6 M-2 -6 L2 6 L-9 6 M2 6 L7 -6 M-5 -9 H1" /></g>;
-    case "tarif": // téléphone / prix
-      return <g {...s}><rect x="-8" y="-14" width="16" height="28" rx="3" /><path d="M-3 -10 H3 M0 10 H0.01" /><path d="M-4 -2 H4 M-4 2 H2" strokeWidth="2.4" /></g>;
     case "arret-de-tram":
       return <g {...s}><rect x="-11" y="-9" width="22" height="17" rx="3" /><path d="M-11 -1 H11 M-6 8 L-9 13 M6 8 L9 13 M-4 -13 H4 M0 -13 V-9" /><circle cx="-5" cy="4" r="1.2" fill="currentColor" /><circle cx="5" cy="4" r="1.2" fill="currentColor" /></g>;
     default:
