@@ -12,6 +12,15 @@ export type Resource = {
 
 export type Instruction = { step: number; title?: string; text: string };
 
+// Carte d'information : recto = un chiffre et une accroche, verso = 3–5 lignes, puis « En savoir plus » (fiche en modale).
+export type InfoCard = {
+  id: string; accent?: boolean; wide?: boolean;
+  front: { value?: string; label: string; teaser?: string };
+  back: { title?: string; lines?: string[]; image?: Img };
+  link?: Link;        // action externe (ex. ouvrir la plateforme)
+  resource?: string;  // id d'une ressource de l'arrêt, ouverte en modale
+};
+
 export type Stop = {
   id: string; order: number; place: string; title: string; question: string;
   mode: "passive" | "animated" | "selfservice"; animator: string | null; position?: string;
@@ -23,6 +32,9 @@ export type Stop = {
   reveal: { title: string; lines: string[]; source?: Source } | null;
   featured?: string[];
   images?: Img[];
+  cards?: InfoCard[];      // mode « cartes » : recto / verso / fiche
+  cities?: boolean;        // affiche les cartes Villes (bloc `cities`) après `cards`
+  moreCards?: InfoCard[];  // cartes « pour aller plus loin », après les villes
   resources: Resource[];
 };
 

@@ -140,33 +140,63 @@ td.e { font-size: 22px; }
 .links a { display: inline-block; margin-right: 14px; font-weight: 700; }
 .links .todo { color: var(--muted); font-style: italic; }
 
-/* ---------- Arrêt 4 : cartes Villes ---------- */
-.citywrap { display: grid; gap: 14px; }
+/* ---------- Cartes recto / verso (arrêts « cartes » : faits, villes) ---------- */
+.rlist.cards { gap: 22px; }
+.tent.compact { gap: 6px; }
+.tent .consignes { font-size: 15px; }
+.tent .consignes summary { cursor: pointer; font-family: var(--display); font-weight: 700; color: var(--sum-blue); font-size: 14px; }
+.tent .consignes > * + * { margin-top: 8px; }
+.cardsec, .citywrap { display: grid; gap: 12px; }
+.csec-title { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--sum-green-deep); font-weight: 700; }
 .cintro { margin: 0; font-size: 17px; color: var(--ink); max-width: 70ch; }
 .empty { border: 2px dashed var(--line); border-radius: 10px; padding: 18px; color: var(--muted); text-align: center; font-size: 15px; }
-.citygrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; align-items: start; }
+.cardgrid { --card-h: 230px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; align-items: start; }
+.cardgrid.cities { --card-h: 320px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 
-.citycard { perspective: 1400px; display: grid; }
-/* Les deux faces sont empilées dans une grille ; seule la face visible donne sa hauteur à la carte
-   (la face cachée est sortie du flux), donc toutes les cartes ont la même taille au repos et une carte retournée grandit seule. */
-.citycard .inner { position: relative; display: grid; width: 100%; transition: transform .6s; transform-style: preserve-3d; }
-.citycard.flip .inner { transform: rotateY(180deg); }
-.citycard:not(.flip) .face.back, .citycard.flip .face.front { position: absolute; inset: 0; overflow: hidden; }
-@media (prefers-reduced-motion: reduce) { .citycard .inner { transition: none; } }
-.citycard .face {
-  grid-area: 1 / 1; min-height: 320px; backface-visibility: hidden; border-radius: 12px; background: #fff;
+.fcard { perspective: 1400px; display: grid; }
+.fcard.wide { grid-column: span 2; }
+/* Les deux faces sont empilées ; la face cachée est sortie du flux : même hauteur au repos, seule une carte retournée grandit. */
+.fcard .inner { position: relative; display: grid; width: 100%; transition: transform .6s; transform-style: preserve-3d; }
+.fcard.flip .inner { transform: rotateY(180deg); }
+.fcard:not(.flip) .face.back, .fcard.flip .face.front { position: absolute; inset: 0; overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .fcard .inner { transition: none; } }
+.fcard .face {
+  grid-area: 1 / 1; min-height: var(--card-h); backface-visibility: hidden; border-radius: 12px; background: #fff;
   padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; text-align: left; color: var(--ink);
 }
-.citycard .face.front { border: 2px solid var(--sum-blue); width: 100%; transition: border-color .15s, box-shadow .15s; }
-.citycard .face.front:hover { box-shadow: 0 6px 18px rgba(27,52,103,.18); }
-.citycard .face.back { border: 2px solid var(--sum-green); transform: rotateY(180deg); }
-.citycard .top { display: flex; align-items: center; gap: 10px; }
-.citycard .flag { font-size: 34px; line-height: 1; }
-.citycard h4 { font-size: 22px; font-weight: 800; color: var(--sum-blue); line-height: 1.1; }
-.citycard .c { font-size: 13px; color: var(--muted); }
-.citycard .tagline { margin: 0; font-size: 15px; line-height: 1.3; color: var(--ink); }
-.citycard .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sum-green-deep); }
-.citycard .hint { margin-top: auto; font-size: 13px; color: var(--muted); font-style: italic; }
+.fcard .face.front { border: 2px solid var(--sum-blue); width: 100%; transition: border-color .15s, box-shadow .15s; }
+.fcard .face.front:hover { box-shadow: 0 6px 18px rgba(27,52,103,.18); }
+.fcard .face.back { border: 2px solid var(--sum-green); transform: rotateY(180deg); }
+.fcard .hint { margin-top: auto; font-size: 13px; color: var(--muted); font-style: italic; }
+.fcard .bhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fcard .bhead h4 { font-size: 20px; font-weight: 800; color: var(--sum-blue); line-height: 1.1; }
+.iconbtn.flipback { width: 44px; height: 44px; padding: 0; font-size: 20px; justify-content: center; border-color: var(--sum-green); flex: none; }
+.fcard .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sum-green-deep); }
+.fcard .cta { margin-top: auto; padding-top: 6px; display: flex; gap: 8px; flex-wrap: wrap; }
+.fcard .cta .iconbtn { text-decoration: none; min-height: 44px; }
+
+/* Carte d'information : un chiffre, une accroche */
+.fcard.info .n { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 3.4vw, 46px); line-height: 1; color: var(--sum-blue); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.fcard.info .l { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.15; color: var(--sum-blue-deep); }
+.fcard.info .t { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.3; }
+.fcard.info .blines { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; line-height: 1.3; }
+.fcard.info .bimg { margin: 0; border-radius: 8px; overflow: hidden; background: var(--paper); border: 1px solid var(--line); }
+.fcard.info .bimg img { display: block; width: 100%; max-height: 220px; object-fit: contain; }
+/* Carte mise en avant (plateforme de données) */
+.fcard.accent .face.front { background: var(--sum-blue); border-color: var(--sum-blue-deep); color: #fff; }
+.fcard.accent .face.front .n { color: var(--sum-green); }
+.fcard.accent .face.front .l { color: #fff; }
+.fcard.accent .face.front .t, .fcard.accent .face.front .hint { color: #DCE3F5; }
+.fcard.accent .face.back { background: var(--sum-green-soft); }
+
+/* Carte Ville */
+.fcard.city .top { display: flex; align-items: center; gap: 10px; }
+.fcard .flag { font-size: 34px; line-height: 1; }
+.fcard.city h4 { font-size: 22px; font-weight: 800; color: var(--sum-blue); line-height: 1.1; }
+.fcard.city .c { font-size: 13px; color: var(--muted); }
+.fcard.city .tagline { margin: 0; font-size: 15px; line-height: 1.3; color: var(--ink); }
+.fcard.city .second { font-size: 13px; color: var(--muted); }
+.fcard.city .second b { color: var(--sum-blue-deep); font-variant-numeric: tabular-nums; }
 
 /* Évolution : couleur + glyphe ▲ / ▼ (lisible aussi sans distinguer les couleurs) */
 .move { border-radius: 8px; padding: 8px 10px; background: var(--paper); border: 1.5px solid var(--line); }
@@ -178,11 +208,9 @@ td.e { font-size: 22px; }
 .move.down { background: #FBE3E1; border-color: #C0392B; color: #96261A; }
 .move.flat { color: var(--sum-blue-deep); }
 .move.none { color: var(--muted); font-size: 15px; font-weight: 600; }
-.citycard .second { font-size: 13px; color: var(--muted); }
-.citycard .second b { color: var(--sum-blue-deep); font-variant-numeric: tabular-nums; }
+.move.compact { padding: 6px 10px; }
+.move.compact .v { font-size: 20px; }
 
-.citycard .bhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.iconbtn.flipback { width: 44px; height: 44px; padding: 0; font-size: 20px; justify-content: center; border-color: var(--sum-green); }
 .mlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .mlist button {
   width: 100%; min-height: 48px; text-align: left; background: var(--paper); border: 1.5px solid var(--line); border-radius: 8px;
@@ -190,18 +218,43 @@ td.e { font-size: 22px; }
 }
 .mlist button:hover { border-color: var(--sum-blue); background: #fff; }
 .mlist .t { font-family: var(--display); font-weight: 700; font-size: 15px; line-height: 1.15; color: var(--sum-blue-deep); }
-.badge { justify-self: start; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--sum-blue); color: #fff; }
+.badge { justify-self: start; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--sum-blue); color: #fff; white-space: nowrap; }
 .badge.pull { background: var(--sum-green); color: #17230A; }
 .clegend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 .clegend .lg { display: inline-flex; align-items: center; gap: 6px; }
 
-/* Fiche d'une mesure */
-.mdetail .mhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.mdetail .mhead .who { font-family: var(--display); font-weight: 700; color: var(--sum-blue-deep); }
-.mdetail .mhead .flag { font-size: 22px; }
-.mdetail h4.sub { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--sum-green-deep); font-weight: 700; }
-.mdetail .fact .v.big { font-size: 28px; }
-.mdetail .items.soft li { border-left-color: var(--sum-blue); }
+/* Histoire d'une ville (modale) */
+.story .shead { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+.story .shead .flag { font-size: 44px; line-height: 1; }
+.story .shead .c { font-size: 14px; color: var(--muted); }
+.story .smove { display: grid; gap: 4px; justify-items: end; }
+.story .smove .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sum-green-deep); }
+.story .lead { font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--sum-blue-deep); line-height: 1.2; }
+.story h4.sub { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--sum-green-deep); font-weight: 700; }
+.story .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.story .steps > li { position: relative; display: grid; grid-template-columns: 32px 200px minmax(0, 1fr); gap: 14px; align-items: start; padding: 12px; border-radius: 12px; background: var(--paper); border: 1.5px solid var(--line); scroll-margin-top: 12px; }
+.story .steps > li.on { border-color: var(--sum-green); box-shadow: 0 0 0 3px var(--sum-green-soft); }
+.story .steps .num { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--sum-blue); color: #fff; font-family: var(--display); font-weight: 800; }
+.story .steps .pic { margin: 0; display: grid; gap: 4px; }
+.story .steps .pic img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; display: block; border: 1px solid var(--line); background: #fff; }
+.story .steps .pic .ph { aspect-ratio: 4 / 3; border: 2px dashed var(--line); border-radius: 8px; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+.story .steps .pic figcaption { font-size: 12px; color: var(--muted); line-height: 1.25; }
+.story .steps .txt { display: grid; gap: 8px; min-width: 0; }
+.story .steps .mh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.story .steps .mh b { font-family: var(--display); font-size: 18px; color: var(--sum-blue); line-height: 1.15; }
+.story .steps p { margin: 0; font-size: 16px; }
+.story .kf { background: var(--sum-green-soft); border-radius: 8px; padding: 6px 10px; font-size: 14px; color: var(--sum-green-deep); }
+.story .kf b { font-family: var(--display); font-size: 20px; color: var(--sum-blue-deep); margin-right: 6px; }
+.story details { font-size: 15px; }
+.story details summary { cursor: pointer; font-family: var(--display); font-weight: 700; color: var(--sum-blue); }
+.story details > * + * { margin-top: 10px; }
+.story .items.soft li { border-left-color: var(--sum-blue); }
+@media (max-width: 700px) {
+  .story .shead { grid-template-columns: auto minmax(0, 1fr); }
+  .story .smove { grid-column: 1 / -1; justify-items: start; }
+  .story .steps > li { grid-template-columns: 32px minmax(0, 1fr); }
+  .story .steps .pic { grid-column: 2; }
+}
 
 /* ---------- Panel (left) + map (right) ---------- */
 .stage.wide { --panel-w: 64%; }
@@ -257,8 +310,8 @@ td.e { font-size: 22px; }
 @media (max-width: 900px) { .masthead { grid-template-columns: auto 1fr; } .masthead h1 { white-space: normal; } }
 .tent .notice.soft { border-style: solid; border-color: var(--line); color: var(--ink); font-weight: 400; }
 @media (max-width: 520px) {
-  .citygrid { grid-template-columns: 1fr; }
-  .citycard .face { min-height: 300px; }
+  .cardgrid, .cardgrid.cities { grid-template-columns: 1fr; }
+  .fcard.wide { grid-column: auto; }
 }
 
 /* ---------- Modale (ressource, fiche de mesure) ---------- */

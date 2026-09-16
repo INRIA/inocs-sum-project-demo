@@ -40,7 +40,7 @@
     "imagesNote": "stops[].images : image(s) principale(s) de l'arrêt, affichées en haut du panneau (la première en grand, les autres en vignettes). src vide = emplacement. Fichiers dans app/public/images/."
   },
   "journey": {
-    "metaphor": "Un trajet porte-à-porte sans voiture personnelle : maison → carrefour → station de vélos → arrêt de tram → destination. À chaque arrêt, une décision.",
+    "metaphor": "Un trajet porte-à-porte sans voiture personnelle : maison → carrefour → station de vélos → destination. À chaque arrêt, une décision.",
     "traveller": {
       "name": "",
       "note": "Nom/personnage du vélo qui avance sur la frise (à définir)."
@@ -53,7 +53,7 @@
         "Bienvenue à Ville en mouvement. Ce soir, vous êtes à la tête de votre ville.",
         "Votre défi : que chacun arrive à l'heure, sans voiture personnelle, avec un budget d'émissions de CO₂ limité.",
         "Entre 2023 et 2026, neuf villes européennes ont relevé ce défi pour de vrai dans le projet de recherche SUM — de Rotterdam à Jérusalem, de Genève à Coimbra. Lille les a suivies comme ville observatrice.",
-        "La salle est votre ville : six tables, six arrêts d'un trajet porte-à-porte. Vous pouvez faire tout le trajet ou vous arrêter où vous voulez.",
+        "La salle est votre ville : quatre tables, quatre arrêts d'un trajet porte-à-porte. Vous pouvez faire tout le trajet ou vous arrêter où vous voulez.",
         "Sur chaque table, un QR code ouvre la page de l'arrêt avec les explications et les vraies données.",
         "À la fin, on se retrouve pour le conseil municipal : chaque table raconte ce que ses maires ont décidé."
       ],
@@ -69,7 +69,7 @@
       "steps": [
         "Rassembler tout le monde devant l'écran de l'Hôtel de ville.",
         "Chaque table animée dit en une phrase ce que ses maires ont décidé (carrefour, station).",
-        "Révéler ce que le modèle propose (station) et ce que les vraies villes ont fait (tram).",
+        "Révéler ce que le modèle propose (station) et ce que les vraies villes ont fait (destination).",
         "Message final : la recherche éclaire, la ville décide."
       ],
       "messages": [
@@ -94,7 +94,7 @@
       "durationMin": null,
       "tableTent": {
         "headline": "Vous êtes maire.",
-        "subline": "Neuf villes européennes ont relevé le défi. À votre tour."
+        "subline": "Neuf villes européennes ont relevé le défi. Retournez les cartes pour faire connaissance."
       },
       "instructions": [
         {
@@ -103,7 +103,7 @@
         },
         {
           "step": 2,
-          "text": "Regardez le trajet sur l'écran : cinq arrêts, cinq décisions."
+          "text": "Regardez le trajet sur l'écran : quatre arrêts, quatre décisions."
         },
         {
           "step": 3,
@@ -112,7 +112,7 @@
       ],
       "materials": [
         "Grand écran ou téléviseur avec la page « Trajet » (vélo animé)",
-        "Affiche A2 : le trajet et les cinq arrêts",
+        "Affiche A2 : le trajet et les quatre arrêts",
         "Affiche A3 : SUM en trois chiffres",
         "Affiche A3 : la table des smileys (acceptation par ville)",
         "Badges autocollants « MAIRE »",
@@ -449,12 +449,150 @@
           }
         }
       ],
-      "images": [
+      "images": [],
+      "cards": [
         {
-          "src": "/images/sum-map.png",
-          "alt": "Carte des villes du projet SUM",
-          "caption": "Les villes du projet SUM en Europe",
-          "credit": "sum-project.eu"
+          "id": "partenaires",
+          "front": {
+            "value": "29",
+            "label": "partenaires",
+            "teaser": "dans 12 pays"
+          },
+          "back": {
+            "title": "Qui fait SUM ?",
+            "lines": [
+              "Des universités aux opérateurs de transport, en passant par les villes et les réseaux européens.",
+              "12 pays, de la Norvège à Chypre.",
+              "Coordination : Inria."
+            ]
+          },
+          "resource": "sum-en-bref"
+        },
+        {
+          "id": "duree",
+          "front": {
+            "value": "3 ans",
+            "label": "de recherche et de terrain",
+            "teaser": "juin 2023 – mai 2026"
+          },
+          "back": {
+            "title": "La chronologie",
+            "lines": [
+              "Juin 2023 : lancement du projet.",
+              "2024 : enquête « avant » auprès des habitants.",
+              "2024–2026 : les villes testent leurs mesures.",
+              "Début 2026 : enquête « après », même questionnaire.",
+              "Mai 2026 : fin du projet ; la plateforme reste en ligne au moins 5 ans."
+            ]
+          },
+          "resource": "sum-en-bref"
+        },
+        {
+          "id": "living-labs",
+          "front": {
+            "value": "9",
+            "label": "Living Labs",
+            "teaser": "de la Norvège à Chypre, de la banlieue d'Athènes au centre de Genève"
+          },
+          "back": {
+            "title": "Les neuf villes",
+            "image": {
+              "src": "/images/sum-map.png",
+              "alt": "Carte des villes du projet SUM",
+              "caption": "Les villes du projet SUM en Europe",
+              "credit": "sum-project.eu"
+            },
+            "lines": [
+              "4 villes leaders : Munich, Genève, Jérusalem, Penteli.",
+              "5 villes suiveuses : Rotterdam, Cracovie, Fredrikstad, Larnaca, Coimbra."
+            ]
+          },
+          "resource": "neuf-villes"
+        },
+        {
+          "id": "objectifs",
+          "front": {
+            "value": "15 → 30",
+            "label": "villes équipées d'ici 2030",
+            "teaser": "L'objectif : relier mobilités partagées et transports en commun"
+          },
+          "back": {
+            "title": "Ce que SUM vise",
+            "lines": [
+              "Intégrer vélos, trottinettes, voitures partagées et bus à la demande aux transports en commun.",
+              "Des trajets porte-à-porte sans voiture personnelle, dans un budget d'émissions de CO₂ limité.",
+              "15 villes d'ici 2026, 30 d'ici 2030."
+            ]
+          },
+          "resource": "sum-en-bref"
+        },
+        {
+          "id": "leviers",
+          "front": {
+            "value": "5",
+            "label": "leviers du maire",
+            "teaser": "Prévoir, gérer, connecter, co-concevoir, tarifer"
+          },
+          "back": {
+            "title": "Les cinq leviers",
+            "lines": [
+              "Prévoir la disponibilité des modes partagés.",
+              "Gérer les flottes partagées à la demande.",
+              "Connecter horaires et billettique aux transports en commun.",
+              "Co-concevoir les pôles de mobilité avec les habitants.",
+              "Tarifer et inciter pour réduire le coût des modes partagés."
+            ]
+          },
+          "resource": "cinq-leviers"
+        },
+        {
+          "id": "enquetes",
+          "front": {
+            "value": "2",
+            "label": "enquêtes, avant et après",
+            "teaser": "Même questionnaire, 7 langues, 2024 puis 2026"
+          },
+          "back": {
+            "title": "Comment sait-on si ça marche ?",
+            "lines": [
+              "200 répondants visés par ville.",
+              "29 indicateurs communs (cadre SIEF).",
+              "Indicateur principal : la part modale, c'est-à-dire qui se déplace comment."
+            ]
+          },
+          "resource": "comment-on-mesure"
+        },
+        {
+          "id": "smileys",
+          "front": {
+            "value": "🙂 😐 🙁",
+            "label": "Qui a aimé quoi ?",
+            "teaser": "Les habitants ont noté les nouveaux services. Devinez les villes tout en vert."
+          },
+          "back": {
+            "title": "Réponse",
+            "lines": [
+              "Tout en vert : Cracovie (LajkBus) et Larnaca (vélos partagés).",
+              "Tout en rouge : Jérusalem (vélos partagés).",
+              "Le détail, service par service, est dans la fiche."
+            ]
+          },
+          "resource": "smileys"
+        },
+        {
+          "id": "observatrices",
+          "front": {
+            "value": "7",
+            "label": "villes observatrices",
+            "teaser": "dont Lille"
+          },
+          "back": {
+            "title": "Elles suivent pour répliquer",
+            "lines": [
+              "Vitoria-Gasteiz, Lille, Istanbul, Zagreb, Tel Aviv, Héraklion et la communauté du Douro.",
+              "Objectif : 15 villes d'ici 2030."
+            ]
+          }
         }
       ]
     },
@@ -949,19 +1087,19 @@
       ]
     },
     {
-      "id": "arret-de-tram",
+      "id": "destination",
       "order": 4,
-      "place": "Arrêt de tram",
+      "place": "Destination",
       "title": "Qu'ont fait les vraies villes ?",
-      "question": "Neuf villes ont essayé. Qu'est-ce qui a marché ?",
+      "question": "Neuf villes ont essayé. Est-ce que ça a marché ?",
       "mode": "selfservice",
       "animator": null,
-      "position": "table 4, sans animateur",
+      "position": "table 4, grand écran tactile ou tablette, sans animateur",
       "capacity": 8,
       "durationMin": 8,
       "tableTent": {
         "headline": "Qu'ont fait les vraies villes ?",
-        "subline": "Choisissez une ville, lisez son évolution, retournez la carte et ouvrez une mesure."
+        "subline": "Une plateforme de données, neuf villes. Retournez une carte, ouvrez son histoire."
       },
       "instructions": [
         {
@@ -970,59 +1108,147 @@
         },
         {
           "step": 2,
-          "text": "Touchez la carte : elle se retourne et montre les mesures prises par la ville — contraintes (bleu) et incitations (vert)."
+          "text": "Touchez la carte : elle se retourne et résume ce que la ville a fait — contraintes (bleu) et incitations (vert)."
         },
         {
           "step": 3,
-          "text": "Touchez une mesure : photos, chiffres et résultats. Le QR code de la ville ouvre la même page sur votre téléphone."
+          "text": "Ouvrez l'histoire de la ville : photos, chiffres, ce qui a marché et ce qui n'a pas eu lieu. Le QR code de la ville ouvre la même page sur votre téléphone."
+        },
+        {
+          "step": 4,
+          "text": "Sur la plateforme de données ouvertes, cherchez ce qui a changé… et ce qui n'a pas changé."
         }
       ],
       "materials": [
         "Grand écran tactile ou tablette (page de l'arrêt 4)",
+        "Tablette avec odp.sum-project.eu (vue Insights)",
+        "Affiche A3 : avant / après par ville (parts modales)",
+        "Affiche A4 : « Ce qui n'a pas marché, et pourquoi c'est utile »",
         "Carte d'instruction",
-        "QR code par ville vers #/arret-de-tram/<ville>"
+        "QR code par ville vers #/destination/<ville>",
+        "QR code vers l'arrêt 4 de la page"
       ],
       "reveal": null,
-      "resources": [],
-      "images": []
-    },
-    {
-      "id": "destination",
-      "order": 5,
-      "place": "Destination",
-      "title": "Est-ce que ça a marché ?",
-      "question": "Comment sait-on qu'une ville a changé ?",
-      "mode": "passive",
-      "animator": null,
-      "position": "table 5, tablette avec la plateforme de données",
-      "capacity": null,
-      "durationMin": null,
-      "tableTent": {
-        "headline": "Est-ce que ça a marché ?",
-        "subline": "1 435 habitants ont répondu. Voici ce qu'ils disent."
-      },
-      "instructions": [
+      "cards": [
         {
-          "step": 1,
-          "text": "Regardez les affiches avant / après."
+          "id": "odp",
+          "accent": true,
+          "wide": true,
+          "front": {
+            "value": "11 villes",
+            "label": "sur la plateforme de données ouvertes",
+            "teaser": "Avant / après, mesure par mesure. Sans compte, pour tout le monde."
+          },
+          "back": {
+            "title": "Qu'est-ce qu'on y trouve ?",
+            "lines": [
+              "Les indicateurs de chaque ville, avant et après.",
+              "Les mesures mises en place, ville par ville.",
+              "Deux outils : quelle mesure a contribué à quel résultat, et quelle mesure gagne selon vos priorités.",
+              "Logiciel libre, en ligne au moins 5 ans après le projet."
+            ]
+          },
+          "link": {
+            "label": "Ouvrir la plateforme",
+            "url": "https://odp.sum-project.eu"
+          },
+          "resource": "plateforme"
         },
         {
-          "step": 2,
-          "text": "Sur la tablette, choisissez une ville sur la plateforme de données ouvertes."
-        },
-        {
-          "step": 3,
-          "text": "Cherchez ce qui a changé… et ce qui n'a pas changé."
+          "id": "repondants",
+          "front": {
+            "value": "1 435",
+            "label": "habitants ont répondu",
+            "teaser": "8 villes, 7 langues, deux ans après la première enquête"
+          },
+          "back": {
+            "title": "Qui a répondu ?",
+            "lines": [
+              "Genève 184 · Cracovie 211 · Rotterdam 144 · Jérusalem 186.",
+              "Coimbra 101 · Munich 202 · Penteli 202 · Larnaca 205.",
+              "Fredrikstad : pas d'enquête après (analyse sur 2021 et 2024)."
+            ]
+          },
+          "resource": "enquete-apres"
         }
       ],
-      "materials": [
-        "Affiche A3 : « 1 435 réponses, 8 villes, 7 langues »",
-        "Affiche A3 : avant / après par ville (parts modales)",
-        "Tablette avec odp.sum-project.eu (vue Insights)",
-        "Affiche A4 : « Ce qui n'a pas marché, et pourquoi c'est utile »",
-        "QR code vers l'arrêt 6 de la page"
+      "cities": true,
+      "moreCards": [
+        {
+          "id": "avant-apres",
+          "front": {
+            "value": "▲ ▼",
+            "label": "Qu'est-ce qui a changé ?",
+            "teaser": "Des signaux, ville par ville — à lire avec prudence"
+          },
+          "back": {
+            "title": "Trois signaux",
+            "lines": [
+              "Cracovie : modes partagés de moins de 1 % à 20 % (LajkBus).",
+              "Munich : voiture personnelle − 10 %, marche et vélo + 12 %.",
+              "Coimbra : 93 % des trajets en voiture après — pas de report modal pendant le pilote."
+            ]
+          },
+          "resource": "avant-apres"
+        },
+        {
+          "id": "gagne",
+          "front": {
+            "value": "1ᵉʳ",
+            "label": "Infrastructures électriques et bas carbone",
+            "teaser": "Quelle mesure gagne ? Ça dépend de ce qu'on met en premier."
+          },
+          "back": {
+            "title": "Le classement du projet",
+            "lines": [
+              "1. Infrastructures électriques et bas carbone.",
+              "2. Horaires et fréquences des transports en commun.",
+              "3. Engagement et sensibilisation du public.",
+              "4. Intégration des modes partagés.",
+              "5. Plateformes MaaS."
+            ]
+          },
+          "link": {
+            "label": "Essayer avec vos priorités",
+            "url": "https://odp.sum-project.eu/tools/mcda_analysis"
+          },
+          "resource": "quelle-mesure-gagne"
+        },
+        {
+          "id": "rate",
+          "front": {
+            "value": "3",
+            "label": "échecs mesurés",
+            "teaser": "Un échec mesuré vaut plus qu'un succès supposé."
+          },
+          "back": {
+            "title": "Ce qui n'a pas marché",
+            "lines": [
+              "Penteli : moins de 100 trajets en vélo électrique, à cause du vandalisme.",
+              "Coimbra : le bus à la demande n'a pas produit de report modal.",
+              "Rotterdam : un seul opérateur de scooters a partagé ses données."
+            ]
+          },
+          "resource": "ce-qui-na-pas-marche"
+        },
+        {
+          "id": "apres",
+          "front": {
+            "value": "7",
+            "label": "villes observatrices, dont Lille",
+            "teaser": "Et après SUM ?"
+          },
+          "back": {
+            "title": "La suite",
+            "lines": [
+              "Vitoria-Gasteiz, Lille, Istanbul, Zagreb, Tel Aviv, Héraklion, communauté du Douro.",
+              "La plateforme passe à ERTICO fin 2026 pour accueillir de nouvelles villes.",
+              "Objectif : 15 villes d'ici 2030."
+            ]
+          },
+          "resource": "et-apres"
+        }
       ],
-      "reveal": null,
       "resources": [
         {
           "id": "enquete-apres",
@@ -1294,20 +1520,7 @@
           }
         }
       ],
-      "images": [
-        {
-          "src": "/images/destination-odp.jpg",
-          "alt": "Page d’accueil de la SUM Open Data Platform",
-          "caption": "La plateforme de données ouvertes : odp.sum-project.eu",
-          "credit": "Rapport SUM, Fig. 4"
-        },
-        {
-          "src": "/images/destination-sief.png",
-          "alt": "Schéma du cadre d’évaluation SIEF",
-          "caption": "Les 29 indicateurs du cadre SIEF",
-          "credit": "Rapport SUM, Fig. 3 / ODP"
-        }
-      ]
+      "images": []
     }
   ],
   "cities": {

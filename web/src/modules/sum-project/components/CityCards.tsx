@@ -1,26 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { CitiesBlock, CityItem, Split } from "../lib/types";
-import MeasureDetail from "./MeasureDetail";
+import CityStory from "./CityStory";
+import FlipCard from "./FlipCard";
 import Modal from "./Modal";
 
-// Encodage dans l'URL : #/arret-de-tram/<ville> (carte retournée), #/arret-de-tram/<ville>--<mesure> (fiche).
+// Encodage dans l'URL : #/<arrêt>/<ville> (carte retournée au chargement, pour les QR codes),
+// #/<arrêt>/<ville>--histoire (histoire de la ville en modale), #/<arrêt>/<ville>--<mesure> (idem, positionnée sur la mesure).
 export const parseSel = (sel: string | null) => {
   const [city, measure] = (sel || "").split("--");
-  return { cityId: city || null, measureId: measure || null };
+  return { cityId: city || null, measureId: measure && measure !== "histoire" ? measure : null, story: !!measure };
 };
 
-const pct = (n: number) => n.toLocaleString("fr-FR", { maximumFractionDigits: 1 }) + " %";
+export const pct = (n: number) => n.toLocaleString("fr-FR", { maximumFractionDigits: 1 }) + " %";
 const dir = (s: Split) => (s.after > s.before ? "up" : s.after < s.before ? "down" : "flat");
 const glyph = { up: "▲", down: "▼", flat: "＝" };
 
-function Move({ s, years }: { s: Split; years?: number[] }) {
+export function Move({ s, years, compact }: { s: Split; years?: number[]; compact?: boolean }) {
   const d = dir(s);
   return (
-    <div className={"move " + d}>
+    <div className={"move " + d + (compact ? " compact" : "")}>
       <div className="v"><span className="g" aria-hidden="true">{glyph[d]}</span>{pct(s.before)} <span className="ar">→</span> {pct(s.after)}</div>
-      {years && years.length === 2 && <div className="y">{years[0]} → {years[1]}</div>}
+      {years && years.length === 2 && years[0] && years[1] && <div className="y">{years[0]} → {years[1]}</div>}
     </div>
   );
+}
+
+export function NsmMove({ c, compact }: { c: CityItem; compact?: boolean }) {
+  const ms = c.modalSplit;
+  return ms && ms.nsm
+    ? <Move s={ms.nsm} years={ms.years} compact={compact} />
+    : <div className={"move none" + (compact ? " compact" : "")}>NSM : pas encore publié{ms?.note && <div className="y">{ms.note}</div>}</div>;
 }
 
 function CardFront({ c }: { c: CityItem }) {
@@ -36,82 +45,65 @@ function CardFront({ c }: { c: CityItem }) {
       </div>
       {c.tagline && <p className="tagline">{c.tagline}</p>}
       <div className="k">Mobilité partagée (NSM)</div>
-      {ms && ms.nsm
-        ? <Move s={ms.nsm} years={ms.years} />
-        : <div className="move none">NSM : pas encore publié{ms?.note && <div className="y">{ms.note}</div>}</div>}
+      <NsmMove c={c} />
       {ms && !ms.nsm && ms.pt && (
         <div className="second">
           <span>Transports en commun</span> <b>{pct(ms.pt.before)} → {pct(ms.pt.after)}</b>
           {ms.years && ms.years.length === 2 && <i> ({ms.years[0]} → {ms.years[1]})</i>}
         </div>
       )}
-      <div className="hint">Toucher pour voir les mesures ↻</div>
     </>
   );
 }
 
-type Props = { block: CitiesBlock; sel: string | null; onOpen: (res: string | null) => void; crumb?: string };
+type Props = { block: CitiesBlock; sel: string | null; onOpen: (res: string | null) => void; crumb: string };
 
 export default function CityCards({ block, sel, onOpen, crumb }: Props) {
-  const { cityId, measureId } = parseSel(sel);
+  const { cityId, measureId, story } = parseSel(sel);
   const city = block.items.find((c) => c.id === cityId) || null;
-  const measure = (city && city.measures.find((m) => m.id === measureId)) || null;
 
-  // Échap dans une fiche de mesure : revenir à la ville, pas à la carte du parcours.
-  useEffect(() => {
-    if (!measure || !city) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return;
-      e.stopPropagation();
-      onOpen(city.id);
-    };
-    window.addEventListener("keydown", onKey, true);
-    return () => window.removeEventListener("keydown", onKey, true);
-  }, [measure, city, onOpen]);
+  // Cartes retournées : état local (plusieurs à la fois), amorcé par le hash (QR code d'une ville).
+  const [open, setOpen] = useState<Set<string>>(() => new Set(city ? [city.id] : []));
+  useEffect(() => { if (city) setOpen((s) => (s.has(city.id) ? s : new Set(s).add(city.id))); }, [city]);
+  const set = (id: string, on: boolean) => setOpen((s) => { const n = new Set(s); on ? n.add(id) : n.delete(id); return n; });
 
   return (
     <section className="citywrap" aria-label={block.title}>
-      {city && measure && (
-        <Modal crumbs={[crumb || block.title, <><span className="flag" aria-hidden="true">{city.flag}</span> {city.name}</>, measure.title]} onClose={() => onOpen(city.id)}>
-          <MeasureDetail city={city} m={measure} block={block} />
+      {city && story && (
+        <Modal crumbs={[crumb, <><span className="flag" aria-hidden="true">{city.flag}</span> {city.name}</>]} onClose={() => onOpen(null)}>
+          <CityStory city={city} block={block} measureId={measureId} />
         </Modal>
       )}
+      <h3 className="csec-title">Les neuf villes</h3>
       {block.intro && <p className="cintro">{block.intro}</p>}
       {block.items.length === 0 ? (
         <div className="empty">Contenu en préparation — les villes arrivent bientôt.</div>
       ) : (
-        <div className="citygrid">
-          {block.items.map((c) => {
-            const flipped = c.id === cityId;
-            return (
-              <div key={c.id} className={"citycard" + (flipped ? " flip" : "")}>
-                <div className="inner">
-                  <button type="button" className="face front" inert={flipped}
-                          aria-label={`${c.name} — voir les mesures`} onClick={() => onOpen(c.id)}>
-                    <CardFront c={c} />
-                  </button>
-                  <div className="face back" inert={!flipped}>
-                    <div className="bhead">
-                      <h4>{c.flag} {c.name}</h4>
-                      <button type="button" className="iconbtn flipback" onClick={() => onOpen(null)} aria-label={`Retourner la carte ${c.name}`}>↩</button>
-                    </div>
-                    <div className="k">Ce que la ville a fait</div>
-                    <ul className="mlist">
-                      {c.measures.map((m) => (
-                        <li key={m.id}>
-                          <button type="button" onClick={() => onOpen(c.id + "--" + m.id)}>
-                            <span className={"badge " + m.type}>{block.measureTypes[m.type].label}</span>
-                            <span className="t">{m.title}</span>
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                    {c.measures.length === 0 && <div className="empty">Mesures en préparation.</div>}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className="cardgrid cities">
+          {block.items.map((c) => (
+            <FlipCard key={c.id} flipped={open.has(c.id)} onFlip={(on) => set(c.id, on)} label={c.name} className="city"
+                      backTitle={<>{c.flag} {c.name}</>}
+                      front={<CardFront c={c} />}
+                      back={
+                        <>
+                          <div className="k">Ce que la ville a fait</div>
+                          <ul className="mlist">
+                            {c.measures.map((m) => (
+                              <li key={m.id}>
+                                <button type="button" onClick={() => onOpen(c.id + "--" + m.id)}>
+                                  <span className={"badge " + m.type}>{block.measureTypes[m.type].label}</span>
+                                  <span className="t">{m.title}</span>
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                          {c.measures.length === 0 && <div className="empty">Mesures en préparation.</div>}
+                          <div className="cta">
+                            <button type="button" className="iconbtn primary" onClick={() => onOpen(c.id + "--histoire")}>Lire l'histoire de {c.name} →</button>
+                          </div>
+                        </>
+                      } />
+          ))}
         </div>
       )}
       <div className="clegend">
