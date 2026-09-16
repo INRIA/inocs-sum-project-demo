@@ -19,6 +19,8 @@ function Icon({ id }: { id: string }) {
       return <g {...s}><path d="M-13 9 V-2 H13 V9 Z M-16 -2 H16 M-9 9 V2 M0 9 V2 M9 9 V2 M0 -2 V-13 M0 -13 H8 V-8 H0" /></g>;
     case "carrefour":
       return <g {...s}><path d="M-14 -4 H-4 V-14 H4 V-4 H14 V4 H4 V14 H-4 V4 H-14 Z" /></g>;
+    case "belvedere": // une longue-vue sur sa colline
+      return <g {...s}><path d="M-13 12 Q0 4 14 12" /><path d="M-1 -3 L-7 10 M-1 -3 L5 10 M-1 -3 V-6" /><path d="M-11 3 L9 -10" strokeWidth="5.5" /><path d="M9 -10 L13 -12" strokeWidth="7" /></g>;
     case "station":
       return <g {...s}><circle cx="-9" cy="6" r="6.5" /><circle cx="10" cy="6" r="6.5" /><path d="M-9 6 L-2 -6 H7 L10 6 M-2 -6 L2 6 L-9 6 M2 6 L7 -6 M-5 -9 H1" /></g>;
     default:

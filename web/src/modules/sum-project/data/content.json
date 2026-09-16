@@ -40,7 +40,7 @@
     "imagesNote": "stops[].images : image(s) principale(s) de l'arrêt, affichées en haut du panneau (la première en grand, les autres en vignettes). src vide = emplacement. Fichiers dans app/public/images/."
   },
   "journey": {
-    "metaphor": "Un trajet porte-à-porte sans voiture personnelle : maison → station de vélos → carrefour → destination. À chaque arrêt, une décision.",
+    "metaphor": "Un trajet porte-à-porte sans voiture personnelle : maison → belvédère → station de vélos → carrefour → destination. À chaque arrêt, une décision.",
     "traveller": {
       "name": "",
       "note": "Nom/personnage du vélo qui avance sur la frise (à définir)."
@@ -53,7 +53,7 @@
         "Bienvenue à Ville en mouvement. Ce soir, vous êtes à la tête de votre ville.",
         "Votre défi : que chacun arrive à l'heure, sans voiture personnelle, avec un budget d'émissions de CO₂ limité.",
         "Entre 2023 et 2026, neuf villes européennes ont relevé ce défi pour de vrai dans le projet de recherche SUM — de Rotterdam à Jérusalem, de Genève à Coimbra. Lille les a suivies comme ville observatrice.",
-        "La salle est votre ville : quatre tables, quatre arrêts d'un trajet porte-à-porte. Vous pouvez faire tout le trajet ou vous arrêter où vous voulez.",
+        "La salle est votre ville : cinq tables, cinq arrêts d'un trajet porte-à-porte. Vous pouvez faire tout le trajet ou vous arrêter où vous voulez.",
         "Sur chaque table, un QR code ouvre la page de l'arrêt avec les explications et les vraies données.",
         "À la fin, on se retrouve pour le conseil municipal : chaque table raconte ce que ses maires ont décidé."
       ],
@@ -68,7 +68,7 @@
       "durationMin": 10,
       "steps": [
         "Rassembler tout le monde devant l'écran de l'Hôtel de ville.",
-        "Chaque table animée dit en une phrase ce que ses maires ont décidé (station, carrefour).",
+        "Chaque table animée dit en une phrase ce que ses maires ont décidé (station, carrefour), et le Belvédère lit ses bulletins.",
         "Révéler ce que le modèle propose (station) et ce que les vraies villes ont fait (destination).",
         "Message final : la recherche éclaire, la ville décide."
       ],
@@ -103,7 +103,7 @@
         },
         {
           "step": 2,
-          "text": "Regardez le trajet sur l'écran : quatre arrêts, quatre décisions."
+          "text": "Regardez le trajet sur l'écran : cinq arrêts, cinq décisions."
         },
         {
           "step": 3,
@@ -112,7 +112,7 @@
       ],
       "materials": [
         "Grand écran ou téléviseur avec la page « Trajet » (vélo animé)",
-        "Affiche A2 : le trajet et les quatre arrêts",
+        "Affiche A2 : le trajet et les cinq arrêts",
         "Affiche A3 : SUM en trois chiffres",
         "Affiche A3 : la table des smileys (acceptation par ville)",
         "Badges autocollants « MAIRE »",
@@ -597,18 +597,518 @@
       ]
     },
     {
-      "id": "station",
+      "id": "belvedere",
       "order": 2,
+      "place": "Belvédère",
+      "title": "Ce qui arrive après le tram",
+      "question": "Douze idées venues des villes SUM : lesquelles roulent déjà, lesquelles sont au labo, lesquelles ont buté sur un mur ?",
+      "mode": "selfservice",
+      "animator": null,
+      "position": "table 2, en autonomie ; un animateur passe toutes les 10 min pour un débrief d'une minute",
+      "capacity": 5,
+      "durationMin": 8,
+      "badge": "Jeu de tri",
+      "tableTent": {
+        "headline": "Ce qui arrive après le tram",
+        "subline": "Douze idées, trois tapis. Devinez où chacune en est vraiment, puis retournez les cartes."
+      },
+      "instructions": [
+        {
+          "step": 1,
+          "title": "Distribuer (30 s)",
+          "text": "Lisez le chevalet. Chacun prend 2 ou 3 cartes."
+        },
+        {
+          "step": 2,
+          "title": "Trier (3–4 min)",
+          "text": "À tour de rôle : lisez votre carte à voix haute, 20 secondes de débat, posez-la sur un tapis : 🟢 ça roule déjà, 🟡 au labo ou en préparation, 🔴 pas (encore) possible."
+        },
+        {
+          "step": 3,
+          "title": "Retourner (2 min)",
+          "text": "Quand toutes les cartes sont posées, retournez-les ensemble. Comptez les bonnes réponses et lisez à voix haute le « pourquoi » qui vous surprend le plus."
+        },
+        {
+          "step": 4,
+          "title": "Bulletin (1 min)",
+          "text": "Écrivez sur un bulletin l'idée que vous voudriez à Villeurbanne, tamponnez votre ticket, puis suivez « Pour le voir : table X »."
+        }
+      ],
+      "rule": "Chacun place au moins une carte. Personne ne retourne une carte avant la fin.",
+      "materials": [
+        "Chevalet de table",
+        "12 cartes innovation A6, recto (titre, photo, accroche, question) / verso (tampon, 3 lignes « pourquoi », partenaire, « Pour le voir : table X », page du rapport)",
+        "3 tapis A4 : 🟢 « Ça roule déjà » · 🟡 « Au labo ou en préparation » · 🔴 « Pas (encore) possible »",
+        "Bandeau de score et tampon pour le ticket",
+        "20 bulletins « Bulletin pour le conseil municipal »",
+        "Enveloppe « Le score de SUM »",
+        "Sablier 5 min (optionnel)",
+        "QR code vers l'arrêt 2 de la page"
+      ],
+      "game": {
+        "note": "Variante 6–9 ans : trier par « il y a un écran » / « il y a un véhicule » ; un parent retourne.",
+        "sort": {
+          "message": "Innover, ce n'est pas seulement ce qui roule déjà : entre l'idée et la rue, il y a le laboratoire — et parfois un mur.",
+          "howto": "Lisez chaque carte, décidez ensemble, posez-la sur un tapis. On retourne tout à la fin.",
+          "bins": [
+            {
+              "id": "roule",
+              "emoji": "🟢",
+              "label": "Ça roule déjà",
+              "short": "Ça roule",
+              "tone": "green",
+              "hint": "En service dans une ville"
+            },
+            {
+              "id": "labo",
+              "emoji": "🟡",
+              "label": "Au labo ou en préparation",
+              "short": "Au labo",
+              "tone": "amber",
+              "hint": "Testé, simulé, en cours"
+            },
+            {
+              "id": "mur",
+              "emoji": "🔴",
+              "label": "Pas (encore) possible",
+              "short": "Pas possible",
+              "tone": "red",
+              "hint": "Arrêté, refusé, bloqué"
+            }
+          ],
+          "cards": [
+            {
+              "id": "scooters-prevus",
+              "n": 1,
+              "title": "Savoir où seront les scooters partagés dans une heure",
+              "pitch": "L'appli du transporteur prédit combien de scooters partagés seront disponibles à chaque station, une heure à l'avance.",
+              "question": "Une prévision, ça se met en service comme un bus ?",
+              "image": {
+                "src": "/images/cities/rotterdam/check-availability-prediction-1.jpg",
+                "caption": "La prévision de disponibilité dans l'appli RET (Rotterdam)",
+                "alt": "La prévision de disponibilité dans l'appli RET (Rotterdam)",
+                "credit": ""
+              },
+              "verdict": "roule",
+              "why": [
+                "En service dans l'appli RET depuis juillet 2025, sur 15 stations et 17 zones.",
+                "Une idée « numérique » : pas de véhicule à acheter, pas d'homologation à obtenir.",
+                "Le modèle apprend sur les données passées et se corrige chaque jour."
+              ],
+              "partner": "TU Delft, Siemens, RET",
+              "livingLab": "Rotterdam",
+              "see": {
+                "stop": "destination",
+                "res": "rotterdam--check-availability-prediction"
+              },
+              "source": "Rapport pp. 21–22, 55–57"
+            },
+            {
+              "id": "bus-appel",
+              "n": 2,
+              "title": "Un bus qui vient quand on l'appelle",
+              "pitch": "En périphérie, pas de ligne fixe : on réserve, un minibus passe et vous amène au terminus du tram.",
+              "question": "Une ville peut-elle vraiment lancer ça et le garder ?",
+              "image": {
+                "src": "/images/cities/cracovie/lajkbus-on-demand-minibus-1.jpg",
+                "caption": "Le LajkBus à Cracovie",
+                "alt": "Le LajkBus à Cracovie",
+                "credit": ""
+              },
+              "verdict": "roule",
+              "why": [
+                "LajkBus roule depuis février 2025 entre Skotniki et Czerwone Maki, du lundi au vendredi de 6 h à 21 h.",
+                "La ville a décidé de le garder après le projet.",
+                "Un service, pas une technologie nouvelle : le plus dur était l'organisation."
+              ],
+              "partner": "ZF, Cracovie",
+              "livingLab": "Cracovie",
+              "see": {
+                "stop": "destination",
+                "res": "cracovie--lajkbus-on-demand-minibus"
+              },
+              "source": "Rapport pp. 58–59"
+            },
+            {
+              "id": "bus-velo-billet",
+              "n": 3,
+              "title": "Bus + vélo sur un seul billet",
+              "pitch": "L'appli des bus vend aussi le vélo partagé, avec une réduction quand on combine les deux.",
+              "question": "Deux opérateurs, un billet : simple sur le papier ?",
+              "image": {
+                "src": "/images/cities/larnaca/maas-app-integration-1.jpg",
+                "caption": "L'appli des transports de Larnaca",
+                "alt": "L'appli des transports de Larnaca",
+                "credit": ""
+              },
+              "verdict": "roule",
+              "why": [
+                "L'appli de transport public est devenue une appli tous-modes avec Nextbike.",
+                "La réservation combinée à tarif réduit est pleinement opérationnelle.",
+                "Un accord commercial et une intégration logicielle : rapide quand les deux parties veulent."
+              ],
+              "partner": "CON, Larnaca",
+              "livingLab": "Larnaca",
+              "see": {
+                "stop": "destination",
+                "res": "larnaca--maas-app-integration"
+              },
+              "source": "Rapport p. 36"
+            },
+            {
+              "id": "site-11-villes",
+              "n": 4,
+              "title": "Un site où 11 villes comparent leurs résultats",
+              "pitch": "Une plateforme ouverte où chaque ville publie ses chiffres avant / après, visibles par tout le monde.",
+              "question": "Les villes acceptent-elles de montrer leurs résultats, même moyens ?",
+              "image": {
+                "src": "/images/destination-odp.jpg",
+                "caption": "La plateforme de données ouvertes SUM",
+                "alt": "La plateforme de données ouvertes SUM",
+                "credit": ""
+              },
+              "verdict": "roule",
+              "why": [
+                "En ligne depuis janvier 2026, avec 11 Living Labs.",
+                "Code ouvert, maintenue au moins 5 ans après le projet par ERTICO.",
+                "Construite à Inria et à l'université de Twente."
+              ],
+              "partner": "Inria, Université de Twente",
+              "livingLab": "Tous",
+              "see": {
+                "stop": "destination"
+              },
+              "source": "Rapport pp. 14–17"
+            },
+            {
+              "id": "minibus-colis",
+              "n": 5,
+              "title": "Un minibus qui transporte des passagers et des colis",
+              "pitch": "Le même véhicule prend des voyageurs et des paquets, pour remplir les trajets à vide.",
+              "question": "Bonne idée, mais qui la porte une fois le projet terminé ?",
+              "image": {
+                "src": "",
+                "caption": "Le minibus passagers + colis testé à Genève",
+                "alt": "Minibus mixte passagers et colis"
+              },
+              "verdict": "labo",
+              "stamp": "Testé et prévu",
+              "why": [
+                "Testé à Genève pendant SUM.",
+                "Le projet continue dans ULTIMO : ce n'est pas abandonné.",
+                "Mélanger passagers et marchandises demande des règles nouvelles : ça prend du temps."
+              ],
+              "partner": "ZF, Genève",
+              "livingLab": "Genève",
+              "see": {
+                "stop": "destination",
+                "res": "geneve"
+              },
+              "source": "Rapport pp. 43–48, 102–106"
+            },
+            {
+              "id": "ville-jumelle",
+              "n": 6,
+              "title": "Une ville jumelle dans l'ordinateur",
+              "pitch": "Avant de lancer un service de minibus partagés, on le fait rouler des milliers de fois dans une copie numérique de la ville.",
+              "question": "Une simulation, c'est déjà une innovation ?",
+              "image": {
+                "src": "",
+                "caption": "Le jumeau numérique de Jérusalem (figure 8 du rapport)",
+                "alt": "Simulation de Jérusalem"
+              },
+              "verdict": "labo",
+              "why": [
+                "Plus de 2 000 configurations de minibus partagés simulées à Jérusalem.",
+                "Le résultat sert à décider, pas encore à rouler.",
+                "Le laboratoire, ici, c'est l'ordinateur."
+              ],
+              "partner": "TAU, TUM, JU",
+              "livingLab": "Jérusalem",
+              "see": {
+                "stop": "destination",
+                "res": "jerusalem"
+              },
+              "source": "Rapport pp. 24, 48–50"
+            },
+            {
+              "id": "algo-minibus-tram",
+              "n": 7,
+              "title": "Un algorithme qui propose « minibus, puis tram »",
+              "pitch": "Un programme calcule pour chaque voyageur le meilleur mélange : un minibus partagé jusqu'au tram, puis le tram.",
+              "question": "Qui l'a déjà dans son appli ?",
+              "image": {
+                "src": "",
+                "caption": "Le calcul multimodal FleetPy (figure 9 du rapport)",
+                "alt": "Schéma d'un calcul minibus puis tram"
+              },
+              "verdict": "labo",
+              "why": [
+                "Le logiciel existe (FleetPy + RAPTOR) et tourne en simulation.",
+                "Aucune ville ne l'a encore branché sur une appli grand public.",
+                "Entre le code et la rue : un opérateur, des données en direct, des contrats."
+              ],
+              "partner": "TUM",
+              "livingLab": "Munich",
+              "see": {
+                "stop": "destination",
+                "res": "munich"
+              },
+              "source": "Rapport p. 26"
+            },
+            {
+              "id": "prix-heure",
+              "n": 8,
+              "title": "Un prix qui change selon l'heure pour vous faire changer de mode",
+              "pitch": "Le billet coûte moins cher à l'heure creuse ou en combinant vélo et tram, pour désengorger la pointe.",
+              "question": "Une équipe de maths peut-elle fixer les prix d'une ville ?",
+              "image": {
+                "src": "",
+                "caption": "L'interface web de la démo de tarification (Inria)",
+                "alt": "Démo de tarification"
+              },
+              "verdict": "labo",
+              "why": [
+                "Modèle de tarification et de recommandation d'Inria, avec une démo web.",
+                "Niveau de maturité TRL 4 : validé en laboratoire, pas dans une ville.",
+                "Variante étudiée : un tarif vélo à la réservation."
+              ],
+              "partner": "Inria INOCS",
+              "livingLab": "Genève",
+              "see": null,
+              "source": "Rapport pp. 33–35, 37"
+            },
+            {
+              "id": "velos-justes",
+              "n": 9,
+              "title": "Un réseau de vélos dessiné pour être juste",
+              "pitch": "Le modèle place les stations en équilibrant efficacité et équité : pas seulement là où il y a le plus de monde.",
+              "question": "Vous l'avez peut-être déjà essayé à la table Station ?",
+              "image": {
+                "src": "/images/station-geneve-demo.png",
+                "caption": "La démo de conception du réseau de vélos (Genève)",
+                "alt": "La démo de conception du réseau de vélos (Genève)",
+                "credit": ""
+              },
+              "verdict": "labo",
+              "why": [
+                "Conception bi-objectif efficacité / équité (indice de Gini) sur Genève.",
+                "C'est le modèle de la table Station : de la recherche, avec la ville comme cas d'étude.",
+                "Rien n'est construit : le résultat nourrit la discussion avec la ville."
+              ],
+              "partner": "Université de Twente, Inria",
+              "livingLab": "Genève",
+              "see": {
+                "stop": "station"
+              },
+              "source": "Rapport p. 25"
+            },
+            {
+              "id": "robots-taxis",
+              "n": 10,
+              "title": "Des robots-taxis sans conducteur",
+              "pitch": "Une flotte de voitures autonomes partagées, réservables dans l'appli, pour compléter le tram.",
+              "question": "On en parle depuis dix ans : et là ?",
+              "image": {
+                "src": "/images/cities/munich/reserved-carsharing-parking-1.jpg",
+                "caption": "Ce qui reste à Munich : des places réservées à l'autopartage",
+                "alt": "Ce qui reste à Munich : des places réservées à l'autopartage",
+                "credit": ""
+              },
+              "verdict": "mur",
+              "why": [
+                "La flotte de niveau 4 de SIXT a été annulée : pas d'homologation.",
+                "Restent environ 900 places dédiées à l'autopartage, bien réelles.",
+                "Quand la loi n'est pas prête, la technologie attend."
+              ],
+              "partner": "SIXT, Munich",
+              "livingLab": "Munich",
+              "see": {
+                "stop": "destination",
+                "res": "munich--reserved-carsharing-parking"
+              },
+              "source": "Rapport pp. 38–43, 102"
+            },
+            {
+              "id": "bus-electriques",
+              "n": 11,
+              "title": "Des bus électriques pour le quartier",
+              "pitch": "De petites lignes de bus électriques pour relier les quartiers de la colline au centre et au métro.",
+              "question": "Acheter des bus, c'est le plus facile, non ?",
+              "image": {
+                "src": "/images/cities/penteli/bus-lines-reintroduced-1.jpg",
+                "caption": "La ligne scolaire à Penteli",
+                "alt": "La ligne scolaire à Penteli",
+                "credit": ""
+              },
+              "verdict": "mur",
+              "why": [
+                "Les bus n'ont pas été achetés.",
+                "Seule la ligne scolaire a roulé ; les autres ont été simulées.",
+                "Le budget et les marchés publics d'une petite commune : un mur fréquent."
+              ],
+              "partner": "Penteli",
+              "livingLab": "Penteli (Athènes)",
+              "see": {
+                "stop": "destination",
+                "res": "penteli--bus-lines-reintroduced"
+              },
+              "source": "Rapport pp. 50–54, 102"
+            },
+            {
+              "id": "zone-trafic-limite",
+              "n": 12,
+              "title": "Une zone à trafic limité au centre-ville",
+              "pitch": "Le centre réservé aux résidents, livraisons et transports en commun : les autres voitures restent dehors.",
+              "question": "Le tram est là, pourquoi pas la zone ?",
+              "image": {
+                "src": "",
+                "caption": "Le centre de Genève",
+                "alt": "Centre-ville de Genève"
+              },
+              "verdict": "mur",
+              "why": [
+                "Rejetée en octobre 2024.",
+                "Ce n'est ni la technique ni l'argent : c'est une décision politique.",
+                "À VÉRIFIER avant impression : qui a rejeté la mesure (vote, autorité)."
+              ],
+              "partner": "Genève",
+              "livingLab": "Genève",
+              "see": {
+                "stop": "destination",
+                "res": "geneve"
+              },
+              "source": "Rapport pp. 43–48"
+            }
+          ],
+          "debrief": "les idées « numériques » (une appli, un site, un calcul) ont avancé vite ; celles qui dépendent d'un véhicule, d'un budget ou d'une loi ont ralenti ou se sont arrêtées. Pourquoi ?",
+          "bulletin": "L'idée que je voudrais à Villeurbanne : ___"
+        }
+      },
+      "reveal": {
+        "title": "Le score de SUM",
+        "lines": [
+          "4 idées roulent aujourd'hui, 5 sont au labo ou en préparation, 3 se sont arrêtées.",
+          "Tous les Living Labs n'ont pas le même niveau de résultats.",
+          "7 villes observatrices, dont Lille, reprennent des mesures de SUM."
+        ],
+        "source": {
+          "report": "p. 85, 101"
+        }
+      },
+      "resources": [
+        {
+          "id": "pourquoi-du-temps",
+          "title": "Pourquoi une idée met du temps",
+          "teaser": "Du laboratoire à la rue, une échelle en neuf niveaux.",
+          "kind": "fiche",
+          "body": [
+            "Les chercheurs mesurent la maturité d'une technologie sur une échelle de 1 (idée) à 9 (en service). SUM a fait passer plusieurs méthodes du niveau 3 au niveau 4 : validées en laboratoire, sur des données réelles, pas encore dans une ville.",
+            "Exemples au niveau 4 : la tarification incitative d'Inria, la conception équitable du réseau de vélos, le calcul multimodal « minibus puis tram »."
+          ],
+          "source": {
+            "report": "pp. 25–26, 33–35"
+          }
+        },
+        {
+          "id": "pas-reussi",
+          "title": "Ce que SUM n'a pas réussi, et pourquoi",
+          "teaser": "Trois murs : l'homologation, le budget, le vote.",
+          "kind": "fiche",
+          "body": [
+            "Les robots-taxis de Munich : pas d'homologation pour une flotte de niveau 4.",
+            "Les bus électriques de Penteli : pas achetés ; seule la ligne scolaire a roulé.",
+            "La zone à trafic limité de Genève : rejetée en octobre 2024.",
+            "Ces échecs sont documentés dans le rapport, avec leurs causes : c'est aussi un résultat."
+          ],
+          "source": {
+            "report": "pp. 102–106"
+          }
+        },
+        {
+          "id": "apres-sum",
+          "title": "Ce qui continue après SUM",
+          "teaser": "ULTIMO, la plateforme de données, sept villes observatrices.",
+          "kind": "fiche",
+          "body": [
+            "Le minibus passagers + colis de Genève continue dans le projet ULTIMO.",
+            "La plateforme de données ouvertes reste en ligne au moins cinq ans, portée par ERTICO.",
+            "Sept villes observatrices, dont Lille, reprennent des mesures. Quatorze résultats clés exploitables ont été identifiés."
+          ],
+          "source": {
+            "report": "pp. 14–17, 85"
+          }
+        }
+      ],
+      "images": [],
+      "moreTitle": "Pour comprendre le tri",
+      "moreCards": [
+        {
+          "id": "c-temps",
+          "front": {
+            "value": "3 → 4",
+            "label": "Pourquoi une idée met du temps",
+            "teaser": "Une échelle en neuf niveaux, du labo à la rue."
+          },
+          "back": {
+            "title": "Du niveau 3 au niveau 4",
+            "lines": [
+              "Niveau 4 : validé en laboratoire sur des données réelles.",
+              "Niveau 9 : en service dans une ville.",
+              "SUM a fait monter plusieurs méthodes d'un cran."
+            ]
+          },
+          "resource": "pourquoi-du-temps"
+        },
+        {
+          "id": "c-murs",
+          "front": {
+            "value": "3",
+            "label": "Ce que SUM n'a pas réussi",
+            "teaser": "Et pourquoi c'est aussi un résultat."
+          },
+          "back": {
+            "title": "Trois murs",
+            "lines": [
+              "L'homologation : les robots-taxis de Munich.",
+              "Le budget : les bus électriques de Penteli.",
+              "Le vote : la zone à trafic limité de Genève."
+            ]
+          },
+          "resource": "pas-reussi"
+        },
+        {
+          "id": "c-apres",
+          "front": {
+            "value": "5 ans",
+            "label": "Ce qui continue après SUM",
+            "teaser": "ULTIMO, la plateforme, les villes observatrices."
+          },
+          "back": {
+            "title": "Après mai 2026",
+            "lines": [
+              "Le minibus mixte de Genève continue dans ULTIMO.",
+              "La plateforme reste en ligne cinq ans (ERTICO).",
+              "Sept villes observatrices, dont Lille."
+            ]
+          },
+          "resource": "apres-sum"
+        }
+      ]
+    },
+    {
+      "id": "station",
+      "order": 3,
       "place": "Station de vélos",
-      "title": "Où doivent vivre les vélos ?",
+      "title": "Où placer les stations de vélos partagés ?",
       "question": "Avec 20 000 €, où placez-vous les dix dernières stations ?",
       "mode": "animated",
       "animator": "A",
-      "position": "table 2, avec tablette et ordinateur portable",
+      "position": "table 3, avec tablette et ordinateur portable",
       "capacity": 6,
       "durationMin": 15,
       "tableTent": {
-        "headline": "Où doivent vivre les vélos ?",
+        "headline": "Où placer les stations de vélos partagés ?",
         "subline": "Une carte, des épingles, un budget. La tablette montre comment la ville bouge."
       },
       "game": {
@@ -644,7 +1144,7 @@
         "Épingles ou pions : 10 par groupe",
         "Tablette avec la démo (étape 2 « La ville », passée en français, plein écran)",
         "Ordinateur portable ou écran pour la révélation (étape 4, plan d'amorce 20 k€)",
-        "QR code vers l'arrêt 2 de la page"
+        "QR code vers l'arrêt 3 de la page"
       ],
       "reveal": null,
       "resources": [
@@ -886,13 +1386,13 @@
     },
     {
       "id": "carrefour",
-      "order": 3,
+      "order": 4,
       "place": "Carrefour",
       "title": "Et si on refaisait ce carrefour ?",
       "question": "Qui utilise cette rue ? Quand ? Qu'est-ce qui coince ?",
       "mode": "animated",
       "animator": "B",
-      "position": "table 3",
+      "position": "table 4",
       "capacity": 6,
       "durationMin": 10,
       "tableTent": {
@@ -930,7 +1430,7 @@
         "Cartes d'instruction plastifiées (étapes 1–4)",
         "Enveloppe « Ouvre-moi quand vous avez voté »",
         "Gommettes de vote",
-        "QR code vers l'arrêt 3 de la page"
+        "QR code vers l'arrêt 4 de la page"
       ],
       "reveal": {
         "title": "Ce qui s'est passé à Coimbra",
@@ -1136,13 +1636,13 @@
     },
     {
       "id": "destination",
-      "order": 4,
+      "order": 5,
       "place": "Destination",
       "title": "Qu'ont fait les vraies villes ?",
       "question": "Neuf villes ont essayé. Est-ce que ça a marché ?",
       "mode": "selfservice",
       "animator": null,
-      "position": "table 4, grand écran tactile ou tablette, sans animateur",
+      "position": "table 5, grand écran tactile ou tablette, sans animateur",
       "capacity": 8,
       "durationMin": 8,
       "tableTent": {
@@ -1168,13 +1668,13 @@
         }
       ],
       "materials": [
-        "Grand écran tactile ou tablette (page de l'arrêt 4)",
+        "Grand écran tactile ou tablette (page de l'arrêt 5)",
         "Tablette avec odp.sum-project.eu (vue Insights)",
         "Affiche A3 : avant / après par ville (parts modales)",
         "Affiche A4 : « Ce qui n'a pas marché, et pourquoi c'est utile »",
         "Carte d'instruction",
         "QR code par ville vers #/destination/<ville>",
-        "QR code vers l'arrêt 4 de la page"
+        "QR code vers l'arrêt 5 de la page"
       ],
       "reveal": null,
       "cards": [

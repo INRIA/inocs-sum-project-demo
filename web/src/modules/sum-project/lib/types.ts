@@ -21,6 +21,22 @@ export type InfoCard = {
   resource?: string;  // id d'une ressource de l'arrêt, ouverte en modale
 };
 
+// Jeu de tri (« Belvédère ») : des cartes « innovation » à poser sur trois tapis, puis on retourne tout.
+export type SortBin = { id: string; emoji: string; label: string; short: string; tone: "green" | "amber" | "red"; hint?: string };
+export type SortCard = {
+  id: string; n: number; title: string; pitch: string; question?: string; image?: Img | null;
+  verdict: string;                          // id du tapis où la carte va vraiment
+  stamp?: string;                           // texte du tampon au verso (défaut : label du tapis)
+  why: string[]; partner?: string; livingLab?: string;
+  see?: { stop: string; res?: string } | null;  // « Pour le voir : arrêt X » → route interne #/<stop>/<res>
+  source?: string;
+};
+export type SortGameDef = {
+  message?: string; howto?: string; bins: SortBin[]; cards: SortCard[];
+  debrief?: string;   // ce que l'animateur fait remarquer après le retournement
+  bulletin?: string;  // texte du bulletin pour le conseil municipal (affiché, pas saisi)
+};
+
 export type Stop = {
   id: string; order: number; place: string; title: string; question: string;
   mode: "passive" | "animated" | "selfservice"; animator: string | null; position?: string;
@@ -29,7 +45,7 @@ export type Stop = {
   tableTent: { headline: string; subline: string };
   instructions: Instruction[]; rule?: string; materials: string[];
   questions?: { id: string; text: string }[];
-  game?: { mapNote?: string; note?: string; stationsToPlace?: number; tablet?: { url: string; note: string } };
+  game?: { mapNote?: string; note?: string; stationsToPlace?: number; tablet?: { url: string; note: string }; sort?: SortGameDef };
   reveal: { title: string; lines: string[]; source?: Source } | null;
   featured?: string[];
   images?: Img[];

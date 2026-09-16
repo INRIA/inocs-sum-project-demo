@@ -5,17 +5,20 @@ import CityCards, { parseSel } from "./CityCards";
 import Gallery from "./Gallery";
 import InfoCards from "./InfoCards";
 import Modal from "./Modal";
+import SortGame from "./SortGame";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
 type Props = { stop: Stop; content: Content; resId: string | null; onOpen: (id: string | null) => void };
 
 export default function StopPanel({ stop, content, resId, onOpen }: Props) {
-  const cardMode = !!(stop.cards || stop.cities || stop.challenge); // arrêt « cartes » : recto / verso / fiche en modale
+  const sort = stop.game?.sort || null;
+  const cardMode = !!(stop.cards || stop.cities || stop.challenge || sort); // arrêt « cartes » : recto / verso / fiche en modale
   const cityId = stop.cities ? parseSel(resId).cityId : null;
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
+  const isSortCard = !!sort && sort.cards.some((c) => c.id === resId);
 
-  const r = isCity ? null
+  const r = isCity || isSortCard ? null
     : resId === "__reveal" && stop.reveal
       ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
       : stop.resources.find((x) => x.id === resId) || null;
@@ -46,7 +49,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
         </Modal>
       )}
       {!cardMode && stop.images && stop.images.length > 0 && <Gallery images={stop.images} />}
-      <div className={"rlist" + (cardMode ? " cards" : "")}>
+      <div className={"rlist" + (cardMode ? " cards" : "") + (sort ? " full" : "")}>
         <aside className={"tent" + (cardMode ? " compact" : "")}>
           {!cardMode && <div className="headline">{stop.tableTent.headline}</div>}
           <div className="subline">{stop.tableTent.subline}</div>
@@ -71,6 +74,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
                 <a className="iconbtn primary big" href={stop.challenge.cta.url} target="_blank" rel="noopener">{stop.challenge.cta.label} ↗</a>
               </section>
             )}
+            {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
             {stop.cards && stop.cards.length > 0 && <InfoCards cards={stop.cards} onOpen={onOpen} />}
             {stop.cities && <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} />}
             {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title={stop.moreTitle || "Pour aller plus loin"} columns={stop.id === "station" ? 2 : undefined} />}
