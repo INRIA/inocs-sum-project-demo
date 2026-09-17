@@ -27,6 +27,13 @@ function Timeline({ items }: { items: { when: string; text: string }[] }) {
   );
 }
 
+// Émoji « acceptation » : un rond de couleur pour repérer d'un coup d'œil qui est au-dessus ou en dessous de la moyenne.
+const SMILEY_TONE: Record<string, string> = { "🙂": "good", "😐": "mid", "🙁": "bad" };
+export function Smiley({ value }: { value: string }) {
+  const tone = SMILEY_TONE[value];
+  return tone ? <span className={"smiley " + tone}>{value}</span> : <>{value}</>;
+}
+
 // Grille d'émojis : une ligne par service, une colonne par critère. Les `headCols` premières colonnes forment l'en-tête de ligne (ville + service).
 function Matrix({ columns, rows, legend, headCols = 1 }: { columns: string[]; rows: string[][]; legend?: string; headCols?: number }) {
   return (
@@ -36,7 +43,7 @@ function Matrix({ columns, rows, legend, headCols = 1 }: { columns: string[]; ro
         <tbody>{rows.map((r, i) => (
           <tr key={i}>
             <td className="h">{r.slice(0, headCols).map((v, j) => j === 0 ? <b key={j}>{v}</b> : <small key={j}>{v}</small>)}</td>
-            {r.slice(headCols).map((v, j) => <td key={j} className="e">{v}</td>)}
+            {r.slice(headCols).map((v, j) => <td key={j} className="e"><Smiley value={v} /></td>)}
           </tr>
         ))}</tbody>
       </table>

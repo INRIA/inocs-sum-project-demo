@@ -52,7 +52,7 @@
       "script": [
         "Bienvenue à Ville en mouvement. Ce soir, vous êtes à la tête de votre ville.",
         "Votre défi : que chacun arrive à l'heure, sans voiture personnelle, avec un budget d'émissions de CO₂ limité.",
-        "Entre 2023 et 2026, neuf villes européennes ont relevé ce défi pour de vrai dans le projet de recherche SUM — de Rotterdam à Jérusalem, de Genève à Coimbra. Lille les a suivies comme ville observatrice.",
+        "Entre 2023 et 2026, neuf villes européennes ont relevé ce défi pour de vrai dans le projet de recherche SUM: de Rotterdam à Jérusalem, de Genève à Coimbra. Lille les a suivies comme ville observatrice.",
         "La salle est votre ville : cinq tables, cinq arrêts d'un trajet porte-à-porte. Vous pouvez faire tout le trajet ou vous arrêter où vous voulez.",
         "Sur chaque table, un QR code ouvre la page de l'arrêt avec les explications et les vraies données.",
         "À la fin, on se retrouve pour le conseil municipal : chaque table raconte ce que ses maires ont décidé."
@@ -74,9 +74,9 @@
       ],
       "messages": [
         "Le problème est vraiment difficile : plusieurs critères, plusieurs contraintes, plusieurs acteurs.",
-        "Les outils de recherche (prévision, simulation, optimisation) aident à comparer des scénarios — ils ne remplacent pas la décision.",
+        "Les outils de recherche (prévision, simulation, optimisation) aident à comparer des scénarios, mais ils ne remplacent pas la décision.",
         "Ce que vous avez vu à la table « Station » est un travail de recherche et d'innovation, avec Genève comme cas d'étude.",
-        "Les vraies villes ont testé, mesuré, et parfois échoué — et c'est mesuré aussi."
+        "Les vraies villes ont testé, mesuré, et parfois échoué, et c'est mesuré aussi."
       ]
     }
   },
@@ -937,7 +937,7 @@
       "game": {
         "note": "Variante 6–9 ans : trier par « il y a un écran » / « il y a un véhicule » ; un parent retourne.",
         "sort": {
-          "message": "Innover, ce n'est pas seulement ce qui roule déjà : entre l'idée et la rue, il y a le laboratoire — et parfois un mur.",
+          "message": "Innover, ce n'est pas seulement ce qui roule déjà : entre l'idée et la rue, il y a tout un process de validation depuis le laboratoire et parfois on est face à un mur.",
           "howto": "Lisez chaque carte, décidez ensemble, posez-la sur un tapis. On retourne tout à la fin.",
           "bins": [
             {
@@ -1327,14 +1327,14 @@
         },
         {
           "id": "pas-reussi",
-          "title": "Ce que SUM n'a pas réussi, et pourquoi",
-          "teaser": "Trois murs : l'homologation, le budget, le vote.",
+          "title": "Trois obstacles, trois leçons pour la suite",
+          "teaser": "Homologation, budget, vote : ce que ces trois cas apprennent aux prochains projets.",
           "kind": "fiche",
           "body": [
-            "Les robots-taxis de Munich : pas d'homologation pour une flotte de niveau 4.",
-            "Les bus électriques de Penteli : pas achetés ; seule la ligne scolaire a roulé.",
-            "La zone à trafic limité de Genève : rejetée en octobre 2024.",
-            "Ces échecs sont documentés dans le rapport, avec leurs causes : c'est aussi un résultat."
+            "Les robots-taxis de Munich : pas d'homologation pour une flotte de niveau 4 — il faut l'anticiper avant de tester.",
+            "Les bus électriques de Penteli : pas achetés, seule la ligne scolaire a roulé — mieux vaut sécuriser l'achat avant d'annoncer un service.",
+            "La zone à trafic limité de Genève : rejetée en octobre 2024. Une mesure impopulaire se prépare avec les habitants, pas après.",
+            "Ces trois cas sont documentés avec leurs causes dans le rapport : ils indiquent précisément où porter l'effort la prochaine fois."
           ],
           "source": {
             "report": "pp. 102–106"
@@ -1379,15 +1379,15 @@
           "id": "c-murs",
           "front": {
             "value": "3",
-            "label": "Ce que SUM n'a pas réussi",
-            "teaser": "Et pourquoi c'est aussi un résultat."
+            "label": "Trois leçons pour la suite",
+            "teaser": "Ce qui a buté ici éclaire ce qui marchera ailleurs."
           },
           "back": {
-            "title": "Trois murs",
+            "title": "Ce qu'on en retient",
             "lines": [
-              "L'homologation : les robots-taxis de Munich.",
-              "Le budget : les bus électriques de Penteli.",
-              "Le vote : la zone à trafic limité de Genève."
+              "L'homologation : il faut l'anticiper avant de tester une flotte de niveau 4 (Munich).",
+              "Le budget : mieux vaut sécuriser l'achat avant d'annoncer un service (Penteli).",
+              "Le vote : une mesure impopulaire se prépare avec les habitants, pas après (Genève)."
             ]
           },
           "resource": "pas-reussi"
@@ -1489,7 +1489,7 @@
           "teaser": "Trop de stations coûte cher. Trop peu, et les vélos ne servent à rien.",
           "kind": "story",
           "body": [
-            "Placer des stations de vélos partagés a l'air simple. Mais chaque station a un coût, une capacité, un stock de vélos à réapprovisionner, et elle doit tomber là où les gens en ont besoin — souvent à côté d'un arrêt de bus ou de tram.",
+            "Placer des stations de vélos partagés a l'air simple. Mais chaque station a un coût, une capacité, un stock de vélos à réapprovisionner, et elle doit tomber là où les gens en ont besoin (souvent à côté d'un arrêt de bus ou de tram).",
             "Il faut décider plusieurs choses à la fois, sous contrainte de budget, en anticipant comment les gens vont réellement se déplacer."
           ],
           "facts": [
@@ -2301,56 +2301,6 @@
           }
         },
         {
-          "id": "avant-apres",
-          "title": "Qu'est-ce qui a changé ?",
-          "teaser": "Des signaux, ville par ville — à lire avec prudence.",
-          "kind": "list",
-          "body": [
-            "Le rapport prévient : la comparaison avant/après est indicative, car les répondants ne sont pas les mêmes personnes."
-          ],
-          "items": [
-            {
-              "title": "Cracovie",
-              "text": "Modes partagés : moins de 1 % avant → 20 % après (LajkBus)."
-            },
-            {
-              "title": "Penteli",
-              "text": "Transports en commun : ≈ 16 % → 18,5 %."
-            },
-            {
-              "title": "Jérusalem",
-              "text": "Marche, voiture, micromobilité et train en hausse après l'extension du tram."
-            },
-            {
-              "title": "Munich",
-              "text": "Enquête début 2026 : voiture personnelle − 10 %, marche et vélo + 12 %."
-            },
-            {
-              "title": "Genève",
-              "text": "41 % des trajets déclarés en train (avant)."
-            },
-            {
-              "title": "Coimbra",
-              "text": "93,2 % des trajets déclarés en voiture après — pas de report modal pendant le pilote."
-            }
-          ],
-          "facts": [],
-          "images": [
-            {
-              "src": "",
-              "caption": "Parts modales de Munich, avant / après",
-              "suggestedSource": "rapport Fig. 38 p.65"
-            }
-          ],
-          "links": [],
-          "source": {
-            "report": "p.42, p.62, p.64–65",
-            "task": "T5.1",
-            "partner": "UT, TUM",
-            "livingLab": ""
-          }
-        },
-        {
           "id": "plateforme",
           "title": "La plateforme de données ouvertes",
           "teaser": "11 villes y publient leurs indicateurs. Sans compte, pour tout le monde.",
@@ -2458,7 +2408,7 @@
         },
         {
           "id": "ce-qui-na-pas-marche",
-          "title": "Ce qui n'a pas marché — et pourquoi c'est utile",
+          "title": "Ce qui n'a pas marché et pourquoi c'est utile",
           "teaser": "Un échec mesuré vaut plus qu'un succès supposé.",
           "kind": "notice",
           "body": [
@@ -2562,7 +2512,7 @@
             "id": "check-availability-prediction",
             "type": "pull",
             "title": "Disponibilité prévue des cyclomoteurs dans l'appli RET",
-            "summary": "RET a ajouté à son appli MaaS — une appli qui réunit tous les transports — une fonction qui prévoit et affiche la disponibilité des cyclomoteurs électriques partagés CHECK à 14 stations de métro, pour que les voyageurs puissent compter sur un véhicule partagé pour finir leur trajet.",
+            "summary": "RET a ajouté à son appli MaaS, une appli qui réunit tous les transports, une fonction qui prévoit et affiche la disponibilité des cyclomoteurs électriques partagés CHECK à 14 stations de métro, pour que les voyageurs puissent compter sur un véhicule partagé pour finir leur trajet.",
             "details": [
               "Prévoit la disponibilité des cyclomoteurs CHECK à 14 stations de métro et l'affiche dans le calculateur d'itinéraire de l'appli RET.",
               "Développé par RET (l'opérateur de transports en commun), Siemens Mobility (technologie) et TU Delft (recherche), avec CHECK (opérateur de cyclomoteurs) et Infoplaza (développeur de l'appli).",
@@ -2727,7 +2677,7 @@
             "id": "maas-app",
             "type": "pull",
             "title": "Une seule appli pour tous les transports",
-            "summary": "Une nouvelle appli unique — une appli qui réunit tous les transports — regroupe les tpg, les Mouettes genevoises et les CFF sur une seule plateforme pour planifier un trajet et, à terme, payer, à la place de 3 applis séparées.",
+            "summary": "Une nouvelle appli unique, qui réunit tous les transports et regroupe les tpg, les Mouettes genevoises et les CFF sur une seule plateforme pour planifier un trajet et, à terme, payer, à la place de 3 applis séparées.",
             "details": [
               "Développée en interne par les tpg avec Hacon, après qu'un appel d'offres commun avec Berne, Bâle et Zurich (20 millions de francs) n'a reçu aucune offre adaptée.",
               "Livrée en 3 phases : d'abord le calcul d'itinéraire, puis la billetterie, puis l'accessibilité.",
@@ -2783,7 +2733,7 @@
             "id": "tpg-flex",
             "type": "pull",
             "title": "Navette à la demande : tpg flex",
-            "summary": "Un service de minibus à la demande (tpg flex) — un bus à la demande, aussi appelé DRT — a été étendu à de nouvelles zones du canton, avec en plus une navette de nuit pour le personnel des tpg, coordonnée avec les horaires des lignes fixes.",
+            "summary": "Un service de minibus à la demande (tpg flex) (un bus à la demande, aussi appelé DRT) a été étendu à de nouvelles zones du canton, avec en plus une navette de nuit pour le personnel des tpg, coordonnée avec les horaires des lignes fixes.",
             "details": [
               "Environ 300 passagers par jour sur tpg flex.",
               "Étendu à de nouvelles zones du canton pendant le projet.",
@@ -2843,7 +2793,7 @@
         "flag": "🇮🇱",
         "role": "leader",
         "tagline": "Faire d'une nouvelle ligne de tram un quartier connecté et sans voiture",
-        "context": "Yuvalim-Ganim, un quartier en forte croissance sur les collines à l'ouest de Jérusalem (environ 40 000 habitants, plus de 80 000 attendus), où les longues distances à pied en pente rendaient les habitants très dépendants de la voiture. Le Living Lab s'est appuyé sur l'extension de la Ligne rouge du tram — un LRT, ou tram léger — pour ajouter des services de desserte locale autour d'elle.",
+        "context": "Yuvalim-Ganim, un quartier en forte croissance sur les collines à l'ouest de Jérusalem (environ 40 000 habitants, plus de 80 000 attendus), où les longues distances à pied en pente rendaient les habitants très dépendants de la voiture. Le Living Lab s'est appuyé sur l'extension de la Ligne rouge du tram (un LRT, ou tram léger) pour ajouter des services de desserte locale autour d'elle.",
         "odpUrl": "https://odp.sum-project.eu/living-lab-city/3",
         "modalSplit": {
           "years": [
@@ -2891,7 +2841,7 @@
             "id": "lrt-park-and-ride",
             "type": "pull",
             "title": "Un nouveau parking relais près du tram",
-            "summary": "Un parking relais — un P+R, pour se garer et prendre le tram — est en construction à côté d'une station, pour que les automobilistes venant de l'extérieur du quartier puissent se garer et continuer en tram plutôt qu'en voiture jusqu'au centre-ville.",
+            "summary": "Un parking relais (un P+R, pour se garer et prendre le tram) est en construction à côté d'une station, pour que les automobilistes venant de l'extérieur du quartier puissent se garer et continuer en tram plutôt qu'en voiture jusqu'au centre-ville.",
             "details": [
               "Construit par la Municipalité de Jérusalem et JTMT, de décembre 2022 à décembre 2026 ; chantier en cours.",
               "Objectif : plus de transports en commun, moins de voitures.",
@@ -3026,7 +2976,7 @@
             "id": "lajkbus-on-demand-minibus",
             "type": "pull",
             "title": "Minibus partagé à la demande pour la périphérie",
-            "summary": "Un service de bus à la demande — un DRT — appelé Lajkbus a été lancé le 10 février 2025 dans un quartier périphérique de Cracovie mal desservi par le bus, le tram et le train. Les usagers réservent une place partagée avec une appli et sont pris en charge près de chez eux.",
+            "summary": "Un service de bus à la demande (un DRT) appelé Lajkbus a été lancé le 10 février 2025 dans un quartier périphérique de Cracovie mal desservi par le bus, le tram et le train. Les usagers réservent une place partagée avec une appli et sont pris en charge près de chez eux.",
             "details": [
               "Zone desservie : un quartier périphérique d'environ 6 500 habitants, avec un faible accès aux transports en commun.",
               "Réservation via une appli simple ; flotte de minibus partagés floqués Lajkbus / KMK.",
@@ -3323,7 +3273,7 @@
             "id": "parking-restriction-park-ride",
             "type": "push",
             "title": "Des parkings relais pour limiter la voiture",
-            "summary": "Dans le cadre de son plan de mobilité urbaine durable (SUMP), Larnaca prévoit de réduire fortement le stationnement en centre-ville et de construire des parkings relais — des P+R — en périphérie, pour que les automobilistes puissent se garer et continuer en transports en commun. Ce projet dépasse le calendrier de SUM : les sites ont été choisis et modélisés, mais rien n'était encore construit à la réunion d'évaluation.",
+            "summary": "Dans le cadre de son plan de mobilité urbaine durable (SUMP), Larnaca prévoit de réduire fortement le stationnement en centre-ville et de construire des parkings relais 'P+R' en périphérie, pour que les automobilistes puissent se garer et continuer en transports en commun. Ce projet dépasse le calendrier de SUM : les sites ont été choisis et modélisés, mais rien n'était encore construit à la réunion d'évaluation.",
             "details": [
               "Le SUMP de Larnaca vise à réduire de 80 % le stationnement en voirie dans le centre (contre 494 places aujourd'hui) et de 30 % le stationnement hors voirie (contre 2 199 places).",
               "Deux sites candidats pour un parking relais ont été choisis et visualisés, à Kalo Chorio et à Aradippou.",
@@ -3494,7 +3444,7 @@
         "results": [
           "Étude 2025 : une voiture en autopartage remplace 23 voitures particulières à Munich.",
           "Sur 215 usagers de l'autopartage interrogés, 58 % disent que les places réservées les aident régulièrement, souvent ou toujours à trouver une place ; plus de la moitié trouvent encore le stationnement parfois à toujours difficile en général.",
-          "Seuls 4,4 % des trajets en autopartage commencent ou finissent à plus de 500 m d'un arrêt de transport en commun (sur 1 113 arrêts analysés dans 1 189 hexagones de la ville) — l'autopartage complète déjà bien le réseau, même si seuls 5 à 9 % des trajets combinent souvent ou toujours autopartage et transports en commun.",
+          "Seuls 4,4 % des trajets en autopartage commencent ou finissent à plus de 500 m d'un arrêt de transport en commun (sur 1 113 arrêts analysés dans 1 189 hexagones de la ville). L'autopartage complète déjà bien le réseau, même si seuls 5 à 9 % des trajets combinent souvent ou toujours autopartage et transports en commun.",
           "Une simulation de covoiturage à la demande, utilisant les places d'autopartage comme points de prise en charge, montre que 36,6 % des trajets directs en centre-ville pourraient être partagés, surtout aux heures de pointe."
         ],
         "notDone": [
@@ -3540,7 +3490,7 @@
             "id": "flexible-transport-cernache",
             "type": "pull",
             "title": "Un bus flexible pour Cernache",
-            "summary": "Un service de transport flexible a été mis en place à Cernache, commune périphérique peu dense : itinéraires et horaires fixes aux heures de pointe, service à la demande — un DRT — en dehors, reliant les habitants au pôle de mobilité de Casconha et au reste du réseau.",
+            "summary": "Un service de transport flexible a été mis en place à Cernache, commune périphérique peu dense : itinéraires et horaires fixes aux heures de pointe, service à la demande (un DRT) en dehors, reliant les habitants au pôle de mobilité de Casconha et au reste du réseau.",
             "details": [
               "En service de septembre 2024 à mai 2026, avec la Municipalité de Coimbra, la SMTUC et la Junte de paroisse de Cernache.",
               "Minibus adaptés pour l'accessibilité ; service destiné en priorité aux personnes âgées et éloignées du numérique.",
@@ -3618,7 +3568,7 @@
             "id": "fare-integration-move-c",
             "type": "pull",
             "title": "Move-C, un billet pour bus, BRT et train",
-            "summary": "La région de Coimbra a lancé Move-C, une carte tarifaire intermodale unique utilisable sur les bus de la SMTUC et le nouveau Metrobus (BRT — un bus à haut niveau de service), pour faciliter les correspondances entre modes.",
+            "summary": "La région de Coimbra a lancé Move-C, une carte tarifaire intermodale unique utilisable sur les bus de la SMTUC et le nouveau Metrobus (BRT un bus à haut niveau de service), pour faciliter les correspondances entre modes.",
             "details": [
               "Mise en place ; le tarif intégré a démarré en janvier 2026 pour la SMTUC et le BRT.",
               "Reste à intégrer : l'opérateur de cars intercommunaux et la compagnie ferroviaire nationale.",
@@ -3830,7 +3780,7 @@
             "title": "Une appli tous-modes avec FreeNow",
             "summary": "Depuis janvier 2025, l'appli FreeNow couvre aussi les vélos électriques partagés de Penteli, à côté des VTC, offrant aux habitants une seule appli pour planifier et payer des trajets combinant plusieurs modes.",
             "details": [
-              "Première intégration MaaS — une appli qui réunit tous les transports — jamais proposée à Penteli.",
+              "Première intégration MaaS (une appli qui réunit tous les transports) jamais proposée à Penteli.",
               "Combine VTC, réservation de vélos électriques et information de trajet numérique dans une seule appli.",
               "Plus de 100 clics enregistrés pour réserver un vélo électrique et plus de 50 pour télécharger l'appli depuis la page de lancement.",
               "Une carte web publique du réseau de transport de Penteli a été publiée par le NTUA."

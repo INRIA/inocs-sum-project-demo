@@ -128,7 +128,7 @@ export default function Journey({ content }: { content: Content }) {
       </div>
 
       <section className={"panel open" + (noanim ? " noanim" : "")} aria-label="Ressources de l'arrêt">
-        <div className="grip"><button type="button" aria-label={tall ? "Réduire le panneau" : "Agrandir le panneau"} title={tall ? "Réduire" : "Agrandir"} onClick={() => setTall((t) => !t)}>{tall ? "›" : "‹"}</button></div>
+        <div className="grip"><button type="button" aria-label={tall ? "Réduire le panneau" : "Agrandir le panneau"} title={tall ? "Réduire" : "Agrandir"} onClick={() => setTall((t) => !t)}>{tall ? "‹" : "›"}</button></div>
 
         {view === "intro" && <Intro content={content} onStart={() => stops[0] && go(stops[0].id)} onChoose={showLegend} />}
         {view === "conseil" && <Conseil content={content} visited={visited} onGo={go} onReset={reset} />}
