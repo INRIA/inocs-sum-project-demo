@@ -31,6 +31,11 @@ export default function CityStory({ city, block, measureId }: Props) {
       {city.context && <p>{city.context}</p>}
 
       <h4 className="sub">Ce que la ville a fait</h4>
+      <div className="slegend">
+        {(["push", "pull"] as const).map((t) => (
+          <span key={t} className="lg"><span className={"badge " + t}>{block.measureTypes[t].label}</span> {block.measureTypes[t].description}</span>
+        ))}
+      </div>
       <ol className="steps">
         {city.measures.map((m, i) => {
           const imgs = m.images || [];
@@ -64,6 +69,12 @@ export default function CityStory({ city, block, measureId }: Props) {
         <>
           <h4 className="sub">Ce qui s'est passé</h4>
           <ul className="items">{city.results.map((r, i) => <li key={i}>{r}</li>)}</ul>
+        </>
+      )}
+      {city.keep && (
+        <>
+          <h4 className="sub">Ce qu'on retient</h4>
+          <p className="keep">{city.keep}</p>
         </>
       )}
       {city.notDone && city.notDone.length > 0 && (

@@ -1,0 +1,22 @@
+/* Histoire d'une ville : la légende contrainte/incitation et la phrase « Ce qu'on retient ». */
+
+/* Légende compacte sous « Ce que la ville a fait » : même écriture que .clegend des cartes Villes. */
+.story .slegend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); margin: -4px 0 2px; }
+.story .slegend .lg { display: inline-flex; align-items: center; gap: 6px; }
+
+/* La leçon qu'un maire rapporte chez lui. */
+.story .keep {
+  background: var(--sum-green-soft);
+  border-left: 4px solid var(--sum-green);
+  border-radius: 8px;
+  max-width: none;  /* pleine largeur, comme les listes de résultats */
+  padding: 10px 14px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--sum-blue-deep);
+}
+
+@media (max-width: 640px) {
+  .story .slegend { gap: 6px 14px; }
+  .story .slegend .lg { align-items: flex-start; }
+}

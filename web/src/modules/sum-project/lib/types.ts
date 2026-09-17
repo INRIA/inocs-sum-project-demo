@@ -79,7 +79,9 @@ export type CityItem = {
   id: string; name: string; country: string; flag: string; role: string;
   tagline: string; context?: string; odpUrl?: string;
   hero?: Img;  // la photo qui représente la ville (bandeau de l'arrêt 1)
-  modalSplit?: ModalSplit | null; measures: CityMeasure[]; results?: string[]; notDone?: string[];
+  modalSplit?: ModalSplit | null; measures: CityMeasure[]; results?: string[];
+  keep?: string;  // la leçon qu'un maire rapporte chez lui, une phrase
+  notDone?: string[];
 };
 export type CitiesBlock = {
   title: string; intro: string;
