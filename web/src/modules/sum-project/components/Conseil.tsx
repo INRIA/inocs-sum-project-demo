@@ -6,6 +6,7 @@ import type { Content } from "../lib/types";
 // le score du jeu de tri, les quatre messages, puis une seule action principale (plateforme de données).
 const nb = (s: string) => s.replace(/ ([?!:;])/g, " $1");
 const SORT_KEY = (id: string) => `sum-sort:${id}`;
+const REFLECT_KEY = (id: string) => `sum-sort:reflect:${id}`;
 
 type Props = {
   content: Content;
@@ -25,6 +26,8 @@ export default function Conseil({ content, visited, onGo, onReset, actions }: Pr
 
   // Le score du Belvédère est gardé par appareil : on le relit ici (jamais au rendu serveur).
   const [sc, setSc] = useState<{ score: number; revealed: boolean } | null>(null);
+  // « Ce qui m'a le plus surpris » : le choix fait au Belvédère est rejoué ici.
+  const [reflect, setReflect] = useState<string | null>(null);
   useEffect(() => {
     if (!sortStop) return;
     try {
@@ -33,7 +36,9 @@ export default function Conseil({ content, visited, onGo, onReset, actions }: Pr
       const placed: Record<string, string> = (saved && saved.placed) || {};
       setSc({ score: cards.filter((k) => placed[k.id] === k.verdict).length, revealed: !!(saved && saved.revealed) });
     } catch { setSc(null); }
+    try { setReflect(sessionStorage.getItem(REFLECT_KEY(sortStop.id))); } catch { setReflect(null); }
   }, [sortStop, cards]);
+  const reflectBin = (sortStop?.game?.sort?.bins || []).find((b) => b.id === reflect) || null;
 
   return (
     <>
@@ -75,6 +80,11 @@ export default function Conseil({ content, visited, onGo, onReset, actions }: Pr
                 <p className="none">
                   Partie non terminée{" "}: passez au{" "}
                   <a href={`#/${sortStop.id}`}>{sortStop.place}, arrêt {sortStop.order}</a>
+                </p>
+              )}
+              {reflectBin && (
+                <p className="surprise">
+                  Ce qui vous a le plus surpris{"\u00A0"}: <b><span aria-hidden="true">{reflectBin.emoji}</span> {reflectBin.label}</b>
                 </p>
               )}
             </section>

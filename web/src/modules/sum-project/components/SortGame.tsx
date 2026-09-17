@@ -13,6 +13,10 @@ type Props = {
 type Saved = { placed: Record<string, string>; revealed: boolean };
 
 const KEY = (id: string) => `sum-sort:${id}`;
+// « Ce qui m'a le plus surpris » : un seul tapis, rejoué au conseil municipal.
+// Le préfixe « sum-sort: » est volontaire : « Nouvelle partie » efface déjà toutes ces clés.
+const RKEY = (id: string) => `sum-sort:reflect:${id}`;
+const loadReflect = (id: string): string | null => { try { return sessionStorage.getItem(RKEY(id)); } catch { return null; } };
 const load = (id: string): Saved => {
   try { const raw = sessionStorage.getItem(KEY(id)); if (raw) return JSON.parse(raw); } catch {}
   return { placed: {}, revealed: false };
@@ -24,9 +28,15 @@ export default function SortGame({ stopId, def, stops, reveal, sel, onOpen, crum
   const [revealed, setRevealed] = useState(false);
   const [trueSort, setTrueSort] = useState(false);
   const [ready, setReady] = useState(false);
+  const [reflect, setReflect] = useState<string | null>(null);
+  const [pulse, setPulse] = useState<{ bin: string; n: number } | null>(null);
 
-  useEffect(() => { const s = load(stopId); setPlaced(s.placed); setRevealed(s.revealed); setReady(true); }, [stopId]);
+  useEffect(() => { const s = load(stopId); setPlaced(s.placed); setRevealed(s.revealed); setReflect(loadReflect(stopId)); setReady(true); }, [stopId]);
   useEffect(() => { if (ready) save(stopId, { placed, revealed }); }, [ready, stopId, placed, revealed]);
+  useEffect(() => {
+    if (!ready) return;
+    try { if (reflect) sessionStorage.setItem(RKEY(stopId), reflect); else sessionStorage.removeItem(RKEY(stopId)); } catch {}
+  }, [ready, stopId, reflect]);
 
   const bins = def.bins, cards = def.cards;
   const binOf = (id: string) => bins.find((b) => b.id === id);
@@ -41,9 +51,21 @@ export default function SortGame({ stopId, def, stops, reveal, sel, onOpen, crum
   const yours = (b: SortBin) => cards.filter((c) => placed[c.id] === b.id).length;
   const truth = (b: SortBin) => cards.filter((c) => c.verdict === b.id).length;
 
-  const place = (cardId: string, binId: string) => setPlaced((p) => ({ ...p, [cardId]: binId }));
+  // Poser une carte : le tapis concerné clignote une fois dans la barre collante (retour visible sur téléphone).
+  const place = (cardId: string, binId: string) => {
+    setPlaced((p) => ({ ...p, [cardId]: binId }));
+    setPulse((q) => ({ bin: binId, n: (q?.n || 0) + 1 }));
+  };
   const unplace = (cardId: string) => setPlaced((p) => { const n = { ...p }; delete n[cardId]; return n; });
-  const restart = () => { setPlaced({}); setRevealed(false); setTrueSort(false); };
+  const restart = () => { setPlaced({}); setRevealed(false); setTrueSort(false); setReflect(null); setPulse(null); };
+  const calm = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const goMat = (binId: string) => {
+    const mat = document.getElementById("mat-" + binId);
+    if (!mat) return;
+    const bar = document.getElementById("sort-bar");
+    if (bar) mat.style.scrollMarginTop = bar.offsetHeight + 10 + "px"; // la barre collante change de hauteur selon l'écran
+    mat.scrollIntoView({ block: "start", behavior: calm() ? "auto" : "smooth" });
+  };
   // Au retournement, on ramène les tapis sous la barre de score : le retournement des cartes est le moment du jeu.
   const doReveal = () => {
     setRevealed(true);
@@ -85,7 +107,6 @@ export default function SortGame({ stopId, def, stops, reveal, sel, onOpen, crum
       })()}
 
       <div className="sortintro">
-        <div className="k">Le jeu</div>
         {def.message && <p className="msg">{def.message}</p>}
         {def.howto && <p className="how">{def.howto}</p>}
       </div>
@@ -107,13 +128,26 @@ export default function SortGame({ stopId, def, stops, reveal, sel, onOpen, crum
             </button>
           </>
         )}
+        {/* Téléphone : les trois tapis en pastilles, comptage en direct, un toucher pour y aller. */}
+        <div className="matstrip" role="group" aria-label="Aller à un tapis">
+          {bins.map((b) => {
+            const n = inBin(b).length;
+            return (
+              <button key={b.id + "-" + (pulse?.bin === b.id ? pulse.n : 0)} type="button"
+                      className={"mpill " + b.tone + (pulse?.bin === b.id ? " pulse" : "")}
+                      onClick={() => goMat(b.id)} aria-label={`${b.label}\u00A0: ${n} cartes — aller au tapis`}>
+                <span className="emoji" aria-hidden="true">{b.emoji}</span><span className="n">{n}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="mats" id="sort-mats">
         {bins.map((b) => {
           const list = inBin(b);
           return (
-            <section key={b.id} className={"mat " + b.tone} aria-label={b.label}>
+            <section key={b.id} id={"mat-" + b.id} className={"mat " + b.tone} aria-label={b.label}>
               <header><span className="emoji" aria-hidden="true">{b.emoji}</span><span>{b.label}</span><span className="count" aria-label={`${list.length} cartes`}>{list.length}</span></header>
               <div className="slot">
                 {list.length === 0 && <div className="ph">{b.hint || "Posez une carte ici"}</div>}
@@ -186,6 +220,21 @@ export default function SortGame({ stopId, def, stops, reveal, sel, onOpen, crum
           </div>
           {reveal && reveal.lines.length > 0 && <ul className="lines">{reveal.lines.map((l, i) => <li key={i}>{l}</li>)}</ul>}
           {reveal?.source?.report && <div className="src light">Source : rapport {reveal.source.report}</div>}
+        </section>
+      )}
+
+      {revealed && (
+        <section className="reflect" aria-label="Ce qui m'a le plus surpris">
+          <div className="k">Ce qui m'a le plus surpris{"\u00A0"}:</div>
+          <div className="rbtns" role="group" aria-label="Choisir un tapis">
+            {bins.map((b) => (
+              <button key={b.id} type="button" className={"rbtn " + b.tone + (reflect === b.id ? " on" : "")}
+                      aria-pressed={reflect === b.id}
+                      onClick={() => setReflect((r) => (r === b.id ? null : b.id))}>
+                <span className="emoji" aria-hidden="true">{b.emoji}</span>{b.short}
+              </button>
+            ))}
+          </div>
         </section>
       )}
 
