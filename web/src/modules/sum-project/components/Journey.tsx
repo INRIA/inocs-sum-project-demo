@@ -5,6 +5,7 @@ import CityMap from "./CityMap";
 import StopPanel from "./StopPanel";
 import Intro from "./Intro";
 import Conseil from "./Conseil";
+import Ticket from "./Ticket";
 
 const VKEY = "sum-visited";      // arrêts déjà ouverts, par appareil (sessionStorage : remis à zéro d'un groupe à l'autre)
 const LKEY = "sum-layout";       // affichage préféré de l'appareil (localStorage : gardé d'un groupe à l'autre)
@@ -289,6 +290,8 @@ export default function Journey({ content }: { content: Content }) {
               {parts.length > 0 && (
                 <div className="brief"><b>Table {stop.order}</b>{parts.map((p) => " · " + p).join("")}</div>
               )}
+              {/* Le billet : une ligne fine, les arrêts déjà tamponnés restent sous les yeux d'un arrêt à l'autre. */}
+              <Ticket stops={stops} visited={visited} activeId={stop.id} onSelect={(id) => go(id)} />
             </header>
             <div className="sheet-body">
               <StopPanel stop={stop} content={content} resId={resId} onOpen={(r) => go(stop.id, r)} />

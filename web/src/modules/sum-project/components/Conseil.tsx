@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { Content } from "../lib/types";
 import Glossary from "./Glossary";
+import Ticket from "./Ticket";
 
 // Écran de clôture : « Le conseil municipal » (route #/conseil). Rejoue le trajet (billet tamponné),
 // le score du jeu de tri, les quatre messages, puis une seule action principale (plateforme de données).
@@ -54,23 +55,8 @@ export default function Conseil({ content, visited, onGo, onReset, actions }: Pr
       </header>
       <div className="sheet-body">
         <div className="conseil">
-          <section aria-label="Votre trajet">
-            <div className="csec-title">Votre trajet</div>
-            <ol className="ticket">
-              {stops.map((s) => {
-                const v = visited.has(s.id);
-                return (
-                  <li key={s.id}>
-                    <button type="button" className={"trow" + (v ? " on" : "")} onClick={() => onGo(s.id)}>
-                      <span className="n">{s.order}</span>
-                      <span className="pl">{s.place}</span>
-                      <span className="stamp">{v ? "✓ visité" : "pas encore"}</span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ol>
-          </section>
+          {/* Le même billet que dans l'en-tête des arrêts, en grand : le trajet se rejoue sur l'objet déjà connu. */}
+          <Ticket stops={stops} visited={visited} activeId="conseil" onSelect={(id) => onGo(id)} big />
 
           {sortStop && (
             <section className="scorebox" aria-label={`Votre score au ${sortStop.place}`}>

@@ -709,20 +709,57 @@ td.e { font-size: 22px; }
 /* ---------- Conseil municipal (#/conseil) ---------- */
 .conseil { display: grid; gap: 20px; max-width: 70ch; }
 .conseil section { display: grid; gap: 8px; }
-.ticket { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-.ticket .trow {
-  width: 100%; min-height: 48px; display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 10px;
-  text-align: left; padding: 6px 12px 6px 8px; border: 2px dashed var(--line); border-radius: 10px; background: var(--card);
+/* ---------- Le billet : six cases qui se tamponnent au passage ----------
+   Le même objet du début à la fin : une ligne fine dans l'en-tête d'un arrêt,
+   le billet en grand sur l'écran de clôture (.ticket.big). */
+.ticket .tkstrip { display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; }
+.ticket .tkrow { list-style: none; margin: 0; padding: 0; display: flex; align-items: flex-start; gap: 6px; }
+.ticket .tk { position: relative; display: grid; justify-items: center; gap: 3px; padding: 0; border: 0; background: transparent; }
+.ticket .tk .d {
+  width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  border: 2px dashed var(--line); background: #fff; color: var(--muted);
+  font-family: var(--display); font-weight: 800; font-size: 13px; line-height: 1;
 }
-.ticket .trow:hover { border-color: var(--sum-blue); }
-.ticket .trow .n { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
-  background: var(--sum-blue); color: #fff; font-family: var(--display); font-weight: 800; font-size: 14px; }
-.ticket .trow .pl { font-family: var(--display); font-weight: 700; color: var(--sum-blue-deep); }
-.ticket .trow .stamp { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--muted); border: 1.5px dashed var(--line); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
-.ticket .trow.on { border-style: solid; border-color: var(--sum-green); background: var(--sum-green-soft); }
-.ticket .trow.on .n { background: var(--sum-green-deep); }
-.ticket .trow.on .stamp { color: var(--sum-green-deep); border-color: var(--sum-green-deep); border-style: solid; background: #fff; transform: rotate(-2deg); }
+/* tamponné : le coup de tampon en caoutchouc, légèrement de travers */
+.ticket .tk.on .d { border: 2.5px solid var(--sum-green-deep); background: var(--sum-green-soft); color: var(--sum-green-deep); transform: rotate(-6deg); }
+/* là où l'on est : la case est cerclée */
+.ticket .tk.cur .d { border-style: solid; border-color: var(--sum-blue); color: var(--sum-blue); box-shadow: 0 0 0 3px var(--sum-blue-soft); }
+.ticket .tk.on.cur .d { border-color: var(--sum-green-deep); color: var(--sum-green-deep); box-shadow: 0 0 0 3px rgba(150,186,62,.45); }
+.ticket .tk.fin .d { font-size: 14px; }
+.ticket .tk:hover .d { border-color: var(--sum-blue); }
+@keyframes tkstamp { 0% { transform: scale(1.7) rotate(-16deg); opacity: .2; } 60% { transform: scale(.92) rotate(-6deg); opacity: 1; } 100% { transform: rotate(-6deg); } }
+@media (prefers-reduced-motion: no-preference) { .ticket .tk.fresh .d { animation: tkstamp .5s ease-out; } }
+/* les deux souvenirs du Belvédère : le score et ce qui a le plus surpris */
+.ticket .tkb { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ticket .tkb .b {
+  display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; background: #fff;
+  border: 1.5px solid var(--line); border-radius: 999px; padding: 4px 9px;
+  font-family: var(--display); font-weight: 700; font-size: 12px; line-height: 1; color: var(--muted);
+}
+.ticket .tkb .b b { font-size: 13px; color: var(--sum-blue-deep); font-variant-numeric: tabular-nums; }
+.ticket .tkb .b.emo { font-size: 14px; }
+.ticket .tkb .l { display: none; }
+/* sur grand écran l'en-tête a la place d'écrire ce que valent les deux souvenirs */
+@media (min-width: 861px) { .sheet-head .ticket .tkb .l { display: inline; } }
+
+/* Dans l'en-tête d'un arrêt : une quatrième ligne fine, discrète, alignée à droite. */
+.sheet-head .ticket { grid-column: 1 / -1; justify-self: end; margin: 1px 0 3px; }
+/* 28 px à l'œil, 44 px sous le doigt */
+.sheet-head .ticket .tk::after { content: ""; position: absolute; left: -3px; right: -3px; top: -8px; height: 44px; }
+
+/* Sur l'écran de clôture : le billet en grand, le lieu sous chaque case. */
+.ticket.big { display: grid; gap: 10px; padding: 14px 16px; border: 2px dashed var(--sum-blue); border-radius: 14px; background: var(--paper); }
+.ticket.big .tkstrip { align-items: flex-start; gap: 12px 14px; }
+.ticket.big .tkrow { gap: 8px; flex-wrap: wrap; }
+.ticket.big .tk { width: 68px; gap: 6px; }
+.ticket.big .tk .d { width: 56px; height: 56px; font-size: 22px; border-width: 3px; }
+.ticket.big .tk.fin .d { font-size: 24px; }
+.ticket.big .tk .pl { font-family: var(--display); font-weight: 700; font-size: 12px; line-height: 1.15; text-align: center; color: var(--muted); }
+.ticket.big .tk.on .pl { color: var(--sum-green-deep); }
+.ticket.big .tk.cur .pl { color: var(--sum-blue-deep); }
+.ticket.big .tkb .b { font-size: 14px; padding: 8px 12px; }
+.ticket.big .tkb .b.emo { font-size: 17px; }
+.ticket.big .tkb .l { display: inline; font-size: 13px; font-weight: 700; color: var(--muted); }
 
 .scorebox { background: var(--sum-blue-soft); border-radius: 12px; padding: 14px 16px; }
 .scorebox .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sum-blue); }
@@ -749,6 +786,7 @@ td.e { font-size: 22px; }
     max-width: none; padding-bottom: 4px; scrollbar-width: none; }
   .legend::-webkit-scrollbar { display: none; }
   .legend button { flex: none; }
+  .sheet-head .ticket { justify-self: start; }
   .sheet-head h2 .sticker { font-size: 12px; padding: 6px 10px; margin-left: 8px; }
   .intro .stake { padding: 12px 14px; }
   .introcta .iconbtn { width: 100%; justify-content: center; text-align: center; }
@@ -759,8 +797,9 @@ td.e { font-size: 22px; }
   .hubsteps { display: grid; }
 }
 @media (max-width: 520px) {
-  .ticket .trow { grid-template-columns: 28px minmax(0, 1fr); row-gap: 4px; }
-  .ticket .trow .stamp { grid-column: 2; justify-self: start; }
+  /* le billet en grand tient en deux rangées plutôt que de déborder */
+  .ticket.big { padding: 12px; }
+  .ticket.big .tk { width: 64px; }
 }
 
 /* ==========================================================================
@@ -811,6 +850,9 @@ td.e { font-size: 22px; }
 .presenter .anchors,
 .presenter .fcard .hint,
 .presenter .tent { display: none; }
+
+/* Le billet est un objet de visiteur : il disparaît de l'en-tête projeté (il reste au conseil municipal). */
+.presenter .sheet-head .ticket { display: none; }
 
 /* Une seule action évidente : « Suivant » devient un gros bouton. */
 .presenter .sheet-head .actions .iconbtn.primary { min-height: 52px; padding: 0 20px; font-size: 17px; }
