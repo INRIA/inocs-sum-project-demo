@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Échafaudage pas-à-pas des tables animées (Stepper.tsx)
+   Un seul rythme : l'étape en cours ouverte, les étapes faites repliées sur une
+   ligne, les suivantes verrouillées, puis un temps de réflexion à la fin.
+   ========================================================================== */
+
+.stepper {
+  display: grid; gap: 10px; margin-bottom: 16px;
+  padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--card);
+}
+
+/* Ligne d'avancement : « Étape 2 sur 4 », un trait fin, et « Recommencer ↺ » dès qu'on a commencé */
+.stepper .prog { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.stepper .prog .lbl { font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--sum-blue); white-space: nowrap; }
+.stepper .prog .track { flex: 1 1 90px; min-width: 70px; height: 4px; border-radius: 999px; background: var(--sum-blue-soft); overflow: hidden; }
+.stepper .prog .track span { display: block; height: 100%; background: var(--sum-green); border-radius: 999px; transition: width .25s ease; }
+.stepper .prog .ghost {
+  min-height: 44px; padding: 0 12px; border-radius: 999px; border: 1.5px solid var(--line); background: transparent;
+  color: var(--muted); font-family: var(--display); font-weight: 700; font-size: 13px; white-space: nowrap;
+}
+.stepper .prog .ghost:hover { border-color: var(--sum-blue); color: var(--sum-blue); background: #fff; }
+
+/* La liste des étapes */
+.stepper ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.stepper .step {
+  border: 1.5px solid var(--line); border-left: 4px solid var(--line); border-radius: 0 12px 12px 0;
+  background: var(--paper); padding: 10px 12px; transition: background .15s, border-color .15s, opacity .15s;
+}
+.stepper .step.current { background: #fff; border-color: var(--line); border-left-color: var(--sum-green); box-shadow: 0 6px 18px rgba(27,52,103,.08); }
+.stepper .step.done { border-left-color: var(--sum-green-deep); }
+.stepper .step.locked { border-left-color: var(--line); background: transparent; opacity: .55; }
+
+/* L'en-tête d'une étape : pastille 32 px, titre, pastille de minutage à droite */
+.stepper .head {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: 6px 10px;
+  width: 100%; margin: 0; padding: 0; border: 0; background: none; color: inherit; text-align: left; font: inherit;
+}
+.stepper .step.done .head { cursor: pointer; min-height: 44px; }
+.stepper .disc {
+  width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 800; font-size: 15px; line-height: 1;
+}
+.stepper .step.current .disc { background: var(--sum-blue); color: #fff; }
+.stepper .step.done .disc { background: var(--sum-green); color: #17230A; }
+.stepper .step.locked .disc { background: var(--block); color: var(--muted); font-size: 12px; }
+.stepper .step .t { font-family: var(--display); font-weight: 700; font-size: 16px; line-height: 1.2; color: var(--sum-blue-deep); min-width: 0; }
+.stepper .step.done .t { color: var(--muted); }
+.stepper .step.locked .t { color: var(--muted); }
+.stepper .step .chip.time { white-space: nowrap; justify-self: end; }
+
+/* Étape faite : le texte tient sur une ligne */
+.stepper .step .sum {
+  grid-column: 2 / -1; display: block; min-width: 0; font-size: 14px; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Étape en cours : le texte complet et une seule action visible */
+.stepper .step .body { margin: 8px 0 2px; padding-left: 42px; display: grid; gap: 10px; justify-items: start; }
+.stepper .step .body p { margin: 0; font-size: 15px; line-height: 1.4; max-width: 62ch; }
+.stepper .step .body p i { color: var(--muted); }
+.stepper .step .body .next { min-height: 44px; background: var(--sum-green); border-color: var(--sum-green-deep); color: #17230A; }
+
+/* La clôture : ce que la table retient */
+.stepper .reflect {
+  display: grid; gap: 8px; padding: 12px 14px; border-radius: 12px;
+  background: var(--sum-green-soft); border: 1.5px solid var(--sum-green);
+}
+.stepper .reflect h4 { font-size: 17px; font-weight: 800; color: var(--sum-green-deep); }
+.stepper .reflect .notice { border: 2px dashed var(--sum-blue); color: var(--sum-blue-deep); background: #fff; padding: 8px 12px; font-weight: 700; font-size: 14px; border-radius: 6px; }
+.stepper .reflect .hint { margin: 0; font-size: 14px; color: var(--muted); }
+
+@media (max-width: 520px) {
+  .stepper { padding: 12px 12px; }
+  .stepper .prog .track { flex-basis: 100%; order: 3; }
+  .stepper .step .t { font-size: 15px; }
+  .stepper .step .body { padding-left: 0; }
+  .stepper .step .body .next { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stepper .step, .stepper .prog .track span { transition: none; }
+}

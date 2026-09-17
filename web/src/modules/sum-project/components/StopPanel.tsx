@@ -7,6 +7,7 @@ import InfoCards from "./InfoCards";
 import Modal from "./Modal";
 import SortGame from "./SortGame";
 import CityStrip from "./CityStrip";
+import Stepper from "./Stepper";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
@@ -61,13 +62,18 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
     </div>
   );
 
+  // Table animée en mode « cartes » : l'échafaudage pas-à-pas remplace la liste numérotée des consignes.
+  const stepped = cardMode && stop.mode === "animated" && stop.instructions.length > 0;
+
   const consignes = (
     <>
-      <ol>
-        {stop.instructions.map((i) => (
-          <li key={i.step}>{i.title && <b>{i.title} — </b>}{i.text || <i>À compléter</i>}</li>
-        ))}
-      </ol>
+      {!stepped && (
+        <ol>
+          {stop.instructions.map((i) => (
+            <li key={i.step}>{i.title && <b>{i.title} — </b>}{i.text || <i>À compléter</i>}</li>
+          ))}
+        </ol>
+      )}
       {stop.rule && <div className="notice">♥ {stop.rule}</div>}
       {stop.questions && (
         <div className="qs">
@@ -90,11 +96,12 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
         <p className="q">{stop.question}</p>
         {cardMode && (
           <details className="consignes">
-            <summary>Consignes de la table</summary>
+            <summary>{stepped ? "Infos de la table" : "Consignes de la table"}</summary>
             <div className="cbody">{chips}{consignes}</div>
           </details>
         )}
       </div>
+      {stepped && <Stepper stopId={stop.id} steps={stop.instructions} rule={stop.rule} />}
       {secs.length >= 2 && (
         <nav className="anchors" aria-label="Sections de l'arrêt">
           {secs.map((s) => <button key={s.id} type="button" onClick={() => jump(s.id)}>{s.label}</button>)}
