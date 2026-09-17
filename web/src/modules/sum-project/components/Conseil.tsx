@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
 import type { Content } from "../lib/types";
 
 // Écran de clôture : « Le conseil municipal » (route #/conseil). Rejoue le trajet (billet tamponné),
@@ -11,9 +12,10 @@ type Props = {
   visited: Set<string>;
   onGo: (id: string | null, res?: string | null) => void;
   onReset: () => void;
+  actions?: ReactNode;
 };
 
-export default function Conseil({ content, visited, onGo, onReset }: Props) {
+export default function Conseil({ content, visited, onGo, onReset, actions }: Props) {
   const stops = content.stops;
   const c = content.journey.conclusion;
   const p = content.meta.project;
@@ -36,14 +38,13 @@ export default function Conseil({ content, visited, onGo, onReset }: Props) {
   return (
     <>
       <header className="sheet-head">
-        <div>
-          <div className="eyebrow">Fin du trajet</div>
-          <h2>{nb(c.title)}</h2>
-        </div>
+        <div className="eyebrow">Fin du trajet</div>
         <div className="actions">
-          {last && <button className="iconbtn" type="button" onClick={() => onGo(last.id)} title={last.place}>← {last.order}</button>}
+          {last && <button className="iconbtn" type="button" onClick={() => onGo(last.id)} title={last.place} aria-label={`Arrêt précédent\u00A0: ${last.place}`}>← {last.order}</button>}
+          {actions}
           <button className="iconbtn close" type="button" aria-label="Fermer" onClick={() => onGo(null)}>×</button>
         </div>
+        <h2>{nb(c.title)}</h2>
       </header>
       <div className="sheet-body">
         <div className="conseil">

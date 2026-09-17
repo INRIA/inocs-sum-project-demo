@@ -37,6 +37,30 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
 
   const crumb = `Arrêt ${stop.order} · ${stop.place}`;
   const via = r && [...(stop.cards || []), ...(stop.moreCards || [])].find((c) => c.resource === r.id);
+
+  // Les repères d'un arrêt long : on n'affiche la rangée que s'il y a au moins deux sections à atteindre.
+  const moreTitle = stop.moreTitle || "Pour aller plus loin";
+  const secs = [
+    cards.length > 0 ? { id: "sec-cards", label: "Cartes" } : null,
+    stop.cities ? { id: "sec-cities", label: "Neuf villes" } : null,
+    stop.moreCards && stop.moreCards.length > 0 ? { id: "sec-more", label: moreTitle } : null,
+    stop.cityStrip ? { id: "sec-strip", label: "Les villes" } : null,
+  ].filter(Boolean) as { id: string; label: string }[];
+  const jump = (id: string) => {
+    const el = document.getElementById(id); if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    try { el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); } catch { el.scrollIntoView(); }
+  };
+
+  const chips = (
+    <div className="chips">
+      <span className="chip">{modeLabel[stop.mode]}</span>
+      {stop.animator && <span className="chip blue">Animateur {stop.animator}</span>}
+      {stop.durationMin && <span className="chip blue">{stop.durationMin} min</span>}
+      {stop.capacity && <span className="chip blue">≤ {stop.capacity} pers.</span>}
+    </div>
+  );
+
   const consignes = (
     <>
       <ol>
@@ -60,21 +84,40 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
           <ResourceDetail r={r} />
         </Modal>
       )}
+
+      {/* La question de l'arrêt, et à sa droite les consignes de la table (repliées). */}
+      <div className="qrow">
+        <p className="q">{stop.question}</p>
+        {cardMode && (
+          <details className="consignes">
+            <summary>Consignes de la table</summary>
+            <div className="cbody">{chips}{consignes}</div>
+          </details>
+        )}
+      </div>
+      {secs.length >= 2 && (
+        <nav className="anchors" aria-label="Sections de l'arrêt">
+          {secs.map((s) => <button key={s.id} type="button" onClick={() => jump(s.id)}>{s.label}</button>)}
+        </nav>
+      )}
+
       {!cardMode && stop.images && stop.images.length > 0 && <Gallery images={stop.images} />}
       <div className={"rlist" + (cardMode ? " cards" : "") + (sort ? " full" : "")}>
-        <aside className={"tent" + (cardMode ? " compact" : "")}>
-          {!cardMode && <div className="headline">{stop.tableTent.headline}</div>}
-          <div className="subline">{stop.tableTent.subline}</div>
-          <div className="chips" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-            <span className="chip">{modeLabel[stop.mode]}</span>
-            {stop.animator && <span className="chip blue">Animateur {stop.animator}</span>}
-            {stop.durationMin && <span className="chip blue">{stop.durationMin} min</span>}
-            {stop.capacity && <span className="chip blue">≤ {stop.capacity} pers.</span>}
-          </div>
-          {cardMode ? <details className="consignes"><summary>Consignes de la table</summary>{consignes}</details> : consignes}
-          {!cardMode && stop.game?.tablet?.url && <a className="demo" href={/^https?:/.test(stop.game.tablet.url) ? stop.game.tablet.url : assetUrl(stop.game.tablet.url)} target="_blank" rel="noopener">Ouvrir la démo sur la tablette ↗</a>}
-          {!cardMode && stop.game?.note && <div className="notice soft">{stop.game.note}</div>}
-        </aside>
+        {cardMode ? (
+          !stop.brief && (
+            // sans brief dans l'en-tête, on garde la phrase du chevalet de table
+            <aside className="tent compact"><div className="subline">{stop.tableTent.subline}</div></aside>
+          )
+        ) : (
+          <aside className="tent">
+            <div className="headline">{stop.tableTent.headline}</div>
+            <div className="subline">{stop.tableTent.subline}</div>
+            {chips}
+            {consignes}
+            {stop.game?.tablet?.url && <a className="demo" href={/^https?:/.test(stop.game.tablet.url) ? stop.game.tablet.url : assetUrl(stop.game.tablet.url)} target="_blank" rel="noopener">Ouvrir la démo sur la tablette ↗</a>}
+            {stop.game?.note && <div className="notice soft">{stop.game.note}</div>}
+          </aside>
+        )}
 
         {cardMode ? (
           <>
@@ -87,10 +130,14 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
               </section>
             )}
             {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
-            {cards.length > 0 && <InfoCards cards={cards} onOpen={onOpen} />}
-            {stop.cities && <CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} />}
-            {stop.moreCards && stop.moreCards.length > 0 && <InfoCards cards={stop.moreCards} onOpen={onOpen} title={stop.moreTitle || "Pour aller plus loin"} columns={stop.id === "station" ? 2 : undefined} />}
-            {stop.cityStrip && <CityStrip strip={stop.cityStrip} cities={content.cities.items} />}
+            {cards.length > 0 && <div className="sec" id="sec-cards"><InfoCards cards={cards} onOpen={onOpen} /></div>}
+            {stop.cities && <div className="sec" id="sec-cities"><CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} /></div>}
+            {stop.moreCards && stop.moreCards.length > 0 && (
+              <div className="sec" id="sec-more">
+                <InfoCards cards={stop.moreCards} onOpen={onOpen} title={moreTitle} columns={stop.id === "station" ? 2 : undefined} />
+              </div>
+            )}
+            {stop.cityStrip && <div className="sec" id="sec-strip"><CityStrip strip={stop.cityStrip} cities={content.cities.items} /></div>}
           </>
         ) : (
           <div className="tiles">

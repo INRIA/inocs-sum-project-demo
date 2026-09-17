@@ -6,6 +6,7 @@ type Props = {
   stops: StopLite[]; activeId: string | null; onSelect: (id: string) => void;
   visited?: Set<string>;   // arrêts déjà ouverts : un petit tampon ✓ sur le disque
   atEnd?: boolean;         // écran du conseil municipal : le vélo va jusqu'au bout de la route
+  mini?: boolean;          // vignette (affichage « plein écran ») : pas d'étiquettes, des disques plus gros
 };
 
 // Route du vélo : une courbe qui traverse la ville de gauche à droite (viewBox 1400 × 620).
@@ -32,7 +33,7 @@ function Icon({ id }: { id: string }) {
   }
 }
 
-export default function CityMap({ stops, activeId, onSelect, visited, atEnd = false }: Props) {
+export default function CityMap({ stops, activeId, onSelect, visited, atEnd = false, mini = false }: Props) {
   const pathRef = useRef<SVGPathElement>(null);
   const bikeRef = useRef<SVGGElement>(null);
   const [pts, setPts] = useState<{ x: number; y: number }[]>([]);
@@ -87,7 +88,7 @@ export default function CityMap({ stops, activeId, onSelect, visited, atEnd = fa
   }, [activeId, atEnd, stops]);
 
   return (
-    <svg className="map" viewBox="0 0 1400 620" preserveAspectRatio="xMidYMid meet" role="group" aria-label={`Carte de la ville : ${stops.length} arrêts`}>
+    <svg className={"map" + (mini ? " mini" : "")} viewBox="0 0 1400 620" preserveAspectRatio="xMidYMid meet" role="group" aria-label={`Carte de la ville : ${stops.length} arrêts`}>
       <defs>
         <pattern id="win" width="14" height="14" patternUnits="userSpaceOnUse">
           <rect x="3" y="3" width="5" height="6" fill="#FFFFFF" opacity=".55" />
@@ -128,18 +129,22 @@ export default function CityMap({ stops, activeId, onSelect, visited, atEnd = fa
           <g key={s.id} className={"stop" + (active ? " active" : "")} transform={`translate(${p.x} ${p.y})`}
              onClick={() => onSelect(s.id)} role="button" tabIndex={0} aria-label={`Arrêt ${s.order} : ${s.place}${seen ? ", visité" : ""}`} aria-pressed={active}
              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(s.id); } }}>
-            <circle className="ring" r="30" />
-            <circle className="disc" r="30" filter="url(#soft)" />
-            <g color={active ? "#17230A" : "var(--sum-blue)"}><Icon id={s.id} /></g>
-            <g transform="translate(24 -24)"><circle r="12" fill="var(--sum-blue-deep)" /><text className="num" style={{ fontSize: 14, fill: "#fff" }}>{s.order}</text></g>
+            <circle className="ring" r={mini ? 46 : 30} />
+            <circle className="disc" r={mini ? 46 : 30} filter="url(#soft)" />
+            {mini
+              ? <text className="num" style={{ fontSize: 46 }}>{s.order}</text>
+              : <>
+                  <g color={active ? "#17230A" : "var(--sum-blue)"}><Icon id={s.id} /></g>
+                  <g transform="translate(24 -24)"><circle r="12" fill="var(--sum-blue-deep)" /><text className="num" style={{ fontSize: 14, fill: "#fff" }}>{s.order}</text></g>
+                </>}
             {seen && (
-              <g className="tick" transform="translate(22 22)" aria-hidden="true">
-                <circle r="12" fill="#fff" stroke="var(--sum-green-deep)" strokeWidth="3" />
-                <path d="M-5 0 L-1.5 4.5 L5.5 -4" fill="none" stroke="var(--sum-green-deep)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+              <g className="tick" transform={mini ? "translate(34 34)" : "translate(22 22)"} aria-hidden="true">
+                <circle r={mini ? 17 : 12} fill="#fff" stroke="var(--sum-green-deep)" strokeWidth="3" />
+                <path d="M-5 0 L-1.5 4.5 L5.5 -4" transform={mini ? "scale(1.4)" : undefined} fill="none" stroke="var(--sum-green-deep)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </g>
             )}
-            <text className="lbl" y={ly}>{s.place}</text>
-            <text className="lbl2" y={ly + 20}>{s.title}</text>
+            {!mini && <text className="lbl" y={ly}>{s.place}</text>}
+            {!mini && <text className="lbl2" y={ly + 20}>{s.title}</text>}
           </g>
         );
       })}
