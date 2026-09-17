@@ -8,8 +8,10 @@ export default function Masthead({ title, subtitle, logo }: { title: string; sub
         <div className="sub">{subtitle}</div>
       </div>
       <div className="tags">
-        <span className="tag"><span className="full">Nuit européenne des chercheurs 2026</span><span className="short">Nuit des chercheurs 2026</span></span>
+        <span className="tag"><span className="full">Nuit européenne des chercheurs 2026</span><span className="short">Nuit des chercheurs 2026</span><span className="tiny">Nuit 2026</span></span>
         <span className="tag ghost">INOCS · Inria</span>
+        {/* Emplacement laissé au parcours : Journey y greffe l'interrupteur « Présentateur » (portail React). */}
+        <div id="presenter-slot" />
       </div>
     </header>
   );

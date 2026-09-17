@@ -57,7 +57,7 @@ a { color: var(--sum-blue); }
 .masthead .tags { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .tag { white-space: nowrap; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; padding: 4px 9px; border-radius: 999px; background: var(--sum-green); color: #17230A; }
 .tag.ghost { background: transparent; color: #DCE3F5; border: 1px solid rgba(255,255,255,.35); }
-.tag .short { display: none; }
+.tag .short, .tag .tiny { display: none; }
 
 /* ---------- Map stage ---------- */
 .stage { position: relative; overflow: hidden; }
@@ -426,9 +426,13 @@ td.e { font-size: 22px; }
   .stage.plein .sheet-body { padding-bottom: 24px; }
   .sheet-head { padding: 8px 14px 10px; }
   .sheet-body { padding: 12px 14px 24px; }
-  .masthead { height: 56px; }
+  .masthead { height: 56px; gap: 10px; }
   .masthead .sub, .masthead .tag.ghost { display: none; }
-  .masthead .tag { white-space: normal; text-align: center; font-size: 9px; line-height: 1.15; max-width: 84px; }
+  /* rien ne dépasse de l'écran : le titre s'abrège, la pastille se comprime */
+  .masthead .title { gap: 0; }
+  .masthead h1 { flex-shrink: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; font-size: 20px; }
+  .masthead .tags { min-width: 0; flex-shrink: 1; }
+  .masthead .tag { white-space: normal; text-align: center; font-size: 9px; line-height: 1.15; max-width: 84px; min-width: 0; padding: 4px 7px; }
   .masthead .tag .full { display: none; }
   .masthead .tag .short { display: inline; }
 }
@@ -709,4 +713,79 @@ td.e { font-size: 22px; }
 @media (max-width: 520px) {
   .ticket .trow { grid-template-columns: 28px minmax(0, 1fr); row-gap: 4px; }
   .ticket .trow .stamp { grid-column: 2; justify-self: start; }
+}
+
+/* ==========================================================================
+   Mode présentateur (?mode=presentateur, touche « p ») : gros texte pour le
+   vidéoprojecteur, une seule action évidente, et tout le décor de table en moins.
+   La classe est posée sur <html> (pour le bandeau) et sur .stage.
+   ========================================================================== */
+
+/* L'interrupteur, greffé dans le bandeau : ce n'est pas un contrôle de visiteur, 32 px suffisent. */
+#presenter-slot { display: contents; }
+.masthead .prestoggle {
+  display: inline-flex; align-items: center; gap: 8px; flex: none; height: 32px; padding: 0 12px 0 8px;
+  border-radius: 999px; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #DCE3F5;
+  font-family: var(--display); font-weight: 700; font-size: 12px; line-height: 1; white-space: nowrap;
+}
+.masthead .prestoggle:hover { border-color: #fff; color: #fff; }
+.masthead .prestoggle .sw {
+  flex: none; position: relative; width: 28px; height: 16px; border-radius: 999px;
+  background: rgba(255,255,255,.3); transition: background .15s;
+}
+.masthead .prestoggle .sw::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%;
+  background: #fff; transition: transform .15s;
+}
+.masthead .prestoggle[aria-pressed="true"] { background: var(--sum-green); border-color: var(--sum-green); color: #17230A; }
+.masthead .prestoggle[aria-pressed="true"] .sw { background: rgba(23,35,10,.45); }
+.masthead .prestoggle[aria-pressed="true"] .sw::after { transform: translateX(12px); }
+@media (prefers-reduced-motion: reduce) { .masthead .prestoggle .sw, .masthead .prestoggle .sw::after { transition: none; } }
+
+/* L'échelle : +15 % sur tout le panneau, et le même rapport sur ce qui est figé en clamp(). */
+.presenter .panel { font-size: 115%; }
+.presenter .sheet-head h2 { font-size: clamp(23px, 2.07vw, 28px); }
+.presenter .fcard.info .n { font-size: clamp(39px, 3.9vw, 53px); }
+.presenter .fcard.info .n.long { font-size: clamp(30px, 2.76vw, 39px); }
+.presenter .challenge .q { font-size: clamp(25px, 2.76vw, 37px); }
+.presenter .csec-title { font-size: 15px; }
+.presenter .qrow .q { font-size: 18px; }
+/* l'échafaudage pas-à-pas est le corps de l'arrêt animé : il suit la même échelle (stepper.css est chargé après) */
+.presenter .stepper .step .t { font-size: 18px; }
+.presenter .stepper .step .body p { font-size: 17px; }
+.presenter .stepper .prog .lbl { font-size: 16px; }
+
+/* Le décor de table : hors de l'écran projeté. */
+.presenter .masthead .sub,
+.presenter .masthead .tag.ghost,
+.presenter .chip,
+.presenter .qrow .consignes,
+.presenter .anchors,
+.presenter .fcard .hint,
+.presenter .tent { display: none; }
+
+/* Une seule action évidente : « Suivant » devient un gros bouton. */
+.presenter .sheet-head .actions .iconbtn.primary { min-height: 52px; padding: 0 20px; font-size: 17px; }
+
+/* ==========================================================================
+   Téléphone étroit (390 px) : rien ne dépasse de l'écran.
+   ========================================================================== */
+@media (max-width: 520px) {
+  /* quatre boutons dans l'en-tête : le retour devient une icône, l'affichage passe la main à la vignette ⤢ */
+  .sheet-head .actions { gap: 4px; }
+  .sheet-head .actions .iconbtn { padding: 0 10px; }
+  .sheet-head .actions .layoutbtn { display: none; }
+  .sheet-head .actions .iconbtn.back { width: 44px; padding: 0; justify-content: center; font-size: 18px; }
+  .sheet-head .actions .iconbtn.back .ord { display: none; }
+}
+/* Téléphone : l'interrupteur n'a pas sa place dans un bandeau de 56 px — on passe par ?mode=presentateur. */
+@media (max-width: 860px) { .masthead .prestoggle { display: none; } }
+@media (max-width: 400px) {
+  .masthead { gap: 8px; }
+  .masthead .tag { white-space: nowrap; font-size: 9px; max-width: none; padding: 4px 6px; }
+  .masthead .tag .short { display: none; }
+  .masthead .tag .tiny { display: inline; }
+  /* la vignette de carte et son bouton ⤢ restent dans le bandeau */
+  .stage.plein .mapwrap { max-width: 100%; }
+  .mapzoom { right: 4px; }
 }

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type { Content, Stop } from "../lib/types";
 import CityMap from "./CityMap";
 import StopPanel from "./StopPanel";
@@ -7,7 +8,13 @@ import Conseil from "./Conseil";
 
 const VKEY = "sum-visited";      // arrêts déjà ouverts, par appareil (sessionStorage : remis à zéro d'un groupe à l'autre)
 const LKEY = "sum-layout";       // affichage préféré de l'appareil (localStorage : gardé d'un groupe à l'autre)
+const PKEY = "sum-presenter";    // mode présentateur de l'appareil (localStorage : gardé d'un groupe à l'autre)
 const CONSEIL = "conseil";       // route de l'écran de clôture : #/conseil
+
+// Paramètres d'URL, à mettre dans le QR ou le raccourci du poste :
+//   ?layout=carte|large|plein        l'affichage de départ (devient la préférence de l'appareil)
+//   ?mode=presentateur|visiteur      le mode de départ (devient la préférence de l'appareil ; touche « p » pour basculer)
+// Les deux l'emportent sur ce qui est gardé en mémoire ; sans eux, on reprend la préférence de l'appareil.
 
 // Trois affichages : la carte à droite, le panneau large, ou le plein écran avec la carte en vignette.
 export type Layout = "carte" | "large" | "plein";
@@ -36,6 +43,17 @@ export function LayoutButton({ layout, onCycle }: { layout: Layout; onCycle: () 
   );
 }
 
+// L'interrupteur « Présentateur » : greffé dans le bandeau (mode guidé = gros texte, écran épuré, flèches).
+function PresenterToggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
+  return (
+    <button type="button" className="prestoggle" aria-pressed={on} onClick={onToggle}
+            title="Mode présentateur : texte plus grand, écran épuré pour le vidéoprojecteur (touche P)">
+      <span className="sw" aria-hidden="true" />
+      <span className="lbl">Présentateur</span>
+    </button>
+  );
+}
+
 // La ligne de brief sous le titre : table, animateur, durée, capacité, puis « Ici, vous… ».
 function briefParts(stop: Stop): string[] {
   const p: string[] = [];
@@ -52,6 +70,8 @@ export default function Journey({ content }: { content: Content }) {
   const [resId, setResId] = useState<string | null>(null);
   const [view, setView] = useState<"intro" | "stop" | "conseil">("intro");
   const [layout, setLayout] = useState<Layout>("carte");
+  const [presenter, setPresenter] = useState(false);   // mode guidé (vidéoprojecteur) ; relu au montage
+  const [slot, setSlot] = useState<HTMLElement | null>(null);  // l'emplacement laissé par le bandeau (rendu par Astro)
   const [visited, setVisited] = useState<Set<string>>(() => new Set());
   const [noanim, setNoanim] = useState(true);  // arrivée directe (QR) : pas de glissement du tiroir
   const legendRef = useRef<HTMLElement | null>(null);
@@ -85,6 +105,23 @@ export default function Journey({ content }: { content: Content }) {
       return n;
     });
   }, []);
+  const togglePresenter = useCallback(() => {
+    setPresenter((p) => {
+      const n = !p;
+      try { localStorage.setItem(PKEY, n ? "1" : "0"); } catch {}
+      return n;
+    });
+  }, []);
+
+  // Le mode teint la scène et la racine : le bandeau (hors React) peut se mettre au diapason.
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle("presenter", presenter);
+    return () => root.classList.remove("presenter");
+  }, [presenter]);
+
+  // L'interrupteur va se loger dans le bandeau rendu par Astro (pas d'îlot supplémentaire).
+  useEffect(() => { setSlot(document.getElementById("presenter-slot")); }, []);
 
   // routes : #/<stop>, #/<stop>/<ressource> (QR-ables) et #/conseil ; sans hash, le hub montre l'intro
   const apply = useCallback(() => {
@@ -97,15 +134,28 @@ export default function Journey({ content }: { content: Content }) {
 
   useEffect(() => {
     const direct = !!parseHash().stop;
+    const qs = new URLSearchParams(location.search);
 
-    // Affichage : ?layout=carte|large|plein l'emporte (et devient la préférence de l'appareil),
-    // sinon la préférence gardée, sinon « plein » quand on arrive droit sur un arrêt (QR à la table).
+    // Mode : ?mode=presentateur|visiteur l'emporte (et devient la préférence de l'appareil), sinon la préférence gardée.
+    let pres = false;
+    try { pres = localStorage.getItem(PKEY) === "1"; } catch {}
+    const m = qs.get("mode");
+    if (m === "presentateur" || m === "visiteur") {
+      pres = m === "presentateur";
+      try { localStorage.setItem(PKEY, pres ? "1" : "0"); } catch {}
+    }
+    if (pres) setPresenter(true);
+
+    // Affichage : ?layout=carte|large|plein l'emporte (et devient la préférence de l'appareil), sinon la préférence
+    // gardée, sinon « large » en présentateur (le texte prime sur la carte), sinon « plein » quand on arrive droit
+    // sur un arrêt (QR à la table).
     let want: Layout = "carte";
     let stored: string | null = null;
     try { stored = localStorage.getItem(LKEY); } catch {}
-    const q = new URLSearchParams(location.search).get("layout");
+    const q = qs.get("layout");
     if (isLayout(q)) { want = q; try { localStorage.setItem(LKEY, q); } catch {} }
     else if (isLayout(stored)) want = stored;
+    else if (pres) want = "large";
     else if (direct) want = "plein";
     if (want !== "carte") setLayout(want);
 
@@ -133,20 +183,22 @@ export default function Journey({ content }: { content: Content }) {
         if (resId) go(stopId, null); else if (view !== "intro") go(null);
         return;
       }
-      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      const arrow = e.key === "ArrowLeft" || e.key === "ArrowRight";
+      if (!arrow && e.key !== "p") return;
       if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
-      // pas de navigation quand une fiche est ouverte, ni depuis un champ de saisie
+      // pas de navigation ni de bascule quand une fiche est ouverte, ni depuis un champ de saisie
       if (resId || document.querySelector(".modal-backdrop")) return;
       const t = e.target as HTMLElement | null;
       const tag = (t?.tagName || "").toLowerCase();
       if (tag === "input" || tag === "textarea" || tag === "select" || t?.isContentEditable) return;
+      if (!arrow) { e.preventDefault(); togglePresenter(); return; }   // « p » : présentateur ⇄ visiteur
       if (view !== "stop") return;
       if (e.key === "ArrowLeft" && prev) { e.preventDefault(); go(prev.id); }
       if (e.key === "ArrowRight") { e.preventDefault(); go(next ? next.id : CONSEIL); }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [resId, stopId, view, go, prev, next]);
+  }, [resId, stopId, view, go, prev, next, togglePresenter]);
 
   // « Je suis à une table » : on amène les pastilles sous les yeux (et le clavier dessus).
   // En plein écran les pastilles sont cachées : on revient d'abord à l'affichage « carte ».
@@ -170,7 +222,7 @@ export default function Journey({ content }: { content: Content }) {
       const kill: string[] = [];
       for (let i = 0; i < sessionStorage.length; i++) {
         const k = sessionStorage.key(i);
-        if (k && k.startsWith("sum-sort:")) kill.push(k);
+        if (k && (k.startsWith("sum-sort:") || k.startsWith("sum-steps:"))) kill.push(k);
       }
       kill.forEach((k) => sessionStorage.removeItem(k));
     } catch {}
@@ -183,7 +235,8 @@ export default function Journey({ content }: { content: Content }) {
   const parts = stop ? briefParts(stop) : [];
 
   return (
-    <div className={"stage " + layout}>
+    <div className={"stage " + layout + (presenter ? " presenter" : "")}>
+      {slot && createPortal(<PresenterToggle on={presenter} onToggle={togglePresenter} />, slot)}
       <div className={"mapwrap shrunk" + (noanim ? " noanim" : "")}>
         <CityMap stops={stops} activeId={stopId} visited={visited} atEnd={view === "conseil"} mini={mini} onSelect={(id) => go(id)} />
         {mini && (
@@ -217,7 +270,7 @@ export default function Journey({ content }: { content: Content }) {
             <header className="sheet-head">
               <div className="eyebrow">Arrêt {stop.order} sur {stops.length} · {stop.place}</div>
               <div className="actions">
-                {prev && <button className="iconbtn" type="button" onClick={() => go(prev.id)} title={prev.place} aria-label={`Arrêt précédent : ${prev.place}`}>← {prev.order}</button>}
+                {prev && <button className="iconbtn back" type="button" onClick={() => go(prev.id)} title={prev.place} aria-label={`Arrêt précédent : ${prev.place}`}>←<span className="ord"> {prev.order}</span></button>}
                 {next
                   ? <button className="iconbtn primary" type="button" onClick={() => go(next.id)} aria-label={`Arrêt suivant : ${next.place}`}>
                       <span>Suivant<span className="long">{"\u00a0: " + next.place}</span></span> →
