@@ -203,8 +203,8 @@ export default function Journey({ content }: { content: Content }) {
   // « Je suis à une table » : on amène les pastilles sous les yeux (et le clavier dessus).
   // En plein écran les pastilles sont cachées : on revient d'abord à l'affichage « carte ».
   const showLegend = useCallback(() => {
-    const flash = () => {
-      const el = legendRef.current; if (!el) return;
+    const flash = (el: HTMLElement | null) => {
+      if (!el) return;
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       el.classList.add("flash");
       // « nearest » : on ne fait défiler que si c'est nécessaire (la scène est un conteneur overflow:hidden)
@@ -212,7 +212,11 @@ export default function Journey({ content }: { content: Content }) {
       (el.querySelector("button") as HTMLButtonElement | null)?.focus({ preventScroll: true });
       window.setTimeout(() => el.classList.remove("flash"), 2400);
     };
-    if (layout === "plein") { chooseLayout("carte"); window.setTimeout(flash, 60); } else flash();
+    // Téléphone : la carte et ses pastilles sont masquées sur le hub — on vise l'escalier d'arrêts.
+    const phone = window.matchMedia("(max-width: 860px)").matches;
+    if (phone) { flash(document.getElementById("stoplist")); return; }
+    if (layout === "plein") { chooseLayout("carte"); window.setTimeout(() => flash(legendRef.current), 60); }
+    else flash(legendRef.current);
   }, [layout, chooseLayout]);
 
   // « Nouvelle partie » : on efface l'état de l'appareil pour le groupe suivant
@@ -235,7 +239,7 @@ export default function Journey({ content }: { content: Content }) {
   const parts = stop ? briefParts(stop) : [];
 
   return (
-    <div className={"stage " + layout + (presenter ? " presenter" : "")}>
+    <div className={"stage " + layout + (view === "intro" ? " hub" : "") + (presenter ? " presenter" : "")}>
       {slot && createPortal(<PresenterToggle on={presenter} onToggle={togglePresenter} />, slot)}
       <div className={"mapwrap shrunk" + (noanim ? " noanim" : "")}>
         <CityMap stops={stops} activeId={stopId} visited={visited} atEnd={view === "conseil"} mini={mini} onSelect={(id) => go(id)} />
@@ -262,7 +266,7 @@ export default function Journey({ content }: { content: Content }) {
       </div>
 
       <section className={"panel open" + (noanim ? " noanim" : "")} aria-label="Ressources de l'arrêt">
-        {view === "intro" && <Intro content={content} actions={layoutBtn} onStart={() => stops[0] && go(stops[0].id)} onChoose={showLegend} />}
+        {view === "intro" && <Intro content={content} actions={layoutBtn} visited={visited} onSelect={(id) => go(id)} onStart={() => stops[0] && go(stops[0].id)} onChoose={showLegend} />}
         {view === "conseil" && <Conseil content={content} visited={visited} actions={layoutBtn} onGo={go} onReset={reset} />}
 
         {stop && (

@@ -656,6 +656,49 @@ td.e { font-size: 22px; }
 .introcta .iconbtn { justify-self: start; }
 .introcta .iconbtn.primary { background: var(--sum-green); border-color: var(--sum-green-deep); color: #17230A; }
 
+/* ---------- L'escalier d'arrêts (téléphone) ----------
+   Sur grand écran la carte reste le hub. Sur téléphone ses étiquettes deviennent illisibles :
+   le trajet se lit en vertical, une marche par arrêt, reliées par un trait qui verdit. */
+.hubsteps { display: none; gap: 8px; margin-top: 2px; }
+.stoplist { list-style: none; margin: 0; padding: 0; }
+.stoplist .sstep { position: relative; }
+/* le trait : moitié au-dessus du disque (::before), moitié en dessous (::after) */
+.stoplist .sstep::before, .stoplist .sstep::after {
+  content: ""; position: absolute; left: 24.5px; width: 3px; background: var(--line);
+}
+.stoplist .sstep::before { top: 0; height: 50%; }
+.stoplist .sstep::after { top: 50%; bottom: 0; }
+.stoplist .sstep:first-child::before, .stoplist .sstep:last-child::after { display: none; }
+.stoplist .sstep.lit-up::before, .stoplist .sstep.lit-down::after { background: var(--sum-green); }
+.stoplist .sstep.fin::before { width: 0; background: none; border-left: 3px dashed var(--sum-green-deep); }
+.stoplist button {
+  position: relative; z-index: 1; width: 100%; min-height: 56px; padding: 6px 8px; border: 0; border-radius: 12px;
+  background: transparent; color: var(--ink); text-align: left;
+  display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; gap: 12px;
+}
+.stoplist button:hover { background: var(--paper); }
+.stoplist .disc {
+  width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  border: 2.5px solid var(--sum-blue); background: #fff; color: var(--sum-blue);
+  font-family: var(--display); font-weight: 800; font-size: 16px; line-height: 1;
+}
+.stoplist .txt { display: grid; gap: 1px; min-width: 0; }
+.stoplist .pl { font-family: var(--display); font-weight: 700; font-size: 16px; line-height: 1.15; color: var(--sum-blue-deep); }
+.stoplist .ti { font-size: 13px; line-height: 1.2; color: var(--muted); }
+.stoplist .chev { font-size: 22px; line-height: 1; color: var(--muted); padding: 0 4px; }
+.stoplist .done .disc { border-color: var(--sum-green-deep); background: var(--sum-green-soft); color: var(--sum-green-deep); }
+.stoplist .on .disc { border-color: var(--sum-green-deep); background: var(--sum-green); color: #17230A; }
+.stoplist .on .pl { color: var(--sum-green-deep); }
+.stoplist .fin button { border: 2px dashed var(--sum-green-deep); }
+.stoplist .fin .disc { border-style: dashed; border-color: var(--sum-green-deep); background: #fff; color: var(--sum-green-deep); font-size: 18px; }
+.stoplist .fin .pl { color: var(--sum-green-deep); }
+/* « Je suis à une table » : l'escalier se signale une fois */
+.stoplist.flash .sstep button { animation: legendflash 1.1s ease-out 2; }
+@media (prefers-reduced-motion: reduce) {
+  .stoplist.flash .sstep button { animation: none; }
+  .stoplist.flash .sstep:first-child button { box-shadow: 0 0 0 4px rgba(150,186,62,.55); }
+}
+
 /* ---------- Brief d'arrivée (QR) : une ligne sous le titre ---------- */
 .sheet-head .brief {
   grid-column: 1 / -1; justify-self: start; display: block; font-size: 13.5px; line-height: 1.25; font-style: normal;
@@ -709,6 +752,11 @@ td.e { font-size: 22px; }
   .sheet-head h2 .sticker { font-size: 12px; padding: 6px 10px; margin-left: 8px; }
   .intro .stake { padding: 12px 14px; }
   .introcta .iconbtn { width: 100%; justify-content: center; text-align: center; }
+  /* Hub : la carte (étiquettes minuscules) laisse la place à l'escalier d'arrêts, le tiroir prend tout l'écran. */
+  .stage.hub .mapwrap { display: none; }
+  .stage.hub .panel { top: 0; height: auto; border-radius: 0; border-top: 0; box-shadow: none; }
+  .stage.hub .sheet-body { padding-bottom: 24px; }
+  .hubsteps { display: grid; }
 }
 @media (max-width: 520px) {
   .ticket .trow { grid-template-columns: 28px minmax(0, 1fr); row-gap: 4px; }
