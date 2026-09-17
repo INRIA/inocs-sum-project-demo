@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   </head>
   <body>
     <div class="app">
-      <Masthead title={meta.title} subtitle={meta.subtitle} logo={meta.logo} how={content.journey.intro.script[1]} />
+      <Masthead title={meta.title} subtitle={meta.subtitle} logo={meta.logo} />
       <Journey client:load content={content} />
     </div>
   </body>
