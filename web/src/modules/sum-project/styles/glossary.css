@@ -1,0 +1,20 @@
+/* Lexique : liste de définitions (dans « Pour l'animateur » du conseil, et en modale depuis l'accueil). */
+
+.gintro { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+
+.glossary { display: grid; grid-template-columns: 1fr; gap: 10px 18px; margin: 0; }
+@media (min-width: 700px) {
+  .glossary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.glossary .g { display: grid; gap: 2px; }
+.glossary dt { font-family: var(--display); font-weight: 700; color: var(--sum-blue); font-size: 16px; }
+.glossary dd { margin: 0; font-size: 14px; color: var(--ink); }
+.glossary dd.empty { font-style: italic; color: var(--muted); }
+
+/* Bouton « Lexique » au bas de l'accueil : style discret, 44 px de haut. */
+.iconbtn.ghost {
+  background: transparent; border-color: var(--line); color: var(--muted);
+}
+.iconbtn.ghost:hover { color: var(--sum-blue); border-color: var(--sum-blue); }
+.glossarybtn { justify-self: start; min-height: 44px; margin-top: 4px; }

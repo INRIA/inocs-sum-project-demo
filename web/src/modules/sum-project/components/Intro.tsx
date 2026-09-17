@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { Content } from "../lib/types";
+import Modal from "./Modal";
+import Glossary from "./Glossary";
 
 // Écran d'entrée : « Vous êtes maire ». Affiché dans le tiroir quand aucun arrêt n'est ouvert
 // (le hub *est* l'intro), la carte reste visible à droite. Tout le texte vient de content.journey.intro.
@@ -12,6 +15,15 @@ export default function Intro({ content, onStart, onChoose, actions }: Props) {
   const script = intro.script || [];
   const first = content.stops[0];
   const event = (content.meta.event?.name || "").split("—")[0].trim();
+  const [showGlossary, setShowGlossary] = useState(false);
+
+  // Modale locale (pas de route) : le routeur de Journey ne la voit pas, donc Échap est géré ici.
+  useEffect(() => {
+    if (!showGlossary) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setShowGlossary(false); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [showGlossary]);
 
   return (
     <>
@@ -36,8 +48,16 @@ export default function Intro({ content, onStart, onChoose, actions }: Props) {
               Je suis à une table{" "}: choisir mon arrêt
             </button>
           </div>
+          <button className="iconbtn ghost glossarybtn" type="button" onClick={() => setShowGlossary(true)}>
+            Lexique
+          </button>
         </div>
       </div>
+      {showGlossary && (
+        <Modal crumbs={["Bienvenue", "Lexique"]} onClose={() => setShowGlossary(false)}>
+          <Glossary items={content.glossary} />
+        </Modal>
+      )}
     </>
   );
 }

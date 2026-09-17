@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { Content } from "../lib/types";
+import Glossary from "./Glossary";
 
 // Écran de clôture : « Le conseil municipal » (route #/conseil). Rejoue le trajet (billet tamponné),
 // le score du jeu de tri, les quatre messages, puis une seule action principale (plateforme de données).
@@ -105,6 +106,11 @@ export default function Conseil({ content, visited, onGo, onReset, actions }: Pr
               <li><a href={p.website} target="_blank" rel="noopener">Le site du projet SUM ↗</a></li>
               <li><a href={p.demo} target="_blank" rel="noopener">La démo Station de vélos ↗</a></li>
             </ul>
+          </details>
+
+          <details className="more">
+            <summary>Lexique</summary>
+            <Glossary items={content.glossary} />
           </details>
 
           <details className="more">
