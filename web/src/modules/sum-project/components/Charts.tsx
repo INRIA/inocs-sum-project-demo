@@ -62,13 +62,13 @@ export function Smiley({ value }: { value: string }) {
   if (!f) {
     if (value !== "NA") return <>{value}</>;
     return (
-      <span className="face na" role="img" aria-label="non évalué">
+      <span className="smile na" role="img" aria-label="non évalué">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle className="bg" cx="12" cy="12" r="10" /><path className="mouth" d="M8 12 H16" /></svg>
       </span>
     );
   }
   return (
-    <span className={"face " + f.tone} role="img" aria-label={f.label}>
+    <span className={"smile " + f.tone} role="img" aria-label={f.label}>
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle className="bg" cx="12" cy="12" r="11" />
         <circle className="eye" cx="8.5" cy="9.5" r="1.7" /><circle className="eye" cx="15.5" cy="9.5" r="1.7" />

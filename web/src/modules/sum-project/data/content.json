@@ -2144,17 +2144,17 @@
       "id": "destination",
       "order": 5,
       "place": "Destination",
-      "title": "Qu'ont fait les vraies villes ?",
+      "title": "Les résultats dans les villes",
       "question": "Neuf villes ont essayé. Est-ce que ça a marché ?",
-      "brief": "Ici, vous retournez les cartes des neuf villes pour voir ce qui a vraiment changé.",
+      "brief": "Ici, vous lisez les résultats des neuf villes : la plateforme de données, les chiffres, ce qui a marché et ce qui n'a pas marché.",
       "mode": "selfservice",
       "animator": null,
       "position": "table 5, grand écran tactile ou tablette, sans animateur",
       "capacity": 8,
       "durationMin": 8,
       "tableTent": {
-        "headline": "Qu'ont fait les vraies villes ?",
-        "subline": "Une plateforme de données, neuf villes. Retournez une carte, ouvrez son histoire."
+        "headline": "Les résultats dans les villes",
+        "subline": "Une plateforme de données, neuf villes. Regardez ce qui a changé, puis ouvrez l'histoire d'une ville."
       },
       "instructions": [
         {
@@ -2184,126 +2184,149 @@
         "QR code vers l'arrêt 5 de la page"
       ],
       "reveal": null,
-      "cards": [
-        {
-          "id": "odp",
-          "accent": true,
-          "wide": true,
-          "front": {
-            "value": "11 villes",
-            "label": "sur la plateforme de données ouvertes",
-            "teaser": "Avant / après, mesure par mesure. Sans compte, pour tout le monde."
-          },
-          "back": {
-            "title": "Qu'est-ce qu'on y trouve ?",
-            "lines": [
-              "Les indicateurs de chaque ville, avant et après.",
-              "Les mesures mises en place, ville par ville.",
-              "Deux outils : quelle mesure a contribué à quel résultat, et quelle mesure gagne selon vos priorités.",
-              "Logiciel libre, en ligne au moins 5 ans après le projet."
-            ]
-          },
-          "link": {
+      "hero": {
+        "kicker": "La preuve par les données",
+        "figure": "11 villes",
+        "label": "sur la plateforme de données ouvertes",
+        "text": "Avant / après, mesure par mesure, pour chaque Living Lab. Sans compte, pour tout le monde.",
+        "lines": [
+          "Les indicateurs de chaque ville, avant et après.",
+          "Les mesures mises en place, ville par ville.",
+          "Deux outils : quelle mesure a contribué à quel résultat, et quelle mesure gagne selon vos priorités.",
+          "Logiciel libre, en ligne au moins 5 ans après le projet."
+        ],
+        "image": {
+          "src": "/images/destination-odp.jpg",
+          "alt": "La plateforme de données ouvertes SUM",
+          "caption": "odp.sum-project.eu"
+        },
+        "links": [
+          {
             "label": "Ouvrir la plateforme",
             "url": "https://odp.sum-project.eu"
           },
-          "resource": "plateforme"
-        },
-        {
-          "id": "repondants",
-          "front": {
-            "value": "1 435",
-            "label": "habitants ont répondu",
-            "teaser": "8 villes, 7 langues, deux ans après la première enquête"
+          {
+            "label": "Comparer les villes",
+            "url": "https://odp.sum-project.eu/insights/cities"
           },
-          "back": {
-            "title": "Qui a répondu ?",
-            "lines": [
-              "Genève 184 · Cracovie 211 · Rotterdam 144 · Jérusalem 186.",
-              "Coimbra 101 · Munich 202 · Penteli 202 · Larnaca 205.",
-              "Fredrikstad : pas d'enquête après (analyse sur 2021 et 2024)."
-            ]
-          },
+          {
+            "label": "Quelle mesure gagne ?",
+            "url": "https://odp.sum-project.eu/tools/mcda_analysis"
+          }
+        ],
+        "resource": "plateforme",
+        "stat": {
+          "value": "1 435",
+          "label": "habitants ont répondu",
+          "teaser": "8 villes, 7 langues, deux ans après la première enquête",
           "resource": "enquete-apres"
         }
-      ],
+      },
       "cities": true,
-      "moreCards": [
-        {
-          "id": "avant-apres",
-          "front": {
-            "value": "▲ ▼",
-            "label": "Qu'est-ce qui a changé ?",
-            "teaser": "Des signaux, ville par ville — à lire avec prudence"
+      "takeaways": {
+        "title": "Ce qu'on retient",
+        "panels": [
+          {
+            "id": "marche",
+            "tone": "green",
+            "title": "Ce qui a marché",
+            "items": [
+              {
+                "city": "cracovie",
+                "text": "Un minibus à la demande intégré au ticket et au pôle d'échanges : 50 500 passagers en un an, la voiture divisée par deux dans le quartier."
+              },
+              {
+                "city": "geneve",
+                "text": "29 pôles de mobilité et une seule appli : la satisfaction des usagers passe de 14 % à 78 %."
+              },
+              {
+                "city": "jerusalem",
+                "text": "Les stations de vélos posées aux arrêts de tram : 14 % des stations font 30 % des locations."
+              },
+              {
+                "city": "munich",
+                "text": "Une voiture en autopartage remplace 23 voitures particulières ; 2 500 places de stationnement converties."
+              },
+              {
+                "city": "larnaca",
+                "text": "Le billet combiné bus + vélo : 31 points de plus pour les transports en commun."
+              }
+            ],
+            "resource": "quelle-mesure-gagne"
           },
-          "back": {
-            "title": "Trois signaux",
-            "lines": [
-              "Cracovie : modes partagés de moins de 1 % à 20 % (LajkBus).",
-              "Munich : voiture personnelle − 10 %, marche et vélo + 12 %.",
-              "Coimbra : 93 % des trajets en voiture après — pas de report modal pendant le pilote."
-            ]
-          },
-          "resource": "avant-apres"
-        },
-        {
-          "id": "gagne",
-          "front": {
-            "value": "1ᵉʳ",
-            "label": "Infrastructures électriques et bas carbone",
-            "teaser": "Quelle mesure gagne ? Ça dépend de ce qu'on met en premier."
-          },
-          "back": {
-            "title": "Le classement du projet",
-            "lines": [
-              "1. Infrastructures électriques et bas carbone.",
-              "2. Horaires et fréquences des transports en commun.",
-              "3. Engagement et sensibilisation du public.",
-              "4. Intégration des modes partagés.",
-              "5. Plateformes MaaS."
-            ]
-          },
-          "link": {
-            "label": "Essayer avec vos priorités",
-            "url": "https://odp.sum-project.eu/tools/mcda_analysis"
-          },
-          "resource": "quelle-mesure-gagne"
-        },
-        {
-          "id": "rate",
-          "front": {
-            "value": "3",
-            "label": "échecs mesurés",
-            "teaser": "Un échec mesuré vaut plus qu'un succès supposé."
-          },
-          "back": {
+          {
+            "id": "rate",
+            "tone": "red",
             "title": "Ce qui n'a pas marché",
-            "lines": [
-              "Penteli : moins de 100 trajets en vélo électrique, à cause du vandalisme.",
-              "Coimbra : le bus à la demande n'a pas produit de report modal.",
-              "Rotterdam : un seul opérateur de scooters a partagé ses données."
-            ]
+            "items": [
+              {
+                "city": "penteli",
+                "text": "Moins de 100 trajets en vélo électrique : vandalisme et horaires réduits."
+              },
+              {
+                "city": "coimbra",
+                "text": "Le bus à la demande hors pointe : 43 trajets réalisés, aucun report modal mesuré."
+              },
+              {
+                "city": "rotterdam",
+                "text": "Un seul opérateur de scooters a partagé ses données."
+              },
+              {
+                "city": "munich",
+                "text": "Les robots-taxis annulés : pas d'homologation pour les véhicules de niveau 4."
+              },
+              {
+                "city": "geneve",
+                "text": "Le péage urbain refusé par les urnes ; la zone à trafic limité rejetée par le Grand Conseil."
+              }
+            ],
+            "resource": "ce-qui-na-pas-marche"
           },
-          "resource": "ce-qui-na-pas-marche"
-        },
-        {
-          "id": "apres",
-          "front": {
-            "value": "7",
-            "label": "villes observatrices, dont Lille",
-            "teaser": "Et après SUM ?"
+          {
+            "id": "defis",
+            "tone": "blue",
+            "title": "Les défis de ce type de projet",
+            "items": [
+              {
+                "text": "L'homologation : anticiper la loi avant de tester une flotte autonome (Munich)."
+              },
+              {
+                "text": "Le budget et les marchés publics : sécuriser l'achat avant d'annoncer un service (Penteli)."
+              },
+              {
+                "text": "L'acceptabilité : une mesure de contrainte se prépare avec les habitants, pas après (Genève)."
+              },
+              {
+                "text": "Les données des opérateurs privés : sans accord de partage, pas d'évaluation (Rotterdam)."
+              },
+              {
+                "text": "Le temps : du laboratoire à la rue, une idée met plusieurs années (niveaux de maturité 4 à 9)."
+              }
+            ],
+            "link": {
+              "label": "Trois obstacles, trois leçons (arrêt 2)",
+              "url": "#/belvedere/pas-reussi"
+            }
           },
-          "back": {
-            "title": "La suite",
-            "lines": [
-              "Vitoria-Gasteiz, Lille, Istanbul, Zagreb, Tel Aviv, Héraklion, communauté du Douro.",
-              "La plateforme passe à ERTICO fin 2026 pour accueillir de nouvelles villes.",
-              "Objectif : 15 villes d'ici 2030."
-            ]
-          },
-          "resource": "et-apres"
-        }
-      ],
+          {
+            "id": "apres",
+            "tone": "paper",
+            "title": "Et après SUM ?",
+            "items": [
+              {
+                "text": "Sept villes observatrices, dont Lille : Vitoria-Gasteiz, Istanbul, Zagreb, Tel Aviv, Héraklion, communauté du Douro."
+              },
+              {
+                "text": "La plateforme passe à ERTICO fin 2026 pour accueillir de nouvelles villes."
+              },
+              {
+                "text": "Objectif : 15 villes d'ici 2030."
+              }
+            ],
+            "resource": "et-apres"
+          }
+        ]
+      },
       "resources": [
         {
           "id": "enquete-apres",

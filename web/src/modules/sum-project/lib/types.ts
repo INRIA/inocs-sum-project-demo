@@ -60,6 +60,23 @@ export type Story = { autoplaySec?: number; chapters: StoryChapter[] };
 export type MissionQuestion = { id: string; icon: string; q: string; answer?: { title: string; lines: string[]; link?: Link } };  // icon : croquis CIVITAS (Sketch.tsx)
 export type Mission = { eyebrow: string; text: string; lead?: string; questions: MissionQuestion[]; tool: { label: string; url: string; note?: string } };
 
+// Bloc « héros » d'un arrêt (arrêt Destination) : une capture, un chiffre, ce qu'on y trouve, les liens externes,
+// et à côté une tuile chiffre (le nombre de répondants). `resource` ouvre la fiche en modale.
+export type HeroStat = { value: string; label: string; teaser?: string; resource?: string };
+export type Hero = {
+  kicker: string; figure: string; label: string; text?: string; lines?: string[];
+  image?: Img; links?: Link[]; resource?: string; stat?: HeroStat;
+};
+
+// « Ce qu'on retient » (arrêt Destination) : quatre panneaux colorés, une liste de constats.
+// Un constat qui porte une ville montre son drapeau : le clic ouvre l'histoire de la ville.
+export type TakeawayItem = { city?: string; text: string };
+export type TakeawayPanel = {
+  id: string; tone: "green" | "red" | "blue" | "paper"; title: string;
+  items: TakeawayItem[]; resource?: string; link?: Link;   // link : une route interne (#/…) ou un lien externe
+};
+export type Takeaways = { title: string; panels: TakeawayPanel[] };
+
 export type Stop = {
   id: string; order: number; place: string; title: string; question: string;
   mode: "passive" | "animated" | "selfservice"; animator: string | null; position?: string;
@@ -78,9 +95,11 @@ export type Stop = {
   story?: Story;           // mode « histoire » : remplace les cartes (arrêt 1)
   mission?: Mission;       // mode « mission » : texte du maire, questions, outil en modale (arrêt 3)
   cards?: InfoCard[];      // mode « cartes » : recto / verso / fiche
+  hero?: Hero;             // bandeau bleu en tête de l'arrêt (arrêt 5 : la plateforme de données)
   cities?: boolean;        // affiche les cartes Villes (bloc `cities`) après `cards`
   moreCards?: InfoCard[];  // cartes « pour aller plus loin », après les villes
   moreTitle?: string;      // titre de la section moreCards (défaut : « Pour aller plus loin »)
+  takeaways?: Takeaways;   // « Ce qu'on retient » : quatre panneaux, après les villes (arrêt 5)
   resources: Resource[];
 };
 

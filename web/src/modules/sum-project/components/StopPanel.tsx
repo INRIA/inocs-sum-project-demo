@@ -10,6 +10,8 @@ import CityStrip from "./CityStrip";
 import Stepper from "./Stepper";
 import StoryRoad, { ChapterDetail, CHAPTER_PREFIX } from "./StoryRoad";
 import Mission, { Embed, embedUrlFor } from "./Mission";
+import Hero from "./Hero";
+import Takeaways from "./Takeaways";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
@@ -24,7 +26,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
   const sort = stop.game?.sort || null;
   const story = stop.story || null;
   const mission = stop.mission || null;
-  const cardMode = !!(stop.cards || stop.cities || sort || stop.cityStrip || story || mission); // arrêt « cartes » : recto / verso / fiche en modale
+  const cardMode = !!(stop.cards || stop.cities || sort || stop.cityStrip || story || mission || stop.hero || stop.takeaways); // arrêt « cartes » : recto / verso / fiche en modale
   // #/<arrêt>/chapitre-<id> : un chapitre de l'histoire en modale (téléphone, ou lien profond)
   const chapIdx = story && resId && resId.startsWith(CHAPTER_PREFIX) ? story.chapters.findIndex((c) => CHAPTER_PREFIX + c.id === resId) : -1;
   const chap = chapIdx >= 0 ? story!.chapters[chapIdx] : null;
@@ -55,9 +57,11 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
   // Les repères d'un arrêt long : on n'affiche la rangée que s'il y a au moins deux sections à atteindre.
   const moreTitle = stop.moreTitle || "Pour aller plus loin";
   const secs = [
+    stop.hero ? { id: "sec-hero", label: "La plateforme" } : null,
     cards.length > 0 ? { id: "sec-cards", label: "Cartes" } : null,
     stop.cities ? { id: "sec-cities", label: "Neuf villes" } : null,
     stop.moreCards && stop.moreCards.length > 0 ? { id: "sec-more", label: moreTitle } : null,
+    stop.takeaways ? { id: "sec-take", label: stop.takeaways.title } : null,
     stop.cityStrip ? { id: "sec-strip", label: "Les villes" } : null,
   ].filter(Boolean) as { id: string; label: string }[];
   const jump = (id: string) => {
@@ -172,12 +176,16 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
               <StoryRoad story={story} content={content} chapter={chapter} onChapter={onChapter || (() => {})} autoplay={autoplay}
                          paused={!!resId} onOpen={onOpen} onNextStop={onNextStop || (() => {})} nextLabel={nextLabel || "Arrêt suivant"} />
             )}
+            {stop.hero && <div className="sec" id="sec-hero"><Hero hero={stop.hero} onOpen={onOpen} /></div>}
             {cards.length > 0 && <div className="sec" id="sec-cards"><InfoCards cards={cards} onOpen={onOpen} /></div>}
             {stop.cities && <div className="sec" id="sec-cities"><CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} /></div>}
             {stop.moreCards && stop.moreCards.length > 0 && (
               <div className="sec" id="sec-more">
                 <InfoCards cards={stop.moreCards} onOpen={onOpen} title={moreTitle} columns={stop.id === "station" ? 2 : undefined} />
               </div>
+            )}
+            {stop.takeaways && (
+              <div className="sec" id="sec-take"><Takeaways block={stop.takeaways} cities={content.cities.items} onOpen={onOpen} /></div>
             )}
             {stop.cityStrip && <div className="sec" id="sec-strip"><CityStrip strip={stop.cityStrip} cities={content.cities.items} /></div>}
           </>
