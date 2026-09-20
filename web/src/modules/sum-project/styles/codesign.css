@@ -102,6 +102,11 @@
   .codesign .chead { padding: 16px 16px 14px; }
   .codesign .pband { grid-template-columns: 1fr; padding: 12px 12px 0; gap: 8px; }
   .codesign .pband::before { display: none; }
+}
+/* Panneau étroit (affichage « carte » sur grand écran) : la bande passe en 2 × 2 pour que les titres tiennent. */
+@media (min-width: 861px) and (max-width: 1200px) {
+  .stage.carte .codesign .pband { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stage.carte .codesign .pband::before { display: none; }
   .codesign .pstep { min-height: 56px; }
   .codesign .below { display: none; }
   .codesign .inline { display: block; }
