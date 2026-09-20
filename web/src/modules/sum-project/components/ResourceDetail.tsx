@@ -1,6 +1,6 @@
 import type { Resource, Source } from "../lib/types";
 import { assetUrl } from "../../../infrastructure/assetUrl";
-import { Smiley } from "./Charts";
+import { Smiley, LegendFaces } from "./Charts";
 
 export function SourceLine({ s }: { s?: Source | null }) {
   if (!s) return null;
@@ -31,7 +31,7 @@ export default function ResourceDetail({ r }: { r: Resource }) {
             <thead><tr>{r.table.columns.map((c) => <th key={c}>{c}</th>)}</tr></thead>
             <tbody>{r.table.rows.map((row, i) => <tr key={i}>{row.map((v, j) => <td key={j} className={j > 1 ? "e" : ""}>{j > 1 ? <Smiley value={v} /> : v}</td>)}</tr>)}</tbody>
           </table>
-          {r.legend && <div className="legendtxt">{r.legend}</div>}
+          {r.legend && <LegendFaces text={r.legend} />}
         </div>
       )}
       {r.facts && r.facts.length > 0 && (

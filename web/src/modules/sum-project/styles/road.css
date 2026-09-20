@@ -1,0 +1,162 @@
+/* La route de SUM (arrêt « histoire ») : la route à gauche, le chapitre à droite, tout dans l'écran.
+   Sur téléphone la route se couche au-dessus d'une carte-résumé et le chapitre se lit dans la modale. */
+
+/* Le corps du tiroir devient une colonne : la question en haut, l'histoire prend le reste de la hauteur. */
+.sheet-body.fill { display: flex; flex-direction: column; }
+.sheet-body.fill .qrow { flex: none; }
+/* l'enveloppe des cartes (.rlist) laisse toute la hauteur restante à l'histoire, sans grandir avec elle */
+.sheet-body.fill .rlist.cards { flex: 1 1 auto; min-height: 0; grid-template-rows: minmax(0, 1fr); }
+.roadstory { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(220px, 30%) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 0 22px; }
+.stage.plein .sheet-body.fill { padding-bottom: 24px; }
+.stage.plein .roadstory .schap { padding-bottom: 140px; }   /* la vignette de carte occupe le coin bas-droit */
+
+/* ---- La route ---- */
+.srail { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; min-height: 0; min-width: 0; }
+.srail .road { display: block; width: 100%; height: 100%; overflow: visible; }
+.srail .road.h { display: none; }
+.road .roadbed { fill: none; stroke: var(--road); stroke-width: 26; stroke-linecap: round; }
+.road .center { fill: none; stroke: var(--road-line); stroke-width: 2.5; stroke-dasharray: 14 10; stroke-linecap: round; }
+.road .prog { fill: none; stroke: var(--sum-green); stroke-width: 9; stroke-linecap: round; opacity: .95; }
+.road .st { cursor: pointer; }
+.road .st .hit { fill: transparent; }
+.road .st .ring { fill: none; stroke: var(--sum-green); stroke-width: 5; opacity: 0; }
+.road .st.active .ring { opacity: 1; animation: roadpulse 1.6s ease-out infinite; }
+@keyframes roadpulse { 0% { r: 26; opacity: .9; } 100% { r: 44; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .road .st.active .ring { animation: none; opacity: .8; } }
+.road .st .disc { fill: #fff; stroke: var(--sum-blue); stroke-width: 4; filter: drop-shadow(0 2px 2px rgba(27,52,103,.2)); }
+.road .st.seen .disc { fill: var(--sum-green-soft); stroke: var(--sum-green-deep); }
+.road .st.active .disc { fill: var(--sum-green); stroke: var(--sum-green-deep); }
+.road .st:hover .disc, .road .st:focus-visible .disc { stroke: var(--sum-green-deep); }
+.road .st:focus-visible { outline: none; }
+.road .st .stamp { font-family: var(--display); font-weight: 800; fill: var(--sum-blue); text-anchor: middle; dominant-baseline: central; }
+.road .st.seen .stamp { fill: var(--sum-green-deep); }
+.road .st.active .stamp { fill: #17230A; }
+.road .st .klbl {
+  font-family: var(--display); font-weight: 700; font-size: 17px; fill: var(--sum-blue-deep); dominant-baseline: central;
+  paint-order: stroke; stroke: #fff; stroke-width: 5px; stroke-linejoin: round;
+}
+.road .st.active .klbl { fill: var(--sum-green-deep); }
+.road .st.seen .klbl { fill: var(--sum-green-deep); }
+
+/* les commandes sous la route */
+.srail .ctl { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; }
+.srail .playbtn { border-color: var(--sum-blue); }
+.srail .playbtn.on { background: var(--sum-blue-soft); }
+.srail .count { font-family: var(--display); font-weight: 800; font-size: 16px; color: var(--sum-blue-deep); font-variant-numeric: tabular-nums; min-width: 34px; }
+.srail .hint { font-size: 13px; color: var(--muted); font-style: italic; }
+.srail .iconbtn.ghost { border-color: transparent; color: var(--sum-blue); }
+
+/* ---- Le chapitre ---- */
+.schap { min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 10px; padding: 2px 4px 8px 2px; scroll-margin-top: 8px; }
+@media (prefers-reduced-motion: no-preference) {
+  .roadstory .schap { animation: schap-in .25s ease-out; }
+  @keyframes schap-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
+.schap .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--sum-green-deep); font-weight: 700; }
+.schap h3 { font-size: clamp(22px, 2.2vw, 28px); font-weight: 800; color: var(--sum-blue-deep); line-height: 1.1; }
+.schap .fig { display: grid; gap: 2px; }
+.schap .fig .n { font-family: var(--display); font-weight: 800; font-size: clamp(38px, 3.6vw, 54px); line-height: 1; color: var(--sum-blue); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.schap .fig .n.long { font-size: clamp(28px, 2.6vw, 38px); line-height: 1.05; }
+.schap .fig .l { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.15; color: var(--sum-blue-deep); }
+.schap .t { margin: 0; font-size: 16px; color: var(--muted); line-height: 1.3; max-width: 70ch; }
+.schap .body { display: grid; gap: 12px; min-width: 0; }
+.schap .blines { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 16px; line-height: 1.3; max-width: 70ch; }
+.schap .pic { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--paper); display: grid; }
+.schap .pic img { display: block; width: 100%; max-height: 150px; object-fit: cover; object-position: top; }
+.schap .pic.fit img { object-fit: contain; background: #fff; }
+.schap .pic figcaption { font-size: 12px; color: var(--muted); padding: 4px 10px; }
+.schap .cta { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 2px; }
+.schap .cta .iconbtn { text-decoration: none; }
+.schap .mnav { display: none; }
+.schap .chapnav { display: flex; justify-content: space-between; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; }
+
+/* les cinq leviers : un picto et son mot */
+.schap .pictos { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.schap .pictos > div { display: grid; justify-items: center; gap: 4px; font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--sum-blue-deep); }
+.schap .pictos .picto { color: var(--sum-green-deep); }
+
+/* trois exemples : photo, drapeau et ville, chiffre clé, mesure */
+.examples { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ex { display: grid; grid-template-rows: auto auto auto 1fr; gap: 4px; text-decoration: none; color: var(--ink); border: 2px solid var(--sum-blue); border-radius: 12px; overflow: hidden; background: #fff; transition: transform .15s, box-shadow .15s; }
+.ex:hover, .ex:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(27,52,103,.22); border-color: var(--sum-green); }
+.ex img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: var(--paper); }
+.ex .ph { aspect-ratio: 4 / 3; display: grid; place-items: center; font-size: 40px; background: var(--paper); }
+.ex .who { display: flex; gap: 6px; align-items: center; padding: 6px 10px 0; font-family: var(--display); font-weight: 800; color: var(--sum-blue); font-size: 16px; }
+.ex .kf { padding: 0 10px; font-family: var(--display); font-weight: 800; font-size: 24px; color: var(--sum-blue-deep); line-height: 1; font-variant-numeric: tabular-nums; }
+.ex .kf small { display: block; font-family: var(--body); font-weight: 600; font-size: 13px; color: var(--sum-green-deep); margin-top: 3px; line-height: 1.2; }
+.ex .mt { padding: 0 10px 10px; font-size: 14px; color: var(--muted); line-height: 1.25; }
+
+/* la rangée des neuf villes */
+.cityrow { display: flex; gap: 6px; flex-wrap: wrap; }
+.cthumb { display: grid; justify-items: center; gap: 4px; width: 62px; text-decoration: none; color: var(--sum-blue-deep); font-family: var(--display); font-weight: 700; font-size: 12px; line-height: 1.1; text-align: center; }
+.cthumb img, .cthumb .ph { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--sum-blue); display: grid; place-items: center; background: var(--paper); font-size: 26px; }
+.cthumb:hover img, .cthumb:focus-visible img { border-color: var(--sum-green-deep); }
+
+/* avant / après : deux barres par ligne, les valeurs écrites */
+.delta { display: grid; gap: 10px; font-size: 14px; }
+.drow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) auto; gap: 10px; align-items: center; }
+.drow .lbl { font-weight: 600; line-height: 1.2; }
+.drow .pair { display: grid; gap: 3px; }
+.drow .trk { height: 9px; background: var(--paper); border: 1px solid var(--line); border-radius: 5px; overflow: hidden; }
+.drow .fill { height: 100%; border-radius: 4px; }
+.drow .fill.before { background: #6C84C2; }
+.drow .fill.after { background: var(--sum-blue); }
+.drow .vals { font-variant-numeric: tabular-nums; white-space: nowrap; display: inline-flex; align-items: baseline; gap: 6px; color: var(--muted); }
+.drow .vals b { color: var(--sum-blue-deep); font-family: var(--display); font-size: 18px; }
+.dlegend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
+.dlegend .sw { display: inline-block; width: 14px; height: 9px; border-radius: 3px; vertical-align: middle; margin-right: 4px; }
+.dlegend .sw.before { background: #6C84C2; }
+.dlegend .sw.after { background: var(--sum-blue); }
+
+/* la frise en ligne (grand écran) */
+.tl.horizontal { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); border-left: 0; border-top: 3px solid var(--sum-green); padding: 12px 0 0; gap: 10px; }
+.tl.horizontal li { align-content: start; }
+.tl.horizontal li .dot { left: 0; top: -20px; }
+
+/* ---- Présentateur : le chiffre et le titre une taille au-dessus, pas d'invite ---- */
+.presenter .schap h3 { font-size: clamp(26px, 2.5vw, 34px); }
+.presenter .schap .fig .n { font-size: clamp(44px, 4.3vw, 66px); }
+.presenter .schap .fig .n.long { font-size: clamp(32px, 3vw, 46px); }
+.presenter .schap .fig .l { font-size: 22px; }
+.presenter .schap .t, .presenter .schap .blines { font-size: 18px; }
+.presenter .srail .hint { display: none; }
+.presenter .srail .playbtn { min-height: 52px; font-size: 17px; padding: 0 20px; }
+.presenter .srail .count { font-size: 19px; }
+
+/* ---- Tablette et téléphone ---- */
+@media (max-width: 1100px) { .roadstory { grid-template-columns: 220px minmax(0, 1fr); gap: 0 16px; } }
+@media (max-width: 860px) {
+  .sheet-body.fill { display: block; }
+  .roadstory { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .stage.plein .roadstory .schap { padding-bottom: 8px; }
+  .sheet-body.fill .rlist.cards { grid-template-rows: none; }
+  .roadstory { grid-template-rows: auto auto; }
+  .srail { grid-template-rows: auto auto; gap: 6px; }
+  .srail .road.v { display: none; }
+  .srail .road.h { display: block; height: auto; }
+  .srail .ctl { justify-content: space-between; }
+  .srail .hint { display: none; }
+  /* la carte-résumé : le chapitre se lit dans la modale */
+  .schap { overflow: visible; border: 2px solid var(--sum-blue); border-radius: 14px; padding: 12px 14px; gap: 8px; touch-action: pan-y; }
+  .schap .body, .schap .cta { display: none; }
+  .schap .mnav { display: grid; grid-template-columns: 48px minmax(0, 1fr) 48px; gap: 8px; margin-top: 4px; }
+  .schap .mnav .iconbtn { min-height: 48px; justify-content: center; padding: 0; text-decoration: none; }
+  .schap .mnav .iconbtn:disabled { opacity: .35; cursor: default; }
+  /* dans la modale, tout le chapitre */
+  .detail-chap { border: 0; padding: 0; }
+  .detail-chap .body, .detail-chap .cta { display: grid; }
+  .detail-chap .cta { display: flex; }
+  .detail-chap .mnav { display: none; }
+  .examples { grid-template-columns: 1fr; }
+  .ex { grid-template-columns: 110px minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
+  .ex img, .ex .ph { grid-row: 1 / 4; height: 100%; aspect-ratio: auto; min-height: 84px; }
+  .cityrow { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; scrollbar-width: none; }
+  .cityrow::-webkit-scrollbar { display: none; }
+  .cthumb { flex: none; scroll-snap-align: start; }
+}
+@media (max-width: 700px) {
+  .tl.horizontal { grid-auto-flow: row; grid-auto-columns: auto; border-top: 0; border-left: 3px solid var(--sum-green); padding: 0 0 0 14px; gap: 8px; }
+  .tl.horizontal li .dot { left: -22px; top: 4px; }
+  .drow { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .drow .vals { justify-content: flex-start; }
+}

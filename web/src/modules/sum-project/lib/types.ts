@@ -15,8 +15,9 @@ export type Instruction = { step: number; title?: string; text: string };
 // Petits graphiques dessinés depuis les données (barres, frise, grille d'émojis) : modifiables sans toucher au code.
 export type Chart =
   | { type: "bars"; unit?: string; items: { label: string; value: number }[] }
-  | { type: "timeline"; items: { when: string; text: string }[] }
-  | { type: "matrix"; columns: string[]; rows: string[][]; legend?: string; headCols?: number };  // headCols : colonnes de gauche fusionnées en en-tête de ligne
+  | { type: "timeline"; horizontal?: boolean; items: { when: string; text: string }[] }   // horizontal : une frise en ligne (grand écran), verticale sur téléphone
+  | { type: "matrix"; columns: string[]; rows: string[][]; legend?: string; headCols?: number }  // headCols : colonnes de gauche fusionnées en en-tête de ligne
+  | { type: "delta"; unit?: string; items: { label: string; before: number; after: number; beforeText?: string; afterText?: string }[] };  // avant / après : deux barres par ligne
 
 // Carte d'information : recto = un chiffre et une accroche, verso = 3–5 lignes, puis « En savoir plus » (fiche en modale).
 export type InfoCard = {
@@ -43,6 +44,18 @@ export type SortGameDef = {
   bulletin?: string;  // texte du bulletin pour le conseil municipal (affiché, pas saisi)
 };
 
+// Histoire d'un arrêt (« la route de SUM ») : une route à gauche, un chapitre à droite, lecture automatique possible.
+export type StoryExample = { city: string; measure?: string; caption?: string };   // photo, drapeau, chiffre clé lus dans le bloc `cities`
+export type StoryChapter = {
+  id: string; kicker: string; kickerShort?: string;   // « Pourquoi ? » à côté du disque ; version courte sous la route (téléphone)
+  stamp: string;                                      // ce qui s'écrit dans le disque : « 70 % », « 5 », « 🙂 »…
+  title: string; figure?: string; figureLabel?: string; teaser?: string;
+  lines?: string[]; charts?: Chart[]; icons?: { name: string; label: string }[];   // pictos (Pictos.tsx) avec leur mot
+  image?: Img; examples?: StoryExample[]; cities?: boolean;                        // cities : la rangée des neuf villes
+  links?: Link[]; resource?: string;                                                // fiche « En savoir plus » (modale)
+};
+export type Story = { autoplaySec?: number; chapters: StoryChapter[] };
+
 export type Stop = {
   id: string; order: number; place: string; title: string; question: string;
   mode: "passive" | "animated" | "selfservice"; animator: string | null; position?: string;
@@ -58,6 +71,7 @@ export type Stop = {
   images?: Img[];
   challenge?: { eyebrow?: string; question: string; hint?: string; cta: Link };  // une seule question, un seul bouton
   cityStrip?: { title: string; lead?: string };  // bandeau des villes (photo, drapeau, nom) → #/destination/<ville>
+  story?: Story;           // mode « histoire » : remplace les cartes (arrêt 1)
   cards?: InfoCard[];      // mode « cartes » : recto / verso / fiche
   cities?: boolean;        // affiche les cartes Villes (bloc `cities`) après `cards`
   moreCards?: InfoCard[];  // cartes « pour aller plus loin », après les villes

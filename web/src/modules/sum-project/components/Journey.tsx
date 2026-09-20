@@ -15,6 +15,7 @@ const CONSEIL = "conseil";       // route de l'écran de clôture : #/conseil
 // Paramètres d'URL, à mettre dans le QR ou le raccourci du poste :
 //   ?layout=carte|large|plein        l'affichage de départ (devient la préférence de l'appareil)
 //   ?mode=presentateur|visiteur      le mode de départ (devient la préférence de l'appareil ; touche « p » pour basculer)
+//   ?autoplay=1                      l'histoire d'un arrêt (arrêt 1) se lit toute seule, un chapitre toutes les 20 s (grand écran de l'entrée)
 // Les deux l'emportent sur ce qui est gardé en mémoire ; sans eux, on reprend la préférence de l'appareil.
 
 // Trois affichages : la carte à droite, le panneau large, ou le plein écran avec la carte en vignette.
@@ -75,6 +76,9 @@ export default function Journey({ content }: { content: Content }) {
   const [slot, setSlot] = useState<HTMLElement | null>(null);  // l'emplacement laissé par le bandeau (rendu par Astro)
   const [visited, setVisited] = useState<Set<string>>(() => new Set());
   const [noanim, setNoanim] = useState(true);  // arrivée directe (QR) : pas de glissement du tiroir
+  const [chapter, setChapter] = useState(0);   // arrêt « histoire » : le chapitre ouvert (les flèches le font avancer avant de changer d'arrêt)
+  const [autoplay, setAutoplay] = useState(false);
+  const lastStopRef = useRef<string | null>(null);
   const legendRef = useRef<HTMLElement | null>(null);
 
   // état « visité » relu au montage (avant la route, pour ne pas perdre l'arrêt qu'on vient d'ouvrir)
@@ -129,7 +133,18 @@ export default function Journey({ content }: { content: Content }) {
     const h = parseHash();
     if (h.stop === CONSEIL) { setStopId(null); setResId(null); setView("conseil"); return; }
     const s = stops.find((x) => x.id === h.stop);
-    if (s) { setStopId(s.id); setResId(h.res); setView("stop"); markVisited(s.id); }
+    if (s) {
+      setStopId(s.id); setResId(h.res); setView("stop"); markVisited(s.id);
+      // l'histoire : chapitre 1 en arrivant sur l'arrêt, ou celui du lien #/<arrêt>/chapitre-<id>
+      const hi = s.story && h.res && h.res.startsWith("chapitre-") ? s.story.chapters.findIndex((c) => "chapitre-" + c.id === h.res) : -1;
+      const fresh = lastStopRef.current !== s.id; lastStopRef.current = s.id;
+      if (hi >= 0) setChapter(hi); else if (fresh) setChapter(0);
+      const phone = window.matchMedia("(max-width: 860px)").matches;
+      // téléphone : l'histoire a besoin de tout l'écran, le tiroir prend la hauteur (bandeau de carte de 72 px)
+      if (s.story && phone) setLayout("plein");
+      // grand écran : le chapitre s'ouvre dans le volet, pas en modale — le lien devient #/<arrêt>
+      if (hi >= 0 && !phone) { setResId(null); history.replaceState(null, "", "#/" + s.id); }
+    }
     else { setStopId(null); setResId(null); setView("intro"); }
   }, [stops, markVisited]);
 
@@ -146,6 +161,7 @@ export default function Journey({ content }: { content: Content }) {
       try { localStorage.setItem(PKEY, pres ? "1" : "0"); } catch {}
     }
     if (pres) setPresenter(true);
+    if (qs.get("autoplay") === "1") setAutoplay(true);
 
     // Affichage : ?layout=carte|large|plein l'emporte (et devient la préférence de l'appareil), sinon la préférence
     // gardée, sinon « large » en présentateur (le texte prime sur la carte), sinon « plein » quand on arrive droit
@@ -194,12 +210,20 @@ export default function Journey({ content }: { content: Content }) {
       if (tag === "input" || tag === "textarea" || tag === "select" || t?.isContentEditable) return;
       if (!arrow) { e.preventDefault(); togglePresenter(); return; }   // « p » : présentateur ⇄ visiteur
       if (view !== "stop") return;
-      if (e.key === "ArrowLeft" && prev) { e.preventDefault(); go(prev.id); }
-      if (e.key === "ArrowRight") { e.preventDefault(); go(next ? next.id : CONSEIL); }
+      // sur un arrêt « histoire », les flèches parcourent d'abord les chapitres
+      const last = stop?.story ? stop.story.chapters.length - 1 : -1;
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        if (last >= 0 && chapter > 0) setChapter(chapter - 1); else if (prev) go(prev.id);
+      }
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        if (last >= 0 && chapter < last) setChapter(chapter + 1); else go(next ? next.id : CONSEIL);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [resId, stopId, view, go, prev, next, togglePresenter]);
+  }, [resId, stopId, view, go, prev, next, togglePresenter, stop, chapter]);
 
   // « Je suis à une table » : on amène les pastilles sous les yeux (et le clavier dessus).
   // En plein écran les pastilles sont cachées : on revient d'abord à l'affichage « carte ».
@@ -293,8 +317,10 @@ export default function Journey({ content }: { content: Content }) {
               {/* Le billet : une ligne fine, les arrêts déjà tamponnés restent sous les yeux d'un arrêt à l'autre. */}
               <Ticket stops={stops} visited={visited} activeId={stop.id} onSelect={(id) => go(id)} />
             </header>
-            <div className="sheet-body">
-              <StopPanel stop={stop} content={content} resId={resId} onOpen={(r) => go(stop.id, r)} />
+            <div className={"sheet-body" + (stop.story ? " fill" : "")}>
+              <StopPanel stop={stop} content={content} resId={resId} onOpen={(r) => go(stop.id, r)}
+                         chapter={chapter} onChapter={setChapter} autoplay={autoplay}
+                         onNextStop={() => go(next ? next.id : CONSEIL)} nextLabel={next ? next.place : "Le conseil municipal"} />
             </div>
           </>
         )}

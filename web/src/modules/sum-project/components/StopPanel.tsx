@@ -8,14 +8,24 @@ import Modal from "./Modal";
 import SortGame from "./SortGame";
 import CityStrip from "./CityStrip";
 import Stepper from "./Stepper";
+import StoryRoad, { ChapterDetail, CHAPTER_PREFIX } from "./StoryRoad";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
-type Props = { stop: Stop; content: Content; resId: string | null; onOpen: (id: string | null) => void };
+type Props = {
+  stop: Stop; content: Content; resId: string | null; onOpen: (id: string | null) => void;
+  chapter?: number; onChapter?: (i: number) => void;   // arrêt « histoire » : le chapitre ouvert (état de Journey, pour les flèches)
+  autoplay?: boolean;                                  // ?autoplay=1
+  onNextStop?: () => void; nextLabel?: string;
+};
 
-export default function StopPanel({ stop, content, resId, onOpen }: Props) {
+export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, onChapter, autoplay = false, onNextStop, nextLabel }: Props) {
   const sort = stop.game?.sort || null;
-  const cardMode = !!(stop.cards || stop.cities || stop.challenge || sort || stop.cityStrip); // arrêt « cartes » : recto / verso / fiche en modale
+  const story = stop.story || null;
+  const cardMode = !!(stop.cards || stop.cities || stop.challenge || sort || stop.cityStrip || story); // arrêt « cartes » : recto / verso / fiche en modale
+  // #/<arrêt>/chapitre-<id> : un chapitre de l'histoire en modale (téléphone, ou lien profond)
+  const chapIdx = story && resId && resId.startsWith(CHAPTER_PREFIX) ? story.chapters.findIndex((c) => CHAPTER_PREFIX + c.id === resId) : -1;
+  const chap = chapIdx >= 0 ? story!.chapters[chapIdx] : null;
   const cityId = stop.cities ? parseSel(resId).cityId : null;
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
   const isSortCard = !!sort && sort.cards.some((c) => c.id === resId);
@@ -31,7 +41,7 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
       }]
     : stop.cards || [];
 
-  const r = isCity || isSortCard ? null
+  const r = isCity || isSortCard || chap ? null
     : resId === "__reveal" && stop.reveal
       ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
       : stop.resources.find((x) => x.id === resId) || null;
@@ -90,6 +100,11 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
           <ResourceDetail r={r} />
         </Modal>
       )}
+      {chap && story && (
+        <Modal crumbs={[crumb, `Chapitre ${chapIdx + 1} sur ${story.chapters.length}`, chap.kicker]} onClose={() => onOpen(null)}>
+          <ChapterDetail story={story} index={chapIdx} content={content} onOpen={onOpen} />
+        </Modal>
+      )}
 
       {/* La question de l'arrêt, et à sa droite les consignes de la table (repliées). */}
       <div className="qrow">
@@ -137,6 +152,10 @@ export default function StopPanel({ stop, content, resId, onOpen }: Props) {
               </section>
             )}
             {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
+            {story && (
+              <StoryRoad story={story} content={content} chapter={chapter} onChapter={onChapter || (() => {})} autoplay={autoplay}
+                         paused={!!resId} onOpen={onOpen} onNextStop={onNextStop || (() => {})} nextLabel={nextLabel || "Arrêt suivant"} />
+            )}
             {cards.length > 0 && <div className="sec" id="sec-cards"><InfoCards cards={cards} onOpen={onOpen} /></div>}
             {stop.cities && <div className="sec" id="sec-cities"><CityCards block={content.cities} sel={resId} onOpen={onOpen} crumb={crumb} /></div>}
             {stop.moreCards && stop.moreCards.length > 0 && (

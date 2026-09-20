@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { drive, fractionsFor, placeMarker, reducedMotion } from "../lib/road";
+import Bike from "./Bike";
 
 export type StopLite = { id: string; order: number; place: string; title: string };
 
@@ -11,8 +13,7 @@ type Props = {
 
 // Route du vélo : une courbe qui traverse la ville de gauche à droite (viewBox 1400 × 620).
 const ROAD = "M 40 500 C 200 500, 240 300, 380 290 S 560 400, 700 330 S 860 150, 1000 190 S 1180 360, 1330 250";
-// Position de chaque arrêt le long de la route (fraction de la longueur).
-const fractionsFor = (n: number) => Array.from({ length: n }, (_, i) => 0.09 + (0.96 - 0.09) * (i / Math.max(1, n - 1)));
+// Position de chaque arrêt le long de la route : fractionsFor (lib/road.ts), partagé avec la route de l'histoire.
 const PARK_BEFORE = 52; // le vélo s'arrête juste avant le disque de l'arrêt
 // Étiquette au-dessus ou en dessous de la route, pour ne pas se chevaucher.
 
@@ -38,7 +39,7 @@ export default function CityMap({ stops, activeId, onSelect, visited, atEnd = fa
   const bikeRef = useRef<SVGGElement>(null);
   const [pts, setPts] = useState<{ x: number; y: number }[]>([]);
   const lenRef = useRef(0); // position actuelle du vélo (longueur sur la route)
-  const rafRef = useRef(0);
+  const cancelRef = useRef<() => void>(() => {});
 
   // positions des arrêts sur la route
   useEffect(() => {
@@ -52,11 +53,7 @@ export default function CityMap({ stops, activeId, onSelect, visited, atEnd = fa
 
   function placeBike(len: number) {
     const p = pathRef.current, g = bikeRef.current; if (!p || !g) return;
-    const L = p.getTotalLength();
-    const a = p.getPointAtLength(Math.max(0, len - 4)), b = p.getPointAtLength(Math.min(L, len + 4));
-    const ang = (Math.atan2(b.y - a.y, b.x - a.x) * 180) / Math.PI;
-    const q = p.getPointAtLength(len);
-    g.setAttribute("transform", `translate(${q.x} ${q.y - 26}) rotate(${ang * 0.6})`);
+    placeMarker(p, g, len);
   }
 
   // le vélo roule jusqu'à l'arrêt sélectionné (ou jusqu'au bout de la route pour le conseil municipal)
@@ -71,20 +68,11 @@ export default function CityMap({ stops, activeId, onSelect, visited, atEnd = fa
     }
     if (to === null) return;
     const from = lenRef.current;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dist = Math.abs(to - from);
-    const dur = reduce ? 0 : Math.min(2200, Math.max(700, dist * 1.6));
-    cancelAnimationFrame(rafRef.current);
-    const t0 = performance.now();
-    const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-    const step = (now: number) => {
-      const t = dur === 0 ? 1 : Math.min(1, (now - t0) / dur);
-      const len = from + (to - from) * ease(t);
-      lenRef.current = len; placeBike(len);
-      if (t < 1) rafRef.current = requestAnimationFrame(step);
-    };
-    rafRef.current = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(rafRef.current);
+    const dur = reducedMotion() ? 0 : Math.min(2200, Math.max(700, dist * 1.6));
+    cancelRef.current();
+    cancelRef.current = drive(from, to, dur, (len) => { lenRef.current = len; placeBike(len); });
+    return () => cancelRef.current();
   }, [activeId, atEnd, stops]);
 
   return (
@@ -149,16 +137,8 @@ export default function CityMap({ stops, activeId, onSelect, visited, atEnd = fa
         );
       })}
 
-      {/* ---- Vélo ---- */}
-      <g ref={bikeRef} aria-hidden="true">
-        <g transform="scale(1.35)">
-          <circle cx="-13" cy="18" r="11" fill="none" stroke="var(--sum-blue-deep)" strokeWidth="3.5" />
-          <circle cx="17" cy="18" r="11" fill="none" stroke="var(--sum-blue-deep)" strokeWidth="3.5" />
-          <path d="M-13 18 L-3 2 H11 L17 18 M-3 2 L4 18 L-13 18 M4 18 L11 2 M-8 -2 H-1 M14 -1 L11 2" fill="none" stroke="var(--sum-green)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M-1 2 L2 -8 L10 -10 M2 -8 L1 -1" fill="none" stroke="var(--sum-blue-deep)" strokeWidth="3.5" strokeLinecap="round" />
-          <circle cx="4" cy="-14" r="4.5" fill="var(--sum-blue-deep)" />
-        </g>
-      </g>
+      {/* ---- Vélo (Bike.tsx, partagé avec la route de l'histoire) ---- */}
+      <Bike ref={bikeRef} />
     </svg>
   );
 }

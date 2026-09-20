@@ -87,7 +87,7 @@
       "place": "Hôtel de ville",
       "title": "Vous êtes maire",
       "question": "Et si c'était vous qui décidiez ?",
-      "brief": "Ici, vous découvrez le défi des neuf villes en retournant sept cartes.",
+      "brief": "Ici, vous suivez la route de SUM en sept chapitres.",
       "mode": "passive",
       "animator": null,
       "position": "entrée de la salle, grand écran",
@@ -95,7 +95,7 @@
       "durationMin": null,
       "tableTent": {
         "headline": "Vous êtes maire.",
-        "subline": "Neuf villes européennes ont relevé le défi. Retournez les cartes : pourquoi changer, avec quoi, et est-ce que ça a marché ?"
+        "subline": "Neuf villes européennes ont relevé le défi. Suivez la route, chapitre par chapitre : pourquoi changer, avec quoi, et est-ce que ça a marché ?"
       },
       "instructions": [
         {
@@ -112,7 +112,7 @@
         }
       ],
       "materials": [
-        "Grand écran ou téléviseur avec la page « Trajet » (vélo animé)",
+        "Grand écran ou téléviseur : l'arrêt 1 en lecture automatique (?autoplay=1), un chapitre toutes les 20 secondes",
         "Affiche A2 : le trajet et les cinq arrêts",
         "Affiche A3 : SUM en trois chiffres",
         "Affiche A3 : la table des smileys (acceptation par ville)",
@@ -574,314 +574,369 @@
         }
       ],
       "images": [],
-      "cards": [
-        {
-          "id": "pourquoi",
-          "wide": true,
-          "accent": true,
-          "front": {
-            "value": "70 %",
-            "label": "des kilomètres se font en voiture individuelle",
-            "teaser": "Pourquoi changer ? Parce que l'habitude tient bon. Avant SUM, voilà ce que disaient les habitants."
-          },
-          "back": {
-            "title": "Les cinq freins des habitants",
-            "chart": {
-              "type": "bars",
-              "unit": " %",
-              "items": [
-                {
-                  "label": "Contents de leur voiture",
-                  "value": 34
-                },
-                {
-                  "label": "Impossible de combiner avec le bus ou le tram",
-                  "value": 17
-                },
-                {
-                  "label": "Trop cher",
-                  "value": 16
-                },
-                {
-                  "label": "Pas sûrs d'en trouver un",
-                  "value": 15
-                },
-                {
-                  "label": "Pas là où ils veulent",
-                  "value": 11
-                }
-              ]
-            },
+      "story": {
+        "autoplaySec": 20,
+        "chapters": [
+          {
+            "id": "pourquoi",
+            "kicker": "Pourquoi ?",
+            "kickerShort": "Pourquoi ?",
+            "stamp": "70 %",
+            "title": "Parce que l'habitude tient bon",
+            "figure": "70 %",
+            "figureLabel": "des kilomètres se font en voiture individuelle",
+            "teaser": "Avant SUM, une enquête européenne a demandé aux habitants pourquoi ils ne lâchaient pas leur voiture. Cinq réponses dominent.",
+            "charts": [
+              {
+                "type": "bars",
+                "unit": " %",
+                "items": [
+                  {
+                    "label": "Contents de leur voiture",
+                    "value": 34
+                  },
+                  {
+                    "label": "Impossible de combiner avec le bus ou le tram",
+                    "value": 17
+                  },
+                  {
+                    "label": "Trop cher",
+                    "value": 16
+                  },
+                  {
+                    "label": "Pas sûrs d'en trouver un",
+                    "value": 15
+                  },
+                  {
+                    "label": "Pas là où ils veulent",
+                    "value": 11
+                  }
+                ]
+              }
+            ],
             "lines": [
               "Cinq freins, cinq leviers : SUM a construit un outil contre chacun."
-            ]
+            ],
+            "resource": "pourquoi-changer"
           },
-          "resource": "pourquoi-changer"
-        },
-        {
-          "id": "leviers",
-          "front": {
-            "value": "5",
-            "label": "leviers du maire",
-            "teaser": "Prévoir, gérer, connecter, co-concevoir, tarifer",
+          {
+            "id": "quoi",
+            "kicker": "Quoi ?",
+            "kickerShort": "Quoi ?",
+            "stamp": "5",
+            "title": "Cinq leviers, un objectif",
+            "figure": "5",
+            "figureLabel": "leviers du maire",
+            "teaser": "Prévoir, gérer, connecter, co-concevoir, tarifer : les cinq piliers du projet sont les cinq leviers d'un maire.",
             "icons": [
-              "prevoir",
-              "gerer",
-              "connecter",
-              "coconcevoir",
-              "tarifer"
-            ]
-          },
-          "back": {
-            "title": "Les cinq leviers, et où les voir",
+              {
+                "name": "prevoir",
+                "label": "Prévoir"
+              },
+              {
+                "name": "gerer",
+                "label": "Gérer"
+              },
+              {
+                "name": "connecter",
+                "label": "Connecter"
+              },
+              {
+                "name": "coconcevoir",
+                "label": "Co-concevoir"
+              },
+              {
+                "name": "tarifer",
+                "label": "Tarifer"
+              }
+            ],
             "lines": [
-              "Prévoir où seront les vélos et scooters dans une heure → Belvédère, carte 1.",
-              "Gérer une flotte de bus à la demande → Belvédère, carte 2.",
-              "Connecter bus et vélo sur un seul billet → Belvédère, carte 3.",
-              "Co-concevoir la rue avec les habitants → Carrefour.",
-              "Tarifer pour faire changer d'habitude → Belvédère, carte 8."
-            ]
+              "L'objectif de départ : relier vélos, trottinettes et voitures partagées aux transports en commun dans 15 villes d'ici 2026, 30 d'ici 2030.",
+              "Trois ans (juin 2023 – mai 2026), 10,2 millions d'euros, un projet Horizon Europe coordonné par Inria."
+            ],
+            "resource": "cinq-leviers"
           },
-          "resource": "cinq-leviers"
-        },
-        {
-          "id": "partenaires",
-          "wide": true,
-          "front": {
-            "value": "29",
-            "label": "partenaires · 12 pays · 9 villes",
-            "teaser": "Qui a joué ? Des universités, des villes et des opérateurs de transport, de la Norvège à Chypre.",
+          {
+            "id": "qui",
+            "kicker": "Qui et où ?",
+            "kickerShort": "Qui et où ?",
+            "stamp": "29",
+            "title": "29 partenaires, 12 pays, 9 villes",
+            "figure": "29",
+            "figureLabel": "partenaires · 12 pays · 9 villes",
+            "teaser": "Des universités, des villes et des opérateurs de transport, de la Norvège à Chypre. Touchez une ville pour ouvrir sa carte.",
             "image": {
               "src": "/images/sum-consortium-cracovie.jpg",
               "alt": "Le consortium SUM devant un bus électrique de Cracovie",
               "caption": "Le consortium SUM réuni à Cracovie",
               "credit": "SUM"
-            }
+            },
+            "cities": true,
+            "lines": [
+              "Quatre villes « leaders » (Munich, Genève, Jérusalem, Penteli) et cinq « suiveuses » (Rotterdam, Cracovie, Fredrikstad, Larnaca, Coimbra).",
+              "Trois pays hors Union européenne : Israël, Norvège, Suisse."
+            ],
+            "resource": "sum-en-bref"
           },
-          "back": {
-            "title": "Qui fait SUM ?",
+          {
+            "id": "fait",
+            "kicker": "Qu'a-t-on fait ?",
+            "kickerShort": "Fait quoi ?",
+            "stamp": "3",
+            "title": "Trois exemples parmi neuf villes",
+            "figure": "3",
+            "figureLabel": "exemples, un par levier",
+            "teaser": "Des pôles de mobilité à Genève, un billet combiné à Larnaca, une prédiction de disponibilité à Rotterdam. Touchez un exemple pour l'ouvrir.",
+            "examples": [
+              {
+                "city": "geneve",
+                "measure": "mobility-hubs"
+              },
+              {
+                "city": "larnaca",
+                "measure": "ticketing-price-nudging"
+              },
+              {
+                "city": "rotterdam",
+                "measure": "check-availability-prediction"
+              }
+            ],
+            "lines": [
+              "Et six autres villes vous attendent à l'arrêt 5 · Destination."
+            ],
+            "links": [
+              {
+                "label": "Voir les neuf villes, arrêt 5",
+                "url": "#/destination"
+              }
+            ],
+            "resource": "ca-a-marche"
+          },
+          {
+            "id": "aime",
+            "kicker": "Qu'ont aimé les habitants ?",
+            "kickerShort": "Aimé ?",
+            "stamp": "🙂",
+            "title": "Deux villes tout en vert",
+            "teaser": "Après quelques mois d'usage, les habitants ont noté le service partagé de leur ville. Devinez les villes tout en vert.",
+            "charts": [
+              {
+                "type": "matrix",
+                "columns": [
+                  "Ville",
+                  "Service",
+                  "Pratique",
+                  "Temps",
+                  "Facile",
+                  "Accès",
+                  "Sûr",
+                  "Envie"
+                ],
+                "rows": [
+                  [
+                    "Munich",
+                    "Autopartage",
+                    "🙁",
+                    "😐",
+                    "🙂",
+                    "NA",
+                    "NA",
+                    "😐"
+                  ],
+                  [
+                    "Genève",
+                    "Autopartage",
+                    "😐",
+                    "🙁",
+                    "🙂",
+                    "🙂",
+                    "NA",
+                    "🙂"
+                  ],
+                  [
+                    "Genève",
+                    "Vélos partagés",
+                    "😐",
+                    "😐",
+                    "🙂",
+                    "🙂",
+                    "🙂",
+                    "😐"
+                  ],
+                  [
+                    "Jérusalem",
+                    "Vélos partagés",
+                    "🙁",
+                    "🙁",
+                    "🙁",
+                    "🙁",
+                    "🙁",
+                    "🙁"
+                  ],
+                  [
+                    "Jérusalem",
+                    "Tram (à venir)",
+                    "😐",
+                    "😐",
+                    "🙂",
+                    "😐",
+                    "NA",
+                    "NA"
+                  ],
+                  [
+                    "Rotterdam",
+                    "Scooters",
+                    "🙁",
+                    "🙂",
+                    "😐",
+                    "NA",
+                    "😐",
+                    "🙁"
+                  ],
+                  [
+                    "Penteli",
+                    "Vélos partagés",
+                    "🙁",
+                    "🙁",
+                    "🙂",
+                    "🙁",
+                    "🙁",
+                    "🙁"
+                  ],
+                  [
+                    "Cracovie",
+                    "LajkBus",
+                    "🙂",
+                    "🙂",
+                    "🙂",
+                    "🙂",
+                    "🙂",
+                    "🙂"
+                  ],
+                  [
+                    "Larnaca",
+                    "Vélos partagés",
+                    "🙂",
+                    "🙂",
+                    "🙂",
+                    "🙂",
+                    "🙂",
+                    "🙂"
+                  ],
+                  [
+                    "Coimbra",
+                    "Bus",
+                    "🙁",
+                    "🙁",
+                    "😐",
+                    "😐",
+                    "NA",
+                    "🙁"
+                  ]
+                ],
+                "legend": "🙂 au-dessus de la moyenne · 😐 dans la moyenne · 🙁 en dessous · NA non évalué",
+                "headCols": 2
+              }
+            ],
+            "resource": "smileys"
+          },
+          {
+            "id": "mesure",
+            "kicker": "Comment on mesure ?",
+            "kickerShort": "Mesuré ?",
+            "stamp": "×2",
+            "title": "La même question, avant et après",
+            "figure": "Avant → Après",
+            "figureLabel": "200 habitants par ville, le même questionnaire en 2024 et en 2026",
+            "charts": [
+              {
+                "type": "timeline",
+                "items": [
+                  {
+                    "when": "Juin 2023",
+                    "text": "Lancement du projet."
+                  },
+                  {
+                    "when": "2024",
+                    "text": "Enquête « avant » : 200 habitants par ville, même questionnaire en 7 langues."
+                  },
+                  {
+                    "when": "2024 – 2026",
+                    "text": "Les villes testent leurs mesures."
+                  },
+                  {
+                    "when": "Début 2026",
+                    "text": "Enquête « après », mêmes questions."
+                  },
+                  {
+                    "when": "Mai 2026",
+                    "text": "Fin du projet ; la plateforme reste en ligne."
+                  }
+                ],
+                "horizontal": true
+              },
+              {
+                "type": "delta",
+                "unit": " %",
+                "items": [
+                  {
+                    "label": "Transports en commun, neuf villes",
+                    "before": 16,
+                    "after": 18.5
+                  },
+                  {
+                    "label": "Modes partagés, Cracovie",
+                    "before": 1,
+                    "after": 20,
+                    "beforeText": "< 1"
+                  }
+                ]
+              }
+            ],
+            "lines": [
+              "Des parts de trajets déclarés dans l'enquête, pas des comptages : un ordre de grandeur. Le détail ville par ville est sur la plateforme de données ouverte."
+            ],
+            "links": [
+              {
+                "label": "Plateforme de données ouverte",
+                "url": "https://odp.sum-project.eu"
+              },
+              {
+                "label": "Enquête « avant » (Zenodo)",
+                "url": "https://doi.org/10.5281/zenodo.14887578"
+              }
+            ],
+            "resource": "comment-on-mesure"
+          },
+          {
+            "id": "apres",
+            "kicker": "Et après ?",
+            "kickerShort": "Et après ?",
+            "stamp": "+7",
+            "title": "Lille observe, la plateforme reste",
+            "figure": "Lille",
+            "figureLabel": "observe SUM, avec six autres villes",
+            "teaser": "Sept villes ont suivi le projet pour copier ce qui marche. La plateforme de données accueille déjà 11 villes et reste en ligne.",
             "image": {
-              "src": "/images/sum-partners.png",
-              "alt": "Les logos des 29 partenaires du projet SUM",
-              "caption": "Les 29 partenaires",
+              "src": "/images/destination-odp.jpg",
+              "alt": "La page d'accueil de la plateforme de données SUM",
+              "caption": "La plateforme de données ouverte, odp.sum-project.eu",
               "credit": "SUM"
             },
-            "lines": [
-              "Des universités aux opérateurs de transport, en passant par les villes et les réseaux européens.",
-              "Trois pays hors Union européenne : Israël, Norvège, Suisse.",
-              "Budget : 10,2 millions d'euros sur trois ans. Coordination : Inria."
-            ]
-          },
-          "resource": "sum-en-bref"
-        },
-        {
-          "id": "marche",
-          "front": {
-            "value": "< 1 % → 20 %",
-            "label": "de trajets en modes partagés à Cracovie",
-            "teaser": "Est-ce que ça a marché ? Après le bus à la demande, d'après l'enquête « après »."
-          },
-          "back": {
-            "title": "Est-ce que ça a marché ?",
-            "lines": [
-              "Cracovie : les modes partagés passent de moins de 1 % à 20 % des trajets déclarés, après LajkBus.",
-              "Dans les neuf villes, les transports en commun passent de 16 % à 18,5 % des trajets.",
-              "Coimbra : 93 % des trajets se font encore en voiture. Tout ne bouge pas en trois ans."
-            ]
-          },
-          "link": {
-            "label": "Voir les villes, arrêt 5",
-            "url": "#/destination"
-          },
-          "resource": "ca-a-marche"
-        },
-        {
-          "id": "smileys",
-          "front": {
-            "value": "🙂 😐 🙁",
-            "label": "Qui a aimé quoi ?",
-            "teaser": "Les habitants ont noté les nouveaux services. Devinez les villes tout en vert."
-          },
-          "back": {
-            "title": "Qui a aimé quoi ?",
-            "chart": {
-              "type": "matrix",
-              "columns": [
-                "Ville",
-                "Service",
-                "Pratique",
-                "Temps",
-                "Facile",
-                "Accès",
-                "Sûr",
-                "Envie"
-              ],
-              "rows": [
-                [
-                  "Munich",
-                  "Autopartage",
-                  "🙁",
-                  "😐",
-                  "🙂",
-                  "NA",
-                  "NA",
-                  "😐"
-                ],
-                [
-                  "Genève",
-                  "Autopartage",
-                  "😐",
-                  "🙁",
-                  "🙂",
-                  "🙂",
-                  "NA",
-                  "🙂"
-                ],
-                [
-                  "Genève",
-                  "Vélos partagés",
-                  "😐",
-                  "😐",
-                  "🙂",
-                  "🙂",
-                  "🙂",
-                  "😐"
-                ],
-                [
-                  "Jérusalem",
-                  "Vélos partagés",
-                  "🙁",
-                  "🙁",
-                  "🙁",
-                  "🙁",
-                  "🙁",
-                  "🙁"
-                ],
-                [
-                  "Jérusalem",
-                  "Tram (à venir)",
-                  "😐",
-                  "😐",
-                  "🙂",
-                  "😐",
-                  "NA",
-                  "NA"
-                ],
-                [
-                  "Rotterdam",
-                  "Scooters",
-                  "🙁",
-                  "🙂",
-                  "😐",
-                  "NA",
-                  "😐",
-                  "🙁"
-                ],
-                [
-                  "Penteli",
-                  "Vélos partagés",
-                  "🙁",
-                  "🙁",
-                  "🙂",
-                  "🙁",
-                  "🙁",
-                  "🙁"
-                ],
-                [
-                  "Cracovie",
-                  "LajkBus",
-                  "🙂",
-                  "🙂",
-                  "🙂",
-                  "🙂",
-                  "🙂",
-                  "🙂"
-                ],
-                [
-                  "Larnaca",
-                  "Vélos partagés",
-                  "🙂",
-                  "🙂",
-                  "🙂",
-                  "🙂",
-                  "🙂",
-                  "🙂"
-                ],
-                [
-                  "Coimbra",
-                  "Bus",
-                  "🙁",
-                  "🙁",
-                  "😐",
-                  "😐",
-                  "NA",
-                  "🙁"
-                ]
-              ],
-              "legend": "🙂 au-dessus de la moyenne · 😐 dans la moyenne · 🙁 en dessous · NA non évalué",
-              "headCols": 2
-            }
-          },
-          "resource": "smileys"
-        },
-        {
-          "id": "avant-apres",
-          "front": {
-            "value": "Avant → Après",
-            "label": "la même question, deux fois",
-            "teaser": "Comment sait-on si ça marche ? On demande aux habitants avant, puis après."
-          },
-          "back": {
-            "title": "Comment sait-on ?",
-            "chart": {
-              "type": "timeline",
-              "items": [
-                {
-                  "when": "Juin 2023",
-                  "text": "Lancement du projet."
-                },
-                {
-                  "when": "2024",
-                  "text": "Enquête « avant » : 200 habitants par ville, même questionnaire en 7 langues."
-                },
-                {
-                  "when": "2024 – 2026",
-                  "text": "Les villes testent leurs mesures."
-                },
-                {
-                  "when": "Début 2026",
-                  "text": "Enquête « après », mêmes questions."
-                },
-                {
-                  "when": "Mai 2026",
-                  "text": "Fin du projet ; la plateforme reste en ligne."
-                }
-              ]
-            }
-          },
-          "resource": "comment-on-mesure"
-        },
-        {
-          "id": "apres",
-          "front": {
-            "value": "Lille",
-            "label": "observe SUM, avec six autres villes",
-            "teaser": "Et après ? Sept villes regardent pour copier. La plateforme accueille déjà 11 villes."
-          },
-          "back": {
-            "title": "Et après ?",
             "lines": [
               "🇫🇷 Lille · 🇪🇸 Vitoria-Gasteiz · 🇹🇷 Istanbul · 🇭🇷 Zagreb · 🇮🇱 Tel Aviv · 🇬🇷 Héraklion · 🇵🇹 Douro.",
               "La plateforme de données héberge déjà 11 villes, dont les 9 de SUM, et reste ouverte.",
               "Le Douro déploie des bus à la demande dans 19 communes."
-            ]
-          },
-          "resource": "et-apres"
-        }
-      ],
-      "cityStrip": {
-        "title": "Neuf villes ont relevé le défi",
-        "lead": "Touchez une ville pour ouvrir sa carte à l'arrêt 5 · Destination."
+            ],
+            "links": [
+              {
+                "label": "Ouvrir la plateforme",
+                "url": "https://odp.sum-project.eu"
+              }
+            ],
+            "resource": "et-apres"
+          }
+        ]
       }
     },
     {
