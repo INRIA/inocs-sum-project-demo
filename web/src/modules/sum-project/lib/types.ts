@@ -28,18 +28,20 @@ export type InfoCard = {
   resource?: string;  // id d'une ressource de l'arrêt, ouverte en modale
 };
 
-// Jeu de tri (« Belvédère ») : des cartes « innovation » à poser sur trois tapis, puis on retourne tout.
-export type SortBin = { id: string; emoji: string; label: string; short: string; tone: "green" | "amber" | "red"; hint?: string };
-export type SortCard = {
+// Jeu de cartes (« Belvédère ») : on choisit les innovations que sa ville veut, puis on retourne les cartes
+// pour voir où en est chaque idée dans le projet. Quatre statuts, du plus avancé au plus lointain.
+export type PickStatus = { id: string; label: string; short: string; tone: "green" | "blue" | "amber" | "grey"; hint?: string };
+export type PickCard = {
   id: string; n: number; title: string; pitch: string; question?: string; image?: Img | null;
-  verdict: string;                          // id du tapis où la carte va vraiment
-  stamp?: string;                           // texte du tampon au verso (défaut : label du tapis)
+  icon?: string;                            // croquis CIVITAS (Sketch.tsx) quand la carte n'a pas encore de photo
+  status: string;                           // id du statut réel de l'idée (verso de la carte)
+  stamp?: string;                           // texte du tampon au verso (défaut : label du statut)
   why: string[]; partner?: string; livingLab?: string;
   see?: { stop: string; res?: string } | null;  // « Pour le voir : arrêt X » → route interne #/<stop>/<res>
   source?: string;
 };
-export type SortGameDef = {
-  message?: string; howto?: string; bins: SortBin[]; cards: SortCard[];
+export type PickGameDef = {
+  message?: string; howto?: string; statuses: PickStatus[]; cards: PickCard[];
   debrief?: string;   // ce que l'animateur fait remarquer après le retournement
   bulletin?: string;  // texte du bulletin pour le conseil municipal (affiché, pas saisi)
 };
@@ -86,7 +88,7 @@ export type Stop = {
   tableTent: { headline: string; subline: string };
   instructions: Instruction[]; rule?: string; materials: string[];
   questions?: { id: string; text: string }[];
-  game?: { mapNote?: string; note?: string; stationsToPlace?: number; tablet?: { url: string; note: string }; sort?: SortGameDef };
+  game?: { mapNote?: string; note?: string; stationsToPlace?: number; tablet?: { url: string; note: string }; pick?: PickGameDef };
   reveal: { title: string; lines: string[]; source?: Source } | null;
   featured?: string[];
   images?: Img[];

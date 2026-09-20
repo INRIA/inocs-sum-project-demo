@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import type { Stop } from "../lib/types";
+import { loadPick, loadReflect } from "../lib/pickState";
 import { CONSEIL_ID } from "./StopList";
 
 // Le billet : le même objet du début à la fin du trajet. Six cases — cinq arrêts et le conseil
-// municipal — qui se tamponnent au passage, plus deux souvenirs du Belvédère (le score et ce qui
-// a le plus surpris). Discret dans l'en-tête d'un arrêt, en grand sur l'écran de clôture.
-const SORT_KEY = (id: string) => `sum-sort:${id}`;
-const REFLECT_KEY = (id: string) => `sum-sort:reflect:${id}`;
+// municipal — qui se tamponnent au passage, plus deux souvenirs du Belvédère (le nombre d'idées
+// choisies et ce qui a le plus surpris). Discret dans l'en-tête d'un arrêt, en grand sur l'écran de clôture.
 
 type Props = {
   stops: Stop[];
@@ -17,24 +16,19 @@ type Props = {
 };
 
 export default function Ticket({ stops, visited, activeId, onSelect, big = false }: Props) {
-  const sortStop = stops.find((s) => s.game?.sort) || null;
-  const cards = sortStop?.game?.sort?.cards || [];
-  const bins = sortStop?.game?.sort?.bins || [];
+  const pickStop = stops.find((s) => s.game?.pick) || null;
+  const statuses = pickStop?.game?.pick?.statuses || [];
 
   // Souvenirs gardés par appareil : relus après le montage (jamais au rendu serveur).
-  const [score, setScore] = useState<number | null>(null);
+  const [nPicked, setNPicked] = useState<number | null>(null);
   const [reflect, setReflect] = useState<string | null>(null);
   useEffect(() => {
-    if (!sortStop) return;
-    try {
-      const raw = sessionStorage.getItem(SORT_KEY(sortStop.id));
-      const saved = raw ? JSON.parse(raw) : null;
-      const placed: Record<string, string> = (saved && saved.placed) || {};
-      setScore(saved && saved.revealed ? cards.filter((k) => placed[k.id] === k.verdict).length : null);
-    } catch { setScore(null); }
-    try { setReflect(sessionStorage.getItem(REFLECT_KEY(sortStop.id))); } catch { setReflect(null); }
-  }, [sortStop, cards, activeId, visited]);
-  const bin = bins.find((b) => b.id === reflect) || null;
+    if (!pickStop) return;
+    const saved = loadPick(pickStop.id);
+    setNPicked(saved.revealed ? saved.picked.length : null);
+    setReflect(loadReflect(pickStop.id));
+  }, [pickStop, activeId, visited]);
+  const status = statuses.find((b) => b.id === reflect) || null;
 
   // Le coup de tampon : seulement pour l'arrêt qu'on vient de visiter, jamais au montage.
   const seen = useRef<Set<string> | null>(null);
@@ -75,16 +69,16 @@ export default function Ticket({ stops, visited, activeId, onSelect, big = false
           {stops.map((s) => slot(s.id, String(s.order), `Arrêt ${s.order} : ${s.place}${visited.has(s.id) ? ", tamponné" : ", pas encore"}`, s.place, visited.has(s.id)))}
           {slot(CONSEIL_ID, "⚑", "Le conseil municipal, fin du trajet", "Le conseil", activeId === CONSEIL_ID)}
         </ol>
-        {(score !== null || bin) && (
+        {(nPicked !== null || status) && (
           <div className="tkb">
-            {score !== null && sortStop && (
-              <span className="b sc" aria-label={`Score au ${sortStop.place} : ${score} sur ${cards.length} bien vues`}>
-                <b>{score}/{cards.length}</b><span className="l">bien vues</span>
+            {nPicked !== null && pickStop && (
+              <span className="b sc" aria-label={`Votre programme au ${pickStop.place} : ${nPicked} idée${nPicked > 1 ? "s" : ""} choisie${nPicked > 1 ? "s" : ""}`}>
+                <b>{nPicked}</b><span className="l">idée{nPicked > 1 ? "s" : ""}</span>
               </span>
             )}
-            {bin && (
-              <span className="b emo" aria-label={`Ce qui vous a le plus surpris : ${bin.label}`}>
-                <span aria-hidden="true">{bin.emoji}</span><span className="l">{bin.short || bin.label}</span>
+            {status && (
+              <span className="b emo" aria-label={`Ce qui vous a le plus surpris : ${status.label}`}>
+                <span className={"dot " + status.tone} aria-hidden="true" /><span className="l">{status.short || status.label}</span>
               </span>
             )}
           </div>

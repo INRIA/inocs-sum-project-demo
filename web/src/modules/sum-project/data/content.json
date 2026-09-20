@@ -943,81 +943,85 @@
       "id": "belvedere",
       "order": 2,
       "place": "Belvédère",
-      "title": "Ce qui arrive après le tram",
-      "question": "Treize idées venues des villes SUM : lesquelles roulent déjà, lesquelles sont au labo, lesquelles attendent encore leur heure ?",
-      "brief": "Ici, vous devinez où en sont treize idées : sur la route, au labo ou en attente.",
+      "title": "Votre programme pour la ville",
+      "question": "Treize innovations testées dans les villes SUM : lesquelles votre ville choisit-elle ? Et où en sont-elles vraiment ?",
+      "brief": "Ici, vous composez votre programme de maire, puis vous retournez vos cartes pour voir où en est chaque idée.",
       "mode": "selfservice",
       "animator": null,
       "position": "table 2, en autonomie ; un animateur passe toutes les 10 min pour un débrief d'une minute",
       "capacity": 5,
       "durationMin": 8,
-      "badge": "Jeu de tri",
+      "badge": "Jeu de cartes",
       "tableTent": {
-        "headline": "Ce qui arrive après le tram",
-        "subline": "Treize idées, trois tapis. Devinez où chacune en est vraiment, puis retournez les cartes."
+        "headline": "Votre programme pour la ville",
+        "subline": "Treize idées, un programme. Choisissez celles que votre ville veut, puis retournez-les : où en sont-elles vraiment ?"
       },
       "instructions": [
         {
           "step": 1,
-          "title": "Distribuer (30 s)",
-          "text": "Lisez le chevalet. Chacun prend 2 ou 3 cartes."
+          "title": "Lire (1 min)",
+          "text": "Lisez le chevalet. Étalez les treize cartes, recto visible."
         },
         {
           "step": 2,
-          "title": "Trier (3–4 min)",
-          "text": "À tour de rôle : lisez votre carte à voix haute, 20 secondes de débat, posez-la sur un tapis : 🟢 ça roule déjà, 🟡 au labo ou en préparation, 🔴 ça attend son heure."
+          "title": "Choisir (3 min)",
+          "text": "Vous êtes le conseil municipal : discutez, puis gardez les cartes que votre ville veut. Aucune limite, mais chaque carte doit être défendue par quelqu'un."
         },
         {
           "step": 3,
           "title": "Retourner (2 min)",
-          "text": "Quand toutes les cartes sont posées, retournez-les ensemble. Comptez les bonnes réponses et lisez à voix haute le « pourquoi » qui vous surprend le plus."
+          "text": "Retournez vos cartes : en service, testé et prévu, au labo, ou pas prévu pour l'instant. Lisez le « pourquoi » qui vous surprend le plus."
         },
         {
           "step": 4,
           "title": "Bulletin (1 min)",
-          "text": "Écrivez sur un bulletin l'idée que vous voudriez à Villeurbanne, tamponnez votre ticket, puis suivez « Pour le voir : table X »."
+          "text": "Écrivez sur un bulletin l'idée que vous voudriez chez vous, tamponnez votre ticket, puis suivez « Pour le voir : table X »."
         }
       ],
-      "rule": "Chacun place au moins une carte. Personne ne retourne une carte avant la fin.",
+      "rule": "Chaque carte choisie doit être défendue par au moins une personne. Personne ne retourne une carte avant la fin.",
       "materials": [
         "Chevalet de table",
         "13 cartes innovation A6, recto (titre, photo, accroche, question) / verso (tampon, 3 lignes « pourquoi », partenaire, « Pour le voir : table X », page du rapport)",
-        "3 tapis A4 : 🟢 « Ça roule déjà » · 🟡 « Au labo ou en préparation » · 🔴 « Ça attend son heure »",
-        "Bandeau de score et tampon pour le ticket",
+        "4 tampons de statut : Déjà en service · Testé, déploiement prévu · Au labo seulement · Pas prévu pour l'instant",
+        "Tampon pour le ticket",
         "20 bulletins « Bulletin pour le conseil municipal »",
-        "Enveloppe « Le score de SUM »",
+        "Enveloppe « Où en sont les treize idées »",
         "Sablier 5 min (optionnel)",
         "QR code vers l'arrêt 2 de la page"
       ],
       "game": {
-        "note": "Variante 6–9 ans : trier par « il y a un écran » / « il y a un véhicule » ; un parent retourne.",
-        "sort": {
-          "message": "Innover, ce n'est pas seulement ce qui roule déjà : entre l'idée et la rue, il y a tout un process de validation depuis le laboratoire et parfois on est face à un mur.",
-          "howto": "Lisez chaque carte, décidez ensemble, posez-la sur un tapis. On retourne tout à la fin.",
-          "bins": [
+        "note": "Variante 6–9 ans : chacun choisit l'idée qu'il aimerait devant chez lui ; un parent retourne et lit le tampon.",
+        "pick": {
+          "message": "Innover, ce n'est pas seulement ce qui roule déjà : entre l'idée et la rue, il y a tout un chemin depuis le laboratoire, et parfois un mur.",
+          "howto": "Choisissez les idées que votre ville veut. Quand votre programme est prêt, retournez les cartes.",
+          "statuses": [
             {
-              "id": "roule",
-              "emoji": "🟢",
-              "label": "Ça roule déjà",
-              "short": "Ça roule",
+              "id": "service",
+              "label": "Déjà en service",
+              "short": "En service",
               "tone": "green",
-              "hint": "En service dans une ville"
+              "hint": "En service dans une ville du projet"
+            },
+            {
+              "id": "prevu",
+              "label": "Testé, déploiement prévu",
+              "short": "Testé, prévu",
+              "tone": "blue",
+              "hint": "Testé pendant SUM, la suite est engagée"
             },
             {
               "id": "labo",
-              "emoji": "🟡",
-              "label": "Au labo ou en préparation",
+              "label": "Au labo seulement",
               "short": "Au labo",
               "tone": "amber",
-              "hint": "Testé, simulé, en cours"
+              "hint": "Simulé ou validé en laboratoire, pas dans la rue"
             },
             {
-              "id": "mur",
-              "emoji": "🔴",
-              "label": "Ça attend son heure",
-              "short": "Attend son heure",
-              "tone": "red",
-              "hint": "Reporté pour l'instant, mais mesuré"
+              "id": "attente",
+              "label": "Pas prévu pour l'instant",
+              "short": "Pas prévu",
+              "tone": "grey",
+              "hint": "Arrêté ou reporté, mais documenté"
             }
           ],
           "cards": [
@@ -1033,7 +1037,7 @@
                 "alt": "La prévision de disponibilité dans l'appli RET (Rotterdam)",
                 "credit": ""
               },
-              "verdict": "roule",
+              "status": "service",
               "why": [
                 "En service dans l'appli RET depuis juillet 2025, sur 15 stations et 17 zones.",
                 "Une idée « numérique » : pas de véhicule à acheter, pas d'homologation à obtenir.",
@@ -1059,7 +1063,7 @@
                 "alt": "Le LajkBus à Cracovie",
                 "credit": ""
               },
-              "verdict": "roule",
+              "status": "service",
               "why": [
                 "LajkBus roule depuis février 2025 entre Skotniki et Czerwone Maki, du lundi au vendredi de 6 h à 21 h.",
                 "La ville a décidé de le garder après le projet.",
@@ -1085,7 +1089,7 @@
                 "alt": "L'appli des transports de Larnaca",
                 "credit": ""
               },
-              "verdict": "roule",
+              "status": "service",
               "why": [
                 "L'appli de transport public est devenue une appli tous-modes avec Nextbike.",
                 "La réservation combinée à tarif réduit est pleinement opérationnelle.",
@@ -1111,7 +1115,7 @@
                 "alt": "La plateforme de données ouvertes SUM",
                 "credit": ""
               },
-              "verdict": "roule",
+              "status": "service",
               "why": [
                 "En ligne depuis janvier 2026, avec 11 Living Labs.",
                 "Code ouvert, maintenue au moins 5 ans après le projet par ERTICO.",
@@ -1135,8 +1139,9 @@
                 "caption": "Le minibus passagers + colis testé à Genève",
                 "alt": "Minibus mixte passagers et colis"
               },
-              "verdict": "labo",
-              "stamp": "Testé et prévu",
+              "icon": "freight",
+              "status": "prevu",
+              "stamp": "Testé, prévu",
               "why": [
                 "Testé à Genève pendant SUM.",
                 "Le projet continue dans ULTIMO : ce n'est pas abandonné.",
@@ -1161,7 +1166,8 @@
                 "caption": "Le jumeau numérique de Jérusalem (figure 8 du rapport)",
                 "alt": "Simulation de Jérusalem"
               },
-              "verdict": "labo",
+              "icon": "city",
+              "status": "labo",
               "why": [
                 "Plus de 2 000 configurations de minibus partagés simulées à Jérusalem.",
                 "Le résultat sert à décider, pas encore à rouler.",
@@ -1186,7 +1192,8 @@
                 "caption": "Le calcul multimodal FleetPy (figure 9 du rapport)",
                 "alt": "Schéma d'un calcul minibus puis tram"
               },
-              "verdict": "labo",
+              "icon": "mobile",
+              "status": "labo",
               "why": [
                 "Le logiciel existe (FleetPy + RAPTOR) et tourne en simulation.",
                 "Aucune ville ne l'a encore branché sur une appli grand public.",
@@ -1211,7 +1218,8 @@
                 "caption": "L'interface web de la démo de tarification (Inria)",
                 "alt": "Démo de tarification"
               },
-              "verdict": "labo",
+              "icon": "ticket",
+              "status": "labo",
               "why": [
                 "Modèle de tarification et de recommandation d'Inria, avec une démo web.",
                 "Niveau de maturité TRL 4 : validé en laboratoire, pas dans une ville.",
@@ -1234,7 +1242,7 @@
                 "alt": "La démo de conception du réseau de vélos (Genève)",
                 "credit": ""
               },
-              "verdict": "labo",
+              "status": "labo",
               "why": [
                 "Conception bi-objectif efficacité / équité (indice de Gini) sur Genève.",
                 "C'est le modèle de la table Station : de la recherche, avec la ville comme cas d'étude.",
@@ -1259,7 +1267,7 @@
                 "alt": "Ce qui reste à Munich : des places réservées à l'autopartage",
                 "credit": ""
               },
-              "verdict": "mur",
+              "status": "attente",
               "why": [
                 "La flotte de niveau 4 de SIXT a été annulée : pas d'homologation.",
                 "Restent environ 900 places dédiées à l'autopartage, bien réelles.",
@@ -1285,7 +1293,7 @@
                 "alt": "La ligne scolaire à Penteli",
                 "credit": ""
               },
-              "verdict": "mur",
+              "status": "attente",
               "why": [
                 "Les bus n'ont pas été achetés.",
                 "Seule la ligne scolaire a roulé ; les autres ont été simulées.",
@@ -1310,7 +1318,8 @@
                 "caption": "Le centre de Genève",
                 "alt": "Centre-ville de Genève"
               },
-              "verdict": "mur",
+              "icon": "nocars",
+              "status": "attente",
               "why": [
                 "Rejetée en octobre 2024.",
                 "Ce n'est ni la technique ni l'argent : c'est une décision politique.",
@@ -1336,7 +1345,7 @@
                 "alt": "Un ferry électrique blanc et profilé naviguant sur l'eau",
                 "credit": "Living Lab Fredrikstad"
               },
-              "verdict": "mur",
+              "status": "attente",
               "why": [
                 "Le ferry électrique, lui, a été testé pour de vrai d'avril 2024 à août 2025 : 26 583 passagers en 2025.",
                 "La version sans capitaine n'a pas vu le jour : le travail sur les capteurs et l'autonomie a pris plus de temps que prévu.",
@@ -1348,17 +1357,18 @@
                 "stop": "destination",
                 "res": "fredrikstad--hyke-electric-ferry-pilot"
               },
-              "source": "Présentation du Living Lab Fredrikstad, réunion d'évaluation SUM, juin 2026, diapos 5, 15 et 18"
+              "source": "Présentation du Living Lab Fredrikstad, réunion d'évaluation SUM, juin 2026, diapos 5, 15 et 18",
+              "stamp": "Testé, pas prévu"
             }
           ],
-          "debrief": "les idées « numériques » (une appli, un site, un calcul) ont avancé vite ; celles qui dépendent d'un véhicule, d'un budget ou d'une loi ont ralenti ou se sont arrêtées. Pourquoi ?",
-          "bulletin": "L'idée que je voudrais à Villeurbanne : ___"
+          "debrief": "Les idées « numériques » (une appli, un site, un calcul) ont avancé vite ; celles qui dépendent d'un véhicule, d'un budget ou d'une loi ont ralenti ou se sont arrêtées.",
+          "bulletin": "L'idée que je voudrais chez moi : ___"
         }
       },
       "reveal": {
-        "title": "Le score de SUM",
+        "title": "Où en sont les treize idées",
         "lines": [
-          "4 idées roulent aujourd'hui, 5 sont au labo ou en préparation, 3 se sont arrêtées.",
+          "4 idées sont en service aujourd'hui, 1 est testée et prévue, 4 sont au labo, 4 ne sont pas prévues pour l'instant.",
           "Tous les Living Labs n'ont pas le même niveau de résultats.",
           "7 villes observatrices, dont Lille, reprennent des mesures de SUM."
         ],
@@ -1411,7 +1421,7 @@
         }
       ],
       "images": [],
-      "moreTitle": "Pour comprendre le tri",
+      "moreTitle": "Pour comprendre ces idées",
       "moreCards": [
         {
           "id": "c-temps",

@@ -5,7 +5,7 @@ import CityCards, { parseSel } from "./CityCards";
 import Gallery from "./Gallery";
 import InfoCards from "./InfoCards";
 import Modal from "./Modal";
-import SortGame from "./SortGame";
+import PickGame from "./PickGame";
 import CityStrip from "./CityStrip";
 import Stepper from "./Stepper";
 import StoryRoad, { ChapterDetail, CHAPTER_PREFIX } from "./StoryRoad";
@@ -23,21 +23,21 @@ type Props = {
 };
 
 export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, onChapter, autoplay = false, onNextStop, nextLabel }: Props) {
-  const sort = stop.game?.sort || null;
+  const pick = stop.game?.pick || null;
   const story = stop.story || null;
   const mission = stop.mission || null;
-  const cardMode = !!(stop.cards || stop.cities || sort || stop.cityStrip || story || mission || stop.hero || stop.takeaways); // arrêt « cartes » : recto / verso / fiche en modale
+  const cardMode = !!(stop.cards || stop.cities || pick || stop.cityStrip || story || mission || stop.hero || stop.takeaways); // arrêt « cartes » : recto / verso / fiche en modale
   // #/<arrêt>/chapitre-<id> : un chapitre de l'histoire en modale (téléphone, ou lien profond)
   const chapIdx = story && resId && resId.startsWith(CHAPTER_PREFIX) ? story.chapters.findIndex((c) => CHAPTER_PREFIX + c.id === resId) : -1;
   const chap = chapIdx >= 0 ? story!.chapters[chapIdx] : null;
   const cityId = stop.cities ? parseSel(resId).cityId : null;
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
-  const isSortCard = !!sort && sort.cards.some((c) => c.id === resId);
+  const isPickCard = !!pick && pick.cards.some((c) => c.id === resId);
   const embedUrl = embedUrlFor(mission, resId);   // #/<arrêt>/outil : l'outil externe en modale
 
   // En mode « cartes », l'enveloppe devient la dernière carte de la grille (son verso = la révélation).
-  // Le jeu de tri (Belvédère) garde son propre retournement : on n'y touche pas.
-  const cards: InfoCard[] = stop.cards && stop.cards.length > 0 && stop.reveal && !sort
+  // Le jeu de cartes (Belvédère) garde son propre retournement : on n'y touche pas.
+  const cards: InfoCard[] = stop.cards && stop.cards.length > 0 && stop.reveal && !pick
     ? [...stop.cards, {
         id: "__reveal", accent: true,
         front: { value: "✉", label: stop.reveal.title, teaser: "Ouvre-moi quand vous avez voté." },
@@ -46,7 +46,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
       }]
     : stop.cards || [];
 
-  const r = isCity || isSortCard || chap || embedUrl ? null
+  const r = isCity || isPickCard || chap || embedUrl ? null
     : resId === "__reveal" && stop.reveal
       ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
       : stop.resources.find((x) => x.id === resId) || null;
@@ -137,7 +137,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
       )}
 
       {!cardMode && stop.images && stop.images.length > 0 && <Gallery images={stop.images} />}
-      <div className={"rlist" + (cardMode ? " cards" : "") + (sort ? " full" : "")}>
+      <div className={"rlist" + (cardMode ? " cards" : "") + (pick ? " full" : "")}>
         {cardMode ? (
           !stop.brief && (
             // sans brief dans l'en-tête, on garde la phrase du chevalet de table
@@ -171,7 +171,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
                 </ul>
               </section>
             )}
-            {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
+            {pick && <PickGame stopId={stop.id} def={pick} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}
             {story && (
               <StoryRoad story={story} content={content} chapter={chapter} onChapter={onChapter || (() => {})} autoplay={autoplay}
                          paused={!!resId} onOpen={onOpen} onNextStop={onNextStop || (() => {})} nextLabel={nextLabel || "Arrêt suivant"} />

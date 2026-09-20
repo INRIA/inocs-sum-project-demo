@@ -456,139 +456,82 @@ td.e { font-size: 22px; }
   .qrow .consignes[open] { grid-column: 1; }
 }
 
-/* ---------- Jeu de tri (Belvédère) : trois tapis, une main de cartes, on retourne tout à la fin ---------- */
+/* ---------- Belvédère : tampons, résultat, bulletin (le jeu lui-même est dans pick.css) ---------- */
 .rlist.cards.full { grid-template-columns: 1fr; gap: 14px; }
-.sortgame { display: grid; gap: 12px; min-width: 0; }
-.sortintro { display: grid; gap: 2px; }  /* bloc compact : la première carte doit rester au-dessus de la ligne de flottaison */
 .result .k, .bulletin .k, .reflect .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sum-green-deep); }
-.sortintro .msg { margin: 0; font-family: var(--display); font-weight: 700; font-size: 18px; line-height: 1.25; color: var(--sum-blue-deep); text-wrap: pretty; }
-.sortintro .how { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.3; max-width: 80ch; }
-.sortbar { position: sticky; top: 0; z-index: 3; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--card); border: 1.5px solid var(--line); border-radius: 12px; padding: 8px 14px; box-shadow: 0 4px 14px rgba(27,52,103,.08); }
-.sortbar .cnt { font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--sum-blue); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.sortbar .cnt small { font-size: 14px; font-weight: 600; color: var(--muted); }
-.sortbar .bar { flex: 1 1 120px; height: 8px; border-radius: 999px; background: var(--sum-blue-soft); overflow: hidden; }
-.sortbar .bar i { display: block; height: 100%; background: var(--sum-green); transition: width .3s; }
-.sortbar .iconbtn { min-height: 44px; height: auto; }
-.sortbar .iconbtn:disabled { opacity: .45; cursor: not-allowed; }
-.sortbar .iconbtn[aria-pressed="true"] { background: var(--sum-blue-soft); border-color: var(--sum-blue); }
-/* Téléphone : les trois tapis en pastilles sous la barre — compte en direct, un toucher pour y aller. */
-.matstrip { display: none; gap: 6px; flex: 1 0 100%; }
-.mpill {
-  flex: 1 1 0; min-width: 0; min-height: 40px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  border: 2px solid; border-radius: 999px; background: #fff; padding: 0 8px;
-  font-family: var(--display); font-weight: 800; font-size: 16px; line-height: 1; font-variant-numeric: tabular-nums;
-}
-.mpill .emoji { font-size: 15px; line-height: 1; }
-.mpill.green { border-color: var(--sum-green); background: var(--sum-green-soft); color: var(--sum-green-deep); }
-.mpill.amber { border-color: var(--amber); background: var(--amber-soft); color: var(--amber-deep); }
-.mpill.red { border-color: var(--red); background: var(--red-soft); color: var(--red-deep); }
-@keyframes matpop { 0% { transform: none; } 40% { transform: scale(1.16); } 100% { transform: none; } }
-@media (prefers-reduced-motion: no-preference) { .mpill.pulse { animation: matpop .36s ease-out; } }
-
-.mats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; --card-h: 0px; }
-.mat { border: 2px solid var(--line); border-radius: 14px; background: #fff; display: grid; grid-template-rows: auto 1fr; overflow: hidden; min-width: 0; }
-.mat header { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-family: var(--display); font-weight: 800; font-size: 15px; line-height: 1.1; }
-.mat header .emoji { font-size: 22px; line-height: 1; }
-.mat header .count { margin-left: auto; min-width: 26px; height: 26px; padding: 0 8px; border-radius: 999px; display: grid; place-items: center; font-size: 13px; background: rgba(255,255,255,.75); font-variant-numeric: tabular-nums; }
-.mat .slot { padding: 8px 10px; display: grid; gap: 8px; align-content: start; min-height: 72px; }
-.mat .ph { border: 2px dashed rgba(0,0,0,.18); border-radius: 10px; padding: 10px; text-align: center; color: var(--muted); font-size: 13px; align-self: center; }
-.mat.green { border-color: var(--sum-green); background: var(--sum-green-soft); } .mat.green header { color: var(--sum-green-deep); }
-.mat.amber { border-color: var(--amber); background: var(--amber-soft); } .mat.amber header { color: var(--amber-deep); }
-.mat.red { border-color: var(--red); background: var(--red-soft); } .mat.red header { color: var(--red-deep); }
-
 .num { flex: none; display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--sum-blue); color: #fff; font-family: var(--display); font-weight: 800; font-size: 13px; }
-.fcard.sort .face { min-height: 0; padding: 10px 12px; gap: 6px; }
-.fcard.sort .face.front { border-color: rgba(0,0,0,.12); }
-.fcard.sort .face.front:hover { box-shadow: none; }
-.fcard.sort .face.back { border-color: var(--line); }
-.fcard.sort .face.back.ok { border-color: var(--sum-green); box-shadow: 0 0 0 3px rgba(150,186,62,.25); }
-.fcard.sort .face.back.ko { border-color: var(--red); box-shadow: 0 0 0 3px rgba(207,70,60,.18); }
-.fcard.sort h4 { font-size: 15px; font-weight: 700; color: var(--sum-blue-deep); line-height: 1.15; }
-.fcard.sort .row { display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: wrap; }
-.fcard.sort .iconbtn { min-height: 44px; height: auto; font-size: 13px; padding: 0 10px; }
-.fcard.sort .you { font-size: 13px; font-weight: 700; color: var(--muted); }
-.fcard.sort .face.back.ok .you { color: var(--sum-green-deep); }
-.fcard.sort .face.back.ko .you { color: var(--red-deep); }
-.fcard.sort .why { margin: 0; font-size: 14px; line-height: 1.3; color: var(--ink); }
 
+/* Le tampon du statut : quatre tons, du plus avancé au plus lointain. */
 .stamp { display: inline-flex; align-items: center; gap: 6px; font-family: var(--display); font-weight: 800; font-size: 12px; line-height: 1.1; padding: 4px 8px; border-radius: 6px; border: 2px solid; transform: rotate(-2deg); background: #fff; text-transform: uppercase; letter-spacing: .04em; }
 .stamp.green { color: var(--sum-green-deep); border-color: var(--sum-green); }
+.stamp.blue { color: #fff; background: var(--sum-blue); border-color: var(--sum-blue-deep); }
 .stamp.amber { color: var(--amber-deep); border-color: var(--amber); }
+.stamp.grey { color: #4A5160; background: #E4E6E0; border-color: #B9BFB2; }
 .stamp.red { color: var(--red-deep); border-color: var(--red); }
 .stamp.big { font-size: 17px; padding: 7px 12px; justify-self: start; }
+/* Une pastille de couleur au lieu d'un émoji : le billet et le conseil rejouent le statut. */
+.scorebox .surprise .dot, .ticket .tkb .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; border: 2px solid; vertical-align: -1px; }
+.scorebox .surprise .dot.green, .ticket .tkb .dot.green { background: var(--sum-green); border-color: var(--sum-green-deep); }
+.scorebox .surprise .dot.blue, .ticket .tkb .dot.blue { background: var(--sum-blue); border-color: var(--sum-blue-deep); }
+.scorebox .surprise .dot.amber, .ticket .tkb .dot.amber { background: var(--amber); border-color: var(--amber-deep); }
+.scorebox .surprise .dot.grey, .ticket .tkb .dot.grey { background: #E4E6E0; border-color: #8E958A; }
+.scorebox .big .det { display: block; font-size: 16px; font-weight: 700; color: var(--sum-blue); line-height: 1.3; margin-top: 2px; }
 
-.hand { display: grid; gap: 8px; }
-.hand .csec-title { font-size: 12px; }
-.handgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
-.hcard { border: 2px solid var(--sum-blue); border-radius: 12px; background: #fff; display: flex; flex-direction: column; gap: 8px; padding: 0 14px 12px; min-width: 0; }
-.hcard .pic { margin: 0 -14px 4px; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px 10px 0 0; background: var(--paper); border-bottom: 1px solid var(--line); }
-.hcard .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-.hcard .pic.ph { display: grid; place-items: center; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-bottom: 2px dashed var(--line); }
-.hcard .row { display: flex; align-items: flex-start; gap: 8px; }
-.hcard h4 { font-size: 18px; font-weight: 800; line-height: 1.1; color: var(--sum-blue); }
-.hcard .pitch { margin: 0; font-size: 15px; line-height: 1.3; }
-.hcard .qq { margin: 0; font-size: 14px; color: var(--muted); font-style: italic; }
-.verdicts { margin-top: auto; padding-top: 6px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
-.vbtn { min-height: 48px; border-radius: 10px; border: 2px solid; background: #fff; font-family: var(--display); font-weight: 700; font-size: 12px; line-height: 1.1; padding: 4px; display: grid; place-items: center; gap: 2px; cursor: pointer; text-align: center; }
-.vbtn .emoji { font-size: 18px; line-height: 1; }
-.vbtn.green { border-color: var(--sum-green); color: var(--sum-green-deep); } .vbtn.green:hover { background: var(--sum-green-soft); }
-.vbtn.amber { border-color: var(--amber); color: var(--amber-deep); } .vbtn.amber:hover { background: var(--amber-soft); }
-.vbtn.red { border-color: var(--red); color: var(--red-deep); } .vbtn.red:hover { background: var(--red-soft); }
-
-.allplaced { border: 2px dashed var(--sum-green); background: var(--sum-green-soft); border-radius: 14px; padding: 18px; display: grid; gap: 12px; justify-items: center; text-align: center; font-family: var(--display); font-weight: 700; color: var(--sum-green-deep); font-size: 17px; }
-.allplaced .iconbtn.primary { justify-self: center; }
-
+/* Le résultat : votre programme, puis où en sont les treize idées. Aucun score. */
 .result { display: grid; gap: 12px; background: var(--sum-blue); color: #fff; border-radius: 14px; padding: 20px 22px; border-bottom: 6px solid var(--sum-green); }
 .result .k { color: var(--sum-green); }
-.result .score { display: flex; align-items: baseline; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 18px; }
-.result .score b { font-size: clamp(40px, 5vw, 60px); font-weight: 800; color: var(--sum-green); line-height: 1; font-variant-numeric: tabular-nums; }
-.result .cmp { display: grid; grid-template-columns: auto repeat(3, minmax(0, 1fr)); gap: 6px 12px; align-items: center; font-size: 14px; max-width: 520px; }
-.result .cmp .h { color: #DCE3F5; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
-.result .cmp b { font-family: var(--display); font-size: 22px; font-variant-numeric: tabular-nums; }
+.result .prog { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.result .prog li { font-size: 15px; line-height: 1.6; }   /* le texte coule autour du tampon : sur téléphone rien ne part seul à la ligne */
+.result .prog li b { font-family: var(--display); font-weight: 800; font-size: 19px; white-space: nowrap; margin-right: 7px; }
+.result .prog li .t { color: #DCE3F5; }
+.result .prog li.none { color: #DCE3F5; font-style: italic; }
+.result .stamp { background: #fff; border-color: #fff; }
+.result .stamp.green { color: var(--sum-green-deep); }
+.result .stamp.blue { color: var(--sum-blue); }
+.result .stamp.amber { color: var(--amber-deep); }
+.result .stamp.grey { color: #4A5160; background: #E4E6E0; border-color: #E4E6E0; }
+.result .totals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px 12px; max-width: 640px; }
+.result .tot { display: grid; gap: 2px; font-size: 13px; line-height: 1.2; color: #DCE3F5; }
+.result .tot b { font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1; color: var(--sum-green); font-variant-numeric: tabular-nums; }
 .result .lines { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 15px; color: #DCE3F5; }
 .result .src.light { color: #DCE3F5; border-top-color: rgba(255,255,255,.25); }
-/* Une question, trois boutons : le choix est rejoué au conseil municipal. */
+
+/* Une question, quatre boutons : le choix est rejoué au conseil municipal. */
 .reflect { display: grid; gap: 10px; border: 2px solid var(--sum-blue-soft); background: var(--sum-blue-soft); border-radius: 14px; padding: 12px 14px; }
 .reflect .k { color: var(--sum-blue-deep); font-size: 13px; letter-spacing: .04em; text-transform: none; font-family: var(--display); }
-.rbtns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; max-width: 620px; }
+.rbtns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; max-width: 780px; }
 .rbtn {
-  min-height: 44px; min-width: 0; border: 2px solid; border-radius: 999px; background: #fff; padding: 6px 10px;
+  min-height: 48px; min-width: 0; border: 2px solid; border-radius: 999px; background: #fff; padding: 6px 12px;
   display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-align: center;
   font-family: var(--display); font-weight: 700; font-size: 14px; line-height: 1.1;
 }
-.rbtn .emoji { font-size: 17px; line-height: 1; }
 .rbtn.green { border-color: var(--sum-green); color: var(--sum-green-deep); } .rbtn.green:hover { background: var(--sum-green-soft); }
+.rbtn.blue { border-color: var(--sum-blue); color: var(--sum-blue); } .rbtn.blue:hover { background: var(--sum-blue-soft); }
 .rbtn.amber { border-color: var(--amber); color: var(--amber-deep); } .rbtn.amber:hover { background: var(--amber-soft); }
-.rbtn.red { border-color: var(--red); color: var(--red-deep); } .rbtn.red:hover { background: var(--red-soft); }
+.rbtn.grey { border-color: #B9BFB2; color: #4A5160; } .rbtn.grey:hover { background: #E4E6E0; }
 .rbtn.green.on { background: var(--sum-green); border-color: var(--sum-green-deep); color: #17230A; }
+.rbtn.blue.on { background: var(--sum-blue); border-color: var(--sum-blue-deep); color: #fff; }
 .rbtn.amber.on { background: var(--amber); border-color: var(--amber-deep); color: #2C1C00; }
-.rbtn.red.on { background: var(--red); border-color: var(--red-deep); color: #fff; }
+.rbtn.grey.on { background: #4A5160; border-color: #2F3440; color: #fff; }
 .rbtn.on { box-shadow: 0 2px 8px rgba(27,52,103,.18); }
+
 .debrief { border: 2px dashed var(--sum-blue); border-radius: 12px; padding: 10px 14px; font-size: 15px; color: var(--sum-blue-deep); }
 .debrief b { font-family: var(--display); }
 .bulletin { border: 2px solid var(--ink); border-radius: 6px; padding: 14px 16px; background: #fff; display: grid; gap: 8px; box-shadow: 5px 5px 0 var(--sum-green); max-width: 520px; }
 .bulletin .txt { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--ink); }
 .bulletin .line { height: 30px; border-bottom: 2px solid var(--ink); }
+/* La fiche d'une carte, en modale : le tampon, la photo (ou le croquis), le « pourquoi ». */
 .verso .imgph img { max-height: 380px; object-fit: contain; }
+.verso .imgph.sk { display: grid; justify-items: center; gap: 8px; border-style: solid; color: var(--sum-blue); }
+.verso .statusline { font-size: 15px; color: var(--muted); font-style: italic; }
 .verso .meta { font-size: 14px; color: var(--muted); }
 .verso .iconbtn { justify-self: start; text-decoration: none; min-height: 44px; }
 .verso .empty { text-align: left; }
 @media (max-width: 860px) {
-  .matstrip { display: flex; }
-  .sortbar { gap: 8px 10px; }
-  .sortbar .bar { flex: 1 1 60px; }   /* le compteur, la jauge et le bouton tiennent sur une ligne */
-  .mat { scroll-margin-top: 120px; }  /* repli : la barre collante ne recouvre pas le tapis visé */
+  .result .totals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rbtns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 700px) {
-  .mats { gap: 6px; }
-  .mat header { padding: 8px; font-size: 12px; gap: 4px; }
-  .mat header .emoji { font-size: 16px; }
-  .mat header .count { min-width: 22px; height: 22px; padding: 0 6px; font-size: 12px; }
-  .mat .slot { padding: 6px; gap: 6px; min-height: 96px; }
-  .fcard.sort .face { padding: 8px; }
-  .fcard.sort h4 { font-size: 13px; }
-  .fcard.sort .iconbtn { font-size: 12px; padding: 0 8px; }
-  .result .cmp b { font-size: 18px; }
+@media (max-width: 520px) {
   .rbtns { grid-template-columns: 1fr; }
   .rbtn { justify-content: flex-start; text-align: left; padding: 6px 14px; }
 }

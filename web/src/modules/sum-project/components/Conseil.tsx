@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { Content } from "../lib/types";
+import { loadPick, loadReflect } from "../lib/pickState";
 import Glossary from "./Glossary";
 import Ticket from "./Ticket";
 
 // Écran de clôture : « Le conseil municipal » (route #/conseil). Rejoue le trajet (billet tamponné),
-// le score du jeu de tri, les quatre messages, puis une seule action principale (plateforme de données).
+// le programme composé au Belvédère, les quatre messages, puis une seule action principale (plateforme de données).
 const nb = (s: string) => s.replace(/ ([?!:;])/g, " $1");
-const SORT_KEY = (id: string) => `sum-sort:${id}`;
-const REFLECT_KEY = (id: string) => `sum-sort:reflect:${id}`;
+const low = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
 
 type Props = {
   content: Content;
@@ -23,24 +23,25 @@ export default function Conseil({ content, visited, onGo, onReset, actions }: Pr
   const c = content.journey.conclusion;
   const p = content.meta.project;
   const last = stops[stops.length - 1] || null;
-  const sortStop = stops.find((s) => s.game?.sort) || null;
-  const cards = sortStop?.game?.sort?.cards || [];
+  const pickStop = stops.find((s) => s.game?.pick) || null;
+  const cards = pickStop?.game?.pick?.cards || [];
+  const statuses = pickStop?.game?.pick?.statuses || [];
 
-  // Le score du Belvédère est gardé par appareil : on le relit ici (jamais au rendu serveur).
-  const [sc, setSc] = useState<{ score: number; revealed: boolean } | null>(null);
+  // Le programme du Belvédère est gardé par appareil : on le relit ici (jamais au rendu serveur).
+  const [pk, setPk] = useState<{ picked: string[]; revealed: boolean } | null>(null);
   // « Ce qui m'a le plus surpris » : le choix fait au Belvédère est rejoué ici.
   const [reflect, setReflect] = useState<string | null>(null);
   useEffect(() => {
-    if (!sortStop) return;
-    try {
-      const raw = sessionStorage.getItem(SORT_KEY(sortStop.id));
-      const saved = raw ? JSON.parse(raw) : null;
-      const placed: Record<string, string> = (saved && saved.placed) || {};
-      setSc({ score: cards.filter((k) => placed[k.id] === k.verdict).length, revealed: !!(saved && saved.revealed) });
-    } catch { setSc(null); }
-    try { setReflect(sessionStorage.getItem(REFLECT_KEY(sortStop.id))); } catch { setReflect(null); }
-  }, [sortStop, cards]);
-  const reflectBin = (sortStop?.game?.sort?.bins || []).find((b) => b.id === reflect) || null;
+    if (!pickStop) return;
+    setPk(loadPick(pickStop.id));
+    setReflect(loadReflect(pickStop.id));
+  }, [pickStop]);
+  const reflectStatus = statuses.find((b) => b.id === reflect) || null;
+  // « 5 idées choisies : 2 en service · 1 au labo » — les statuts absents du programme ne s'écrivent pas.
+  const mine = pk ? cards.filter((c) => pk.picked.includes(c.id)) : [];
+  const parts = statuses
+    .map((st) => ({ st, n: mine.filter((c) => c.status === st.id).length }))
+    .filter((x) => x.n > 0);
 
   return (
     <>
@@ -58,20 +59,23 @@ export default function Conseil({ content, visited, onGo, onReset, actions }: Pr
           {/* Le même billet que dans l'en-tête des arrêts, en grand : le trajet se rejoue sur l'objet déjà connu. */}
           <Ticket stops={stops} visited={visited} activeId="conseil" onSelect={(id) => onGo(id)} big />
 
-          {sortStop && (
-            <section className="scorebox" aria-label={`Votre score au ${sortStop.place}`}>
-              <div className="k">Votre score au {sortStop.place}</div>
-              {sc && sc.revealed ? (
-                <p className="big">{sc.score} / {cards.length} bien vues</p>
+          {pickStop && (
+            <section className="scorebox" aria-label={`Votre programme au ${pickStop.place}`}>
+              <div className="k">Votre programme au {pickStop.place}</div>
+              {pk && pk.revealed ? (
+                <p className="big">
+                  {mine.length} idée{mine.length > 1 ? "s" : ""} choisie{mine.length > 1 ? "s" : ""}
+                  {parts.length > 0 && <span className="det">{parts.map((x) => `${x.n} ${low(x.st.short)}`).join(" \u00B7 ")}</span>}
+                </p>
               ) : (
                 <p className="none">
                   Partie non terminée{" "}: passez au{" "}
-                  <a href={`#/${sortStop.id}`}>{sortStop.place}, arrêt {sortStop.order}</a>
+                  <a href={`#/${pickStop.id}`}>{pickStop.place}, arrêt {pickStop.order}</a>
                 </p>
               )}
-              {reflectBin && (
+              {reflectStatus && (
                 <p className="surprise">
-                  Ce qui vous a le plus surpris{"\u00A0"}: <b><span aria-hidden="true">{reflectBin.emoji}</span> {reflectBin.label}</b>
+                  Ce qui vous a le plus surpris{"\u00A0"}: <b><span className={"dot " + reflectStatus.tone} aria-hidden="true" /> {reflectStatus.label}</b>
                 </p>
               )}
             </section>
