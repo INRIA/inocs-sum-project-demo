@@ -187,13 +187,8 @@ td.e { font-size: 22px; }
 .fcard .cta { margin-top: auto; padding-top: 6px; display: flex; gap: 8px; flex-wrap: wrap; }
 .fcard .cta .iconbtn { text-decoration: none; min-height: 44px; }
 
-/* Une seule question, un seul bouton (arrêt Station) */
-.challenge { display: grid; gap: 12px; background: var(--sum-blue); color: #fff; border-radius: 14px; padding: 22px 24px; border-bottom: 6px solid var(--sum-green); }
-.challenge .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--sum-green); }
-.challenge .q { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.15; text-wrap: balance; }
-.challenge .h { margin: 0; font-size: 16px; color: #DCE3F5; max-width: 60ch; }
+/* Bouton d'action large (mission, cartes) */
 .iconbtn.big { height: auto; min-height: 52px; padding: 10px 20px; font-size: 17px; text-decoration: none; justify-self: start; }
-.challenge .iconbtn.primary { background: var(--sum-green); border-color: var(--sum-green); color: #17230A; }
 
 /* Carte d'information : un chiffre, une accroche */
 .fcard.info .n { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 3.4vw, 46px); line-height: 1; color: var(--sum-blue); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }

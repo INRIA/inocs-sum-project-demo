@@ -9,6 +9,7 @@ import SortGame from "./SortGame";
 import CityStrip from "./CityStrip";
 import Stepper from "./Stepper";
 import StoryRoad, { ChapterDetail, CHAPTER_PREFIX } from "./StoryRoad";
+import Mission, { Embed, embedUrlFor } from "./Mission";
 
 const modeLabel = { passive: "Table libre", animated: "Table animée", selfservice: "Jeu en autonomie" };
 
@@ -22,13 +23,15 @@ type Props = {
 export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, onChapter, autoplay = false, onNextStop, nextLabel }: Props) {
   const sort = stop.game?.sort || null;
   const story = stop.story || null;
-  const cardMode = !!(stop.cards || stop.cities || stop.challenge || sort || stop.cityStrip || story); // arrêt « cartes » : recto / verso / fiche en modale
+  const mission = stop.mission || null;
+  const cardMode = !!(stop.cards || stop.cities || sort || stop.cityStrip || story || mission); // arrêt « cartes » : recto / verso / fiche en modale
   // #/<arrêt>/chapitre-<id> : un chapitre de l'histoire en modale (téléphone, ou lien profond)
   const chapIdx = story && resId && resId.startsWith(CHAPTER_PREFIX) ? story.chapters.findIndex((c) => CHAPTER_PREFIX + c.id === resId) : -1;
   const chap = chapIdx >= 0 ? story!.chapters[chapIdx] : null;
   const cityId = stop.cities ? parseSel(resId).cityId : null;
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
   const isSortCard = !!sort && sort.cards.some((c) => c.id === resId);
+  const embedUrl = embedUrlFor(mission, resId);   // #/<arrêt>/outil : l'outil externe en modale
 
   // En mode « cartes », l'enveloppe devient la dernière carte de la grille (son verso = la révélation).
   // Le jeu de tri (Belvédère) garde son propre retournement : on n'y touche pas.
@@ -41,7 +44,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
       }]
     : stop.cards || [];
 
-  const r = isCity || isSortCard || chap ? null
+  const r = isCity || isSortCard || chap || embedUrl ? null
     : resId === "__reveal" && stop.reveal
       ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
       : stop.resources.find((x) => x.id === resId) || null;
@@ -73,7 +76,8 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
   );
 
   // Table animée en mode « cartes » : l'échafaudage pas-à-pas remplace la liste numérotée des consignes.
-  const stepped = cardMode && stop.mode === "animated" && stop.instructions.length > 0;
+  // Un arrêt « mission » garde ses consignes repliées : la mission remplace l'échafaudage.
+  const stepped = cardMode && stop.mode === "animated" && stop.instructions.length > 0 && !mission;
 
   const consignes = (
     <>
@@ -98,6 +102,11 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
       {r && (
         <Modal crumbs={[crumb, via ? via.front.label : r.id === "__reveal" ? "Enveloppe" : "Ressources", r.title]} onClose={() => onOpen(null)}>
           <ResourceDetail r={r} />
+        </Modal>
+      )}
+      {embedUrl && (
+        <Modal className="embed" closeLabel="Fermer" crumbs={[crumb, "L'outil"]} onClose={() => onOpen(null)}>
+          <Embed url={embedUrl} title="Outil : où placer les stations de vélos" />
         </Modal>
       )}
       {chap && story && (
@@ -143,12 +152,19 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
 
         {cardMode ? (
           <>
-            {stop.challenge && (
-              <section className="challenge" aria-label="La question">
-                <div className="k">{stop.challenge.eyebrow || "La question"}</div>
-                <p className="q">{stop.challenge.question}</p>
-                {stop.challenge.hint && <p className="h">{stop.challenge.hint}</p>}
-                <a className="iconbtn primary big" href={stop.challenge.cta.url} target="_blank" rel="noopener">{stop.challenge.cta.label} ↗</a>
+            {mission && <Mission mission={mission} onOpen={onOpen} />}
+            {mission && stop.resources.length > 0 && (
+              <section className="reslinks" aria-label="Pour aller plus loin">
+                <h3 className="csec-title">Pour aller plus loin</h3>
+                <ul>
+                  {stop.resources.map((res) => (
+                    <li key={res.id}>
+                      <button type="button" onClick={() => onOpen(res.id)}>
+                        <span className="kind">{res.kind}</span><span className="t">{res.title}</span><span className="arrow" aria-hidden="true">→</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
               </section>
             )}
             {sort && <SortGame stopId={stop.id} def={sort} stops={content.stops} reveal={stop.reveal} sel={resId} onOpen={onOpen} crumb={crumb} />}

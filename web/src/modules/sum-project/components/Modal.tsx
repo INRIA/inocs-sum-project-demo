@@ -3,9 +3,10 @@ import { createPortal } from "react-dom";
 
 // Fenêtre modale commune : fil d'Ariane (arrêt › carte › élément), bouton Fermer, clic sur le fond.
 // Échap est géré par les parents (Journey / CityCards) via le routage par hash.
-type Props = { crumbs: ReactNode[]; onClose: () => void; children: ReactNode };
+// className : variante (ex. « embed » pour l'outil en iframe) ; closeLabel : le bouton Fermer écrit en toutes lettres (téléphone, cadre visible).
+type Props = { crumbs: ReactNode[]; onClose: () => void; children: ReactNode; className?: string; closeLabel?: string };
 
-export default function Modal({ crumbs, onClose, children }: Props) {
+export default function Modal({ crumbs, onClose, children, className, closeLabel }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function Modal({ crumbs, onClose, children }: Props) {
   const last = crumbs.length - 1;
   return createPortal(
     <div className="modal-backdrop" onClick={onClose}>
-      <div ref={ref} className="modal" role="dialog" aria-modal="true" aria-label={typeof crumbs[last] === "string" ? (crumbs[last] as string) : "Détail"}
+      <div ref={ref} className={"modal" + (className ? " " + className : "")} role="dialog" aria-modal="true" aria-label={typeof crumbs[last] === "string" ? (crumbs[last] as string) : "Détail"}
            tabIndex={-1} onClick={(e) => e.stopPropagation()}>
         <header className="modal-head">
           <nav className="crumbs" aria-label="Vous êtes ici">
@@ -30,7 +31,7 @@ export default function Modal({ crumbs, onClose, children }: Props) {
               </span>
             ))}
           </nav>
-          <button type="button" className="iconbtn close" aria-label="Fermer" onClick={onClose}>×</button>
+          <button type="button" className={"iconbtn close" + (closeLabel ? " text" : "")} aria-label="Fermer" onClick={onClose}>{closeLabel ? <>{closeLabel} ×</> : "×"}</button>
         </header>
         <div className="modal-body">{children}</div>
       </div>

@@ -1472,7 +1472,7 @@
       "place": "Station de vélos",
       "title": "Où placer les stations de vélos partagés ?",
       "question": "Avec 20 000 €, où placez-vous les dix dernières stations ?",
-      "brief": "Ici, vous placez dix stations de vélos sur la carte de Genève avec 20 000 €.",
+      "brief": "Ici, vous recevez votre mission de maire, puis vous ouvrez l'outil qui aide à y répondre.",
       "mode": "animated",
       "animator": "A",
       "position": "table 3, avec tablette et ordinateur portable",
@@ -1480,7 +1480,7 @@
       "durationMin": 15,
       "tableTent": {
         "headline": "Où placer les stations de vélos partagés ?",
-        "subline": "Une carte, des épingles, un budget. La tablette montre comment la ville bouge."
+        "subline": "Une carte, des épingles, un budget. L'outil montre comment la ville bouge et où le modèle placerait les stations."
       },
       "game": {
         "tablet": {
@@ -1513,7 +1513,7 @@
       "materials": [
         "Carte imprimée A1 du centre de Genève (1,5 km) avec les sites candidats et les 23 stations déjà placées",
         "Épingles ou pions : 10 par groupe",
-        "Tablette avec la démo (étape 2 « La ville », passée en français, plein écran)",
+        "Tablette avec l'outil (étape 2 « La ville », passée en français, plein écran)",
         "Ordinateur portable ou écran pour la révélation (étape 4, plan d'amorce 20 k€)",
         "QR code vers l'arrêt 3 de la page"
       ],
@@ -1661,99 +1661,104 @@
         }
       ],
       "images": [],
-      "moreCards": [
-        {
-          "id": "q1-budget",
-          "front": {
-            "value": "Q1",
-            "label": "Combien la ville doit-elle investir ?",
-            "teaser": "Et à partir de quand l'euro suivant ne rapporte-t-il plus ?"
+      "mission": {
+        "eyebrow": "Vous êtes maire",
+        "text": "Vous voulez améliorer le réseau de mobilité partagée en organisant au mieux les stations de vélos, pour que les habitants arrivent à l'heure et que la ville reste bien connectée.",
+        "lead": "Il vous faut quelques réponses :",
+        "questions": [
+          {
+            "id": "budget",
+            "icon": "ticket",
+            "q": "Combien la ville doit-elle investir ?",
+            "answer": {
+              "title": "Jusqu'à 80 000 €",
+              "lines": [
+                "20 000 € servent 34 % des trajets potentiels, 40 000 € en servent 62 %, 80 000 € en servent 90 %.",
+                "Au-delà, presque plus rien : 120 000 € servent 91 %.",
+                "Les premiers euros achètent de la couverture, les derniers des bornes pour des usagers déjà servis."
+              ],
+              "link": {
+                "label": "Voir la preuve dans l'outil",
+                "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+              }
+            }
           },
-          "back": {
-            "title": "Réponse : jusqu'à 80 000 €",
-            "lines": [
-              "20 000 € servent 34 % des trajets potentiels, 40 000 € en servent 62 %, 80 000 € en servent 90 %.",
-              "Au-delà, presque plus rien : 120 000 € servent 91 %.",
-              "Les premiers euros achètent de la couverture, les derniers des bornes pour des usagers déjà servis."
-            ]
+          {
+            "id": "stations",
+            "icon": "bikeparking",
+            "q": "Où vont les stations ?",
+            "answer": {
+              "title": "C'est la carte de l'outil",
+              "lines": [
+                "23 stations sont déjà placées aux meilleurs endroits ; il en reste 10 à choisir parmi les sites candidats.",
+                "Regardez d'abord comment la ville bouge avec les transports en commun, heure par heure : les vélos finissent là où les gens sont allés.",
+                "Dans l'outil, l'étape 3 montre les sites candidats et l'étape 4 la réponse du modèle."
+              ],
+              "link": {
+                "label": "Voir comment la ville bouge",
+                "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=2"
+              }
+            }
           },
-          "link": {
-            "label": "Voir la preuve dans la démo",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+          {
+            "id": "camions",
+            "icon": "freight",
+            "q": "Faut-il des camions pour rééquilibrer les vélos ?",
+            "answer": {
+              "title": "Un peu de camions, pas plus",
+              "lines": [
+                "Sans camion, le réseau à 80 000 € sert 87,5 % des trajets.",
+                "9 tournées par jour (426 €) le portent à 90 % : 36 trajets de plus.",
+                "Sans limite, 76 tournées (4 000 € par jour) n'ajoutent que 13 trajets : mieux vaut investir ailleurs."
+              ],
+              "link": {
+                "label": "Voir la preuve dans l'outil",
+                "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+              }
+            }
+          },
+          {
+            "id": "service",
+            "icon": "timetable",
+            "q": "Quel taux de service viser ?",
+            "answer": {
+              "title": "Environ 90 % des trajets, pas 100 %",
+              "lines": [
+                "Le taux de service, c'est la part des trajets demandés que le réseau peut vraiment servir.",
+                "Les derniers points coûtent le plus cher : 80 000 € servent 90 % des trajets, 120 000 € seulement 91 %.",
+                "Le rythme de la journée compte aussi : une forte pointe du matin fait tomber le service de 92 à 82 % à budget égal."
+              ],
+              "link": {
+                "label": "Voir la preuve dans l'outil",
+                "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+              }
+            }
+          },
+          {
+            "id": "tc",
+            "icon": "busstop",
+            "q": "Faut-il donner la priorité aux transports en commun ?",
+            "answer": {
+              "title": "Oui, dès 40 000 €",
+              "lines": [
+                "À 20 000 €, un trajet servi sur cinq seulement (19 %) combine vélo et transports en commun.",
+                "À 40 000 €, un sur trois (32 %) : le modèle peut financer des stations aux arrêts de tram et de bus.",
+                "À 80 000 €, quatre sur dix (40 %)."
+              ],
+              "link": {
+                "label": "Voir la preuve dans l'outil",
+                "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
+              }
+            }
           }
-        },
-        {
-          "id": "q2-transports",
-          "front": {
-            "value": "Q2",
-            "label": "Quand le vélo partagé alimente-t-il les trams et les bus ?",
-            "teaser": "Au lieu de simplement remplacer de courts trajets"
-          },
-          "back": {
-            "title": "Réponse : entre 20 000 et 40 000 €",
-            "lines": [
-              "À 20 000 €, un trajet servi sur cinq seulement (19 %) combine vélo et transports en commun.",
-              "À 40 000 €, un sur trois (32 %) : le modèle peut financer des stations aux arrêts de tram et de bus.",
-              "À 80 000 €, quatre sur dix (40 %)."
-            ]
-          },
-          "link": {
-            "label": "Voir la preuve dans la démo",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
-          }
-        },
-        {
-          "id": "q3-camions",
-          "front": {
-            "value": "Q3",
-            "label": "Des camions, ou des bornes ?",
-            "teaser": "Faut-il payer des camions qui déplacent les vélos, ou plus de stations ?"
-          },
-          "back": {
-            "title": "Réponse : un peu de camions, pas plus",
-            "lines": [
-              "Sans camion, le réseau à 80 000 € sert 87,5 % des trajets.",
-              "9 tournées par jour (426 €) le portent à 90 % : 36 trajets de plus.",
-              "Sans limite, 76 tournées (4 000 € par jour) n'ajoutent que 13 trajets : mieux vaut investir ailleurs."
-            ]
-          },
-          "link": {
-            "label": "Voir la preuve dans la démo",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
-          }
-        },
-        {
-          "id": "q4-rythme",
-          "front": {
-            "value": "Q4",
-            "label": "Le rythme de la journée change-t-il la carte ?",
-            "teaser": "Pendulaires le lundi, loisirs le dimanche"
-          },
-          "back": {
-            "title": "Réponse : peu la carte, beaucoup le service",
-            "lines": [
-              "Même budget, 80 000 € : une journée régulière est servie à 92 %, une journée à forte pointe du matin à 82 %.",
-              "La carte bouge peu, de 75 à 84 stations selon le rythme.",
-              "Ce qui change : plus la pointe est chargée, moins elle est servie."
-            ]
-          },
-          "link": {
-            "label": "Voir la preuve dans la démo",
-            "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=5"
-          }
-        }
-      ],
-      "challenge": {
-        "eyebrow": "Vous êtes maire de Genève",
-        "question": "Avec 20 000 €, la ville peut ouvrir 33 stations de vélos. 23 sont déjà placées aux meilleurs endroits. Où placez-vous les 10 dernières ?",
-        "hint": "Un indice : regardez comment la ville bouge avec les transports en commun, heure par heure. Les vélos finissent là où les gens sont allés.",
-        "cta": {
-          "label": "Découvrir comment la ville bouge",
-          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/?step=2"
+        ],
+        "tool": {
+          "label": "Ouvrir l'outil pour trouver des réponses",
+          "url": "https://inria.github.io/inocs-sum-bss-pt-network-design/",
+          "note": "L'outil s'ouvre dans une fenêtre : fermez-la pour revenir à l'arrêt."
         }
       },
-      "badge": "Recherche et innovation",
-      "moreTitle": "Les quatre questions du modèle"
+      "badge": "Recherche et innovation"
     },
     {
       "id": "carrefour",

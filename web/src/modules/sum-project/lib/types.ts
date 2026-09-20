@@ -56,6 +56,10 @@ export type StoryChapter = {
 };
 export type Story = { autoplaySec?: number; chapters: StoryChapter[] };
 
+// Mission d'un arrêt (« Station de vélos ») : le texte du maire, des questions dont la réponse se déplie, un outil externe ouvert en modale.
+export type MissionQuestion = { id: string; icon: string; q: string; answer?: { title: string; lines: string[]; link?: Link } };  // icon : croquis CIVITAS (Sketch.tsx)
+export type Mission = { eyebrow: string; text: string; lead?: string; questions: MissionQuestion[]; tool: { label: string; url: string; note?: string } };
+
 export type Stop = {
   id: string; order: number; place: string; title: string; question: string;
   mode: "passive" | "animated" | "selfservice"; animator: string | null; position?: string;
@@ -72,6 +76,7 @@ export type Stop = {
   challenge?: { eyebrow?: string; question: string; hint?: string; cta: Link };  // une seule question, un seul bouton
   cityStrip?: { title: string; lead?: string };  // bandeau des villes (photo, drapeau, nom) → #/destination/<ville>
   story?: Story;           // mode « histoire » : remplace les cartes (arrêt 1)
+  mission?: Mission;       // mode « mission » : texte du maire, questions, outil en modale (arrêt 3)
   cards?: InfoCard[];      // mode « cartes » : recto / verso / fiche
   cities?: boolean;        // affiche les cartes Villes (bloc `cities`) après `cards`
   moreCards?: InfoCard[];  // cartes « pour aller plus loin », après les villes
