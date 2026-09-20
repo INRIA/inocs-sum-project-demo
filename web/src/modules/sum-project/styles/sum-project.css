@@ -787,10 +787,6 @@ td.e { font-size: 22px; }
 .presenter .challenge .q { font-size: clamp(25px, 2.76vw, 37px); }
 .presenter .csec-title { font-size: 15px; }
 .presenter .qrow .q { font-size: 18px; }
-/* l'échafaudage pas-à-pas est le corps de l'arrêt animé : il suit la même échelle (stepper.css est chargé après) */
-.presenter .stepper .step .t { font-size: 18px; }
-.presenter .stepper .step .body p { font-size: 17px; }
-.presenter .stepper .prog .lbl { font-size: 16px; }
 
 /* Le décor de table : hors de l'écran projeté. */
 .presenter .masthead .sub,

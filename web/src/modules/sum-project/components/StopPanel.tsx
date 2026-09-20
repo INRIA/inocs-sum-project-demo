@@ -7,7 +7,8 @@ import InfoCards from "./InfoCards";
 import Modal from "./Modal";
 import PickGame from "./PickGame";
 import CityStrip from "./CityStrip";
-import Stepper from "./Stepper";
+import CoDesign, { ROLE_PRINT } from "./CoDesign";
+import RolePrint from "./RolePrint";
 import StoryRoad, { ChapterDetail, CHAPTER_PREFIX } from "./StoryRoad";
 import Mission, { Embed, embedUrlFor } from "./Mission";
 import Hero from "./Hero";
@@ -26,7 +27,8 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
   const pick = stop.game?.pick || null;
   const story = stop.story || null;
   const mission = stop.mission || null;
-  const cardMode = !!(stop.cards || stop.cities || pick || stop.cityStrip || story || mission || stop.hero || stop.takeaways); // arrêt « cartes » : recto / verso / fiche en modale
+  const proc = stop.process || null;
+  const cardMode = !!(stop.cards || stop.cities || pick || stop.cityStrip || story || mission || proc || stop.hero || stop.takeaways); // arrêt « cartes » : recto / verso / fiche en modale
   // #/<arrêt>/chapitre-<id> : un chapitre de l'histoire en modale (téléphone, ou lien profond)
   const chapIdx = story && resId && resId.startsWith(CHAPTER_PREFIX) ? story.chapters.findIndex((c) => CHAPTER_PREFIX + c.id === resId) : -1;
   const chap = chapIdx >= 0 ? story!.chapters[chapIdx] : null;
@@ -34,6 +36,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
   const isCity = !!cityId && content.cities.items.some((c) => c.id === cityId);
   const isPickCard = !!pick && pick.cards.some((c) => c.id === resId);
   const embedUrl = embedUrlFor(mission, resId);   // #/<arrêt>/outil : l'outil externe en modale
+  const rolePrint = !!proc && resId === ROLE_PRINT;   // #/<arrêt>/roles-impression : les cartes de rôle à imprimer
 
   // En mode « cartes », l'enveloppe devient la dernière carte de la grille (son verso = la révélation).
   // Le jeu de cartes (Belvédère) garde son propre retournement : on n'y touche pas.
@@ -46,10 +49,14 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
       }]
     : stop.cards || [];
 
-  const r = isCity || isPickCard || chap || embedUrl ? null
+  const r = isCity || isPickCard || chap || embedUrl || rolePrint ? null
     : resId === "__reveal" && stop.reveal
       ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
       : stop.resources.find((x) => x.id === resId) || null;
+
+  // « Pour aller plus loin » : les ressources que les blocs de l'arrêt n'ouvrent pas déjà (mission, atelier).
+  const used = new Set((proc?.ctas || []).map((c) => c.resource).filter(Boolean) as string[]);
+  const more = mission || proc ? stop.resources.filter((res) => !used.has(res.id)) : [];
 
   const crumb = `Arrêt ${stop.order} · ${stop.place}`;
   const via = r && [...(stop.cards || []), ...(stop.moreCards || [])].find((c) => c.resource === r.id);
@@ -79,19 +86,13 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
     </div>
   );
 
-  // Table animée en mode « cartes » : l'échafaudage pas-à-pas remplace la liste numérotée des consignes.
-  // Un arrêt « mission » garde ses consignes repliées : la mission remplace l'échafaudage.
-  const stepped = cardMode && stop.mode === "animated" && stop.instructions.length > 0 && !mission;
-
   const consignes = (
     <>
-      {!stepped && (
-        <ol>
-          {stop.instructions.map((i) => (
-            <li key={i.step}>{i.title && <b>{i.title} — </b>}{i.text || <i>À compléter</i>}</li>
-          ))}
-        </ol>
-      )}
+      <ol>
+        {stop.instructions.map((i) => (
+          <li key={i.step}>{i.title && <b>{i.title} — </b>}{i.text || <i>À compléter</i>}</li>
+        ))}
+      </ol>
       {stop.rule && <div className="notice">♥ {stop.rule}</div>}
       {stop.questions && (
         <div className="qs">
@@ -113,6 +114,11 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
           <Embed url={embedUrl} title="Outil : où placer les stations de vélos" />
         </Modal>
       )}
+      {rolePrint && proc && (
+        <Modal className="print" closeLabel="Fermer" crumbs={[crumb, "Cartes de rôle"]} onClose={() => onOpen(null)}>
+          <RolePrint roles={proc.roles} />
+        </Modal>
+      )}
       {chap && story && (
         <Modal crumbs={[crumb, `Chapitre ${chapIdx + 1} sur ${story.chapters.length}`, chap.kicker]} onClose={() => onOpen(null)}>
           <ChapterDetail story={story} index={chapIdx} content={content} onOpen={onOpen} />
@@ -124,12 +130,11 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
         <p className="q">{stop.question}</p>
         {cardMode && (
           <details className="consignes">
-            <summary>{stepped ? "Infos de la table" : "Consignes de la table"}</summary>
+            <summary>Consignes de la table</summary>
             <div className="cbody">{chips}{consignes}</div>
           </details>
         )}
       </div>
-      {stepped && <Stepper stopId={stop.id} steps={stop.instructions} rule={stop.rule} />}
       {secs.length >= 2 && (
         <nav className="anchors" aria-label="Sections de l'arrêt">
           {secs.map((s) => <button key={s.id} type="button" onClick={() => jump(s.id)}>{s.label}</button>)}
@@ -157,11 +162,12 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
         {cardMode ? (
           <>
             {mission && <Mission mission={mission} onOpen={onOpen} />}
-            {mission && stop.resources.length > 0 && (
-              <section className="reslinks" aria-label="Pour aller plus loin">
-                <h3 className="csec-title">Pour aller plus loin</h3>
+            {proc && <CoDesign process={proc} onOpen={onOpen} />}
+            {more.length > 0 && (
+              <section className="reslinks" aria-label={moreTitle}>
+                <h3 className="csec-title">{moreTitle}</h3>
                 <ul>
-                  {stop.resources.map((res) => (
+                  {more.map((res) => (
                     <li key={res.id}>
                       <button type="button" onClick={() => onOpen(res.id)}>
                         <span className="kind">{res.kind}</span><span className="t">{res.title}</span><span className="arrow" aria-hidden="true">→</span>

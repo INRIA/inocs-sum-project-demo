@@ -1774,36 +1774,41 @@
       "id": "carrefour",
       "order": 4,
       "place": "Carrefour",
-      "title": "Et si on refaisait ce carrefour ?",
+      "title": "Et si on refaisait cette rue ?",
       "question": "Qui utilise cette rue ? Quand ? Qu'est-ce qui coince ?",
-      "brief": "Ici, vous redessinez un carrefour avec du calque et des miniatures, puis vous votez.",
+      "brief": "Ici, vous suivez les quatre étapes d'un atelier de co-design, comme Coimbra et Penteli l'ont fait.",
       "mode": "animated",
       "animator": "B",
       "position": "table 4",
       "capacity": 6,
       "durationMin": 10,
       "tableTent": {
-        "headline": "Et si on refaisait ce carrefour ?",
-        "subline": "Posez le calque, déplacez les miniatures, votez — puis ouvrez l'enveloppe. Trois villes européennes l'ont fait pour de vrai."
+        "headline": "Et si on refaisait cette rue ?",
+        "subline": "Quatre étapes : voir la rue, inviter, parler et proposer, voter. Puis ouvrez l'enveloppe : deux villes l'ont fait pour de vrai."
       },
       "instructions": [
         {
           "step": 1,
-          "title": "Choisir une situation (3 min)",
-          "text": "Regardez le plan. Que se passe-t-il exactement à cet endroit ? Qui est concerné ? À quel moment de la journée ? Placez les miniatures sur le plan et rejouez le problème pas à pas."
+          "title": "Voir la rue (2 min)",
+          "text": "Regardez le plan et la photo. Que se passe-t-il exactement à cet endroit ? Qui est concerné ? À quel moment de la journée ? Placez les miniatures sur le plan et rejouez le problème pas à pas."
         },
         {
           "step": 2,
-          "title": "Tester une alternative (5 min)",
-          "text": "Posez le papier calque sur le plan. Dessinez un changement. Testez la solution avec les miniatures. Est-ce que ça marche pour tout le monde ?"
+          "title": "Inviter (2 min)",
+          "text": "Distribuez les cartes de rôle ; qui manque ? écrivez-le sur une carte vide."
         },
         {
           "step": 3,
-          "title": "Voter (2 min)",
-          "text": "Chaque groupe présente sa solution en une phrase. Tout le monde vote pour sa préférée."
+          "title": "Parler et proposer (4 min)",
+          "text": "Chacun dit, depuis son rôle, ce qui coince. Puis chacun dessine une idée sur le calque, et les feuilles tournent une fois."
         },
         {
           "step": 4,
+          "title": "Voter (2 min)",
+          "text": "Chaque groupe présente sa solution en une phrase. Tout le monde vote avec ses gommettes."
+        },
+        {
+          "step": 5,
           "title": "Ouvrir l'enveloppe",
           "text": "Découvrez ce que les habitants de Coimbra ont fait."
         }
@@ -1814,10 +1819,12 @@
         "Feuilles de papier calque A3",
         "Feutres",
         "Miniatures : bus, minibus, voitures, vélos, trottinettes, piétons, bâtiments, mobilier (jouets ou impressions 3D)",
+        "Cartes de rôle A6 (12 + 2 vides), imprimées depuis la page",
         "Cartes d'instruction plastifiées (étapes 1–4)",
         "Enveloppe « Ouvre-moi quand vous avez voté »",
         "Gommettes de vote",
-        "QR code vers l'arrêt 4 de la page"
+        "QR code vers l'arrêt 4 de la page",
+        "Jeu de co-design Penteli (PDF, 8 pages)"
       ],
       "reveal": {
         "title": "Ce qui s'est passé à Coimbra",
@@ -1844,6 +1851,32 @@
             "À Coimbra (Portugal), un nouveau pôle de mobilité et la rue autour ont été le sujet d'un atelier de co-création.",
             "Déroulé : visite du site en groupes avec un plan et des questions → marche jusqu'à l'école primaire → travail en groupes (un urbaniste par groupe) avec plans, papier calque, véhicules et bâtiments imprimés en 3D → chaque groupe présente → vote → réflexion individuelle.",
             "Les participants ont dit avoir beaucoup appris et que le pôle serait bien meilleur avec leurs propositions."
+          ],
+          "items": [
+            {
+              "title": "Recruter large",
+              "text": "Recruter large : habitants, parents et enseignants de l'école voisine, étudiants et personnel de l'université, de l'hôpital, une personne en fauteuil roulant, police, opérateurs et chauffeurs de bus, taxis, micromobilité, urbanistes, service des espaces verts, élus."
+            },
+            {
+              "title": "Visiter le site",
+              "text": "Visiter le site en groupes mélangés, pour que chaque public soit représenté et que personne ne domine. Chaque groupe a une carte du quartier et des questions."
+            },
+            {
+              "title": "Marcher jusqu'au lieu de l'atelier",
+              "text": "Marcher jusqu'au lieu de l'atelier : les discussions commencent (stationnement, accessibilité, ombre)."
+            },
+            {
+              "title": "Travailler en groupe",
+              "text": "Travailler en groupe, un urbaniste par groupe : cartes, papier calque, véhicules, bâtiments et mobilier miniatures, fiche d'instructions (page 7)."
+            },
+            {
+              "title": "Présenter et voter",
+              "text": "Chaque groupe présente sa solution et justifie ses choix. Tout le monde vote pour sa préférée."
+            },
+            {
+              "title": "Faire le bilan",
+              "text": "Chacun fait le bilan de l'atelier, individuellement."
+            }
           ],
           "facts": [
             {
@@ -1891,6 +1924,198 @@
             "task": "T3.2 / WP3",
             "partner": "Chalmers (Design & Human Factors), Coimbra LL",
             "livingLab": "Coimbra"
+          }
+        },
+        {
+          "id": "penteli-atelier",
+          "title": "Penteli : la rue redessinée, puis votée",
+          "teaser": "Sept rôles, cinq mesures, un vote : ce que la banlieue d'Athènes a fait et obtenu.",
+          "kind": "story",
+          "body": [
+            "Penteli est une commune vallonnée de la banlieue nord-est d'Athènes : 35 610 habitants, 36,1 km². Avant le projet, seuls les bus OASA et les taxis la desservaient, et les modes partagés représentaient moins de 2 % des déplacements.",
+            "Rue Gennimata, avant les travaux : des voitures garées des deux côtés de la chaussée, pas de trottoir praticable, et une vitesse mesurée à V85 = 48 km/h — 85 % des véhicules roulent sous 48 km/h, donc beaucoup au-dessus de 30. Les habitants jugeaient le vélo le mode le moins sûr.",
+            "Le Living Lab a fait parler sept rôles (enfant, parent avec poussette, personne en fauteuil, personne âgée, cycliste, chauffeur de bus, commerçant), comparé cinq mesures, puis fait voter 26 participants — habitants, élus, associations, urbanistes — en comparant les mesures deux à deux (analyse hiérarchique AHP, enquête 2024-2025).",
+            "Et tout n'a pas marché : les vélos électriques ont fait moins de 100 trajets (vandalisme, horaires réduits) — les habitants les avaient justement classés en dernier ; les bus électriques n'ont pas pu être achetés pendant le projet, seule la ligne scolaire a circulé."
+          ],
+          "facts": [
+            {
+              "label": "Accessibilité (indicateur KPI20)",
+              "value": "6,35 % → 50,5 %"
+            },
+            {
+              "label": "Inclusion sociale (KPI23)",
+              "value": "2 % → 17 %"
+            },
+            {
+              "label": "Congestion, ratio de temps de trajet (KPI24)",
+              "value": "1,66 → 1,57"
+            },
+            {
+              "label": "Services partagés intégrés",
+              "value": "2 → 3"
+            }
+          ],
+          "items": [
+            {
+              "title": "Redistribuer l'espace de la rue",
+              "text": "rues piétonnes · pistes cyclables · espace partagé (zone de rencontre) · mobilier et végétation"
+            },
+            {
+              "title": "Vélos électriques en libre-service",
+              "text": "disponibilité des vélos · proximité des stations · connexion avec les transports en commun"
+            },
+            {
+              "title": "Créer un pôle de mobilité sur la place",
+              "text": "connexion entre les modes · garder l'identité de la place · signalétique claire"
+            },
+            {
+              "title": "Bus électriques locaux",
+              "text": "fréquence · couverture des lignes · connexion au métro"
+            },
+            {
+              "title": "Une appli pour tout (MaaS)",
+              "text": "fiabilité · simplicité"
+            }
+          ],
+          "images": [
+            {
+              "src": "/images/carrefour/gennimata-avant.jpg",
+              "alt": "Rue Gennimata avant : voitures garées des deux côtés, pas de trottoir",
+              "caption": "Rue Gennimata, avant",
+              "credit": "SUM D4.2, Fig. 48a — capture Google Street View"
+            },
+            {
+              "src": "/images/carrefour/gennimata-apres.jpg",
+              "alt": "Rue Gennimata après : trottoir large, piste cyclable, stationnement d'un seul côté",
+              "caption": "Rue Gennimata, après",
+              "credit": "SUM D4.2, Fig. 48b"
+            },
+            {
+              "src": "/images/carrefour/priorites-habitants.png",
+              "alt": "Scores AHP : bus 0,29, rues 0,28, pôle 0,18, vélos 0,13, appli 0,13",
+              "caption": "Le classement des habitants",
+              "credit": "SUM D4.2, Fig. 44"
+            }
+          ],
+          "links": [],
+          "table": {
+            "columns": [
+              "Mesure",
+              "Poids",
+              "En tête"
+            ],
+            "rows": [
+              [
+                "Bus électriques locaux",
+                "0,29",
+                "fréquence (0,41)"
+              ],
+              [
+                "Redistribuer l'espace de la rue",
+                "0,28",
+                "rues piétonnes (0,34), espace partagé (0,31), vélo (0,19)"
+              ],
+              [
+                "Pôle de mobilité",
+                "0,18",
+                "connexion entre les modes (0,57)"
+              ],
+              [
+                "Vélos électriques",
+                "0,13",
+                "connexion avec les TC (0,48)"
+              ],
+              [
+                "Appli MaaS",
+                "0,13",
+                "fiabilité et simplicité à égalité"
+              ]
+            ]
+          },
+          "source": {
+            "report": "D4.2, section 3.5 Penteli",
+            "task": "T3.1 / T4.4",
+            "partner": "Municipalité de Penteli, NTUA",
+            "livingLab": "Penteli"
+          }
+        },
+        {
+          "id": "methode-menu",
+          "title": "Animer un atelier : la méthode et le menu",
+          "teaser": "Comprendre, imaginer, évaluer : les six services du menu de la co-création, et la fiche à poser sur la table.",
+          "kind": "tool",
+          "body": [
+            "Chalmers University of Technology (Design & Human Factors) a conçu pour SUM une méthode de co-création des pôles de mobilité, puis a formé les Living Labs à organiser leurs propres ateliers.",
+            "La méthode tient en trois phases : Comprendre les besoins des habitants, Imaginer des solutions à ces besoins, Évaluer ces solutions ensemble.",
+            "Chaque service est une phase de l'atelier, chaque plat une méthode. Choisissez un ou deux plats par service. Traduit du menu « Co-Creation Methods » de Chalmers."
+          ],
+          "facts": [],
+          "items": [
+            {
+              "title": "Antipasti · Se mettre en condition",
+              "text": "Apportez le vôtre : Chacun partage un souvenir du lieu, ou apporte un petit objet qui dit ce qu'il voudrait y ressentir. · Allez-y ! : En petit : chacun visite le lieu avant l'atelier. En grand : tout ou partie de l'atelier se passe sur place. · Journal : Chacun note un trajet, ou une autre activité de tous les jours liée au lieu."
+            },
+            {
+              "title": "Primi · Comprendre le lieu ensemble",
+              "text": "Cartographier ensemble : Sur un grand tirage du lieu, tracez trajets, flux et points noirs avec épingles, laine, gommettes, drapeaux, post-it ou petites maquettes. Sans carte : placez les activités sur une frise du temps. · Storyboard : En dessins simples, racontez l'histoire d'un usager de la rue. En plus : chaque groupe prend un usager différent. · Collage d'ambiance : Découpez des images dans des magazines pour montrer l'atmosphère souhaitée."
+            },
+            {
+              "title": "Secondi · Trouver des solutions",
+              "text": "6-3-5 : 6 personnes écrivent ou dessinent chacune 3 idées. Toutes les 5 minutes, les feuilles tournent et chacun développe les idées reçues. En 30 minutes, tout le monde a travaillé sur toutes les idées. En silence. · Construire la rue : Blocs, Lego ou matériel de bricolage pour prototyper l'aménagement. Cartes, photos et figurines aident à situer les propositions. · Prototyper sur place : Craie, ruban adhésif, matériaux faciles à poser et à retirer : on essaie la solution sur le lieu même. · Storyboard : Celui des primi sert aussi à raconter les scénarios futurs."
+            },
+            {
+              "title": "Dolci · Tester et évaluer",
+              "text": "Jeu de rôle : Jouez des scènes pour sentir comment on vivrait l'aménagement futur. En plus : jouez les solutions des autres groupes, ou prenez le rôle d'usagers différents (enfant, cycliste, patron de café). · Prototype vidéo : Jouez et filmez de courtes scènes : comment on utiliserait la solution, ce qu'on y ressentirait. · Inviter le public : Seulement si l'on prototype sur place : les passants essaient ou commentent les propositions."
+            },
+            {
+              "title": "Digestif · Partager",
+              "text": "Partager, c'est donner : Chaque groupe présente ses idées aux autres : récit, prototypes, vidéos, cartes ou dessins. · Vote des priorités : Toutes les idées au même endroit ; chacun colle ses gommettes pour choisir celles à poursuivre. · Un mot pour finir : Chacun dit un mot sur son expérience, ou ce qu'il retient."
+            },
+            {
+              "title": "Contorni · Accompagnements",
+              "text": "Remontant : Boissons et collations gardent l'énergie ; des bonbons originaux brisent la glace. · Un coup de main : Des consignes claires et des espaces dédiés pour poser idées, notes et prototypes. · Tours de parole : De courts points d'étape entre les activités, pour que chaque voix soit entendue. · Faire appel aux pros : Un animateur pour mener l'atelier, des comédiens ou chorégraphes pour les jeux de rôle. · Garder une trace : Des photographes et des preneurs de notes pour recueillir toutes les idées."
+            },
+            {
+              "title": "Créer une ambiance ludique",
+              "text": "Créez une ambiance ludique : épingles, laine, post-it emojis faits maison. « Le plaisir et la créativité ne sont pas des distractions : ils permettent de s'engager plus ouvertement. »"
+            },
+            {
+              "title": "Fabriquer le matériel soi-même",
+              "text": "Fabriquez le matériel vous-même : les participants voient l'effort fourni, et s'engagent davantage."
+            },
+            {
+              "title": "Inviter les décideurs",
+              "text": "Invitez les décideurs : le résultat a bien plus de chances d'être repris dans le projet final."
+            },
+            {
+              "title": "Phase 1 · Choisir des situations (25 min)",
+              "text": "À partir de ce que vous avez observé pendant la visite, choisissez 1 ou 2 situations principales. Réfléchissez : Que se passe-t-il exactement à cet endroit ? · Qui est concerné ? · À quel moment de la journée ?. Passez à l'action : Placez les miniatures utiles sur la carte. · Rejouez la situation pas à pas."
+            },
+            {
+              "title": "Phase 2 · Tester des alternatives (35 min)",
+              "text": "Imaginez maintenant comment cette situation pourrait mieux fonctionner. Outils : Papier calque · Feutres · Miniatures. Passez à l'action : Dessinez un changement sur le calque. · Posez-le sur la carte. · Testez la solution avec les miniatures. → Essayez plusieurs options !"
+            }
+          ],
+          "images": [
+            {
+              "src": "/images/carrefour-menu-cocreation.png",
+              "alt": "Le menu original « Co-Creation Methods », imprimé comme la carte d'un restaurant italien",
+              "caption": "Le menu original, traduit en français dans le jeu imprimable",
+              "credit": "Chalmers University of Technology, Design & Human Factors — SUM Rapport périodique 2, Fig. 11"
+            },
+            {
+              "src": "/images/carrefour-coimbra-fiche.png",
+              "alt": "Fiche originale « Etapas do Workshop », en portugais",
+              "caption": "La fiche de l'atelier de Coimbra, à poser sur chaque table",
+              "credit": "SUM Rapport périodique 2, Fig. 15"
+            }
+          ],
+          "links": [],
+          "source": {
+            "report": "Second Period Report, pp. 29–32",
+            "task": "T3.2",
+            "partner": "Chalmers (Design & Human Factors)",
+            "livingLab": "Coimbra, Fredrikstad"
           }
         },
         {
@@ -2045,110 +2270,233 @@
           "credit": "Rapport SUM, Fig. 15"
         }
       ],
-      "cards": [
-        {
-          "id": "coimbra",
-          "accent": true,
-          "wide": true,
-          "front": {
-            "value": "49",
-            "label": "habitants ont redessiné un carrefour",
-            "teaser": "À Coimbra, autour d'un pôle de mobilité en construction : les parents et les enseignants de l'école voisine, l'hôpital, la police, les chauffeurs de bus et de taxi — et les élus.",
-            "image": {
-              "src": "/images/carrefour-coimbra-atelier.jpg",
-              "alt": "Des participants penchés sur un plan couvert de calque, avec des miniatures",
-              "caption": "Coimbra : les groupes testent leurs alternatives",
-              "credit": "Rapport SUM, Fig. 16"
-            }
-          },
-          "back": {
-            "title": "Comment ils ont fait",
-            "lines": [
-              "Ils ont d'abord visité le site en groupes, avec un plan et des questions à se poser.",
-              "Puis atelier à l'école primaire : plans, papier calque, véhicules et bâtiments imprimés en 3D, un urbaniste par groupe.",
-              "Chaque groupe présente sa solution, tout le monde vote.",
-              "Les décideurs étaient dans la salle : le résultat a de bonnes chances d'être repris dans le projet final du pôle."
+      "process": {
+        "eyebrow": "Vous êtes maire",
+        "intro": "Vous voulez améliorer la vie des habitants et vous organisez un atelier de co-design pour concevoir une solution avec eux. Vous y participez, comme tout le monde.",
+        "steps": [
+          {
+            "id": "voir",
+            "n": 1,
+            "title": "Voir la rue",
+            "verb": "Comprendre",
+            "text": "Regardez le plan et la photo. Que se passe-t-il exactement à cet endroit ? Qui est concerné ? À quel moment de la journée ?",
+            "table": "À la table : le plan A2, les miniatures. Rejouez le problème pas à pas.",
+            "difficulties": [
+              "Voitures garées des deux côtés",
+              "Pas de trottoir praticable",
+              "85 % des voitures sous 48 km/h, donc beaucoup au-dessus de 30",
+              "L'arrêt de bus bloqué par le stationnement"
+            ],
+            "images": [
+              {
+                "src": "/images/carrefour/gennimata-avant.jpg",
+                "alt": "Rue Gennimata avant : voitures garées des deux côtés, pas de trottoir",
+                "caption": "Penteli, rue Gennimata, avant",
+                "credit": "SUM D4.2, Fig. 48a — capture Google Street View"
+              },
+              {
+                "src": "/images/carrefour/melissia-carte-usages.png",
+                "alt": "Vue aérienne de la place de Melissia avec les usages du sol",
+                "caption": "Place de Melissia : usages, corridor de transport en commun, emplacement du pôle",
+                "credit": "SUM D4.2, Fig. 54"
+              }
             ]
           },
-          "resource": "coimbra-atelier"
-        },
-        {
-          "id": "menu",
-          "front": {
-            "value": "1 menu",
-            "label": "Le menu de la co-création",
-            "teaser": "Antipasti, primi, dolci : un atelier se commande comme au restaurant italien.",
-            "image": {
-              "src": "/images/carrefour-fredrikstad-cocreation.jpg",
-              "alt": "Six personnes autour d'une table de travail couverte de fiches et d'autocollants",
-              "caption": "« Co-créer la co-création » : les Living Labs préparent leurs ateliers",
-              "credit": "Rapport SUM, Fig. 10"
-            }
+          {
+            "id": "inviter",
+            "n": 2,
+            "title": "Inviter",
+            "verb": "Qui est concerné ?",
+            "text": "Qui est touché par le problème et doit être autour de la table ? Distribuez une carte par personne. Il manque quelqu'un ? Écrivez-le sur une carte vide.",
+            "table": "À la table : les cartes de rôle imprimées, deux cartes vides."
           },
-          "back": {
-            "title": "Commander un atelier",
-            "image": {
-              "src": "/images/carrefour-menu-cocreation.png",
-              "alt": "Le menu des méthodes de co-création, imprimé comme la carte d'un restaurant italien",
-              "caption": "Le menu de co-création développé dans SUM",
-              "credit": "Rapport SUM, Fig. 11"
+          {
+            "id": "parler",
+            "n": 3,
+            "title": "Parler et proposer",
+            "verb": "Imaginer",
+            "text": "Chacun parle depuis son rôle, puis propose une idée. Une méthode simple, tirée du menu de la co-création.",
+            "table": "À la table : le calque, les feutres, les miniatures."
+          },
+          {
+            "id": "voter",
+            "n": 4,
+            "title": "Voter",
+            "verb": "Évaluer",
+            "text": "Chaque groupe présente sa solution en une phrase. Tout le monde vote avec ses gommettes. Puis ouvrez l'enveloppe.",
+            "table": "À la table : les gommettes, l'enveloppe « Ouvre-moi quand vous avez voté »."
+          }
+        ],
+        "roles": {
+          "families": [
+            {
+              "id": "habiter",
+              "label": "Habiter",
+              "roles": [
+                {
+                  "id": "enfant",
+                  "icon": "kid",
+                  "label": "Enfant qui va à l'école",
+                  "need": "traverser sans danger"
+                },
+                {
+                  "id": "parent",
+                  "icon": "pram",
+                  "label": "Parent avec poussette",
+                  "need": "un trottoir continu"
+                },
+                {
+                  "id": "senior",
+                  "icon": "pedestrian",
+                  "label": "Personne âgée",
+                  "need": "des bancs, de l'ombre, des traversées courtes"
+                },
+                {
+                  "id": "fauteuil",
+                  "icon": "wheelchair",
+                  "label": "Personne en fauteuil roulant",
+                  "need": "des bordures abaissées, pas d'obstacles"
+                },
+                {
+                  "id": "cycliste",
+                  "icon": "bikelane",
+                  "label": "Cycliste",
+                  "need": "se sentir en sécurité face aux voitures"
+                }
+              ]
             },
-            "lines": [
-              "Chaque plat est une méthode, et chaque service une phase de l'atelier : se mettre dans l'ambiance, comprendre le lieu, trouver des idées, les évaluer.",
-              "Chalmers l'a créé pour les neuf villes du projet ; Coimbra est celle qui s'en est le plus servie.",
-              "Avec des planches d'autocollants, des épingles, de la laine et des post-it emojis faits maison : « le plaisir et la créativité ne sont pas des distractions »."
-            ]
-          },
-          "resource": "menu-cocreation"
-        },
-        {
-          "id": "fredrikstad",
-          "front": {
-            "value": "32",
-            "label": "participants, une ligne de bus, un parking vélo",
-            "teaser": "À Fredrikstad, les habitants ont dit où ça coince avec des épingles et de la laine sur la carte de la ville.",
-            "image": {
-              "src": "/images/carrefour-fredrikstad-carte.jpg",
-              "alt": "Une carte de Fredrikstad hérissée d'épingles reliées par de la laine, avec des drapeaux annotés",
-              "caption": "Fredrikstad : épingles et laine sur la carte",
-              "credit": "Rapport SUM, p. 29"
+            {
+              "id": "travailler",
+              "label": "Travailler",
+              "roles": [
+                {
+                  "id": "commercant",
+                  "icon": "table",
+                  "label": "Commerçant de la place",
+                  "need": "que les clients viennent et se garent quelque part"
+                },
+                {
+                  "id": "salarie",
+                  "icon": "busstop",
+                  "label": "Salarié du quartier",
+                  "need": "arriver à l'heure, en bus ou à vélo"
+                },
+                {
+                  "id": "chauffeur",
+                  "icon": "bus",
+                  "label": "Chauffeur de bus",
+                  "need": "un arrêt accessible, sans voiture garée dessus"
+                },
+                {
+                  "id": "livreur",
+                  "icon": "freight",
+                  "label": "Livreur",
+                  "need": "une place pour s'arrêter dix minutes"
+                }
+              ]
+            },
+            {
+              "id": "decider",
+              "label": "Décider",
+              "roles": [
+                {
+                  "id": "elu",
+                  "icon": "city",
+                  "label": "Élu·e",
+                  "need": "une solution acceptée et finançable"
+                },
+                {
+                  "id": "urbaniste",
+                  "icon": "metromap",
+                  "label": "Urbaniste",
+                  "need": "un plan cohérent avec le reste du quartier"
+                },
+                {
+                  "id": "police",
+                  "icon": "trafficlight",
+                  "label": "Police municipale",
+                  "need": "des règles lisibles et applicables"
+                }
+              ]
             }
+          ],
+          "blank": {
+            "label": "Qui manque ?",
+            "need": "Écrivez le rôle et ce dont il a besoin."
           },
-          "back": {
-            "title": "Des épingles, puis du concret",
-            "lines": [
-              "La ville voulait transformer les arrêts d'une nouvelle ligne de ferry en pôles de mobilité.",
-              "Trois ateliers citoyens en 2024 : habitants, commerces, opérateurs, urbanistes — 32 personnes au troisième.",
-              "Déjà en service : une nouvelle ligne de bus pendulaire.",
-              "Et un parking vélo partagé, entre le ferry et les lieux de travail."
-            ]
-          },
-          "resource": "fredrikstad-ferry"
+          "prompts": [
+            "Ce qui coince pour moi :",
+            "Mon idée :"
+          ]
         },
-        {
-          "id": "penteli",
-          "front": {
-            "value": "> 5 km",
-            "label": "de rues cyclables, les premières d'Attique",
-            "teaser": "À Penteli, dans la banlieue d'Athènes, l'espace de la rue a été redécoupé avec les habitants.",
-            "image": {
-              "src": "/images/cities/penteli/cycle-streets-2.jpg",
-              "alt": "Une rue de Melissia après réaménagement, large trottoir pavé et chaussée réduite",
-              "caption": "Penteli : une rue après son réaménagement",
-              "credit": "Living Lab Penteli"
+        "method": {
+          "name": "Tour de rôle 1 · 2 · 3",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Ce qui coince",
+              "time": "30 s chacun",
+              "text": "À tour de rôle, chacun dit, depuis son rôle, ce qui coince à cet endroit. On ne débat pas encore."
+            },
+            {
+              "n": 2,
+              "title": "Une idée par personne",
+              "time": "3 min",
+              "text": "Chacun dessine ou écrit une idée sur le calque. Les feuilles tournent une fois : on complète l'idée du voisin (6-3-5 express)."
+            },
+            {
+              "n": 3,
+              "title": "Regrouper",
+              "time": "2 min",
+              "text": "On rassemble les idées proches. Testez-les avec les miniatures : est-ce que ça marche pour tout le monde ?"
             }
+          ],
+          "menu": [
+            {
+              "course": "Antipasti",
+              "role": "Se mettre en condition"
+            },
+            {
+              "course": "Primi",
+              "role": "Comprendre le lieu",
+              "dish": "Cartographier ensemble"
+            },
+            {
+              "course": "Secondi",
+              "role": "Trouver des solutions",
+              "dish": "6-3-5"
+            },
+            {
+              "course": "Dolci",
+              "role": "Tester et évaluer"
+            },
+            {
+              "course": "Digestif",
+              "role": "Partager",
+              "dish": "Vote des priorités"
+            }
+          ],
+          "note": "Le menu de la co-création (Chalmers) : chaque service est une phase, chaque plat une méthode. Ici, trois plats suffisent."
+        },
+        "ctas": [
+          {
+            "label": "Comment Coimbra a fait",
+            "resource": "coimbra-atelier"
           },
-          "back": {
-            "title": "La rue redécoupée avec les habitants",
-            "lines": [
-              "Deux ateliers, un en ligne et un en présentiel — ce dernier reporté à cause des incendies d'août 2024.",
-              "Plus de 5 km de rues transformées et limitées à 30 km/h, dont environ 400 m de piste cyclable dédiée.",
-              "Et un pôle de mobilité avec son totem bilingue, sur la place de Melissia."
-            ]
+          {
+            "label": "Comment Penteli a fait",
+            "resource": "penteli-atelier"
           },
-          "resource": "penteli-rues"
-        }
-      ]
+          {
+            "label": "La méthode et le menu",
+            "resource": "methode-menu"
+          },
+          {
+            "label": "Télécharger le jeu (PDF)",
+            "href": "/docs/Jeu_co-design_Penteli.pdf"
+          }
+        ]
+      }
     },
     {
       "id": "destination",
