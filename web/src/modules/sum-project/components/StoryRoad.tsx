@@ -7,15 +7,15 @@ import Bike from "./Bike";
 import Chart from "./Charts";
 import Picto from "./Pictos";
 
-// « La route de SUM » : l'histoire d'un arrêt en chapitres. À gauche une route qui monte, un disque par chapitre,
+// « La route de SUM » : l'histoire d'un arrêt en chapitres. À gauche une route qui descend, un disque par chapitre,
 // le vélo garé au chapitre ouvert ; à droite le chapitre. « Lecture auto » fait rouler le vélo d'un disque au
 // suivant en `autoplaySec` secondes. Sur téléphone la route se couche au-dessus d'une carte-résumé, et le
 // chapitre se lit dans la modale (#/<arrêt>/chapitre-<id>).
 
 export const CHAPTER_PREFIX = "chapitre-";
 
-// Deux routes : debout (grand écran, viewBox 360 × 720, du bas vers le haut) et couchée (téléphone, 720 × 150).
-const ROAD_V = "M 190 690 C 60 660, 40 580, 150 540 S 320 470, 190 410 S 40 330, 170 280 S 320 210, 190 150 S 60 90, 170 30";
+// Deux routes : debout (grand écran, viewBox 360 × 720, du haut vers le bas) et couchée (téléphone, 720 × 150).
+const ROAD_V = "M 170 30 C 60 90, 60 90, 190 150 C 320 210, 300 230, 170 280 C 40 330, 60 350, 190 410 C 320 470, 260 500, 150 540 C 40 580, 60 660, 190 690";
 const ROAD_H = "M 30 92 C 110 30, 190 30, 260 92 S 400 150, 490 92 S 620 30, 690 92";
 const PARK_V = 36;   // le vélo s'arrête juste avant le disque
 const PARK_H = 62;
@@ -147,10 +147,32 @@ export function ChapterBody({ c, content }: { c: StoryChapter; content: Content 
           {c.image.caption && <figcaption>{c.image.caption}</figcaption>}
         </figure>
       )}
+      {c.images && c.images.length > 0 && (
+        <div className="hero2">
+          {c.images.map((im) => (
+            <figure key={im.src} className={"pic" + (im.src.endsWith(".png") ? " fit" : "")}>
+              <img src={assetUrl(im.src)} alt={im.alt || im.caption} />
+              {im.caption && <figcaption>{im.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      )}
+      {c.stats && (
+        <ul className="stats">
+          {c.stats.map((k) => <li key={k.label}><b>{k.value}</b><span>{k.label}</span></li>)}
+        </ul>
+      )}
       {c.icons && (
         <div className="pictos">
           {c.icons.map((i) => <div key={i.name}><Picto name={i.name} size={40} /><span>{i.label}</span></div>)}
         </div>
+      )}
+      {c.cards && (
+        <ul className="lcards">
+          {c.cards.map((k) => (
+            <li key={k.title}><Picto name={k.icon} size={34} /><b>{k.title}</b><span>{k.text}</span></li>
+          ))}
+        </ul>
       )}
       {(c.charts || []).map((ch, k) => <Chart key={k} chart={ch} />)}
       {c.examples && (
@@ -169,6 +191,8 @@ export function ChapterBody({ c, content }: { c: StoryChapter; content: Content 
         </div>
       )}
       {c.lines && c.lines.length > 0 && <ul className="blines">{c.lines.map((l, i) => <li key={i}>{l}</li>)}</ul>}
+      {c.highlights && c.highlights.length > 0 && <ul className="hlights">{c.highlights.map((l, i) => <li key={i}>{l}</li>)}</ul>}
+      {c.source && <p className="src"><em><a href={c.source.url} target="_blank" rel="noopener">{c.source.label}</a></em></p>}
     </div>
   );
 }
@@ -303,7 +327,7 @@ export default function StoryRoad({ story, content, chapter, onChapter, autoplay
       </aside>
 
       <section key={c.id} className="schap" aria-live="polite" onPointerDown={onDown} onPointerUp={onUp}>
-        <div className="k">Chapitre {chapter + 1} sur {n} · {c.kicker}</div>
+        <div className="k">Présentation SUM · {chapter + 1}/{n} · {c.kicker}</div>
         <h3>{c.title}</h3>
         <Figure c={c} />
         {c.teaser && <p className="t">{c.teaser}</p>}

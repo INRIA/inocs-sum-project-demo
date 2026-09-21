@@ -140,8 +140,8 @@ export default function Journey({ content }: { content: Content }) {
       const fresh = lastStopRef.current !== s.id; lastStopRef.current = s.id;
       if (hi >= 0) setChapter(hi); else if (fresh) setChapter(0);
       const phone = window.matchMedia("(max-width: 860px)").matches;
-      // téléphone : l'histoire a besoin de tout l'écran, le tiroir prend la hauteur (bandeau de carte de 72 px)
-      if (s.story && phone) setLayout("plein");
+      // téléphone : la carte est cachée par défaut (pastille ⤢ en bas à droite), le contenu prend tout l'écran
+      if (phone && (s.story || fresh)) setLayout("plein");
       // grand écran : le chapitre s'ouvre dans le volet, pas en modale — le lien devient #/<arrêt>
       if (hi >= 0 && !phone) { setResId(null); history.replaceState(null, "", "#/" + s.id); }
     }
@@ -218,7 +218,7 @@ export default function Journey({ content }: { content: Content }) {
       }
       if (e.key === "ArrowRight") {
         e.preventDefault();
-        if (last >= 0 && chapter < last) setChapter(chapter + 1); else go(next ? next.id : CONSEIL);
+        if (last >= 0 && chapter < last) setChapter(chapter + 1); else if (next) go(next.id);
       }
     };
     window.addEventListener("keydown", onKey);
@@ -259,6 +259,11 @@ export default function Journey({ content }: { content: Content }) {
     go(null);
   }, [go]);
 
+  // Depuis l'en-tête : un tap malheureux ne doit pas effacer le programme d'un groupe.
+  const askReset = useCallback(() => {
+    if (window.confirm("Tout remettre à zéro et recommencer une nouvelle partie ?")) reset();
+  }, [reset]);
+
   const mini = layout === "plein";
   const layoutBtn = <LayoutButton layout={layout} onCycle={cycleLayout} />;
   const parts = stop ? briefParts(stop) : [];
@@ -270,7 +275,15 @@ export default function Journey({ content }: { content: Content }) {
         <CityMap stops={stops} activeId={stopId} visited={visited} atEnd={view === "conseil"} mini={mini} onSelect={(id) => go(id)} />
         {mini && (
           <button type="button" className="mapzoom" title="Agrandir la carte" aria-label="Agrandir la carte"
-                  onClick={() => chooseLayout("carte")}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7" /></svg></button>
+                  onClick={() => chooseLayout("carte")}>
+            <svg className="ic-expand" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7" /></svg>
+            {/* téléphone : une carte pliée, plus parlante qu'une flèche */}
+            <svg className="ic-map" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z" /><path d="M9 4v13.5M15 6.5V20" /></svg>
+          </button>
+        )}
+        {layout === "carte" && (
+          <button type="button" className="mapzoom shrink" title="Réduire la carte" aria-label="Réduire la carte"
+                  onClick={() => chooseLayout("plein")}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10h-6V4M14 10l7-7M4 14h6v6M10 14l-7 7" /></svg></button>
         )}
         <nav className="legend" aria-label="Arrêts" ref={legendRef}>
           {stops.map((s) => {
@@ -278,49 +291,44 @@ export default function Journey({ content }: { content: Content }) {
             return (
               <button key={s.id} type="button" className={v ? "visited" : undefined} aria-current={s.id === stopId}
                       aria-label={`Arrêt ${s.order} : ${s.place}${v ? ", visité" : ""}`} onClick={() => go(s.id)}>
-                <span className="n">{s.order}</span>{s.place}
+                <span className="n">{s.order}</span><span className="lbl">{s.place}</span>
                 {v && <span className="tick" aria-hidden="true">✓</span>}
               </button>
             );
           })}
-          <button type="button" className="fin" aria-current={view === "conseil"}
-                  aria-label="Le conseil municipal, fin du trajet" onClick={() => go(CONSEIL)}>
-            <span className="n" aria-hidden="true">⚑</span>Le conseil
-          </button>
         </nav>
       </div>
 
-      <section className={"panel open" + (noanim ? " noanim" : "")} aria-label="Ressources de l'arrêt">
+      <section className={"panel open" + (stop ? " stopview" : "") + (noanim ? " noanim" : "")} aria-label="Ressources de l'arrêt">
         {view === "intro" && <Intro content={content} actions={layoutBtn} visited={visited} onSelect={(id) => go(id)} onStart={() => stops[0] && go(stops[0].id)} onChoose={showLegend} />}
         {view === "conseil" && <Conseil content={content} visited={visited} actions={layoutBtn} onGo={go} onReset={reset} />}
 
         {stop && (
           <>
             <header className="sheet-head">
-              <div className="eyebrow">Arrêt {stop.order} sur {stops.length} · {stop.place}</div>
+              <div className="where">
+                <div className="eyebrow">Arrêt {stop.order} sur {stops.length} · {stop.place}</div>
+                <Ticket stops={stops} visited={visited} activeId={stop.id} onSelect={(id) => go(id)} />
+              </div>
               <div className="actions">
+                <button className="iconbtn restart" type="button" title="Tout remettre à zéro" onClick={askReset}><span className="rtxt">Nouvelle partie </span>↺</button>
                 {prev && <button className="iconbtn back" type="button" onClick={() => go(prev.id)} title={prev.place} aria-label={`Arrêt précédent : ${prev.place}`}>←<span className="ord"> {prev.order}</span></button>}
-                {next
-                  ? <button className="iconbtn primary" type="button" onClick={() => go(next.id)} aria-label={`Arrêt suivant : ${next.place}`}>
-                      <span>Suivant<span className="long">{"\u00a0: " + next.place}</span></span> →
-                    </button>
-                  : <button className="iconbtn primary" type="button" onClick={() => go(CONSEIL)} aria-label="Le conseil municipal">
-                      <span className="long">Le conseil municipal</span><span className="short" aria-hidden="true">Le conseil</span> →
+                {next && <button className="iconbtn primary" type="button" onClick={() => go(next.id)} aria-label={`Arrêt suivant : ${next.place}`}>
+                      <span><span className="stxt">Suivant</span><span className="long">{"\u00a0: " + next.place}</span></span> →
                     </button>}
                 {layoutBtn}
-                <button className="iconbtn close" type="button" aria-label="Fermer" onClick={() => go(null)}>×</button>
+                {/* <button className="iconbtn close" type="button" aria-label="Fermer" onClick={() => go(null)}>×</button> */}
               </div>
               <h2>{stop.title.replace(/ ([?!:;])/g, " $1")}{stop.badge && <span className="titlebadge">{stop.badge}</span>}</h2>
               {parts.length > 0 && (
                 <div className="brief"><b>Table {stop.order}</b>{parts.map((p) => " · " + p).join("")}</div>
               )}
               {/* Le billet : une ligne fine, les arrêts déjà tamponnés restent sous les yeux d'un arrêt à l'autre. */}
-              <Ticket stops={stops} visited={visited} activeId={stop.id} onSelect={(id) => go(id)} />
             </header>
             <div className={"sheet-body" + (stop.story ? " fill" : "")}>
               <StopPanel stop={stop} content={content} resId={resId} onOpen={(r) => go(stop.id, r)}
                          chapter={chapter} onChapter={setChapter} autoplay={autoplay}
-                         onNextStop={() => go(next ? next.id : CONSEIL)} nextLabel={next ? next.place : "Le conseil municipal"} />
+                         onNextStop={() => next && go(next.id)} nextLabel={next ? next.place : "Arrêt suivant"} />
             </div>
           </>
         )}

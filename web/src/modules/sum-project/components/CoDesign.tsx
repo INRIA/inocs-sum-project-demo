@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { assetUrl } from "../../../infrastructure/assetUrl";
 import type { Process, ProcessStep } from "../lib/types";
 import Sketch from "./Sketch";
@@ -21,9 +21,24 @@ export default function CoDesign({ process, onOpen }: Props) {
     if (s && steps.some((x) => x.id === s)) setActive(s);
   }, [process]);
 
+  // Un clic sur une étape amène son contenu dans la vue : sinon le panneau se déplie hors écran
+  // (l'étape précédemment ouverte se referme au-dessus et décale la page).
+  const root = useRef<HTMLElement>(null);
+  const touched = useRef(false);
+  useEffect(() => {
+    if (!touched.current) return;
+    const el = root.current; if (!el) return;
+    const inline = getComputedStyle(el.querySelector(".inline")!).display !== "none";
+    const target = inline ? el.querySelector(".pstepw.on") : el.querySelector(".below .ppanel");
+    if (!target) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" }));
+  }, [active]);
+  const choose = (id: string) => { touched.current = true; setActive(id); };
+
   const idx = Math.max(0, steps.findIndex((s) => s.id === active));
   const cur = steps[idx];
-  const go = (i: number) => { const s = steps[i]; if (s) setActive(s.id); };
+  const go = (i: number) => { const s = steps[i]; if (s) choose(s.id); };
 
   const roles = process.roles;
   const method = process.method;
@@ -141,7 +156,7 @@ export default function CoDesign({ process, onOpen }: Props) {
   );
 
   return (
-    <section className="codesign" aria-label="L'atelier en quatre étapes">
+    <section ref={root} className="codesign" aria-label="L'atelier en quatre étapes">
       <div className="chead">
         <div className="k">{process.eyebrow}</div>
         <p className="txt">{process.intro}</p>
@@ -151,7 +166,7 @@ export default function CoDesign({ process, onOpen }: Props) {
         {steps.map((s) => (
           <div className={"pstepw" + (s.id === active ? " on" : "")} key={s.id}>
             <button type="button" className={"pstep" + (s.id === active ? " on" : "")}
-                    aria-expanded={s.id === active} onClick={() => setActive(s.id)}>
+                    aria-expanded={s.id === active} onClick={() => choose(s.id)}>
               <span className="disc" aria-hidden="true">{s.n}</span>
               <span className="t">{s.title}</span>
               <span className="verb">{s.verb}</span>

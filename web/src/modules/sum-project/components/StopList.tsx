@@ -2,15 +2,13 @@ import type { StopLite } from "./CityMap";
 
 // Le parcours en vertical : sur téléphone, la carte devient illisible (étiquettes minuscules),
 // on la remplace par un escalier d'arrêts — disque numéroté, lieu, titre, chevron — relié par un
-// trait qui verdit à mesure qu'on avance. Dernière marche, en pointillés : le conseil municipal.
+// trait qui verdit à mesure qu'on avance.
 type Props = {
   stops: StopLite[];
   visited: Set<string>;
-  activeId: string | null;          // « conseil » quand on est sur l'écran de clôture
+  activeId: string | null;
   onSelect: (id: string) => void;
 };
-
-export const CONSEIL_ID = "conseil";
 
 export default function StopList({ stops, visited, activeId, onSelect }: Props) {
   return (
@@ -39,17 +37,6 @@ export default function StopList({ stops, visited, activeId, onSelect }: Props) 
           </li>
         );
       })}
-      <li className={"sstep fin" + (activeId === CONSEIL_ID ? " on" : "") + (visited.has(stops[stops.length - 1]?.id || "") ? " lit-up" : "")}>
-        <button type="button" onClick={() => onSelect(CONSEIL_ID)} aria-current={activeId === CONSEIL_ID ? "true" : undefined}
-                aria-label="Le conseil municipal, fin du trajet">
-          <span className="disc" aria-hidden="true">⚑</span>
-          <span className="txt">
-            <span className="pl">Le conseil municipal</span>
-            <span className="ti">Fin du trajet{" "}: ce qu'on retient</span>
-          </span>
-          <span className="chev" aria-hidden="true">›</span>
-        </button>
-      </li>
     </ol>
   );
 }

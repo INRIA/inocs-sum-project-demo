@@ -86,10 +86,12 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
     </div>
   );
 
+  // les consignes sont facultatives : sans consigne, ni règle, ni questions, pas de bouton
+  const hasConsignes = !!(stop.instructions?.length || stop.rule || stop.questions?.length);
   const consignes = (
     <>
       <ol>
-        {stop.instructions.map((i) => (
+        {(stop.instructions || []).map((i) => (
           <li key={i.step}>{i.title && <b>{i.title} — </b>}{i.text || <i>À compléter</i>}</li>
         ))}
       </ol>
@@ -128,7 +130,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
       {/* La question de l'arrêt, et à sa droite les consignes de la table (repliées). */}
       <div className="qrow">
         <p className="q">{stop.question}</p>
-        {cardMode && (
+        {cardMode && hasConsignes && (
           <details className="consignes">
             <summary>Consignes de la table</summary>
             <div className="cbody">{chips}{consignes}</div>

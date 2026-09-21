@@ -96,7 +96,7 @@ export default function PickGame({ stopId, def, stops, reveal, sel, onOpen, crum
             <div className="row">{stampOf(c)}<span className="num">{c.n}</span></div>
             <h4>{c.title}</h4>
             {c.why[0] && <p className="why">{c.why[0]}</p>}
-            <div className="row"><button type="button" className="iconbtn" onClick={() => onOpen(c.id)}>Pourquoi ? →</button></div>
+            <div className="row"><button type="button" className="iconbtn" onClick={() => onOpen(c.id)}>Plus d'infos →</button></div>
           </div>
         </div>
       </div>
@@ -137,14 +137,14 @@ export default function PickGame({ stopId, def, stops, reveal, sel, onOpen, crum
       <div className="pickbar" id="sort-bar" role="status" aria-live="polite">
         {revealed ? (
           <>
-            <span className="cnt">Mon programme · <b>{nMine}</b> <small>idée{nMine > 1 ? "s" : ""}</small></span>
+            <span className="cnt"><span className="lbl">Mon programme · </span><b>{nMine}</b> <small>idée{nMine > 1 ? "s" : ""}</small></span>
             <div className="counts" role="group" aria-label="Votre programme par statut">
               {statuses.map((s) => {
                 const n = countIn(mine, s);
                 return <span key={s.id} className={"ccount " + s.tone + (n === 0 ? " zero" : "")}><b>{n}</b> {s.short}</span>;
               })}
             </div>
-            <button type="button" className="iconbtn" onClick={restart}>Recommencer ↺</button>
+            <button type="button" className="iconbtn" onClick={restart} aria-label="Recommencer"><span className="rtxt">Recommencer </span>↺</button>
             {/* Téléphone : deux repères pour atteindre les deux sections sans faire défiler à l'aveugle. */}
             <div className="jumps" role="group" aria-label="Aller à une section">
               <button type="button" className="jpill" onClick={() => goSec("pick-mine")}>Votre programme</button>
@@ -153,7 +153,7 @@ export default function PickGame({ stopId, def, stops, reveal, sel, onOpen, crum
           </>
         ) : (
           <>
-            <span className="cnt">Mon programme · <b>{nMine}</b> <small>idée{nMine > 1 ? "s" : ""}</small></span>
+            <span className="cnt"><span className="lbl">Mon programme · </span><b>{nMine}</b> <small>idée{nMine > 1 ? "s" : ""}</small></span>
             <div className="pchips" role="group" aria-label="Les idées de votre programme">
               {mine.map((c) => (
                 <button key={c.id} type="button" className="pchip" onClick={() => toggle(c.id)}
@@ -164,7 +164,7 @@ export default function PickGame({ stopId, def, stops, reveal, sel, onOpen, crum
             </div>
             <button type="button" className="iconbtn primary" disabled={nMine === 0} onClick={doReveal}
                     title={nMine === 0 ? "Choisissez au moins une idée" : undefined}>
-              Retourner mes cartes ↻
+              Retourner les cartes ↻
             </button>
           </>
         )}
@@ -228,13 +228,13 @@ export default function PickGame({ stopId, def, stops, reveal, sel, onOpen, crum
       )}
 
       {revealed && def.debrief && <div className="debrief"><b>À remarquer · </b>{def.debrief}</div>}
-      {revealed && def.bulletin && (
+      {/* {revealed && def.bulletin && (
         <div className="bulletin" aria-label="Bulletin pour le conseil municipal">
           <div className="k">Bulletin pour le conseil municipal · à remplir sur papier</div>
           <div className="txt">{def.bulletin}</div>
           <div className="line" aria-hidden="true" />
         </div>
-      )}
+      )} */}
     </section>
   );
 }

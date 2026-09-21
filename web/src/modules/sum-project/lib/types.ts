@@ -53,7 +53,12 @@ export type StoryChapter = {
   stamp: string;                                      // ce qui s'écrit dans le disque : « 70 % », « 5 », « 🙂 »…
   title: string; figure?: string; figureLabel?: string; teaser?: string;
   lines?: string[]; charts?: Chart[]; icons?: { name: string; label: string }[];   // pictos (Pictos.tsx) avec leur mot
+  cards?: { icon: string; title: string; text: string }[];                          // cartes : picto (Pictos.tsx), titre, description
+  images?: Img[];                                                                   // photos côte à côte, en tête du corps
+  stats?: { value: string; label: string }[];                                       // cartes-chiffres
+  highlights?: string[];                                                            // puces mises en avant, sous le corps
   image?: Img; examples?: StoryExample[]; cities?: boolean;                        // cities : la rangée des neuf villes
+  source?: Link;                                                                    // « Source … » en italique sous le corps
   links?: Link[]; resource?: string;                                                // fiche « En savoir plus » (modale)
 };
 export type Story = { autoplaySec?: number; chapters: StoryChapter[] };
@@ -110,7 +115,7 @@ export type Stop = {
   badge?: string;          // étiquette à côté du titre (ex. « Recherche et innovation »)
   brief?: string;          // une ligne : « Ici, vous allez … », affichée sous le titre pour qui arrive par QR
   tableTent: { headline: string; subline: string };
-  instructions: Instruction[]; rule?: string; materials: string[];
+  instructions?: Instruction[]; rule?: string; materials: string[];
   questions?: { id: string; text: string }[];
   game?: { mapNote?: string; note?: string; stationsToPlace?: number; tablet?: { url: string; note: string }; pick?: PickGameDef };
   reveal: { title: string; lines: string[]; source?: Source } | null;

@@ -1,16 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import type { Stop } from "../lib/types";
 import { loadPick, loadReflect } from "../lib/pickState";
-import { CONSEIL_ID } from "./StopList";
 
-// Le billet : le même objet du début à la fin du trajet. Six cases — cinq arrêts et le conseil
-// municipal — qui se tamponnent au passage, plus deux souvenirs du Belvédère (le nombre d'idées
+// Le billet : le même objet du début à la fin du trajet. Une case par arrêt, qui se tamponne au passage, plus deux souvenirs du Belvédère (le nombre d'idées
 // choisies et ce qui a le plus surpris). Discret dans l'en-tête d'un arrêt, en grand sur l'écran de clôture.
 
 type Props = {
   stops: Stop[];
   visited: Set<string>;
-  activeId: string | null;      // « conseil » sur l'écran de clôture
+  activeId: string | null;
   onSelect: (id: string) => void;
   big?: boolean;                // variante de clôture : cases de 56 px, le lieu sous chaque case
 };
@@ -45,13 +43,12 @@ export default function Ticket({ stops, visited, activeId, onSelect, big = false
   }, [visited]);
 
   const slot = (id: string, n: string, label: string, place: string, v: boolean) => {
-    const cls = ["tk", v ? "on" : "", id === activeId ? "cur" : "", id === fresh ? "fresh" : "",
-                 id === CONSEIL_ID ? "fin" : ""].filter(Boolean).join(" ");
+    const cls = ["tk", v ? "on" : "", id === activeId ? "cur" : "", id === fresh ? "fresh" : ""].filter(Boolean).join(" ");
     return (
       <li key={id}>
         <button type="button" className={cls} onClick={() => onSelect(id)}
                 aria-current={id === activeId ? "true" : undefined} aria-label={label}>
-          <span className="d" aria-hidden="true">{v && id !== CONSEIL_ID ? "✓" : n}</span>
+          <span className="d" aria-hidden="true">{v ? "✓" : n}</span>
           {big && <span className="pl" aria-hidden="true">{place}</span>}
         </button>
       </li>
@@ -67,7 +64,6 @@ export default function Ticket({ stops, visited, activeId, onSelect, big = false
       <div className="tkstrip">
         <ol className="tkrow">
           {stops.map((s) => slot(s.id, String(s.order), `Arrêt ${s.order} : ${s.place}${visited.has(s.id) ? ", tamponné" : ", pas encore"}`, s.place, visited.has(s.id)))}
-          {slot(CONSEIL_ID, "⚑", "Le conseil municipal, fin du trajet", "Le conseil", activeId === CONSEIL_ID)}
         </ol>
         {(nPicked !== null || status) && (
           <div className="tkb">
