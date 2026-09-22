@@ -1,19 +1,22 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { assetUrl } from "../../../infrastructure/assetUrl";
-import type { Process, ProcessStep } from "../lib/types";
+import type { CitiesBlock, MeasureType, Process, ProcessStep } from "../lib/types";
 import Sketch from "./Sketch";
 
 // L'atelier de co-design en quatre étapes (arrêt « Carrefour »).
 // C'est un guide, pas un jeu : les quatre étapes sont ouvertes dès l'arrivée, on en consulte une à la fois.
+// Étape 1 : les trois sites lyonnais, chacun ouvre sa fiche en modale (#/carrefour/site-<id>).
+// Étape 3 : les mesures des neuf villes du projet servent de banque d'idées (contrainte / incitation).
 // Grand écran : une bande de quatre stations, le panneau de l'étape choisie en dessous.
 // Téléphone : la bande devient une liste, l'étape choisie déplie son panneau sous son bouton (accordéon).
 // ?step=<id> ouvre une étape d'emblée (affiche, QR code, vérification).
 
 export const ROLE_PRINT = "roles-impression";   // #/carrefour/roles-impression : les cartes de rôle à imprimer
+export const SITE_PREFIX = "site-";             // #/carrefour/site-<id> : la fiche d'un des trois sites
 
-type Props = { process: Process; onOpen: (id: string) => void };
+type Props = { process: Process; cities: CitiesBlock; onOpen: (id: string) => void };
 
-export default function CoDesign({ process, onOpen }: Props) {
+export default function CoDesign({ process, cities, onOpen }: Props) {
   const steps = process.steps;
   const [active, setActive] = useState(steps[0]?.id || "");
   useEffect(() => {
@@ -41,23 +44,12 @@ export default function CoDesign({ process, onOpen }: Props) {
   const go = (i: number) => { const s = steps[i]; if (s) choose(s.id); };
 
   const roles = process.roles;
-  const method = process.method;
+  const measures = process.measures;
 
   const nav = (
     <div className="pnav">
       <button type="button" className="iconbtn" disabled={idx === 0} onClick={() => go(idx - 1)}>‹ Étape précédente</button>
       <button type="button" className="iconbtn" disabled={idx === steps.length - 1} onClick={() => go(idx + 1)}>Étape suivante ›</button>
-    </div>
-  );
-
-  const figures = (s: ProcessStep) => s.images && s.images.length > 0 && (
-    <div className="pfigs">
-      {s.images.map((im, i) => (
-        <figure key={i}>
-          <img src={assetUrl(im.src)} alt={im.alt || im.caption} />
-          <figcaption>{im.caption}{im.credit && <span> — {im.credit}</span>}</figcaption>
-        </figure>
-      ))}
     </div>
   );
 
@@ -72,7 +64,52 @@ export default function CoDesign({ process, onOpen }: Props) {
     </div>
   );
 
+  // Les villes qui l'ont fait, sous chaque idée : le drapeau et le nom, jamais l'identifiant brut.
+  const cityName = (id: string) => {
+    const c = cities.items.find((x) => x.id === id);
+    return c ? c.flag + " " + c.name : id;
+  };
+
+  // Une colonne de la banque d'idées : l'étiquette et la couleur viennent du bloc « villes ».
+  const mcol = (t: MeasureType) => (
+    <div className="mcol" style={{ borderTopColor: cities.measureTypes[t].color }}>
+      <h4>
+        <span className={"badge " + t}>{cities.measureTypes[t].label}</span>
+        <span className="d">{cities.measureTypes[t].description}</span>
+      </h4>
+      {measures.items.filter((m) => m.type === t).map((m) => (
+        <div className="mcard" key={m.id}>
+          <div className="lbl">{m.title}</div>
+          <p>{m.text}</p>
+          {m.cities && m.cities.length > 0 && <div className="cities">{m.cities.map(cityName).join(" · ")}</div>}
+        </div>
+      ))}
+      {/* la carte vide ferme la colonne courte (six contraintes contre quatorze incitations) */}
+      {t === "push" && (
+        <div className="mcard blank">
+          <span className="ic" aria-hidden="true">✎</span>
+          <div><div className="lbl">{measures.blank.label}</div><p>{measures.blank.need}</p></div>
+        </div>
+      )}
+    </div>
+  );
+
   const body = (s: ProcessStep): ReactNode => {
+    if (s.id === "voir") return (
+      <>
+        <p className="ptext">{s.text}</p>
+        <div className="sites">
+          {process.sites.map((st) => (
+            <button type="button" className="site" key={st.id} onClick={() => onOpen(SITE_PREFIX + st.id)}>
+              {st.images[0] && <img src={assetUrl(st.images[0].src)} alt={st.images[0].alt || st.images[0].caption} />}
+              <span className="nm">{st.short}<span className="city">{st.city}</span></span>
+              <span className="q">{st.question}</span>
+              <span className="more">Voir le site →</span>
+            </button>
+          ))}
+        </div>
+      </>
+    );
     if (s.id === "inviter") return (
       <>
         <p className="ptext">{s.text}</p>
@@ -98,48 +135,15 @@ export default function CoDesign({ process, onOpen }: Props) {
     if (s.id === "parler") return (
       <>
         <p className="ptext">{s.text}</p>
-        <div className="meth">
-          <h4 className="csec-title">{method.name}</h4>
-          <ol className="msteps">
-            {method.steps.map((m) => (
-              <li key={m.n}>
-                <span className="disc" aria-hidden="true">{m.n}</span>
-                <div>
-                  <div className="mt">{m.title} <span className="chip blue">{m.time}</span></div>
-                  <p>{m.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <div className="menu" aria-label="Le menu de la co-création">
-            {method.menu.map((c) => (
-              <div className={"course" + (c.dish ? " on" : "")} key={c.course}>
-                <div className="cn">{c.course}</div>
-                <div className="cr">{c.role}</div>
-                {c.dish && <div className="cd">{c.dish}</div>}
-              </div>
-            ))}
-          </div>
-          {method.note && <p className="mnote">{method.note}</p>}
+        {measures.intro && <p className="ptext muted">{measures.intro}</p>}
+        <div className="measures">
+          {mcol("push")}
+          {mcol("pull")}
         </div>
       </>
     );
-    if (s.id === "voter") return (
-      <>
-        <p className="ptext">{s.text}</p>
-        {s.table && <div className="notice">{s.table}</div>}
-        <button type="button" className="iconbtn primary big" onClick={() => onOpen("__reveal")}>Ouvrir l'enveloppe ✉</button>
-      </>
-    );
-    return (
-      <>
-        {figures(s)}
-        <p className="ptext">{s.text}</p>
-        {s.difficulties && s.difficulties.length > 0 && (
-          <div className="chips">{s.difficulties.map((d, i) => <span className="chip" key={i}>{d}</span>)}</div>
-        )}
-      </>
-    );
+    // « Voter » n'a que son texte : la consigne de table suffit, le vote clôt l'atelier.
+    return <p className="ptext">{s.text}</p>;
   };
 
   const panel = (s: ProcessStep) => (
@@ -150,7 +154,7 @@ export default function CoDesign({ process, onOpen }: Props) {
         <span className="verb">{s.verb}</span>
       </div>
       {body(s)}
-      {s.table && s.id !== "voter" && <div className="notice">{s.table}</div>}
+      {s.table && <div className="notice">{s.table}</div>}
       {nav}
     </div>
   );

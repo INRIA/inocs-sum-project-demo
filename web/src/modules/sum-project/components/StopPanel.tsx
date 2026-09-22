@@ -7,8 +7,9 @@ import InfoCards from "./InfoCards";
 import Modal from "./Modal";
 import PickGame from "./PickGame";
 import CityStrip from "./CityStrip";
-import CoDesign, { ROLE_PRINT } from "./CoDesign";
+import CoDesign, { ROLE_PRINT, SITE_PREFIX } from "./CoDesign";
 import RolePrint from "./RolePrint";
+import SiteDetail from "./SiteDetail";
 import StoryRoad, { ChapterDetail, CHAPTER_PREFIX } from "./StoryRoad";
 import Mission, { Embed, embedUrlFor } from "./Mission";
 import Hero from "./Hero";
@@ -37,6 +38,8 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
   const isPickCard = !!pick && pick.cards.some((c) => c.id === resId);
   const embedUrl = embedUrlFor(mission, resId);   // #/<arrêt>/outil : l'outil externe en modale
   const rolePrint = !!proc && resId === ROLE_PRINT;   // #/<arrêt>/roles-impression : les cartes de rôle à imprimer
+  // #/<arrêt>/site-<id> : la fiche d'un des trois sites de l'atelier (plan, vues de rue, constats)
+  const site = proc && resId?.startsWith(SITE_PREFIX) ? proc.sites.find((s) => SITE_PREFIX + s.id === resId) || null : null;
 
   // En mode « cartes », l'enveloppe devient la dernière carte de la grille (son verso = la révélation).
   // Le jeu de cartes (Belvédère) garde son propre retournement : on n'y touche pas.
@@ -49,7 +52,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
       }]
     : stop.cards || [];
 
-  const r = isCity || isPickCard || chap || embedUrl || rolePrint ? null
+  const r = isCity || isPickCard || chap || embedUrl || rolePrint || site ? null
     : resId === "__reveal" && stop.reveal
       ? { id: "__reveal", title: stop.reveal.title, teaser: "Ouvre-moi quand vous avez décidé.", kind: "reveal", body: stop.reveal.lines, source: stop.reveal.source }
       : stop.resources.find((x) => x.id === resId) || null;
@@ -121,6 +124,11 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
           <RolePrint roles={proc.roles} />
         </Modal>
       )}
+      {site && proc && (
+        <Modal className="site" closeLabel="Fermer" crumbs={[crumb, "Voir la rue", site.short]} onClose={() => onOpen(null)}>
+          <SiteDetail site={site} roles={proc.roles} />
+        </Modal>
+      )}
       {chap && story && (
         <Modal crumbs={[crumb, `Chapitre ${chapIdx + 1} sur ${story.chapters.length}`, chap.kicker]} onClose={() => onOpen(null)}>
           <ChapterDetail story={story} index={chapIdx} content={content} onOpen={onOpen} />
@@ -164,7 +172,7 @@ export default function StopPanel({ stop, content, resId, onOpen, chapter = 0, o
         {cardMode ? (
           <>
             {mission && <Mission mission={mission} onOpen={onOpen} />}
-            {proc && <CoDesign process={proc} onOpen={onOpen} />}
+            {proc && <CoDesign process={proc} cities={content.cities} onOpen={onOpen} />}
             {more.length > 0 && (
               <section className="reslinks" aria-label={moreTitle}>
                 <h3 className="csec-title">{moreTitle}</h3>

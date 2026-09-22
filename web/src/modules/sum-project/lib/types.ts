@@ -69,6 +69,7 @@ export type Mission = { eyebrow: string; text: string; lead?: string; questions:
 
 // Atelier de co-design en quatre étapes (arrêt « Carrefour ») : le web ne fait que guider,
 // l'atelier réel se joue à la table avec le plan imprimé, le calque et les miniatures.
+// Étape 1 : on choisit un des trois sites lyonnais ; étape 3 : on pioche dans les mesures des neuf villes.
 export type Role = { id: string; icon: string; label: string; need: string };   // icon : croquis CIVITAS (Sketch.tsx)
 export type RoleFamily = { id: string; label: string; roles: Role[] };
 export type Roles = {
@@ -76,19 +77,28 @@ export type Roles = {
   blank: { label: string; need: string };   // les deux cartes vides « Qui manque ? »
   prompts: string[];                        // les lignes à remplir sur la carte imprimée
 };
-export type MethodStep = { n: number; title: string; time: string; text: string };
-export type MenuCourse = { course: string; role: string; dish?: string };   // dish : le plat retenu pour cette méthode
-export type Method = { name: string; steps: MethodStep[]; menu: MenuCourse[]; note?: string };
+// Un site de l'atelier : une vraie rue de Lyon ou de Villeurbanne, son plan et ses vues de rue.
+// images[0] : la vue aérienne, les suivantes : les vues de rue. roles : des ids de process.roles.
+export type Site = {
+  id: string; n: number; short: string; city: string; name: string;
+  question: string;      // la question posée au groupe devant ce site
+  context?: string;      // ce qu'il faut savoir du corridor avant de regarder les photos
+  problem: string[];     // les constats, à vérifier et corriger sur le terrain
+  who: string;           // « Qui est concerné ? »
+  roles: string[]; images: Img[];
+};
+// La banque d'idées de l'étape « Parler » : les mesures mises en place par les neuf villes du projet.
+// cities : des ids de content.cities.items ; l'étiquette et la couleur viennent de cities.measureTypes.
+export type MeasureIdea = { id: string; type: MeasureType; title: string; text: string; cities?: string[] };
+export type Measures = { intro?: string; items: MeasureIdea[]; blank: { label: string; need: string } };  // blank : la carte vide « Une autre idée ? »
 export type ProcessStep = {
   id: string; n: number; title: string; verb: string; text: string;
   table?: string;            // « À la table : … » — ce qui se passe avec le matériel imprimé
-  difficulties?: string[];   // les constats de l'étape « Voir la rue »
-  images?: Img[];
 };
 export type ProcessCta = { label: string; resource?: string; href?: string };  // resource : fiche en modale ; href : fichier à télécharger
 export type Process = {
   eyebrow: string; intro: string;
-  steps: ProcessStep[]; roles: Roles; method: Method; ctas: ProcessCta[];
+  steps: ProcessStep[]; roles: Roles; sites: Site[]; measures: Measures; ctas: ProcessCta[];
 };
 
 // Bloc « héros » d'un arrêt (arrêt Destination) : une capture, un chiffre, ce qu'on y trouve, les liens externes,

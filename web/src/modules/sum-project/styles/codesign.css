@@ -40,12 +40,19 @@
 .codesign .iconbtn.big { min-height: 52px; justify-self: start; }
 .codesign .iconbtn.primary.big { background: var(--sum-green); border-color: var(--sum-green-deep); color: #17230A; }
 
-/* Étape 1 : les deux images côte à côte. */
-.codesign .pfigs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.codesign .pfigs figure { margin: 0; display: grid; gap: 6px; min-width: 0; }
-.codesign .pfigs img { width: 100%; height: 230px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); }
-.codesign .pfigs figcaption { font-size: 12px; color: var(--ink); line-height: 1.3; }
-.codesign .pfigs figcaption span { color: var(--muted); }
+/* Étape 1 : les trois sites, chacun ouvre sa fiche en modale. */
+.codesign .sites { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.codesign .site {
+  display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; min-width: 0; padding: 0 0 12px;
+  border: 2px solid var(--line); border-radius: 12px; background: var(--paper); color: var(--ink);
+  font: inherit; text-align: left; cursor: pointer; overflow: hidden; transition: border-color .15s, box-shadow .15s;
+}
+.codesign .site:hover { border-color: var(--sum-blue); box-shadow: 0 6px 18px rgba(27,52,103,.14); }
+.codesign .site img { width: 100%; height: 150px; object-fit: cover; display: block; background: #fff; }
+.codesign .site .nm { display: grid; gap: 2px; padding: 10px 12px 0; font-family: var(--display); font-weight: 800; font-size: 16px; line-height: 1.15; color: var(--sum-blue-deep); }
+.codesign .site .nm .city { font-family: var(--body); font-weight: 700; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.codesign .site .q { padding: 0 12px; font-size: 14px; line-height: 1.35; }
+.codesign .site .more { padding: 0 12px; font-size: 13px; font-weight: 700; color: var(--sum-green-deep); }
 
 /* Étape 2 : les familles de rôles et leurs cartes. */
 .codesign .fams { display: grid; gap: 14px; }
@@ -62,23 +69,18 @@
 .codesign .rolecard .need { font-size: 13px; line-height: 1.3; color: var(--ink); margin-top: 3px; }
 .codesign .rolecard .need b { font-weight: 700; color: var(--muted); }
 
-/* Étape 3 : la méthode et le menu. */
-.codesign .meth { display: grid; gap: 12px; }
-.codesign .msteps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.codesign .msteps li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; align-items: start; }
-.codesign .msteps .disc {
-  width: 30px; height: 30px; border-radius: 999px; display: grid; place-items: center;
-  background: var(--sum-blue-soft); color: var(--sum-blue); font-family: var(--display); font-weight: 800; font-size: 15px;
-}
-.codesign .msteps .mt { font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--sum-blue-deep); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.codesign .msteps p { margin: 2px 0 0; font-size: 15px; line-height: 1.35; max-width: 70ch; }
-.codesign .menu { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
-.codesign .menu .course { border-top: 3px solid var(--line); background: var(--paper); border-radius: 0 0 8px 8px; padding: 8px 10px; min-width: 0; }
-.codesign .menu .course.on { border-top-color: var(--sum-green); background: var(--sum-green-soft); }
-.codesign .menu .cn { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700; font-size: 16px; color: var(--sum-blue); line-height: 1.1; }
-.codesign .menu .cr { font-size: 11px; letter-spacing: .05em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-top: 3px; }
-.codesign .menu .cd { font-size: 13px; font-weight: 700; color: var(--sum-green-deep); margin-top: 4px; line-height: 1.2; }
-.codesign .mnote { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.35; max-width: 80ch; }
+/* Étape 3 : la banque d'idées — les mesures des neuf villes, contrainte à gauche, incitation à droite. */
+.codesign .ptext.muted { font-size: 14px; color: var(--muted); }
+.codesign .measures { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+.codesign .mcol { display: grid; gap: 8px; align-content: start; min-width: 0; border-top: 4px solid var(--line); padding-top: 10px; }
+.codesign .mcol h4 { margin: 0; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.codesign .mcol h4 .d { font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--muted); line-height: 1.25; }
+.codesign .mcard { padding: 9px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--paper); }
+.codesign .mcard .lbl { font-family: var(--display); font-weight: 700; font-size: 15px; line-height: 1.15; color: var(--sum-blue-deep); }
+.codesign .mcard p { margin: 3px 0 0; font-size: 13px; line-height: 1.35; }
+.codesign .mcard .cities { margin-top: 5px; font-size: 11px; line-height: 1.3; color: var(--muted); }
+.codesign .mcard.blank { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; align-items: center; border-style: dashed; border-color: var(--sum-blue); background: #fff; }
+.codesign .mcard.blank .ic { color: var(--sum-blue); font-size: 22px; text-align: center; }
 
 .codesign .pnav { display: flex; gap: 10px; flex-wrap: wrap; }
 .codesign .pnav .iconbtn:disabled { opacity: .4; cursor: default; }
@@ -90,18 +92,29 @@
 .presenter .codesign .ptext { font-size: 18px; }
 .presenter .codesign .rolecard .lbl { font-size: 17px; }
 .presenter .codesign .rolecard .need { font-size: 15px; }
-.presenter .codesign .msteps p { font-size: 17px; }
-.presenter .codesign .menu .cn { font-size: 18px; }
+.presenter .codesign .site .nm { font-size: 18px; }
+.presenter .codesign .site .q { font-size: 16px; }
+.presenter .codesign .mcard .lbl { font-size: 17px; }
+.presenter .codesign .mcard p { font-size: 15px; }
+.presenter .sitedetail .lines li,
+.presenter .sitedetail .who { font-size: 17px; }
 
 @media (max-width: 1100px) {
-  .codesign .pfigs img { height: 190px; }
-  .codesign .menu { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .codesign .site img { height: 130px; }
 }
 /* Téléphone : la bande devient une liste, l'étape choisie déplie son panneau dessous. */
 @media (max-width: 860px) {
   .codesign .chead { padding: 16px 16px 14px; }
   .codesign .pband { grid-template-columns: 1fr; padding: 12px 12px 0; gap: 8px; }
   .codesign .pband::before { display: none; }
+  /* la carte d'un site devient une rangée : la vignette à gauche, le texte à droite */
+  .codesign .sites { grid-template-columns: 1fr; }
+  .codesign .site { grid-template-columns: 110px minmax(0, 1fr); grid-template-rows: auto auto auto; padding: 0; column-gap: 12px; row-gap: 6px; }
+  .codesign .site img { grid-row: 1 / -1; height: 100%; min-height: 104px; }
+  .codesign .site .nm { padding: 10px 12px 0 0; }
+  .codesign .site .q { padding: 0 12px 0 0; }
+  .codesign .site .more { padding: 0 12px 10px 0; }
+  .codesign .measures { grid-template-columns: 1fr; }
 }
 /* Panneau étroit (affichage « carte » sur grand écran) : la bande passe en 2 × 2 pour que les titres tiennent. */
 @media (min-width: 861px) and (max-width: 1200px) {
@@ -113,15 +126,33 @@
   .codesign .inline .ppanel { margin-top: 8px; padding: 14px 12px; }
   /* le bouton de l'étape porte déjà son numéro et son titre : le panneau ne les répète pas */
   .codesign .inline .phead { display: none; }
-  .codesign .pfigs { grid-template-columns: 1fr; }
-  .codesign .pfigs img { height: 180px; }
+  .codesign .sites { grid-template-columns: 1fr; }
+  .codesign .site { grid-template-columns: 110px minmax(0, 1fr); grid-template-rows: auto auto auto; padding: 0; column-gap: 12px; row-gap: 6px; }
+  .codesign .site img { grid-row: 1 / -1; height: 100%; min-height: 104px; }
+  .codesign .site .nm { padding: 10px 12px 0 0; }
+  .codesign .site .q { padding: 0 12px 0 0; }
+  .codesign .site .more { padding: 0 12px 10px 0; }
   .codesign .rolecards { grid-template-columns: 1fr; }
-  .codesign .menu { grid-template-columns: 1fr 1fr; }
+  .codesign .measures { grid-template-columns: 1fr; }
   .codesign .pnav { display: grid; grid-template-columns: 1fr 1fr; }
   .codesign .pnav .iconbtn { justify-content: center; }
   .codesign .iconbtn.big { width: 100%; justify-content: center; }
   .codesign .cta { padding: 12px; }
   .codesign .cta .iconbtn { width: 100%; justify-content: center; }
+}
+/* Le même volet étroit, mais sur une grande fenêtre : en affichage « carte » le panneau ne prend que
+   46 % de la largeur (≈ 660 px sur un portable de 1440). Les trois sites et les deux colonnes de
+   mesures y sont illisibles : on reprend la mise en page en une colonne. */
+@media (min-width: 1201px) and (max-width: 1700px) {
+  .stage.carte .codesign .pband { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stage.carte .codesign .pband::before { display: none; }
+  .stage.carte .codesign .sites { grid-template-columns: 1fr; }
+  .stage.carte .codesign .site { grid-template-columns: 110px minmax(0, 1fr); grid-template-rows: auto auto auto; padding: 0; column-gap: 12px; row-gap: 6px; }
+  .stage.carte .codesign .site img { grid-row: 1 / -1; height: 100%; min-height: 104px; }
+  .stage.carte .codesign .site .nm { padding: 10px 12px 0 0; }
+  .stage.carte .codesign .site .q { padding: 0 12px 0 0; }
+  .stage.carte .codesign .site .more { padding: 0 12px 10px 0; }
+  .stage.carte .codesign .measures { grid-template-columns: 1fr; }
 }
 
 /* ---------- Les cartes de rôle à imprimer (#/<arrêt>/roles-impression) ---------- */
@@ -146,6 +177,34 @@
 .roleprint .prompt { display: grid; gap: 7px; }
 .roleprint .prompt span { font-size: 11px; font-weight: 700; color: var(--sum-blue); }
 .roleprint .prompt i { display: block; height: 1px; background: var(--line); }
+
+/* ---------- La fiche d'un site (#/<arrêt>/site-<id>) : ce qu'on lit, puis ce qu'on regarde ---------- */
+.modal.site { width: min(1180px, 96vw); max-width: none; }
+.sitedetail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; align-items: start; }
+.sitedetail .txt { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.sitedetail h3 { margin: 0; font-size: clamp(19px, 1.7vw, 24px); font-weight: 800; color: var(--sum-blue); line-height: 1.15; }
+.sitedetail .addr { margin-top: -7px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.sitedetail .q { margin: 0; font-family: var(--display); font-weight: 800; font-size: 17px; line-height: 1.3; color: var(--sum-green-deep); }
+.sitedetail p { margin: 0; font-size: 15px; line-height: 1.45; }
+.sitedetail .lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.sitedetail .lines li { border-left: 3px solid var(--sum-green); padding: 2px 0 2px 10px; font-size: 15px; line-height: 1.4; }
+.sitedetail .who { border: 2px dashed var(--sum-blue); border-radius: 10px; padding: 10px 12px; font-size: 15px; line-height: 1.4; }
+.sitedetail .who b { color: var(--sum-blue); }
+.sitedetail .rolechips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.sitedetail .rolechip { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px; background: var(--sum-blue-soft); color: var(--sum-blue-deep); font-size: 13px; font-weight: 700; }
+.sitedetail .pics { display: grid; gap: 10px; min-width: 0; }
+.sitedetail .pics figure { margin: 0; display: grid; gap: 5px; min-width: 0; }
+.sitedetail .pics img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); }
+.sitedetail .pics figcaption { font-size: 12px; line-height: 1.3; color: var(--ink); }
+.sitedetail .pics figcaption span { color: var(--muted); }
+.sitedetail .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; min-width: 0; }
+
+/* Téléphone : le texte puis les photos, l'une sous l'autre.
+   La modale est un portail sur le body : seule la largeur de la fenêtre la commande. */
+@media (max-width: 860px) {
+  .sitedetail { grid-template-columns: 1fr; }
+  .sitedetail .two { grid-template-columns: 1fr; }
+}
 
 @media print {
   body > *:not(.modal-backdrop) { display: none !important; }

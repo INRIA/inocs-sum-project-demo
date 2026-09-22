@@ -48,8 +48,9 @@ export default function ResourceDetail({ r }: { r: Resource }) {
       ))}
       {r.links && r.links.length > 0 && (
         <div className="links">
+          {/* un lien externe part tel quel ; un fichier du site (« /docs/… ») passe par assetUrl */}
           {r.links.map((l, i) => l.url
-            ? <a key={i} href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>
+            ? <a key={i} href={/^https?:/.test(l.url) ? l.url : assetUrl(l.url)} target="_blank" rel="noopener">{l.label} ↗</a>
             : <span key={i} className="todo">{l.label} — URL à compléter</span>)}
         </div>
       )}
